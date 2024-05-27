@@ -1,0 +1,37 @@
+# got this from chatGPT
+version: '3.8'
+
+services:
+  frontend:
+    build: ./client
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  backend:
+    image: ./server
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:yourpassword@db:5432/yourdatabase
+    depends_on:
+      - db
+    volumes:
+      - backend_data:/app/data
+
+  db:
+    image: postgres:16.3-alpine3.20 
+    restart: always
+    environment:
+      POSTGRES_USER: yourusername
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: yourdatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  backend_data:
+  db_data:
