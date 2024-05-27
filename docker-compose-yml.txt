@@ -1,0 +1,22 @@
+version: "3.8" {depending on your docker engine}
+services: -{Object}
+    <name_of_image>: -{Object}
+        images: postgres:16.3-alpine3.20        {use this when you want to build an image off of an image in the docker hub}
+        build: ./backend or ./server            {this is telling docker where should it find the Dockerfile file that it will use to build the image, and the path is relative to the docker-compose.yml file}
+        depends_on: -[Array]                    {A list of the <name_of_image> that this current image depends on, so this one will wait for that one to be completed before it is built}
+            - db
+            - backend
+        container_name: <name_of_container>
+        ports: -[Array]
+            - "4000:4000" or "8080:3000"
+        volumes: -[Array]
+            - ./api:/app                        {binding volume for live changes}
+            - ./logs:/app/logs                  {binding volume for storing data}
+            - users-data:/app/data/users-data   {mounted volume}
+        environment: -{Object}
+            DB_URL: mongodb://db/shoppers
+        command: ./docker-entrypoint.sh
+        stdin_open: true
+        tty: true
+volumes:
+    users-data:
