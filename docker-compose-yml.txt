@@ -2,21 +2,42 @@ version: "3.8" {depending on your docker engine}
 services: -{Object}
     <name_of_image>: -{Object}
         images: postgres:16.3-alpine3.20        {use this when you want to build an image off of an image in the docker hub}
+        restart: always                         {
+            The restart: always directive in Docker Compose specifies a restart policy for a container. When set to always, it means that Docker will automatically restart the container if it stops for any reason, such as a crash or manual stop.
+
+            Here's what restart: always does:
+            1. Automatic Restart: If the container stops for any reason, Docker automatically restarts it.
+            2. High Availability: Ensures high availability of the service by automatically bringing it back online in case of failure.
+            3. Fault Tolerance: Helps maintain service continuity by quickly recovering from failures without manual intervention.
+
+            This option is commonly used for critical services or those that need to be highly available. However, it's important to note that using restart: always can mask underlying issues, so it's essential to monitor the container's behavior and investigate the cause of frequent restarts if they occur.
+        }
+    
         build: ./backend or ./server            {this is telling docker where should it find the Dockerfile file that it will use to build the image, and the path is relative to the docker-compose.yml file}
         depends_on: -[Array]                    {A list of the <name_of_image> that this current image depends on, so this one will wait for that one to be completed before it is built}
             - db
             - backend
+        
         container_name: <name_of_container>
         ports: -[Array]
             - "4000:4000" or "8080:3000"
+
         volumes: -[Array]
             - ./api:/app                        {binding volume for live changes}
             - ./logs:/app/logs                  {binding volume for storing data}
             - users-data:/app/data/users-data   {mounted volume}
+
         environment: -{Object}
-            DB_URL: mongodb://db/shoppers
+            POSTGRES_USER: <username>
+            POSTGRES_PASSWORD: <password>
+            POSTGRES_DB: <database>
+
         command: ./docker-entrypoint.sh
         stdin_open: true
         tty: true
 volumes:
     users-data:
+    {
+        the volumes section is used to define named volumes that can be referenced by services in the services section. These named volumes are created and managed by Docker itself.
+        The line above `users-data` is defining a named volume. These named volumes are just placeholders, and their values are not specified in the docker-compose.yml file. Docker Compose automatically creates volumes with these names when you bring up the Docker services defined in the services section that reference them.
+    }
