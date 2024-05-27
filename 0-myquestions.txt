@@ -1,0 +1,53 @@
+1. write a full Dockerfile for a backend node app and compare your's with the teachers Dockerfile
+2. Build an image with out a tag (i.e <image_name>:<tag>)
+3. Build an image with a tag (i.e <image_name>:<tag>)
+4. List all images you've created
+5. create 5 images using one Dockerfile, but let all images have different names
+6. delete on image
+7. delete multiple images
+8. delete all images
+9. what can you say about using the COPY command {
+    copy multiple files
+    using regex in package.json copy
+    copy files with white space in their names
+    copying everything
+}
+10. create a group and create a user, then add the user to the group created using the RUN command
+11. make the user you just created the default user
+12. tell us about the CMD command, how do you use it and what are the alternatives to CMD command, explain the diff btw CMD and it's alternatives
+13. how do you push an image to docker hub?
+14. run a container in a detached mode
+15. run a container in an interactive mode {
+    run a container with all the params you know {name, port, environment, volumes}
+    list all the containers using 2 different commands
+    list all the containers both running and stopped containers
+}
+16. logs in a container? follow logs in a container and show the timestamp for each logs
+17. execute three commands in a running container {1. ls, 2. mkdir, 3. sh}
+18. execute a shell in an interactive mode in a running container
+19. use the docker attach command to attach to a running container
+20. remove a docker container - use the 2 methods available
+21. docker volume, everything you know about it and it's command {
+    1. tell me the difference btw a bind and mount volume
+    2. do the both of them while starting a postgres container using a postgres image from docker hub
+    3. how do you map your current workspace into the container using volumes, so that you can see live changes in your container
+}
+22. copy a file from docker to your system and do vice-versa
+23. Cleaning up your workspace {
+    1. using prune
+    2. recursively using rm --p60
+}
+24. convert the JSON Object to a yaml syntax - using the image in this directory "json_to_yaml.png"
+25. Create a docker-compose.yml file for these services {
+    frontend, backend, db using postgres | mysql
+}
+26. build images from the compose file created {
+    1. don't use --no-cache
+    2. use --no-cache
+    3. see the list of images created
+}
+27. using the compose file, start the containers {
+    1. see the list of containers from this compose file
+    2. stop the running containers for only this compose file
+    3. re-write the docker-compose.yml file into a json file
+}
