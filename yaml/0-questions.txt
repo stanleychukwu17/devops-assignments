@@ -84,7 +84,7 @@ Answers
             two: 2
             three: 3
 
-12. chomp modifiers are used to tell yaml how we would like to happen with multiline text that ends with [space] or [tab], by default sometimes, yaml strips/removes this [space]/[tab] from the
+12. chomp modifiers are used to tell yaml what we would like to happen with multiline text that ends with [space] or [tab], by default sometimes, yaml strips/removes this [space]/[tab] from the
     end of the text, but we can use chomp modifiers to explicitly tell yaml what to do.
     we use + symbol to tell yaml to preserve the end as it is
     we use - symbol to tell yaml to remove the characters from the end of our text.
@@ -92,4 +92,10 @@ Answers
     So we can do: >+ or |+
     and also, we can do: >- or |-
 
-13. the_text: >+
+13. Answers:
+    Note: >+ this is a multiline text
+            but will be displayed as a one line text 
+
+    Note: |- this is a multiline text
+            but will be displayed as a multiline text
+            and the end [space] will be stripped away 
