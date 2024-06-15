@@ -27,7 +27,7 @@ RUN go mod download
 #       --mount=type=cache,target=/root/.cache/go-build\
 #       go mod download
 
-COPY --chown=stanley:stanley . .
+COPY --chown=stanley:stanley . ./
 
 RUN go build \
     -ldflags "-linkmode external -extldflags -static" \
@@ -39,9 +39,9 @@ FROM scratch
 
 ENV GIN_MODE=release
 
-COPY --chown=stanley:stanley --from=build /etc/passwd /etc/passwd
+COPY --from=build /etc/passwd /etc/passwd
 
-COPY --from=build /app/api-golang api-golang
+COPY --chown=stanley:stanley --from=build /app/api-golang api-golang
 
 EXPOSE 8080
 

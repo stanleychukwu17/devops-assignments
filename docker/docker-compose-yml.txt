@@ -24,14 +24,18 @@ services: -{Object}
             - "4000:4000" or "8080:3000"
 
         volumes: -[Array]
-            - ./api:/app                        {binding volume for live changes}
-            - ./logs:/app/logs                  {binding volume for storing data}
-            - users-data:/app/data/users-data   {mounted volume}
+            - ./api:/app                        {binding mount for live changes}
+            - ./logs:/app/logs                  {binding mount for storing data}
+            - users-data:/app/data/users-data   {named volume}
 
         environment: -{Object}
             POSTGRES_USER: <username>
             POSTGRES_PASSWORD: <password>
             POSTGRES_DB: <database>
+            or
+            - POSTGRES_USER=<username>
+            - POSTGRES_PASSWORD=<password>
+            - POSTGRES_DB=<database>
 
         hostname: <name_of_service> or <your_own_custom_name> {if you do not specify a hostname, docker will use <name_of_service> as the default hostname}
 
