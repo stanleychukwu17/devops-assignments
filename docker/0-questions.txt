@@ -1,4 +1,3 @@
-- write a full Dockerfile for a backend node app, React app, Golang app and compare your's with the teachers Dockerfile
 - Build an image with out a tag (i.e <image_name>:<tag>)
 - Build an image with a tag (i.e <image_name>:<tag>)
 - List all images you've created
@@ -6,7 +5,7 @@
 - delete an image
 - delete multiple images
 - delete all images
-- what can you say about using the COPY command {
+- what can you say about using the COPY command (p36) {
     copy multiple files
     using regex in package.json copy
     copy files with white space in their names
@@ -22,13 +21,17 @@
     list all the containers using 2 different commands
     list all the containers both running and stopped containers
 }
-- logs in a container? follow logs in a container and show the timestamp for each logs
+- logs in a container {
+    - follow logs in a container
+    - show a certain number of log
+    - show the timestamp for each logs
+}
 - execute three commands in a running container {1. ls, 2. mkdir, 3. sh}
 - execute a shell in an interactive mode in a running container
 - use the docker attach command to attach to a running container
 - remove a docker container - use the 2 methods available
 - docker volume, everything you know about it and it's command {
-    1. tell me the difference btw a bind and mount volume
+    1. tell me the difference btw a bind mount and a named volume
     2. do the both of them while starting a postgres container using a postgres image from docker hub
     3. how do you map your current workspace into the container using volumes, so that you can see live changes in your container
 }
@@ -38,16 +41,17 @@
     2. recursively using rm --p60
 }
 - convert the JSON Object to a yaml syntax - using the image in this directory "json_to_yaml.png"
+
 - Create a docker-compose.yml file for these services {
-    frontend, backend, db using postgres | mysql
+    frontend, backend, db using (postgres and pgAdmin | mysql and phpMyAdmin)
 }
 - build images from the compose file created {
     1. don't use --no-cache
     2. use --no-cache
     3. see the list of images created
 }
--. using the compose file, start the containers {
+- using the compose file, start the containers {
     1. see the list of containers from this compose file
     2. stop the running containers for only this compose file
-    3. re-write the docker-compose.yml file into a json file
 }
+- do the Dockerfile for react, golang, node.js, postgres
