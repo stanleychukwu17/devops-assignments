@@ -1,0 +1,58 @@
+----------SIDE A----------
+- Explain root@3f5432951:/#
+    - Explain root, /, #
+- Explain the difference btw # and $
+- how do you see a history of all the commands used
+- Select one of the commands from the list of commands from above
+    - how do you clear your command history
+
+- how do you manage and install packages in linux, tell us about the apt package manager
+- Explain these linux folders in a linux file system:
+    bin | root | boot | lib | dev | var | etc | proc | home
+- difference btw a relative path and an absolute path
+    - how do you navigate an absolute path (2 ways)
+- talk about the following linux commands {
+    mkdir(+1 tag)
+    mv
+    touch
+    ls (+4 tags)
+    mv
+    rm(+2 tags)
+}
+- 2 ways you can view a file
+    - how to edit a file in your terminal
+
+
+- redirect multiple files (at-least 3 files) into a single file called combine.txt
+    - redirect ls -l of a folder into a folder/file
+    - append a redirect output
+- search for a word in all the txt files
+    - make your search case insensitive
+    - let the search be recursive
+- Explain:
+    - grep -ir hello /etc
+    - grep -ir hello .
+- Find all the files in your directory that ends with .ts or .js (let the search be case insensitive)
+- Find all the folders that their names start with "city-"
+
+
+- Explain:
+    Find / -type f -name "*.js" > js-files.txt
+- talk about different types of chaining commands
+- write commands in multiple in multiple lines
+- talk about environment variables with examples
+- give an example of addgroup and adduser, explain your example
+
+
+- give an example of useradd, usermod, userdel, 
+- give an example of groupadd, {groupmod*}, {groupdel*}
+- Create a user and use that user to log into a docker container
+- using groupadd and useradd, create a group, then create user while assigning a group to the user on creation of the user
+
+- tell us about what you know on file permissions
+- change the permissions of a user
+    - add read, write, execute
+    -remove write, execute
+- change the permissions of a group and other users
+    - remove all permissions
+    - add reading and writing permissions
