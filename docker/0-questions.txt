@@ -18,14 +18,15 @@ Group 1
 11. change ownership of files you're copying to the user you created
 
 
+
 Group 2
-1. tell us about the CMD command, how do you use it and what are the alternatives to CMD command, explain the diff btw CMD and it's alternatives
+1.  tell us about the CMD command and how do you use it
+    what are the alternatives to CMD command, explain the diff btw CMD and it's alternatives
 2. how do you push an image to docker hub?
 3. run a container in a detached mode
 4. run a container in an interactive mode {
     run a container with all the params you know {name, port, environment, volumes}
-    list all the containers using 2 different commands
-    list all the containers both running and stopped containers
+    list all the containers using 2 different commands (both running and stopped containers)
 }
 5. logs in a container {
     - follow logs in a container
@@ -37,7 +38,7 @@ Group 2
 8. use the docker attach command to attach to a running container
 9. remove a docker container - use the 2 methods available
 10. docker volume, everything you know about it and it's command {
-    1. tell me the difference btw a bind mount and a named volume
+    1. tell me the difference btw a bind mount and a named volume and give an example
     2. do the both of them while starting a postgres container using a postgres image from docker hub
     3. how do you map your current workspace into the container using volumes, so that you can see live changes in your container
 }
@@ -49,19 +50,21 @@ Group 3
     1. using prune
     2. recursively using rm --p60
 }
-3. Create a docker-compose.yml file for these services {
-    frontend, backend, db using (postgres and pgAdmin | mysql and phpMyAdmin)
+3. create a Dockerfile for react, golang, node.js, postgres {
+    Dockerfile for react, golang, node.js -- for dev
+    Dockerfile for react, golang, node.js -- for prod
 }
-4. build images from the compose file created {
+4. Create a docker-compose.yml file for these services {
+    frontend
+    backend
+    db using (postgres and pgAdmin | mysql and phpMyAdmin)
+}
+5. build images from the compose file created {
     1. don't use --no-cache
     2. use --no-cache
     3. see the list of images created
 }
-5. using the compose file, start the containers {
+6. using the compose file, start the containers {
     1. see the list of containers from this compose file
     2. stop the running containers for only this compose file
-}
-6. do the Dockerfile for react, golang, node.js, postgres {
-    Dockerfile for react, golang, node.js -- for dev
-    Dockerfile for react, golang, node.js -- for prod
 }
