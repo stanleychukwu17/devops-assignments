@@ -1,0 +1,55 @@
+Group 1
+1. docker build -t <image_name> <path_to_locate_dockerfile>
+    e.g docker build -t python_image ./
+
+2. docker build -t <image_name>:<tag> <path_to_locate_dockerfile>
+    e.g docker build -t python_image:v1.0 ./
+
+3. docker images
+    docker image ls
+
+5. docker image rm <image_name>
+    docker rmi <image_name>
+
+6. docker image rm image_1 image_2 image_3 {...}
+
+7. docker image rm $(docker image ls -q)
+    docker rmi $(docker images -q)
+    --
+    docker image prune -f {Remove all dangling images (-f = by force (without confirmation))}
+    docker image prune -a {Remove all unused images (with confirmation):}
+    docker image prune -a -f {Remove all unused images (without confirmation):}
+
+8.  - COPY package.json package-lock.json pnpm-lock.yml ./
+    - COPY package*.json ./ {
+        COPY *.txt *(.js|.ts) picture* ./
+        The COPY instruction in Docker does not support advanced pattern matching or glob patterns like *, ?, or complex regex patterns directly.
+    }
+    - COPY ["file with space.txt", "."]
+    - COPY . ./
+    - ADD and COPY commands both carry out the same task, but the ADD command can do a little bit more {
+        1. ADD can copy from a url e.g ADD https://github.com/stanley/come.txt ./
+        2. ADD can copy for a zipped file into your working directory e.g ADD code.tar ./,
+         and it will unzip the file content and copy the contents
+    }
+9. RUN addgroup app && adduser -S -G app app {
+    you must put -S before -G, it is the correct way of doing it, you're saying create a -S system user called
+    "app" and add the user to a group -G called "app"
+}
+10. USER app
+11. COPY --chown=app . ./
+    RUN chown -R app:app /app
+    {
+        Use COPY --chown=app:app . ./ when you are copying files and want to set their ownership in one step.
+        Use RUN chown -R app:app /app when you need to change the ownership of files or directories that are
+        already present in the image from previous layers or build steps.
+
+        chown = stands for "change owner"
+        -R = This flag stands for "recursive"
+        app:app = This specifies the new owner and group for the files.
+                The first app refers to the username, and the second app refers to the group name.
+        /app = The command will change the ownership of /app and all files and subdirectories within /app
+    }
+
+
+
