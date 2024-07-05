@@ -1,0 +1,48 @@
+FROM golang:alpine as build
+
+RUN addgroup stanley && adduser -S -G stanley stanley 
+
+USER stanley
+
+WORKDIR /app
+
+# Mount a volume to cache Go modules
+VOLUME /go/pkg/mod
+# remember to setup the volumes in you docker-compose.yml, the above line is just to let docker know where to mount the volume
+#   services:
+#       my_service:
+#           image: my_golang_image
+#           volumes:
+#             - gomod_cache:/go/pkg/mod
+#             - go_cache_build:/root/.cache/go-build
+#       volumes:
+#         gomod_cache:
+#         go_cache_build:
+
+COPY go.mod go.sum ./
+
+RUN go mod download
+# the teacher replaced the above in his lecture with the below, this his own method of caching the dependencies go downloaded; but even chatGPT recommends a named volume to manage the cache
+#   RUN --mount=type=cache,target=/go/pkg/mod \
+#       --mount=type=cache,target=/root/.cache/go-build\
+#       go mod download
+
+COPY --chown=stanley:stanley . ./
+
+RUN go build \
+    -ldflags "-linkmode external -extldflags -static" \
+    -tags netgo \
+    -o api-golang
+
+###
+FROM scratch
+
+ENV GIN_MODE=release
+
+COPY --from=build /etc/passwd /etc/passwd
+
+COPY --chown=stanley:stanley --from=build /app/api-golang api-golang
+
+EXPOSE 8080
+
+ENTRYPOINT ["./api-golang"]
