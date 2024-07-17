@@ -1,0 +1,60 @@
+1.  git config --global user.name "Chukwu Stanley Edward"
+    git config --global user.email "jondoe4life@yahoo.com"
+    To see name or email, you do
+    git config user.name or git config user.email
+
+2.  git log {See all commit messages}
+    git log --oneline {See all commit messages in one-line}
+
+3.  git add file1.ext file2.ext file...
+    git commit --amend
+    {modify your commit message and save}
+    git push
+
+4.  - we use branches to enhance our workflow on git, so allow proper development of new-features or bug fixes.
+        This inturn saves us from too many uncessary conflicts at-least until we are ready to merge with another branch
+    - git branch <new-branch-name>
+    - git branch -d <branch-name> {for merged branch}
+        git branch -D <branch-name? {For un-merged branch}
+    - git branch -m <new-branch-name> {stay in the branch you are re-naming}
+    - git branch
+    - git branch -v
+    - git branch -r
+    - git branch -a
+
+5.  git switch <branch-name>
+    git switch -c <new-branch-name>
+
+6.  when you try to switch from a branch with unsaved changes, git will not allow you to until you commit the changes or stash the changes,
+    but when the case is of new files, the new files will follow you to the branch you're switching to
+
+7.  1. you switch to the *main* branch by: git switch main
+    2. you run: git merge bug/fix-cart
+
+8.  git stash
+
+9.  1. git stash : this will stash(save) all your uncommitted changes and will allow you to switch to another branch without any issues
+    2. git stash pop : the will remove the last stash and apply it to the current branch (after all, it will delete the stash from storage)
+    3. git stash apply : this will take the last stash and apply it to the current branch (but it will not delete the stash from storage)
+    4. git stash list : shows you all the stashes
+    5. git stash drop <stash-id> : deletes a stash using the stash-id
+    6. git stash clear: deletes all the stash
+
+10. git restore <filename> - this will restore the file to teh state of the last committed file
+    git restore --source <commit-hash> <filename> - this will restore the file to the state it was in the commit hash provided
+
+11. git reset <commit-hash> - this will delete all the commits you have made after the <commit-hash> specified
+        but it will not roll back the changes, everything will remain the same, only the commits will be deleted
+    
+    git reset --hard <commit-hash> - this will delete and the commits and will also take your project back to the state
+        it was at the time of the <commit-hash> specified
+
+    ### git revert
+    git revert <commit-hash> - this is different from git reset because instead of deleting the commits and taking the
+        project back, it will instead create a new commit (and in this new commit, it will take your work back to the state
+        it was at the <commit-hash>), because it results in a new commit, you'll be prompted to enter a commit hash
+    
+    ### which one should i use
+    - if you want to reverse commits that you haven't shared with anyone, use reset and no one will ever know what happened
+    - but if you want to reverse commits that are already in other peoples system, you should use revert, because if you delete
+        the commit on other peoples system, this will cause serious serious issues to reconcile the changes
