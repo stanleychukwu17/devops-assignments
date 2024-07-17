@@ -8,8 +8,8 @@
     - Create a new branch
     - Delete a branch
     - rename a branch
-    - see all branches with their last commit messages
     - See all the branches locally
+    - see all branches with their last commit messages
     - See all remote branches
     - See all remote and local branches at once
 
@@ -24,8 +24,7 @@
 
 9. Tell us all about the commands of stash and explain them (6 commands)
 
-10. how do you take a project back to an old commit (i.e losing and the changes made after the commit)
-    - how do you take just a file back to an old commit (i.e losing and the changes made after the commit)
+10. how do you take just a file back to an old commit (i.e losing and the changes made after the commit)
 
 11. what is the difference btw git reset and git revert
 
