@@ -38,6 +38,8 @@
 
 - Explain:
     Find / -type f -name "*.js" > js-files.txt
+    Find ./ -type f -name "*.js" > js-files.txt
+    Find ./ -type d -name "*terraform*" > terraform-projects.txt
 - talk about different types of chaining commands
 - write commands in multiple in multiple lines
 - talk about environment variables with examples
