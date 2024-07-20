@@ -58,3 +58,74 @@
     - if you want to reverse commits that you haven't shared with anyone, use reset and no one will ever know what happened
     - but if you want to reverse commits that are already in other peoples system, you should use revert, because if you delete
         the commit on other peoples system, this will cause serious serious issues to reconcile the changes
+
+12. git clone <url_of_repo>
+
+13. git remote is where we store our local project, we connect our local project to a remote repo using git.. the remote repo can be github, gitlab e.t.c
+    git remote -v: shows you the remote name and the remote url
+
+14. git remote add <name_you_want_to_call_the_remote> <url_where_you_want_to_assign_to_the_remote>
+    e.g git remote add origin https://github.com/stanleychukwu17/iLoveMyWife
+    # how do you delete a remote url
+    - git remote remove <name_of_remote>;
+        e.g - git remove origin
+
+15. git push <remote_name> <name_of_branch>;
+        e.g - git push origin main
+    git push <remote_name> <name_of_feature_branch>
+        e.g - git push origin feature/add-buy-it-now-button
+    # how do you set a branch to be an upstream branch to always push to
+    git push -u <remote_name> <name_of_branch>
+    or
+    git push -set-upstream <remote_name> <name_of_branch>
+
+16. git switch <name_of_branch_on_the_remote_repo>
+
+17. 
+    # git fetch
+        Purpose:
+            Downloads new changes from the remote repository but does not integrate them into your current working branch.
+        Operation:
+            - Fetches all branches and tags from the remote repository that have been updated since your last fetch.
+            - Updates the remote tracking branches (like origin/master, origin/develop, etc.) in your local repository
+              to reflect the state of the remote repository.
+            - Does not modify your working directory or current branch.
+        Usage:
+            Typically followed by examining fetched changes (git diff origin/master) or merging them manually
+            (git merge origin/master).
+
+    # git pull
+        Purpose:
+            Downloads new changes from the remote repository and integrates them into your current branch.
+        Operation:
+            - Performs a git fetch to bring down the latest changes from the remote repository.
+            - Then, it automatically merges the retrieved changes into your current branch.
+        Usage:
+            - Convenient for updating your working branch with the latest changes from the remote repository in one step.
+            - caution: It automatically performs a merge, which could lead to conflicts if your local branch has
+              diverged from the remote branch.
+
+    # Key Differences
+        Integration:
+            git fetch only downloads new data from a remote repository while git pull downloads new data and directly
+            integrates it into your current working branch.
+        Safety:
+            git fetch is safer because it doesn't change your local branches automatically; you can review changes
+            before integrating them. git pull automatically integrates fetched changes, potentially leading
+            to unexpected merges or conflicts.
+        Usage Context:
+            git fetch is useful when you want to see what has changed in the remote repository without immediately
+            integrating it into your work. git pull is useful when you know you want to update your current working
+            branch with changes from the remote repository and you are prepared to handle any potential conflicts.
+    # Summary
+        In summary, git fetch is more cautious and gives you more control over when and how to integrate changes,
+        while git pull is more convenient for straightforward updates of your current branch with remote changes.
+
+18. git fetch origin main
+    git fetch origin new-page/promo
+
+19. git pull origin main
+    git pull origin new-page/promo
+    -
+    when the changes pulled from the remote repo are conflicting with one or more files on your local repo, git will pause
+    the merging and require you to manually resolve the conflicts and merge the branches again by yourself
