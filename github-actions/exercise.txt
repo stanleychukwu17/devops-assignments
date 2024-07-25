@@ -1,2 +1,5 @@
-solve the assignments in my chatGPT assignments
+# using github actions and terraform and *ansible, deploy a simple node.js application
+https://chatgpt.com/c/aef5876d-b1d1-4c48-b67d-88a37e915ed5
+
+# solve the assignments in my chatGPT assignments
 https://chatgpt.com/c/4751383b-a984-427a-a18c-e19f6b33e2ee
