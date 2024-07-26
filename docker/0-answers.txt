@@ -49,6 +49,8 @@ Group 1
         app:app = This specifies the new owner and group for the files.
                 The first app refers to the username, and the second app refers to the group name.
         /app = The command will change the ownership of /app and all files and subdirectories within /app
+
+        chatGPT say better to do: "RUN chown -R app:app /app" than: "RUN chown -R app:app ./"
     }
 
 
@@ -64,8 +66,8 @@ Group 2.
         that of ENTRYPOINT cannot be over-ridden
 
 2.  docker login
-    docker tag <image_name>:tag <username>/<myApp>:<tag>
-    docker push <username>/<myApp>:<tag>
+    docker tag <image_name>:tag <username>/<myRepo>:<tag>
+    docker push <username>/<myRepo>:<tag>
     https://hub.docker.com/r/username/myapp - to verify that the image has been pushed
 
 3. docker run -d --name react_container -p 3000:3000 react_image:latest (or)
@@ -80,7 +82,8 @@ Group 2.
     b. docker container ls (-a)
         docker ps (-a)
 
-5.  a. docker logs -f CONTAINER_ID_or_NAME
+5.  0. docker logs CONTAINER_ID_or_NAME = show all logs
+    a. docker logs -f CONTAINER_ID_or_NAME
     b. docker logs --tail 100 my_container {shows last 100 logs}
     c. docker logs -f -t my_container (or) docker logs -ft my_container
 
@@ -89,10 +92,15 @@ Group 2.
     3. docker exec -it my_container sh
 
 7. docker exec -it my_container sh (or) docker exec -it my_container shell
-    for ubuntu based system, you can do:
+    for ubuntu based system, or ubuntu based image you can do:
     docker exec -it my_container bash
 
 8. docker attach CONTAINER_ID_or_NAME
+    note this attaches to the main process as its own user, not as root unless the main process is running as root.
+    For attaching to a running shell as root:
+    docker exec -it -u root CONTAINER_ID_or_NAME /bin/bash
+    (or)
+    docker exec -it -u root CONTAINER_ID_or_NAME /bin/sh {where -u == --user}
 
 9.  - docker rm -f CONTAINER_ID_or_NAME
     - docker rm -f $(docker ps -aq)
