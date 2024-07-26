@@ -1,8 +1,13 @@
 version: "3.8" {depending on your docker engine}
 services: -{Object}
     <name_of_service>: -{Object}
-        images: postgres:16.3-alpine3.20        {use this when you want to build an image off of an image from the docker hub}
-        build: ./backend or ./server            {this is telling docker where should it find the Dockerfile file that it will use to build the image, and the path is relative to the docker-compose.yml file}
+        image: postgres:16.3-alpine3.20
+
+        build: ./backend or ./server
+        or you can also do
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile.prod
 
         container_name: <name_of_container>
         restart: always                         {
@@ -16,7 +21,7 @@ services: -{Object}
             This option is commonly used for critical services or those that need to be highly available. However, it's important to note that using restart: always can mask underlying issues, so it's essential to monitor the container's behavior and investigate the cause of frequent restarts if they occur.
         }
     
-        depends_on: -[Array]                    {A list of the <name_of_image> that this current image depends on, so this one will wait for that one to be completed before it is built}
+        depends_on: -[Array]
             - db
             - backend
 
@@ -26,18 +31,27 @@ services: -{Object}
         volumes: -[Array]
             - ./api:/app                        {binding mount for live changes}
             - ./logs:/app/logs                  {binding mount for storing data}
-            - users-data:/app/data/users-data   {named volume}
+            - users-data:/app/data/users-data   {named volume for storing users data}
 
         environment: -{Object}
             POSTGRES_USER: <username>
             POSTGRES_PASSWORD: <password>
             POSTGRES_DB: <database>
-            or
+            or an [Array]
             - POSTGRES_USER=<username>
             - POSTGRES_PASSWORD=<password>
             - POSTGRES_DB=<database>
 
+
+        env_file:                               # if you prefer using the .env file for environment variables, you can do the below:
+            - ./backend/.env                    {i.e <path_to_the_env_file>}
+
         hostname: <name_of_service> or <your_own_custom_name> {if you do not specify a hostname, docker will use <name_of_service> as the default hostname}
+        NOTE: no need for a hostname - here is what docker has to say about it:
+            That makes sense not to add a hostname. If Docker Compose's has automatic service name resolution, it simplifies the configuration and avoids the need for manually specifying hostname's.
+            Here’s a brief summary of how Docker Compose handles service names and networking by default:
+            1. Service Names as Hostname: Docker Compose automatically uses the service name as the hostname for inter-service communication. For example, if you have services named web and db, they can communicate using these names directly.
+            2. Built-in DNS: Docker Compose sets up a default network for your services and includes DNS resolution. This allows services to refer to each other by name.
 
         networks:                               {if you want to use a custom network}
             - <myNetwork>
@@ -54,7 +68,8 @@ volumes:
     users-data:
     {
         the volumes section is used to define named volumes that can be referenced by services in the services section. These named volumes are created and managed by Docker itself.
-        The line above `users-data` is defining a named volume. These named volumes are just placeholders, and their values are not specified in the docker-compose.yml file. Docker Compose automatically creates volumes with these names when you bring up the Docker services defined in the services section that reference them.
+        The line above `users-data` is defining a named volume. These named volumes are just placeholders, and their values are not specified in the docker-compose.yml file. Docker Compose automatically creates volumes with
+        these names
     }
 
 networks:       {define your custom networks here and tell it what you want it to be}
