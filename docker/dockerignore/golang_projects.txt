@@ -1,0 +1,41 @@
+# General base
+Dockerfile*
+Makefile
+.git
+.gitignore
+.dockerignore
+README.md
+
+
+# Go build artifacts
+bin/
+build/
+*.exe
+*.out
+*.test
+
+# Go modules cache and vendor directories
+go.sum
+go.mod
+vendor/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs_analysis.dat
+*.DS_Store
+
+# Logs and temporary files
+*.log
+tmp/
+*.swp
+
+# Environment and configuration files
+.env
+.env.local
+
+# Other potentially sensitive files
+*.pem
+*.key
+*.crt
