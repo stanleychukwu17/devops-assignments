@@ -29,7 +29,7 @@ Group 1
     - COPY . ./
     - ADD and COPY commands both carry out the same task, but the ADD command can do a little bit more {
         1. ADD can copy from a url e.g ADD https://github.com/stanley/come.txt ./
-        2. ADD can copy for a zipped file into your working directory e.g ADD code.tar ./,
+        2. ADD can copy from a zipped file into your working directory e.g ADD code.tar ./,
          and it will unzip the file content and copy the contents
     }
 9. RUN addgroup app && adduser -S -G app app {
@@ -37,7 +37,7 @@ Group 1
     "app" and add the user to a group -G called "app"
 }
 10. USER app
-11. COPY --chown=app . ./
+11. COPY --chown=app:app . ./
     RUN chown -R app:app /app
     {
         Use COPY --chown=app:app . ./ when you are copying files and want to set their ownership in one step.
