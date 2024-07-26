@@ -1,0 +1,41 @@
+1.  What is the core terraform workflow
+
+2.  Talk about terraform providers
+
+3. Configure an aws provider with both access_key and secret_key
+
+4.  What is a terraform block, arguments and label
+    - Give an example
+
+5. How do you initialize terraform in your project directory
+
+6. Draw out the journey of creating an EC2 instance starting from a VPC
+
+7. What is the syntax for creating a resource
+
+8. what is a cidr_block
+
+9. Create a VPC and add a Tag of Name to it
+
+10. How do you preview changes in your configuration file
+    - How do you apply the changes in your configuration file
+    - How do you save the preview into a file
+    - How do you apply the configuration from the save file
+
+11. How do you skip the terminal asking you to enter yes when you run "terraform apply"
+    - How do you format your .tf files to the standard terraform syntax
+    - List all the ways you can use the fmt command (4 ways)
+    - How do you validate the syntax and arguments in your terraform configuration
+
+12. How do you destroy the infrastructure you built
+    - destroy with auto approve
+    - destroy only a particular resource
+    - how do you replace an existing infrastructure
+
+13. Create a Subnets and attach it to a VPC
+    - {if you have time quickly read about Subnets in p39}
+    - talk about private and public Subnets
+    - write a config file with 2 Subnets and let them be public by associating them to an internet gateway and a route table
+        = https://chatgpt.com/c/08dcc8a7-72ba-47f5-a927-3cd30286665a
+        = D:\Sz - projects\28-devops\1-terraform\00-examples\1-aws-subnet-with-igw
+        = D:\Sz - projects\28-devops\1-terraform\00-examples\2-aws-subnet-using-a-load-balancer
