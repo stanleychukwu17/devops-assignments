@@ -1,8 +1,45 @@
-node_modules/
+# General base
 Dockerfile*
 Makefile
-README.md
 .git
 .gitignore
 .dockerignore
+
+
+# Node modules and npm cache
+node_modules
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+package-lock.json
+yarn.lock
+
+# Build and development artifacts
+dist/
+build/
+coverage/
+*.test.js
+*.spec.js
+
+# Environment and configuration files
 .env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs_analysis.dat
+*.DS_Store
+
+# Logs and temporary files
+*.log
+tmp/
+*.swp
+
+# Other potentially sensitive files
+*.pem
+*.key
+*.crt
+*.env
