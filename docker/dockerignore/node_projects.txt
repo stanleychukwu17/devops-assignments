@@ -4,6 +4,7 @@ Makefile
 .git
 .gitignore
 .dockerignore
+README.md
 
 
 # Node modules and npm cache
