@@ -32,10 +32,9 @@
     - destroy only a particular resource
     - how do you replace an existing infrastructure
 
-13. - Create a Subnets and attach it to a VPC
-    - {if you have time quickly read about Subnets in p39}
-    - talk about private and public Subnets
-    - write a config file with 2 Subnets and let them be public by associating them to an internet gateway and a route table
+13. a Create a Subnets and attach it to a VPC
+    - talk about private and public Subnets {if you have time quickly read about Subnets in p39}
+    b write a config file with 2 Subnets and let them be public by associating them to an internet gateway and a route table
         = https://chatgpt.com/c/08dcc8a7-72ba-47f5-a927-3cd30286665a
         = D:\Sz - projects\28-devops\1-terraform\00-examples\1-aws-subnet-with-igw
         = D:\Sz - projects\28-devops\1-terraform\00-examples\2-aws-subnet-using-a-load-balancer
