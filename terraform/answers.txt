@@ -63,7 +63,7 @@
     - terraform fmt <name_of_folder>
       terraform fmt -diff
       terraform fmt -recursive
-    -terraform validate
+    - terraform validate
 
 12. - terraform destroy
     - terraform destroy -auto-approve
