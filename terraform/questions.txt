@@ -24,7 +24,7 @@
 
 11. How do you skip the terminal asking you to enter yes when you run "terraform apply"
     - How do you format your .tf files to the standard terraform syntax
-    - List all the ways you can use the fmt command (4 ways)
+    - List all the ways you can use the fmt command (3 ways)
     - How do you validate the syntax and arguments in your terraform configuration
 
 12. How do you destroy the infrastructure you built
@@ -32,7 +32,7 @@
     - destroy only a particular resource
     - how do you replace an existing infrastructure
 
-13. Create a Subnets and attach it to a VPC
+13. - Create a Subnets and attach it to a VPC
     - {if you have time quickly read about Subnets in p39}
     - talk about private and public Subnets
     - write a config file with 2 Subnets and let them be public by associating them to an internet gateway and a route table
