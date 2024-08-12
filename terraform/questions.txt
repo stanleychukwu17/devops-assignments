@@ -1,6 +1,6 @@
-1.  What is the core terraform workflow
+1. What is the core terraform workflow
 
-2.  Talk about terraform providers
+2. Talk about terraform providers
 
 3. Configure an aws provider with both access_key and secret_key
 
@@ -55,7 +55,14 @@
 
 20. What is a route table and what is an internet gateway
 
+21. what is an aws_security_group
+    - difference btw aws_security_group & aws_default_security_group
 
+22. add a variable to you variables.tf and terraform.tfvars file, name of the variable is
+        general_public_address
+    - use the variable to create an aws_security_group
+
+22. Create an EC2 instance
 
 
 . re-write the config file we learnt from the DevOps terraform BootCamp
