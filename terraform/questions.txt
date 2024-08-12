@@ -37,3 +37,25 @@
         D:\Sz - projects\28-devops\1-terraform\00-examples\1-aws-subnet-with-igw
         D:\Sz - projects\28-devops\1-terraform\00-examples\2-aws-subnet-using-a-load-balancer
     }
+
+14. How do you declare a variable, what are the three arguments in a variable declaration.
+    - And in what files do store your variables
+
+15. How do you force a replacement of your variables when running the terraform plan or terraform apply command
+
+16. what can you say about terraform.tfvars file?
+    - what is the difference btw terraform.tfvars and variables.tf
+
+17. Create a production.tfvars file and use it to run the terraform apply command
+
+18. How can you use the variables in your main.tf configuration file
+    - How do you insert a variable in a string
+
+19. Talk about variable precedence - how are they ranked in terms of which one gets applied
+
+20. What is a route table and what is an internet gateway
+
+
+
+
+. re-write the config file we learnt from the DevOps terraform BootCamp
