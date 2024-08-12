@@ -30,15 +30,21 @@
         enable_dns_hostname = true
     }
 
-    resource = is a block
+    resource = is a block.. i.e a "resource block"
     cidr_block, enable_dns_hostname, enable_dns_support = arguments
     aws_vpc, main = label names
+    aws_vpc = resource type.. i.e "aws_vpc resource type"
+    main = local_name {used for local identification}
 
 5. terraform init - this will download all of the required_providers
 
-6. VPC -> Subnet -> Route table & Internet Gateway -> Security groups -> EC2 instance
+6. VPC -> Subnet -> Route table & Internet Gateway -> Security groups -> EC2 instance {
+    For EC2 instance, we need:
+        data for "ami" automatic fetching
+        keyGen for ssh logging into your EC2 vm
+}
 
-7. resource <provider_resource_name> <local_name> { ...arguments }
+7. resource <provider_resourceName> <local_name> { ...arguments }
 
 8. Classless Inter Domain Routing
 
@@ -56,7 +62,7 @@
 10. - terraform plan
     - terraform apply
     - terraform plan -out=tfplan or terraform plan -out tfplan
-    - terraform apply "tfplan"
+    - terraform apply "tfplan" or terraform apply "tfplan" -auto-approve
 
 11. - terraform apply -auto-approve
     - terraform fmt
@@ -69,3 +75,51 @@
     - terraform destroy -auto-approve
     - terraform destroy -target "aws_vpc.main"
     - terraform apply -replace="aws_vpc.main"
+
+13. D:\Sz - projects\0-exercise\terraform\answers\13_a.tf
+
+14. you use the variable block
+    variable "vpc_cidr_block" {
+        default = "10.0.0.0/16"
+        description = "The cidr block for the main vpc for development stage"
+        type = string
+    }
+    - you save variables in two file: variables.tf & terraform.tfvars
+
+15. terraform apply -auto-approve -var="vpc_cidr_block=10.0.0.0/16" -var="subnet_cidr_block=10.0.10.0/24"
+
+16. terraform.tfvars does not compile with the other terraform files(i.e .tf files) into a single module
+    - terraform.tfvars stores only the values. no description, no type
+    - variables.tf stores everything, the default, description, type arguments can all be passed into variables in the variable block
+
+17. terraform apply -auto-approve -var-file=production.tfvars
+
+18. here is how to use it in your main.tf:
+    resource "aws_vpc" "main" {
+        cidr_block = var.vpc_cidr_block
+
+        tags = {
+            Name = "${var.environment_stage} VPC"
+        }
+    }
+
+    - resource "aws_subnet" "web_subnet" {
+        cidr_block = var.subnet_cidr_block
+        vpc_id = aws_vpc.main.id
+        availability_zone = var.subnet_availability_zone_1
+
+        tags = {
+            Name = "${var.environment_stage} subnet for VPC"
+        }
+    }
+
+19. this is how they are applied into your config files
+    -var & -var-file
+    terraform.tfvars
+    environment variables "TF_VAR_*"
+
+20. A route table is a virtual router within your vpc, A default route table contains routes that determine where the network traffic
+    is directed. The default route table controls the routing for all subnets that belongs to the vpc and are not explicitly associated
+    with other route table. So basically, the route table controls routing for all subnets within the vpc
+
+    An Internet Gateway - 
