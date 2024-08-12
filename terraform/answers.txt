@@ -4,7 +4,7 @@
     Apply
 
 2.  terraform is nothing without providers, every terraform project, you need to specify a provider, there are providers
-    for every major cloud infrastructure platform, these providers can be compared to you nodejs packages,
+    for every major cloud infrastructure platform, these providers can be compared to your nodejs packages,
     in these providers are the code that will be used to provision your infrastructure
 
 3.
@@ -92,7 +92,8 @@
     - terraform.tfvars stores only the values. no description, no type
     - variables.tf stores everything, the default, description, type arguments can all be passed into variables in the variable block
 
-17. terraform apply -auto-approve -var-file=production.tfvars
+17. touch production.tfvars
+    terraform apply -auto-approve -var-file=production.tfvars
 
 18. here is how to use it in your main.tf:
     resource "aws_vpc" "main" {
@@ -118,8 +119,70 @@
     terraform.tfvars
     environment variables "TF_VAR_*"
 
-20. A route table is a virtual router within your vpc, A default route table contains routes that determine where the network traffic
-    is directed. The default route table controls the routing for all subnets that belongs to the vpc and are not explicitly associated
-    with other route table. So basically, the route table controls routing for all subnets within the vpc
+20. A route table is a virtual router within your vpc, A default route table contains routes that determine where the
+    network traffic is directed. The default route table controls the routing for all subnets that belongs to the vpc
+    and are not explicitly associated with other route table. So basically, the route table controls routing for all
+    subnets within the vpc
 
-    An Internet Gateway - 
+    An Internet Gateway - is a managed service that allows communication between instances in a Virtual Private Cloud (VPC)
+    and the internet
+
+21. - An aws_security_group is an aws managed service that determines if internet traffic are permitted into or out of
+      an instance
+    - aws_security_group = You have to create this one by yourself using the resource "aws_security_group"
+      aws_default_security_group = This one comes by default when you create the VPC, it is always better to leave
+        this one alone and create new security groups
+
+22. in variables.tf
+    variable "general_public_address" {
+        description = "everyone is allowed to visit this EC2 instance"
+        type = string
+    }
+    in terraform.tfvars
+    general_public_address = 0.0.0.0/0
+    ----
+    resource "aws_security_group" "ec2_security" {
+        vpc_id = aws_vpc.main.id
+    
+        # for ssh connections
+        ingress {
+            from_port = 22
+            to_port = 22
+            protocol = "tcp"
+            cidr_block = [var.general_public_address]
+        }
+
+        # for http connection
+        ingress {
+            from_port = 80
+            to_port = 80
+            protocol = "tcp"
+            cidr_block = [var.general_public_address]
+        }
+
+        # for outgoing request
+        egress {
+            from_port = 0
+            to_port = 0
+            protocol = "-1" # any type of request
+            cidr_block = ["0.0.0.0/0"]
+        }
+    
+        tags = {
+            Name = "EC2 security group"
+        }
+    }
+
+    22.
+        resource "aws_instance" "my_vm" {
+            ami =                           "ami-4094940048585fse2"
+            instance_type =                 "t2.micro"
+            subnet_id =                     aws_subnet.web_subnet.id
+            vpc_security_group_ids =        [aws_security_group.ec2_security.id]
+            associate_public_ip_address =   true
+            key =                           "production_ssh_key"
+
+            tags = {
+                Name = "My EC2 instance - Selling town EC2_1"
+            }
+        }
