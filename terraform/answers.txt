@@ -44,7 +44,9 @@
         keyGen for ssh logging into your EC2 vm
 }
 
-7. resource <provider_resourceName> <local_name> { ...arguments }
+7. resource "<provider>_<resource_type>" "<local_name>" {
+    # arguments
+}
 
 8. Classless Inter Domain Routing
 
