@@ -58,11 +58,30 @@
 21. what is an aws_security_group
     - difference btw aws_security_group & aws_default_security_group
 
-22. add a variable to you variables.tf and terraform.tfvars file, name of the variable is
+22. add a variable to your variables.tf and terraform.tfvars file, name of the variable is
         general_public_address
     - use the variable to create an aws_security_group
 
-22. Create an EC2 instance
+23. Create an EC2 instance
+
+24. How do you generate a ssh key pair from your linux command line
+
+25. How do you set the ssh key permission to read only
+
+26. use the ssh to create a resource key pair and use the key pair in your ec2 instance
+
+27. login into your running ec2 instance using the ssh key that you generated
+
+28. move the ssh file path to the variable file and use it in the aws_key_pair resource
+
+29. What are data resources in terraform
+
+30. use the data resource block to dynamically fetch the ami for an ec3 instance
+
+31. what is the proper file for output variables to be stored?
+
+32. write the outputs for {and ec2 public ip}, {ec2 ami}, {vpc id}
+
 
 
 
