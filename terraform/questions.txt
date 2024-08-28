@@ -76,7 +76,7 @@
 
 29. What are data resources in terraform
 
-30. use the data resource block to dynamically fetch the ami for an ec3 instance
+30. use the data resource block to dynamically fetch the ami for an ec2 instance
 
 31. what is the proper file for output variables to be stored?
 
