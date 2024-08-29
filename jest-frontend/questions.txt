@@ -17,3 +17,35 @@
 9. what is beforeEach, afterEach, beforeAll, afterAll
 
 10. Write down another way you can do await (using waitFor)
+
+11. List some matches from jest
+
+12. fireEvent alternative using {user}
+
+13. how to use the user.click & user.keyboard
+
+14. how to use a mock function for the last questions, replace callBack with the mock function
+
+15. what are the 3 ways you can select an input element
+
+16. what is screen.logTestingPlaygroundURL()
+
+17. how do you use within
+
+18. what is screen.debug()
+
+19. finding By Accessible names
+
+20. When to use each of the query functions
+
+21. Custom matchers in jest - use custom matchers to solve the issue below
+    it("should displays two buttons", () => {
+        render(<FormData />)
+
+        const form = scene.getByRole("form")
+        const btn = within(form).getAllByRole("button")
+        expect(btn).toHaveLength(2)
+    })
+
+    imagine if we had lots of similar test to write all day long we can save time by writing our
+    own custom matchers
