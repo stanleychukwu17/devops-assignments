@@ -1,0 +1,68 @@
+1.  App.tsx -> App.test.tsx
+    itemDisplay.tsx -> itemDisplay.test.tsx
+
+2.  getBy,      findBy,         queryBy
+    getAllBy,   findAllBy       queryAllBy
+
+3.  getByRole       getByLabelText      getByPlaceholderText        getByText
+    getByAltText    getByTitle
+    getByTestId     getAllByTestId
+
+4. const headingElement = await screen.findByRole(/how far/i)
+
+5.
+    it("should not find any heading element", () => {
+        render(<Header title="my header" />)
+        const header = screen.queryByText(/dogs/i)
+
+    })
+
+6.  const headingElement = screen.getAllByRole("heading")
+    expect(headingElement.length).toBe(3)
+    expect(headingElement).toHaveLength(3)
+
+7.
+    describe("Testing the cart total", () => {
+        it("should add 5 products to the cart", () => { ... })
+        it("should show $55.58 as total", () => { ... })
+    })
+
+8.
+    it("should have empty input when add button is clicked", async () => {
+        render(<AddInput />)
+
+        const inpElement = screen.getByPlaceholderText(/add your todo/i)
+        const btnElement = screen.getByRole("button", {name: /add/i})
+
+        fireEvent.change(inpElement, {target: {value: "Buy Soap"}})
+        fireEvent.click(btnElement)
+
+        expect(inpElement.value).toBe("")
+    })
+
+9.
+    beforeEach: The beforeEach() function runs every-time before each of your test runs
+    afterEach: The afterEach() function runs every-time after each of your test runs
+    beforeAll: The beforeAll() function runs once before any of your test starts/runs
+    afterAll: The afterAll() function runs once after all your test have finished running
+
+    e.g
+    describe("Testing followerList", () => {
+        beforeAll(() => { render the main component })
+        afterAll(() => { clearAllMock, delete any data created to the database })
+
+        beforeEach(() => { ... })
+        afterEach(() => { clearAllMock() })
+
+        it(" ... ", () => { ... })
+        it(" ... ", () => { ... })
+        it(" ... ", () => { ... })
+    })
+
+10.
+    it("should load 6 more products", async () => {
+        render(<App />)
+
+        const btn = screen.getByRole("button", {name: /load more/i})
+        fireEvent.click(btn)
+    })
