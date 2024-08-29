@@ -1,0 +1,19 @@
+1. How do you name your test files
+
+2. List 6 types of query methods
+
+3. How do you select items from the dom
+
+4. How do you use findBy or findAllBy
+
+5. How do you use queryBy
+
+6. How do you use getAllBy
+
+7. how do you use a describe block
+
+8. how do you use the fireEvent with input and button elements
+
+9. what is beforeEach, afterEach, beforeAll, afterAll
+
+10. Write down another way you can do await (using waitFor)
