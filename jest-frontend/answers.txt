@@ -65,4 +65,10 @@
 
         const btn = screen.getByRole("button", {name: /load more/i})
         fireEvent.click(btn)
+
+        waitFor(async () => {
+            const headingElement = await screen.findAllByRole("heading")
+            expect(headingElement).toHaveLength(12)
+        })
     })
+
