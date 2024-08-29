@@ -213,3 +213,43 @@
 
 27. ssh -i ~/.ssh/test_rsa ec2-user@<PublicIP>
 
+28. 
+    in variables.tf we do:
+    variable "ssh_pubic_key_path" {
+        description = "The path to where the ssh key is stored on my local computer"
+        type = string
+    }
+
+    in terraform.tfvars we do:
+    ssh_pubic_key_path = "C:/Users/STANLEY/.ssh/test_rsa.pub"
+
+    in main.tf we do:
+    resource "aws_key_pair" "test_ssh_key" {
+        key_name = "testing_ssh_key"
+        public_key = file(var.ssh_pubic_key_path)
+    }
+
+    Note: if you change the public_key value, a new instance is created, each instance belong to the key it was created with
+
+29. Data sources are like a function, and their goal is to fetch data from cloud providers. An example is a list of ami images
+    from an availability_zone
+    e.g
+    data "aws_ami" "latest_amazon_linux2" {
+        owners = ["amazon"]
+        most_recent = true   # if more than one image is returned, terraform will use the most recent image
+
+        filter {
+            name = "name"    # filter the result using the items in the value[] list below
+            values = ["amzn2-ami-kernel-*-x86_64-gp2"]
+        }
+
+        filter {
+            name = "architecture"
+            values = ["x86_64"]
+        }
+    }
+    {Now we need to update our aws_instance with the dynamic ami id}
+    resource "aws_instance" "my_vm" {
+        ami = data.aws_ami.latest_amazon_linux2.id
+        ...
+    }
