@@ -233,7 +233,7 @@
 
 29. Data sources are like a function, and their goal is to fetch data from cloud providers. An example is a list of ami images
     from an availability_zone
-    e.g
+    -
     data "aws_ami" "latest_amazon_linux2" {
         owners = ["amazon"]
         most_recent = true   # if more than one image is returned, terraform will use the most recent image
@@ -253,3 +253,5 @@
         ami = data.aws_ami.latest_amazon_linux2.id
         ...
     }
+
+30. output.tf
