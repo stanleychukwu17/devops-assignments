@@ -17,8 +17,8 @@
 
 9. Create a VPC and add a Tag of Name to it
 
-10. How do you preview changes in your configuration file
-    - How do you apply the changes in your configuration file
+10. How do you preview changes in your main.tf
+    - How do you apply the changes in your main.tf
     - How do you save the preview into a file
     - How do you apply the configuration from the save file
 
@@ -75,12 +75,11 @@
 28. move the ssh file path to the variable file and use it in the aws_key_pair resource
 
 29. What are data resources in terraform
+    - use the data resource block to dynamically fetch the ami for an ec2 instance
 
-30. use the data resource block to dynamically fetch the ami for an ec2 instance
+30. what is the proper file for output variables to be stored?
 
-31. what is the proper file for output variables to be stored?
-
-32. write the outputs for {and ec2 public ip}, {ec2 ami}, {vpc id}
+31. write the outputs for {and ec2 public ip}, {ec2 ami}, {vpc id}
 
 
 
