@@ -8,13 +8,12 @@
     getByAltText    getByTitle
     getByTestId     getAllByTestId
 
-4. const headingElement = await screen.findByRole(/how far/i)
+4. const headingElement = await screen.findByText(/how far/i)
 
 5.
     it("should not find any heading element", () => {
         render(<Header title="my header" />)
         const header = screen.queryByText(/dogs/i)
-
     })
 
 6.  const headingElement = screen.getAllByRole("heading")
@@ -78,33 +77,43 @@
     expect(fn).toThrow()
     expect(mock).toHaveBeenCalled()
 
-12. user.click(element)
-    user.keyboard("stanley"); simulates typing "stanley"
-    user.keyboard("{Enter}"); simulates pressing the enter key on the keyboard
+12. userEvent.click(element)
+    userEvent.type("stanley"); simulates typing "stanley"
+    userEvent.keyboard("{enter}"); simulates pressing the enter key on the keyboard
 
-13.
-    it("should call onUserAdd when the form is submitted", () => {
-        const argList = []
-        const callBack = (...args) => {
-            argList.push(args)
-        }
+13. {
+    import { render, screen } from '@testing-library/react';
+    import userEvent from '@testing-library/user-event';
+    import MyForm from './MyForm';
 
-        render(<UserForm onUserAdd={callBack} />)
+    test('should submit form on Enter key press', async () => {
+        render(<MyForm />);
+        
+        // Find the input field and submit button
+        const input = screen.getByLabelText(/username/i);
+        const submitBtn = screen.getByRole('button', { name: /submit/i });
+        
+        // Type into the input field
+        await userEvent.type(input, 'test-user');
+        
+        // Simulate pressing the Enter key
+        await userEvent.keyboard('{enter}');
 
-        const [nameInput, emailInput] = scene.getAllByRole("textBox")
-        user.click(nameInput)
-        user.keyboard("jane")
+        // Click on the submitBtn
+        await userEvent.click(submitBtn)
+        
+        // Assert the expected behavior after the Enter key press
+        expect(screen.getByText(/form submitted/i)).toBeInTheDocument();
+    });
+}
 
-        user.click(emailInput)
-        user.keyboard("jane@jane.com")
+13.1 {
+    Use userEvent when you want to simulate user interactions in a way that closely mirrors real user behavior.
+        It’s especially useful for typing, multi-step interactions, and more complex scenarios.
 
-        const btn = scene.getByRole("button")
-        user.click(btn)
-
-        // Assertion to make sure 'onUserAdd' gets called with email & name
-        expect(argList).toHaveLength(1)
-        expect(argList[0[0]]).toEqual({name: "jane", email: "jane@jane.com"})
-    })
+    Use fireEvent for simpler cases where direct event dispatching is sufficient, or when you need to trigger
+        events that are not covered by userEvent.
+}
 
 14.
     const mock = jest.fn()

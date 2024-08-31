@@ -20,11 +20,12 @@
 
 11. List some matches from jest
 
-12. fireEvent alternative using {user}
+12. fireEvent alternative using {userEvent}
 
-13. how to use the user.click & user.keyboard
+13. how to use the userEvent.click & userEvent.keyboard
+13.1 Diff btw userEvent and fireEvent
 
-14. how to use a mock function for the last questions, replace callBack with the mock function
+14. how to use a mock function
 
 15. what are the 3 ways you can select an input element
 
