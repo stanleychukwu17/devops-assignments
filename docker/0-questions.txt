@@ -1,11 +1,14 @@
 Group 1
 1. Build an image with out a tag (i.e <image_name>:<tag>)
 2. Build an image with a tag (i.e <image_name>:<tag>)
+
 3. List all images you've created
 4. create 3 images using one Dockerfile, but let all images have different names
+
 5. delete an image
 6. delete multiple images
 7. delete all images
+
 8. what can you say about using the COPY command (p36) {
     copy multiple files
     using regex in package.json copy
@@ -24,6 +27,7 @@ Group 2
     what are the alternatives to CMD command, explain the diff btw CMD and it's alternatives
 2. how do you push an image to docker hub?
 3. run a container in a detached mode
+
 4. run a container in an interactive mode {
     run a container with all the params you know {name, port, environment, volumes}
     list all the containers using 2 different commands (both running and stopped containers)
@@ -35,9 +39,10 @@ Group 2
 }
 6. execute three commands in a running container {1. ls, 2. mkdir, 3. sh}
 7. execute a shell in an interactive mode in a running container
+
 8. use the docker attach command to attach to a running container
 9. remove a docker container - use the 2 methods available
-    - how do you start and stop and already existing container
+    - how do you start and stop an already existing container
 10. docker volume, everything you know about it and it's command {
     1. tell me the difference btw a bind mount and a named volume and give an example
     2. do the both of them while starting a postgres container using a postgres image from docker hub

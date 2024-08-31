@@ -1,17 +1,17 @@
 Group 1
-1. docker build -t <image_name> <path_to_locate_dockerfile>
+1.  docker build -t <image_name> <path_to_locate_dockerfile>
     e.g docker build -t python_image ./
 
-2. docker build -t <image_name>:<tag> <path_to_locate_dockerfile>
+2.  docker build -t <image_name>:<tag> <path_to_locate_dockerfile>
     e.g docker build -t python_image:v1.0 ./
 
-3. docker images
+3.  docker images
     docker image ls
 
-5. docker image rm <image_name>
+5.  docker image rm <image_name>
     docker rmi <image_name>
 
-6. docker image rm image_1 image_2 image_3 {...}
+6.  docker image rm image_1 image_2 image_3 {...}
 
 7. docker image rm $(docker image ls -q)
     docker rmi $(docker images -q)
@@ -70,7 +70,7 @@ Group 2.
     docker push <username>/<myRepo>:<tag>
     https://hub.docker.com/r/username/myapp - to verify that the image has been pushed
 
-3. docker run -d --name react_container -p 3000:3000 react_image:latest (or)
+3.  docker run -d --name react_container -p 3000:3000 react_image:latest (or)
     docker run -d --name=react_container -p 3000:3000 react_image:latest
 
 4.  a. docker run -it \
