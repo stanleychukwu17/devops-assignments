@@ -3,7 +3,7 @@ Group 1
 2. Build an image with a tag (i.e <image_name>:<tag>)
 
 3. List all images you've created
-4. create 3 images using one Dockerfile, but let all images have different names
+4. Go to docker hub and search for node-alpine image
 
 5. delete an image
 6. delete multiple images
