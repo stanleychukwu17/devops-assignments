@@ -18,6 +18,10 @@ Group 1
     --
     docker image prune -f {Remove all dangling images (-f = by force (without confirmation))}
     docker image prune -a {Remove all unused images (with confirmation):}
+        Unused images are those that are not currently associated with any containers, including those that are
+        tagged.
+        Note: Unlike the previous command, this will delete both dangling images and images that are not currently
+        in use but might still have tags.
     docker image prune -a -f {Remove all unused images (without confirmation):}
 
 8.  - COPY package.json package-lock.json pnpm-lock.yml ./
@@ -51,8 +55,13 @@ Group 1
         /app = The command will change the ownership of /app and all files and subdirectories within /app
 
         chatGPT say better to do: "RUN chown -R app:app /app" than: "RUN chown -R app:app ./"
+        but if your WORKDIR = /usr/src/app, then do:
+        -
+        WORKDIR /usr/src/app
+        COPY . /usr/src/app
+        RUN chown -R app:app /usr/src/app
+        USER app
     }
-
 
 
 
@@ -103,6 +112,7 @@ Group 2.
     docker exec -it -u root CONTAINER_ID_or_NAME /bin/sh {where -u == --user}
 
 9.  - docker rm -f CONTAINER_ID_or_NAME
+    - docker container rm CONTAINER_ID_or_NAME
     - docker rm -f $(docker ps -aq)
     ---
     docker start <CONTAINER_ID_or_NAME> # to start an existing container
