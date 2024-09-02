@@ -14,6 +14,7 @@
     it("should not find any heading element", () => {
         render(<Header title="my header" />)
         const header = screen.queryByText(/dogs/i)
+        expect(header).not.toBeInTheDocument()
     })
 
 6.  const headingElement = screen.getAllByRole("heading")
@@ -77,9 +78,22 @@
     expect(fn).toThrow()
     expect(mock).toHaveBeenCalled()
 
-12. userEvent.click(element)
-    userEvent.type("stanley"); simulates typing "stanley"
-    userEvent.keyboard("{enter}"); simulates pressing the enter key on the keyboard
+12. userEvent.click(btnElement)
+    userEvent.type(inpElement, "stanley"); simulates typing "stanley"
+    await userEvent.keyboard('{Enter}'); // Simulate pressing the Enter key
+    for the above, you can also do == .keyboard('{enter}'); // lowerCase Works too
+    ---
+    userEvent.click(element): Simulates a click event.
+    userEvent.type(element, text): Simulates typing into an input or textarea.
+    userEvent.dblClick(element): Simulates a double-click event.
+    userEvent.selectOptions(select, options): Simulates selecting options from a <select> element.
+    userEvent.hover(element): Simulates hovering over an element.
+    userEvent.tab(): Simulates a tab key press.
+    Important Notes
+    Async Handling: Many userEvent functions return promises, so you often need to use await to ensure the actions
+        complete before making assertions.
+    Event Simulation: userEvent simulates interactions more closely to how users would, as opposed to fireEvent
+        which may be lower-level.
 
 13. {
     import { render, screen } from '@testing-library/react';
@@ -129,6 +143,7 @@
 
     scene.getByLabelText(/enter email/i)
     scene.getByRole("textBox", {name: /enter email/i})
+    screen.getByPlaceholderText(/enter your name/i)
     scene.getByTestId("user_email")
 
 16. when you use this method. it gives you a url that when you click on takes you to a web page that shows
@@ -157,7 +172,7 @@
         getBy, getAllBy
     - To prove an element(s) does not exist, use:
         queryBy, queryAllBy
-    - To prove and element(s) eventually exists, use:
+    - To prove an element(s) eventually exists, use:
         findBy, findAllBy
 
 21. 
@@ -173,3 +188,13 @@
             message: () => `Expected to find ${quantity} ${role} elements`
         }
     }
+    ---
+    now add it to the "expect" list of methods
+    expect.extend({toContainRole})
+    ---
+    in use
+    expect(form).toContainRole("button", 2)
+    form = container
+    button = role
+    2 = quantity
+
