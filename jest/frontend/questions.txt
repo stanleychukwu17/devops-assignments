@@ -37,7 +37,7 @@
 
 19. finding By Accessible names
 
-20. When to use each of the query functions
+20. When to use each of the query methods
 
 21. Custom matchers in jest - use custom matchers to solve the issue below
     it("should displays two buttons", () => {
@@ -48,5 +48,7 @@
         expect(btn).toHaveLength(2)
     })
 
-    imagine if we had lots of similar test to write all day long we can save time by writing our
-    own custom matchers
+    imagine if we had lots of similar test to write all day long, where we have to search for elements
+    within other elements, we can save time by writing our own custom matchers
+    -
+    write a custom matcher that captures the grabbing of the "form" end the assertions
