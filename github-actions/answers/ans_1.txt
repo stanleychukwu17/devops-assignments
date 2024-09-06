@@ -13,8 +13,7 @@
 
                 - name: Run build
                     run: echo "Build triggered by push to main branch"
-    }
-
+}
 
 2. pull request {
     name: Pull Request Workflow
@@ -33,7 +32,6 @@
                   run: echo "Tests triggered by a pull request to the main branch"
 }
 
-
 3. issues events {
     name: Issue Workflow
     on:
@@ -47,3 +45,125 @@
               run: echo "Issue was opened or edited: ${{ github.event.issue.title }}"
     }
 
+4. workflow Dispatch {
+    name: Manual Trigger Workflow
+    on:
+        workflow_dispatch:
+            inputs:
+                example_input:
+                    description: 'An example input'
+                    required: true
+                    default: 'default_value'
+    jobs:
+        manual:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Print input
+                    run: echo "Manual run with input: ${{ github.event.inputs.example_input }}"
+}
+
+5. deployment_status {
+    name: Deployment Workflow
+    on:
+        deployment_status:
+            types: [success, failure]
+    jobs:
+        notify:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Deployment status notification
+                  run: echo "Deployment status changed to ${{ github.event.deployment_status.state }}"
+}
+
+6. Custom events {
+    name: Custom Event Workflow
+    on:
+        repository_dispatch:
+            types: [my_custom_event]
+    jobs:
+        custom:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Custom event handling
+                  run: echo "Handling custom event"
+}
+
+7. Release Event {
+    name: Release Workflow
+    on:
+        release:
+            types: [created, published]
+    jobs:
+        notify-release:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Notify about release
+                  run: echo "New release created: ${{ github.event.release.tag_name }}"
+}
+
+8. Schedule Events {
+    name: Scheduled Workflow
+    on:
+        schedule:
+            - cron: '0 0 * * *' # Runs daily at midnight
+    jobs:
+        run-task:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Scheduled Task
+                  run: echo "This task runs daily at midnight"
+}
+
+9. Repository Dispatch {
+    name: Repository Dispatch Workflow
+    on:
+        repository_dispatch:
+            types: [custom-event]
+    jobs:
+        custom:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Respond to custom event
+                  run: echo "Custom event triggered: ${{ github.event.action }}"
+}
+
+10. Dependabot Events {
+    name: Dependabot Workflow
+    on:
+        dependabot:
+            types: [pull_request]
+    jobs:
+        dependabot-check:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Dependabot PR Check
+                  run: echo "Dependabot created or updated a pull request"
+}
+
+11. Workflow Run Events {
+    name: Workflow Run Workflow
+    on:
+        workflow_run:
+            workflows: ["Main Workflow"]
+            types:
+                - completed
+    jobs:
+        followup:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Follow-up job
+                  run: echo "Main workflow completed, triggering follow-up job"
+}
+
+12. fork events {
+    name: Fork Workflow
+    on:
+        create:
+            tags: [fork]
+    jobs:
+        notify:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Notify about fork
+                  run: echo "Repository was forked"
+}
