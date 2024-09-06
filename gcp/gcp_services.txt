@@ -1,0 +1,87 @@
+Google Cloud Platform (GCP) offers a variety of services with free tiers that are available
+beyond the 90-day trial period. These free tiers provide limited usage without charge, allowing you
+to continue using some services even after your initial $300 credit is exhausted. Here are some examples
+of GCP services with free tiers:
+
+
+1. **Compute Engine**:
+   - 1 f1-micro instance per month in specific regions.
+   - 30 GB of standard persistent disk storage.
+
+2. **Cloud Storage**:
+   - 5 GB of Regional Storage.
+   - 1 GB of outbound data per month.
+
+3. **BigQuery**:
+   - 1 TB of query data processed per month.
+   - 10 GB of storage per month.
+
+4. **Cloud Pub/Sub**:
+   - 10 GB of messages per month.
+   - 1000 operations per second for subscription and topic.
+
+5. **Google Kubernetes Engine (GKE)**:
+   - No charge for cluster management.
+
+6. **Cloud Functions**:
+   - 2 million invocations per month.
+   - 400,000 GB-seconds of compute time per month.
+
+7. **Firebase**:
+   - Free tier includes various services like Authentication, Firestore, and Hosting with
+   specific usage limits.
+
+8. **Cloud Firestore**:
+   - 50,000 reads, 20,000 writes, and 20,000 deletes per day.
+
+9. **Cloud SQL**:
+   - 30 GB of storage per month.
+   - 1 GB of backup storage.
+
+10. **Cloud Run**:
+    - 2 million requests per month.
+    - 360,000 GB-seconds of compute time per month.
+
+These free tiers are designed to help you get started with GCP services without incurring costs.
+The specific limits and availability can change, so it's a good idea to check the GCP documentation
+or the Google Cloud Free Tier webpage for the most current details.
+
+
+
+
+
+
+
+Certainly! Here's an overview of each of these Google Cloud Platform (GCP) services:
+
+### 1. **Compute Engine**
+- **What It Is**: Compute Engine provides virtual machines (VMs) that run on Google’s infrastructure. These VMs can be customized with different CPU, memory, and storage configurations.
+- **Use Cases**: Ideal for running applications, hosting websites, and processing large datasets. It supports both short-term and long-term workloads.
+- **Free Tier**: Includes 1 f1-micro instance per month in eligible regions and 30 GB of standard persistent disk storage.
+
+### 2. **Cloud Storage**
+- **What It Is**: Cloud Storage is a scalable, durable, and secure object storage service for storing and accessing your data. It supports various storage classes to optimize costs based on access patterns.
+- **Use Cases**: Suitable for storing files, backups, and large datasets. Often used for data archiving, disaster recovery, and serving static content for websites.
+- **Free Tier**: Offers 5 GB of Regional Storage and 1 GB of outbound data per month.
+
+### 3. **BigQuery**
+- **What It Is**: BigQuery is a fully managed, serverless data warehouse that enables super-fast SQL queries using the processing power of Google's infrastructure.
+- **Use Cases**: Designed for analyzing large datasets quickly and efficiently. It's often used for business intelligence, data analytics, and machine learning.
+- **Free Tier**: Provides 1 TB of query data processed per month and 10 GB of storage per month.
+
+### 4. **Google Kubernetes Engine (GKE)**
+- **What It Is**: GKE is a managed Kubernetes service that simplifies deploying, managing, and scaling containerized applications using Kubernetes.
+- **Use Cases**: Ideal for container orchestration, microservices architectures, and large-scale application deployments.
+- **Free Tier**: There’s no charge for the Kubernetes cluster management, but you pay for the underlying Compute Engine resources and other associated costs.
+
+### 5. **Cloud SQL**
+- **What It Is**: Cloud SQL is a fully managed relational database service that supports SQL databases like MySQL, PostgreSQL, and SQL Server.
+- **Use Cases**: Used for applications requiring relational databases, such as web apps, business applications, and data processing workflows.
+- **Free Tier**: Offers 30 GB of storage per month and 1 GB of backup storage.
+
+### 6. **Cloud Run**
+- **What It Is**: Cloud Run is a fully managed compute platform that automatically scales your containerized applications. It supports applications written in any language that can run in a container.
+- **Use Cases**: Perfect for deploying stateless applications and APIs, particularly those that need to scale up and down based on demand.
+- **Free Tier**: Includes 2 million requests per month, 360,000 GB-seconds of compute time, and 180,000 GB-seconds of memory.
+
+These services are designed to help you build, deploy, and manage a variety of applications and workloads on Google Cloud’s infrastructure. The free tiers allow you to explore and experiment with these services with minimal initial costs.
