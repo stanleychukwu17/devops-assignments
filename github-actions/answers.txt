@@ -30,35 +30,35 @@
             repository_dispatch:
                 types: [my_custom_event]
 
-    fork events:
-        on:
-            create:
-                tags: [fork]
-
-    Release Event:
+    7. Release Event:
         on:
             release:
                 types: [created, published]
 
-    Schedule Events:
+    8. Schedule Events:
         on:
             schedule:
                 - cron: '0 0 * * *' # Runs daily at midnight
 
-    Repository Dispatch:
+    9. Repository Dispatch:
         on:
             repository_dispatch:
                 types: [custom-event]
 
-    Dependabot Events:
+    10. Dependabot Events:
         on:
             dependabot:
                 types: [pull_request]
 
-    Workflow Run Events
+    11. Workflow Run Events:
         on:
             workflow_run:
                 workflows: ["Main Workflow"]
                 types:
                     - completed
+    12. fork events:
+        on:
+            create:
+                tags: [fork]
+
 }
