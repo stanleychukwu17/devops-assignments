@@ -182,7 +182,7 @@
         subnet_id =                     aws_subnet.web_subnet.id
         vpc_security_group_ids =        [aws_security_group.ec2_security.id]
         associate_public_ip_address =   true
-        key_name =                           "production_ssh_key"
+        key_name =                      "production_ssh_key"
 
         tags = {
             Name = "My EC2 instance - Selling town EC2_1"
@@ -193,7 +193,7 @@
         -t rsa: Specifies the type of key to create, in this case, RSA.
         -b 2048: Sets the number of bits in the key, here 2048 bits.
         -C 'test key': Adds a comment to the key.
-        -N '': Sets an empty passphrase for the key (not recommended for all use cases due to security reasons).
+        -N '': used for encryption. Sets an empty passphrase for the key (not recommended for all use cases due to security reasons).
         -f ~/.ssh/test_rsa: Specifies the filename of the key file.
     }
 
@@ -254,4 +254,42 @@
         ...
     }
 
-30. output.tf
+30. outputs.tf (you can also do output.tf)
+
+31. in your outputs.tf
+    output "ec2_public_ip_address" {
+        description = "The public IP address of the EC2 instance."
+        value       = aws_instance.my_vm.public_ip
+    }
+
+    output "ec_ami" {
+        description = "The ami of our ec2 instance"
+        value = aws_instance.my_vm.ami
+    }
+
+    output "vpc_id" {
+        description = "ID of the main VPC"
+        value = aws_vpc.main.id
+    }
+
+    output "ec2_instance_id" {
+        description = "The ID of the EC2 instance."
+        value       = aws_instance.example.id
+    }
+
+
+33. {
+    Terraform state is a critical component of Terraform's infrastructure management process. It is a file that tracks the current state of your infrastructure as managed by Terraform. Here’s a concise summary:
+
+1. **Purpose**: The state file maintains a mapping between your Terraform configuration and the actual resources deployed in your infrastructure. It helps Terraform understand what resources exist, their configurations, and how they relate to each other.
+
+2. **Storage**: By default, the state file is named `terraform.tfstate` and is stored locally in your working directory. However, in team environments or production settings, it’s common to use remote state storage solutions like Amazon S3, Azure Blob Storage, or Terraform Cloud for better management and collaboration.
+
+3. **Usage**: During operations like `terraform apply`, Terraform reads the state file to determine the changes that need to be made to your infrastructure. It then updates the state file with the latest information after applying the changes.
+
+4. **Locking and Security**: For remote state, locking mechanisms prevent simultaneous updates, and secure storage ensures that sensitive information in the state file is protected.
+
+5. **Management**: State files can be sensitive because they may contain confidential information (like resource IDs or metadata). It’s essential to manage and protect the state file carefully and to use Terraform’s built-in commands like `terraform state list` and `terraform state show` to inspect and manage it.
+
+In summary, Terraform state acts as the source of truth for your managed infrastructure, enabling Terraform to track, update, and manage resources effectively.
+} 
