@@ -81,6 +81,23 @@
 
 31. write the outputs for {and ec2 public ip}, {ec2 ami}, {vpc id}
 
+32. what command can you use to view all of you outputs
+    - what if you wanted to view only one output, e.g ec2_public_ip_address
+    - display your output on in json format
+    - save the output in json format
+    - save the json output to a new file
+    - how do you hide an output from showing in the terminal
+
+33. what is terraform state
+    - in what file is the terraform state stored
+
+34. how do you see all the resources in your terraform state
+    - explain this command terraform show | grep -A 20 aws_vpc
+
+35. how do you see only the resources in the state file, list out the resources
+
+36. how do you show only one resource from the state, show the aws_instance resource only
+
 
 
 
