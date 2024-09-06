@@ -1,0 +1,49 @@
+1. push request {
+    name: Push Workflow
+    on:
+        push:
+            branches:
+            - main
+    jobs:
+        build:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Checkout code
+                    uses: actions/checkout@v3
+
+                - name: Run build
+                    run: echo "Build triggered by push to main branch"
+    }
+
+
+2. pull request {
+    name: Pull Request Workflow
+    on:
+    pull_request:
+        branches:
+        - main
+    jobs:
+        test:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Checkout code
+                  uses: actions/checkout@v3
+
+                - name: Run tests
+                  run: echo "Tests triggered by a pull request to the main branch"
+}
+
+
+3. issues events {
+    name: Issue Workflow
+    on:
+    issues:
+        types: [opened, edited]
+    jobs:
+        handle-issue:
+            runs-on: ubuntu-latest
+            steps:
+            - name: Log issue activity
+              run: echo "Issue was opened or edited: ${{ github.event.issue.title }}"
+    }
+
