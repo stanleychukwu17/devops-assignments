@@ -36,11 +36,14 @@ Group 1
         2. ADD can copy from a zipped file into your working directory e.g ADD code.tar ./,
          and it will unzip the file content and copy the contents
     }
+
 9. RUN addgroup app && adduser -S -G app app {
     you must put -S before -G, it is the correct way of doing it, you're saying create a -S system user called
     "app" and add the user to a group -G called "app"
 }
+
 10. USER app
+
 11. COPY --chown=app:app . ./
     RUN chown -R app:app /app
     {
@@ -100,9 +103,9 @@ Group 2.
     2. docker exec -it my_container mkdir /path/to/new_directory
     3. docker exec -it my_container sh
 
-7. docker exec -it my_container sh (or) docker exec -it my_container shell
-    for ubuntu based system, or ubuntu based image you can do:
-    docker exec -it my_container bash
+7. docker exec -it my_container sh (or) docker exec -it my_container bash
+    for ubuntu based system, or ubuntu based image you can use bash
+    
 
 8. docker attach CONTAINER_ID_or_NAME
     note this attaches to the main process as its own user, not as root unless the main process is running as root.
