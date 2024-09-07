@@ -57,6 +57,8 @@ Group 3
     2. recursively using rm --p60
 }
 3. create a Dockerfile for react, golang, node.js, postgres {
+    DONE: react & golang;;;
+    NEEDED: node.js .dev & .prod
     Dockerfile for react & node.js, golang -- for dev
     Dockerfile for react & node.js, golang -- for prod
 }
