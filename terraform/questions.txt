@@ -93,10 +93,16 @@
 
 34. how do you see all the resources in your terraform state
     - explain this command terraform show | grep -A 20 aws_vpc
+    - use show to see a specific resource
+    - use show to see the content of a plan file
 
-35. how do you see only the resources in the state file, list out the resources
 
-36. how do you show only one resource from the state, show the aws_instance resource only
+35. terraform state
+    - list only the resources in the state file
+    - use the state command to see just one resource
+    - use state to view the state in json format
+    - list state resource by Module. {tip: use the grep command}
+
 
 
 
