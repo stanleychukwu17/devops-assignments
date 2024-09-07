@@ -277,19 +277,53 @@
         value       = aws_instance.example.id
     }
 
+32. {
+    - terraform output
+    - terraform output ec2_public_ip_address
+    - terraform output -json
+    - terraform output -json > output.json
+    - if you want to hide an output from display in the terminal, set sensitive = true, i.e {
+        output "ec2_public_ip_address" {
+            description = "The public IP address of the EC2 instance for ebay"
+            value = aws_instance.my_vm.public_ip
+            sensitive = true
+        }
+    }
+}
 
-33. {
-    Terraform state is a critical component of Terraform's infrastructure management process. It is a file that tracks the current state of your infrastructure as managed by Terraform. Here’s a concise summary:
+33. Terraform state is a critical component of Terraform's infrastructure management process. It is a file that
+    tracks the current state of your infrastructure as managed by Terraform.  Terraform state acts as the source of
+    truth for your managed infrastructure, enabling Terraform to track, update, and manage resources effectively.
+    For more {
+        1. **Purpose**: The state file maintains a mapping between your Terraform configuration and the actual
+            resources deployed in your infrastructure. It helps Terraform understand what resources exist, their
+            configurations, and how they relate to each other.
 
-1. **Purpose**: The state file maintains a mapping between your Terraform configuration and the actual resources deployed in your infrastructure. It helps Terraform understand what resources exist, their configurations, and how they relate to each other.
+        2. **Storage**: By default, the state file is named `terraform.tfstate` and is stored locally in your working
+            directory. However, in team environments or production settings, it’s common to use remote state storage
+            solutions like Amazon S3, Azure Blob Storage, or Terraform Cloud for better management and collaboration.
 
-2. **Storage**: By default, the state file is named `terraform.tfstate` and is stored locally in your working directory. However, in team environments or production settings, it’s common to use remote state storage solutions like Amazon S3, Azure Blob Storage, or Terraform Cloud for better management and collaboration.
+        3. **Usage**: During operations like `terraform apply`, Terraform reads the state file to determine the changes
+            that need to be made to your infrastructure. It then updates the state file with the latest information
+            after applying the changes.
 
-3. **Usage**: During operations like `terraform apply`, Terraform reads the state file to determine the changes that need to be made to your infrastructure. It then updates the state file with the latest information after applying the changes.
+        4. **Locking and Security**: For remote state, locking mechanisms prevent simultaneous updates.
+    }
+    ---
+    ---
+    terraform state is stored in a terraform.tfstate file
 
-4. **Locking and Security**: For remote state, locking mechanisms prevent simultaneous updates, and secure storage ensures that sensitive information in the state file is protected.
+34. - terraform show
+    - terraform show | grep -A 20 aws_vpc -: means, show all resources, then pipe the result to the grep
+        command and then search for aws_vpc, if you find the result, then show 20lines after it(i.e A20)
+    - terraform show -target=<resource_address>
+        e.g terraform show -target=aws_instance.my_vm
+    - terraform show <plan_file>
 
-5. **Management**: State files can be sensitive because they may contain confidential information (like resource IDs or metadata). It’s essential to manage and protect the state file carefully and to use Terraform’s built-in commands like `terraform state list` and `terraform state show` to inspect and manage it.
+35. - terraform state list
+    - terraform state show <resource_address>
+        e.g terraform state show aws_instance.my_vm
+    - terraform state pull
+    - terraform state list | grep 'module.module_name'
 
-In summary, Terraform state acts as the source of truth for your managed infrastructure, enabling Terraform to track, update, and manage resources effectively.
-} 
+
