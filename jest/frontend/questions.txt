@@ -52,3 +52,15 @@
     within other elements, we can save time by writing our own custom matchers
     -
     write a custom matcher that captures the grabbing of the "form" end the assertions
+
+22. How do you use RegExp for pattern matching
+
+23. List some of the methods that calls the act function behind the scene for you
+
+24. You can Answer the question or look at the answer
+    : Write a pause function, then use it in your test
+
+25. Mock a component (path to component: "../tree/FileIcon")
+
+26. Mock a component that contains some data fetching logic and returns an object
+    e.g:
