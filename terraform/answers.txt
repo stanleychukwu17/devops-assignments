@@ -274,7 +274,7 @@
 
     output "ec2_instance_id" {
         description = "The ID of the EC2 instance."
-        value       = aws_instance.example.id
+        value       = aws_instance.my_vm.id
     }
 
 32. {
@@ -324,6 +324,6 @@
     - terraform state show <resource_address>
         e.g terraform state show aws_instance.my_vm
     - terraform state pull
-    - terraform state list | grep 'module.module_name'
+    - terraform state list | grep 'module.<module_name>'
 
 
