@@ -121,13 +121,8 @@
     terraform.tfvars
     environment variables "TF_VAR_*"
 
-20. A route table is a virtual router within your vpc, A default route table contains routes that determine where the
-    network traffic is directed. The default route table controls the routing for all subnets that belongs to the vpc
-    and are not explicitly associated with other route table. So basically, the route table controls routing for all
-    subnets within the vpc
-
-    An Internet Gateway - is a managed service that allows communication between instances in a Virtual Private Cloud (VPC)
-    and the internet
+20. A route table is a virtual router within your vpc, it controls routing for all subnets within the vpc
+    An Internet Gateway: it allows communication between instances in a Virtual Private Cloud (VPC) and the internet
 
 21. - An aws_security_group is an aws managed service that determines if internet traffic are permitted into or out of
       an instance
@@ -292,7 +287,7 @@
 }
 
 33. Terraform state is a critical component of Terraform's infrastructure management process. It is a file that
-    tracks the current state of your infrastructure as managed by Terraform.  Terraform state acts as the source of
+    tracks the current state of your infrastructure as managed by Terraform. Terraform state acts as the source of
     truth for your managed infrastructure, enabling Terraform to track, update, and manage resources effectively.
     For more {
         1. **Purpose**: The state file maintains a mapping between your Terraform configuration and the actual
