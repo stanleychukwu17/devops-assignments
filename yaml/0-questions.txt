@@ -34,5 +34,3 @@
 12. Explain the chomp modifiers
 
 13. Give an example using both of the chomp modifiers
-
-14. [if there is time, do complete revision of the book]
