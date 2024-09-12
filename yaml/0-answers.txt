@@ -7,9 +7,9 @@ Answers
     and we use 3 dots to indicate the ending of a yaml document, i.e (...)
 
 4. you can represent a string by
-    1. just writing it out
-    2. by wrapping them in double quotes
-    2. by wrapping them in single quotes
+    1. just writing it out : like this string
+    2. by wrapping them in double quotes : "like this string"
+    2. by wrapping them in single quotes : 'like this string'
 
 5. You use a pound sign (#) to indicate a comment, and in can appear on its own or inline e.g
     # this is a full line comment
@@ -66,9 +66,10 @@ Answers
     and also, we can do: >- or |-
 
 13. Answers:
-    Note: >+ this is a multiline text
-            but will be displayed as a one line text 
+    Note: >+ this is a multiline text,
+            but will be displayed as a one line text
+            and the end [space] will be preserved 
 
     Note: |- this is a multiline text
-            but will be displayed as a multiline text
+            and will be displayed as a multiline text
             and the end [space] will be stripped away 
