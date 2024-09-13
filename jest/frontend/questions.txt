@@ -51,7 +51,7 @@
     imagine if we had lots of similar test to write all day long, where we have to search for elements
     within other elements, we can save time by writing our own custom matchers
     -
-    write a custom matcher that captures the grabbing of the "form" end the assertions
+    write a custom matcher that captures the grabbing of an "element" and looking for other elements within it 
 
 22. How do you use RegExp for pattern matching
 
@@ -63,4 +63,9 @@
 25. Mock a component (path to component: "../tree/FileIcon")
 
 26. Mock a component that contains some data fetching logic and returns an object
-    e.g:
+    e.g: in our home route component, we have:
+    import useRepositories from "../hooks/useRepositories"
+
+    function HomeRoute () {
+        const {data: jsRepos} = useRepositories("....") # the hook returns an object like {data: {...}, ...}
+    }
