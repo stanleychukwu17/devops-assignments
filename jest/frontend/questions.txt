@@ -57,7 +57,7 @@
 
 23. List some of the methods that calls the act function behind the scene for you
 
-24. You can Answer the question or look at the answer
+24. You can answer the question or look at the answer
     : Write a pause function, then use it in your test
 
 25. Mock a component (path to component: "../tree/FileIcon")
