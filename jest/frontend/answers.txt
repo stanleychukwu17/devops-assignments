@@ -176,25 +176,98 @@
         findBy, findAllBy
 
 21. 
-    Answer:
-    function toContainRole(container, role, quantity = 1) {
-        const elements = within(container).queryAllByRole(role)
-        if(elements.length === quantity) {
-            return {pass:true}
-        }
+    Answer 1 {
+        function toContainRole(container, role, quantity = 1) {
+            const elements = within(container).queryAllByRole(role)
+            if(elements.length === quantity) {
+                return {pass:true}
+            }
 
-        return {
-            pass: false,
-            message: () => `Expected to find ${quantity} ${role} elements`
+            return {
+                pass: false,
+                message: () => `Expected to find ${quantity} ${role} elements`
+            }
         }
+        ---
+        now add it to the "expect" list of methods
+        expect.extend({toContainRole})
+        ---
+        in use
+        expect(form).toContainRole("button", 2)
+        form = container
+        button = role
+        2 = quantity
     }
-    ---
-    now add it to the "expect" list of methods
-    expect.extend({toContainRole})
-    ---
-    in use
-    expect(form).toContainRole("button", 2)
-    form = container
-    button = role
-    2 = quantity
+    chatGPT version {
+        function toContainRole(container, role, quantity = 1) {
+            const elements = within(container).queryAllByRole(role);
+            const pass = elements.length === quantity;
+            
+            return {
+                pass,
+                message: () => {
+                    if (pass) {
+                        return `the expected number of elements is found`;
+                    } else {
+                        return `Expected to find ${quantity} ${role} elements, but found ${elements.length}.`;
+                    }
+                },
+            };
+        }
 
+        // Extending Jest's expect
+        expect.extend({ toContainRole });
+    }
+
+
+22.
+    for (let key in repository) {
+        const value = repository[key]
+        const element = screen.getByText(new RegExp(value))
+        expect(element).toBeInTheDocument()
+    }
+
+23. 
+    An act() 
+    screen.findBy
+    screen.findAllBy
+    waitFor
+    all userEvent {
+        e.g userEvent.click, userEvent.keyboard e.t.c
+    }
+
+24. 
+    const pause = () => {
+        return new Promise(resolve => {
+            setTimeout(() => {resolve();}, 100)
+        })
+    }
+
+    it("should wait for data fetching to be completed", async () => {
+        render(<Component />)
+
+        screen.debug() // see what your component looks like before the data is fetched and the states are updated
+        pause()
+        screen.debug() // see what your component looks like after our data fetching is completed and the states have been updated
+    })
+
+25.
+    jest.mock("../tree/FileIcon", () => {
+        return () => {
+            return "File Icon component have been mocked"
+        }
+    })
+    Anywhere in this test that the FileIcon component is imported will receive this mocked version, you can use
+    screen.debug() to verify that the mocked version is what has been rendered
+
+26.
+    In your test file HomeRoute.test.tsx
+    import HomeRoute from "./HomeRoute"
+
+    jest.mock("../hooks/useRepositories", () => {
+        return () => {
+            return {
+                data : [{name: "react js"}, {name: "javascript"}]
+            }
+        }
+    })
