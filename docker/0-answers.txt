@@ -37,7 +37,7 @@ Group 1
          and it will unzip the file content and copy the contents
     }
 
-9. RUN addgroup app && adduser -S -G app app {
+9. RUN addgroup -S app && adduser -S -G app app {
     you must put -S before -G, it is the correct way of doing it, you're saying create a -S system user called
     "app" and add the user to a group -G called "app"
 }
