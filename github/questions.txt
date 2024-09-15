@@ -16,7 +16,10 @@
 5. Switch to a newly created branch
 - Switch while creating a new branch using the *Switch* command
 
-6. what happens when you try to Switch from one branch to another (and the current branch has unsaved changes + new files created)
+6. what happens when you try to Switch from one branch to another (
+    1. and the current branch has un-committed changes
+    2. new files created that are not saved
+)
 
 7. if your current location is the bug/fix-cart branch, how do you merge this branch into the main branch
 
