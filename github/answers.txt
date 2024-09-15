@@ -25,8 +25,10 @@
 5.  git switch <branch-name>
     git switch -c <new-branch-name>
 
-6.  when you try to switch from a branch with unsaved changes, git will not allow you to until you commit the changes or stash the changes,
-    but when the case is of new files, the new files will follow you to the branch you're switching to
+6.  1. when you try to switch from a branch with un-committed changes, git will not allow you to switch
+        branches until you commit the changes or stash the changes,
+    2. when you have new files that are not saved, the new files will follow you to the branch you're
+        switching to
 
 7.  1. you switch to the *main* branch by: git switch main
     2. you run: git merge bug/fix-cart
@@ -40,7 +42,7 @@
     5. git stash drop <stash-id> : deletes a stash using the stash-id
     6. git stash clear: deletes all the stash
 
-10. git restore <filename> - this will restore the file to teh state of the last committed file
+10. git restore <filename> - this will restore the file to the state of the last committed file
     git restore --source <commit-hash> <filename> - this will restore the file to the state it was in the commit hash provided
 
 11. git reset <commit-hash> - this will delete all the commits you have made after the <commit-hash> specified
@@ -50,18 +52,22 @@
         it was at the time of the <commit-hash> specified
 
     ### git revert
-    git revert <commit-hash> - this is different from git reset because instead of deleting the commits and taking the
-        project back, it will instead create a new commit (and in this new commit, it will take your work back to the state
-        it was at the <commit-hash>), because it results in a new commit, you'll be prompted to enter a commit hash
+    git revert <commit-hash> - this is different from git reset because instead of deleting the commits
+        and taking the project back, it will instead create a new commit (and in this new commit, it will
+        take your work back to the state it was at the <commit-hash>), because it results in a new commit,
+        you'll be prompted to enter a commit hash
     
     ### which one should i use
-    - if you want to reverse commits that you haven't shared with anyone, use reset and no one will ever know what happened
-    - but if you want to reverse commits that are already in other peoples system, you should use revert, because if you delete
-        the commit on other peoples system, this will cause serious serious issues to reconcile the changes
+    - if you want to reverse commits that you haven't shared with anyone, use reset and no one will ever know
+        what happened
+    - but if you want to reverse commits that are already in other peoples system, you should use revert,
+        because if you delete the commit on other peoples system, this will cause serious serious issues
+        to reconcile the changes
 
 12. git clone <url_of_repo>
 
-13. git remote is where we store our local project, we connect our local project to a remote repo using git.. the remote repo can be github, gitlab e.t.c
+13. git remote is where we store our local project, we connect our local project to a remote repo using git..
+    the remote repo can be github, gitlab e.t.c
     git remote -v: shows you the remote name and the remote url
 
 14. git remote add <name_you_want_to_call_the_remote> <url_where_you_want_to_assign_to_the_remote>
@@ -70,12 +76,12 @@
     - git remote remove <name_of_remote>;
         e.g - git remove origin
 
-15. git push <remote_name> <name_of_branch>;
+15. - git push <remote_name> <name_of_branch>;
         e.g - git push origin main
-    git push <remote_name> <name_of_feature_branch>
+    - git push <remote_name> <name_of_feature_branch>
         e.g - git push origin feature/add-buy-it-now-button
     # how do you set a branch to be an upstream branch to always push to
-    git push -u <remote_name> <name_of_branch>
+    - git push -u <remote_name> <name_of_branch>
     or
     git push -set-upstream <remote_name> <name_of_branch>
 
@@ -84,15 +90,17 @@
 17. 
     # git fetch
         Purpose:
-            Downloads new changes from the remote repository but does not integrate them into your current working branch.
+            Downloads new changes from the remote repository but does not integrate them into your current
+            working branch.
         Operation:
-            - Fetches all branches and tags from the remote repository that have been updated since your last fetch.
-            - Updates the remote tracking branches (like origin/master, origin/develop, etc.) in your local repository
-              to reflect the state of the remote repository.
+            - Fetches all branches and tags from the remote repository that have been updated since your last
+                fetch.
+            - Updates the remote tracking branches (i.e origin/<repo> e.g: origin/main) in your local
+                repository to reflect the state of the remote repository.
             - Does not modify your working directory or current branch.
         Usage:
-            Typically followed by examining fetched changes (git diff origin/master) or merging them manually
-            (git merge origin/master).
+            Typically followed by examining fetched changes (git diff origin/main) or merging them
+                manually (git merge origin/main).
 
     # git pull
         Purpose:
@@ -101,22 +109,24 @@
             - Performs a git fetch to bring down the latest changes from the remote repository.
             - Then, it automatically merges the retrieved changes into your current branch.
         Usage:
-            - Convenient for updating your working branch with the latest changes from the remote repository in one step.
-            - caution: It automatically performs a merge, which could lead to conflicts if your local branch has
-              diverged from the remote branch.
+            - Convenient for updating your working branch with the latest changes from the remote repository
+                in one step.
+            - caution: It automatically performs a merge, which could lead to conflicts if your local branch
+                has diverged from the remote branch.
 
     # Key Differences
         Integration:
-            git fetch only downloads new data from a remote repository while git pull downloads new data and directly
-            integrates it into your current working branch.
+            git fetch only downloads new data from a remote repository while git pull downloads new data
+            and directly integrates it into your current working branch.
         Safety:
-            git fetch is safer because it doesn't change your local branches automatically; you can review changes
-            before integrating them. git pull automatically integrates fetched changes, potentially leading
-            to unexpected merges or conflicts.
+            git fetch is safer because it doesn't change your local branches automatically; you can review
+            changes before integrating them. git pull automatically integrates fetched changes, potentially
+            leading to unexpected merges or conflicts.
         Usage Context:
             git fetch is useful when you want to see what has changed in the remote repository without immediately
-            integrating it into your work. git pull is useful when you know you want to update your current working
-            branch with changes from the remote repository and you are prepared to handle any potential conflicts.
+            integrating it into your work. git pull is useful when you know you want to update your current
+            working branch with changes from the remote repository and you are prepared to handle any
+            potential conflicts.
     # Summary
         In summary, git fetch is more cautious and gives you more control over when and how to integrate changes,
         while git pull is more convenient for straightforward updates of your current branch with remote changes.
@@ -127,5 +137,6 @@
 19. git pull origin main
     git pull origin new-page/promo
     -
-    when the changes pulled from the remote repo are conflicting with one or more files on your local repo, git will pause
-    the merging and require you to manually resolve the conflicts and merge the branches again by yourself
+    when the changes pulled from the remote repo are conflicting with one or more files on your local repo,
+    git will pause the merging and require you to manually resolve the conflicts and merge the branches
+    again by yourself
