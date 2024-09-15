@@ -124,11 +124,11 @@
 20. A route table is a virtual router within your vpc, it controls routing for all subnets within the vpc
     An Internet Gateway: it allows communication between instances in a Virtual Private Cloud (VPC) and the internet
 
-21. - An aws_security_group is an aws managed service that determines if internet traffic are permitted into or out of
-      an instance
+21. - An aws_security_group is an aws managed service that determines if internet traffic are permitted
+        into or out of an instance
     - aws_security_group = You have to create this one by yourself using the resource "aws_security_group"
       aws_default_security_group = This one comes by default when you create the VPC, it is always better to leave
-        this one alone and create new security groups
+        this one alone and create new security groups (i.e aws_security_group)
 
 22. in variables.tf
     variable "general_public_address" {
@@ -257,7 +257,7 @@
         value       = aws_instance.my_vm.public_ip
     }
 
-    output "ec_ami" {
+    output "ec2_ami" {
         description = "The ami of our ec2 instance"
         value = aws_instance.my_vm.ami
     }
