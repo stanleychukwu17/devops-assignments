@@ -1,33 +1,3 @@
 
-When you install Cypress in a Next.js project, Cypress will set up a default folder structure to
-help organize your tests and other related files. Here’s what the typical folder structure looks like:
 
-cypress/: This is the main directory created by Cypress for your test files and configuration.
 
-cypress/fixtures/: This folder is used to store sample data files that can be used in your tests. These
-    files are typically in JSON format, but you can use other formats as needed.
-
-cypress/integration/: This is where you put your test files. By default, it’s named integration, but in more recent versions of Cypress, it might be named e2e to better reflect end-to-end testing. You write your test cases here using JavaScript or TypeScript.
-
-cypress/support/: This directory is for reusable code that you want to use across your test files, such as custom commands or configuration settings. The index.js file in this folder is loaded before your test files.
-
-cypress/plugins/: This folder is used to store plugins that can be used to extend Cypress’s functionality. For most users, this folder contains a single index.js file where you can configure plugins.
-
-cypress.config.js (or cypress.config.ts for TypeScript): This is the main configuration file for Cypress. You can specify various configuration options here, such as test timeout settings, base URL, and more.
-
-cypress/videos/: This folder will be created automatically if you enable video recording in your Cypress configuration. It stores video recordings of your test runs, which can be helpful for debugging.
-
-cypress/screenshots/: If you enable screenshots in your Cypress configuration, this folder will store screenshots taken during test failures.
-
-Here’s a simple view of what your folder structure might look like after installing Cypress:
-
-my-nextjs-project/
-├── cypress/
-│   ├── fixtures/
-│   ├── integration/ (or e2e/)
-│   ├── support/
-│   └── plugins/
-├── cypress.config.js
-├── cypress.videos/ (if video recording is enabled)
-├── cypress.screenshots/ (if screenshots are enabled)
-└── other-project-files/
