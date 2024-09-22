@@ -3,6 +3,8 @@
         "addgroup",
         "adduser",
         "keygen",
+        "pnpx",
+        "rightclick",
         "tfstate",
         "tfvars",
         "WORKDIR"
