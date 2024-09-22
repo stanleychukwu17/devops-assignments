@@ -1,0 +1,28 @@
+1. How do you open a website/url in cypress
+
+2. How do you run cypress in the terminal without opening your web browser 
+
+3. Explain the folder structure of cypress
+
+4. How do you grab elements from the dom in cypress
+    - Difference btw cy.get(), cy.contains(), cy.find() and give examples
+
+5. how do you set the viewport of your testing browser
+
+6. How do you verify the url of a page, for example:
+    - From homepage, navigate to the login page, then assert that the url is for login page
+    - Now from the login page, how do you navigate back to the homepage from the login page {
+        don't use cy.url()
+    }
+
+7. Difference between cy.log() and console.log(), give an example of cy.log()
+
+8. how do you type on input elements using cypress
+
+9. show how to use the before, beforeEach, after, afterEach hook in cypress
+
+10. Tell us about cy.pause() and cy.debug()
+
+11. Using timeouts in cypress, give an example
+
+12. how to right-click using cypress
