@@ -5,8 +5,7 @@
     getAllBy,   findAllBy       queryAllBy
 
 3.  getByRole       getByLabelText      getByPlaceholderText        getByText
-    getByAltText    getByTitle
-    getByTestId     getAllByTestId
+    getByAltText    getByTitle          getByTestId
 
 4. const headingElement = await screen.findByText(/how far/i)
 
