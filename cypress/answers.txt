@@ -13,7 +13,7 @@
     ↳ /fixtures/: This folder is used to store sample data files that can be used in your
         tests. These files are typically in JSON format, but you can use other formats as needed.
 
-    ↳ e2e/: This is where you put your test files.  You write your test cases here using JavaScript 
+    ↳ e2e/: This is where you put your test files. You write your test cases here using JavaScript 
         or TypeScript.
 
     ↳ support/: This directory is for reusable code that you want to use across your test files, such as
@@ -52,9 +52,9 @@
             cy.get("div.form").should("exist")
 
         cy.contains(): Can select an elements using both a selector and text or either of each.e.g:
-            cy.contains("registration was successful").should("exist")
-            cy.contains("[data-testid=learnBtn]").should("have.text", "buy me now")
-            cy.contains("button", "submit").click()
+            cy.contains("registration was successful").should("exist") // using only text search
+            cy.contains("[data-testid=learnBtn]").should("have.text", "buy me now") // using attribute selector
+            cy.contains("button", "submit").click() // using element and text to select
 
         cy.find(): Used to search for elements within a selected parent container. e.g:
             cy.get('.form').find('.input')
