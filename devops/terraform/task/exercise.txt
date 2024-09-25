@@ -1,0 +1,2 @@
+1. Create A VPC, Create 2 Subnets, An IGW, A Route table, associate the route-table to the IGW, and associate the 2 Subnets to the route table
+chatGPT solutions: https://chatgpt.com/c/08dcc8a7-72ba-47f5-a927-3cd30286665a
