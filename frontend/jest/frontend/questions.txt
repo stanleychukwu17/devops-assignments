@@ -1,0 +1,71 @@
+1. How do you name your test files
+
+2. List 6 types of query methods
+
+3. How do you select items from the dom
+
+4. How do you use findBy or findAllBy
+
+5. How do you use queryBy
+
+6. How do you use getAllBy
+
+7. how do you use a describe block
+
+8. how do you use the fireEvent with input and button elements
+
+9. what is beforeEach, afterEach, beforeAll, afterAll
+
+10. Write down another way you can do await (using waitFor)
+
+11. List some matches from jest
+
+12. fireEvent alternative using {userEvent}
+
+13. how to use the userEvent.click & userEvent.keyboard
+13.1 Diff btw userEvent and fireEvent
+
+14. how to use a mock function
+
+15. what are the 3 ways you can select an input element
+
+16. what is screen.logTestingPlaygroundURL()
+
+17. how do you use within
+
+18. what is screen.debug()
+
+19. finding By Accessible names
+
+20. When to use each of the query methods
+
+21. Custom matchers in jest - use custom matchers to solve the issue below
+    it("should displays two buttons", () => {
+        render(<FormData />)
+
+        const form = scene.getByRole("form")
+        const btn = within(form).getAllByRole("button")
+        expect(btn).toHaveLength(2)
+    })
+
+    imagine if we had lots of similar test to write all day long, where we have to search for elements
+    within other elements, we can save time by writing our own custom matchers
+    -
+    write a custom matcher that captures the grabbing of an "element" and looking for other elements within it 
+
+22. How do you use RegExp for pattern matching
+
+23. List some of the methods that calls the act function behind the scene for you
+
+24. You can answer the question or look at the answer
+    : Write a pause function, then use it in your test
+
+25. Mock a component (path to component: "../tree/FileIcon")
+
+26. Mock a component that contains some data fetching logic and returns an object
+    e.g: in our home route component, we have:
+    import useRepositories from "../hooks/useRepositories"
+
+    function HomeRoute () {
+        const {data: jsRepos} = useRepositories("....") # the hook returns an object like {data: {...}, ...}
+    }
