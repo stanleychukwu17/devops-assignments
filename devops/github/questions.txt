@@ -1,0 +1,52 @@
+1. Config default username & email
+
+2. how to see all commit messages in a repo, then how to see it in one-line
+
+3. How do you modify commits to include files you did not add + modify the commit message
+
+4. Tell us about github branches
+    - Create a new branch
+    - Delete a branch
+    - rename a branch
+    - See all the branches locally
+    - see all branches with their last commit messages
+    - See all remote branches
+    - See all remote and local branches at once
+
+5. Switch to a newly created branch
+- Switch while creating a new branch using the *Switch* command
+
+6. what happens when you try to Switch from one branch to another (
+    1. and the current branch has un-committed changes
+    2. new files created that are not saved
+)
+
+7. if your current location is the bug/fix-cart branch, how do you merge this branch into the main branch
+
+8. how do you save an uncompleted, uncommitted work before switching to another branch
+
+9. Tell us all about the commands of stash and explain them (6 commands)
+
+10. how do you take just a file back to an old commit (i.e losing and the changes made after the commit)
+
+11. what is the difference btw git reset and git revert
+
+12. how do you clone a project from github into your working directory
+
+13. what is git remote and *git remote -v*
+
+14. how do you add a remote url to push your github code to (also the syntax)
+    - how do you delete a remote url
+
+15. write down the full syntax for git push
+    - how do you push a feature branch
+    - how do you set a branch to be an upstream branch to always push to
+
+16. how do you switch to a remote branch (i.e a branch available in your remote repo, but not in your local repo)
+
+17. Diff btw *git fetch* and *git pull*
+
+18. Write a command to fetch from origin/main and another command to fetch from origin/new-page/promo
+
+19. write a command to pull from origin/main branch and another command to pull from  origin/new-page/promo
+    - what happens when you do a git pull, especially if they are conflicts
