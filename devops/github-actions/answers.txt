@@ -1,0 +1,64 @@
+1. {
+    1. push request events:
+        on:
+            push
+
+    2. pull request events:
+        on:
+            pull_request
+
+    3. issues events:
+        types:
+            [opened, edited]
+
+    4. Workflow Dispatch:
+        on:
+            workflow_dispatch:
+                inputs:
+                    example_input:
+                        description: 'An example input'
+                        required: true
+                        default: 'default_value'
+
+    5. Deployment Events:
+        on:
+            deployment_status:
+                types: [success, failure]
+
+    6. Custom Events:
+        on:
+            repository_dispatch:
+                types: [my_custom_event]
+
+    7. Release Event:
+        on:
+            release:
+                types: [created, published]
+
+    8. Schedule Events:
+        on:
+            schedule:
+                - cron: '0 0 * * *' # Runs daily at midnight
+
+    9. Repository Dispatch:
+        on:
+            repository_dispatch:
+                types: [custom-event]
+
+    10. Dependabot Events:
+        on:
+            dependabot:
+                types: [pull_request]
+
+    11. Workflow Run Events:
+        on:
+            workflow_run:
+                workflows: ["Main Workflow"]
+                types:
+                    - completed
+    12. fork events:
+        on:
+            create:
+                tags: [fork]
+
+}
