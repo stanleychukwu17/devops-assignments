@@ -1,0 +1,52 @@
+1. it is a hook from framer-motion that is mostly used to track the changes to motion values and also
+    to update motion elements with out triggering the react re-render engine
+    e.g:
+    const x = useMotionValue(0)
+    const y = useMotionValue(0)
+    <motion.div style={{x,y}} />
+
+    - some of the methods for useMotionValue are
+    .get()  .set()  .stop() .velocity() .destroy()
+
+2.  const x = useMotionValue(0)
+    const opacity = useTransform(x, [-200, 0, 200], [0,1,0])
+    -
+    return <motion.div drag="x" style={{x, opacity}} />
+
+3.  const xInput = [-100, 0, 100]
+    const opacityOutput = [0,1,0]
+    const colorOutput = ['#f00', '#fff', '#0f0']
+
+    const opacity = useTransform(x, xInput, opacityOutput)
+    const color = useTransform(x, xInput, colorOutput)
+
+4. useMotionTemplate creates a new motion value from a string template containing other motion values
+    e.g-1:
+    const x = useMotionValue(0)
+    const transform = useMotionTemplate`transform(${x}px)`
+    -
+    return <motion.div style={{transform}} />
+
+    e.g-2:
+    const shadowX = useSpring(0)
+    const shadowY = useMotionValue(0)
+
+    const shadow = useMotionTemplate`drop-shadow(${shadowX}px ${shadowY}px 20px rgba(0,0,0,0.3))`
+
+    return <motion.div style={{filter: shadow}} />
+
+5. useScroll is used to track the scroll progress of the web page or to track the scroll progress in an
+    element
+    e.g:
+    const {scrollX, scrollY, scrollXProgress, scrollYProgress} = useScroll()
+    -
+    scrollX & scrollY: are the absolute scroll position in pixels
+    scroll[X/Y]Progress: are the scroll position between a defined value between(0 to 1)i.e(0-100%)
+
+    e.g-2: We could show a page scroll indicator by passing scrollYProgress straight to the scaleX
+        style of a progress bar
+    -
+    const {scrollYProgress} = useScroll()
+    const scaleX = useSpring(scrollYProgress)
+    -
+    return <motion.div style={{scaleX}} />

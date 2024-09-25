@@ -1,0 +1,11 @@
+1. Talk about useMotionValue
+    - List some of the useMotionValue methods
+
+2. use the useMotionValue and useTransform on a drag element
+
+3. use the useTransform hook to transform the xInput -> opacityOutput & colorOutput
+    where: xInput = [-100, 0, 100]
+
+4. Tell us about useMotionTemplate and give an example of how to use it
+
+5. Tell us about useScroll and give an example of how to use it
