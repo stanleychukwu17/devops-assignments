@@ -1,0 +1,143 @@
+1. cy.visit(<url>)
+
+2.  npx cypress run --headless
+    pnpx cypress run --headless
+
+3. folder structure {
+    When you install Cypress in a Next.js project, Cypress will set up a default folder structure
+    to help organize your tests and other related files. Here’s what the typical folder structure
+    looks like:
+
+    - cypress/: This is the main directory created by Cypress for your test files and configuration.
+
+    ↳ /fixtures/: This folder is used to store sample data files that can be used in your
+        tests. These files are typically in JSON format, but you can use other formats as needed.
+
+    ↳ e2e/: This is where you put your test files. You write your test cases here using JavaScript 
+        or TypeScript.
+
+    ↳ support/: This directory is for reusable code that you want to use across your test files, such as
+        custom commands or configuration settings. The index.js file in this folder is loaded before your
+        test files.
+
+    ↳ plugins/: This folder is used to store plugins that can be used to extend Cypress’s functionality.
+        For most users, this folder contains a single index.js file where you can configure plugins.
+
+    ↳ cypress.config.js (or cypress.config.ts for TypeScript): This is the main configuration file for Cypress.
+        You can specify various configuration options here, such as test timeout settings, base URL, and more.
+
+    ↳ videos/: This folder will be created automatically if you enable video recording in your Cypress
+        configuration. It stores video recordings of your test runs, which can be helpful for debugging.
+
+    ↳ screenshots/: If you enable screenshots in your Cypress configuration, this folder will store
+        screenshots taken during test failures.
+
+    Here’s a simple view of what your folder structure might look like after installing Cypress:
+    my-nextjs-project/
+    ├── cypress/
+    │   ├── fixtures/
+    │   ├── e2e/ (or integration/)
+    │   ├── support/
+    │   └── plugins/
+    ├── cypress.config.js
+    ├── cypress.videos/ (if video recording is enabled)
+    ├── cypress.screenshots/ (if screenshots are enabled)
+    └── other-project-files/
+}
+
+4.  - We use cy.contains(), cy.get(), cy.find()
+    - their differences are {
+        cy.get(): Selects elements based on a css selector. e.g:
+            cy.get('button.add').click()
+            cy.get("div.form").should("exist")
+
+        cy.contains(): Can select an elements using both a selector and text or either of each.e.g:
+            cy.contains("registration was successful").should("exist") // using only text search
+            cy.contains("[data-testid=learnBtn]").should("have.text", "buy me now") // using attribute selector
+            cy.contains("button", "submit").click() // using element and text to select
+
+        cy.find(): Used to search for elements within a selected parent container. e.g:
+            cy.get('.form').find('.input')
+    }
+
+5.  cy.viewport(<width>, <height>)
+    cy.viewport(1280, 720)
+    cy.viewport("iphone-5")
+
+6.
+    - it.only("The login page link works", () => {
+        cy.viewport(1280, 720)
+        cy.visit(<homepage-url-link>)
+
+        cy.contains("sign in").click()
+        cy.url().should("include", "/login")
+
+        cy.go("back")
+        cy.contains("register").click()
+        cy.url().should("include", "/register-new-account")
+    })
+    - cy.go("back")
+
+7.
+    - cy.log(<value>): will log the value in your cypress GUI
+        cy.url().then(value => {
+            cy.log("The current url value is", value)
+        })
+    - console.log(<value>): will log the value to the terminal of your web browser
+
+8.
+    cy.get("...").type("username")
+    cy.get("...").type("password")
+
+9.
+    before(() => {
+        cy.then(() => {
+            window.localStorage.setItem("auth_token", "token")
+        })
+    })
+    -
+    beforeEach(() => {
+        cy.viewport(1280, 720)
+        cy.visit(<base-url>)
+    })
+    ---
+    afterEach(() => {
+        // Example: Clear cookies or local storage
+        cy.clearCookies();
+        cy.clearLocalStorage();
+    });
+
+    afterEach(() => {
+        cy.log('Test finished');
+        // Optionally, you could use Cypress's built-in commands to take a screenshot if a test fails
+        if (Cypress.mocha.getRunner().suite.tests[0].state === 'failed') {
+            cy.screenshot('screenshot-on-failure');
+        }
+    });
+    -
+    after(() => {
+        // Example: Clean up test data in the database
+        cy.request('DELETE', '/api/cleanup');
+    });
+    after(() => {
+        // Example: Final reporting or cleanup
+        cy.log('All tests complete');
+    });
+
+10. cy.pause(): this will pause your test where ever you placed the command, you can click on the
+        "resume button" at the top of the cypres GUI to continue the test
+    cy.debug(): it's just like your JavaScript debugger, it freezes you JavaScript thread
+
+11.
+    it.only("New File feature works", () => {
+        cy.visit("https://codedamn.com/playground/html")
+
+        cy.contains("settings up the challenge", {timeout: 7*1000}).should("exist")
+        cy.contains("setting up the challenge", {timeout: 7*1000}).should("not.exist")
+
+        // we grab the terminal and press ctrl+c to kill all processes
+        cy.get("[data-testid=xterm]").type("{ctrl}{c}").type("touch testScript.js {enter}")
+        cy.contains("testScript.js").should("exist")
+    })
+
+12. cy.contains("testScript.js").rightclick()
