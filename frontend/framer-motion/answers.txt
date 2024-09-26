@@ -35,8 +35,8 @@
 
     return <motion.div style={{filter: shadow}} />
 
-5. useScroll is used to track the scroll progress of the web page or to track the scroll progress in an
-    element
+5. useScroll is used to track the scroll progress of the web page or to track the scroll progress
+    in an element
     e.g:
     const {scrollX, scrollY, scrollXProgress, scrollYProgress} = useScroll()
     -
@@ -50,3 +50,109 @@
     const scaleX = useSpring(scrollYProgress)
     -
     return <motion.div style={{scaleX}} />
+
+6.
+    const ref = useRef<HTMLElement>({} as HTMLElement)
+    const {scrollXProgress} = useScroll({container: ref})
+
+    <svg>
+        <motion.circle
+            cx={50}, cy={30} r={30} fill="purple" style={{pathLength: scrollXProgress}}
+        />
+    </svg>
+    <ul ref={ref}>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+    </ul>
+
+7.
+    const ref = useRef<HTMLElement>({} as HTMLElement)
+    const {scrollXProgress} = useScroll({
+        target: ref,
+        offset: [0.2, 0.5]
+    })
+
+    return <motion.div ref={ref}>...</motion.div>
+
+    offset explanation {
+        - the offset property specifies the range of the scroll progress that you're interested in
+            Accepted values are: number, text("start"|"center"|"end"), pixels,
+                                percentage(0% to 100%), viewport(vh and vw)
+        offset: [0.2, 0.5]:
+            0.2: This represents the start of the range, meaning you want to begin tracking the scroll
+                progress when the scroll position is at 20% of the target element's height
+            0.5: This represents the end of the range, meaning you want to stop tracking when the scroll
+                position reaches 50% of the target element's height.
+
+        offset: ["100px", "400px"]:
+            you're specifying a range based on pixel values rather than percentages
+            -
+            "100px": The tracking of scroll progress will begin when the scroll position is at 100 pixels
+                from the top of the target element
+            "400px": This indicates the endpoint of the scroll range. The tracking will stop when the scroll
+                position reaches 400 pixels from the top of the target element
+    }
+
+8. useSpring creates a motion value that will animate to its latest target with a spring animation.
+    e.g
+        const x = useMotionValue(0)
+        const spring = useSpring(x, {stiffness: 1000, damping: 10})
+        ...
+        return <motion.div style={{x:spring}}>...</motion.div>
+    
+    - options that can be passed into the useSpring hook are: {
+        stiffness: the higher the number, the stiffer the object/element
+        damping: it is the oscillation force, the lower the number the higher the oscillation, the
+                higher the number, the lower the oscillation
+        mass: it is the weight of the element, the higher the mass the slower the spring effect in
+            terms of the element movement, the lower the mass the faster the movement
+        bounce: the lower the number, the higher the bouncing of the element
+    }
+
+9. The useTransform hook creates a new motion value that transforms the output of one or more motion values
+    e.g:
+    const opacity = useTransform(x, [-100, 0, 100], [0,1,0])
+    const color = useTransform(x, [-100, 0, 100], ['#f00', '#fff', '#0f0'])
+    const rotate = useTransform(scrollY, [0, 100], [0,360], {clamp:false, ease:"ask chatGPT 4 values"})
+    // by setting clamp to false, the increment will continue to map even when the max input value
+        has been reached. e.g if scrollY is 200, rotate = 720
+    
+    -- using functions to transform output values
+    e.g:1
+    const x = useMotionValue(0)
+    const y = useSpring(0)
+    const z = useTransform([x,y], (latestX, latestY) => latestX * latestY)
+    return <motion.div style={{x,y,z}} />
+    -
+    e.g:2
+    const x = useMotionValue(0)
+    const y = useTransform(x, latestX => Math.cos(value/10) * 50)
+    return <motion.div style={{x,y}} />
+
+10. Creates a motion value that tracks the velocity of another motion value. it accepts a motion value
+    and returns a new one that updates with the provided motion values velocity
+    e.g:
+    const pink = (saturation: number) => {
+        return `hsl(327, ${saturation}%, 50%)`
+    }
+    const HomeComp = () => {
+        const x = useMotionValue(0)
+        const smooth = useSpring(x, {damping:50, stiffness:400})
+            // with this stiffness and damping above, the element will be very heavy
+        const velocity = useVelocity(smooth)
+        const scale = useTransform(velocity, [-3000,0,3000], [2,1,2], {clamp:false})
+        const backgroundColor = useTransform(
+            velocity,
+            [-3000,0,3000],
+            [pink(100), pink(0), pink(100)]
+        )
+
+        return (
+            <motion.div
+                drag="x"
+                dragElastic={1}
+                dragConstraints={{left:-200, right:200}}
+                style={{x, scale, backgroundColor}}
+        )
+    }
