@@ -24,3 +24,19 @@
 
 10. Tell us about the useVelocity hook,
     write down at-least one example of using the useVelocity hook and go-through the other one
+
+11. Talk about the useAnimationControls hook and give examples
+11.1 how do you use variant variables in useAnimationControls 
+11.2 useAnimationControls for sequence animations, show an example of using sequence to open a menu
+11.3 using dynamic element with useAnimationControls.start
+11.4 Talk about the useAnimationControls methods, the .set(), .start(), .stop()
+
+12. Talk about useAnimationFrame hook and give us an example
+
+13. Talk about the useInView hook
+    - what are the options that can be provided to this hook
+
+14. Talk about keyframe's in framer-motion, also how do you space them using times
+
+15. List at-least 5 gesture animation props
+    - talk in details about whileHover, whileTap
