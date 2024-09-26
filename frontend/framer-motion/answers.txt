@@ -156,3 +156,118 @@
                 style={{x, scale, backgroundColor}}
         )
     }
+
+11. useAnimationControls can create animation controls that can be used to start/stop animations on one or
+    more motion components or multiple animations together
+    e.g
+    function HomeComp () {
+        const controls = useAnimationControls()
+
+        useEffect(() => {
+            controls.start({x:"100px", scale:2, transition:{duration:3}})
+        }, [])
+
+        const takeItBack = useCallback(() => {
+            controls.start({x:0, scale: 1})
+        }, [])
+
+        return <motion.div animate={controls} onClick={takeItBack} />
+    }
+
+11.1    controls.start("hidden")
+        controls.start("visible")
+        controls.start("hover")
+
+11.2
+    const sequence = async () => {
+        await menuControl.start({x:0})
+        return await itemsControl.start({opacity:1})
+    }
+    sequence().then(() => {
+        childrenControls.start({y:-50, color:'#fefefe'})
+    })
+
+11.3
+    useEffect(() => {
+        controls.start(i => ({
+            opacity:0, x:100,
+            transition: {delay: i*0.3}
+        }))
+    })
+    return (
+        <ul>
+            <motion.li custom={0} animate={controls}>...</motion.li>
+            <motion.li custom={1} animate={controls}>...</motion.li>
+        </ul>
+    )
+
+11.4
+    .set(definition): the .set() method does not perform any animations, it is just like the gsap.set(),
+        it just sets the attr/properties of the element to the value received
+        --
+        with properties: controls.set({opacity: 0})
+        with variants: controls.set("hidden")
+    .start():
+        controls.start("hover", {duration: .5, ease:"easeIn"}) // i.e (definition, transitionOverride)
+        controls.start({x:0, transition: {duration: 1}})
+    .stop(): stops the animation at the current timeline
+
+
+12. useAnimationFrame: is an animation loop that provides the latest frame time to the provided
+    callback function, it runs a callback once every animation frame 
+    e.g
+    useAnimationFrame((time, delta) => {
+        ref.current.style.transform = `rotateY(${time}deg)`
+    })
+
+13. The useInView hook is a simple hook to let you know when an element is within the viewport
+    const ref = useRef(null)
+    const isInView = useInView(ref)
+
+    useEffect(() => {
+        console.log("Element is in view", isInView)
+    }, [isInView])
+
+    return <motion.div ref={ref} />
+    --
+    - What are the options that can be provided to the hook?
+    1. root: RefObject<HTMLElement>
+        By default, the element will be tracked as it enters & leaves the window's viewport,
+        Set root to be the ref of a scrollable parent & it will use that parent to be the viewport instead
+        e.g:
+            const ref = useRef(null)
+            const container = useRef(null)
+            const isInView = useInView(ref, {root: container})
+            return (
+                <motion.div ref={container} style={{overflow: "scroll"}}>
+                    <div ref={ref} />
+                </motion.div>
+            )
+    2. once: boolean
+        if you set to true, the useInView hook will stop observing the element and always return true.
+        The default is false
+    3. amount: "some"|"all"|number
+        The amount of the item that needs to enter the viewport for useInView to return true.
+        You can also use number from 0-1, The default is 0
+
+14. e.g:
+    <motion.circle
+        cx={300} cy={400}
+        animate={{
+            cx: [300,600],
+            cy: [400,0,400],
+            transition: {
+                cx: {times: [0,1], duration: 1},
+                cy: {times: [0, 0.5, 1], duration: 1},
+            }
+        }}
+    />
+
+    e.g:2
+    variant = {
+        x: [null, 100, 0] // here if the value is animating, null will continue from the current value
+    }
+
+15. whileHover, whileTap, whileFocus, whileDrag, whileInView
+
+
