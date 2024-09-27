@@ -39,4 +39,33 @@
 14. Talk about keyframe's in framer-motion, also how do you space them using times
 
 15. List at-least 5 gesture animation props
-    - talk in details about whileHover, whileTap
+    - talk about whileHover
+    - talk about whileTap
+
+----------
+
+16. Talk about Layout animations
+    - customizing layout animation duration
+    - talk about layout scroll prop
+
+17. - Drag, what values can the drag prop receive
+    - talk about whileDrag
+    - talk about dragSnapToOrigin
+    - talk about dragConstraints
+    - talk about dragElastic
+    - talk about dragMomentum
+    - talk about dragPropagation
+    - talk about onDrag, onDragStart, onDragEnd, onDirectionLock
+
+17.1 
+    - talk about useDragControls
+    - talk about useDragListener
+
+18. tell us about these transition properties {when, delayChildren, staggerChildren, staggerDirection}
+    - talk about dynamic variant
+
+19. Talk about useAnimate hook
+    what can it be used for
+
+20. Talk about event propagation(i.e bubbling up of an event)
+    talk about the whileInView animation
