@@ -29,7 +29,7 @@
 
     e.g-2:
     const shadowX = useSpring(0)
-    const shadowY = useMotionValue(0)
+    const shadowY = useMotionValue(shadowX)
 
     const shadow = useMotionTemplate`drop-shadow(${shadowX}px ${shadowY}px 20px rgba(0,0,0,0.3))`
 
@@ -60,7 +60,7 @@
             cx={50}, cy={30} r={30} fill="purple" style={{pathLength: scrollXProgress}}
         />
     </svg>
-    <ul ref={ref}>
+    <ul ref={ref} style={{overflow-x: "scroll"}}>
         <li>...</li>
         <li>...</li>
         <li>...</li>
@@ -127,7 +127,7 @@
     -
     e.g:2
     const x = useMotionValue(0)
-    const y = useTransform(x, latestX => Math.cos(value/10) * 50)
+    const y = useTransform(x, latestX => Math.cos(value/10) * 50) // creates a wavy effect
     return <motion.div style={{x,y}} />
 
 10. Creates a motion value that tracks the velocity of another motion value. it accepts a motion value
@@ -154,6 +154,7 @@
                 dragElastic={1}
                 dragConstraints={{left:-200, right:200}}
                 style={{x, scale, backgroundColor}}
+            />
         )
     }
 
@@ -240,12 +241,15 @@
             const isInView = useInView(ref, {root: container})
             return (
                 <motion.div ref={container} style={{overflow: "scroll"}}>
+                    <div />
+                    <div />
+                    <div />
                     <div ref={ref} />
                 </motion.div>
             )
     2. once: boolean
-        if you set to true, the useInView hook will stop observing the element and always return true.
-        The default is false
+        if you set to true, the useInView hook will stop observing the element once it hits true and will
+        always return true. The default is false
     3. amount: "some"|"all"|number
         The amount of the item that needs to enter the viewport for useInView to return true.
         You can also use number from 0-1, The default is 0
@@ -269,5 +273,84 @@
     }
 
 15. whileHover, whileTap, whileFocus, whileDrag, whileInView
+    ---
+    - whileHover: can be used with some more related props
+    <motion.div
+        whileHover={{scale: 1.2}}
+        onHoverStart={(event, info) => console.log(info)}
+        onHoverEnd={(event, info) => console.log(info)}
+    />
+    ---
+    - whileTap: can be used with some more related props
+    <motion.div
+        whileTap={{scale: 1.2}}
+        onTap={(event, info) => console.log(info.point.x, info.point.y)}
+        onTapStart={(event, info) => console.log(info)}
+        onTapCancel={(event, info) => console.log(info)}
+    />
 
+16. To enable motion layout animation, we simply set the layout prop of a motion component. e.g:
+    <motion.div layout />
+    -
+    Any layout changes dat happens as a result of a re-render will b animated, dat could be a combination of:
+    1. Re-ordering of a list
+    2. A change in width, height or position
+    3. A change in the parent layout e.g flexBox or grid
+
+    ---
+    - customizing layout animation duration
+        <motion.div
+            layout
+            animate={{opacity:0.5}}
+            transition={{
+                opacity: {ease: "linear"}
+                layout: {duration: 0.3}
+            }}
+    ---
+    - talk about layout scroll prop
+        <motion.div layoutScroll style={{overflow: "scroll"}}
+
+17.
+    - <motion.div drag /> or drag="x" or drag="y"
+    - whileDrag={{scale:1.2}}
+    - dragSnapToOrigin:
+        If set to true, the draggable element will animate back to it's center/origin when released
+    ---
+    - dragConstraints:
+        This will define a distance for the name edge of the draggable component
+        You can pass in an object of optional (top, left, bottom, right) values measured in pixels
+        e.g:
+            <motion.div drag="x" dragConstraints={{left:0, right:300}} />
+        Or you can pass in the ref to another component
+        e.g:
+            const MyComponent = () => {
+                const container = useRef(null)
+                return (
+                    <motion.div ref={container}>
+                        <motion.div drag dragConstraints={container} />
+                    </motion.div>
+                )
+            }
+    ---
+    - dragElastic:
+        The degree of movement allowed outside constraints, 0 = no movement, 1 = full movement,
+        it is set to 0.5 by default
+            <motion.div drag="x" dragConstraints={{left:0, right:300}} dragElastic={0.2} />
+    - dragMomentum:
+        Applies momentum to the component when dragging finishes. set to "true" by default
+        {This drag momentum gives it that phone scroll feeling, might as well call it smooth scroll}
+            <motion.div drag dragMomentum={false} />
+    - dragPropagation
+        Allows drag gesture propagation to child components. Set to false by default
+        e.g: <motion.div drag dragPropagation={true} />
+    ---
+    - onDrag, onDragStart, onDragEnd, onDirectionLock
+        <motion.div
+            drag
+            onDrag={(event, info) => {console.log(event, info)}}
+            onDragStart={(event, info) => {console.log(event, info)}}
+            onDragEnd={(event, info) => {console.log(event, info)}}
+            onDirectionLock={(axis) => {console.log(axis)}}
+        />
+        // onDirectionLock is a callback function that fires when a drag direction is determined
 
