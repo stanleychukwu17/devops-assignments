@@ -25,6 +25,8 @@
 10. Tell us about the useVelocity hook,
     write down at-least one example of using the useVelocity hook and go-through the other one
 
+----------
+
 11. Talk about the useAnimationControls hook and give examples
 11.1 how do you use variant variables in useAnimationControls 
 11.2 useAnimationControls for sequence animations, show an example of using sequence to open a menu
@@ -42,8 +44,6 @@
     - talk about whileHover
     - talk about whileTap
 
-----------
-
 16. Talk about Layout animations
     - customizing layout animation duration
     - talk about layout scroll prop
@@ -55,11 +55,12 @@
     - talk about dragElastic
     - talk about dragMomentum
     - talk about dragPropagation
+    - talk about dragTransition
     - talk about onDrag, onDragStart, onDragEnd, onDirectionLock
 
-17.1 
+17.1
     - talk about useDragControls
-    - talk about useDragListener
+    - talk about dragListener
 
 18. tell us about these transition properties {when, delayChildren, staggerChildren, staggerDirection}
     - talk about dynamic variant
@@ -69,3 +70,22 @@
 
 20. Talk about event propagation(i.e bubbling up of an event)
     talk about the whileInView animation
+
+----------
+21. transitions
+    - List 3 types of transition
+    - Types of built-in named easing functions
+    - How do you ease with cubic-beiZer
+    - how do you specify different easing functions for different "times" for different "keyframe" values
+    - how do you repeat an animation + specify a repeat type & specifying a delay for the repeat
+
+22. Read the answer - on supported values
+
+23. Transform origin
+    - how do you set origin of x,y,z axis (use number and text)
+    - what properties do you animate when animating an svg
+
+24. - List some animation props that can be received by a motion component
+    - List some animation events that can be received by a motion component
+
+25. What is MotionConfig and how can you use it?
