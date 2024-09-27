@@ -76,8 +76,8 @@
     - List 3 types of transition
     - Types of built-in named easing functions
     - How do you ease with cubic-beiZer
-    - how do you specify different easing functions for different "times" for different "keyframe" values
-    - how do you repeat an animation + specify a repeat type & specifying a delay for the repeat
+    - How do you specify different easing functions for different "times" for different "keyframe" values
+    - How do you repeat an animation + specify a repeat type & specifying a delay for the repeat
 
 22. Read the answer - on supported values
 

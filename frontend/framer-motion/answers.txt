@@ -472,3 +472,90 @@
 
 ----------
 
+21.
+    - List 3 types of transition:
+        tween | spring | inertia
+
+    - Types of built-in named easing functions:
+        "linear"
+        easeIn, easeOut, easeInOut
+        circIn, circOut, circInOut
+        backIn, backOut, backInOut
+        anticipate
+
+    - How do you ease with cubic-beiZer:
+        ease: [0.17, 0.67, 0.83, 0.67] # x1,y1, x2,y2
+
+    - How do you specify different easing functions for different "times" for different "keyframe" values
+        visible: {
+            x: [0, 50, 100, 0],
+            transition: {
+                x: {
+                    times: [0, 0.3, 0.6, 1]
+                    ease: ["easeIn", "easeOut", "circIn"]
+                    repeat: Infinity
+                    repeatDelay: 0.2
+                }
+            }
+        }
+
+    - How do you repeat an animation + specify a repeat type & specifying a delay for the repeat
+        <motion.div
+            ...
+            transition={{
+                repeat: number(i.e number of times) | Infinity 
+                repeatType: loop | reverse | mirror
+                repeatDelay time_in_seconds
+            }}
+        />
+        repeatType explanation:
+        - loop: Repeats the animation from the start
+        - reverse: Alternates btw forward and backwards playback
+        - mirror: switches from and to alternately
+
+22. 
+    value types that can be animated by motion:
+        - Numbers: 0, 1000 e.t.c
+        - Strings containing numbers: "0vh", "10px" e.t.c"
+        - colors: hex, rgba, hsla
+        - complex stings containing multiple numbers and colors (i.e "10px 0 #000")
+
+    value type conversions:
+        For html properties like x, y, width, height, top, left, bottom, right. their values can be animated
+        freely between different value types. e.g
+        -
+        <motion.div
+            initial={{x: "100"}}
+            animate={{x: "calc(100vw-50%)"}}
+        />
+        -
+        Additionally, any color type (hex, hsl, rgb) can animate btw each other
+
+23.
+    - how do you set origin of x,y,z axis (use number and text)
+        {originX: 0.5, originY: .07, originZ: 1}
+        {originX: left|center|right|top|bottom}
+    
+    - what properties do you animate when animating an svg
+    pathOffset, pathLength
+
+24.
+    - List some animation props that can be received by a motion component
+        initial, animate, variants, transition, exit, style
+
+    - List some animation events that can be received by a motion component
+        onUpdate, onAnimationStart, onAnimationComplete
+        see more info on Book-19, Page 22
+
+25. 
+    MotionConfig can be used to set configurations for all child motion components. Currently, it only
+    accepts one prop, transition
+    e.g:
+    import {motion, MotionConfig} from "framer-motion"
+    <MotionConfig transition={{duration:1}}>
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} />
+    </MotionConfig>
+
+
+
+
