@@ -108,6 +108,7 @@
         mass: it is the weight of the element, the higher the mass the slower the spring effect in
             terms of the element movement, the lower the mass the faster the movement
         bounce: the lower the number, the higher the bouncing of the element
+        velocity: specify the velocity at which you want the object to move
     }
 
 9. The useTransform hook creates a new motion value that transforms the output of one or more motion values
@@ -129,6 +130,8 @@
     const x = useMotionValue(0)
     const y = useTransform(x, latestX => Math.cos(value/10) * 50) // creates a wavy effect
     return <motion.div style={{x,y}} />
+
+----------
 
 10. Creates a motion value that tracks the velocity of another motion value. it accepts a motion value
     and returns a new one that updates with the provided motion values velocity
@@ -212,7 +215,6 @@
         controls.start("hover", {duration: .5, ease:"easeIn"}) // i.e (definition, transitionOverride)
         controls.start({x:0, transition: {duration: 1}})
     .stop(): stops the animation at the current timeline
-
 
 12. useAnimationFrame: is an animation loop that provides the latest frame time to the provided
     callback function, it runs a callback once every animation frame 
@@ -340,9 +342,17 @@
         Applies momentum to the component when dragging finishes. set to "true" by default
         {This drag momentum gives it that phone scroll feeling, might as well call it smooth scroll}
             <motion.div drag dragMomentum={false} />
-    - dragPropagation
+    - dragPropagation:
         Allows drag gesture propagation to child components. Set to false by default
         e.g: <motion.div drag dragPropagation={true} />
+    - dragTransition:
+        dragTransition:inertiaOptions
+        Allows you to change dragging inertia parameters. when releasing a draggable frame, an animation with type
+        inertia starts. The animation is based on your dragging velocity. This property allows you to customize it
+        <motion.div
+            drag
+            dragTransition={{bounceStiffness: 600, bounceDamping: 10}}
+        />
     ---
     - onDrag, onDragStart, onDragEnd, onDirectionLock
         <motion.div
@@ -353,4 +363,112 @@
             onDirectionLock={(axis) => {console.log(axis)}}
         />
         // onDirectionLock is a callback function that fires when a drag direction is determined
+
+17.1
+    - useDragControls: This hook is useful when you want to initiate dragging from a different component
+        other than the draggable one. the hook exposes a "start" method that can start dragging from
+        pointerDown events
+        e.g:
+        const dragControls = useDragControls()
+        -
+        function startDrag (event) {
+            dragControls.start(event)
+        }
+        -
+        return (
+            <>
+                <motion.div drag="x" onPointerDown={startDrag}>...</motion.div>
+                <motion.div drag="x" dragControls={dragControls}>...</motion.div>
+            </>
+        )
+    ---
+    - dragListener:
+        Determines whether to trigger the drag gesture from event listeners. if passing dragControls,
+        setting this to false will ensure that dragging can only be initiated by the controls, rather than a
+        pointerDown event on the draggable element. The default is set to true.
+        -
+        <motion.div drag="x" dragListener={false} dragControls={dragControls} />
+
+18. 
+    -
+    when: "beforeChildren"|"afterChildren"
+        if an animation should play before it's children animation or after the children animation has
+        been completed
+    delayChildren: <time_in_seconds>
+        how long to delay the children animation before they can start
+    staggerChildren: <time_in_seconds>
+        a delay between each child animation
+    staggerDirection:
+    ---
+    - dynamic variant:
+        const variant = {
+            visible: i => ({x: 50, transition:{delay:i*0.3}})
+        }
+        -
+        return items.map((item, index) => {
+            <motion.li custom={index} animate={visible} variants={variant}>
+                {item}
+            </motion.li>
+        })
+
+19. 
+    -
+    const MyComponent = () => {
+        const [scope, animate] = useAnimate()
+        useEffect(() => {
+            const animation = async() => {
+                await animate(scope.current, {x:"100%"})
+                animate("li", {opacity:1})
+            }
+
+            animation()
+        }, [])
+
+        return (
+            <ul ref={scope}>
+                <li />
+                <li />
+            </ul>
+        )
+    }
+    ---
+    - what can it be used for:
+    It can be used to animate any HTML/SVG elements
+    Create complex sequence of animations
+    Control animations with time, speed, play(), pause() and other playback controls
+    Animate single motion values
+    e.g:
+    const count = useMotionValue(0)
+    const rounded = useTransform(count, (latest) => Math.round(latest))
+    useEffect(() => {
+        const animation = animate(count, 100, {
+            type:"spring", stiffness:200, duration:10, onComplete: (x) => {...}
+        })
+
+        return animation.stop
+    })
+
+20.
+    - Propagation
+        Children can stop pointer events from propagating to their parents. e.g:
+        <motion.div whileTap={{scale:2}}>
+            <button onPointerDownCapture={e => e.stopPropagation()} />
+        </motion.div>
+
+    ---
+    - whileInView
+        using variant-variable
+        <motion.div initial="hidden" whileInView="visible" viewport={{once:true}} />
+        -
+        using targetOptions
+        <motion.div
+            initial={opacity: 0}
+            whileInView={opacity: 1}
+            viewport={{
+                root:scrollable_containerRef,
+                amount:some|all|number(default is some, where some = 0)
+            }}
+        />
+
+----------
 
