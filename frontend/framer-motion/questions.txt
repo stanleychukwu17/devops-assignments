@@ -89,3 +89,22 @@
     - List some animation events that can be received by a motion component
 
 25. What is MotionConfig and how can you use it?
+
+26. - Re-order, create a component with a list of items that can be re-ordered using framer-motion
+    - how can we use dragControls with the re-order component?
+
+27. - List all motion values hooks again(they're 8)
+    - List and talk about methods of these hooks
+    - Talks about the hook useMotionValueEvent
+
+{
+    extend useAnimate hook on question 19
+    -
+    animate the presence of a component use the useAnimate and usePresence hook
+}
+
+{
+    add the touch-action: none to the useDragControls explanation page-34
+}
+
+29. The animate function
