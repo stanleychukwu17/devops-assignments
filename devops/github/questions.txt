@@ -1,6 +1,7 @@
 1. Config default username & email
 
-2. how to see all commit messages in a repo, then how to see it in one-line
+2.  - how to see all commit messages in a repo
+    - then how to see it in one-line
 
 3. How do you modify commits to include files you did not add + modify the commit message
 
@@ -14,7 +15,7 @@
     - See all remote and local branches at once
 
 5. Switch to a newly created branch
-- Switch while creating a new branch using the *Switch* command
+    - Switch while creating a new branch using the *Switch* command
 
 6. what happens when you try to Switch from one branch to another (
     1. and the current branch has un-committed changes
@@ -48,5 +49,5 @@
 
 18. Write a command to fetch from origin/main and another command to fetch from origin/new-page/promo
 
-19. write a command to pull from origin/main branch and another command to pull from  origin/new-page/promo
+19. write a command to pull from origin/main branch and another command to pull from origin/new-page/promo
     - what happens when you do a git pull, especially if they are conflicts
