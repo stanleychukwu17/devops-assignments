@@ -3,9 +3,9 @@
     Plan:
     Apply
 
-2.  terraform is nothing without providers, every terraform project, you need to specify a provider, there are providers
-    for every major cloud infrastructure platform, these providers can be compared to your nodejs packages,
-    in these providers are the code that will be used to provision your infrastructure
+2.  terraform is nothing without providers, every terraform project, you need to specify a provider, there are
+    providers for every major cloud infrastructure platform, these providers can be compared to your nodejs
+    packages, in these providers are the code that will be used to provision your infrastructure
 
 3.
     terraform {
@@ -92,7 +92,8 @@
 
 16. terraform.tfvars does not compile with the other terraform files(i.e .tf files) into a single module
     - terraform.tfvars stores only the values. no description, no type
-    - variables.tf stores everything, the default, description, type arguments can all be passed into variables in the variable block
+    - variables.tf stores everything, the (default, description & type) arguments can all be passed
+        into variables in the variable block
 
 17. touch production.tfvars
     terraform apply -auto-approve -var-file=production.tfvars
@@ -122,7 +123,8 @@
     environment variables "TF_VAR_*"
 
 20. A route table is a virtual router within your vpc, it controls routing for all subnets within the vpc
-    An Internet Gateway: it allows communication between instances in a Virtual Private Cloud (VPC) and the internet
+    An Internet Gateway: it allows communication between instances in a Virtual Private Cloud (VPC) and
+        the internet
 
 21. - An aws_security_group is an aws managed service that determines if internet traffic are permitted
         into or out of an instance
