@@ -3,3 +3,8 @@ https://chatgpt.com/c/aef5876d-b1d1-4c48-b67d-88a37e915ed5
 
 # solve the assignments in my chatGPT assignments
 https://chatgpt.com/c/4751383b-a984-427a-a18c-e19f6b33e2ee
+
+# study them if you understand what's going on
+https://github.com/apollographql/apollo-client-nextjs/blob/main/.github/workflows/publish.yml
+https://github.com/calcom/cal.com/actions/runs/11012120548?pr=16735
+https://github.com/calcom/cal.com/actions/runs/11012120548/workflow?pr=16735#L163
