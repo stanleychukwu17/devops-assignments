@@ -131,8 +131,6 @@
     const y = useTransform(x, latestX => Math.cos(value/10) * 50) // creates a wavy effect
     return <motion.div style={{x,y}} />
 
-----------
-
 10. Creates a motion value that tracks the velocity of another motion value. it accepts a motion value
     and returns a new one that updates with the provided motion values velocity
     e.g:
@@ -161,6 +159,8 @@
         )
     }
 
+----------
+
 11. useAnimationControls can create animation controls that can be used to start/stop animations on one or
     more motion components or multiple animations together
     e.g
@@ -178,7 +178,7 @@
         return <motion.div animate={controls} onClick={takeItBack} />
     }
 
-11.1    controls.start("hidden")
+11.1 controls.start("hidden")
         controls.start("visible")
         controls.start("hover")
 
@@ -377,7 +377,7 @@
         -
         return (
             <>
-                <motion.div drag="x" onPointerDown={startDrag}>...</motion.div>
+                <motion.div onPointerDown={startDrag}>...</motion.div>
                 <motion.div drag="x" dragControls={dragControls}>...</motion.div>
             </>
         )
@@ -398,7 +398,9 @@
         how long to delay the children animation before they can start
     staggerChildren: <time_in_seconds>
         a delay between each child animation
-    staggerDirection:
+    staggerDirection: 1 or -1
+        where 1 is to stagger from top to bottom(Asc)
+        And -1 is to stagger from bottom to top(Desc)
     ---
     - dynamic variant:
         const variant = {
@@ -416,7 +418,7 @@
     const MyComponent = () => {
         const [scope, animate] = useAnimate()
         useEffect(() => {
-            const animation = async() => {
+            const animation = async () => {
                 await animate(scope.current, {x:"100%"})
                 animate("li", {opacity:1})
             }
@@ -447,12 +449,14 @@
 
         return animation.stop
     })
-
+    return <motion.div> {rounded} </motion.div>
 20.
     - Propagation
         Children can stop pointer events from propagating to their parents. e.g:
         <motion.div whileTap={{scale:2}}>
             <button onPointerDownCapture={e => e.stopPropagation()} />
+            <div>...</div>
+            <div>...</div>
         </motion.div>
 
     ---
@@ -555,7 +559,6 @@
     <MotionConfig transition={{duration:1}}>
         <motion.div initial={{opacity:0}} animate={{opacity:1}} />
     </MotionConfig>
-
 
 
 

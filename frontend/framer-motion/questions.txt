@@ -8,7 +8,7 @@
 
 4. Tell us about useMotionTemplate and give an example of how to use it
 
-5. Tell us about useScroll and give an example of how to use it
+5. Tell us about useScroll and give an example of how to use to display page scroll progress bar
 -
 6. How can you track the scrolling in a scrollable element using the useScroll hook
 -
@@ -91,11 +91,12 @@
 25. What is MotionConfig and how can you use it?
 
 26. - Re-order, create a component with a list of items that can be re-ordered using framer-motion
+    - how do you change the <Reorder.Group> default element used to render your items
     - how can we use dragControls with the re-order component?
 
 27. - List all motion values hooks again(they're 8)
     - List and talk about methods of these hooks
-    - Talks about the hook useMotionValueEvent
+    - Talk about the hook useMotionValueEvent
 
 {
     extend useAnimate hook on question 19
