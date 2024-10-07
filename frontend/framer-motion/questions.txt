@@ -94,7 +94,7 @@
     - how do you change the <Reorder.Group> default element used to render your items
     - how can we use dragControls with the re-order component?
 
-27. - List all motion values hooks again(they're 8)
+27. - List at-least 5 motion value hooks (they're 9 in total)
     - List and talk about methods of these hooks
     - Talk about the hook useMotionValueEvent
 
