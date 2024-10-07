@@ -560,5 +560,54 @@
         <motion.div initial={{opacity:0}} animate={{opacity:1}} />
     </MotionConfig>
 
+26. 
+    The Reorder component can be used to crate drag-to-reorder lists, like reOrderable tabs or todo items e.g:
+        import {Reorder} from "framer-motion"
+        import {useState} from "react"
 
+        function List () {
+            const [items, setItems] = useState([0,1,2,3,4,5,6,7])
 
+            return (
+                <Reorder.Group axis="y" values={items} onReorder={setItems}>
+                    {items.map(item => (
+                        <Reorder.Item key={item} value={item}>
+                            {item}
+                        </Reorder.Item>
+                    ))}
+                </Reorder.Group>
+                
+            )
+        }
+
+    ---
+    - how do you change the <Reorder.Group> default element used to render your items
+        By default, the rendered item is <ul> but you can change this by using the "as" prop, i.e:
+        <Reorder.Group as="ol">
+    ---
+    - how can we use dragControls with the re-order component?
+        import {Reorder, useDragControls} from "framer-motion"
+
+        function EachItem ({value}) {
+            const controls = useDragControls()
+            return (
+                <Reorder.Item value={value} dragListener={false}> dragControls={controls}>
+                    <div>{value}</div>
+                    <div onPointerDown={ e => controls.start(e) } />
+                </Reorder.Item>
+            )
+        }
+
+27.
+    - List at-least 5 motion value hooks (they're 9 in total)
+    useMotionValue          useMotionTemplate           useScroll           useSpring
+    useSpring               useTime                     useTransform        useVelocity
+    useMotionValueEvent
+
+    - List and talk about methods of these hooks
+        .get()  .set()  .getVelocity()  .jump(newValue)     .stop()
+        .isAnimating() 
+        .on(event, ()=>{}) event: change | animationStart | animationComplete | animationCancel
+
+    - Talk about the hook useMotionValueEvent
+    
