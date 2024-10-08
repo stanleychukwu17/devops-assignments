@@ -6,9 +6,9 @@
     <motion.div style={{x,y}} />
 
     - some of the methods for useMotionValue are
-    .get()  .set()  .stop() .velocity() .destroy()
+    .get()  .set()  .stop() .velocity() .destroy() .jump()
 
-2.  const x = useMotionValue(0)
+2.  const x = useMotionValue(-200)
     const opacity = useTransform(x, [-200, 0, 200], [0,1,0])
     -
     return <motion.div drag="x" style={{x, opacity}} />
@@ -134,7 +134,7 @@
 10. Creates a motion value that tracks the velocity of another motion value. it accepts a motion value
     and returns a new one that updates with the provided motion values velocity
     e.g:
-    const pink = (saturation: number) => {
+    const pink = (saturation: number): string => {
         return `hsl(327, ${saturation}%, 50%)`
     }
     const HomeComp = () => {
@@ -178,7 +178,7 @@
         return <motion.div animate={controls} onClick={takeItBack} />
     }
 
-11.1 controls.start("hidden")
+11.1    controls.start("hidden")
         controls.start("visible")
         controls.start("hover")
 
@@ -263,11 +263,12 @@
             cx: [300,600],
             cy: [400,0,400],
             transition: {
-                cx: {times: [0,1], duration: 1},
+                cx: {times: [0, 1], duration: 1},
                 cy: {times: [0, 0.5, 1], duration: 1},
             }
         }}
     />
+
 
     e.g:2
     variant = {
