@@ -269,6 +269,10 @@
         }}
     />
 
+    times: [0, 1] is mapping the keyframe [300,600] to [0, 1] which is saying let 300 occur at time 0% and
+        let 600 occur at 100%
+    times: [0, 0.5, 1] is mapping the keyframe [400,0,400] to [0, 0.5, 1] which is saying let 400 occur at time 0% and
+        let 0 occur at 50% and finally let 400 occur at 100%
 
     e.g:2
     variant = {
