@@ -1,5 +1,5 @@
 1. Talk about useMotionValue
-    - List some of the useMotionValue methods
+    - List some of the useMotionValue methods (6 methods)
 
 2. use the useMotionValue and useTransform on a drag element
 
@@ -8,10 +8,8 @@
 
 4. Tell us about useMotionTemplate and give an example of how to use it
 
-5. Tell us about useScroll and give an example of how to use to display page scroll progress bar
--
-6. How can you track the scrolling in a scrollable element using the useScroll hook
--
+5. Tell us about useScroll and give an example of how to use it to display page scroll progress bar
+6. How can you track the scrolling in a scrollable element using the useScroll hook (track scroll in x-axis)
 7. How do you track the scroll progress on an element that is not scrollable (i.e the scroll progress of
     an element as it enters and leaves the viewport)
     - explain the offset option provided
