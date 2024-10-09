@@ -83,8 +83,8 @@
     - how do you set origin of x,y,z axis (use number and text)
     - what properties do you animate when animating an svg
 
-24. - List some animation props that can be received by a motion component
-    - List some animation events that can be received by a motion component
+24. - List some animation props that can be received by a motion component (6 props)
+    - List some animation events that can be received by a motion component (3 events)
 
 25. What is MotionConfig and how can you use it?
 
@@ -92,13 +92,12 @@
     - how do you change the <Reorder.Group> default element used to render your items
     - how can we use dragControls with the re-order component?
 
-27. - List at-least 5 motion value hooks (they're 9 in total)
+27. - List at-least 5 motion value hooks (they're 8 in total)
     - List and talk about methods of these hooks
     - Talk about the hook useMotionValueEvent
 
 {
     extend useAnimate hook on question 19
-    -
     animate the presence of a component use the useAnimate and usePresence hook
 }
 
