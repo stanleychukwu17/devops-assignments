@@ -467,7 +467,7 @@
     ---
     - whileInView
         using variant-variable
-        <motion.div initial="hidden" whileInView="visible" viewport={{once:true}} />
+        <motion.div variants={boxVariant} initial="hidden" whileInView="visible" viewport={{once:true}} />
         -
         using targetOptions
         <motion.div
@@ -542,11 +542,11 @@
 
 23.
     - how do you set origin of x,y,z axis (use number and text)
-        {originX: 0.5, originY: .07, originZ: 1}
+        {originX: 0.5, originY: 0.7, originZ: 1}
         {originX: left|center|right|top|bottom}
     
     - what properties do you animate when animating an svg
-    pathOffset, pathLength
+        pathOffset, pathLength
 
 24.
     - List some animation props that can be received by a motion component
@@ -581,7 +581,6 @@
                         </Reorder.Item>
                     ))}
                 </Reorder.Group>
-                
             )
         }
 
@@ -595,6 +594,7 @@
 
         function EachItem ({value}) {
             const controls = useDragControls()
+
             return (
                 <Reorder.Item value={value} dragListener={false}> dragControls={controls}>
                     <div>{value}</div>
@@ -604,10 +604,9 @@
         }
 
 27.
-    - List at-least 5 motion value hooks (they're 9 in total)
+    - List at-least 5 motion value hooks (they're 8 in total)
     useMotionValue          useMotionTemplate           useScroll           useSpring
-    useSpring               useTime                     useTransform        useVelocity
-    useMotionValueEvent
+    useTime                 useTransform                useVelocity         useMotionValueEvent
 
     - List and talk about methods of these hooks
         .get()  .set()  .getVelocity()  .jump(newValue)     .stop()
@@ -615,4 +614,16 @@
         .on(event, ()=>{}) event: change | animationStart | animationComplete | animationCancel
 
     - Talk about the hook useMotionValueEvent
-    
+        useMotionValueEvent manages MotionValue event handlers throughout the lifecycle of a React component.
+        Whenever the component is unmounted, the event handler will be safely unsubscribed automatically.
+        -
+        e.g:
+        function Component () {
+            const x = useMotionValue(0)
+
+            useMotionValueEvent(x, "animationStart", () => { console.log("animation started") })
+            useMotionValueEvent(x, "change", (latest) => { console.log(latest) })
+            useMotionValueEvent(x, "animationComplete", () => { console.log("animation completed") })
+
+            return <motion.div drag="x" style={{x}} />
+        }
