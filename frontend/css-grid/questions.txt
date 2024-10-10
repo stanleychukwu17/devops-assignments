@@ -1,13 +1,13 @@
 1. Talk about grids
 
-2.  what are grid lines?
+2.  - what are grid lines?
     - using a diagram, draw a grid with 6 columns and 4 rows, then highlight the grid lines
         {7-grid-column-lines, 5-grid-row-lines}
 
 3. What is grid-gap or gap, write down the syntax(2 types)
 
-4. How do you tell your grid how many columns and rows to have
-    - give us a grid with (4 columns @300px), (2 columns @20px), (3 rows @50px) (2 rows @100px)
+4.  - How do you tell your grid how many columns and rows to have
+    - give us a grid with (4 columns @300px), (2 columns @020px), (3 rows @50px) (2 rows @100px)
 
 4.1 Explain
     - grid-column: 3 / -1
@@ -16,7 +16,7 @@
 
 5. Explain these terms, and give examples
     - display: grid
-    - gap: 10px, gap 15px 10px
+    - gap 15px 10px
     - grid-template-columns:
     - grid-template-rows:
     - grid-template-areas:
