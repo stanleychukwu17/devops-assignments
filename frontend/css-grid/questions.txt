@@ -1,0 +1,120 @@
+1. Talk about grids
+
+2.  what are grid lines?
+    - using a diagram, draw a grid with 6 columns and 4 rows, then highlight the grid lines
+        {7-grid-column-lines, 5-grid-row-lines}
+
+3. What is grid-gap or gap, write down the syntax(2 types)
+
+4. How do you tell your grid how many columns and rows to have
+    - give us a grid with (4 columns @300px), (2 columns @20px), (3 rows @50px) (2 rows @100px)
+
+4.1 Explain
+    - grid-column: 3 / -1
+    - grid-row: 1 / -1
+    - grid-area: 3/1/-1/-1
+
+5. Explain these terms, and give examples
+    - display: grid
+    - gap: 10px, gap 15px 10px
+    - grid-template-columns:
+    - grid-template-rows:
+    - grid-template-areas:
+    - grid-column
+    - grid-row
+    - grid-area
+
+6. Explain the following:
+    - grid-column: 1 / span 3
+    - grid-column: span 3
+    - grid-column: span 1
+    - grid-column: 2 / 6
+    - grid-column: 1 / 7
+    - grid-column: 2
+    - grid-column: 5
+    - grid-column: 1 / -1
+    - grid-column: 3 / -1
+
+7. Explain the following
+    - grid-template-columns: 100px 200px 300px
+    - grid-template-rows: repeat(2, 1fr) repeat(3, 200px)
+
+8. Talk about
+    justify-content & align-content
+    justify-items & align-items
+    justify-self & align-self
+
+9. Explain
+    .container {
+        display: grid
+        grid-template-columns: 100px 200px 300px
+        grid-template-rows: repeat(2, 1fr) repeat(3, 200px)
+    }
+    - in the rows: what will be the final value for 1fr
+    - in the columns: what will be the final value for 2fr and 1fr
+
+10. Explain
+    grid-template-rows: repeat(3, 100px), repeat(2, 1fr)
+    grid-template-columns: repeat(3, 200px), repeat(2, 1fr)
+
+11. Draw the following diagram using the html & css below:
+    <div class="container">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+    .container {
+        display: grid
+        grid-template-rows: repeat(5, 100px)
+        grid-template-columns: repeat(5, 100px)
+    }
+
+12. From the diagram @ what will be the grid-column and grid-row for .item1, .item2 & .item3
+
+13. When 2 or more grid items overlap each other, how do you organize them to have your choice on top
+    e.g overlap .item1 over .item3
+
+14. - What is grid-area and what is it syntax
+    - Using grid-area, replace grid-column & grid-row for .item1, .item2 & .item3
+
+15. Explain
+    .container {
+        display: grid
+        grid-template-rows: repeat(5, 100px)
+        grid-template-columns: repeat(5, 100px)
+        grid-template-areas:
+        "   .   .   .   .   ."
+        "   .   .   .   .   ."
+        "   .   .   .   .   ."
+        "   .   .   .   .   ."
+        "   .   .   .   .   ."
+        ;
+    }
+
+16. Draw out the layout for the grid template
+    .container {
+        display: grid
+        grid-template-rows: repeat(5, 100px)
+        grid-template-columns: repeat(5, 100px)
+        grid-template-areas:
+        "   item3       .           .           .           .           .       "
+        "   item3       item2       item2       item2       item2       item2   "
+        "   item3       item1       item1       .           .           .       "
+        "   item3       item1       item1       .           .           .       "
+        "   .           .           .           .           .           .       "
+        ;
+    }
+
+17. From the template below, what will be the grid-template-area
+    {use illustrator to draw the template}
+
+18. How do you make a product display card responsive
+    e.g i want 6 items columns on desktop
+        i want 3 items columns on tablet
+        i want 1 item column on phone
+
+    - use media-query to solve it
+    - use auto-fit
+
+19. what is the difference between auto-fit and auto-fill
+
