@@ -59,6 +59,7 @@
 17.1
     - talk about useDragControls
     - talk about dragListener
+    - what do you do on touch-screen devices when using useDragControls?
 
 
 18. tell us about these transition properties {when, delayChildren, staggerChildren, staggerDirection}
@@ -98,8 +99,4 @@
     - List and talk about methods of these hooks
     - Talk about the hook useMotionValueEvent
 
-{
-    add the touch-action: none to the useDragControls explanation page-34
-}
-
-29. The animate function
+28. The animate function
