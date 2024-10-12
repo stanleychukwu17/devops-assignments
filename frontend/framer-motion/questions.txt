@@ -99,4 +99,11 @@
     - List and talk about methods of these hooks
     - Talk about the hook useMotionValueEvent
 
-28. The animate function
+28. Talk about the useReducedMotion hook
+
+29. - The animate function
+    - Animating a single value
+    - Animating a motion value hook
+    - animating html/svg element
+    - animate sequences
+    - using stagger for delays
