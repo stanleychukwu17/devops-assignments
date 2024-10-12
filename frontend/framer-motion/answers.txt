@@ -663,3 +663,17 @@
 
             return <motion.div drag="x" style={{x}} />
         }
+
+28.
+    useReducedMotion hook is used to check if a user prefers reduced motion
+    e.g
+    import {useReducedMotion} from "framer-motion"
+
+    const prefersReducedMotion = useReducedMotion()
+    const closeX = prefersReducedMotion ? 0 : "-100%"
+    <motion.div animate={{opacity: isOpen ? 1:0, x:isOpen ? 0 : closedX}}
+
+29.
+    The animate function is a function that manually starts and controls animations
+    
+
