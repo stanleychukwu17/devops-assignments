@@ -386,7 +386,6 @@
                 <motion.div drag="x" dragControls={dragControls}>...</motion.div>
             </>
         )
-    ---
     - dragListener:
         Determines whether to trigger the drag gesture from event listeners. if passing dragControls,
         setting this to false will ensure that dragging can only be initiated by the controls, rather than a
@@ -419,42 +418,75 @@
         })
 
 19. 
-    -
-    const MyComponent = () => {
-        const [scope, animate] = useAnimate()
-        useEffect(() => {
-            const animation = async () => {
-                await animate(scope.current, {x:"100%"})
-                animate("li", {opacity:1})
-            }
+    - Talk about useAnimate hook
+        const MyComponent = () => {
+            const [scope, animate] = useAnimate()
+            useEffect(() => {
+                const animation = async () => {
+                    await animate(scope.current, {x:"100%"})
+                    animate("li", {opacity:1})
+                }
 
-            animation()
-        }, [])
+                animation()
+            }, [])
 
-        return (
-            <ul ref={scope}>
-                <li />
-                <li />
-            </ul>
-        )
-    }
-    ---
+            return (
+                <ul ref={scope}>
+                    <li />
+                    <li />
+                </ul>
+            )
+        }
     - what can it be used for:
-    It can be used to animate any HTML/SVG elements
-    Create complex sequence of animations
-    Control animations with time, speed, play(), pause() and other playback controls
-    Animate single motion values
-    e.g:
-    const count = useMotionValue(0)
-    const rounded = useTransform(count, (latest) => Math.round(latest))
-    useEffect(() => {
-        const animation = animate(count, 100, {
-            type:"spring", stiffness:200, duration:10, onComplete: (x) => {...}
-        })
+        It can be used to animate any HTML/SVG elements
+        Create complex sequence of animations
+        Control animations with time, speed, play(), pause() and other playback controls
+        Animate single motion values
+        e.g:
+        const count = useMotionValue(0)
+        const rounded = useTransform(count, (latest) => Math.round(latest))
+        useEffect(() => {
+            const animation = animate(count, 100, {
+                type:"spring", stiffness:200, duration:10, onComplete: (x) => {...}
+            })
 
-        return animation.stop
-    })
-    return <motion.div> {rounded} </motion.div>
+            return animation.stop
+        })
+        return <motion.div> {rounded} </motion.div>
+    - use the useAnimate & usePresence hooks to animate a component when it exits the dom
+        import {useAnimate, usePresence} from "framer-motion"
+
+        function Component() {
+            const [isPresent, safeToRemove] = usePresence()
+            const [scope, animate] = useAnimate()
+
+            useEffect(() => {
+                if (isPresent) {
+                    const enterAnimation = async () => {
+                        await animate(scope.current, {opacity:1})
+                        await animate("li", {opacity:1, x:0})
+                    }
+
+                    enterAnimation()
+                } else {
+                    const exitAnimation = async () => {
+                        await animate("li", {opacity:0, x:-100})
+                        await animate(scope.current, {opacity:0})
+                        safeToRemove()
+                    }
+
+                    exitAnimation()
+                }
+            }, isPresent)
+
+            return (
+                <ul ref={scope}>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                </ul>
+            )
+        }
 20.
     - Propagation
         Children can stop pointer events from propagating to their parents. e.g:
