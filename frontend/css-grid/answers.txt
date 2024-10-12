@@ -59,3 +59,59 @@
     - grid-column: 3 / -1
         start from grid-column-line 3, and stop at the last grid-column-line
 
+7.
+    - grid-template-columns: 100px 200px 300px
+        we are creating 3 columns, the 1st_col=100px; 2nd_col=200px; 3rd_col=300px;
+    - grid-template-rows: repeat(2, 1fr) repeat(3, 200px)
+        we are creating a total of 5 rows
+        the first 2 rows will take 1 fraction each from what is left after the (3, 200px)
+        takes up their place (since their size are fixed, but fraction sizes are not fixed,
+        they are dynamic and calculate their sizes based on the remaining available space)
+
+8.
+    justify-content & align-content
+        justify-content and align-content affect the way a grid is displayed if they are any spaces left
+        if the grid cell
+        -
+        justify-content aligns items along the horizontal axis(i.e x-axis)
+        align-content aligns items along the vertical axis(i.e y-axis)
+    justify-items & align-items
+        justify-items & align-items affect the children of the grid-items (i.e if the children do not fully
+        occupy total grid-cell assigned to the parent)
+        -
+        justify-items aligns the children along the horizontal axis(i.e x-axis)
+        align-items aligns the children along the vertical axis(i.e y-axis)
+    justify-self & align-self
+        justify-self: this is used on the item it-self on the x-axis, it overrides the justify-items
+        settings from the parent
+        align-item: this is used on the item it-self on the y-axis, it overrides the justify-items
+        settings from the parent
+
+9. 
+    - for the row:
+        grid-template-rows: 100px 50px 1fr
+        height: 1000px
+        -
+        we have 2 fixed rows which are 100px and 50px, so this row-sizes will first take their places, now
+        what will be left is 1000px - 100px - 50px = 850px, so 1fr of 850px = 50px
+        therefore 1fr = 850px
+    - for the column:
+        grid-template-columns: 100px 50px 2fr 1fr
+        width: 1000px
+        -
+        we have 2 fixed columns which are 100px and 50px, so this row-sizes will first take their places, now
+        what will be left is 1000px - 100px - 50px = 850px, now we have 2 relative sizes which are 2fr & 1fr,
+        i.e a total of 3fr, so to get the avg fr for the remaining width left(i.e 850px), we will do
+        avg_fr = 850px/3 = 283.3px
+        2fr = 2*283.3 = 566.6px
+        1fr = 283.3px
+
+10.
+    - grid-template-rows: repeat(3, 100px), repeat(2, 1fr):
+        this means, give us 3-rows @100px and 2-rows @1fr each
+    - grid-template-columns: repeat(3, 200px), repeat(2, 1fr):
+        this means, give us 3-columns @200px and 2-columns @1fr each
+
+11.
+    - 
+
