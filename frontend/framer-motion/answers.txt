@@ -392,6 +392,10 @@
         pointerDown event on the draggable element. The default is set to true.
         -
         <motion.div drag="x" dragListener={false} dragControls={dragControls} />
+    - what do you do on touch-screen devices when using useDragControls?
+        For touch screen devices, to prevent un-usual behaviors, we need to use this styling:
+        touch-action: none;
+        e.g <div onPointerDown={startDrag} style={{touchAction: none}} />
 
 18. 
     -
