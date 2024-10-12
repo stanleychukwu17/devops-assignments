@@ -60,11 +60,13 @@
     - talk about useDragControls
     - talk about dragListener
 
+
 18. tell us about these transition properties {when, delayChildren, staggerChildren, staggerDirection}
     - talk about dynamic variant
 
-19. Talk about useAnimate hook
-    what can it be used for
+19. - Talk about useAnimate hook
+    - what can it be used for
+    - use the useAnimate & usePresence hooks to animate a component when it exits the dom
 
 20. Talk about event propagation(i.e bubbling up of an event)
     talk about the whileInView animation
@@ -95,11 +97,6 @@
 27. - List at-least 5 motion value hooks (they're 8 in total)
     - List and talk about methods of these hooks
     - Talk about the hook useMotionValueEvent
-
-{
-    extend useAnimate hook on question 19
-    animate the presence of a component use the useAnimate and usePresence hook
-}
 
 {
     add the touch-action: none to the useDragControls explanation page-34
