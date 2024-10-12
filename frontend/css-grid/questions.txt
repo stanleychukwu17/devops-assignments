@@ -87,24 +87,24 @@
     - When 2 or more grid items overlap each other, how do you organize them to have your choice on top
         (overlap .item1 over .item3)
 
-14. - What is grid-area and what is it syntax
+12. - What is grid-area and what is it syntax
     - Using grid-area, replace grid-column & grid-row for .item1, .item2 & .item3
 
-15. Explain
+13. Explain
     .container {
         display: grid
         grid-template-rows: repeat(5, 100px)
         grid-template-columns: repeat(5, 100px)
         grid-template-areas:
-        "   .   .   .   .   ."
-        "   .   .   .   .   ."
-        "   .   .   .   .   ."
-        "   .   .   .   .   ."
-        "   .   .   .   .   ."
+        "   .   .   .   .   .   "
+        "   .   .   .   .   .   "
+        "   .   .   .   .   .   "
+        "   .   .   .   .   .   "
+        "   .   .   .   .   .   "
         ;
     }
 
-16. Draw out the layout for the grid template
+14. Draw out the layout for the grid template
     .container {
         display: grid
         grid-template-rows: repeat(5, 100px)
@@ -118,10 +118,10 @@
         ;
     }
 
-17. From the template below, what will be the grid-template-area
+15. From the template below, what will be the grid-template-area
     {use illustrator to draw the template}
 
-18. How do you make a product display card responsive
+16. How do you make a product display card responsive
     e.g i want 6 items columns on desktop
         i want 3 items columns on tablet
         i want 1 item column on phone
@@ -129,5 +129,5 @@
     - use media-query to solve it
     - use auto-fit
 
-19. what is the difference between auto-fit and auto-fill
+17. what is the difference between auto-fit and auto-fill
 
