@@ -113,5 +113,40 @@
         this means, give us 3-columns @200px and 2-columns @1fr each
 
 11.
-    - 
+    - 11.1 see images/2-grid-row-and-column
+    - 11.2 see images/2-grid-row-and-column
+    - 11.3
+        use z-index to make .item1 overlap .item3, by default, all item on the grid is at z-index: 0,
+        so when you set .item1 to z-index:1; it will overlap any other grid-item it intersects
+        i.e
+        .item1 {
+            grid-row: 2/4;
+            grid-column: 2/4;
+            z-index: 1;
+        }
+
+12.
+    - What is grid-area and what is it syntax
+        grid is a shortcut that you can use to replace grid-row & grid-column, the syntax is:
+        grid-area: row-line-start / column-line-start/ row-line-end / column-line-end
+    - Using grid-area, replace grid-column & grid-row for .item1, .item2 & .item3
+        .item1 {
+            grid-area: 2/2/4/4
+        }
+        .item2 {
+            grid-area: 1/5/3/6
+        }
+        .item3 {
+            grid-area: 2/3/5/5
+        }
+
+13.
+    the focus of this question is on the grid-template-areas, the "." represents a grid-cell, so if you
+    look at the number of grid-cells, it matches the total number of rows and columns defined in the
+    grid-template-rows & grid-template-columns, looking at the grid-template-areas, you'll see we have
+    5 rows and 5 columns
+
+
+
+
 
