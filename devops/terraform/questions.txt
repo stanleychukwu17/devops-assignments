@@ -39,7 +39,7 @@
     }
 
 14. How do you declare a variable, what are the three arguments in a variable declaration.
-    - And in what files do store your variables
+    - And in what files do you store your variables
 
 15. How do you force a replacement of your variables when running the terraform plan or terraform apply command
 
@@ -81,7 +81,7 @@
 
 31. write the outputs for {and ec2 public ip}, {ec2 ami}, {vpc id}, {ec2 id}
 
-32. what command can you use to view all of you outputs
+32. what command can you use to view all of your outputs
     - what if you wanted to view only one output, e.g ec2_public_ip_address
     - display your output on in json format
     - save the output in json format
