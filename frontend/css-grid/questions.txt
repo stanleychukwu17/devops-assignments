@@ -156,6 +156,7 @@
         i want 3 items columns on tablet
         i want 1 item column on phone
 
+    see images/5-responsive-design.png to see expected layout result
     - use media-query to solve it
     - use auto-fit
 
