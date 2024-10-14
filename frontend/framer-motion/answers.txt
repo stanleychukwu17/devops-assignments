@@ -313,6 +313,7 @@
                 opacity: {ease: "linear"}
                 layout: {duration: 0.3}
             }}
+        />
     ---
     - talk about layout scroll prop
         <motion.div layoutScroll style={{overflow: "scroll"}}
@@ -507,8 +508,8 @@
         -
         using targetOptions
         <motion.div
-            initial={opacity: 0}
-            whileInView={opacity: 1}
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
             viewport={{
                 root:scrollable_containerRef,
                 amount:some|all|number(default is some, where some = 0)
