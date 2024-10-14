@@ -3,7 +3,7 @@
     e.g:
     const x = useMotionValue(0)
     const y = useMotionValue(0)
-    <motion.div style={{x,y}} />
+    <motion.div drag style={{x,y}} />
 
     - some of the methods for useMotionValue are
     .get()  .set()  .stop() .velocity() .destroy() .jump()
@@ -693,3 +693,33 @@
         animate(button, {scale:1.5, x:[0, 100]}, {type:"spring"} )
         animate("div.btn_cvr", {opacity:1}, {duration:.25})
     
+30.
+    - Using the animate function to animate sequences (like gsap.timeline)
+        animate() can also accept complex animation sequences
+        -
+        const sequence = []
+        animate(sequence)
+        {a sequence is an array of DOM and MotionValue animate definitions}
+        -
+        const progress = useMotionValue(0)
+        const sequence = [
+            ["ul", {opacity: 1}, {duration: 0.5}],
+            ["li", {x: [-100, 0]}, {delay: stagger(0.1)}],
+            [progress, 100, {ease: "easeInOut"}],
+            ["div.Item", {y: [0,50,70]}, {at: 1}],
+        ]
+        animate(sequence)
+        <motion.div>{progress}</motion.div>
+        ---
+        ---
+        Each definition will by default play one after one another, it is possible to change when a segment will play
+        by passing the "at" option, which can be either an absolute time, relative time or label.
+
+    - it is also possible to override transitions on a per-value bases in the definitions
+        const sequence = [
+            ["ul", {opacity:1, x:100}, {duration:1, x:{duration:2}}]
+        ]
+    - using stagger for delays
+        if animating more than one item, you can stagger the animations by passing the stagger function to delay
+        import {stagger, animate} from "framer-motion"
+        animate(".items", {x:300}, {delay: stagger(0.1)})
