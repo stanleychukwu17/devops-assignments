@@ -15,12 +15,12 @@
 4.
     - grid-template-columns & grid-template-rows
 
-    -   grid-template-columns: repeat(4, 300px) repeat(2, 200px)
-        grid-template-rows: repeat(3, 50px) repeat(2, 100px)
+    - grid-template-columns: repeat(4, 300px) repeat(2, 200px)
+      grid-template-rows: repeat(3, 50px) repeat(2, 100px)
 
 4.1
-    - grid-column: 3 / -1; start from grid-column-line 3 and stop at the last grid-line
-    - grid-row: 1 / -1; start from grid-row-line 1 and stop at the last grid-line
+    - grid-column: 3 / -1; start from grid-column-line 3 and stop at the last grid-column-line
+    - grid-row: 1 / -1; start from grid-row-line 1 and stop at the last grid-row-line
     - grid-area: 3/1/-1/-1; start-row/start-column/end-row/end-column
 
 5.
@@ -50,6 +50,8 @@
         equivalent = 2 / span 4
     - grid-column: 1 / 7
         start from grid-column-line 1, and stop at grid-column-line 7 columns
+        equivalent = 1 / span 6
+        equivalent = 1 / -1 (i.e if line 7 is the last line)
     - grid-column: 2
         start from grid-column-line 2, and just occupy 1 column
     - grid-column: 5
@@ -71,7 +73,7 @@
 8.
     justify-content & align-content
         justify-content and align-content affect the way a grid is displayed if they are any spaces left
-        if the grid cell
+        in the grid cell
         -
         justify-content aligns items along the horizontal axis(i.e x-axis)
         align-content aligns items along the vertical axis(i.e y-axis)
@@ -83,9 +85,9 @@
         align-items aligns the children along the vertical axis(i.e y-axis)
     justify-self & align-self
         justify-self: this is used on the item it-self on the x-axis, it overrides the justify-items
-        settings from the parent
+            settings from the parent
         align-item: this is used on the item it-self on the y-axis, it overrides the justify-items
-        settings from the parent
+            settings from the parent
 
 9. 
     - for the row:
@@ -113,8 +115,8 @@
         this means, give us 3-columns @200px and 2-columns @1fr each
 
 11.
-    - 11.1 see images/2-grid-row-and-column
-    - 11.2 see images/2-grid-row-and-column
+    - 11.1 see images/2-grid-row-and-column.png
+    - 11.2 see images/2-grid-row-and-column.png
     - 11.3
         use z-index to make .item1 overlap .item3, by default, all item on the grid is at z-index: 0,
         so when you set .item1 to z-index:1; it will overlap any other grid-item it intersects
@@ -179,6 +181,52 @@
         }
     }
 
+16.
+    - use media-query to solve it
+        .container {
+            display: grid
+            justify-content: center;
+            grid-template-rows: repeat(3, 150px)
+            grid-template-columns: repeat(6, 100px)
+            gap: 20px 20px;
+        }
 
+        # for tablet
+        @media screen and (max-width: 1025px) {
+            .container {
+                grid-template-columns: repeat(3, 100px)
+            }
+        }
 
+        # for phone
+        @media screen and (max-width: 767px) {
+            .container {
+                grid-template-columns: 100px
+            }
+        }
+    
+    - use auto-fit to solve it
+        .container {
+            display: grid
+            justify-content: center;
+            grid-template-rows: repeat(3, 150px)
+            grid-template-columns: repeat(auto-fit, 100px);
+            gap: 20px 20px;
+        }
 
+17.
+    auto-fill:
+        It fills the grid with as many columns (or rows) as will fit in the container, even if some of them are empty.
+        e.g: grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        This will create as many 200px wide columns as can fit in the container, even if some columns end up empty.
+
+    auto-fit:
+        Behavior: Similar to auto-fill, but it collapses empty columns (or rows) and allows the content to take
+            up the available space. It essentially adjusts to fit the content while still providing flexibility.
+        e.g: grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        This will create as many 200px wide columns as can fit in the container, but any empty columns will not
+            take up space, allowing the existing items to expand.
+
+    Summary
+        auto-fill: Fills the grid with items and keeps empty space.
+        auto-fit: Fills the grid and collapses empty space, allowing items to take up available room.
