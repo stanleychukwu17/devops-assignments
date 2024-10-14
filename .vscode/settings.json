@@ -3,6 +3,7 @@
         "addgroup",
         "adduser",
         "keygen",
+        "minmax",
         "pnpx",
         "rgba",
         "rightclick",
