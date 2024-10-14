@@ -118,6 +118,7 @@
     - 11.1 see images/2-grid-row-and-column.png
     - 11.2 see images/2-grid-row-and-column.png
     - 11.3
+        see images/2-grid-row-and-column.png
         use z-index to make .item1 overlap .item3, by default, all item on the grid is at z-index: 0,
         so when you set .item1 to z-index:1; it will overlap any other grid-item it intersects
         i.e
@@ -230,3 +231,4 @@
     Summary
         auto-fill: Fills the grid with items and keeps empty space.
         auto-fit: Fills the grid and collapses empty space, allowing items to take up available room.
+
