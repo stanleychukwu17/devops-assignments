@@ -20,7 +20,7 @@
 
 11. List some matches from jest
 
-12. fireEvent alternative using {userEvent}
+12. fireEvent alternative using {userEvent} - (try to list 7 of its methods)
 
 13. how to use the userEvent.click & userEvent.keyboard
 13.1 Diff btw userEvent and fireEvent
