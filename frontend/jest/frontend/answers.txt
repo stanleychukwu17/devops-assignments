@@ -138,7 +138,7 @@
 15.
     Below is the element
     <label htmlFor="email"> Enter email </label>
-    <input id="email" data-testid="user_email" />
+    <input id="email" data-testid="user_email" type="text" placeholder="enter your name" />
 
     scene.getByLabelText(/enter email/i)
     scene.getByRole("textBox", {name: /enter email/i})
@@ -160,7 +160,7 @@
     <button>Submit now</button>
     <div>
         <button aria-label="sign-in"><svg /></button>
-        <button aria-label="sign-out"><svg /><button>
+        <button aria-label="sign-out"><svg /></button>
     </div>
     Answer:
     const submitBtn = scene.getByRole("button", {name: /submit now/i})
@@ -201,7 +201,7 @@
         function toContainRole(container, role, quantity = 1) {
             const elements = within(container).queryAllByRole(role);
             const pass = elements.length === quantity;
-            
+
             return {
                 pass,
                 message: () => {
@@ -227,12 +227,10 @@
     }
 
 23. 
-    An act() 
-    screen.findBy
-    screen.findAllBy
+    screen.findBy || findAllBy
     waitFor
-    all userEvent {
-        e.g userEvent.click, userEvent.keyboard e.t.c
+    userEvent {
+        e.g userEvent.click, userEvent.keyboard e.t.c (all userEvent)
     }
 
 24. 
@@ -266,7 +264,15 @@
     jest.mock("../hooks/useRepositories", () => {
         return () => {
             return {
-                data : [{name: "react js"}, {name: "javascript"}]
+                data : [{name: "react js"}, {name: "javascript"}],
+                users: [{...}, {...}]
             }
         }
     })
+    or
+    jest.mock("../hooks/useRepositories", () => {
+        return () => ({
+            data: [{ name: "react js" }, { name: "javascript" }],
+            users: [{...}, {...}]
+        });
+    });
