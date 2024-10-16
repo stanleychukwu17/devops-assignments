@@ -51,11 +51,12 @@
     imagine if we had lots of similar test to write all day long, where we have to search for elements
     within other elements, we can save time by writing our own custom matchers
     -
-    write a custom matcher that captures the grabbing of an "element" and looking for other elements within it 
+    - write a custom matcher dat captures d grabbing of an "element" & looking 4 other elements within it
+    - look at the chatGPT answer and write it on your own
 
 22. How do you use RegExp for pattern matching
 
-23. List some of the methods that calls the act function behind the scene for you
+23. List some of the methods that calls the act function behind the scene for you (3)
 
 24. You can answer the question or look at the answer
     : Write a pause function, then use it in your test
@@ -67,5 +68,5 @@
     import useRepositories from "../hooks/useRepositories"
 
     function HomeRoute () {
-        const {data: jsRepos} = useRepositories("....") # the hook returns an object like {data: {...}, ...}
+        const {data: jsRepos} = useRepositories("....")  # returns an object {data: {...}, users: {...}}
     }
