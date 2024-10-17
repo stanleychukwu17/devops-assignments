@@ -26,3 +26,7 @@
 11. Using timeouts in cypress, give an example
 
 12. how to right-click using cypress
+
+--- round 2 ---
+
+13. 
