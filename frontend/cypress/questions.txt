@@ -29,4 +29,56 @@
 
 --- round 2 ---
 
-13. 
+13. Give example of these types of locators
+- By Tag name (i.e element name)
+- By ID
+- By class name
+- by attribute name
+- by attribute name and value
+- by class name and value
+- by tag name + attribute name + attribute value
+- by two different attribute
+- by tag name + attribute name + attribute value + ID + className
+- by the most recommended way of doing it - (i.e data-cy)
+
+14. Explain the code below
+    cy.contains('div.header', 'Basic forms').then(firstForm => {
+        const emailLabel = firstForm.find('#email').text()
+        const passwordLabel = firstForm.find('#password').text()
+
+        expect(emailLabel).to.equal('email:')
+        expect(passwordLabel).to.equal('password:')
+    })
+
+    - switch 'firstForm' from it's current jQuery property to a cypres property, then find an element and
+        assert that the element contains a word
+    
+15. Read about the invoke command, am not sure am ever going to be needing it(that is why no task here)
+
+16. Checkboxes and RadioButtons
+    - use cypress to find all radio input element on the web page (there are 3 in total)
+    - now use .then method to check each of the boxes and assert that they are checked
+        (i.e prop:checked = true) (tip use force: true to update the "check", so that incase the input
+        element are hidden or disabled, the check prop will be updated)
+
+    - grab all the Checkboxes on the web-page and update them to checked (there are 3 boxes)
+    - on the same command, grab the first checkbox and trigger the click() event on it, grab the
+        2nd checkbox and trigger the click() event on it
+
+17. Clear an input field
+
+18. working with css values, show 2 ways that an element has a class
+
+19. working with select elements
+    - use the select <option> text to update the value of a select element
+    - use the select <option> value to update the value of a select element
+    - verify both values selected
+    - for select element that allow multiple select options, select multiple options at once
+
+20. Read about cy.stub()
+
+21. Talk about the Page Object Design pattern
+    - show an example
+
+22. Add a command to cy that log's into your application, let name of the command be
+    "loginToApplication" and use the command in your test
