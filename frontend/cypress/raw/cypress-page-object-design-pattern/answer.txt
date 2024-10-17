@@ -1,0 +1,11 @@
+Using the Page Object Model (POM) design pattern in your Cypress tests can be very beneficial,
+especially for larger applications
+
+Here’s a simple example of how you can implement the Page Object Model (POM) in Cypress.
+
+cypress/
+  ├── e2e/
+  │   └── login.cy.js
+  ├── pages/
+  │   └── login_page.js
+  └── support/
