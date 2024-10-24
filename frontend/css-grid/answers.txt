@@ -100,18 +100,18 @@
         height: 1000px
         -
         we have 2 fixed rows which are 100px and 50px, so this row-sizes will first take their places, now
-        what will be left is 1000px - 100px - 50px = 850px, so 1fr of 850px = 50px
+        what will be left is 1000px - 100px - 50px = 850px, so 1fr of 850px = 850px
         therefore 1fr = 850px
     - for the column:
         grid-template-columns: 100px 50px 2fr 1fr
         width: 1000px
         -
-        we have 2 fixed columns which are 100px and 50px, so this row-sizes will first take their places, now
-        what will be left is 1000px - 100px - 50px = 850px, now we have 2 relative sizes which are 2fr & 1fr,
-        i.e a total of 3fr, so to get the avg fr for the remaining width left(i.e 850px), we will do
-        avg_fr = 850px/3 = 283.3px
-        2fr = 2*283.3 = 566.6px
-        1fr = 283.3px
+        we have 2 fixed columns which are 100px and 50px, so this column-sizes will first take their places,
+        now what will b left is 1000px - 100px - 50px = 850px, now we hav 2 relative sizes which are 2fr & 1fr,
+        i.e a total of 3fr, so to get the avg fr for the remaining width(i.e 850px), we will do
+        avg_fr = 850px/3 = 283.33px
+        2fr = 2*283.3 = 566.67px
+        1fr = 283.33px
 
 10.
     - grid-template-rows: repeat(3, 100px), repeat(2, 1fr):
