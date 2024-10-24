@@ -9,11 +9,6 @@
 4.  - How do you tell your grid how many columns and rows to have
     - give us a grid with (4 columns @300px), (2 columns @200px), (3 rows @50px) (2 rows @100px)
 
-4.1 Explain
-    - grid-column: 3 / -1
-    - grid-row: 1 / -1
-    - grid-area: 3/1/-1/-1
-
 5. Explain these terms, and give examples
     - display: grid
     - gap 15px 10px
@@ -23,6 +18,11 @@
     - grid-column
     - grid-row
     - grid-area
+
+5.1 Explain
+    - grid-column: 3 / -1
+    - grid-row: 1 / -1
+    - grid-area: 3/1/-1/-1
 
 6. Explain the following:
     - grid-column: 1 / span 3

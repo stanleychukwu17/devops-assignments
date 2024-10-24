@@ -19,11 +19,6 @@
     - grid-template-rows: repeat(3, 50px) repeat(2, 100px)
       grid-template-columns: repeat(4, 300px) repeat(2, 200px)
 
-4.1
-    - grid-column: 3 / -1; start from grid-column-line 3 and stop at the last grid-column-line
-    - grid-row: 1 / -1; start from grid-row-line 1 and stop at the last grid-row-line
-    - grid-area: 3/1/-1/-1; start-row/start-column/end-row/end-column
-
 5.
     - display the children elements on a grid table
     - gap 15px 10px;
@@ -38,6 +33,12 @@
         defines the row area the content should occupy
     - grid-area:
         shortcut that combines grid-column and grid-row
+
+5.1
+    - grid-column: 3 / -1; start from grid-column-line 3 and stop at the last grid-column-line
+    - grid-row: 1 / -1; start from grid-row-line 1 and stop at the last grid-row-line
+    - grid-area: 3/1/-1/-1; start-row/start-column/end-row/end-column
+
 
 6. 
     - grid-column: 1 / span 3
