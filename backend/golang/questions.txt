@@ -1,0 +1,41 @@
+1. How do you initialize a golang project
+
+2. Write the deck of cards application
+
+3.  - Go multiple variables
+    - attach an int to a, b, c, d, e and assign a value to them
+    - attach an int & string to a, b (use var)
+    - attach an int, string & boolean to a, b, c (use := )
+    - go variables declaration in a block
+    - go const, assign values to different const variables in a block
+
+4.  - In fmt.Printf, what is %v, %T, %s, %d
+    - what and where do we use fmt.Printf("%+v", value)
+    - what and where do we use fmt.Printf("%#v", value)
+
+5.  - How do you initialize an array, initialize an empty array
+    - give us an array of prices, (i.e 5 prices in an array - fixed length)
+    - change the value of an element in an array, update the value of index 2
+    - initialize only specific index in an array
+    - how do you get the length of an array
+
+6.  - initialize an empty slice
+    - use make to create an empty slice, also use new to create an empty slice
+    - create a slice from another slice (i.e slice the slice)
+    - update an element in a slice (update index 2 & 4)
+    - append multiple items to a slice
+    - append one slice to another slice
+    - use copy to create a new slice
+        - tell us why it is better to use copy to create a new slice instead of slicing the slice
+
+7. write a go for loop with a continue and a break statement
+
+8. use range to combine these arrays
+    actions := [2]string{"Big", "Tasty"}
+    fruits := [3]string{"Apple", "Orange", "Banana"}
+
+    use range to combine the arrays to print out statements like
+    Big Apple
+    Big Orange ...
+
+
