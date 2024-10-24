@@ -119,7 +119,7 @@
 
 19. this is how they are applied into your config files
     -var & -var-file
-    terraform.tfvars
+    terraform.tfvars & production.tfvars
     environment variables "TF_VAR_*"
 
 20. A route table is a virtual router within your vpc, it controls routing for all subnets within the vpc
