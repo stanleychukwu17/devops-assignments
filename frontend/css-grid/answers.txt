@@ -24,15 +24,18 @@
     - gap 15px 10px;
         give a gap of 15px on the each row-cell and 10px on each column-cell
     - grid-template-columns:
-        used to set the number of columns on the grid
+        used to set the number of columns on the grid and the sizes of this columns
     - grid-template-rows:
-        used to set the number of rows on the grid
+        used to set the number of rows on the grid and the sizes of this rows
     - grid-column:
-        defines the column area the content should occupy
+        defines the column area the content should occupy, you can use it to specify the grid-column-line
+        where the item should start from and the grid-column-line where the occupation should stop
     - grid-row:
-        defines the row area the content should occupy
+        defines the row area the content should occupy, you can use it to specify the grid-row-line
+        where the item should start from and the grid-row-line where the occupation should stop
     - grid-area:
-        shortcut that combines grid-column and grid-row
+        shortcut that combines grid-row and grid-column with a syntax of:
+        grid-area: start-row/start-column/end-row/end-column
 
 5.1
     - grid-column: 3 / -1; start from grid-column-line 3 and stop at the last grid-column-line
@@ -77,14 +80,14 @@
         justify-content and align-content affect the way a grid is displayed if they are any spaces left
         in the grid cell
         -
-        justify-content aligns items along the horizontal axis(i.e x-axis)
-        align-content aligns items along the vertical axis(i.e y-axis)
+        justify-content aligns items along the horizontal axis(i.e y-axis)
+        align-content aligns items along the vertical axis(i.e x-axis)
     justify-items & align-items
         justify-items & align-items affect the children of the grid-items (i.e if the children do not fully
         occupy total grid-cell assigned to the parent)
         -
-        justify-items aligns the children along the horizontal axis(i.e x-axis)
-        align-items aligns the children along the vertical axis(i.e y-axis)
+        justify-items aligns the children along the horizontal axis(i.e y-axis)
+        align-items aligns the children along the vertical axis(i.e x-axis)
     justify-self & align-self
         justify-self: this is used on the item it-self on the x-axis, it overrides the justify-items
             settings from the parent
