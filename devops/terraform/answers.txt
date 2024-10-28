@@ -102,8 +102,7 @@
 
 16. terraform.tfvars does not compile with the other terraform files(i.e .tf files) into a single module
     - terraform.tfvars stores only the values. no description, no type
-    - variables.tf stores everything, the (default, description & type) arguments can all be passed
-        into variables in the variable block
+    - variables.tf stores everything, the (default, description & type)
 
 17. touch production.tfvars
     terraform apply -auto-approve -var-file=production.tfvars
