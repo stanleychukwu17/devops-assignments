@@ -153,8 +153,8 @@
 
 16. How do you make a product display card responsive
     e.g i want 6 items columns on desktop
-        i want 3 items columns on tablet
-        i want 1 item column on phone
+        i want 3 items columns on tablet screen-1025px
+        i want 1 item column on phone screen-767px
 
     see images/5-responsive-design.png to see expected layout result
     - use media-query to solve it
