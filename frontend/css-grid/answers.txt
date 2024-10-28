@@ -1,6 +1,6 @@
 1.
     Css grids allows us to display contents(html elements) in grids on a webpage. A grid is made of columns
-    and rows know as grid-cells.
+    and rows know as grid-cells. these cells are separated by grid-lines
     You decide how many columns and rows in your grid and where your contents are placed on the grid.
 
 2. 
@@ -20,7 +20,7 @@
       grid-template-columns: repeat(4, 300px) repeat(2, 200px)
 
 5.
-    - display the children elements on a grid table
+    - display the children elements on a grid system - on top of grid-cells
     - gap 15px 10px;
         give a gap of 15px on the each row-cell and 10px on each column-cell
     - grid-template-columns:
