@@ -85,7 +85,7 @@
             grid-column: 3/5;
         }
     - When 2 or more grid items overlap each other, how do you organize them to have your choice on top
-        (overlap .item1 over .item3)
+        (overlap .item1 over .item3) {Because naturally .item3 will overlap .item1}
 
 12. - What is grid-area and what is it syntax
     - Using grid-area, replace grid-column & grid-row for .item1, .item2 & .item3
