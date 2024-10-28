@@ -91,7 +91,7 @@
     justify-self & align-self
         justify-self: this is used on the item it-self on the x-axis, it overrides the justify-items
             settings from the parent
-        align-item: this is used on the item it-self on the y-axis, it overrides the justify-items
+        align-self: this is used on the item it-self on the y-axis, it overrides the justify-items
             settings from the parent
 
 9. 
