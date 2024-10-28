@@ -226,7 +226,8 @@
         public_key = file(var.ssh_pubic_key_path)
     }
 
-    Note: if you change the public_key value, a new instance is created, each instance belong to the key it was created with
+    Note: if you change the public_key value, a new instance is created, each instance belong to the key
+        it was created with
 
 29. Data sources are like a function, and their goal is to fetch data from cloud providers. An example is a
     list of ami images from an availability_zone
