@@ -215,6 +215,7 @@
         .container {
             display: grid
             justify-content: center;
+            align-content: center;
             grid-template-rows: repeat(3, 150px)
             grid-template-columns: repeat(auto-fit, 100px);
             gap: 20px 20px;
@@ -238,7 +239,7 @@
         auto-fit: Fills the grid and collapses empty space, allowing items to take up available room.
 
 18. 
-    So let's we have a grid container where all the cells are filled up because of the way we styled the grid items
+    Say we have a grid container where all the cells are filled up because of the way we styled the grid items
     e.g
     .container {
         display: grid;
