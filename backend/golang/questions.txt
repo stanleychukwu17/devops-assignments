@@ -2,6 +2,8 @@
 
 2. Write the deck of cards application
 
+2.1 write a function that shuffles an array, then explain the function
+
 3.  - Go multiple variables
     - attach an int to a, b, c, d, e and assign a value to them
     - attach an int & string to a, b (use var)
