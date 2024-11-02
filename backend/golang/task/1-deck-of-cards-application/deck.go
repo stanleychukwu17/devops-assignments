@@ -2,7 +2,10 @@ package main
 
 import (
 	"fmt"
+	"io/fs"
 	"math/rand"
+	"os"
+	"strings"
 )
 
 type Deck []string
@@ -42,4 +45,19 @@ func DrawCard(handSize int, cards *Deck) (*Deck, *Deck) {
 	remainingCards := (*cards)[handSize:]
 
 	return &userCut, &remainingCards
+}
+
+func SaveToFile(filename string, cards *Deck) {
+	var permission fs.FileMode = 0644
+
+	cardsToSliceOfString := []string(*cards) // converts first to a slice of string
+	joinCard := strings.Join(cardsToSliceOfString, "~")
+	contentToSave := []byte(joinCard)
+
+	fmt.Printf("%s", joinCard)
+
+	err := os.WriteFile(filename, contentToSave, permission)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
