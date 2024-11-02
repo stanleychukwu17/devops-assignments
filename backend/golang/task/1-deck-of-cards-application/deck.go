@@ -35,3 +35,11 @@ func (d *Deck) Shuffle() {
 		(*d)[i], (*d)[j] = (*d)[j], (*d)[i]
 	}
 }
+
+func DrawCard(handSize int, cards *Deck) (*Deck, *Deck) {
+	// Dereference cards to get the actual slice
+	userCut := (*cards)[:handSize]
+	remainingCards := (*cards)[handSize:]
+
+	return &userCut, &remainingCards
+}
