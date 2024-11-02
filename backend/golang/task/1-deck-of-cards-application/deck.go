@@ -54,10 +54,21 @@ func SaveToFile(filename string, cards *Deck) {
 	joinCard := strings.Join(cardsToSliceOfString, "~")
 	contentToSave := []byte(joinCard)
 
-	fmt.Printf("%s", joinCard)
-
 	err := os.WriteFile(filename, contentToSave, permission)
 	if err != nil {
 		fmt.Println(err)
 	}
+}
+
+func LoadDeckFromFile(filename string) *Deck {
+	content, err := os.ReadFile(filename)
+	if err != nil {
+		fmt.Printf("error: %v \n", err)
+	}
+
+	toString := string(content)
+	toSlice := strings.Split(toString, "~")
+	toDeck := Deck(toSlice)
+
+	return &toDeck
 }
