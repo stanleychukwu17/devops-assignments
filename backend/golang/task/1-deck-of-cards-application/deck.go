@@ -2,15 +2,17 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 )
 
 type Deck []string
 
-func NewDeck() Deck {
+func NewDeck() *Deck {
 	cards := Deck{}
 
 	ranks := []string{"Ace", "Jack", "Queen", "King"}
 	suits := []string{"Spades", "Hearts", "Diamonds", "Clubs"}
+	// suits := []string{"Spades", "Hearts", "1", "2", "3", "4", "5", "Diamonds", "Clubs"}
 
 	for _, rank := range ranks {
 		for _, suit := range suits {
@@ -18,11 +20,18 @@ func NewDeck() Deck {
 		}
 	}
 
-	return cards
+	return &cards
 }
 
 func (d Deck) Print() {
 	for i, card := range d {
 		fmt.Printf("%d: %s\n", i, card)
+	}
+}
+
+func (d *Deck) Shuffle() {
+	for i := range *d {
+		j := i + rand.Intn(len(*d)-i)
+		(*d)[i], (*d)[j] = (*d)[j], (*d)[i]
 	}
 }
