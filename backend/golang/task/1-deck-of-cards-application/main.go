@@ -1,9 +1,15 @@
 package main
 
-import "fmt"
-
 func main() {
-	fmt.Println("Hello, World!")
 	cards := NewDeck()
-	cards.Print()
+	// cards.Print()
+	cards.Shuffle()
+	// cards.Print()
+
+	// user1Card, remainingCards := DrawCard(5, cards)
+	// user2Card, _ := DrawCard(5, remainingCards)
+
+	cardName := "my-cards.txt"
+	SaveToFile(cardName, cards)
+	LoadDeckFromFile(cardName)
 }
