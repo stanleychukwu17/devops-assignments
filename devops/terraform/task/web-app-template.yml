@@ -50,5 +50,5 @@ packages:
 runcmd:
   - sudo systemctl start httpd
   - sudo systemctl start docker
-  - sudo usermod -a -G docker terraform
+  - sudo usermod -a -G docker ec2-user
   - sudo docker run -p 8080:80 nginx
