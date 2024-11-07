@@ -6,8 +6,7 @@ import (
 	"github.com/stanleychukwu17/devops-assignments/blob/main/backend/golang/task/0-deck-of-cards-application/deck"
 )
 
-func main() {
-
+func runTheCards() {
 	cards := deck.NewDeck()
 	// cards.Print()
 	cards.Shuffle()
@@ -23,4 +22,8 @@ func main() {
 	cardName := "my-cards.txt"
 	deck.SaveToFile(cardName, cards)
 	deck.LoadDeckFromFile(cardName)
+}
+
+func main() {
+	runTheCards()
 }
