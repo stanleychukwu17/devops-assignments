@@ -76,7 +76,6 @@
             -
             map[string]int{"a":1, "b":2}
 
-
 5.
     - How do you initialize an array, initialize an empty array
         myArray := [5]string{}
@@ -88,3 +87,33 @@
         houseRents := [5]int{2:500, 4:1000}
     - how do you get the length of an array
         len(myArray)
+
+6.
+    - initialize an empty slice
+        mySlice := []string{}
+
+    - use make to create an empty slice, also use the new() function to create an empty slice
+        mySlice := make([]string, 5, 5) # make(slice, length, capacity)
+        mySlice := make([]int, 4) # make(slice, length_and_capacity)
+
+    - create a slice from another slice (i.e slice the slice)
+        slice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+        slice1 := slice[1:4]
+        slice2 := slice[3:]
+        slice3 := slice[4:]
+
+    - update an element in a slice (update index 2 & 4)
+        slice[0] = 0
+
+    - append multiple items to a slice
+        append(slice, 11, 12, 13, 14, 15)
+
+    - append one slice to another slice
+        append(slice, slice1...)
+        append(slice, slice2..., slice3...)
+
+    - use copy to create a new slice
+        all_car_models := [7000]string{"camry", "avalon", "corolla", "highlander", ...}
+        var needed_amt  
+
+        - tell us why it is better to use copy to create a new slice instead of slicing the slice
