@@ -77,3 +77,14 @@
             map[string]int{"a":1, "b":2}
 
 
+5.
+    - How do you initialize an array, initialize an empty array
+        myArray := [5]string{}
+    - give us an array of prices, (i.e 5 prices in an array - fixed length)
+        cakePrices := [3]float{35.55, 50.25, 100.99}
+    - change the value of an element in an array, update the value of index 2
+        cakePrices[1] = 70.25
+    - initialize only specific index in an array
+        houseRents := [5]int{2:500, 4:1000}
+    - how do you get the length of an array
+        len(myArray)
