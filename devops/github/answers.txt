@@ -38,9 +38,12 @@
 
 8.  git stash
 
-9.  1. git stash : this will stash(save) all your uncommitted changes and will allow you to switch to another branch without any issues
-    2. git stash pop : the will remove the last stash and apply it to the current branch (after all, it will delete the stash from storage)
-    3. git stash apply : this will take the last stash and apply it to the current branch (but it will not delete the stash from storage)
+9.  1. git stash : this will stash(save) all your uncommitted changes and will allow you to switch to another branch
+        without any issues
+    2. git stash pop : the will remove the last stash and apply it to the current branch
+        (after all, it will delete the stash from storage)
+    3. git stash apply : this will take the last stash and apply it to the current branch
+        (but it will not delete the stash from storage)
     4. git stash list : shows you all the stashes
     5. git stash drop <stash-id> : deletes a stash using the stash-id
     6. git stash clear: deletes all the stash
