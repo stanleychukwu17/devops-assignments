@@ -6,7 +6,8 @@
 2.  git log {See all commit messages}
     git log --oneline {See all commit messages in one-line}
 
-3.  git add file1.ext file2.ext file...
+3.  git commit -m "first commit"
+    git add file1.ext file2.ext file...
     git commit --amend
     {modify your commit message and save}
     git push

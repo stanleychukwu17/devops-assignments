@@ -1,4 +1,4 @@
-1. Config default username & email
+1. Config default user.name & user.email
 
 2.  - how to see all commit messages in a repo
     - then how to see it in one-line
