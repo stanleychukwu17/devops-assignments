@@ -88,9 +88,9 @@
     - git push <remote_name> <name_of_feature_branch>
         e.g - git push origin feature/add-buy-it-now-button
     # how do you set a branch to be an upstream branch to always push to
-    - git push -u <remote_name> <name_of_branch>
-    or
-    git push -set-upstream <remote_name> <name_of_branch>
+        - git push -u <remote_name> <name_of_branch>
+        or
+        git push -set-upstream <remote_name> <name_of_branch>
 
 16. git switch <name_of_branch_on_the_remote_repo>
 
