@@ -13,18 +13,23 @@
             b int = -1
             c = false
         )
+
     - attach an int to a, b, c, d, e and assign a value to them
         var a, b, c, d, e int = 1, 2, 3, 4, 5
+
     - attach an int & string to a, b (use var)
         var a, b = 5, "stanley"
+
     - attach an int, string & boolean to a, b, c (use := )
         a, b, c := 15, "bounce", true
+
     - go variables declaration in a block
         var (
             toyota string = camry
             age int = 100
             still_producing = true
         )
+
     - go const, assign values to different const variables in a block
         const AGE int = 100
         const (
@@ -39,5 +44,36 @@
         %T = type
         %s = string
         %d = int or digit(covering all number types)
+
     - what and where do we use fmt.Printf("%+v", value)
+        ~ It is used for structs, and it adds the field names to the output when printing the value of a struct
+        ~ For slices, arrays, and maps, the %+v format will not show field names (because there are no field names),
+            but it will still print the values in a more detailed or user-friendly way compared to the regular %v format.
+        ~ For other types (such as basic types like integers, floats, arrays, slices, etc.), the behavior is
+            similar to the regular %v format, which is to print the value in a default format.
+
     - what and where do we use fmt.Printf("%#v", value)
+        ~ The %#v verb prints the value in a Go-syntax representation. This means that the output will look like valid
+            Go code that could be used to recreate the value.
+        # Usage with structs
+            For structs, %#v will print the struct in a way that includes both the field names and their values, and also
+            show the struct type, making it clearer how the struct is defined in Go code.
+            e.g:
+            fmt.Printf("%#v\n", p)
+            -
+            main.Person{Name:"John", Age:30, Address:"123 Main St"}
+        # Usage with other types:
+            Arrays and Slices: %#v will print the type and the elements, showing how it would be represented in Go.
+            e.g for array:
+            arr := []int{1, 2, 3}
+            fmt.Printf("%#v\n", arr)
+            -
+            []int{1, 2, 3}
+
+            e.g for maps:
+            m := map[string]int{"a": 1, "b": 2}
+            fmt.Printf("%#v\n", m)
+            -
+            map[string]int{"a":1, "b":2}
+
+
