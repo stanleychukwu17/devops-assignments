@@ -34,6 +34,7 @@
 
 7.  1. you switch to the *main* branch by: git switch main
     2. you run: git merge bug/fix-cart
+    3. git branch -d bug/fix-cart (this is optional, to delete the branch)
 
 8.  git stash
 
