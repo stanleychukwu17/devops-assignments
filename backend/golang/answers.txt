@@ -1,3 +1,43 @@
 1. go mod init github.com/stanleychukwu17/golang-questions
 
-2.
+2. see ./task/2-deck-of-cards-application
+
+2.1 see ./task/2.1-function-shuffle-array
+
+3.
+    - Go multiple variables
+        var a int, b string, c bool = 5, "time", true
+        var a, b, c = 10, "life", false
+        var (
+            a string = "vanity"
+            b int = -1
+            c = false
+        )
+    - attach an int to a, b, c, d, e and assign a value to them
+        var a, b, c, d, e int = 1, 2, 3, 4, 5
+    - attach an int & string to a, b (use var)
+        var a, b = 5, "stanley"
+    - attach an int, string & boolean to a, b, c (use := )
+        a, b, c := 15, "bounce", true
+    - go variables declaration in a block
+        var (
+            toyota string = camry
+            age int = 100
+            still_producing = true
+        )
+    - go const, assign values to different const variables in a block
+        const AGE int = 100
+        const (
+            CITY string = "Kubwa"
+            STATE string = "ENUGU"
+            alive boolean = true
+        )
+    
+4.
+    - In fmt.Printf, what is %v, %T, %s, %d
+        %v = value
+        %T = type
+        %s = string
+        %d = int or digit(covering all number types)
+    - what and where do we use fmt.Printf("%+v", value)
+    - what and where do we use fmt.Printf("%#v", value)
