@@ -101,9 +101,51 @@
     - use state to view the state in json format
     - list state resource by Module. {tip: use the grep command}
 
+36. running commands on you ec2 instance
+    - which is the best for running commands on your ec2 instance (cloud-init or ansible)
+    - Read: read about some of the highlights of using cloud-init
+    - create a cloud-init configuration in yaml called "web-app-template.yaml" and use it in your ec2
+    - explain the code in your cloud-init configuration
+    - create an entry-script.sh configuration that can be used in your ec2 instance
 
+37. The teacher copied the terraform code(i.e the terraform files) from another project into a
+    new folder/project and then he modified the "aws_instance" resource to use cloud-init to setup
+    the aws_instance.
+    So he did: "terraform init", then he did: "terraform apply -auto-approve" and he got an error
+    saying: "Error importing EC2 key pair (testing_ssh_key): InvalidKeyPair.Duplicate: The KeyPair
+    'testing_ssh_key' already exists"
+    Now:
+    - explain why this error occurred and how can it be solved
+    - Read: read how you can find your key pairs on aws
 
+38. Now that you've resolved the issue with your "aws_key_pair" and your "tf apply -auto-approve"
+    was successful, do the following:
+    -
+    - login to your ec2 instance
+    - verify if all the users were created successfully
+    - verify if all the groups were created successfully
+    - check if your httpd is running
+    - check if your docker is running
+    - use your browser and confirm that the ec2 instance is accessible from the web using the
+        ec2 PublicIP
+    - use your browser and confirm that the docker on your ec2 instance is running, visit the
+        port 8080 to confirm this
 
+40. Terraform Provisioners
+    - What are the differences btw user_data & provisioners
+    {add that it is better to use user_data over provisioners}
 
+41. - Read: take a look at the provisioner code
+    - Read: take a look at the entry-point.sh code
 
-. re-write the config file we learnt from the DevOps terraform BootCamp
+42: Read: read about how to troubleshot & logging in terraform
+
+================
+SECTION 2 BEGINS
+================
+
+1. List the different types in terraform
+    - List simple types
+    - List Complex types
+    - List structural types
+
