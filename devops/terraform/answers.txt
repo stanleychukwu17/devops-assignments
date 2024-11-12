@@ -334,4 +334,100 @@
     - terraform state pull
     - terraform state list | grep 'module.<module_name>'
 
+36. running commands on you ec2 instance
+    - which is the best for running commands on your ec2 instance (cloud-init or ansible)
+        - For initial boot time configuration, i.e if you need to perform simple one time setup tasks when a VM is
+            first launched, then use "cloud-init". it is the best tool. it is lightweight, easy to use and designed
+            for exactly this Purpose
+        - For ongoing configuration management, if you need to manage the configuration of servers throughout their
+            lifecycle, including making changes, applying updates, or orchestrating complex tasks, Then use Ansible,
+            it provides more power, flexibility and scalability
+        # using both
+            Many organization use both tools in tandem:
+            ~ cloud-init for initial bootstrapping and configuration e.g installing docker, apache, httpd & ansible.
+            ~ ansible for ongoing configuration management and complex orchestration after the initial setup is completed
 
+    - Read: read about some of the highlights of using cloud-init
+        ~ it is the standard for customizing cloud instances on spin up
+        ~ it runs on most linux distributions and cloud providers
+        ~ cloud-init can run per-instance or per-boot configurations
+
+    - create a cloud-init configuration in yaml called "web-app-template.yaml" and use it in your ec2
+        ~ for the creation, see the file in 
+            - ./task/web-app-template-v1.yml - from teacher
+            - ./task/web-app-template-v2.yml - from codeium
+            - ./task/web-app-template-4rm-chatGPT.yml - from chatGPT
+
+            - So now, we will use a "data resource block" to load the the configuration, so in main.tf, we do:
+                data "template_file" "user_data" {
+                    # path to where the configuration is located relative to your main.tf
+                    template = file("./task/web-app-template-v1.yml")
+                }
+            - we have to add this to our "aws_instance" configuration
+            resource "aws_instance" "my_vm" {
+                ...
+                # user_data = file("entry-script.sh") he commented this line out
+                user_data = data.template_file.user_data.rendered
+                ...
+            }
+
+            With all of this, whenever a new ec2_instance setup is completed, terraform will run the code in
+            our web-app-template and set_up the ec2_instance in accordance to the set_up in the file
+
+    - explain the code in your cloud-init configuration
+        -
+        1. Adding groups to the system
+        groups:
+            - devops: [root, sys]
+            - hashicorp
+        The above is adding 2 groups to the system, it added the "devops" group with 2 users "root" & "sys",
+        and also created another group "hashicorp" but without any users in this group
+
+        -
+        2. Adding users to the system. Users are added after groups are added
+        users:
+            - default               # this will be the default system user
+            - name: terraform       # the name of the user
+                gecos: terraform    # the GECOS field(General Electric Comprehensive Operating Supervisor)
+                                        typically contains the full-name or the description of the user, but
+                                        here, we used the same name as the username "terraform"
+                shell: /bin/bash    # the default shell of the user
+                primary_group: hashicorp        # adds a default group for the user
+                sudo: ALL=(ALL) NOPASSWD:ALL    # this allows the user to execute any command as any user
+                                                    (including as root user) without any password
+                groups: users, admin    # this adds the user to other groups (users & admin group)
+                lock_passwd: false      # this means the user account is not locked, so the user will not be
+                                            required a password before they can login
+                ssh_authorized_keys:
+                    - ssh-rsa <key>
+                    # the ssh_authorized_keys section allows you to Specify ssh-keys for the user, enabling
+                        secure ssh access without using a password
+                    # for the ssh-rsa <key>, replace the <key> with your rsa public key
+        
+        -
+        3. Downloading and installing packages
+        packages:
+            - httpd
+            - docker
+        The above will download and install 2 packages, Apache httpd and Docker
+
+        -
+        4. Running commands on the system
+        runcmd:
+            - sudo systemctl start httpd
+            - sudo systemctl start docker
+            - sudo usermod -a -G docker ec2-user
+            - sudo docker run -p 8080:80 nginx
+        sudo: using sudo grants you all privileges so you can run & any commands you want
+        systemctl: is a command used to control the systemd and system service manager
+        "sudo usermod -a -G docker ec2-user":
+            usermod: is used to modify the privileges and attributes of a user
+            -a : user to append a user to a group without removing the user from another group
+            -G : compliments -a, Specifies the group that the user should be added to
+            {the "ec2-user" was added to the "docker" group, which allows the ec2-user to run any docker commands
+             without needing to use sudo}
+        "sudo docker run -p 8080:80 nginx":
+            spins up a new docker container using an "nginx" image, the container will listen to request on port 8080,
+            and map the request to nginx port 80
+
+37.
