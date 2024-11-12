@@ -131,14 +131,14 @@
     - use your browser and confirm that the docker on your ec2 instance is running, visit the
         port 8080 to confirm this
 
-40. Terraform Provisioners
+39. Terraform Provisioners
     - What are the differences btw user_data & provisioners
     {add that it is better to use user_data over provisioners}
 
-41. - Read: take a look at the provisioner code
+40. - Read: take a look at the provisioner code
     - Read: take a look at the entry-point.sh code
 
-42: Read: read about how to troubleshot & logging in terraform
+41: Read: read about how to troubleshot & logging in terraform
 
 ================
 SECTION 2 BEGINS
