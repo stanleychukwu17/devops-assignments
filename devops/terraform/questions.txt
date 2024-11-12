@@ -115,7 +115,8 @@
     saying: "Error importing EC2 key pair (testing_ssh_key): InvalidKeyPair.Duplicate: The KeyPair
     'testing_ssh_key' already exists"
     Now:
-    - explain why this error occurred and how can it be solved
+    - explain why this error occurred
+    - how you solve the above problem
     - Read: read how you can find your key pairs on aws
 
 38. Now that you've resolved the issue with your "aws_key_pair" and your "tf apply -auto-approve"

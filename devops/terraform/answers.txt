@@ -431,3 +431,32 @@
             and map the request to nginx port 80
 
 37.
+    - explain why this error occurred and how can it be solved
+        so the main issue is that this is a new_project and all the terraform code here was copied from another
+        terraform project_1, and in "project_1", the "aws_key_pair" has already been used
+        (for every new ssh aws_key_pair you use, amazon creates it on your aws account using the key_name you used
+        in creating the aws_key_pair), so now this new_project is trying to create a new aws_key_pair on aws, but
+        the key already does exist on the aws account
+        -
+    - how you solve the above problem
+        To solve this problem {the teacher says it is usually a common problem}, you have to import the aws_key_pair
+        into this new_project, here is what you'll do:
+
+        terraform import aws_key_pair.<resource_name> <key_pair_name>
+        -
+        <resource_name>: is the name you want to give to the resource in your Terraform configuration
+        <key_pair_name>: is the actual name of the key pair in AWS.
+
+        e.g:
+        terraform import aws_key_pair.my_key_pair my-key-pair
+        -
+        resource "aws_key_pair" "my_key_pair" {
+            key_name   = "my-key-pair"
+            public_key = "ssh-rsa AAAA...your-public-key..."
+        }
+    - Read: read how you can find your key pairs on aws
+        - Go to your aws console
+        - Go to your Network & Security tab
+        - Click on Key Pairs Link {here you;ll see all the key pairs you've used in all your different projects}
+
+38.
