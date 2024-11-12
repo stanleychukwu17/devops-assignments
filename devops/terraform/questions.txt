@@ -128,9 +128,9 @@
     - check if your httpd is running
     - check if your docker is running
     - use your browser and confirm that the ec2 instance is accessible from the web using the
-        ec2 PublicIP
+        ec2 PublicIP, use PublicIP = 5.159.20.29
     - use your browser and confirm that the docker on your ec2 instance is running, visit the
-        port 8080 to confirm this
+        port 8080 to confirm this, use PublicIP = 5.159.20.29
 
 39. Terraform Provisioners
     - What are the differences btw user_data & provisioners

@@ -460,3 +460,41 @@
         - Click on Key Pairs Link {here you;ll see all the key pairs you've used in all your different projects}
 
 38.
+    - login to your ec2 instance
+        ssh -i ~/.ssh/test_rsa ec2-user@<PublicIP>
+
+    - verify if all the users were created successfully
+        tail /etc/passwd
+        -
+        you'll see stuffs like:
+        terraform:x:1000:1000:terraform:/home/terraform:/bin/bash           # the user we created with cloud-init
+        ec2-user:x:1001:1003:EC2 Default user :/home/ec2-user:/bin/bash     # default user created by aws_instance
+        apache:x:48:48 ...                                                  # user created by apache
+
+    - verify if all the groups were created successfully
+        tail /etc/group
+        -
+        hashicorp:x:1000                # 1
+        devops:x:1001:root              # 2
+        admin:x:1002:terraform          # 3
+        ec2-user:x:1003                 # 4
+        apache:x:48                     # 5
+        docker:x:992:ec2-user           # 6
+        -
+        1. Group name: hashicorp, Password: x, Group ID (GID): 1000, Members: No members
+        2. Group name: root, Password: x, Group ID (GID): 1001, Members: "root user"
+        3. Group name: admin, Password: x, Group ID (GID): 1002, Members: "terraform user"
+        4. Group name: ec2-user, Password: x, Group ID (GID): 1003, Members: No members
+        5. Group name: apache, Password: x, Group ID (GID): 48, Members: No members
+        6. Group name: docker, Password: x, Group ID (GID): 992, Members: "ec2-user user"
+
+    - check if your httpd is running
+        systemctl status httpd
+
+    - check if your docker is running
+        systemctl status docker
+
+    - use your browser and confirm that the ec2 instance is accessible from the web
+        http://35.159.20.29/
+    - use your browser and confirm that the docker on your ec2 instance is running
+        http://35.159.20.29:8080/
