@@ -128,18 +128,11 @@
     - check if your httpd is running
     - check if your docker is running
     - use your browser and confirm that the ec2 instance is accessible from the web using the
-        ec2 PublicIP, use PublicIP = 5.159.20.29
+        ec2 PublicIP, use PublicIP = 35.159.20.29
     - use your browser and confirm that the docker on your ec2 instance is running, visit the
-        port 8080 to confirm this, use PublicIP = 5.159.20.29
+        port 8080 to confirm this, use PublicIP = 35.159.20.29
 
-39. Terraform Provisioners
-    - What are the differences btw user_data & provisioners
-    {add that it is better to use user_data over provisioners}
-
-40. - Read: take a look at the provisioner code
-    - Read: take a look at the entry-point.sh code
-
-41: Read: read about how to troubleshot & logging in terraform
+39: Read: read about how to troubleshot & logging in terraform
 
 ================
 SECTION 2 BEGINS
