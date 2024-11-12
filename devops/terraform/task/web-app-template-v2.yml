@@ -1,0 +1,55 @@
+# cloud config
+# on this one, we started the "httpd" service outside the "runcmd"
+# we used "files:" to create a new "index.html" file and wrote some content into the file
+# we used "directories:" to create new directories(i.e if the directories do not already exist)
+#    and we assigned the directories created to the "terraform user" & "terraform group"
+
+# Adding groups to the system
+groups:
+  - devops: [root, sys]
+  - hashicorp
+
+# Adding users to the system. Users are added after groups are added
+users:
+  - default
+  - name: terraform
+    gecos: terraform
+    shell: /bin/bash
+    primary_group: hashicorp
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    lock_passwd: false
+    ssh_authorized_keys:
+      - ssh-rsa <key>
+  
+# Downloading and installing packages
+packages:
+  - httpd
+  - docker
+
+# Adding services to the system - from codeiumAi
+services:
+  - name: httpd
+    enabled: true
+    start: true
+    template: httpd.conf
+    reload: true
+
+# Adding files to the system - from codeiumAi
+files:
+  - path: /var/www/html/index.html
+    content: "Hello World"
+
+# Adding directories to the system - from codeiumAi
+directories:
+  - path: /var/www/html
+    owner: terraform
+    group: terraform
+    mode: 755
+    recurse: true
+
+# Running commands on the system
+runcmd:
+  - sudo systemctl start docker
+  - sudo usermod -a -G docker ec2-user
+  - sudo docker run -p 8080:80 nginx
