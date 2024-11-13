@@ -52,4 +52,5 @@ directories:
 runcmd:
   - sudo systemctl start docker
   - sudo usermod -a -G docker ec2-user
+  - sudo usermod -a -G docker terraform
   - sudo docker run -p 8080:80 nginx
