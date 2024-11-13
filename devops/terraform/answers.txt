@@ -328,7 +328,8 @@
         e.g terraform show -target=aws_instance.my_vm
     - terraform show <plan_file> e.g terraform show tfplan
 
-35. - terraform state list
+35. terraform state
+    - terraform state list
     - terraform state show <resource_address>
         e.g terraform state show aws_instance.my_vm
     - terraform state pull
@@ -498,3 +499,5 @@
         http://35.159.20.29/
     - use your browser and confirm that the docker on your ec2 instance is running
         http://35.159.20.29:8080/
+
+39.
