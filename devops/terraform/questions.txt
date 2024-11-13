@@ -87,15 +87,15 @@
     - save the output in json format
     - how do you hide an output from showing in the terminal
 
-33. what is terraform state
+33. - what is terraform state
     - in what file is the terraform state stored
 
-34. how do you see all the resources in your terraform state
+34. - how do you see all the resources in your terraform state
     - explain this command terraform show | grep -A20 aws_vpc
     - use show to see a specific resource
     - use show to see the content of a plan file
 
-35. terraform state
+35. terraform state 
     - list only the resources in the state file
     - use the state command to see just one resource
     - use state to view the state in json format
