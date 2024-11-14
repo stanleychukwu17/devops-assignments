@@ -284,7 +284,7 @@
         value       = aws_instance.my_vm.id
     }
 
-32. {
+32.
     - terraform output
     - terraform output ec2_public_ip_address
     - terraform output -json
@@ -296,7 +296,6 @@
             sensitive = true
         }
     }
-}
 
 33. Terraform state is a critical component of Terraform's infrastructure management process. It is a file that
     tracks the current state of your infrastructure as managed by Terraform. Terraform state acts as d source of
@@ -357,23 +356,6 @@
         ~ for the creation, see the file in 
             - ./task/web-app-template-v1.yml - from teacher
             - ./task/web-app-template-v2.yml - from codeium
-            - ./task/web-app-template-4rm-chatGPT.yml - from chatGPT
-
-            - So now, we will use a "data resource block" to load the the configuration, so in main.tf, we do:
-                data "template_file" "user_data" {
-                    # path to where the configuration is located relative to your main.tf
-                    template = file("./task/web-app-template-v1.yml")
-                }
-            - we have to add this to our "aws_instance" configuration
-            resource "aws_instance" "my_vm" {
-                ...
-                # user_data = file("entry-script.sh") he commented this line out
-                user_data = data.template_file.user_data.rendered
-                ...
-            }
-
-            With all of this, whenever a new ec2_instance setup is completed, terraform will run the code in
-            our web-app-template and set_up the ec2_instance in accordance to the set_up in the file
 
     - explain the code in your cloud-init configuration
         -
@@ -431,13 +413,26 @@
             spins up a new docker container using an "nginx" image, the container will listen to request on port 8080,
             and map the request to nginx port 80
 
+    - use the cloud-init in your ec2
+        data "template_file" "user_data" {
+            # path to where the configuration is located relative to your main.tf
+            template = file("./task/web-app-template-v1.yml")
+        }
+
+        resource "aws_instance" "my_vm" {
+            ...
+            # user_data = file("entry-script.sh") he commented this line out
+            user_data = data.template_file.user_data.rendered
+            ...
+        }
+
 37.
     - explain why this error occurred and how can it be solved
         so the main issue is that this is a new_project and all the terraform code here was copied from another
         terraform project_1, and in "project_1", the "aws_key_pair" has already been used
         (for every new ssh aws_key_pair you use, amazon creates it on your aws account using the key_name you used
-        in creating the aws_key_pair), so now this new_project is trying to create a new aws_key_pair on aws, but
-        the key already does exist on the aws account
+        in creating the aws_key_pair), so now this new_project is trying to create a new aws_key_pair on aws using
+        the same key_pair_name & the key already does exist, that's why an error occurred
         -
     - how you solve the above problem
         To solve this problem {the teacher says it is usually a common problem}, you have to import the aws_key_pair
@@ -453,7 +448,7 @@
         -
         resource "aws_key_pair" "my_key_pair" {
             key_name   = "my-key-pair"
-            public_key = "ssh-rsa AAAA...your-public-key..."
+            public_key = "<path_to_file>"
         }
     - Read: read how you can find your key pairs on aws
         - Go to your aws console
