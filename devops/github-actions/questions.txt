@@ -1,5 +1,5 @@
 1. what are the events that can trigger a workflow run {try to name 4-10 events}
-    see more details on the answers in /answers/ans_1.txt
+    see more details on the answers in ./tasks/1-event-triggers.txt
 
 2. workflows
     1. what are they?

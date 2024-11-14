@@ -51,4 +51,5 @@
         - inside the .github folder, create a folder called: "workflows"
         - inside the workflows folder, here you can create all your github-actions workflows .yaml files
 
-    3. see 
+    3. see ./tasks/2-hello-world.yml
+
