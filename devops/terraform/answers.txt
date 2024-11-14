@@ -510,3 +510,85 @@
 ================
 SECTION 2 BEGINS
 ================
+
+1. List and talk about different types in terraform
+    - List simple types
+        number, string, bool, null
+    - List collection types
+        list, map, set
+    - List structural types
+        tuple, object
+
+2. Collection types
+    - Give an example of using "list"
+        variable "av_zones" {
+            description = "availability_zones in the region"
+            type = list(string)
+            default = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
+        }
+        ---
+        in main.tf
+        resource "aws_subnet" "web_subnet" {
+            availability_zone = var.av_zones[1] # eu-central-1b
+        }
+
+    - Give an example of using "maps"
+        variable "amis" {
+            description = "..."
+            type = map(string)
+            default = {
+                "eu-central-1a" = "ami-something-eu-central"
+                "us-west-1" = "ami-something-us-west-1"
+            }
+        }
+        ---
+        in main.tf
+        resource "aws_instance" "my_vm" {
+            ami = var.amis[var.region]
+            or
+            ami = var.amis["${var.region}"]
+        }
+    
+3. Structural types
+    - Give an example of using "tuple"
+        variable "my_vm" {
+            description = "..."
+            type = tuple([string, number, bool])
+            default = ["t2.micro", 1, true]
+        }
+        ---
+        in main.tf
+        resource "aws_subnet" "my_vm" {
+            ami = var.amis[var.region]
+            instance_type = var.my_vm[0]
+            count = var.my_vm[1]
+            associate_public_ip_address = var.my_vm[2]
+        }
+
+    - Give an example of using "object"
+        variable "egress_dsg" {
+            type = object({
+                from_port = number
+                to_port = number
+                protocol = string
+                cidr_block = list(string)
+            })
+
+            default = {
+                from_port = 0,
+                to_port = 65365, # maximum amount of ports
+                protocol = "tcp",
+                cidr_block = ["100.0.0.0/16", "200.0.0.0/16"]
+            }
+        }
+        ---
+        in main.tf
+        resource "aws_security_group" "ec2_security" {
+            ...
+            egress {
+                from_port = var.egress_dsg["from_port"]
+                to_port = var.egress_dsg["to_port"]
+                protocol = var.egress_dsg["protocol"]
+                cidr_block = var.egress_dsg["cidr_block"]
+            }
+        }
