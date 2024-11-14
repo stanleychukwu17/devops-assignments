@@ -1,2 +1,17 @@
-1. what are the events that can trigger a workflow run {try to name 5 events}
+1. what are the events that can trigger a workflow run {try to name 4-10 events}
     see more details on the answers in /answers/ans_1.txt
+
+2. workflows
+    1. what are they?
+    2. how do you create a workflow and where do you save it?
+    3. create a workflow called hello_world
+        - let it have 2 jobs
+        - the 1st job should have a step that says "hello world"
+        - the 2nd job should have a step that says "bye world"
+        - include {workflow_dispatch} so that we can click a button to re-run the job anytime
+            we want to
+    4. Explain the code in your workflow
+    5. How and where do you verify that everything in your workflow works as it should
+    6. Read: read about some additional's you can do on your github-actions page on github 
+
+3. 
