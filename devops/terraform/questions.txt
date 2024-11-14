@@ -81,7 +81,7 @@
 
 31. write the outputs for {and ec2 public ip}, {ec2 ami}, {vpc id}, {ec2 id}
 
-32. what command can you use to view all of your outputs
+32. - what command can you use to view all of your outputs
     - what if you wanted to view only one output, e.g ec2_public_ip_address
     - display your output on in json format
     - save the output in json format
@@ -104,8 +104,9 @@
 36. running commands on you ec2 instance
     - which is the best for running commands on your ec2 instance (cloud-init or ansible)
     - Read: read about some of the highlights of using cloud-init
-    - create a cloud-init configuration in yaml called "web-app-template.yaml" and use it in your ec2
+    - create a cloud-init configuration in yaml called "web-app-template.yaml"
     - explain the code in your cloud-init configuration
+    - use the cloud-init in your ec2
     - create an entry-script.sh configuration that can be used in your ec2 instance
 
 37. The teacher copied the terraform code(i.e the terraform files) from another project into a
