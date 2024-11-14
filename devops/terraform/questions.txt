@@ -95,7 +95,7 @@
     - use show to see a specific resource
     - use show to see the content of a plan file
 
-35. terraform state 
+35. terraform state
     - list only the resources in the state file
     - use the state command to see just one resource
     - use state to view the state in json format
@@ -141,6 +141,14 @@ SECTION 2 BEGINS
 
 1. List the different types in terraform
     - List simple types
-    - List Complex types
+    - List collection types
     - List structural types
+
+2.  Collection types
+    - Give an example of using "list"
+    - Give an example of using "maps"
+
+3. Structural types
+    - Give an example of using "tuple"
+    - Give an example of using "object"
 
