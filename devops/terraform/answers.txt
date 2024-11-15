@@ -717,9 +717,44 @@ SECTION 2 BEGINS
         count = var.is_test == false ? 1 : 0
     }
 
+    You can also do stuffs like:
+    instance_type = var.env_stage == "dev" ? "t2.micro" : "t2.large"
 
+8. Locals
+    - in what files can you save your locals
+        You can define your locals in a file called locals.tf, you can also store them in variables.tf and
+        lastly in main.tf(i.e if you do not have too many locals)
 
-
+    - give an example of using locals
+        in locals.tf
+        locals {
+            owner = "DevOps Corp Team"
+            project = "online store"
+            cidr_blocks = ["172.16.10.0/24", "172.16.20.0/24", "172.16.30.0/24"]
+            common-tags = {
+                Name = "Dev"
+                Environment = "development"
+                version = 1.10
+            }
+        }
+        -
+        in main.tf
+        resource "aws_vpc" "dev_vpc" {
+            cidr_block = "10.0.0.0/16"
+            tags = local.common-tags
+        }
+        resource "aws_subnet" "dev_subnet" {
+            vpc_id = aws_vpc.dev_vpc.id
+            cidr_block = local.cidr_block[0]
+            availability_zone = "eu-central-1a"
+        }
+        resource "aws_internet_gateway" "dev_igw" {
+            vpc_id = aws_vpc.dev_vpc.id
+            tags = {
+                Name = "${tags.local.common-tags["Name"]}"
+                version = "${tags.local.common-tags["Version"]}"
+            }
+        }
 
 
 

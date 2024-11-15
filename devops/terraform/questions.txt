@@ -172,9 +172,7 @@ SECTION 2 BEGINS
 
 8. Locals
     - in what files can you save your locals
-    - talk a little bit about locals
     - give an example of using locals
-    - Read: take a look at the local from the course
 
 9. Terraform built-in functions
     - lookup function
