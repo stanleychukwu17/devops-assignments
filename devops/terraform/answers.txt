@@ -692,8 +692,30 @@ SECTION 2 BEGINS
             }
         }
 
-
-
+7. Conditional Expressions
+ - let's say we want to spin up different instances depending on our current environment, use
+    terraform conditions and variables to check if we should launch an ec2_instance for testing
+    or for production
+    -
+    variable "is_test" {
+        description = "..."
+        type = bool
+    }
+    -
+    in terraform.tfvars
+    is_test = true
+    -
+    in main.tf
+    resource "aws_instance" "test_server" {
+        ami = "..."
+        instance_type = "t2.micro"
+        count = var.is_test == true ? 1 : 0
+    }
+    resource "aws_instance" "production_server" {
+        ami = "..."
+        instance_type = "t2.large"
+        count = var.is_test == false ? 1 : 0
+    }
 
 
 
