@@ -162,9 +162,10 @@ SECTION 2 BEGINS
 5.  - Read: the for_each meta-argument {No need to master}
 
 6.  - Read: take a look at looping with dynamic block {No need to master}
+    - Read: what happens when you run terraform apply
+    - Read: changing the iterator name
 
 7. Conditional Expressions
-    - give some simple example of conditions
     - let's say we want to spin up different instances depending on our current environment, use
         terraform conditions and variables to check if we should launch an ec2_instance for testing
         or for production

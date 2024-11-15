@@ -640,7 +640,8 @@ SECTION 2 BEGINS
             name = each.key # each.key iterates over the set and grabs the key
         }
 
-6.  - Read: take a look at looping with dynamic block
+6.  
+    - Read: take a look at looping with dynamic block
         dynamic block is another way of looping that can save us time
         e.g:
         variable "ingress_ports" {
@@ -670,3 +671,38 @@ SECTION 2 BEGINS
                 cidr_blocks = ["0.0.0.0/0"]
             }
         }
+
+    - Read: what happens when you run terraform apply
+        if you run terraform apply, your security group will be created with all the ports provided, you can
+        go to your aws console to confirm this,
+        ~ go to aws > search for "VPC" > SECURITY > SECURITY_GROUPS
+        ~ select the security group you created, click on inbound rules
+            here you'll see all the rules you've created with the dynamic block
+
+    - Read: changing the iterator name
+        you can set an iterator name to use in accessing the for_each values
+        dynamic "ingress" {
+            for_each = var.ingress_ports
+            iterator = iport
+            content {
+                from_port = iport.value
+                to_port = iport.value
+                protocol = "tcp"
+                cidr_blocks = ["0.0.0.0/0"]
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
