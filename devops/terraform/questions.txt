@@ -155,15 +155,13 @@ SECTION 2 BEGINS
 4. The count meta-argument
     - What is count in terraform and what can it be used for
     - Use count to create 3 aws instances
-    - Using count & list(string) variable, create 4 IAM users
-        {remember to use these functions -> element & length}
-        - explain the element and length functions
+    - Using count & variable: "users" (list(string), a list of usernames), create 4 IAM users
+    - explain the element and length functions
     - when you do count=0 in any resource, what will happen when you run terraform apply
 
 5.  - Read: the for_each meta-argument {No need to master}
-    - use for_each to create IAM users from a list {No need to master}
 
-6.  - Read: take a look at looping with dynamic block
+6.  - Read: take a look at looping with dynamic block {No need to master}
 
 7. Conditional Expressions
     - give some simple example of conditions

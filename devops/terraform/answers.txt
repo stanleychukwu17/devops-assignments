@@ -592,3 +592,81 @@ SECTION 2 BEGINS
                 cidr_block = var.egress_dsg["cidr_block"]
             }
         }
+
+4. The count meta-argument
+    - What is count in terraform and what can it be used for
+        count is used to manage similar resources, you can use ti to automatically scale up/down resources
+        count and for_each are looping techniques
+
+    - Use count to create 3 aws instances
+        resource "aws_instance" "my_vm" {
+            ami = ....
+            instance_type = "t2.micro"
+            count = 3
+        }
+
+    - Using count & variable: "users" (list(string), a list of usernames), create 4 IAM users
+        variable "users" {
+            type = list(string)
+            default = ["demo-user", "stanley", "edward", "chukwu"]
+        }
+
+        resource "aws_iam_user" "level2user" {
+            name = "${element(var.users, count.index)}"
+            path = "/system/"
+            count = "${length(var.users)}"
+        }
+        {You can go to the terraform doc to see how you can customize the IAM users and set level/roles and what
+          the users can have access to}
+
+    - explain the element and length functions
+        ~ element is used to retrieve an item from a list
+        ~ length returns the total number of items in a list
+
+    - when you do count=0 in any resource, what will happen when you run terraform apply
+        when you set count = 0 in a resource block, that resource will not be created, if the resource already
+        exists, the resource will be destroyed
+
+5.  - Read: the for_each meta-argument {No need to master}
+        for_each was introduced to overcome the downside of count, it works with either sets or maps
+        e.g:
+        variable "users" {
+            type = list(string)
+            default = ["demo-user", "stanley", "edward", "chukwu"]
+        }
+        -
+        resource "aws_iam_user" "test" {
+            for_each = toset(var.users) # toset converts the list(string) into a set
+            name = each.key # each.key iterates over the set and grabs the key
+        }
+
+6.  - Read: take a look at looping with dynamic block
+        dynamic block is another way of looping that can save us time
+        e.g:
+        variable "ingress_ports" {
+            description = "List of Ingress Ports"
+            type = list(number)
+            default = [22, 80, 25, 443, 993, 8080]
+        }
+        -
+        in main.tf
+        resource "aws_security_group" "ec2_security" {
+            vpc_id = aws_vpc.main.id
+
+            dynamic "ingress" {
+                for_each = var.ingress_ports
+                content {
+                    from_port = ingress.value
+                    to_port = ingress.value
+                    protocol = "tcp"
+                    cidr_blocks = ["0.0.0.0/0"]
+                }
+            }
+
+            egress {
+                from_port = 0
+                to_port = 0
+                protocol = "-1"
+                cidr_blocks = ["0.0.0.0/0"]
+            }
+        }
