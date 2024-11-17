@@ -80,14 +80,14 @@
         justify-content and align-content affect the way a grid is displayed if they are any spaces left
         in the grid cell
         -
-        justify-content aligns items along the horizontal axis(i.e y-axis)
-        align-content aligns items along the vertical axis(i.e x-axis)
+        justify-content aligns items along the horizontal axis(i.e x-axis)
+        align-content aligns items along the vertical axis(i.e y-axis)
     justify-items & align-items
         justify-items & align-items affect the children of the grid-items (i.e if the children do not fully
         occupy total grid-cell assigned to the parent)
         -
-        justify-items aligns the children along the horizontal axis(i.e y-axis)
-        align-items aligns the children along the vertical axis(i.e x-axis)
+        justify-items aligns the children along the horizontal axis(i.e x-axis)
+        align-items aligns the children along the vertical axis(i.e y-axis)
     justify-self & align-self
         justify-self: this is used on the item it-self on the x-axis, it overrides the justify-items
             settings from the parent
