@@ -223,9 +223,9 @@
 
 17.
     auto-fill:
-        It fills the grid with as many columns (or rows) as will fit in the container, even if some of them are empty.
-        e.g: grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        This will create as many 200px wide columns as can fit in the container, even if some columns end up empty.
+        It fills the grid with as many columns (or rows) as will fit in the container, even if some of them are
+        empty. e.g: grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        This will create as many 200px wide columns as can fit in d container, even if some columns end up empty.
 
     auto-fit:
         Behavior: Similar to auto-fill, but it collapses empty columns (or rows) and allows the content to take
@@ -251,13 +251,14 @@
         ;
     }
     From the example, you can see that there are no grid-cells left, so lets say after 3 months, we added another
-    grid-item and we forgot to adjust our grid-container to make space for the new grid-item, this new grid-item will
-    automatically create a new row and jump to that row, but the height and width of the new row will be random since
-    we did not provided a grid-cell for it.
+    grid-item and we forgot to adjust our grid-container to make space for the new grid-item, this new grid-item
+    will automatically create a new row and jump to that row, but the height and width of the new row will be
+    random since we did not provided a grid-cell for it.
     -
     (Any items/elements created outside the available grid-cells are called explicit-grids/explicit-grid-items)
-    So to make sure that new grid-items maintain consistency with other grid-items (i.e has the same row-height like
-    other grid-cells), we need to use the "grid-auto-rows" the property specifies a row-height for any explicit-grid.
+    So to make sure that new grid-items maintain consistency with other grid-items (i.e has the same row-height
+    like other grid-cells), we need to use the "grid-auto-rows" the property specifies a row-height for any
+    explicit-grid.
     ...
     so
         grid-auto-flow: row; // this is not needed because the default for new explicit-grids are rows
