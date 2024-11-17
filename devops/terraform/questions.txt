@@ -176,6 +176,7 @@ SECTION 2 BEGINS
 
 9. Terraform built-in functions
     - lookup function
+    - difference btw lookup & element function
     - file function
     - formatDate & timestamp()
 
