@@ -68,9 +68,13 @@
 
 7.
     const ref = useRef<HTMLElement>({} as HTMLElement)
-    const {scrollXProgress} = useScroll({
+    const {scrollYProgress} = useScroll({
         target: ref,
         offset: [0.2, 0.5]
+    })
+
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        console.log(latest)
     })
 
     return <motion.div ref={ref}>...</motion.div>
@@ -115,7 +119,7 @@
     e.g:
     const opacity = useTransform(x, [-100, 0, 100], [0,1,0])
     const color = useTransform(x, [-100, 0, 100], ['#f00', '#fff', '#0f0'])
-    const rotate = useTransform(scrollY, [0, 100], [0,360], {clamp:false, ease:"ask chatGPT 4 values"})
+    const rotate = useTransform(scrollY, [0, 100], [0,360], {clamp:false, ease:"ask chatGPT for values"})
     // by setting clamp to false, the increment will continue to map even when the max input value
         has been reached. e.g if scrollY is 200, rotate = 720
     
@@ -325,7 +329,7 @@
         If set to true, the draggable element will animate back to it's center/origin when released
     ---
     - dragConstraints:
-        This will define a distance for the name edge of the draggable component
+        This will define a distance for the named edge of the draggable component
         You can pass in an object of optional (top, left, bottom, right) values measured in pixels
         e.g:
             <motion.div drag="x" dragConstraints={{left:0, right:300}} />
@@ -412,12 +416,12 @@
         And -1 is to stagger from bottom to top(Desc)
     ---
     - dynamic variant:
-        const variant = {
+        const liVariant = {
             visible: i => ({x: 50, transition:{delay:i*0.3}})
         }
         -
         return items.map((item, index) => {
-            <motion.li custom={index} animate={visible} variants={variant}>
+            <motion.li custom={index} animate={visible} variants={liVariant}>
                 {item}
             </motion.li>
         })
@@ -482,7 +486,7 @@
 
                     exitAnimation()
                 }
-            }, isPresent)
+            }, [isPresent])
 
             return (
                 <ul ref={scope}>
@@ -492,6 +496,7 @@
                 </ul>
             )
         }
+
 20.
     - Propagation
         Children can stop pointer events from propagating to their parents. e.g:
@@ -642,8 +647,8 @@
 
 27.
     - List at-least 5 motion value hooks (they're 8 in total)
-    useMotionValue          useMotionTemplate           useScroll           useSpring
-    useTime                 useTransform                useVelocity         useMotionValueEvent
+        useMotionValue          useMotionTemplate           useScroll           useSpring
+        useTime                 useTransform                useVelocity         useMotionValueEvent
 
     - List and talk about methods of these hooks
         .get()  .set()  .getVelocity()  .jump(newValue)     .stop()
