@@ -71,9 +71,11 @@
     - use the useAnimate & usePresence hooks to animate a component when it exits the dom
 
 20. Talk about event propagation(i.e bubbling up of an event)
-    talk about the whileInView animation 
+    talk about the whileInView animation
         - using with variants
         - using with definitionObjects
+        - using viewport, customize the item so that whileInView will work only when visible inside
+            the scrollable container & and only when 20% is visible
 
 ----------
 21. transitions
@@ -99,7 +101,7 @@
     - how can we use dragControls with the re-order component?
 
 27. - List at-least 5 motion value hooks (they're 8 in total)
-    - List and talk about methods of these hooks
+    - List and talk about methods of these hooks (they're 7 in total)
     - Talk about the hook useMotionValueEvent
 
 28. Talk about the useReducedMotion hook
