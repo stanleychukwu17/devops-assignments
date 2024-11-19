@@ -724,7 +724,34 @@
         const sequence = [
             ["ul", {opacity:1, x:100}, {duration:1, x:{duration:2}}]
         ]
+
     - using stagger for delays
         if animating more than one item, you can stagger the animations by passing the stagger function to delay
         import {stagger, animate} from "framer-motion"
         animate(".items", {x:300}, {delay: stagger(0.1)})
+
+    - what are the options that can be passed to the "stagger" function
+        animate(".items", {x:300}, {
+            delay: stagger(0.1, {from:'first', startDelay:1.5, ease: "easeOut"})
+        })
+
+        - from: 'first' | 'center' | 'last' number
+            The element to stagger out from. this can either be the "first", "last" or "center" element or by passing
+            a number, animation can stagger out from a certain index
+            -
+            stagger(.3, {from:"center"}) // starts from the center element
+            stagger(.2, {from: 2}) // starts from the 2nd element
+
+        - startDelay: number
+            A delay in seconds, from which to start the stagger
+            -
+            stagger(0.5, {startDelay: 1}) // this means the first animation will kick-off after 1s, then the next
+            one will start at 1.5s, then the next will kick-off 2s and so on
+
+        - ease: Easing
+            By passing an easing function, staggers can be redistributed through the total stagger time
+            -
+            stagger(0.1, {ease: "circInOut"})
+            stagger(0.1, {ease: [x1,y1,x2,y2]})
+
+31.
