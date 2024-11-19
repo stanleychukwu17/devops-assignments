@@ -114,3 +114,30 @@
 30. - Using the animate function to animate sequences (like gsap.timeline)
     - it is also possible to override transitions on a per-value bases in the definitions
     - using stagger for delays
+    - what are the options that can be passed to the "stagger" function
+
+31. Still on the animate function
+    - talk about the "at" option passed when working with animate(sequence)
+    - explain all the at in the sequence below
+        sequence = [
+            ["nav", {x:100}, {duration:1, at:0.5}],
+            "my-label" // my label is defined at 1s, because the last animation duration = 1s
+            ["nav", {x:100}, {at:"+0.5"}],
+            ["nav li", {opacity:1}, {delay: stagger(0.2), at:"-0.2"}],
+            ["a", {scale: 1.2}, {at: "<"}],
+            [".items", {x:400, y:10}, {at: "my-label"}],
+        ]
+    - list some of the options returned when you create a new animate function using sequence
+    - talk about these options that are returned for animate(sequence)
+        - .duration
+        - .time
+        - .then()
+        - .pause()
+        - .play()
+        - .stop()
+        - .complete()
+        - .cancel()
+        - .speed()
+
+32. Talk about the "transform" function
+
