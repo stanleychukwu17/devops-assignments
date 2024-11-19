@@ -1,5 +1,5 @@
 1. Talk about useMotionValue
-    - List some of the useMotionValue methods (6 methods)
+    - List some of the useMotionValue methods (7 methods)
 
 2. use the useMotionValue and useTransform on a drag element
 

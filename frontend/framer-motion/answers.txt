@@ -6,7 +6,7 @@
     <motion.div drag style={{x,y}} />
 
     - some of the methods for useMotionValue are
-    .get()  .set()  .stop() .velocity() .destroy() .jump()
+    .get()  .set()  .stop() .getVelocity() .destroy() .jump(newValue) .isAnimating()
 
 2.  const x = useMotionValue(-200)
     const opacity = useTransform(x, [-200, 0, 200], [0,1,0])
@@ -608,7 +608,7 @@
     </MotionConfig>
 
 26. 
-    The Reorder component can be used to crate drag-to-reorder lists, like reOrderable tabs or todo items e.g:
+    - The Reorder component can be used to crate drag-to-reorder lists, like reOrderable tabs or todo items e.g:
         import {Reorder} from "framer-motion"
         import {useState} from "react"
 
@@ -626,11 +626,10 @@
             )
         }
 
-    ---
     - how do you change the <Reorder.Group> default element used to render your items
         By default, the rendered item is <ul> but you can change this by using the "as" prop, i.e:
         <Reorder.Group as="ol">
-    ---
+
     - how can we use dragControls with the re-order component?
         import {Reorder, useDragControls} from "framer-motion"
 
@@ -640,7 +639,7 @@
             return (
                 <Reorder.Item value={value} dragListener={false}> dragControls={controls}>
                     <div>{value}</div>
-                    <div onPointerDown={ e => controls.start(e) } />
+                    <button onPointerDown={ e => controls.start(e) } />
                 </Reorder.Item>
             )
         }
