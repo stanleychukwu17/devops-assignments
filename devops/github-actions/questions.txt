@@ -10,8 +10,7 @@
         - the 2nd job should have a step that says "bye world"
         - include {workflow_dispatch} so that we can click a button to re-run the job anytime
             we want to
-    4. Explain the code in your workflow
-    5. How and where do you verify that everything in your workflow works as it should
-    6. Read: read about some additional's you can do on your github-actions page on github 
+    4. Explain what the "actions/checkout@v4" is doing in your workflow
+    5. Read: read about some additional's you can do on your github-actions page on github 
 
 3. 
