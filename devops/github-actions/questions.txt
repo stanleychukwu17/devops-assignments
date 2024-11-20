@@ -13,4 +13,7 @@
     4. Explain what the "actions/checkout@v4" is doing in your workflow
     5. Read: read about some additional's you can do on your github-actions page on github 
 
-3. 
+3. You next task is to use github-actions to write a comment on newly created issues in
+    our codebase/github-repo. Let the workflow have to jobs:
+    1. should use community action to add a comment to the issue
+    2. use the github api to post a comment to the issue

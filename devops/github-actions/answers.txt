@@ -78,3 +78,14 @@
         - click on your [Re-run job button] to re-run all your jobs, this button is here because we
             added "workflow_dispatch" to our workflow, otherwise, if it was not present, you'd not
             see this button
+
+3.
+    see ./task/3-comment-on-issues.yml
+    -
+    we need to pass environment variables in the second job, the first job can access the environment
+    variables internally because it is an action, but since we ae sending a post request, we also need
+    to attach the environment variables
+
+
+
+
