@@ -17,3 +17,12 @@
     our codebase/github-repo. Let the workflow have to jobs:
     1. should use community action to add a comment to the issue
     2. use the github api to post a comment to the issue
+
+4.
+    1. Read: Some of the principles of Continuous Integration
+    2. work on the teacher's Continuous Integration workflow
+    3. work on the workflow for a golang project, let it include testing
+    4. work on the python/cpython workflow
+    5. how do you set rules in your repo so that push_request & pull_request will only
+        pass when certain jobs are successful
+        {You can go to your github account and demonstrate it}
