@@ -1,3 +1,9 @@
+Framer-motion & motion have been merged together:
+here is a guide on upgrading:
+https://motion.dev/docs/upgrade-guide
+motion is quite different from framer-motion, so i'll be sticking with framer-motion for the foreseeable
+future, no time now to start learning motion after all the time i already invested in framer-motion
+
 1. Talk about useMotionValue
     - List some of the useMotionValue methods (7 methods)
 
@@ -120,14 +126,15 @@
     - talk about the "at" option passed when working with animate(sequence)
     - explain all the at in the sequence below
         sequence = [
+            [".product_cover", {x:100}, {duration:2}],
+            "my-label" // my label is defined at 1s, because the last animation duration = 2s
             ["nav", {x:100}, {duration:1, at:0.5}],
-            "my-label" // my label is defined at 1s, because the last animation duration = 1s
             ["nav", {x:100}, {at:"+0.5"}],
             ["nav li", {opacity:1}, {delay: stagger(0.2), at:"-0.2"}],
             ["a", {scale: 1.2}, {at: "<"}],
             [".items", {x:400, y:10}, {at: "my-label"}],
         ]
-    - list some of the options returned when you create a new animate function using sequence
+    - list some of the options returned from animate(sequence) (list 5 out 9 total)
     - talk about these options that are returned for animate(sequence)
         - .duration
         - .time
