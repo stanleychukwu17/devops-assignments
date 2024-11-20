@@ -754,4 +754,99 @@
             stagger(0.1, {ease: "circInOut"})
             stagger(0.1, {ease: [x1,y1,x2,y2]})
 
-31.
+31. Still on the animate function
+    - talk about the "at" option passed when working with animate(sequence)
+        by default, animation definitions within a sequence will play one after the other. By passing "at" to a
+        definition's option, this behavior can be changed
+
+        - at: number; pass a number to define specific time
+            ["nav", {x:100}, {duration:1, at:0.5}]
+            this animation will start at 0.5s from the start of the whole timeline
+        
+        - at: "(+|-)number"
+            ["li", {x:5}, {at:"+1"}] // will start at 1s after the previous animation (i.e like 1s delay)
+            ["li", {y:10}, {at:"-0.2"}] // will start at 0.2s before the previous animation ends
+        
+        - at: "<"
+            ["li", {y:10}, {duration:.7, at:"<"}] // will start at the same time as the previous animation
+        
+        - at: "label-name"
+            will start at the same time where a "label-name" has been defined
+
+    - explain all the at in the sequence below
+        sequence = [
+            [".product_cover", {x:100}, {duration:2}],
+            - this will start immediately and last for 2s
+
+            "my-label" // my label is defined at 2s, because the last animation duration = 2s
+
+            ["nav", {x:100}, {duration:1, at:0.5}],
+            - this will start at 0.5 from when the timeline animation kicked off, if there was no "at",
+                it would have started after "2s" which is the duration of the previous animation
+
+            ["nav", {x:100}, {at:"+0.5"}],
+            - this will start at 0.5s after the previous animation
+
+            ["nav li", {opacity:1}, {delay: stagger(0.2), at:"-0.2"}],
+            - this will start at 0.2s before the end previous animation
+
+            ["a", {scale: 1.2}, {at: "<"}],
+            - this will start at the same time when the previous animation starts
+
+            [".items", {x:400, y:10}, {at: "my-label"}],
+            - this will start at the time where the label was defined, which is 1s
+        ]
+
+    - talk about these options that are returned for animate(sequence)
+        .duration, .time, .then(), .pause(), .play(), .stop(), .complete(), .cancel(), .speed()
+
+    - talk about these options that are returned for animate(sequence)
+        - .duration
+            returns the total duration of the animation/sequence
+            const animation = animate(x, 100, {duration:1, repeat:2})
+            const {duration} = animation; // 1s
+        - .time
+            Gets and Sets the current time of the animation
+            animation.time = 0.5 // sets the time to 0.5s
+            console.log(animation.time) // 0.5
+        - .then()
+            you can do either of the 2
+            await animate(...)
+            animate(...).then(() => console.log("animation completed"))
+        - .pause()
+            animation.pause(); // this will pause the animation
+        - .play()
+            animation.play()
+            - if the animation is paused, it will resume from it's current time
+            - if the animation has finished, the animation will restart
+            e.g
+            animation.pause()
+            animation.time = 1 // the next play will resume from 1s
+        - .stop()
+            animation.stop()
+            stops the animation, and it cannot be restarted or played anymore if you use .stop()
+        - .complete()
+            animation.complete()
+            fast forward the animation to the ending
+        - .cancel()
+            animation.cancel()
+            cancels the animation and takes it back to the start
+        - .speed()
+            Gets and Sets the playback speed of the animation
+            animation.speed = 1 // Normal speed
+            animation.speed = 0.5 // Half speed
+            animation.speed = 2 // Double speed
+            animation.speed = -1 // Reverse speed
+
+32. Talk about the "transform" function
+    Create's a function that will map a value from one range to another, used under the hood by "useTransform"
+    -
+    import {transform} from 'framer-motion'
+    const transformer = transform([0, 100], [0,360], {clamp:false})
+    const rotate = transformer(50) // 180
+    const rotate = transformer(200) // 720
+    -
+    other examples
+    const bgColor = transform([0, 100], ["#f00","#00f"])(50)
+    const transformer = transform([-100, 0, 100, 200], [0,1,1,0])
+    opacity = transformer(-50)
