@@ -1,0 +1,45 @@
+name: comment on issues created
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  comment-with-action:
+    name: comment with action
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: comment with action
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue_number: ${{ github.event.issue.number}}
+          body: |
+            Hello from GitHub Actions!
+            This is an example of how to add a comment to an issue using the
+            [create-or-update-comment](https://github.com/peter-evans/create-or-update-comment) action.
+            see the [documentation](https://github.com/peter-evans/create-or-update-comment).
+          reaction: "+1"
+
+  comment-with-github-api:
+    name: comment with github api
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: comment with github api
+        run: |
+          gh api -X POST
+          https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+          -f body='Hello from GitHub Actions!'
+          -f reaction="+1"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORGANIZATION: ${{ github.repository_owner }}
+          REPOSITORY: ${{ github.repository.name }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+
