@@ -13,9 +13,9 @@ jobs:
       run:
         shell: bash
     steps:
-      - name: dump github context
+      - name: dump github event context
         run: |
-          echo "${{ toJSON(github) }}" | jq '.'
+          echo "${{ toJSON(github.event) }}" | jq '.'
 
       - name: comment with action
         uses: peter-evans/create-or-update-comment@v3
