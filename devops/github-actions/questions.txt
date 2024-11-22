@@ -21,7 +21,22 @@
 4.
     1. Read: Some of the principles of Continuous Integration
     2. work on the workflow for a nodejs project, let it include testing
+        2 jobs, 1. test, 2. lint
     3. work on the workflow for a golang project, let it include testing and test coverage report
+        guide {
+            - set the environment variables globally
+                ENV, PORT, TIMEZONE, DB_NAME, POSTGRES_DB_USER, POSTGRES_DB_PASSWORD
+            - should have 2 jobs
+                1. log-the-env-variables
+                2. test-golang-service
+                    {steps}
+                    - install docker
+                    - checkout the branch
+                    - setup your golang
+                    - install go dependencies
+                    - run go test with coverage output
+                    - check the coverage out
+        }
     4. how do you set rules in your repo so that push_request & pull_request will only
         pass when certain jobs are successful {You can go to your github account and demonstrate it}
     5. work on the python/cpython workflow
