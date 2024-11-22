@@ -1,4 +1,4 @@
-name: Continuous Integration Workflow
+name: Continuous Integration Workflow For a Node.js Project
 
 on:
   pull_request:
@@ -11,30 +11,31 @@ on:
       - main
     paths:
       - 'web/**'
+  workflow_dispatch:
 
 jobs:
   # Run unit tests to make sure everything is 👍
   test:
     name: 'Run unit tests'
+    runs-on: ubuntu-latest # Specify the OS we want the workflow to run on
     defaults:
       run:
         shell: bash
-        working-directory: ./web # Define the working directory for all run steps in the workflow
-    runs-on: ubuntu-latest # Specify the OS we want the workflow to run on
+        working-directory: ./web # Define the working directory for the workflow
     steps:
-    - uses: actions/checkout@v4
-      name: 'Checkout repository'
+      - name: 'Checkout repository'
+        uses: actions/checkout@v4
 
-    - name: 'Set up Node.js'
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.16.0'  # Set Node.js version to 20.16.0
+      - name: 'Set up Node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.16.0'  # Set Node.js version to 20.16.0
 
-    - name: 'Install Dependencies'
-      run: npm install
-    
-    - name: 'Run Tests'
-      run: npm run test
+      - name: 'Install Dependencies'
+        run: npm install
+      
+      - name: 'Run Tests'
+        run: npm run test
 
   # Run the linter to check for code style issues
   lint:
@@ -42,7 +43,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./web # Define the working directory for all run steps in the workflow
+        working-directory: ./web # Define the working directory for the workflow
     runs-on: ubuntu-latest
     steps:    
     - uses: actions/checkout@v4
