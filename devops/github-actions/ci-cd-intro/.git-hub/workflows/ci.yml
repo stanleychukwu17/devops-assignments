@@ -1,6 +1,5 @@
 name: Continuous Integration Workflow
 
-# This workflow is triggered whenever a new PR is created on the main branch
 on:
   pull_request:
     branches:
@@ -20,14 +19,16 @@ jobs:
     defaults:
       run:
         shell: bash
-        # Define the working directory for all run steps in the workflow
-        working-directory: ./web
-    # Specify the OS we want the workflow to run on
-    runs-on: ubuntu-latest
-    # Define the steps for this job
+        working-directory: ./web # Define the working directory for all run steps in the workflow
+    runs-on: ubuntu-latest # Specify the OS we want the workflow to run on
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       name: 'Checkout repository'
+
+    - name: 'Set up Node.js'
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.16.0'  # Set Node.js version to 20.16.0
 
     - name: 'Install Dependencies'
       run: npm install
@@ -41,13 +42,17 @@ jobs:
     defaults:
       run:
         shell: bash
-        # Define the working directory for all run steps in the workflow
-        working-directory: ./web
+        working-directory: ./web # Define the working directory for all run steps in the workflow
     runs-on: ubuntu-latest
     steps:    
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       name: 'Checkout repository'
-    
+
+    - name: 'Set up Node.js'
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.16.0'  # Set Node.js version to 20.16.0
+
     - name: 'Install Dependencies'
       run: npm install
 
