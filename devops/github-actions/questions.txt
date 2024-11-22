@@ -39,5 +39,11 @@
         }
     4. how do you set rules in your repo so that push_request & pull_request will only
         pass when certain jobs are successful {You can go to your github account and demonstrate it}
-    5. work on the python/cpython workflow
+
+5. take a look at this workflow the python/cpython workflow {
+    https://github.com/python/cpython/blob/main/.github/workflows/build.yml#L46
+    https://github.com/python/cpython/blob/main/.github/workflows/reusable-change-detection.yml
+    https://github.com/python/cpython/blob/main/.github/workflows/reusable-windows-msi.yml
+    https://github.com/python/cpython/blob/main/.github/workflows/stale.yml
+}
     
