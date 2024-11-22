@@ -1,0 +1,91 @@
+name: Testing golang backend
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'server-golang/**'
+  pull_request:
+      branches:
+        - main
+      paths:
+        - 'server-golang/**'
+env:
+  ENV: continuous_integration
+  PORT: 4000
+  TIMEZONE: Africa/Lagos
+  DB_NAME: template_test_db
+  POSTGRES_DB_USER: postgres
+  POSTGRES_DB_PASSWORD: password
+  POSTGRES_DB_PORT: 5432
+
+jobs:
+  log-the-env-variables:
+    name: Log the env variables
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: see global environment variables
+        run: |
+          echo $ENV
+          echo $PORT
+          echo $DB_NAME
+          echo $POSTGRES_DB_USER
+          echo $POSTGRES_DB_PASSWORD
+          echo $POSTGRES_DB_PORT
+
+  test-golang-service:
+    name: Testing golang service
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./server-golang
+    env:
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+
+    steps:
+      - name: see job environment variables
+        run: echo $JWT_SECRET
+
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+          sudo apt-get update
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+          sudo systemctl start docker
+          sudo systemctl enable docker
+          docker --version
+
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+            go-version: 1.22.2
+
+      - name: Install dependencies
+        run: go mod download
+
+      - name: Run tests and generate coverage report
+        run: |
+          go test -coverprofile=coverage.out ./...
+          go tool cover -func=coverage.out | tee coverage.txt
+
+      - name: Check coverage percentage
+        run: |
+          coverage=$(grep "total:" coverage.txt | awk '{print $3}' | sed 's/%//')
+          echo "Coverage is $coverage%"
+          if [ $(echo "$coverage < 80" | bc) -eq 1 ]; then
+            echo "Coverage is below 80%. Failing the build."
+            exit 1
+          fi
+
