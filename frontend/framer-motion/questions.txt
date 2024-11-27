@@ -4,6 +4,11 @@ https://motion.dev/docs/upgrade-guide
 motion is quite different from framer-motion, so i'll be sticking with framer-motion for the foreseeable
 future, no time now to start learning motion after all the time i already invested in framer-motion
 
+
+
+
+
+
 1. Talk about useMotionValue
     - List some of the useMotionValue methods (7 methods)
 

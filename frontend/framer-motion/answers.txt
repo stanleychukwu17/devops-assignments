@@ -182,7 +182,8 @@
         return <motion.div animate={controls} onClick={takeItBack} />
     }
 
-11.1    controls.start("hidden")
+11.1 how do you use variant variables in useAnimationControls 
+        controls.start("hidden")
         controls.start("visible")
         controls.start("hover")
 
@@ -331,6 +332,7 @@
     - dragConstraints:
         This will define a distance for the named edge of the draggable component
         You can pass in an object of optional (top, left, bottom, right) values measured in pixels
+        Any position not specified defaults to 0
         e.g:
             <motion.div drag="x" dragConstraints={{left:0, right:300}} />
         Or you can pass in the ref to another component
@@ -648,6 +650,7 @@
     - List at-least 5 motion value hooks (they're 8 in total)
         useMotionValue          useMotionTemplate           useScroll           useSpring
         useTime                 useTransform                useVelocity         useMotionValueEvent
+        useAnimationFrame       useVelocity                 useInView
 
     - List and talk about methods of these hooks
         .get()  .set()  .getVelocity()  .jump(newValue)     .stop()
