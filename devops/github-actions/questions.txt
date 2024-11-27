@@ -46,4 +46,3 @@
     https://github.com/python/cpython/blob/main/.github/workflows/reusable-windows-msi.yml
     https://github.com/python/cpython/blob/main/.github/workflows/stale.yml
 }
-    

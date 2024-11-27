@@ -1,12 +1,14 @@
 1. {
-    1. on: push                                 {push request events:}
+    1. on: push
+        branches: [main, dev]
 
-    2. on: pull_request                         {pull request events:}
+    2. on: pull_request
+        branches: [main, dev]
 
-    3. on: issues:      {issues events:}
+    3. on: issues:
                 types: [opened, edited]
 
-    4. on: workflow_dispatch:                   {Workflow Dispatch:}
+    4. on: workflow_dispatch:
                 inputs:
                     example_input:
                         description: 'An example input'
@@ -16,19 +18,19 @@
     5. on: deployment_status:
                 types: [success, failure]
 
-    6. on: repository_dispatch:                 {Custom Events:}
+    6. on: repository_dispatch:
                 types: [my_custom_event]
 
-    7. on: release:                             {Release Event:}
+    7. on: release:
                 types: [created, published]
 
-    8. on: schedule:                            {Schedule Events:}
+    8. on: schedule:
                 - cron: '0 0 * * *' # Runs daily at midnight
 
-    9. on: dependabot:                          {Dependabot Events:}
+    9. on: dependabot:
                 types: [pull_request]
 
-    10. on: workflow_run:                       {Workflow Run Events:}
+    10. on: workflow_run:
                 workflows: ["Main Workflow"]
                 types:
                     - completed
@@ -77,7 +79,7 @@
             expected outputs from your workflow
         - click on your [Re-run job button] to re-run all your jobs, this button is here because we
             added "workflow_dispatch" to our workflow, otherwise, if it was not present, you'd not
-            see this button
+            see this button. the button helps us to run our workflows with always relying on events
 
 3.
     see ./task/3-comment-on-issues.yml
