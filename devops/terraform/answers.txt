@@ -52,6 +52,7 @@
     For EC2 instance, we need:
         data for "ami" automatic fetching
         keyGen for ssh logging into your EC2 vm
+        user_data = for initial vm set_up and installation of needed services to run the vm
 }
 
 7. resource "<provider>_<resource_type>" "<local_name>" {
@@ -425,6 +426,8 @@
             ...
         }
 
+    - create an entry-script.sh configuration that can be used in your ec2 instance
+
 37.
     - explain why this error occurred and how can it be solved
         so the main issue is that this is a new_project and all the terraform code here was copied from another
@@ -443,11 +446,11 @@
         <key_pair_name>: is the actual name of the key pair in AWS.
 
         e.g:
-        terraform import aws_key_pair.my_key_pair my-key-pair
+        terraform import aws_key_pair.my_key_pair testing_ssh_key
         -
         resource "aws_key_pair" "my_key_pair" {
-            key_name   = "my-key-pair"
-            public_key = "<path_to_file>"
+            key_name   = "testing_ssh_key"
+            public_key = file("<path_to_file>")
         }
     - Read: read how you can find your key pairs on aws
         - Go to your aws console
