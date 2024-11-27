@@ -12,7 +12,11 @@ on:
     paths:
       - 'web/**'
   workflow_dispatch:
-
+    inputs:
+      node_version:
+        description: your desired node version
+        default: 20.16.0
+        required: false
 jobs:
   # Run unit tests to make sure everything is 👍
   test:
