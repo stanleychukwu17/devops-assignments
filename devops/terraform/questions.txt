@@ -32,7 +32,8 @@
     - destroy only a particular resource
     - how do you replace only one resource on your existing infrastructure using the apply command
 
-13. write a config file with 2 Subnets and let them be public by associating them to an internet gateway and a route table
+13. write a config file with 2 Subnets and let them be public by associating them to an
+    internet gateway and a route table
     see both code for refreshment {
         D:\Sz - projects\28-devops\1-terraform\00-examples\1-aws-subnet-with-igw
         D:\Sz - projects\28-devops\1-terraform\00-examples\2-aws-subnet-using-a-load-balancer
@@ -41,7 +42,8 @@
 14. How do you declare a variable, what are the three arguments in a variable declaration.
     - And in what files do you store your variables
 
-15. How do you force a replacement of your variables when running the terraform plan or terraform apply command
+15. How do you force a replacement of your variables when running the terraform plan or
+    terraform apply command
 
 16. what can you say about terraform.tfvars file?
     - what is the difference btw terraform.tfvars and variables.tf
