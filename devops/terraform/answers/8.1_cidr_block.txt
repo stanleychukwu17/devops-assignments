@@ -1,0 +1,29 @@
+The difference between the two CIDR blocks, `10.0.0.0/16` and `237.84.0.0/16`, primarily lies in the **range of IP addresses** they represent, and their **use cases** within networking standards.
+
+### 1. **CIDR Block `10.0.0.0/16`:**
+- This block falls within the **private IP address range** defined by the [RFC 1918](https://tools.ietf.org/html/rfc1918), which specifies IP address ranges that are reserved for private use in internal networks.
+- **Private IP ranges:**
+  - 10.0.0.0 to 10.255.255.255 (10.0.0.0/8)
+  - 172.16.0.0 to 172.31.255.255 (172.16.0.0/12)
+  - 192.168.0.0 to 192.168.255.255 (192.168.0.0/16)
+  
+  The `10.0.0.0/16` is part of the **10.0.0.0/8** private range, meaning it's reserved for use within internal networks, including AWS VPCs. You would typically use this in an AWS VPC to create internal resources that are not directly reachable from the public internet unless you configure specific routing, NAT, or security rules.
+
+### 2. **CIDR Block `237.84.0.0/16`:**
+- This is a **public IP address range**. It falls within the **Class D address space** used for **multicast** addresses.
+  - The range for Class D is `224.0.0.0` to `239.255.255.255`.
+- The IP address `237.84.0.0` is specifically part of the **multicast range**, which means it is not typically assigned for normal point-to-point or host-to-host communications like traditional IP addresses. Instead, it is used for **multicasting**, which is a method of sending data from one sender to multiple receivers.
+- This is not typically usable for assigning to hosts in a private network or for a regular AWS VPC.
+
+### Key Differences and Impact for AWS VPC:
+- **Private vs. Public Use:**
+  - The `10.0.0.0/16` block is from a private address range, which is valid and commonly used in AWS VPCs for creating isolated, internal networks.
+  - The `237.84.0.0/16` block falls within a multicast range and **cannot** be used for private IP addresses in your VPC.
+  
+- **Practical Use:**
+  - **`10.0.0.0/16`**: This block is designed for use in a VPC. You can create subnets and assign IP addresses within this range to EC2 instances, RDS databases, and other services that will be part of your private network.
+  - **`237.84.0.0/16`**: This block would not be suitable for AWS VPCs or most private networking applications, as it's used for multicast traffic, not regular host-to-host communication.
+
+### Conclusion:
+- **Advantage**: `10.0.0.0/16` is the only valid choice for an AWS VPC because it is part of the private IP address range and can be used for internal networking. `237.84.0.0/16` would be an invalid choice for VPCs or most private network setups because it is within the multicast address space.
+- **Recommendation**: Use `10.0.0.0/16` for your AWS VPC to ensure compatibility and proper internal network routing. Avoid using `237.84.0.0/16` unless you have a very specific use case involving multicast traffic (which is unlikely for most AWS VPC scenarios).
