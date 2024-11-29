@@ -132,7 +132,7 @@ future, no time now to start learning motion after all the time i already invest
     - explain all the at in the sequence below
         sequence = [
             [".product_cover", {x:100}, {duration:2}],
-            "my-label" // my label is defined at 1s, because the last animation duration = 2s
+            "my-label" // my label is defined at 2s, because the last animation duration = 2s
             ["nav", {x:100}, {duration:1, at:0.5}],
             ["nav", {x:100}, {at:"+0.5"}],
             ["nav li", {opacity:1}, {delay: stagger(0.2), at:"-0.2"}],

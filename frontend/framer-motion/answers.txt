@@ -738,7 +738,7 @@
             delay: stagger(0.1, {from:'first', startDelay:1.5, ease: "easeOut"})
         })
 
-        - from: 'first' | 'center' | 'last' number
+        - from: 'first' | 'center' | 'last' | number
             The element to stagger out from. this can either be the "first", "last" or "center" element or by passing
             a number, animation can stagger out from a certain index
             -
@@ -797,10 +797,10 @@
             - this will start at the same time when the previous animation starts
 
             [".items", {x:400, y:10}, {at: "my-label"}],
-            - this will start at the time where the label was defined, which is 1s
+            - this will start at the time where the label was defined, which is 2s
         ]
 
-    - talk about these options that are returned for animate(sequence)
+    - list some of the options returned from animate(sequence)
         .duration, .time, .then(), .pause(), .play(), .stop(), .complete(), .cancel(), .speed()
 
     - talk about these options that are returned for animate(sequence)
@@ -825,6 +825,7 @@
             e.g
             animation.pause()
             animation.time = 1 // the next play will resume from 1s
+            animation.play()
         - .stop()
             animation.stop()
             stops the animation, and it cannot be restarted or played anymore if you use .stop()
