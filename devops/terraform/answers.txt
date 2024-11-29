@@ -60,6 +60,7 @@
 }
 
 8. Classless Inter Domain Routing
+8.1 see ./answers/8.1_cidr_block.txt
 
 9.
     resource "aws_vpc" "main" {
@@ -754,8 +755,8 @@ SECTION 2 BEGINS
         resource "aws_internet_gateway" "dev_igw" {
             vpc_id = aws_vpc.dev_vpc.id
             tags = {
-                Name = "${tags.local.common-tags["Name"]}"
-                version = "${tags.local.common-tags["Version"]}"
+                Name = local.common-tags["Name"]
+                version = local.common-tags["Version"]
             }
         }
 
