@@ -61,9 +61,10 @@
 21. what is an aws_security_group
     - difference btw aws_security_group & aws_default_security_group
 
-22. add a variable to your variables.tf and terraform.tfvars file, name of the variable is
-        public_cidr
+22.
+    - add a variable to your variables.tf and terraform.tfvars file: "public_cidr"
     - use the variable to create an aws_security_group
+    - Read: explanation of some of the options used in the ingress and egress
 
 23. Create an EC2 instance
 

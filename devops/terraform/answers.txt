@@ -143,69 +143,119 @@
       aws_default_security_group = This one comes by default when you create the VPC, it is always better to leave
         this one alone and create new security groups (i.e aws_security_group)
 
-22. in variables.tf
-    variable "public_cidr" {
-        description = "everyone is allowed to visit this EC2 instance"
-        type = list(string)
-        default = ["0.0.0.0/0"]
-    }
-    in terraform.tfvars
-    public_cidr = ["0.0.0.0/0"]
-    ----
-    resource "aws_security_group" "ec2_security" {
-        vpc_id = aws_vpc.main.id
-    
-        ingress = [
-            # for ssh connections
-            {
-                from_port = 22
-                to_port = 22
-                protocol = "tcp"
-                cidr_block = var.public_cidr
-                description = "for ssh connections to the ec2"
-                ipv6_cidr_blocks = []
-                self             = false
-                security_groups  = null
-                prefix_list_ids  = null
-            },
-            # for http connection on port 80
-            {
-                from_port = 80
-                to_port = 80
-                protocol = "tcp"
-                cidr_block = var.public_cidr
-                description = "for http connections to the ec2 on port 80"
-                ipv6_cidr_blocks = []
-                self             = false
-                security_groups  = null
-                prefix_list_ids  = null
-            }
-            # for http connection on port 8080
-            {
-                from_port = 80
-                to_port = 80
-                protocol = "tcp"
-                cidr_block = var.public_cidr
-                description = "for http connections to the ec2 on port 8080"
-                ipv6_cidr_blocks = []
-                self             = false
-                security_groups  = null
-                prefix_list_ids  = null
-            }
-        ]
-
-        # for all outgoing request
-        egress = [{
-            from_port = 0
-            to_port = 0
-            protocol = "-1" # any type of request
-            cidr_block = ["0.0.0.0/0"]
-        }]
-    
-        tags = {
-            Name = "EC2 security group"
+22. 
+    - add a variable to your variables.tf and terraform.tfvars file: "public_cidr"
+        in variables.tf
+        variable "public_cidr" {
+            description = "everyone is allowed to visit this EC2 instance"
+            type = list(string)
+            default = ["0.0.0.0/0"]
         }
-    }
+        in terraform.tfvars
+        public_cidr = ["0.0.0.0/0"]
+
+    - use the variable to create an aws_security_group
+        resource "aws_security_group" "ec2_security" {
+            vpc_id = aws_vpc.main.id
+        
+            ingress = [
+                # for ssh connections
+                {
+                    from_port = 22
+                    to_port = 22
+                    protocol = "tcp"
+                    cidr_block = var.public_cidr
+                    description = "for ssh connections to the ec2"
+                    ipv6_cidr_blocks = []
+                    self             = false
+                    security_groups  = null
+                    prefix_list_ids  = null
+                },
+                # for http connection on port 80
+                {
+                    from_port = 80
+                    to_port = 80
+                    protocol = "tcp"
+                    cidr_block = var.public_cidr
+                    description = "for http connections to the ec2 on port 80"
+                    ipv6_cidr_blocks = []
+                    self             = false
+                    security_groups  = null
+                    prefix_list_ids  = null
+                }
+                # for http connection on port 8080
+                {
+                    from_port = 80
+                    to_port = 80
+                    protocol = "tcp"
+                    cidr_block = var.public_cidr
+                    description = "for http connections to the ec2 on port 8080"
+                    ipv6_cidr_blocks = []
+                    self             = false
+                    security_groups  = null
+                    prefix_list_ids  = null
+                }
+            ]
+
+            # for all outgoing request
+            egress = [{
+                from_port = 0
+                to_port = 0
+                protocol = "-1" # any type of request
+                cidr_block = ["0.0.0.0/0"]
+            }]
+        
+            tags = {
+                Name = "EC2 security group"
+            }
+        }
+
+    - Read: explanation of some of the options used in the ingress and egress
+        1. ipv6_cidr_blocks = [] ?
+          - What is ipv6_cidr_blocks:
+            This field defines the list of allowed IPv6 CIDR blocks for the rule. IPv6 CIDR blocks specify which
+            range of IPv6 addresses are allowed to access the resource.
+          - Why is it empty ([]) ?
+            The ipv6_cidr_blocks is empty because the rule is likely intended for IPv4 connections only. Since no
+            IPv6 addresses are specified, the field is left empty (or set to an empty list []). If you wanted to
+            allow IPv6 access, you would provide a valid IPv6 CIDR block here, such as "2001:0db8::/32".
+        
+        2. self = false
+          - What is self ?
+            The self field specifies whether the rule applies to traffic originating from the same security group.
+            When self = true, the rule allows traffic between instances that are associated with the same security group.
+            This is useful for cases where you want to allow internal communication between instances in the same security group.
+            The rule is set to false, meaning it does not allow traffic from instances within the same security group
+
+        3. security_groups = null
+          - What is security_groups?
+            The security_groups field is used to specify which other security groups can send traffic to the instances
+            associated with this rule. This allows you to restrict access to specific groups, as opposed to opening up
+            access to all IPs or CIDR blocks
+          - Why is it set to null?
+            Setting security_groups = null means that this rule is not specifically restricting traffic based on other
+            security groups. In other words, it does not restrict access to instances from other security groups.
+            If you had specific security groups to allow, you would list them here
+        
+        4. prefix_list_ids = null
+          - What is prefix_list_ids?
+            The prefix_list_ids field allows you to specify AWS-managed prefix lists (collections of IP address ranges)
+            to use in the rule. AWS offers managed prefix lists that include ranges for services like
+            Amazon S3, CloudFront, and others. This allows you to define rules based on these predefined IP address ranges
+            rather than manually specifying CIDR blocks
+          - Why is it set to null?
+            Setting prefix_list_ids = null means that the rule is not using any AWS-managed prefix lists. If this field were
+            set with the ID of a prefix list (e.g., "pl-12345678"), it would allow traffic from the IP addresses included
+            in that prefix list.
+        
+        5. Summary of All Fields:
+          - ipv6_cidr_blocks = []: No IPv6 addresses are specified, implying the rule is for IPv4 traffic.
+          - self = false: Traffic from instances within the same security group is not allowed.
+          - security_groups = null: No specific security groups are specified, meaning the rule does not restrict
+            based on other security groups
+          - prefix_list_ids = null: No AWS-managed prefix lists are being used, meaning no predefined IP address
+            ranges are referenced
+          - {Each of these fields can be customized to control traffic flow based on different security needs}
 
 23.
     resource "aws_instance" "my_vm" {
