@@ -296,6 +296,7 @@
     }
 
 27. ssh -i ~/.ssh/test_rsa ec2-user@<PublicIP>
+27.1 sudo su - (i.e sudo switch user - where dash(-)=root)
 
 28. 
     in variables.tf we do:
@@ -425,16 +426,18 @@
             ~ cloud-init for initial bootstrapping and configuration e.g installing docker, apache, httpd & ansible.
             ~ ansible for ongoing configuration management and complex orchestration after the initial setup is completed
 
-    - Read: read about some of the highlights of using cloud-init
+    - create an entry-script.sh configuration that can be used in your ec2 instance
+
+    - not_needed: Read: read about some of the highlights of using cloud-init
         ~ it is the standard for customizing cloud instances on spin up
         ~ it runs on most linux distributions and cloud providers
         ~ cloud-init can run per-instance or per-boot configurations
 
-    - create a cloud-init configuration in yaml called "web-app-template.yaml" and use it in your ec2
+    - not_needed: create a cloud-init configuration in yaml called "web-app-template.yaml" and use it in your ec2
         - ./task/web-app-template-v1.yml - from teacher
         - ./task/web-app-template-v2.yml - from codeium
 
-    - explain the code in your cloud-init configuration
+    - not_needed: explain the code in your cloud-init configuration
         -
         1. Adding groups to the system
         groups:
@@ -490,7 +493,7 @@
             spins up a new docker container using an "nginx" image, the container will listen to request on port 8080,
             and map the request to nginx port 80
 
-    - use the cloud-init in your ec2
+    - not_needed: use the cloud-init in your ec2
         data "template_file" "user_data" {
             # path to where the configuration is located relative to your main.tf
             template = file("./task/web-app-template-v1.yml")
@@ -503,7 +506,6 @@
             ...
         }
 
-    - create an entry-script.sh configuration that can be used in your ec2 instance
 
 37.
     - explain why this error occurred and how can it be solved
