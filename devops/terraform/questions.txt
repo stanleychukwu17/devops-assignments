@@ -62,7 +62,7 @@
     - difference btw aws_security_group & aws_default_security_group
 
 22. add a variable to your variables.tf and terraform.tfvars file, name of the variable is
-        general_public_address
+        public_cidr
     - use the variable to create an aws_security_group
 
 23. Create an EC2 instance

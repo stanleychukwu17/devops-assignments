@@ -144,12 +144,12 @@
         this one alone and create new security groups (i.e aws_security_group)
 
 22. in variables.tf
-    variable "general_public_address" {
+    variable "public_cidr" {
         description = "everyone is allowed to visit this EC2 instance"
         type = string
     }
     in terraform.tfvars
-    general_public_address = "0.0.0.0/0"
+    public_cidr = "0.0.0.0/0"
     ----
     resource "aws_security_group" "ec2_security" {
         vpc_id = aws_vpc.main.id
@@ -159,7 +159,7 @@
             from_port = 22
             to_port = 22
             protocol = "tcp"
-            cidr_block = [var.general_public_address]
+            cidr_block = [var.public_cidr]
         }
 
         # for http connection
@@ -167,7 +167,7 @@
             from_port = 80
             to_port = 80
             protocol = "tcp"
-            cidr_block = [var.general_public_address]
+            cidr_block = [var.public_cidr]
         }
 
         # for outgoing request
