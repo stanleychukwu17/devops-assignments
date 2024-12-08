@@ -74,6 +74,7 @@
 26. use the ssh to create a resource key pair and use the key pair in your ec2 instance
 
 27. login into your running ec2 instance using the ssh key that you generated
+27.1 once logged in, how do you switch to been the root user?
 
 28. move the ssh file path to the variable file and use it in the aws_key_pair resource
 
