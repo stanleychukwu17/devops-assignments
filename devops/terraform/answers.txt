@@ -580,7 +580,7 @@
     ~ Always run "terraform fmt" and "terraform validate" before you run terraform "plan" or "apply".
     ~ To log your terraform operations in your production environment, you have to set your "TF_LOG"
         to either TRACE, DEBUG, INFO, WARN or ERROR 
-    ~ Then to save all your logs to a file, you have to set TF_LOG_PATH to the file:
+    ~ Then to save all your logs to a file, you have to set TF_LOG_PATH to filename:
         e.g
             in your terminal do:
             export TF_LOG=DEBUG
