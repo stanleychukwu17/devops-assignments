@@ -37,11 +37,11 @@
     resource "aws_vpc" "main" {
         cidr_block = "10.0.0.0/16"
         enable_dns_support = true
-        enable_dns_hostname = true
+        enable_dns_hostnames = true
     }
 
     resource = is a block.. i.e a "resource block"
-    cidr_block, enable_dns_hostname, enable_dns_support = arguments
+    cidr_block, enable_dns_hostnames, enable_dns_support = arguments
     aws_vpc, main = label names
     aws_vpc = resource type.. i.e "aws_vpc resource type"
     main = local_name {used for local identification}
