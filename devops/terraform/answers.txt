@@ -146,37 +146,61 @@
 22. in variables.tf
     variable "public_cidr" {
         description = "everyone is allowed to visit this EC2 instance"
-        type = string
+        type = list(string)
+        default = ["0.0.0.0/0"]
     }
     in terraform.tfvars
-    public_cidr = "0.0.0.0/0"
+    public_cidr = ["0.0.0.0/0"]
     ----
     resource "aws_security_group" "ec2_security" {
         vpc_id = aws_vpc.main.id
     
-        # for ssh connections
-        ingress {
-            from_port = 22
-            to_port = 22
-            protocol = "tcp"
-            cidr_block = [var.public_cidr]
-        }
+        ingress = [
+            # for ssh connections
+            {
+                from_port = 22
+                to_port = 22
+                protocol = "tcp"
+                cidr_block = var.public_cidr
+                description = "for ssh connections to the ec2"
+                ipv6_cidr_blocks = []
+                self             = false
+                security_groups  = null
+                prefix_list_ids  = null
+            },
+            # for http connection on port 80
+            {
+                from_port = 80
+                to_port = 80
+                protocol = "tcp"
+                cidr_block = var.public_cidr
+                description = "for http connections to the ec2 on port 80"
+                ipv6_cidr_blocks = []
+                self             = false
+                security_groups  = null
+                prefix_list_ids  = null
+            }
+            # for http connection on port 8080
+            {
+                from_port = 80
+                to_port = 80
+                protocol = "tcp"
+                cidr_block = var.public_cidr
+                description = "for http connections to the ec2 on port 8080"
+                ipv6_cidr_blocks = []
+                self             = false
+                security_groups  = null
+                prefix_list_ids  = null
+            }
+        ]
 
-        # for http connection
-        ingress {
-            from_port = 80
-            to_port = 80
-            protocol = "tcp"
-            cidr_block = [var.public_cidr]
-        }
-
-        # for outgoing request
-        egress {
+        # for all outgoing request
+        egress = [{
             from_port = 0
             to_port = 0
             protocol = "-1" # any type of request
             cidr_block = ["0.0.0.0/0"]
-        }
+        }]
     
         tags = {
             Name = "EC2 security group"
