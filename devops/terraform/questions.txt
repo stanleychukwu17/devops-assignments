@@ -108,11 +108,12 @@
 
 36. running commands on you ec2 instance
     - which is the best for running commands on your ec2 instance (cloud-init or ansible)
-    - Read: read about some of the highlights of using cloud-init
-    - create a cloud-init configuration in yaml called "web-app-template.yaml"
-    - explain the code in your cloud-init configuration
-    - use the cloud-init in your ec2
     - create an entry-script.sh configuration that can be used in your ec2 instance
+    -
+    - not_needed: Read: read about some of the highlights of using cloud-init
+    - not_needed: create a cloud-init configuration in yaml called "web-app-template.yaml"
+    - not_needed: explain the code in your cloud-init configuration
+    - not_needed: use the cloud-init in your ec2
 
 37. The teacher copied the terraform code(i.e the terraform files) from another project into a
     new folder/project and then he modified the "aws_instance" resource to use cloud-init to setup
