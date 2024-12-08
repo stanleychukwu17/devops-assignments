@@ -532,9 +532,9 @@
             public_key = file("<path_to_file>")
         }
     - Read: read how you can find your key pairs on aws
-        - Go to your aws console
+        - Go to your aws console, go to the vpc section
         - Go to your Network & Security tab
-        - Click on Key Pairs Link {here you'll see all the key pairs you've used in all your different projects}
+        - Click on Key Pairs {it's a Link - here you'll see all d key pairs you've used in all ur different projects}
 
 38.
     - login to your ec2 instance
