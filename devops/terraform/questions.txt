@@ -145,7 +145,7 @@
 SECTION 2 BEGINS
 ================
 
-1. List the different types in terraform
+1. List the different value types in terraform
     - List simple types
     - List collection types
     - List structural types

@@ -585,7 +585,6 @@
             in your terminal do:
             export TF_LOG=DEBUG
             export TF_LOG_PATH=terraform.log
-
     ~ there are also other options such as TF_LOG_CORE & TF_LOG_PROVIDER, you can research them at your
         own convenience
 
@@ -593,7 +592,7 @@
 SECTION 2 BEGINS
 ================
 
-1. List and talk about different types in terraform
+1. List the different value types in terraform
     - List simple types
         number, string, bool, null
     - List collection types
@@ -677,8 +676,8 @@ SECTION 2 BEGINS
 
 4. The count meta-argument
     - What is count in terraform and what can it be used for
-        count is used to manage similar resources, you can use ti to automatically scale up/down resources
-        count and for_each are looping techniques
+        - count is used to manage similar resources, you can use it to automatically scale up/down resources
+        - count and for_each are looping techniques
 
     - Use count to create 3 aws instances
         resource "aws_instance" "my_vm" {
@@ -756,7 +755,7 @@ SECTION 2 BEGINS
 
     - Read: what happens when you run terraform apply
         if you run terraform apply, your security group will be created with all the ports provided, you can
-        go to your aws console to confirm this,
+        go to your aws console to confirm this:
         ~ go to aws > search for "VPC" > SECURITY > SECURITY_GROUPS
         ~ select the security group you created, click on inbound rules
             here you'll see all the rules you've created with the dynamic block
@@ -800,7 +799,7 @@ SECTION 2 BEGINS
     }
 
     You can also do stuffs like:
-    instance_type = var.env_stage == "dev" ? "t2.micro" : "t2.large"
+    instance_type = var.env_stage == "dev" ? "t3.micro" : "t3.large"
 
 8. Locals
     - in what files can you save your locals
