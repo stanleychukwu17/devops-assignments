@@ -189,3 +189,8 @@ SECTION 2 BEGINS
 10. Give an example of using splat expressions
 
 11. Read: Terraform remote state
+
+un-answered questions {
+    section1 = 36.2 on entry_script
+    section2 = 9, 10, 11
+}
