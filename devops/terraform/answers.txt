@@ -130,6 +130,7 @@
 
 19. this is how they are applied into your config files
     -var & -var-file
+    *.auto.tfvars
     terraform.tfvars & production.tfvars
     environment variables "TF_VAR_*"
 
@@ -519,9 +520,9 @@
         To solve this problem {the teacher says it is usually a common problem}, you have to import the aws_key_pair
         into this new_project, here is what you'll do:
 
-        terraform import aws_key_pair.<resource_name> <key_pair_name>
+        terraform import aws_key_pair.<local_name> <key_pair_name>
         -
-        <resource_name>: is the name you want to give to the resource in your Terraform configuration
+        <local_name>: is the name you want to give to the resource in your Terraform configuration
         <key_pair_name>: is the actual name of the key pair in AWS.
 
         e.g:
@@ -654,7 +655,6 @@ SECTION 2 BEGINS
                 protocol = string
                 cidr_block = list(string)
             })
-
             default = {
                 from_port = 0,
                 to_port = 65365, # maximum amount of ports
@@ -789,12 +789,12 @@ SECTION 2 BEGINS
     in main.tf
     resource "aws_instance" "test_server" {
         ami = "..."
-        instance_type = "t2.micro"
+        instance_type = "t3.micro"
         count = var.is_test == true ? 1 : 0
     }
     resource "aws_instance" "production_server" {
         ami = "..."
-        instance_type = "t2.large"
+        instance_type = "t3.large"
         count = var.is_test == false ? 1 : 0
     }
 
