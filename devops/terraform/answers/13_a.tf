@@ -5,6 +5,14 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+  backend "s3" {
+    bucket = "name-of-bucket"
+    key = "name-of-file.tf"
+    region = "eu-north-1"
+    encrypt = true
+    dynamodb_table = "name-of-dynamodb-table-for-locking"
+  }
 }
 
 provider "aws" {
