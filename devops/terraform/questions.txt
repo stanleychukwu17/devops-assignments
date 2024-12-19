@@ -194,3 +194,24 @@ SECTION 2 BEGINS
     - working with terraform cloud to store your state file
 
 12. Modules
+    - what is a module in terraform
+    - what is a root module & child module
+    - what is the difference btw a local module and a remote module
+
+13. How do you structure your project to use modules
+    - Talk about providers in modules
+
+14. - Create a small project using modules. Let the ec2 module house the creating of an aws_instance
+    - use the module in your root module 
+    - what do you do after including a new module to your root module
+    - parameterize the ec2_module you created
+    - provide your own variables to the ec2 module
+
+15. Read: Best practices when working with modules
+
+16. - Convert all the code/project from DevOps Directive to be modular
+    - First work on the vpc module and parameterize it to use variables
+    - use the vpc module in your root module
+    - Now move the ec2_instance to a module called "server" and use it in your root module
+    - Now the route53 into Networking module
+    - Now run terraform plan to see that all is well and okay (how many resources would be created?)
