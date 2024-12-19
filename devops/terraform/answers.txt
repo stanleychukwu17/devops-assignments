@@ -869,7 +869,23 @@ SECTION 2 BEGINS
           }
 
 10. Give an example of using splat expressions
+    Lets say for example we have
+    resource "aws_instance" "my_vm" {
+        ami = "ami..."
+        instance_type = "t3.micro"
+        count = 3
+        associate_public_ip_address = true
+    }
 
+    The above will create 3 ec2 instances, so how do we dynamically display the info of these aws_instance's. Say we wanted
+    to display the ip addresses, we might do:
+    output "ip_address_1" {
+        value = aws_instance.my_vm[0].public_ip
+    } 
 
-
+    imagine if we created upTo 10vm, this would take forever, so we can use splat-expressions to dynamically loop through
+    the vm's details, i.e:
+    output "ip_addresses" {
+        value = aws_instance.my_vm[*].public_ip
+    }
 
