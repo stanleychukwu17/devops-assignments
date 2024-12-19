@@ -838,12 +838,37 @@ SECTION 2 BEGINS
         }
 
 9. Terraform built-in functions
+    If you go to the terraform documentation, navigate to the functions section, you'll see all of the functions provided
+    by terraform. You cannot create your own custom functions in terraform
+
     - lookup function
+        it retrieves a "value" from a "map" using a "key" from the map
+        lookup(<map>, <key_name>)
+        e.g ami = lookup(var.ami, var.region)
+
     - difference btw lookup & element function
+        lookup retrieves an item from a map using the key of the value
+        element retrieves an item from a list using the index of the value
+
     - file function
+        The file function reads the content of a file and returns it as a string
+        e.g user_data = file("entry-script.sh")
+
     - formatDate & timestamp()
+        timestamp() is used to retrieve the current time
+        formatDate() is used in to format the date received from timestamp()
+        e.g:
+        in locals.tf
+          locals {
+            time = formatDate("DD MM YYYY hh:mm", timestamp())
+          }
+        in outputs.tf
+          output "CurrentTime" {
+            description = "Current Date and Time"
+            value = local.time
+          }
 
-
+10. Give an example of using splat expressions
 
 
 
