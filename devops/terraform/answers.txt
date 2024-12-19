@@ -889,3 +889,30 @@ SECTION 2 BEGINS
         value = aws_instance.my_vm[*].public_ip
     }
 
+11. Read: Terraform remote state
+    - working with amazon s3 to store your state file
+      you can use terraform to create your s3 bucket or you can go to the terraform website and create your bucket there
+      after creating the s3_bucket and dynamodb for state locking, add the below to your terraform "main.tf" or another file,
+      maybe "backend.tf":
+
+      terraform {
+        required_providers { ... }
+
+        backend "s3" {
+          bucket = <name-of-bucket>
+          key = <name-of-file> e.g s3_backend.tfstate
+          region = "eu-north-1"
+          encrypt = true
+          dynamodb_table = <name-of-table>
+        }
+      }
+
+    - using dynamodb to implement state locking
+      You can go to aws and create a dynamodb table from there, or you can use terraform to create a dynamodb_table
+      The dynamodb_table will help with state locking to prevent simultaneous updating of a state file
+
+    - Read: working with terraform cloud to store your state file
+        You can also you hashicorp cloud for storing of your state file, if you'd like to use hashicorp cloud, then see
+        Terraform 2 - Book35.1 - page-10
+
+12. 

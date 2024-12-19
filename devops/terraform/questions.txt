@@ -189,8 +189,8 @@ SECTION 2 BEGINS
 10. Give an example of using splat expressions
 
 11. Read: Terraform remote state
+    - working with amazon s3 to store your state file
+    - using dynamodb to implement state locking
+    - working with terraform cloud to store your state file
 
-un-answered questions {
-    section1 = 36.2 on entry_script
-    section2 = 9, 10, 11
-}
+12. Modules
