@@ -16,7 +16,8 @@
 3. You next task is to use github-actions to write a comment on newly created issues in
     our codebase/github-repo. Let the workflow have 2 jobs:
     1. should use community action to add a comment to the issue
-    2. use the github api to post a comment to the issue
+    2. what is the | jq '.'? used in the github_action file
+    3. use the github api to post a comment to the issue
 
 4.
     1. Read: Some of the principles of Continuous Integration
