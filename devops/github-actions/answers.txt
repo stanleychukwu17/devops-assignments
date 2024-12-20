@@ -83,10 +83,10 @@
 
 3.
     1. see ./task/3-comment-on-issues.yml
-    -
-    we need to pass environment variables in the second job, the first job can access the environment
-    variables internally because it is an action, but since we ae sending a post request, we also need
-    to attach the environment variables
+        we need to pass environment variables in the second job, the first job can access the environment
+        variables internally because it is an action, but since we are sending a post request, we also need
+        to attach the environment variables in the url
+
 
 4.
     1. Read: Some of the principles of Continuous Integration
