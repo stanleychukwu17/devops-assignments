@@ -215,3 +215,8 @@ SECTION 2 BEGINS
     - Now move the ec2_instance to a module called "server" and use it in your root module
     - Now the route53 into Networking module
     - Now run terraform plan to see that all is well and okay (how many resources would be created?)
+
+
+================
+SECTION 3 BEGINS - will there be a section 3?
+================
