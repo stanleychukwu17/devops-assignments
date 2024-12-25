@@ -37,7 +37,9 @@ Group 2
     - show the timestamp for each logs
 }
 6. execute three commands in a running container {1. ls, 2. mkdir, 3. sh}
-7. execute a shell in an interactive mode in a running container
+
+7.  1. execute a shell in an interactive mode in a running container
+    2. execute a shell in an container as the root user 
 
 8. use the docker attach command to attach to a running container
 9. remove a docker container - use the 2 methods available

@@ -104,9 +104,12 @@ Group 2.
     2. docker exec -it my_container mkdir /path/to/new_directory
     3. docker exec -it my_container sh
 
-7. docker exec -it my_container sh (or) docker exec -it my_container bash
-    for ubuntu based system, or ubuntu based image you can use bash
-    
+7.  1. docker exec -it my_container sh (or) docker exec -it my_container bash
+        for alpine images, they're too small so they do not carry the more recent bash terminal, you can only use shell terminal's
+        for ubuntu based images, you can use bash because these ubuntu based images are larger and carry the bash terminal
+
+    2.  docker exec -it -u root my_container sh {or}
+        docker exec -it -u root CONTAINER_ID_or_NAME /bin/sh {where -u == --user}
 
 8. docker attach CONTAINER_ID_or_NAME
     note this attaches to the main process as its own user, not as root unless the main process is running as root.
