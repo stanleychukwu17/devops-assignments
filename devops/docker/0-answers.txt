@@ -22,12 +22,13 @@ Group 1
         tagged.
         Note: Unlike the previous command, this will delete both dangling images and images that are not currently
         in use but might still have tags.
-    docker image prune -a -f {Remove all unused images (without confirmation):}
+    docker image prune -a -f {Remove all unused & dangling images (without confirmation):}
 
 8.  - COPY package.json package-lock.json pnpm-lock.yml ./
     - COPY package*.json ./ {
         COPY *.txt *(.js|.ts) picture* ./
-        The COPY instruction in Docker does not support advanced pattern matching or glob patterns like *, ?, or complex regex patterns directly.
+        The COPY instruction in Docker does not support advanced pattern matching or glob patterns like *, ?,
+          or complex regex patterns directly.
     }
     - COPY ["file with space.txt", "."]
     - COPY . ./
