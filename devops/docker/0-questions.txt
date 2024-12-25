@@ -44,11 +44,15 @@ Group 2
 8. use the docker attach command to attach to a running container
 9. remove a docker container - use the 2 methods available
     - how do you start and stop an already existing container
-10. docker volume, everything you know about it and it's command {
+10. docker volume
+    0. everything you know about it and it's command
+      how do you create a new volume using the volume command
+      list all the volumes
+      inspect a volume
+      delete a volume by force
     1. tell me the difference btw a bind mount and a named volume and give an example
     2. do the both of them while starting a postgres container using a postgres image from docker hub
     3. how do you map your current workspace into the container using volumes, so that you can see live changes in your container
-}
 
 
 Group 3
