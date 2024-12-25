@@ -27,7 +27,6 @@ Group 2
     what are the alternatives to CMD command, explain the diff btw CMD and it's alternatives
 2. how do you push an image to docker hub?
 3. run a container in a detached mode
-
 4. run a container in an interactive mode {
     run a container with all the params you know {name, port, environment, volumes}
     list all the containers using 2 different commands (both running and stopped containers)
