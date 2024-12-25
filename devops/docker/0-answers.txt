@@ -188,6 +188,7 @@ Group 2.
                 bash
 
             -v ${PWD}:/usr/src/app: This mounts your local directory into the container at /usr/src/app (as you intend).
+
             -v my_node_modules:/usr/src/app/node_modules: This uses a named volume (my_node_modules) for the node_modules
               directory inside the container. By using a named volume, Docker will manage node_modules independently, meaning 
               it won't sync it with your local host machine, preventing any conflicts.
