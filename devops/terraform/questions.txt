@@ -106,7 +106,7 @@
     - use state to view the state in json format
     - list state resource by Module. {tip: use the grep command}
 
-36. running commands on you ec2 instance
+36. running commands on your ec2 instance
     - which is the best for running commands on your ec2 instance (cloud-init or ansible)
     - create an entry-script.sh configuration that can be used in your ec2 instance
     -
