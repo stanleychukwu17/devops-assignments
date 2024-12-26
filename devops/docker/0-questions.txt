@@ -62,10 +62,10 @@ Group 3
     2. recursively using rm --p60
 }
 3. create a Dockerfile for react, golang, node.js, postgres {
-    DONE: react & golang;;;
-    NEEDED: node.js .dev & .prod
-    Dockerfile for react & node.js, golang -- for dev
-    Dockerfile for react & node.js, golang -- for prod
+    dev - react, golang, node.js, postgres; 
+    dev - react, golang, node.js, postgres;
+    NEEDED: postgres .dev
+    NEEDED: react, postgres .prod
 }
 4. Create a docker-compose.yml file for these services {
     frontend
