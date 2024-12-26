@@ -6,7 +6,7 @@ RUN addgroup -S app && adduser -S -G app app
 # Set work directory
 WORKDIR /usr/src/app
 
-# Copy package files and install pnpm as root
+# Copy package files
 COPY package*.json ./
 
 # Install dependencies using npm
@@ -20,10 +20,10 @@ RUN mkdir -p /usr/src/app/.next && chown -R app:app /usr/src/app/.next
 
 # Copy application source code
 COPY --chown=app:app . ./
-# RUN chown -R app:app /usr/src/app  ### Change ownership of the application files to the non-root user
+# RUN chown -R app:app /usr/src/app  ## Change ownership of the application files to the non-root user
 
 # Expose the port
 EXPOSE 3000
 
 # Set the default command
-# CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev"]
