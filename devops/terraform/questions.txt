@@ -193,6 +193,8 @@ SECTION 2 BEGINS
     - using dynamodb to implement state locking
     - working with terraform cloud to store your state file
 
+11.1 Write down the spinning up of resources using load_balancer - from DevOps Directive lecture
+
 12. Modules
     - what is a module in terraform
     - what is a root module & child module
