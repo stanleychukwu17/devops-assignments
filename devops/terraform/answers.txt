@@ -260,7 +260,7 @@
 
 23.
     resource "aws_instance" "my_vm" {
-        ami =                           "ami-4094940048585fse2"
+        ami =                           "ami-4094940048585fse2" or data.aws_ami.latest_amazon_linux2.ami
         instance_type =                 "t3.micro"
         subnet_id =                     aws_subnet.web_subnet.id
         vpc_security_group_ids =        [aws_security_group.ec2_security.id]
@@ -428,6 +428,7 @@
             ~ ansible for ongoing configuration management and complex orchestration after the initial setup is completed
 
     - create an entry-script.sh configuration that can be used in your ec2 instance
+        ./answers/36.2-entry-script.sh
 
     - not_needed: Read: read about some of the highlights of using cloud-init
         ~ it is the standard for customizing cloud instances on spin up
@@ -653,13 +654,13 @@ SECTION 2 BEGINS
                 from_port = number
                 to_port = number
                 protocol = string
-                cidr_block = list(string)
+                cidr_blocks = list(string)
             })
             default = {
                 from_port = 0,
                 to_port = 65365, # maximum amount of ports
                 protocol = "tcp",
-                cidr_block = ["100.0.0.0/16", "200.0.0.0/16"]
+                cidr_blocks = ["100.0.0.0/16", "200.0.0.0/16"]
             }
         }
         ---
@@ -670,7 +671,7 @@ SECTION 2 BEGINS
                 from_port = var.egress_dsg["from_port"]
                 to_port = var.egress_dsg["to_port"]
                 protocol = var.egress_dsg["protocol"]
-                cidr_block = var.egress_dsg["cidr_block"]
+                cidr_blocks = var.egress_dsg["cidr_blocks"]
             }
         }
 
