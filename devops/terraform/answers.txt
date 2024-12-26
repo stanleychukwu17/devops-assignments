@@ -64,7 +64,7 @@
 
 9.
     resource "aws_vpc" "main" {
-        cidr_block = var.vpc_cidr_block
+        cidr_block = "10.0.0.0/16"
         enable_dns_support = true
         enable_dns_hostnames = true
 
@@ -98,7 +98,7 @@
         description = "The cidr block for the main vpc for development stage"
         type = string
     }
-    - you save variables in two file: variables.tf & terraform.tfvars
+    - you save variables in two file: variables.tf & (terraform.tfvars or <any_name>.auto.tfvars)
 
 15. terraform apply -auto-approve -var="vpc_cidr_block=10.0.0.0/16" -var="subnet_cidr_block=10.0.10.0/24"
 
