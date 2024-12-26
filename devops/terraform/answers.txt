@@ -186,8 +186,8 @@
                 }
                 # for http connection on port 8080
                 {
-                    from_port = 80
-                    to_port = 80
+                    from_port = 8080
+                    to_port = 8080
                     protocol = "tcp"
                     cidr_block = var.public_cidr
                     description = "for http connections to the ec2 on port 8080"
