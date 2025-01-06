@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket = "name-of-bucket"
-    key = "name-of-file.tf"
+    key = "name-of-file.tfstate"
     region = "eu-north-1"
     encrypt = true
     dynamodb_table = "name-of-dynamodb-table-for-locking"
