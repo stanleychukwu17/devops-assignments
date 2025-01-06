@@ -174,7 +174,7 @@
                     from_port = 22
                     to_port = 22
                     protocol = "tcp"
-                    cidr_block = var.public_cidr
+                    cidr_blocks = var.public_cidr
                     description = "for ssh connections to the ec2"
                     ipv6_cidr_blocks = []
                     self             = false
@@ -213,6 +213,11 @@
                 to_port = 0
                 protocol = "-1" # any type of request
                 cidr_block = ["0.0.0.0/0"]
+                description = "rule for all outgoing request from the ec2, all traffic are allowed"
+                ipv6_cidr_blocks = []
+                self             = false
+                security_groups  = null
+                prefix_list_ids  = null
             }]
         
             tags = {
