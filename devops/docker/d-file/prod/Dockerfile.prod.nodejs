@@ -35,7 +35,7 @@ RUN chown -R app:app /usr/src/app
 USER app
 
 # Expose the port the app will run on
-EXPOSE 3000
+EXPOSE 4000
 
 # Start the application
 CMD ["npm", "run", "start"]
