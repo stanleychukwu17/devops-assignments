@@ -92,12 +92,21 @@
 
 13. D:\Sz - projects\0-exercise\terraform\answers\13_a.tf
 
-14. you use the variable block
-    variable "vpc_cidr_block" {
-        default = "10.0.0.0/16"
-        description = "The cidr block for the main vpc for development stage"
-        type = string
-    }
+14.
+    - How do you declare a variable, what are the three & four arguments in a variable declaration
+        with 3 arguments:
+        variable "vpc_cidr_block" {
+            default = "10.0.0.0/16"
+            description = "The cidr block for the main vpc for development stage"
+            type = string
+        }
+        with 4 arguments
+        variable "av_zones" {
+            description = "A list of availability_zones"
+            type = list(string)
+            default = ["...", "...", "..."]
+            sensitive = true
+        }
     - you save variables in two file: variables.tf & (terraform.tfvars or <any_name>.auto.tfvars)
 
 15. terraform apply -auto-approve -var="vpc_cidr_block=10.0.0.0/16" -var="subnet_cidr_block=10.0.10.0/24"
