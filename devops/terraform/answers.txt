@@ -382,7 +382,14 @@
     - terraform output
     - terraform output ec2_public_ip_address
     - terraform output -json
-    - terraform output -json > output.json
+    - 
+      - terraform output -json > output.json
+          Will not display output to the terminal, but will save output to output.json
+      - terraform output -json | tee output.json
+          Display the output in the terminal & Save the output into output.json
+      - terraform output -json | tee output.json > /dev/null
+          Will not display output to the terminal, but will save output to output.json
+
     - if you want to hide an output from display in the terminal, set sensitive = true, i.e {
         output "ec2_public_ip_address" {
             description = "The public IP address of the EC2 instance for ebay"
