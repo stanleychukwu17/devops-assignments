@@ -6,6 +6,8 @@
         "cpython",
         "gecos",
         "hostnames",
+        "IMAP",
+        "IMAPS",
         "iport",
         "keygen",
         "Kubwa",

@@ -170,6 +170,7 @@ SECTION 2 BEGINS
 6.  - Read: take a look at looping with dynamic block {No need to master}
     - Read: what happens when you run terraform apply
     - Read: changing the iterator name
+    - Read: see the explanation for the different ports used
 
 7. Conditional Expressions
     - let's say we want to spin up different instances depending on our current environment, use
