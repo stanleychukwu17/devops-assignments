@@ -961,9 +961,14 @@ SECTION 2 BEGINS
       The dynamodb_table will help with state locking to prevent simultaneous updating of a state file
 
     - Read: working with terraform cloud to store your state file
-        You can also use hashicorp cloud for storing of your state file, if you'd like to use hashicorp cloud, then see
-        Terraform 2 - Book35.1 - page-10; or ask chatGPT on how to use it
-        i'd prefer to use aws s3_bucket
+        if you want to use terraform cloud for you .tfstate file storage, then here you go:
+        -
+        backend "remote" {
+          organization = "glich-stream"
+          workspaces {
+            name = "ci-cd-staging"
+          }
+        }
 
 11.1 
 
