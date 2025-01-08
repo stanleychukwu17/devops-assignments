@@ -988,4 +988,23 @@ SECTION 2 BEGINS
         - Remote modules: There are modules that are loaded from remote sources such as terraform registry and
                           are created and maintained by either hashicorp and it's partners or by 3rd parties
 
-13. 
+13. How do you structure your project to use modules
+        root
+        |__ project/
+        |    |__ main.tf
+        |
+        |__ modules/
+            |__ vpc/
+            |    |__ main.tf
+            |    |__ outputs.tf
+            |    |__ variables.tf
+            |
+            |__ ec2/
+            |    |__ main.tf
+            |    |__ outputs.tf
+            |    |__ variables.tf
+            |
+            |__ networking/
+                |__ main.tf
+                |__ outputs.tf
+                |__ variables.tf
