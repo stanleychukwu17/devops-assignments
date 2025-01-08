@@ -194,6 +194,8 @@ SECTION 2 BEGINS
     - working with terraform cloud to store your state file
 
 11.1 Write down the spinning up of resources using load_balancer - from DevOps Directive lecture
+    - list all the resources
+    - write the code for all the resources listed
 
 12. Modules
     - what is a module in terraform
