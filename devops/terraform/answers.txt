@@ -971,6 +971,9 @@ SECTION 2 BEGINS
         }
 
 11.1 
-
+    - list all the resources
+        D:\Sz - projects\28-devops\1-terraform\02-terraform-web-app-from-devops-directive\tree.txt
+    - write the code for all the resources listed
+        D:\Sz - projects\28-devops\1-terraform\02-terraform-web-app-from-devops-directive\main.tf
 12. 
 
