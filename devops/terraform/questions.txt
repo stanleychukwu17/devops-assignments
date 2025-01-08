@@ -204,7 +204,6 @@ SECTION 2 BEGINS
     - what is the difference btw a local module and a remote module
 
 13. How do you structure your project to use modules
-    - Talk about providers in modules
 
 14. - Create a small project using modules. Let the ec2 module house the creating of an aws_instance
     - use the module in your root module 
