@@ -975,5 +975,17 @@ SECTION 2 BEGINS
         D:\Sz - projects\28-devops\1-terraform\02-terraform-web-app-from-devops-directive\tree.txt
     - write the code for all the resources listed
         D:\Sz - projects\28-devops\1-terraform\02-terraform-web-app-from-devops-directive\main.tf
-12. 
 
+12. Modules
+    - what is a module in terraform
+        A module is a set of terraform configuration files in a single directory.
+        Modules are a key to writing reuseable, maintainable, testable terraform code
+    - what is a root module & child module
+        - root module: A root module is the place where you run terraform plan or apply
+        - child module: All modules imported from other directories into the root module are known as child module
+    - what is the difference btw a local module and a remote module
+        - Local modules: It is a module created by you or your team members and are loaded locally
+        - Remote modules: There are modules that are loaded from remote sources such as terraform registry and
+                          are created and maintained by either hashicorp and it's partners or by 3rd parties
+
+13. 
