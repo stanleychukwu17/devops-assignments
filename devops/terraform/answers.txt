@@ -822,8 +822,6 @@ SECTION 2 BEGINS
             - Purpose: A common port for web servers, often used as an alternative to port 80.
                        It may be used for proxy servers or other applications that require HTTP access.
 
-These ports are often used in configurations for networking or firewall settings, and opening them means allowing traffic to specific services on a server.
-
 7. Conditional Expressions
  - let's say we want to spin up different instances depending on our current environment, use
     terraform conditions and variables to check if we should launch an ec2_instance for testing
@@ -942,9 +940,9 @@ These ports are often used in configurations for networking or firewall settings
 
 11. Read: Terraform remote state
     - working with amazon s3 to store your state file
-      you can use terraform to create your s3 bucket or you can go to the terraform website and create your bucket there
-      after creating the s3_bucket and dynamodb for state locking, add the below to your terraform "main.tf" or another file,
-      maybe "backend.tf":
+      you can use terraform to create your s3 bucket or you can go to the aws website and create your bucket there
+      after creating the s3_bucket and dynamodb for state locking, add the below to your terraform "main.tf" or
+      add it to another file called "backend.tf":
 
       terraform {
         required_providers { ... }
