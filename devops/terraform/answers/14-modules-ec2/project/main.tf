@@ -22,3 +22,11 @@ resource "aws_vpc" "main" {
     Name = "Main VPC"
   }
 }
+
+module "my_ec2" {
+  source = "../modules/ec2"
+  ami = var.ami
+  instance_type = var.instance_type
+  instance_count = var.instance_count
+  public_ip = var.public_ip
+}
