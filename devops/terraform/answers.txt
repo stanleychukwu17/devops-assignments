@@ -1022,3 +1022,18 @@ SECTION 2 BEGINS
     - Exposes input variable to allow necessary customization + composition
     - Provides useful defaults
     - Return outputs to make further integrations possible
+
+16. As you separate into modules, what resources goes into which modules?
+    - vpc module
+        aws_vpc, aws_subnet, aws_internet_gateway, aws_route_table, aws_route_association_table
+    - ec2 module
+        aws_security_group, aws_key_pair, data.aws_ami, aws_instance
+    - storage module
+        aws_s3_bucket, aws_s3_bucket_server_side_encryption_configuration
+    - network module
+        aws_lb_listener, aws_lb_target_group, aws_lb_target_group_attachment, aws_lb_listener_rule,
+        aws_security_group.alb_sg, aws_lb
+    - dns module
+        aws_route53_zone, aws_route53_record
+    - database module
+        aws_db_instance
