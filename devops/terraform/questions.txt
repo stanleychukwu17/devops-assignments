@@ -211,7 +211,7 @@ SECTION 2 BEGINS
     - provide your own variables to the ec2 module (use variables here)
     - what do you do after including a new module to your root module
 
-15. Read: Best practices when working with modules
+15. what makes a good module
 
 16. - Convert all the code/project from DevOps Directive to be modular
     - First work on the vpc module and parameterize it to use variables
