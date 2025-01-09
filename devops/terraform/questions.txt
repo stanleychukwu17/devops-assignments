@@ -213,7 +213,15 @@ SECTION 2 BEGINS
 
 15. what makes a good module
 
-16. - Convert all the code/project from DevOps Directive to be modular
+16. As you separate into modules, what resources goes into which modules?
+    - vpc module
+    - ec2 module
+    - storage module
+    - network module
+    - dns module
+    - database module
+
+17. - Convert all the code/project from DevOps Directive to be modular
     - First work on the vpc module and parameterize it to use variables
     - use the vpc module in your root module
     - Now move the ec2_instance to a module called "server" and use it in your root module
