@@ -221,7 +221,16 @@ SECTION 2 BEGINS
     - dns module
     - database module
 
-17. - Convert all the code/project from DevOps Directive to be modular
+17. Accessing child modules output
+    - expose your vpc_id using an output from your vpc module and access it from the root module
+    - what is the syntax for accessing the output of a child module
+    - how will different child modules access their outputs e.g:
+      use the vpc_id from the "vpc_module" in the "ec2_module" to create the aws_security_group
+    - how do you expose an entire resource as an output, e.g:
+      - expose the entire ec2 instance in the ec2 module
+      - access the values from the root module, get: ec2_ami, ec2_public_ip_address, ec2_instance_id
+
+18. - Convert all the code/project from DevOps Directive to use modules
     - First work on the vpc module and parameterize it to use variables
     - use the vpc module in your root module
     - Now move the ec2_instance to a module called "server" and use it in your root module
