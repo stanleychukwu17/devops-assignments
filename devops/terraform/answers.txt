@@ -1037,3 +1037,68 @@ SECTION 2 BEGINS
         aws_route53_zone, aws_route53_record
     - database module
         aws_db_instance
+
+17. Accessing child modules output
+    - expose your vpc_id using an output from your vpc module and access it from the root module
+        in ./modules/vpc/outputs.tf
+            output "vpc_id" {
+                value = aws_vpc.main.id
+            }
+        in ./projects/main.tf
+            module "vpc_module" {
+                source = "../module/vpc"
+                ...
+            }
+        in ./projects/outputs.tf
+            output "vpc_id" {
+                description = "..."
+                value = module.vpc_module.vpc_id
+            }
+
+    - what is the syntax for accessing the output of a child module
+        module.<module_name>.<output_name>
+    
+    - how will different child modules access their outputs e.g:
+      use the vpc_id from the "vpc_module" in the "ec2_module" to create the aws_security_group
+        in ./modules/ec2/main.tf
+            resource "aws_security_group" "ec2" {
+                vpc_id = var.vpc_id
+                ...
+            }
+        -
+        in ./modules/ec2/variables.tf
+            variable "vpc_id" {
+
+            }
+        -
+        in ./projects/main.tf
+            module "ec2_module" {
+                source = "../modules/ec2"
+                vpc_id = module.vpc_module.vpc_id
+            }
+
+    - how do you expose an entire resource as an output, e.g:
+      - expose the entire ec2 instance in the ec2 module
+        in ./modules/ec2/outputs.tf
+            output "ec2_outputs" {
+                value = aws_instance
+            }
+
+      - access the values from the root module, get: ec2_ami, ec2_public_ip_address, ec2_instance_id
+        in ./projects/outputs.tf
+            output "ec2_ami" {
+                value = module.ec2_module.ec2_outputs.ami
+            }
+            output "ec2_public_ip_address" {
+                value = module.ec2_module.ec2_outputs.public_ip
+            }
+            output "ec2_instance_id" {
+                value = module.ec2_module.ec2_outputs.id
+            }
+
+
+
+
+
+
+
