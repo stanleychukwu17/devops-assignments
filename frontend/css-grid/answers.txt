@@ -27,6 +27,9 @@
         used to set the number of columns on the grid and the sizes of this columns
     - grid-template-rows:
         used to set the number of rows on the grid and the sizes of this rows
+    - grid-template-areas:
+        used to define the total number of rows and columns that an element should have, the columns
+        and rows are represented with dots (.)
     - grid-column:
         defines the column area the content should occupy, you can use it to specify the grid-column-line
         where the item should start from and the grid-column-line where the occupation should stop
@@ -41,7 +44,6 @@
     - grid-column: 3 / -1; start from grid-column-line 3 and stop at the last grid-column-line
     - grid-row: 1 / -1; start from grid-row-line 1 and stop at the last grid-row-line
     - grid-area: 3/1/-1/-1; start-row/start-column/end-row/end-column
-
 
 6. 
     - grid-column: 1 / span 3
