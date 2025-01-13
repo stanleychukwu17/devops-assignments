@@ -144,7 +144,6 @@
 ================
 SECTION 2 BEGINS
 ================
-
 1. List the different value types in terraform
     - List simple types
     - List collection types
@@ -248,7 +247,8 @@ SECTION 2 BEGINS
 ================
 SECTION 3 BEGINS
 ================
-1.  - Look at the image of the ec2 from lecture 1 and draw it on your own
+1. Drawing of images
+    - Look at the image of the ec2 from lecture 1 and draw it on your own
     - Look at the image from DevOps Directive lecture and draw it on your own
 
 2. How do you create an s3_bucket and dynamodb_table for storing and locking of .tfstate files
