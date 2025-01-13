@@ -1298,4 +1298,7 @@ SECTION 3 BEGINS
         terraform workspace delete <name-of-workspace>
         e.g: terraform workspace delete development
 
+6.  Read: Terragrunt
 
+    Read: using the tree command
+    Read: Using Directory/File structure to manage environment
