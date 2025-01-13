@@ -269,7 +269,7 @@ SECTION 3 BEGINS
     - deleting of workspaces
 
 6.  Read: Terragrunt
-    Read: using the tree command
+    Read: using the "tree" command
     Read: Using Directory/File structure to manage environment
 
 7. Testing terraform code

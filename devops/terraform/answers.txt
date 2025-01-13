@@ -1298,7 +1298,44 @@ SECTION 3 BEGINS
         terraform workspace delete <name-of-workspace>
         e.g: terraform workspace delete development
 
-6.  Read: Terragrunt
+6.  
+    Read: Terragrunt
+        This is a tool provided by grunt-work.io, it provide utilities to make certain terraform use cases easier.
+        - keeping terraform code DRY
+        - executing commands across multiple TF configs
+        - working with multiple cloud accounts
+        -
+        it's a very great tool, once you start scaling up, you can research more on how to use this tool
 
-    Read: using the tree command
+    Read: using the "tree" command
+        this one is just a terminal tip: you can use the "tree" command to see all your directories and
+        sub-directories
+        tree -a; # to see both hidden directories
+        tree -L2; # to limit the sub-directories level show to 2
+        -
+        this command will only work in a pure linux environment, it works in my ubuntu-20.24(WSL), it won't work
+        in my "git bash", but it works in macBook since they ship with linux
+
     Read: Using Directory/File structure to manage environment
+        you can have something like:
+        -
+        infra/
+            modules/
+                vpc_module/
+                ec2_module/
+            global/
+                main.tf
+            production/
+                main.tf
+            staging/
+                main.tf
+
+        the "global/main.tf" housed only resources that were shared by both production & staging.
+        in  global/main.tf, you have:
+        -
+        terraform { ... }
+        provider "aws" { ... }
+        resource "aws_route53_zone" "primary" {
+            name = "stanleychukwu.com"
+        }
+
