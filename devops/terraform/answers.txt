@@ -1244,8 +1244,42 @@ SECTION 3 BEGINS
             }
         }
 
+4. Managing multiple environment
 
+    One-config: --------------------------------------------------------------
+                |                           |                           |
+            development                   staging                   production
 
+    - workspaces:
+        this involves you using multiple named sections within a single backend
+        e.g staging, development, production e.t.c
+
+    - File structure: talk about it (add note on referenced images p49)
+        this involves using of directory layout, where you can use the same module in different sub-directories.
+        variables in the different directories will determine what resources are created
+
+        e.g:
+        |__ modules
+            |
+            |__ vpc_module
+            |
+            |__ ec2_module
+        |
+        |__ development
+            |__ main.tf, variables.tf, terraform.tfvars
+        |
+        |__ production
+            |__ main.tf, variables.tf, terraform.tfvars
+        |
+        |__ staging
+            |__ main.tf, variables.tf, terraform.tfvars
+
+        some of the advantages of using file structure is, you can reference resources from different
+        configurations(i.e entirely separate configurations), this is made possible by calling the different
+        "config remote state file"
+        e.g: say you deployed some ec2 instances in project-A and you need the i.p addresses of the ec2_instance
+        in project-B, you can reference the "remote state file" of project-A from project-B to get the
+        i.p address
 
 
 
