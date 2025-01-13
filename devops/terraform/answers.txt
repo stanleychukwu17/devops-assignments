@@ -1281,8 +1281,21 @@ SECTION 3 BEGINS
         in project-B, you can reference the "remote state file" of project-A from project-B to get the
         i.p address
 
+5.  Read: How to use terraform workspace to manage environment 
+    - creating a workspace
+        terraform workspace new <name-of-workspace>
+        e.g: terraform workspace new development
+             terraform workspace new production
 
+    - see all workspace
+        terraform workspace list
 
+    - switching btw workspaces
+        terraform workspace switch <name-of-workspace>
+        e.g: terraform workspace switch production
 
+    - deleting of workspaces
+        terraform workspace delete <name-of-workspace>
+        e.g: terraform workspace delete development
 
 
