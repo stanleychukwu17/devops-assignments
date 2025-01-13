@@ -237,6 +237,13 @@ SECTION 2 BEGINS
     - Now the route53 into Networking module
     - Now run terraform plan to see that all is well and okay (how many resources would be created?)
 
+19. Terraform registry
+    - Read: what is terraform registry
+    - Read: How to create a vpc using a module from terraform registry
+    - Read: How to create a security group using a module from terraform registry
+    - Read: How to create an ec2 instance using a module from terraform registry
+    - Read: Accessing outputs from the modules
+    - Read: ssh-ing into the aws_instance created using this module from terraform registry
 
 ================
 SECTION 3 BEGINS - will there be a section 3?
