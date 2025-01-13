@@ -614,7 +614,6 @@
 ================
 SECTION 2 BEGINS
 ================
-
 1. List the different value types in terraform
     - List simple types
         number, string, bool, null
@@ -1149,3 +1148,12 @@ SECTION 2 BEGINS
 
 
 
+================
+SECTION 3 BEGINS
+================
+1. Drawing of images
+    - Look at the image of the ec2 from lecture 1 and draw it on your own
+        - see
+
+    - Look at the image from DevOps Directive lecture and draw it on your own
+        - see
