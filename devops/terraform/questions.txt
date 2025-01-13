@@ -229,6 +229,8 @@ SECTION 2 BEGINS
       - expose the entire ec2 instance in the ec2 module
       - access the values from the root module, get: ec2_ami, ec2_public_ip_address, ec2_instance_id
 
+17.1 see what the final module of DevOps Directive looked like
+
 18. - Convert all the code/project from DevOps Directive to use modules
     - First work on the vpc module and parameterize it to use variables
     - use the vpc module in your root module
