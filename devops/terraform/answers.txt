@@ -1096,8 +1096,29 @@ SECTION 2 BEGINS
             }
 
 
-18.
+17.1 see what the final module of DevOps Directive looked like
+    in projects/main.tf
+    terraform { ... }
+    provider "aws" { ... }
+    -
+    locals {
+        env = terraform.workspace
+    }
+    -
+    module "web_app" {
+        source = "../../modules/web-app-module/"
+        # input variables
+        bucket_name = "devops-data-${local.env}"
+        domain = "stanleychukwu.com"
+        env = local.env
+        instance_type = "t3.micro"
+        create_dns_zone = terraform.workspace == "production" ? true : false
+        db_name = "${local.env}-DB"
+        db_user = "foo"
+        db_pass = var.db_pass
+    }
 
+18. - Convert all the code/project from DevOps Directive to use modules
 
 19. Terraform registry
     - Read: what is terraform registry
