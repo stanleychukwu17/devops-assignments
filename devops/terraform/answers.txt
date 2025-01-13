@@ -1316,7 +1316,7 @@ SECTION 3 BEGINS
         this command will only work in a pure linux environment, it works in my ubuntu-20.24(WSL), it won't work
         in my "git bash", but it works in macBook since they ship with linux
 
-    Read: Using Directory/File structure to manage environment
+    Read: using Directory/File structure to manage environment
         you can have something like:
         -
         infra/
@@ -1338,4 +1338,3 @@ SECTION 3 BEGINS
         resource "aws_route53_zone" "primary" {
             name = "stanleychukwu.com"
         }
-
