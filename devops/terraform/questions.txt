@@ -262,8 +262,16 @@ SECTION 3 BEGINS
     1. workspaces: talk about it
     2. File structure: talk about it (add note on referenced images p49)
 
-5. Read: 
+5.  Read: How to use terraform workspace to manage environment 
+    - creating a workspace
+    - see all workspace
+    - switching btw workspaces
+    - deleting of workspaces
 
 6.  Read: Terragrunt
     Read: Using Directory/File structure to manage environment
     Read: using the tree command
+
+7. Testing terraform code
+    - using bash: look at the code and write by yourself
+    - using golang: look at the code and write by yourself
