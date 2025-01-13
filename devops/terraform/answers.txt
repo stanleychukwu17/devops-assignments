@@ -1153,7 +1153,21 @@ SECTION 3 BEGINS
 ================
 1. Drawing of images
     - Look at the image of the ec2 from lecture 1 and draw it on your own
-        - see
+        - see ./answers/1-draw-images/img1.jpg
 
     - Look at the image from DevOps Directive lecture and draw it on your own
-        - see
+        - see ./answers/1-draw-images/img2.jpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
