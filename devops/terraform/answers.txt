@@ -1359,3 +1359,7 @@ SECTION 3 BEGINS
         resource "aws_route53_zone" "primary" {
             name = "stanleychukwu.com"
         }
+
+
+
+
