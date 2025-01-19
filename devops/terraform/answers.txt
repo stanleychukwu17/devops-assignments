@@ -11,8 +11,8 @@
 
         Define Resources: Specify what infrastructure components you want to create, such as virtual machines, databases,
             and networking resources.
-        Manage State: Keep track of the state of your resources, allowing Terraform to understand the current configuration
-            and make necessary updates.
+        Manage State: Keep track of the state of your resources, allowing Terraform to understand the current 
+            configuration and make necessary updates.
         Provision Infrastructure: Automate the creation, modification, and deletion of resources as defined in your
             configuration files.
     }
