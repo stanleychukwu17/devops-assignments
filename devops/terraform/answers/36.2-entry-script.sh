@@ -5,7 +5,7 @@ sudo systemctl start httpd && sudo systemctl enable httpd
 echo "Hello from $(hostname -f), Deployed via Terraform" > /var/www/html/index.html
 
 sudo apt-get -y install docker
-sudo systemctl start docker
+sudo systemctl start docker && sudo systemctl enable docker
 
 sudo usermod -aG docker ec2-user
 
