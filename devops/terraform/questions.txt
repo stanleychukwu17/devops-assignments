@@ -128,8 +128,8 @@ last_full_revision: 19th Jan 2025
     - how you solve the above problem
     - Read: read how you can find your key pairs on aws
 
-38. Now that you've resolved the issue with your "aws_key_pair" and your "tf apply -auto-approve"
-    was successful, do the following:
+38. Now that you've resolved the issue with your "aws_key_pair" and your
+    "terraform apply -auto-approve" was successful, do the following:
     -
     - login to your ec2 instance
     - verify if all the users were created successfully

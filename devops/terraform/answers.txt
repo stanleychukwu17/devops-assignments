@@ -529,7 +529,6 @@
             ...
         }
 
-
 37.
     - explain why this error occurred and how can it be solved
         so the main issue is that this is a new_project and all the terraform code here was copied from another
