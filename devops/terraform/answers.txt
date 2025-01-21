@@ -117,6 +117,8 @@
 
 17. touch production.tfvars
     terraform apply -auto-approve -var-file=production.tfvars
+    or
+    terraform apply -auto-approve -var-file="production.tfvars"
 
 18. here is how to use it in your main.tf:
     resource "aws_vpc" "main" {
@@ -581,7 +583,7 @@
         docker:x:992:ec2-user           # 6
         -
         1. Group name: hashicorp, Password: x, Group ID (GID): 1000, Members: No members
-        2. Group name: root, Password: x, Group ID (GID): 1001, Members: "root user"
+        2. Group name: devops, Password: x, Group ID (GID): 1001, Members: "root user"
         3. Group name: admin, Password: x, Group ID (GID): 1002, Members: "terraform user"
         4. Group name: ec2-user, Password: x, Group ID (GID): 1003, Members: No members
         5. Group name: apache, Password: x, Group ID (GID): 48, Members: No members
