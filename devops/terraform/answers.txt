@@ -887,8 +887,8 @@ SECTION 2 BEGINS
         }
 
 9. Terraform built-in functions
-    If you go to the terraform documentation, navigate to the functions section, you'll see all of the functions provided
-    by terraform. You cannot create your own custom functions in terraform
+    If you go to the terraform documentation, navigate to the functions section, you'll see all of the
+    functions provided by terraform. You cannot create your own custom functions in terraform
 
     - lookup function
         it retrieves a "value" from a "map" using a "key" from the map
