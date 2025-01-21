@@ -1,4 +1,4 @@
-last_full_revision: 19th Jan 2025
+last_full_revision: 21 Jan 2025
 
 1. What is the core terraform workflow
 
