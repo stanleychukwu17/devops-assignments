@@ -1,0 +1,34 @@
+1.  - Read: why use bash for shell scripting
+        shell scripting is the process of writing and executing scripts in a shell (command-line interpreter)
+        to automate tasks. it involves using scripting languages such as bash to write series of commands and
+        instructions that can be executed sequentially. shell scripts are commonly used in unix-like operating
+        systems for system administration and automation purposes
+
+        here are some of the task commonly performed using shell scripts
+        1. File and directory management
+        2. System administration
+        3. Data processing
+        4. Automaton of repetitive tasks
+        5. Application and service management: starting, stopping and monitoring of application & services.
+        6. System monitoring and reporting: collecting system information like cpu usage, disk space and then using
+            them to generate report/warning based on predefined thresholds
+        7. Network-related tasks: automating network configuration, monitoring network connectivity and performing
+            network diagnostics are some common network related task
+        8. Web related task: automating website maintenance, crawling and scrapping web content, interacting with
+            web api and performing automated testing
+        9. Task scheduling: creating cron jobs to run at specific times
+
+    - how do you create and run a bash script?
+        touch hello_world.sh
+        chmod +x hello_world.sh
+        ./hello_world.sh
+
+
+2.  variables in bash
+    - create a variable.sh script
+    - add a variable named "greet"
+    - execute the script to print out the value of greet on the terminal
+    - add variable named "welcome" with value "Hello world, bash rules your terminal"
+    - with $welcome, search and replace the word "bash" with "makefile"
+    - slice "Hello world" from the $welcome variable
+    - slice "rules your" from the $welcome variable
