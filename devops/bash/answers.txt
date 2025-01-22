@@ -28,4 +28,38 @@
 
 3.  if greeting="Hello world"
     - Difference btw | echo ${greeting} | and | echo $(greeting) |
+        In bash, the difference between echo ${greeting} and echo $(greeting) lies in how the
+        expressions are evaluated:
+
+        1. echo ${greeting}:
+            This is the correct way to access the value of the variable greeting.
+            ${greeting} expands to the value stored in the greeting variable.
+            greeting="hello world", it will output hello world.
+
+        2. echo $(greeting):
+            This is incorrect syntax for referencing a variable.
+            The $() syntax is used for command substitution, meaning it is used to execute a command
+                and capture its output.
+            For example, echo $(ls) would run the ls command and print its output.
+            Since greeting is not a command, this will result in an error like "command not found: greeting".
+
     - Difference btw | echo $greeting | and | echo ${greeting} |
+        Both of them are the same thing, but ${greeting} allows for more
+
+        Here's the breakdown:
+        - echo $greeting:
+            It's a shorthand form that is equivalent to echo ${greeting} and directly expands to
+            the value of the variable greeting.
+
+        - echo ${greeting}:
+            This is the long form, but it works exactly the same as $greeting.
+            The curly braces {} are optional unless you need to disambiguate the variable name when it's followed
+            by other characters that could be interpreted as part of the variable name.
+            e.g:
+                echo "Message: ${greeting}!"
+                echo "${greeting}123"
+
+
+
+
+
