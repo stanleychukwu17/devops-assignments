@@ -970,7 +970,7 @@ SECTION 2 BEGINS
           }
         }
 
-11.1 
+11.1
     - list all the resources
         D:\Sz - projects\28-devops\1-terraform\02-terraform-web-app-from-devops-directive\tree.txt
     - write the code for all the resources listed
@@ -1095,7 +1095,6 @@ SECTION 2 BEGINS
             output "ec2_instance_id" {
                 value = module.ec2_module.ec2_outputs.id
             }
-
 
 17.1 see what the final module of DevOps Directive looked like
     in projects/main.tf
