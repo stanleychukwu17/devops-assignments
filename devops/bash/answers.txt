@@ -59,7 +59,17 @@
                 echo "Message: ${greeting}!"
                 echo "${greeting}123"
 
-
+4.  Arrays in bash
+    - how do you declare an array
+        names=("John" "Jane" "Bob" "Stanley")
+    - how do your retrieve/display all the items in an array
+        echo "${names[@]}"
+    - how do you retrieve/display specific items in an array
+        echo ${names[0]}
+        echo ${names[1]}
+        echo ${names[2]}
+    - how do you retrieve and display all indexes of an array
+        echo "${!names[@]}"
 
 
 
