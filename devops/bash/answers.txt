@@ -71,5 +71,15 @@
     - how do you retrieve and display all indexes of an array
         echo "${!names[@]}"
 
+5.  Arithmetic calculations
+    - show the 3 ways of doing Arithmetic calculations
+        - the most reliable way:
+            total_1=$((5+7))
+            total_2=$((10*10))
+            echo "${total_1} - ${total_2}"
+
+        - other ways but prone to error 
+            expr 7 + 10
+            echo "7 + 10" | bc
 
 
