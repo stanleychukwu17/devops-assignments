@@ -82,4 +82,32 @@
             expr 7 + 10
             echo "7 + 10" | bc
 
+6.  standard input, output & error
+    - what are the values for each of the above
+        STDIN(0)
+        STDOUT(1)
+        STDERR(2)
+
+    - how do you redirect standard input from a text file
+        cat < pop.txt
+
+    - how do you redirect standard output & standard error into a file
+        echo "${total_1} ${total_2}" 1>> pop.txt
+        echo "we gon make it by GOD'S grace " > stanley.txt {you don't need to add the 1}
+
+    - how do you redirect standard output & error into null
+        ls &> /dev/null - redirects both the STDOUT and STDERR
+        ls 1> /dev/null - redirects only STDOUT to null
+        -
+        fake_command 2> error.log - redirects only STDERR to error log
+        fake_command 2> /dev/null - redirects only STDERR to null
+
+7.  Arguments in bash
+    - how do you capture/use arguments in bash
+    - how do you pass arguments to your script when running the script
+    - how do you capture all arguments in bash
+    - what is the difference btw $@ and $*
+    - Read: "$@" vs $@ 
+    - task: using for loop, loop through all arguments received and echo them
+
 
