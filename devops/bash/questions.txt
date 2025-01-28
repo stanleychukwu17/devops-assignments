@@ -9,6 +9,7 @@
     - with $welcome, search and replace the word "bash" with "makefile"
     - slice "Hello world" from the $welcome variable
     - slice "rules your" from the $welcome variable
+    - delete the variable.sh file
 
 3.  if greeting="Hello world"
     - Difference btw | echo ${greeting} | and | echo $(greeting) |
@@ -22,8 +23,6 @@
 
 5.  Arithmetic calculations
     - show the 3 ways of doing Arithmetic calculations
-    - assign each 3 to a variable and display their value in the terminal
-    - do not assign them to a variable, just display them in the terminal
 
 6.  standard input, output & error
     - what are the values for each of the above
