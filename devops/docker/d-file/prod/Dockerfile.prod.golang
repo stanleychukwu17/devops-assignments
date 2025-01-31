@@ -17,19 +17,29 @@ RUN go mod download
 COPY . ./
 
 # Build the Go application
-RUN go build -o app ./cmd/app
+RUN go build -o final_app ./
 
 # Stage 2: Production stage
 FROM scratch
 
 # Copy the Go binary from the build stage
-COPY --from=builder /usr/src/app/app /app
-
-# Add a non-root user
-USER app
+COPY --from=builder /usr/src/app/final_app ./final_app
 
 # Expose the port
-EXPOSE 8080
+EXPOSE 4000
 
 # Command to run the application
-CMD ["/app"]
+CMD ["/final_app"]
+
+# using scratch image
+# This results in a tiny image (~10MB) but lacks debugging tools.
+# if you want to be able to debug the application, you can use the alpine image
+# -
+# FROM golang:1.21.13-alpine3.20
+# WORKDIR /usr/src/app
+# COPY --from=builder /usr/src/app/final_app ./final_app
+# Ensure execution permissions
+# RUN chmod +x ./final_app
+# EXPOSE 4000
+# USER app
+# CMD ["./final_app"]
