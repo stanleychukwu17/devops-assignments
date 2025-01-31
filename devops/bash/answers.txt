@@ -104,6 +104,14 @@
 
 7.  Arguments in bash
     - how do you capture/use arguments in bash
+        $1 - 1st argument
+        $2 - 2nd argument
+        $3 - 3rd argument
+        $....
+
+        $arg1=$1
+        echo ${arg1}
+
     - how do you pass arguments to your script when running the script
     - how do you capture all arguments in bash
     - what is the difference btw $@ and $*
