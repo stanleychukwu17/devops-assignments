@@ -90,13 +90,17 @@ Group 1
 
 
 Group 2.
-1.  1a - CMD npm run dev
-        runs a command, i.e "npm run dev". but it starts a new shell session to run this command
-    1a - CMD ["npm", "run", "dev"]
-        this is better as it does not spin up any new shell session
-    1b - An alternative to CMD is ENTRYPOINT, e.g ENTRYPOINT ["npm", "run", "dev"].
-        the difference is the CMD command can be over-ridden when starting the container, while
-        that of ENTRYPOINT cannot be over-ridden
+1.  - tell us about the CMD command and how do you use it
+      CMD is used to execute the command provided anytime the image is used to start up a container
+      e.g:
+        CMD npm run dev (runs the command: "npm run dev". but it starts a new shell session to run this command)
+        or
+        CMD ["npm", "run", "dev"] (this is better as it does not spin up any new shell session. so it is faster)
+
+    - what are the alternatives to CMD command, explain the diff btw CMD and it's alternatives
+      An alternative to CMD is ENTRYPOINT, e.g ENTRYPOINT ["npm", "run", "dev"].
+      the difference is that the CMD command can be over-ridden when starting the container, while
+      that of ENTRYPOINT cannot be over-ridden
 
 2.  docker login
     docker image tag <image_name>:tag <username>/<myRepo>:<tag>

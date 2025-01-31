@@ -23,8 +23,8 @@ Group 1
 
 
 Group 2
-1.  tell us about the CMD command and how do you use it
-    what are the alternatives to CMD command, explain the diff btw CMD and it's alternatives
+1.  - tell us about the CMD command and how do you use it
+    - what are the alternatives to CMD command, explain the diff btw CMD and it's alternatives
 2. how do you push an image to docker hub?
 3. run a container in a detached mode
 4. run a container in an interactive mode {
