@@ -11,7 +11,7 @@ Answers
     2. by wrapping them in double quotes : "like this string"
     2. by wrapping them in single quotes : 'like this string'
 
-5. You use a pound sign (#) to indicate a comment, and in can appear on its own or inline e.g
+5. You use a pound sign (#) to indicate a comment, and it can appear on its own or inline e.g
     # this is a full line comment
     foo: bar # this is an inline comment
 
