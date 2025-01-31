@@ -5,17 +5,17 @@ Group 1
 3. List all images you've created
 4. Go to docker hub and search for node-alpine image
 
-5. delete an image
+5. delete an image 
 6. delete multiple images
 7. delete all images
 
-8. what can you say about using the COPY command (p36) {
-    copy multiple files
-    using regex in package.json copy
-    copy files with white space in their names
-    copying everything
-    difference btw COPY and ADD
-}
+8.  - what can you say about using the COPY command
+    - copy multiple files
+    - using regex in package.json copy
+    - copy files with white space in their names
+    - copying everything
+    - difference btw COPY and ADD
+
 9. create a group and create a user, then add the user to the group created using the RUN command
 10. make the user you just created the default user
 11. change ownership of files you're copying to the user you created
