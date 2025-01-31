@@ -10,6 +10,11 @@ Group 1
 3.  docker images
     docker image ls
 
+4.  - go to hub.docker.com
+    - search for node, select the first verified node result that comes up with 1B+ downloads
+    - click on tags tab
+    - in the [filter tag input], search for "alpine" and select any image you want
+
 5.  docker image rm <image_name>
     docker rmi <image_name>
 
