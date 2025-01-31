@@ -52,7 +52,8 @@ Group 2
       delete a volume by force
     1. tell me the difference btw a bind mount and a named volume and give an example
     2. do the both of them while starting a postgres container using a postgres image from docker hub
-    3. how do you map your current workspace into the container using volumes, so that you can see live changes in your container
+    3. how do you map your current workspace into the container using volumes,
+       so that you can see live changes in your container
 
 
 Group 3
@@ -62,10 +63,9 @@ Group 3
     2. recursively using rm --p60
 }
 3. create a Dockerfile for react, golang, node.js, postgres {
-    dev - react, golang, node.js, postgres; 
-    dev - react, golang, node.js, postgres;
-    NEEDED: postgres .dev
-    NEEDED: react, postgres .prod
+    dev - react, node.js, golang;
+    prod - react, node.js, golang, postgres;
+    NEEDED: postgres .prod
 }
 4. Create a docker-compose.yml file for these services {
     frontend
