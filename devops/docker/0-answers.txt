@@ -132,8 +132,10 @@ Group 2.
     3. docker exec -it my_container sh
 
 7.  1. docker exec -it my_container sh (or) docker exec -it my_container bash
-        for alpine images, they're too small so they do not carry the more recent bash terminal, you can only use shell terminal's
-        for ubuntu based images, you can use bash because these ubuntu based images are larger and carry the bash terminal
+        - for alpine images, they're too small so they do not carry the more recent bash terminal,
+          you can only use shell terminal's
+        - for ubuntu based images, you can use bash because these ubuntu based images are larger and
+          carry the bash terminal
 
     2.  docker exec -it -u root my_container sh {or}
         docker exec -it -u root CONTAINER_ID_or_NAME /bin/sh {where -u == --user}
@@ -162,19 +164,22 @@ Group 2.
       - docker volume rm -f <my_volume>
 
     1. {
-        bind mount: this volume is not managed by docker, it binds a directory from the host machine into a docker container
-            e.g docker run -d --name my_container -v /host/path:/path my_image
-        named volume: is managed by docker, it stores the volume in an area managed by docker, it is usually faster and
-            better than bind mount.
-            e.g docker run -d --name <my_container> -v <name_of_volume>:/path <my_image>
+        bind mount: this volume is not managed by docker, it binds a directory from the host machine into
+        a docker container
+        e.g docker run -d --name my_container -v /host/path:/path <my_image>
+        -
+        named volume: is managed by docker, it stores the volume in an area managed by docker, it is
+        usually faster and better than bind mount.
+        e.g docker run -d --name <my_container> -v <name_of_volume>:/path <my_image>
     }
+
     2. {
         docker run -d \
-            --name postgres_container
-            -p 5432:5432
-            -v ${PWD}/pg_data:/var/lib/postgresql/data {bind_mound} or
-            -v pg_data:/var/lib/postgresql/data {name_volume}
-            -e POSTGRES_PASSWORD=password
+            --name postgres_container \
+            -p 5432:5432 \
+            -v ${PWD}/pg_data:/var/lib/postgresql/data \ {bind_mound} or
+            -v pg_data:/var/lib/postgresql/data \ {name_volume}
+            -e POSTGRES_PASSWORD=password \
             postgres:latest
     }
     3. {
@@ -185,7 +190,7 @@ Group 2.
             will be the container's default (typically / or a specific directory depending on the image).
 
         ---
-        to prevent it from bind mounting the node_modules folder, we do:
+        to prevent docker from bind mounting the node_modules folder, we do:
         method 1. {
             chatGPT says this method is not the best, it is instead better to use "method-2"
             docker run -it \
@@ -216,12 +221,12 @@ Group 2.
 
             -v ${PWD}:/usr/src/app: This mounts your local directory into the container at /usr/src/app (as you intend).
 
-            -v my_node_modules:/usr/src/app/node_modules: This uses a named volume (my_node_modules) for the node_modules
-              directory inside the container. By using a named volume, Docker will manage node_modules independently, meaning 
-              it won't sync it with your local host machine, preventing any conflicts.
+            -v my_node_modules:/usr/src/app/node_modules: This uses a named volume (my_node_modules) for the
+              node_modules directory inside the container. By using a named volume, Docker will manage node_modules
+              independently, meaning it won't sync it with your local host machine, preventing any conflicts.
               This second -v flag overrides the bind mount by mounting a named volume instead of syncing it with
-              the host's node_modules directory. The "my_node_modules" volume is Docker-managed and does not reference
-              the host's directory.
+              the host's node_modules directory. The "my_node_modules" volume is Docker-managed and does not
+              reference the host's directory.
         }
     }
 
