@@ -31,18 +31,31 @@ Group 1
         in use but might still have tags.
     docker image prune -a -f {Remove all unused & dangling images (without confirmation):}
 
-8.  - COPY package.json package-lock.json pnpm-lock.yml ./
-    - COPY package*.json ./ {
-        COPY *.txt *(.js|.ts) picture* ./
-        The COPY instruction in Docker does not support advanced pattern matching or glob patterns like *, ?,
-          or complex regex patterns directly.
-    }
-    - COPY ["file with space.txt", "."]
-    - COPY . ./
-    - ADD and COPY commands both carry out the same task, but the ADD command can do a little bit more {
+8.  - what can you say about using the COPY command
+      The COPY command is used to copy files & directories from the host machine into the Docker image
+      e.g: COPY <file> <working-directory-in-the-image>
+
+    - copy multiple files
+      COPY package.json package-lock.json pnpm-lock.yml ./
+
+    - using regex in package.json copy
+      COPY package*.json ./ {
+            COPY *.txt *(.js|.ts) picture* ./
+            The COPY instruction in Docker does not support advanced pattern matching
+            or glob patterns like *, ?, or complex regex patterns directly.
+        }
+
+    - copy files with white space in their names
+      COPY ["file with space.txt", "."]
+
+    - copying everything
+      COPY . ./
+
+    - difference btw COPY and ADD
+      ADD and COPY commands both carry out the same task, but the ADD command can do a little bit more {
         1. ADD can copy from a url e.g ADD https://github.com/stanley/come.txt ./
-        2. ADD can copy from a zipped file into your working directory e.g ADD code.tar ./,
-         and it will unzip the file content and copy the contents
+        2. ADD can copy from a zipped file into your working directory e.g ADD code.tar ./
+           it will unzip the file and copy the contents
     }
 
 9. RUN addgroup -S app && adduser -S -G app app {
