@@ -1,5 +1,5 @@
 Answers
-1. after you write down your own on a paper, check the file in this directory to compare your answer to that one
+1. see answer in: ./answer-json-to-yaml.yml
 
 2. multiple documents are supported per .yml or .yaml file
 
