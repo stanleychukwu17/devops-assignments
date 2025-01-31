@@ -17,7 +17,9 @@ RUN go mod download
 COPY --chown=app:app . ./
 
 # Build the Go application
-RUN go build -o app ./cmd/app
+RUN go build -o final_app .
+# if your go code is located in a different folder, e.g: ./cmd/app
+# RUN go build -o app ./cmd/app
 
 # Stage 2: Development stage
 FROM golang:1.21
@@ -29,7 +31,6 @@ RUN addgroup -S app && adduser -S -G app app
 WORKDIR /usr/src/app
 
 # Copy the built application and any other necessary files
-COPY --from=builder /usr/src/app/app ./app
 COPY --from=builder /usr/src/app/. ./
 
 # Switch to the non-root user
@@ -39,4 +40,4 @@ USER app
 EXPOSE 4000
 
 # Command to run the application
-CMD ["./app"]
+CMD ["./final_app"]
