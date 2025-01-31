@@ -118,6 +118,7 @@ Group 2.
         -e POSTGRES_PASSWORD=password \
         -p 5432:5432 \
         postgres:latest
+
     b. docker container ls (-a)
         docker ps (-a)
 
