@@ -1,6 +1,7 @@
 Group 1
 1.  docker build -t <image_name> <path_to_locate_dockerfile>
-    e.g docker build -t python_image ./
+    docker build -t python_image ./
+    docker build -t python_image -f Dockerfile.nodejs.prod
 
 2.  docker build -t <image_name>:<tag> <path_to_locate_dockerfile>
     e.g docker build -t python_image:v1.0 ./
