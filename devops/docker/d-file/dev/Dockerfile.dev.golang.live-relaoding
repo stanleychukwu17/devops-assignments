@@ -1,22 +1,17 @@
-# Stage 1: Build dependencies (not needed in development)
-FROM golang:1.21 AS builder
+FROM golang:1.21 
 
-WORKDIR /usr/src/app
-
-COPY go.mod go.sum ./
-RUN go mod download
-
-COPY . ./
-
-# Stage 2: Development stage
-FROM golang:1.21
+# For a development environment, you don’t need to add a non-root user (app).
+# RUN addgroup -S app && adduser -S -G app app
+# USER app
 
 WORKDIR /usr/src/app
 
 # Install Air globally
 RUN go install github.com/cosmtrek/air@latest
 
-# Copy only the source code for development
+COPY go.mod go.sum ./
+RUN go mod download
+
 COPY . ./
 
 # Expose the development port
