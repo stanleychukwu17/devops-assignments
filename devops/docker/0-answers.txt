@@ -308,7 +308,6 @@ Group 3
     - Unpause previously paused containers
       docker-compose unpause
 
-
 7. Read: so more docker-compose commands
     - View logs for the services defined in docker-compose.yml:
       docker-compose logs
