@@ -261,4 +261,14 @@ Group 3
 
 4.see: ./compose/docker-compose.yml
 
-5. 
+5. build images from the compose file created
+    - don't use --no-cache
+      docker-compose build
+
+    - use --no-cache
+      docker-compose build --no-cache
+
+    - see the list of images created
+      docker-compose images
+      docker images
+      docker image ls
