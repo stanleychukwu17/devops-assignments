@@ -92,3 +92,5 @@ Group 3
 7. Read: so more docker-compose commands
 
 8. Read: some of the properties/methods that can be used in docker-compose services
+
+9. Read: docker-compose | restart vs deploy.restart-policy

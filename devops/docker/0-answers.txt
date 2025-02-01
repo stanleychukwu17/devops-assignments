@@ -344,3 +344,40 @@ Group 3
 
 8.  see: D:\Sz - projects\0-templates\2-docker-templates\0-docker-compose
     you can open it in vsCode
+
+9.  Read: docker-compose | restart vs deploy.restart-policy
+    The restart option and the deploy.restart-policy option in Docker Compose are both used to manage the
+    container's restart behavior, but they have different scopes and usage contexts:
+
+    1. restart (Docker Compose - Local mode)
+        - This option is used when you're running Docker Compose locally in a non-Swarm environment
+          (i.e., standard docker-compose up).
+        - It controls the restart policy for individual containers on the local machine. The container is
+          restarted based on the specified policy (e.g., always, on-failure, no, unless-stopped).
+        e.g:
+            services:
+                app:
+                    image: my-app
+                    restart: always
+
+
+    2. deploy.restart-policy (Docker Compose - Swarm mode)
+        - This option is only applicable when using Docker Swarm, which is a clustering and orchestration tool.
+          Swarm is used for managing multiple Docker containers across a cluster of machines.
+        - It defines the restart policy for services running in a Swarm environment.
+        - The restart policy governs how Docker Swarm should handle container failures or restarts in a
+          cluster environment. Swarm ensures that the desired number of replicas are always running so if one
+          container fails, it will automatically be restarted or replaced to meet the defined service replica count.
+        - The deploy.restart-policy applies only in Swarm mode and works in conjunction with other Swarm features
+          like service scaling.
+        e.g:
+            version: "3.8"
+            services:
+                app:
+                    image: my-app
+                    deploy:
+                        restart-policy:
+                            condition: on-failure
+                            max-attempts: 3
+
+
