@@ -19,10 +19,10 @@
     mv
     rm(+2 tags)
 }
+
+
 - 2 ways you can view a file
     - how to edit a file in your terminal
-
-
 - redirect multiple files (at-least 3 files) into a single file called combine.txt
     - redirect ls -l of a folder into a folder/file
     - append a redirect output

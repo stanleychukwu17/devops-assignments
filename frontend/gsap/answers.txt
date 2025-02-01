@@ -1,0 +1,32 @@
+1.  - what methods do you use to animate when working with gsap
+        we have 3 primary methods for Animating in gsap:
+        - gsap.from
+            gsap.from(selector, {x:"50px", y:-50, duration:1})
+
+        - gsap.to
+            gsap.to(selector, {x:100, y:100, color:'orange', duration:1})
+
+        - gsap.fromTo
+            gsap.fromTo(
+                selector,
+                {x:0, y:0, opacity:0, scale:.2},
+                {x:50, y:50, opacity:1, scale:1.5, duration:.5, ease:"easeInOut"}
+            )
+
+    - Talk about gsap timeline and give an example
+        gsap.timeline is used to animate elements in a sequence. the timeline helps to stack animation
+        on-top of each other without bordering ourselves with the delay & timing
+
+        const tl = gsap.timeline({
+            defaults: {
+                duration: 1
+            }
+        })
+
+        tl.from(".anim1", {y: -50, stagger:.6, opacity:0})
+          .to("rule", {color:"red", cssRule: {scaleY:0}, duration:1}, "-=2.2")
+          .from("aside", {backgroundPosition:"300px 0px", y: 30, opacity:0, delay:1.4}, "-=1")
+          .from("img", {y: 30, opacity:0, delay:1.4}, "-=.5")
+
+
+    - Read: See how to use gsap timeline to animate an svg element
