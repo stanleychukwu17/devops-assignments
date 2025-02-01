@@ -1,8 +1,9 @@
 # Stage 1: Build stage
 FROM golang:1.21 AS builder
 
+# No need to add a non-root user in this stage, since this stage does not run the application
 # Add a non-root user
-RUN addgroup -S app && adduser -S -G app app
+# RUN addgroup -S app && adduser -S -G app app
 
 # Set work directory
 WORKDIR /usr/src/app
@@ -14,15 +15,16 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 # Copy the source code
-COPY --chown=app:app . ./
+COPY . ./
 
 # Build the Go application
 RUN go build -o final_app .
-# if your go code is located in a different folder, e.g: ./cmd/app
-# RUN go build -o app ./cmd/app
+# if your go code is located in a different folder, e.g: ./cmd/app/
+# RUN go build -o app ./cmd/app/
+# but in this case, the go code is in the root directory, same place as the Dockerfile
 
 # Stage 2: Development stage
-FROM golang:1.21
+FROM golang:1.21.13-alpine3.20
 
 # Add a non-root user
 RUN addgroup -S app && adduser -S -G app app
@@ -30,8 +32,18 @@ RUN addgroup -S app && adduser -S -G app app
 # Set work directory
 WORKDIR /usr/src/app
 
-# Copy the built application and any other necessary files
-COPY --from=builder /usr/src/app/. ./
+# Copy the built application
+COPY --from=builder /usr/src/app/final_app ./
+# or you can just copy only the file
+# COPY --from=builder /usr/src/app/final_app /usr/src/app/final_app
+# the above copies the file final_app from the builder as-is into /usr/src/app/
+# The copied file will be /usr/src/app/final_app.
+# or if you want to change the name after copying, use:
+# COPY --from=builder /usr/src/app/final_app /usr/src/app/my_app_v2
+# so the final_app will be renamed to my_app_v2
+
+# Set permissions
+RUN chown -R app:app /usr/src/app
 
 # Switch to the non-root user
 USER app
