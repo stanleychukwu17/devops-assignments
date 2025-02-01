@@ -254,5 +254,11 @@ Group 3
     docker network rm -f $(docker network ls) # for networks
     docker rmi -f $(docker image ls -q) # for images
 
-3.  answers:
-    react & node.js: see the answer in "react" folder. the "Dockerfile_for_react"
+3. create a Dockerfile for react, golang, node.js {
+    dev - see ./d-file/dev/
+    prod - see ./d-file/prod/
+}
+
+4.see: ./compose/docker-compose.yml
+
+5. 
