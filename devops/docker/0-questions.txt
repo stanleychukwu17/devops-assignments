@@ -90,3 +90,5 @@ Group 3
     - Unpause previously paused containers
 
 7. Read: so more docker-compose commands
+
+8. Read: some of the properties/methods that can be used in docker-compose services

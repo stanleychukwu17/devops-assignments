@@ -342,3 +342,5 @@ Group 3
     - Display the running processes in the containers (similar to docker top).
       docker-compose top
 
+8.  see: D:\Sz - projects\0-templates\2-docker-templates\0-docker-compose
+    you can open it in vsCode
