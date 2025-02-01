@@ -109,6 +109,11 @@ Group 2.
     docker push <username>/<myRepo>:<tag>
     https://hub.docker.com/r/username/myapp - to verify that the image has been pushed
 
+2.1 what is the shortcut for "docker image tag"
+    - docker tag
+      e.g:  docker image tag go-app my-registry/go-app:v1
+      or:   docker tag go-app my-registry/go-app:v1
+
 3.  docker run -d --name react_container -p 3000:3000 react_image:latest (or)
     docker run -d --name=react_container -p 3000:3000 react_image:latest
 
