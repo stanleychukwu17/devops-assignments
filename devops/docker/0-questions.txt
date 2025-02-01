@@ -72,11 +72,11 @@ Group 3
     backend
     db using (postgres and pgAdmin | mysql and phpMyAdmin)
 }
-5. build images from the compose file created {
-    1. don't use --no-cache
-    2. use --no-cache
-    3. see the list of images created
-}
+5. build images from the compose file created
+    - don't use --no-cache
+    - use --no-cache
+    - see the list of images created
+
 6. using the compose file, start the containers {
     1. see the list of containers from this compose file
     2. stop the running containers for only this compose file
