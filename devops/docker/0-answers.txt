@@ -289,3 +289,38 @@ Group 3
       
     - use a different docker-compose file to start some container (e.g: docker-compose.dev.yml)
       docker-compose up -f ./docker-compose.dev.yml
+
+7. Read: so more docker-compose commands
+    - View logs for the services defined in docker-compose.yml:
+      docker-compose logs
+      docker-compose logs -f
+      docker-compose logs <service-name>  # For specific service logs
+
+    - Execute a command inside a running container (similar to docker exec)
+      docker-compose exec <service-name> <command>
+      e.g: docker-compose exec frontend sh
+
+    - Run a one-time command against a service. This starts a container and runs the
+      specified command, then stops the container afterward.
+      -
+      docker-compose run <service-name> <command>
+      e.g: docker-compose run frontend npm install
+
+    - Run a service once and remove the container after it finishes.
+      docker-compose run --rm <service-name> <command>
+
+    - Pull the latest image for all services defined in the docker-compose.yml file.
+      docker-compose pull
+
+    - Push built images to a Docker registry.
+      docker-compose push
+
+    - Validate and view the composed configuration in YAML format. It’s useful to check for any syntax errors in the docker-compose.yml file.
+      docker-compose config
+
+    - Display the current version of Docker Compose
+      docker-compose version
+
+    - Display the running processes in the containers (similar to docker top).
+      docker-compose top
+
