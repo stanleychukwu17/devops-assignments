@@ -77,7 +77,16 @@ Group 3
     - use --no-cache
     - see the list of images created
 
-6. using the compose file, start the containers {
-    1. see the list of containers from this compose file
-    2. stop the running containers for only this compose file
-}
+6. using the compose file 
+    - start the containers
+    - see the list of containers from this compose file
+    - stop the running containers for only this compose file
+    - use a different docker-compose file to start some container (e.g: docker-compose.dev.yml)
+    - Stop running containers without removing them
+    - Start previously stopped containers without rebuilding or recreating them
+    - Restart the containers defined in the docker-compose.yml file
+    - Remove stopped service containers
+    - Pause the running containers (will stop all processes without removing them)
+    - Unpause previously paused containers
+
+7. Read: so more docker-compose commands

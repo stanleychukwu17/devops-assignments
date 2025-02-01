@@ -290,6 +290,25 @@ Group 3
     - use a different docker-compose file to start some container (e.g: docker-compose.dev.yml)
       docker-compose up -f ./docker-compose.dev.yml
 
+    - Stop running containers without removing them
+      docker-compose stop
+
+    - Start previously stopped containers without rebuilding or recreating them
+      docker-compose start
+
+    - Restart the containers defined in the docker-compose.yml file
+      docker-compose restart
+    
+    - Remove stopped service containers
+      docker-compose rm
+
+    - Pause the running containers (will stop all processes without removing them)
+      docker-compose pause
+
+    - Unpause previously paused containers
+      docker-compose unpause
+
+
 7. Read: so more docker-compose commands
     - View logs for the services defined in docker-compose.yml:
       docker-compose logs
