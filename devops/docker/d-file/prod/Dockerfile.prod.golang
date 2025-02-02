@@ -1,9 +1,6 @@
 # Stage 1: Build stage
 FROM golang:1.21 AS builder
 
-# Add a non-root user
-RUN addgroup -S app && adduser -S -G app app
-
 # Set work directory
 WORKDIR /usr/src/app
 
@@ -22,6 +19,8 @@ RUN go build -o final_app ./
 # Stage 2: Production stage
 FROM scratch
 
+WORKDIR /usr/src/app
+
 # Copy the Go binary from the build stage
 COPY --from=builder /usr/src/app/final_app ./final_app
 
@@ -29,7 +28,7 @@ COPY --from=builder /usr/src/app/final_app ./final_app
 EXPOSE 4000
 
 # Command to run the application
-CMD ["/final_app"]
+CMD ["./final_app"]
 
 # using scratch image
 # This results in a tiny image (~10MB) but lacks debugging tools.
