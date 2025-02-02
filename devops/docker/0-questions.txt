@@ -5,7 +5,7 @@ Group 1
 3. List all images you've created
 4. Go to docker hub and search for node-alpine image
 
-5. delete an image 
+5. delete an image
 6. delete multiple images
 7. delete all images
 
@@ -27,24 +27,30 @@ Group 2
     - what are the alternatives to CMD command, explain the diff btw CMD and it's alternatives
 2. how do you push an image to docker hub?
 2.1 what is the shortcut for "docker image tag"
+
 3. run a container in a detached mode
+
 4. run a container in an interactive mode {
     run a container with all the params you know {name, port, environment, volumes}
     list all the containers using 2 different commands (both running and stopped containers)
 }
+
 5. logs in a container {
     - follow logs in a container
     - show a certain number of log
     - show the timestamp for each logs
 }
+
 6. execute three commands in a running container {1. ls, 2. mkdir, 3. sh}
 
 7.  1. execute a shell in an interactive mode in a running container
     2. execute a shell in an container as the root user 
 
 8. use the docker attach command to attach to a running container
+
 9. remove a docker container - use the 2 methods available
     - how do you start and stop an already existing container
+    
 10. docker volume
     0. everything you know about it and it's command
       how do you create a new volume using the volume command
