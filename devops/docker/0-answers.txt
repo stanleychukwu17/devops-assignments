@@ -264,17 +264,17 @@ Group 3
       docker-compose ps -a (or --all) # will show all containers, both running and stopped
       docker-compose ps -q (or --quiet) # will show only container ids
 
-    - stop the running containers for only this compose file
+    - stop & remove the running containers for only this compose file
       docker-compose down
-      
-    - use a different docker-compose file to start some container (e.g: docker-compose.dev.yml)
-      docker-compose up -f ./docker-compose.dev.yml
 
     - Stop running containers without removing them
       docker-compose stop
 
     - Start previously stopped containers without rebuilding or recreating them
       docker-compose start
+      
+    - use a different docker-compose file to start some container (e.g: docker-compose.dev.yml)
+      docker-compose up -f ./docker-compose.dev.yml
 
     - Restart the containers defined in the docker-compose.yml file
       docker-compose restart

@@ -84,12 +84,12 @@ Group 3
     - see the list of images created
 
 6. using the compose file
-    - start the containers
+    - start the containers, start with image rebuild, start in detached mode
     - see the list of containers from this compose file
-    - stop the running containers for only this compose file
-    - use a different docker-compose file to start some container (e.g: docker-compose.dev.yml)
+    - stop & remove the running containers for only this compose file
     - Stop running containers without removing them
     - Start previously stopped containers without rebuilding or recreating them
+    - use a different docker-compose file to start some container (e.g: docker-compose.dev.yml)
     - Restart the containers defined in the docker-compose.yml file
     - Remove stopped service containers
     - Pause the running containers (will stop all processes without removing them)
