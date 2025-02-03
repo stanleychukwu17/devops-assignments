@@ -1,1 +1,11 @@
-we been busy
+1.  Networking basics
+    - What is a network
+      A network is a situation where multiple devices are connected to each other so they can communicate with each
+      other.
+      - In a wired LAN network:
+        The most common way for devices to be connected to each other is by using a switch
+      - In a wireless LAN network:
+        The most common way for devices to be connected is through an AP(Access Point), most of the modern routers
+        usually comes with in-built AP
+
+    - Read: some of the stuffs about a network
