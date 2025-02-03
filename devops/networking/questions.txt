@@ -4,6 +4,7 @@
 
 3. what is a protocol
 
-4. - Difference btw a wired and a wireless network
-    - how does a wired network communicate
+4. Difference btw a wired and a wireless network
+
+5.  - how does a wired network communicate
     - how does a wireless network communicate

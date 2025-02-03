@@ -10,32 +10,32 @@
       of the modern routers usually comes with in-built AP
 
 2. What is a LAN and a WAN
-      - LAN:
-        LAN (Local area network) is a network of computers and devices that are connected within a small
-        geographical area, like a home, office or school. it allows devices to communicate with each other
-        and share resources like files, printers or internet Access
-        e.g:
-        - Home Network: The network you set up in your house, connecting your devices like computers,
-          smartphones, smart TVs, printers, etc.
+    - LAN:
+      LAN (Local area network) is a network of computers and devices that are connected within a small
+      geographical area, like a home, office or school. it allows devices to communicate with each other
+      and share resources like files, printers or internet Access
+      e.g:
+      - Home Network: The network you set up in your house, connecting your devices like computers,
+        smartphones, smart TVs, printers, etc.
 
-        - Office Network: In a workplace, all the computers, printers, and servers connected within the office
-          to share resources and communicate.
+      - Office Network: In a workplace, all the computers, printers, and servers connected within the office
+        to share resources and communicate.
 
-        - School Network: In a school, the computers in different classrooms, the library, and the admin offices
-          connected together to share files, access the internet, and more.
+      - School Network: In a school, the computers in different classrooms, the library, and the admin offices
+        connected together to share files, access the internet, and more.
 
-      - WAN:
-        WAN (Wide area network) is a much larger network that covers a broader geographical area, often
-        spanning cities, countries or even continents. The internet is the largest example of a WAN. it connects
-        multiple LANs and other networks together, enabling communication over long distances
-        e.g:
-        - The Internet: The most common example of a WAN. It connects millions of LANs worldwide.
+    - WAN:
+      WAN (Wide area network) is a much larger network that covers a broader geographical area, often
+      spanning cities, countries or even continents. The internet is the largest example of a WAN. it connects
+      multiple LANs and other networks together, enabling communication over long distances
+      e.g:
+      - The Internet: The most common example of a WAN. It connects millions of LANs worldwide.
 
-        - Corporate Networks: A large company with offices in multiple cities or countries might have a WAN
-          connecting all its local office networks (LANs) to each other for communication and data sharing.
+      - Corporate Networks: A large company with offices in multiple cities or countries might have a WAN
+        connecting all its local office networks (LANs) to each other for communication and data sharing.
 
-        - Telecommunications Networks: Mobile network providers like AT&T or Verizon have WANs to connect their
-          base stations and provide service across large areas or even globally.
+      - Telecommunications Networks: Mobile network providers like AT&T or Verizon have WANs to connect their
+        base stations and provide service across large areas or even globally.
 
 3. what is a protocol
     A protocol is a set of rules and conventions that governs how data is transmitted over a network.
@@ -70,7 +70,34 @@
     Each of these protocols works in a very specific way to ensure data is sent, received, and understood
     correctly by the devices on either end of the communication.
 
-3.
-    - Difference btw a wired and a wireless network
-    - how does a wired network communicate
+4. Difference btw a wired and a wireless network
+    - Wired networks: Uses physical cables (like Ethernet cables) to connect devices.
+      they are faster, more reliable, and secure, but less flexible.
+
+    - Wireless networks: Uses radio waves to connect devices without physical cables (typically via Wi-Fi).
+      they are more convenient and flexible, though they may offer slightly slower and less reliable performance.
+
+    Read more {
+        Wired Network:
+        - Speed: Typically offers faster speeds and more stable connections compared to wireless networks,
+          as the signal doesn't degrade over distance or face interference.
+        - Reliability: More reliable because there’s no signal interference from things like walls or other
+          electronic devices.
+        - Security: Tends to be more secure because physical access to the cables is required to intercept data.
+        - Setup: Can be more complex due to the need to run cables, especially in larger spaces.
+        - Flexibility: Less flexible, as devices are tied to a specific location because of the cables.
+
+        Wireless Network:
+        - Speed: Can be slower and more prone to fluctuations due to interference
+          (e.g., from walls, other electronics, or even distance from the router).
+        - Reliability: More susceptible to signal interference or weak connections, especially over
+          longer distances or in crowded environments.
+        - Security: Generally less secure than wired networks, but this can be mitigated with strong
+          encryption and security protocols (like WPA3).
+        - Setup: Easier to set up, with fewer physical constraints since you don’t need to run cables.
+        - Flexibility: Highly flexible, allowing devices to connect from virtually anywhere within
+          range of the Wi-Fi signal.
+    }
+
+5.  - how does a wired network communicate
     - how does a wireless network communicate
