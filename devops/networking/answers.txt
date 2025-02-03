@@ -1,5 +1,4 @@
-1.  Networking basics
-    - What is a network
+1.  - What is a network
       A network is a situation where multiple devices are connected to each other so they can communicate with each
       other.
       - In a wired LAN network:
@@ -8,4 +7,9 @@
         The most common way for devices to be connected is through an AP(Access Point), most of the modern routers
         usually comes with in-built AP
 
-    - Read: some of the stuffs about a network
+
+2.  - What is a LAN and a WAN
+    - What is the difference btw both
+    - Difference btw a wired and a wireless network
+    - how does a wired network communicate
+    - how does a wireless network communicate

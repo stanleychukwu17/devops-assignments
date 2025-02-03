@@ -1,3 +1,9 @@
 1.  Networking basics
     - What is a network
-    - Read: some of the stuffs about a network
+
+
+2.  - What is a LAN and a WAN
+    - What is the difference btw both
+    - Difference btw a wired and a wireless network
+    - how does a wired network communicate
+    - how does a wireless network communicate
