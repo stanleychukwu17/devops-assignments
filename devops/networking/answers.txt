@@ -1,13 +1,15 @@
 1. What is a network
     A network multiple devices been connected to each other so they can communicate with each other.
+    The devices often need some network equipment to connect them all together and help direct the flow of traffic.
+    Common networking equipments are switches and routers
+
     - In a wired LAN network:
       The most common way for devices to be connected to each other is by using a switch
     - In a wireless LAN network:
       The most common way for devices to be connected is through an AP(Access Point) & a router, but most
       of the modern routers usually comes with in-built AP
 
-2. 
-    - What is a LAN and a WAN
+2. What is a LAN and a WAN
       - LAN:
         LAN (Local area network) is a network of computers and devices that are connected within a small
         geographical area, like a home, office or school. it allows devices to communicate with each other
@@ -35,6 +37,40 @@
         - Telecommunications Networks: Mobile network providers like AT&T or Verizon have WANs to connect their
           base stations and provide service across large areas or even globally.
 
+3. what is a protocol
+    A protocol is a set of rules and conventions that governs how data is transmitted over a network.
+    These rules dictate how devices communicate with each other, how data is formatted,
+    and how errors are handled, among other things.
+
+    There are many different types of network protocols with specific purposes. Here are a few common ones:
+
+    1. HTTP (Hypertext Transfer Protocol):
+        Used for transferring web pages and other content on the internet. It's the foundation of data
+        exchange on the World Wide Web.
+    
+    2. TCP/IP (Transmission Control Protocol/Internet Protocol):
+        A suite of protocols that forms the backbone of the internet. It governs how data packets are transmitted
+        across networks.
+
+    3. FTP (File Transfer Protocol):
+        Used for transferring files between computers over a network. It's often used for uploading or downloading
+        files from a server.
+
+    4. DNS (Domain Name System):
+        Translates human-readable domain names (like www.example.com) into IP addresses that computers
+        can understand.
+
+    5. SMTP (Simple Mail Transfer Protocol):
+        Used for sending emails between servers.
+
+    6. IMAP/POP3:
+        These protocols are used for receiving and retrieving emails from a server
+        (IMAP allows syncing across devices, POP3 downloads the email to a single device)
+
+    Each of these protocols works in a very specific way to ensure data is sent, received, and understood
+    correctly by the devices on either end of the communication.
+
+3.
     - Difference btw a wired and a wireless network
     - how does a wired network communicate
     - how does a wireless network communicate
