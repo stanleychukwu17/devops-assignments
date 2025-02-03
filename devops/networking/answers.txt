@@ -99,5 +99,6 @@
           range of the Wi-Fi signal.
     }
 
-5.  - how does a wired network communicate
-    - how does a wireless network communicate
+5. 1. how does a wired network communicate
+
+   2. how does a wireless network communicate
