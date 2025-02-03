@@ -100,5 +100,7 @@
     }
 
 5. 1. how does a wired network communicate
+    see ./answers/5.1-wired-network.md
 
    2. how does a wireless network communicate
+    see ./answers/5.2-wireless-network.md
