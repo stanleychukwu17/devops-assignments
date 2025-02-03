@@ -1,15 +1,40 @@
-1.  - What is a network
-      A network is a situation where multiple devices are connected to each other so they can communicate with each
-      other.
-      - In a wired LAN network:
-        The most common way for devices to be connected to each other is by using a switch
-      - In a wireless LAN network:
-        The most common way for devices to be connected is through an AP(Access Point), most of the modern routers
-        usually comes with in-built AP
+1. What is a network
+    A network multiple devices been connected to each other so they can communicate with each other.
+    - In a wired LAN network:
+      The most common way for devices to be connected to each other is by using a switch
+    - In a wireless LAN network:
+      The most common way for devices to be connected is through an AP(Access Point) & a router, but most
+      of the modern routers usually comes with in-built AP
 
+2. 
+    - What is a LAN and a WAN
+      - LAN:
+        LAN (Local area network) is a network of computers and devices that are connected within a small
+        geographical area, like a home, office or school. it allows devices to communicate with each other
+        and share resources like files, printers or internet Access
+        e.g:
+        - Home Network: The network you set up in your house, connecting your devices like computers,
+          smartphones, smart TVs, printers, etc.
 
-2.  - What is a LAN and a WAN
-    - What is the difference btw both
+        - Office Network: In a workplace, all the computers, printers, and servers connected within the office
+          to share resources and communicate.
+
+        - School Network: In a school, the computers in different classrooms, the library, and the admin offices
+          connected together to share files, access the internet, and more.
+
+      - WAN:
+        WAN (Wide area network) is a much larger network that covers a broader geographical area, often
+        spanning cities, countries or even continents. The internet is the largest example of a WAN. it connects
+        multiple LANs and other networks together, enabling communication over long distances
+        e.g:
+        - The Internet: The most common example of a WAN. It connects millions of LANs worldwide.
+
+        - Corporate Networks: A large company with offices in multiple cities or countries might have a WAN
+          connecting all its local office networks (LANs) to each other for communication and data sharing.
+
+        - Telecommunications Networks: Mobile network providers like AT&T or Verizon have WANs to connect their
+          base stations and provide service across large areas or even globally.
+
     - Difference btw a wired and a wireless network
     - how does a wired network communicate
     - how does a wireless network communicate
