@@ -1,8 +1,11 @@
 Framer-motion & motion have been merged together:
 here is a guide on upgrading:
 https://motion.dev/docs/upgrade-guide
-motion is quite different from framer-motion, so i'll be sticking with framer-motion for the foreseeable
-future, no time now to start learning motion after all the time i already invested in framer-motion
+if you upgrade, the new motion currently supports all the hooks and methods from framer-motion
+
+motion is quite different from framer-motion, so i'll be sticking with framer-motion for
+the foreseeable future, no time now to start learning motion after all the time i already
+invested in framer-motion
 
 
 
