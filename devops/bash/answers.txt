@@ -147,3 +147,34 @@
     - task: using for loop, loop through all arguments received and echo them
         see ./answers/7.5-arguments.sh
 
+8.  Exit status in bash
+    - what is a successful exit status
+        a successful exit is of status "0", i.e "exit(0)"
+
+    - what is a non-successful exit status (you know the range)
+        a non-zero exit status indicates an error or failure
+
+        exit(1) - This is a general error. It doesn't specify what kind of error occurred,
+                  but it signals a failure. 
+
+        exit(2 to 125): These can be used for specific error codes defined by the program, often
+                  to indicate particular types of failures or issues
+
+    - Read: list of common exit codes
+        1 to 125: General errors, user-defined exit codes
+        126: Command found, but not executable
+        127: Command not found
+        128 to 255: System-related errors, often signal terminations
+
+    - how do you know your last exit status
+        - the command
+            echo $?
+
+        - see some examples
+            $ ls
+            $ echo $?
+            -> 0
+
+            $ non_existent_command
+            $ echo $?
+            -> 127
