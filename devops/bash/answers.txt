@@ -91,10 +91,17 @@
 
     - how do you redirect standard input from a text file
         cat < pop.txt
+        tail -5 < pop.txt # show the last 5 lines in the pop.txt document
+        head -50 < pop.txt # show the first 50 lines in the pop.txt document
 
     - how do you redirect standard output & standard error into a file
+        standard output:
         echo "${total_1} ${total_2}" 1>> pop.txt
         echo "we gon make it by GOD'S grace " > stanley.txt {you don't need to add the 1}
+        cat pop.txt variables.sh > combined.txt
+        -
+        standard error:
+        unknown_command 2> error.log
 
     - how do you redirect standard output & error into null
         ls &> /dev/null - redirects both the STDOUT and STDERR
