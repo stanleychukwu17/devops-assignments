@@ -115,6 +115,7 @@
     By using physical cables and switches/routers, wired networks typically provide more stable, faster, and more reliable communication compared to wireless networks.
 
     Here’s how devices communicate in a typical wired network:
+    ./answers/5.1-wired-network.md
     - Physical Connections
     - Network Switches
     - Routers
@@ -123,8 +124,39 @@
     - Communication Process
     - Network Layers
 
-    Read in-depth details on this:
-    ./answers/5.1-wired-network.md
 
    2. how does a wireless network communicate
-    see ./answers/5.2-wireless-network.md
+    In a **wireless network**, devices communicate without the need for physical cables, using **radio waves**
+    to send and receive data.
+
+    In a **wireless network**, devices communicate using radio waves to send and receive data.
+    The **Access Point (AP)** acts as a bridge between the wireless devices and the wired network,
+    enabling devices to connect without physical cables.
+    Devices send data packets over the air, using wireless standards like Wi-Fi, and communicate through
+    protocols like TCP/IP to ensure data reaches its destination. Security measures like encryption and
+    authentication protect the integrity of the communication.
+
+    ### Example of Communication:
+    1. **Laptop Wants to Browse the Web**:
+    - Your laptop sends a request to the AP (router) to access a webpage.
+    - The AP forwards the request to the router, which then communicates with the internet to fetch the webpage.
+    - The router sends the webpage data back to the AP, which then transmits it to your laptop via radio waves.
+    
+    2. **Streaming a Video**:
+    - You start streaming a video on your smartphone.
+    - The phone sends data packets to the AP requesting the video stream.
+    - The AP forwards the request to the router, which fetches the stream from the server.
+    - The server sends the video data to the router, which forwards it back to the AP, and the AP sends it to your phone.
+    - Your phone decodes the video data and displays it on the screen.
+
+    Here's how it works: ./answers/5.2-wireless-network.md
+    - Devices and the Wireless Access Point (AP)
+    - Establishing a Wireless Connection
+    - Radio Frequency (RF) Communication
+    - How Devices Send and Receive Data
+    - Routing and Switching
+    - Communication Protocols
+    - Managing Interference and Congestion
+    - Roaming and Seamless Communication
+    - Wireless Network Security
+
