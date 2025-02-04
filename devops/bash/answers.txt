@@ -231,4 +231,13 @@
 
         see: ./answers/9-if-else.sh
 
+10. if-else for files
+    - how do you check if a file:
+        exist, is readable, is a symlink, is a directory, is writeable,
+        is a file, file size greater than 0bytes
+    - Read: difference btw [-f file] and [-e file]
+    - Task: check if hello.sh exist, if not create it
+        - use ls -l to see if the file(i.e hello.sh) permissions
+        - add executable permission to the file & verify the file is executable
+
 
