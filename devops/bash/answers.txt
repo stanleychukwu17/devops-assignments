@@ -145,7 +145,7 @@
             It treats all arguments as one combined string.
 
     - task: using for loop, loop through all arguments received and echo them
-        see ./answers/7.5-arguments.sh
+        see ./answers/7-arguments.sh
 
 8.  Exit status in bash
     - what is a successful exit status
@@ -178,3 +178,57 @@
             $ non_existent_command
             $ echo $?
             -> 127
+
+9.  if-else conditions in bash
+    - what is the syntax for if-else conditions
+        if [ condition ]; then
+            # code to execute if condition is true
+        elif [ another_condition ]; then
+            # code to execute if the first condition is false and this one is true
+        else
+            # code to execute if none of the conditions are true
+        fi
+
+        e.g:
+            x=10
+            if [ $x -gt 5 ]; then
+                echo "x is greater than 5"
+            elif [ $x -eq 5 ]; then
+                echo "x is equal to 5"
+            else
+                echo "x is less than 5"
+            fi
+
+    - how do you check:
+        equal to: [==] or [-eq]
+        not equal to: [!=] or [-ne]
+        greater than: [-gt]
+        less than: [-lt]
+        greater than or equal to: [-ge]
+        less than or equal to: [-le]
+        regex matching: [[=~]]
+
+    - Do some mathematical comparison of:
+        1 equals 1: [ 1 == 1 ] or [ 1 -eq 1]
+        $var equals 2: [ $var -eq 2 ]
+        $var less than 5 [ $var -lt 5 ]
+
+    - string comparison, strA not equal to strB
+        Read: tip when comparing strings
+        e.g:
+            strA="Hello world"
+            strB="Hello world"
+
+            # the below will fail, because "-eq" should be used only for integers
+            if [ $strA -eq $strB ]; then
+                echo "all is well"
+            if
+
+            # the below will pass, use "-==" should be used for strings
+            if [ $strA -eq $strB ]; then
+                echo "all is well"
+            if
+
+        see: ./answers/9-if-else.sh
+
+
