@@ -10,7 +10,7 @@ echo ""
 echo ${welcome/bash/makefile}
 
 echo ""
-echo "sliced: ${welcome::5}"
+echo "sliced: ${welcome::11}"
 
 echo ""
 echo "sliced: ${welcome:18:-9}"
