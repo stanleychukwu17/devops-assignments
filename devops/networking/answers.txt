@@ -100,7 +100,31 @@
     }
 
 5. 1. how does a wired network communicate
-    see ./answers/5.1-wired-network.md
+    In a **wired network**, devices communicate with each other by using physical cables
+    (usually **Ethernet cables**) and network devices like **switches** or **routers** to manage traffic.
+    The process is much more straightforward than in a wireless network because it relies on physical
+    connections to transmit data.
+
+    In a wired network:
+    - Devices are physically connected using Ethernet cables.
+    - **Switches** handle communication between devices on the same local network (LAN).
+    - **Routers** handle traffic between different networks (e.g., your local network and the internet).
+    - Devices communicate by sending data packets that are routed based on MAC and IP addresses.
+    - Communication is reliable, with data sent in a structured way using networking protocols (like TCP/IP) to ensure delivery.
+
+    By using physical cables and switches/routers, wired networks typically provide more stable, faster, and more reliable communication compared to wireless networks.
+
+    Here’s how devices communicate in a typical wired network:
+    - Physical Connections
+    - Network Switches
+    - Routers
+    - Data Communication
+    - MAC Address
+    - Communication Process
+    - Network Layers
+
+    Read in-depth details on this:
+    ./answers/5.1-wired-network.md
 
    2. how does a wireless network communicate
     see ./answers/5.2-wireless-network.md
