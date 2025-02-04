@@ -117,13 +117,33 @@
         $3 - 3rd argument
         $....
 
-        $arg1=$1
+        arg1=$1
         echo ${arg1}
 
     - how do you pass arguments to your script when running the script
-    - how do you capture all arguments in bash
-    - what is the difference btw $@ and $*
-    - Read: "$@" vs $@ 
-    - task: using for loop, loop through all arguments received and echo them
+        ./script.sh arg1 arg2 arg3 arg...
 
+    - how do you capture all arguments in bash
+        $@ or $*
+
+    - what is the difference btw $@ and $*
+        1. $@:
+            Without quotes: $@ behaves exactly the same as $*, representing all positional parameters.
+
+            With quotes: "$@" treats each argument as a separate quoted string. This means that each
+                          argument will remain intact, even if it contains spaces. For example, if you
+                          pass the arguments "one" and "two words" to a script, "$@" would give:
+                          -> one "two words"
+                          So, each argument is treated as a separate word.
+
+        2. $*:
+            Without quotes: $* behaves the same as $@, representing all positional parameters.
+            With quotes: "$*" concatenates all arguments into a single string, separating them by the
+            first character of the IFS (Internal Field Separator, usually a space).
+            For example, with arguments one and "two words", "$*" would give:
+            -> one two words
+            It treats all arguments as one combined string.
+
+    - task: using for loop, loop through all arguments received and echo them
+        see ./answers/7.5-arguments.sh
 
