@@ -75,3 +75,4 @@
 
 13. For loops in Bash
     - syntax of for loops
+    - give a practical example
