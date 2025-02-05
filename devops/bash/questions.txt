@@ -65,14 +65,12 @@
         - use ls -l to see if the file(i.e hello.sh) permissions
         - add executable permission to the file & verify the file is executable
 
-11. Read: read the tip on executing of scripts from any location
-
-12. while loops in bash
+11. while loops in bash
     - write the syntax for a while loop
     - write an if-else condition inside a while loop
-    - task: use the while loop to number the names in names.txt file
     - how do you do an infinite while loop
+    - task: use the while loop to number the names in names.txt file
 
-13. For loops in Bash
+12. For loops in Bash
     - syntax of for loops
     - give a practical example

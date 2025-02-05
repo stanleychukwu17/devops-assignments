@@ -259,6 +259,33 @@
     - Task: check if hello.sh exist, if not create it
         see ./answers/10-i-else-for-files.sh
 
+11. while loops in bash
+    - write the syntax for a while loop
+        while [ condition ]; do
+            # expressions
+        done
 
+        e.g:
+        count=1
+        while [ $count -le 5 ]; do
+            echo "Count is: $count"
+            ((count++))  # Increment the count
+        done
 
+    - write an if-else condition inside a while loop
+        while [ condition ]; do
+            if [ condition ]; then
+                # expression
+            else
+                # expression
+            fi
+        done
+
+    - how do you do an infinite while loop
+        while true; do
+            # Your commands here
+        done
+
+    - task: use the while loop to number the names in names.txt file
+        see: ./answers/11-while-loops.sh
 
