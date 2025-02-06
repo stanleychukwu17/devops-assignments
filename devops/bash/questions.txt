@@ -73,4 +73,8 @@
 
 12. For loops in Bash
     - syntax of for loops
-    - give a practical example
+    - loop through names.txt
+    - loop through an array
+    - loop through a string
+    - loop through all arguments
+    - loop through each arguments
