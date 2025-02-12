@@ -1,5 +1,10 @@
+full_revision: 12 Feb 2025
+full_revision: 12 Feb 2025
+
 1.  - what methods do you use to animate when working with gsap
-    - Talk about gsap timeline and give an example
+    - gsap timeline with an example
+    - talk about gsap.set()
+      - using it to change the innerText of an element
     - Read: See how to use gsap timeline to animate an svg element
 
 2.  - animate ".anim1" to its current state, using an initial state of:
