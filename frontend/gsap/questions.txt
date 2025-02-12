@@ -32,6 +32,4 @@ full_revision: 12 Feb 2025
 
 6.  - Animating on change of state
     - Animating on interaction
-
-7.  Read: cleaning up {before you read, what can you say about cleaning up}
-
+    - Read: cleaning up {before you read, what can you say about cleaning up}

@@ -82,6 +82,23 @@
         )
 
 3. Read: See how to use gsap timeline to animate an svg element
+    // in this example, we will be animating an svg card
+    const tl = gsap.timeline({
+        defaults : {duration: .7, ease: "Back.easeOut.config(2)", opacity:0}
+    })
+
+    tl.from(".card-bg", {delay:1, scale:.2, transformOrigin: 'center'}, "=.2")
+        .from(".card-top", {scaleY:0, transformOrigin: 'top'})
+        .from(".icon", {scale:.2, transformOrigin: 'center'}, "-=.7")
+        .from(".blip1", {scaleX:0})
+        .from(".blip2", {scaleX:0}, "-=.2")
+        .from(".blip3", {scaleX:0}, "-=.3")
+        .from(".blip4", {scaleX:0}, "-=.5")
+        .from(".blip5", {scaleX:0}, "-=.7")
+
+    // we another timeline to animate the whole card, we want the card to continue to go up and down infinitely
+    var tl2 = gsap.timeline({defaults:{duration:1.5, delay:1}})
+    tl2.to(".whole-card", {y:10, repeat:-1, yoyo:true})
 
 4.  Read: using CssRule plugin to animate pseudo elements/selectors
         -
@@ -101,8 +118,7 @@
             gsap.to(spanAfter, {cssRule:{scaleY:0}, duration:1})
         }, []);
 
-5.  - Read: using gsap and react/next
-    - using the useRef, animate an element state to rotate 360
+5.  - using the useRef, animate an element state to rotate 360
     - Read: targeting descendant elements using gsap.utils.selector {Read and do on your own}
     - Read: Forwarding refs {Read and do on your own}
 
