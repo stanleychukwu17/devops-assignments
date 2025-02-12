@@ -1,0 +1,7 @@
+# research more on the "place-content: center"
+.quote_cover {
+	display: flex;
+	width: 100%;
+	place-content: center;
+}
+
