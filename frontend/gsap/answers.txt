@@ -35,5 +35,20 @@
             timeline animation kicked off, so this one is not relative to any of it's siblings,
             but instead it is relative to the timeline & the timeline duration 
 
-    - 
+    - talk about gsap.set()
+        gsap.set() is used to update the property of element without any animations
+        e.g:
+            gsap.set("element", {zIndex:4, opacity:1, color: "green", fontSize:"30px"})
+            -
+            it just like jQuery $("element").css({}).. the element is not animated to the received values,
+            but the element properties will be updated to the values received
+
+        - using it to change the innerText of an element
+            gsap.set("element", {text: "GOD is good"})
+            gsap.set("element", {text: function () {
+                // do whatever you like inside the function, but return a string value
+                return "Am so grateful for another chance"
+            }})
+
+
     - Read: See how to use gsap timeline to animate an svg element
