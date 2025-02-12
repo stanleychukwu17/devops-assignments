@@ -16,6 +16,7 @@ full_revision: 12 Feb 2025
       delay by 1.4s & duration of 1s
 
     - animate an "aside element" from its current state to a new state,
+      let the starting state be opacity:0, background-position:"200px 50px"
       let the new state be: opacity:1, background-position:"300px 0px"
       delay by 1.1s & duration of 1s
 
