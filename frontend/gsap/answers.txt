@@ -35,6 +35,16 @@
             timeline animation kicked off, so this one is not relative to any of it's siblings,
             but instead it is relative to the timeline & the timeline duration 
 
+    - gsap timeline scaling, reversing, pausing and playing of a timeline animation
+        const button = document.querySelector(".button")
+        button.addEventListener("click", ()=> {
+            timeline.timeScale(3) // this will make the reverse 3x faster
+            timeline.reverse()
+            -
+            timeline.pause()
+            timeline.play()
+        })
+
     - talk about gsap.set()
         gsap.set() is used to update the property of element without any animations
         e.g:
@@ -50,16 +60,21 @@
                 return "Am so grateful for another chance"
             }})
 
-
     - Read: See how to use gsap timeline to animate an svg element
 
 
-2.  - animate ".anim1" to its current state, using an initial state of:
+2.  
+    - animate ".anim1" to its current state, using an initial state of:
         gsap.from(".anim1", {opacity:0, y:-50, stagger:.6, duration:1})
 
     - animate an "image element" to its current state, using an initial state of:
         gsap.from("img.product", {opacity:0, y:30, delay:1.4, duration:1})
 
     - animate an "aside element" from its current state to a new state,
-      let the new state be: opacity:1, background-position:"300px 0px"
-      delay by 1.1s & duration of 1s
+        gsap.fromTo(
+            "aside",
+            {opacity:0, backgroundPosition: "200px 50px},
+            {opacity:1, backgroundPosition: "300px 0px", delay:1.1, duration:1}
+        )
+
+3.  Read: using CssRule plugin to animate pseudo elements/selectors
