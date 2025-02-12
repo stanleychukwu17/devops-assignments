@@ -28,20 +28,8 @@ full_revision: 12 Feb 2025
     - Read: targeting descendant elements using gsap.utils.selector {Read and do on your own}
     - Read: Forwarding refs {Read and do on your own}
 
-5.  - use useRef to create a gsap timeline
-    - reversing of a gsap timeline
-
-6.  - Animating on change of state
+5.  - Animating on change of state
     - Animating on interaction
 
-7.  Read: cleaning up {before you read, what can you say about cleaning up}
-
-
-
-
-
-
-
-
-
+6.  Read: cleaning up {before you read, what can you say about cleaning up}
 
