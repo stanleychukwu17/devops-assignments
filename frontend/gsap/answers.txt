@@ -67,9 +67,6 @@
                 return "Am so grateful for another chance"
             }})
 
-    - Read: See how to use gsap timeline to animate an svg element
-
-
 2.  
     - animate ".anim1" to its current state, using an initial state of:
         gsap.from(".anim1", {opacity:0, y:-50, stagger:.6, duration:1})
@@ -84,7 +81,9 @@
             {opacity:1, backgroundPosition: "300px 0px", delay:1.1, duration:1}
         )
 
-3.  Read: using CssRule plugin to animate pseudo elements/selectors
+3. Read: See how to use gsap timeline to animate an svg element
+
+4.  Read: using CssRule plugin to animate pseudo elements/selectors
         -
         import gsap from 'gsap';
         import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
@@ -102,7 +101,7 @@
             gsap.to(spanAfter, {cssRule:{scaleY:0}, duration:1})
         }, []);
 
-4.  - Read: using gsap and react/next
+5.  - Read: using gsap and react/next
     - using the useRef, animate an element state to rotate 360
     - Read: targeting descendant elements using gsap.utils.selector {Read and do on your own}
     - Read: Forwarding refs {Read and do on your own}

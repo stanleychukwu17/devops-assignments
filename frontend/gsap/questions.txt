@@ -21,15 +21,17 @@ full_revision: 12 Feb 2025
       let the new state be: opacity:1, background-position:"300px 0px"
       delay by 1.1s & duration of 1s
 
-3.  Read: using CssRule plugin to animate pseudo elements/selectors
+3. Read: See how to use gsap timeline to animate an svg element
 
-4.  - Read: using gsap and react/next
+4.  Read: using CssRule plugin to animate pseudo elements/selectors
+
+5.  - Read: using gsap and react/next
     - using the useRef, animate an element state to rotate 360
     - Read: targeting descendant elements using gsap.utils.selector {Read and do on your own}
     - Read: Forwarding refs {Read and do on your own}
 
-5.  - Animating on change of state
+6.  - Animating on change of state
     - Animating on interaction
 
-6.  Read: cleaning up {before you read, what can you say about cleaning up}
+7.  Read: cleaning up {before you read, what can you say about cleaning up}
 
