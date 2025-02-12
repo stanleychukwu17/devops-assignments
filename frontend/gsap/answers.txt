@@ -38,11 +38,16 @@
     - gsap timeline scaling, reversing, pausing and playing of a timeline animation
         const button = document.querySelector(".button")
         button.addEventListener("click", ()=> {
-            timeline.timeScale(3) // this will make the reverse 3x faster
-            timeline.reverse()
+            tl.timeScale(3) // this will make the reverse 3x faster
+            tl.reverse()
             -
-            timeline.pause()
-            timeline.play()
+            tl.pause()
+            tl.play()
+        })
+
+        you can also do:
+        document.querySelector(".button").addEventListener("click", () => {
+            tl.reversed() ? tl.play() : tl.reverse()
         })
 
     - talk about gsap.set()
@@ -78,3 +83,19 @@
         )
 
 3.  Read: using CssRule plugin to animate pseudo elements/selectors
+        -
+        import gsap from 'gsap';
+        import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
+
+        // Register the plugin
+        gsap.registerPlugin(CSSRulePlugin);
+
+        useEffect(() => {
+            // animating the ":hover" effect of a button
+            const buttonRule = CSSRulePlugin.getRule('.my-button:hover');
+            gsap.to(buttonRule, {duration: 0.3, backgroundColor: 'red', color: 'white'});
+
+            // animate the pseudo selector of ":after"
+            const spanAfter = CSSRulePlugin.getRule("span:after")
+            gsap.to(spanAfter, {cssRule:{scaleY:0}, duration:1})
+        }, []);
