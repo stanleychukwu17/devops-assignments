@@ -27,7 +27,6 @@ full_revision: 13 Feb 2025
 
 5.  - using the useRef, animate an element state to rotate 360
     - Read: targeting descendant elements using gsap.utils.selector {Read and do on your own}
-    - Read: Forwarding refs {Read and do on your own}
 
 6.  - Animating on change of state
     - Animating on interaction
