@@ -219,9 +219,20 @@
             </div>
         )
 
-    - Read: cleaning up {before you read, what can you say about cleaning up}
+    - Read: cleaning up: killing an animation, removing event Listeners
+        e.g:
+        useEffect(() => {
+            const buttonAnimation = gsap.to(".button", {rotation: "+360"})
+            const onMove = () => { ... }
 
+            window.addEventListener("pointerMove", onMove)
 
+            return () => {
+                buttonAnimation.kill()
+                window.removeEventListener("pointerMove", onMove)
+            }
+        }, [])
 
+7. Read: some useful gsap utils you can use in your project
 
 

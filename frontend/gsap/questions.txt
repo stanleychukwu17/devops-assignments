@@ -29,7 +29,12 @@ full_revision: 13 Feb 2025
     - Read: targeting descendant elements using gsap.utils.selector {Read and do on your own}
 
 6.  - Animating on change of state
+      - task: generate a random number and use the random number to rotate a box every time the
+          random number changes, tip: you can use gsap.utils.random()
+
     - Animating on interaction
-    - Read: cleaning up {before you read, what can you say about cleaning up}
+      - do an animation for onMouseEnter and onMouseLeave
+
+    - Read: cleaning up: killing an animation, removing event Listeners
 
 7. Read: some useful gsap utils you can use in your project
