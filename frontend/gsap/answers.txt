@@ -82,6 +82,7 @@
         )
 
 3. Read: See how to use gsap timeline to animate an svg element
+    -> see: ./images/3-svg-card
     // in this example, we will be animating an svg card
     const tl = gsap.timeline({
         defaults : {duration: .7, ease: "Back.easeOut.config(2)", opacity:0}
