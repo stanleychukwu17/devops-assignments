@@ -8,9 +8,9 @@
     - see image/1-grid-lines-01
 
 3.
-    A grid-gap is used to set a gap between the grid-cells of a grid, you can set this gap based on
-    rows or columns or both
-    1. grid-gap: 10px; or gap: 10px; give a margin of 10px on each row & column cells
+    A gap is used to set a gap between the grid-cells of a grid, you can set this gap based on
+    rows and columns or both at once
+    1. gap: 10px; give a margin of 10px on each row & column cells
     2. gap: 5px 10px; margin of 5px for each row-cell and 10px for each column-cell
 
 4.
