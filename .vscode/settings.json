@@ -29,6 +29,7 @@
         "tfvars",
         "toset",
         "usermod",
-        "WORKDIR"
+        "WORKDIR",
+        "yoyo"
     ]
 }
