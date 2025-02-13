@@ -120,6 +120,15 @@
         }, []);
 
 5.  - using the useRef, animate an element state to rotate 360
+        const boxRef = useRef(null)
+
+        useEffect(() => {
+            gsap.fromTo(boxRef.current, {opacity:0, x:-100} {opacity:1, x:0, duration:0.5})
+            // delay until the last animation is done
+            gsap.to(boxRef.current, {rotation:"+360"})
+        }, [])
+
+        <div ref={boxRef}></div>
     - Read: targeting descendant elements using gsap.utils.selector {Read and do on your own}
     - Read: Forwarding refs {Read and do on your own}
 
