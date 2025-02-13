@@ -119,7 +119,8 @@
             gsap.to(spanAfter, {cssRule:{scaleY:0}, duration:1})
         }, []);
 
-5.  - using the useRef, animate an element state to rotate 360
+5.
+    - using the useRef, animate an element state to rotate 360
         const boxRef = useRef(null)
 
         useEffect(() => {
@@ -129,7 +130,44 @@
         }, [])
 
         <div ref={boxRef}></div>
+
     - Read: targeting descendant elements using gsap.utils.selector {Read and do on your own}
+        e.g:
+        import {useEffect, useRef} from "React"
+
+        const Box = ({}) => {
+            return <div className="box"{children}></div>
+        }
+
+        const Container = () => {
+            return (
+                <div>
+                    <Box>item 1</Box>
+                    <Container />
+                    <Box>item 2</Box>
+                </div>
+            )
+        }
+
+        function App () {
+            const el = useRef(null)
+            const q = gsap.utils.selector(el)
+
+            useEffect(() => {
+                // this will target all ".box" elements, no matter how deep they are in the DOM
+                // it uses el.current.querySelectorAll() under the hood
+                gsap.to(q(".box"), {x:100, stagger:0.3, repeat:-1, repeatDelay:1, yoyo:true})
+            }, [])
+
+            return (
+                <div className="app" ref={el}>
+                    <Box>From Parent 1</Box>
+                    <Container />
+                    <Box>From Parent 2</Box>
+                </div>
+            )
+        }
+
     - Read: Forwarding refs {Read and do on your own}
 
 
