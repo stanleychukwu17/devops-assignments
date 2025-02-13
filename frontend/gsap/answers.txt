@@ -187,9 +187,40 @@
 
 6.
     - Animating on change of state
+      - task: generate a random number and use the random number to rotate a box every time the
+        random number changes, tip: you can use gsap.utils.random()
+
+            const el = useRef<HTMLDivElement>({} as HTMLDivElement)
+            const randomX = gsap.utils.random(-200, 200, 1, true)
+            const [useX, setX] = useState(0)
+
+            useEffect(() => {
+                gsap.to(el.current, {x:useX, duration:1})
+            }, useX)
+
+            return (
+                <button onClick={() => { setX(randomX()) }}>update X</button>
+            )
 
     - Animating on interaction
+        const onEnter = ({currentTarget}) => {
+            gsap.to(currentTarget, {backgroundColor:'#f1f2f6', scale:1.2})
+        }
+
+        const onLeave = ({currentTarget}) => {
+            gsap.to(currentTarget, {backgroundColor: '#fff', scale:1})
+        }
+
+        return (
+            <div>
+                <button onMouseEnter={onEnter} onMouseLeave={onLeave}>
+                    Hover over me!
+                </button>
+            </div>
+        )
+
     - Read: cleaning up {before you read, what can you say about cleaning up}
+
 
 
 

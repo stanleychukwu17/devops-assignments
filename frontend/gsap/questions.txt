@@ -31,3 +31,5 @@ full_revision: 13 Feb 2025
 6.  - Animating on change of state
     - Animating on interaction
     - Read: cleaning up {before you read, what can you say about cleaning up}
+
+7. Read: some useful gsap utils you can use in your project
