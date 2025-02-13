@@ -234,5 +234,44 @@
         }, [])
 
 7. Read: some useful gsap utils you can use in your project
+    1. gsap.utils.toArray()
+        e.g: const elements = gsap.utils.toArray('.className');
+        -
+        Use case: Converts NodeLists, arrays, or even single elements into an array.
+        -
+        Why it's useful: It ensures you can loop over collections of elements in a consistent way, even if
+        the selection is a NodeList or a single element.
+
+    2. gsap.utils.random()
+        e.g: let randNum = gsap.utils.random(1, 100); // Random number between 1 and 100
+        -
+        Use case: Generates a random number between a given range, with options for decimal points,
+        or even an array of random items.
+        -
+        Why it's useful: Helps you create randomized effects, like random positions, colors, etc.
+
+    3. gsap.utils.clamp()
+        e.g: let limitedValue = gsap.utils.clamp(0, 100, 120); // Returns 100, because 120 exceeds the max
+        -
+        Use case: Limits a value within a defined range (clamps it).
+        -
+        Why it's useful: When you want to ensure a value doesn't go beyond specific bounds
+        (for example, scrolling, positioning, etc.).
+
+    4. gsap.matchMedia()
+        e.g:
+        gsap.matchMedia({
+            "(min-width: 768px)": function() { // animations for larger screens
+                gsap.to(".box", { x: 300 });
+            },
+            "(max-width: 767px)": function() { // animations for smaller screens
+                gsap.to(".box", { x: 50 });
+            }
+        });
+        -
+        Use case: Allows u to create responsive animations dat only run when certain media queries are matched
+        -
+        Why it's useful: Perfect for creating responsive animations without needing to write separate 
+        code for each screen size.
 
 
