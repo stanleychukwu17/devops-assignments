@@ -52,6 +52,23 @@
             tl.reversed() ? tl.play() : tl.reverse()
         })
 
+    - when using useEffect for timeline animations, how do you stop the animation incase of state change
+        you have to do: tl.current && tl.current.progress(0).kill()
+        e.g:
+            const el = useRef()
+            const q = gsap.utils.selector(el)
+            const [openBox, setOpenBox] = useState<boolean>(false)
+
+            useEffect(() => {
+                tl.current.progress(0).kill()
+
+                if (openBox) {
+                    tl.current.to(q(".box"), {opacity:1, x:0})
+                } else {
+                    tl.current.to(q(".box"), {opacity:0, x:-100})
+                }
+            }, [openBox])
+
     - talk about gsap.set()
         gsap.set() is used to update the property of element without any animations
         e.g:
@@ -168,7 +185,9 @@
             )
         }
 
-6.  - Animating on change of state
+6.
+    - Animating on change of state
+
     - Animating on interaction
     - Read: cleaning up {before you read, what can you say about cleaning up}
 

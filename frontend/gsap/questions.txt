@@ -4,9 +4,9 @@ full_revision: 13 Feb 2025
 1.  - what methods do you use to animate when working with gsap
     - gsap timeline with an example
     - gsap timeline reversing, pausing, scaling and playing of a timeline animation
+    - when using useEffect for timeline animations, how do you stop the animation incase of state change
     - talk about gsap.set()
       - using it to change the innerText of an element
-    - Read: See how to use gsap timeline to animate an svg element
 
 2.  - animate ".anim1" to its current state, using an initial state of:
       opacity:0, y:-50
