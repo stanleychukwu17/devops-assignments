@@ -15,7 +15,7 @@ variable "secret_key" {
 
 
 # =====================
-# ec variables
+# ec2 variables
 # =====================
 variable "ami" {
   description = "The AMI to use for the instance"
