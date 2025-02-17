@@ -1084,7 +1084,7 @@ SECTION 2 BEGINS
       - expose the entire ec2 instance in the ec2 module
         in ./modules/ec2/outputs.tf
             output "ec2_outputs" {
-                value = aws_instance
+                value = aws_instance.my_vm
             }
 
       - access the values from the root module, get: ec2_ami, ec2_public_ip_address, ec2_instance_id
