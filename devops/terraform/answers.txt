@@ -1365,6 +1365,8 @@ SECTION 3 BEGINS
             name = "stanleychukwu.com"
         }
 
-
+7. Testing terraform code
+    - using bash: look at the code and write by yourself
+    - using golang: look at the code and write by yourself
 
 

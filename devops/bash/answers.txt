@@ -23,7 +23,6 @@
         chmod +x hello_world.sh
         ./hello_world.sh
 
-
 2.  see ./answers/2-variables.sh
 
 3.  if greeting="Hello world"
