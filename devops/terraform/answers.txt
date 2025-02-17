@@ -1302,9 +1302,9 @@ SECTION 3 BEGINS
         some of the advantages of using file structure is, you can reference resources from different
         configurations(i.e entirely separate configurations), this is made possible by calling the different
         "config remote state file"
-        e.g: say you deployed some ec2 instances in project-A and you need the i.p addresses of the ec2_instance
-        in project-B, you can reference the "remote state file" of project-A from project-B to get the
-        i.p address
+        e.g: say you deployed some ec2 instances in project-A and you need the i.p addresses of the
+            ec2_instances in project-B, you can reference the "remote state file" of project-A from
+            project-B to get the i.p address
 
 5.  Read: How to use terraform workspace to manage environment 
     - creating a workspace
@@ -1325,7 +1325,8 @@ SECTION 3 BEGINS
 
 6.  
     Read: Terragrunt
-        This is a tool provided by grunt-work.io, it provide utilities to make certain terraform use cases easier.
+        This is a tool provided by grunt-work.io, it provide utilities to make certain terraform use
+        cases easier
         - keeping terraform code DRY
         - executing commands across multiple TF configs
         - working with multiple cloud accounts
@@ -1338,8 +1339,8 @@ SECTION 3 BEGINS
         tree -a; # to see both hidden directories
         tree -L2; # to limit the sub-directories level show to 2
         -
-        this command will only work in a pure linux environment, it works in my ubuntu-20.24(WSL), it won't work
-        in my "git bash", but it works in macBook since they ship with linux
+        this command will only work in a pure linux environment, it works in my ubuntu-20.24(WSL), it
+        won't work in my "git bash", but it works in macBook since they ship with linux
 
     Read: using Directory/File structure to manage environment
         you can have something like:
