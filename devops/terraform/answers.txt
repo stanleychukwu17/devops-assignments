@@ -984,11 +984,12 @@ SECTION 2 BEGINS
         Modules are a key to writing reuseable, maintainable, testable terraform code
     - what is a root module & child module
         - root module: A root module is the place where you run terraform plan or apply
-        - child module: All modules imported from other directories into the root module are known as child module
+        - child module: All modules imported from other directories into the root module are known as
+            child module
     - what is the difference btw a local module and a remote module
         - Local modules: It is a module created by you or your team members and are loaded locally
-        - Remote modules: There are modules that are loaded from remote sources such as terraform registry and
-                          are created and maintained by either hashicorp and it's partners or by 3rd parties
+        - Remote modules: There are modules that are loaded from remote sources such as terraform registry
+            and are created and maintained by either hashicorp and it's partners or by 3rd parties
 
 13. How do you structure your project to use modules
         root
