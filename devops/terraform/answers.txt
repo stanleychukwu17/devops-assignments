@@ -1167,7 +1167,7 @@ SECTION 2 BEGINS
     - Read: ssh-ing into the aws_instance created using this module from terraform registry
         you cannot use the ec2-user as usual to ssh into the ec2 instance created from a module,
         the ec2-user is only available when you use the amazon-linux-images, if you're using a module to
-        create for ec2 instance, then check the docs to know the right user to use for ssh-ing into
+        create an ec2 instance, then check the docs to know the right user to use for ssh-ing into
         the instance
 
 
