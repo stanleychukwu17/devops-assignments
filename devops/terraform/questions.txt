@@ -1,5 +1,5 @@
-full_revision: 21 Jan 2025
-full_revision: 11th Feb 2025
+full_revision: 21th Jan 2025
+full_revision: 16th Feb 2025
 
 1. What is the core terraform workflow
 
@@ -43,7 +43,7 @@ full_revision: 11th Feb 2025
         D:\Sz - projects\28-devops\1-terraform\00-examples\2-aws-subnet-using-a-load-balancer
     }
 
-14. How do you declare a variable, what are the (3&4) arguments in a variable declaration.
+14. - How do you declare a variable, what are the (3&4) arguments in a variable declaration.
     - And in what files do you store your variables
 
 15. How do you force a replacement of your variables when running the terraform plan or

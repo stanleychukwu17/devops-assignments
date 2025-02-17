@@ -236,7 +236,7 @@
             The ipv6_cidr_blocks is empty because the rule is likely intended for IPv4 connections only. Since no
             IPv6 addresses are specified, the field is left empty (or set to an empty list []). If you wanted to
             allow IPv6 access, you would provide a valid IPv6 CIDR block here, such as "2001:0db8::/32".
-        
+
         2. self = false
           - What is self ?
             The self field specifies whether the rule applies to traffic originating from the same security group.
@@ -253,7 +253,7 @@
             Setting security_groups = null means that this rule is not specifically restricting traffic based on other
             security groups. In other words, it does not restrict access to instances from other security groups.
             If you had specific security groups to allow, you would list them here
-        
+
         4. prefix_list_ids = null
           - What is prefix_list_ids?
             The prefix_list_ids field allows you to specify AWS-managed prefix lists (collections of IP address ranges)
@@ -264,7 +264,7 @@
             Setting prefix_list_ids = null means that the rule is not using any AWS-managed prefix lists. If this field were
             set with the ID of a prefix list (e.g., "pl-12345678"), it would allow traffic from the IP addresses included
             in that prefix list.
-        
+
         5. Summary of All Fields:
           - ipv6_cidr_blocks = []: No IPv6 addresses are specified, implying the rule is for IPv4 traffic.
           - self = false: Traffic from instances within the same security group is not allowed.
@@ -400,22 +400,23 @@
         }
     }
 
-33. Terraform state is a critical component of Terraform's infrastructure management process. It is a file that
-    tracks the current state of your infrastructure as managed by Terraform. Terraform state acts as d source of
-    truth for your managed infrastructure, enabling Terraform to track, update, and manage resources effectively.
+33. Terraform state is a critical component of Terraform's infrastructure management process. It is a file
+    that tracks the current state of your infrastructure as managed by Terraform. Terraform state acts
+    as the source of truth for your managed infrastructure, enabling Terraform to track, update, and
+    manage resources effectively.
     For more {
-        1. **Purpose**: The state file maintains a mapping between your Terraform configuration and the actual
-            resources deployed in your infrastructure. It helps Terraform understand what resources exist, their
-            configurations, and how they relate to each other.
+        1. **Purpose**: The state file maintains a mapping between your Terraform configuration and the
+            actual resources deployed in your infrastructure. It helps Terraform understand what resources
+            exist, their configurations, and how they relate to each other.
 
         2. **Storage**: By default, the state file is named `terraform.tfstate` and is stored locally in your
-            working directory. However, in team environments or production settings, it’s common to use remote
-            state storage solutions like Amazon S3, Azure Blob Storage, or Terraform Cloud for better management
-            and collaboration.
+            working directory. However, in team environments or production settings, it’s common to use
+            remote state storage solutions like Amazon S3, Azure Blob Storage, or Terraform Cloud for
+            better management and collaboration.
 
-        3. **Usage**: During operations like `terraform apply`, Terraform reads the state file to determine the
-            changes that need to be made to your infrastructure. It then updates the state file with the latest
-            information after applying the changes.
+        3. **Usage**: During operations like `terraform apply`, Terraform reads the state file to determine
+            the changes that need to be made to your infrastructure. It then updates the state file with
+            the latest information after applying the changes.
 
         4. **Locking and Security**: For remote state, locking mechanisms prevent simultaneous updates.
     }
@@ -540,8 +541,8 @@
         the same key_pair_name & the key already does exist, that's why an error occurred
         -
     - how you solve the above problem
-        To solve this problem {the teacher says it is usually a common problem}, you have to import the aws_key_pair
-        into this new_project, here is what you'll do:
+        To solve this problem {the teacher says it is usually a common problem}, you have to import
+        the aws_key_pair into this new_project, here is what you'll do:
 
         terraform import aws_key_pair.<local_name> <key_pair_name>
         -
@@ -926,14 +927,14 @@ SECTION 2 BEGINS
         associate_public_ip_address = true
     }
 
-    The above will create 3 ec2 instances, so how do we dynamically display the info of these aws_instance's. Say we wanted
-    to display the ip addresses, we might do:
+    The above will create 3 ec2 instances, so how do we dynamically display the info of these aws_instance's.
+    Say we wanted to display the ip addresses, we might do:
     output "ip_address_1" {
         value = aws_instance.my_vm[0].public_ip
     } 
 
-    imagine if we created upTo 10vm, this would take forever, so we can use splat-expressions to dynamically loop through
-    the vm's details, i.e:
+    imagine if we created upTo 10vm, this would take forever, so we can use splat-expressions to dynamically
+    loop through the vm's details, i.e:
     output "ip_addresses" {
         value = aws_instance.my_vm[*].public_ip
     }
@@ -957,14 +958,15 @@ SECTION 2 BEGINS
       }
 
     - using dynamodb to implement state locking
-      You can go to aws and create a dynamodb table from there, or you can use terraform to create a dynamodb_table
-      The dynamodb_table will help with state locking to prevent simultaneous updating of a state file
+      You can go to aws and create a dynamodb table from there, or you can use terraform to create a
+      dynamodb_table, The dynamodb_table will help with state locking to prevent simultaneous updating
+      of a state file
 
     - Read: working with terraform cloud to store your state file
         if you want to use terraform cloud for you .tfstate file storage, then here you go:
         -
         backend "remote" {
-          organization = "glich-stream"
+          organization = "glitch-stream"
           workspaces {
             name = "ci-cd-staging"
           }
