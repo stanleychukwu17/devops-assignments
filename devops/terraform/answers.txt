@@ -1160,7 +1160,7 @@ SECTION 2 BEGINS
 
     - Read: Accessing outputs from the modules
         - Go through each of the doc of the modules you're using to see how it exposes output, e.g for the
-          vpc module we used earlier on, the the vpc-id would look like:
+          vpc module we used earlier on, the the vpc_id would look like:
           -
           module.vpc.vpc_id
 

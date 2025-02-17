@@ -238,7 +238,7 @@ SECTION 2 BEGINS
     - First work on the vpc module and parameterize it to use variables
     - use the vpc module in your root module
     - Now move the ec2_instance to a module called "server" and use it in your root module
-    - Now the route53 into Networking module
+    - Now the route53 & Networking module
     - Now run terraform plan to see that all is well and okay (how many resources would be created?)
 
 19. Terraform registry
