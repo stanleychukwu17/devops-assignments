@@ -19,11 +19,8 @@ full_revision: 18th Feb 2025
 3. You next task is to use github-actions to write a comment on newly created issue in
     our github-repo. Let the workflow have 2 jobs:
 
-    1. 1st job should use community action to add a comment to the issue
-    
-    2. 2nd job should dump github events data &
-       use the github api to post a comment to the issue
-
+    1. 1st job: dump github events data & use community action to add a comment to the issue
+    2. 2nd job: use the github api to post a comment to the issue
     3. what is the | jq '.'? used in the github_action file
 
 4.

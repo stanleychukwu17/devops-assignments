@@ -83,12 +83,9 @@
             see this button. the button helps us to run our workflows without always relying on events
 
 3.
-    1. see ./task/3-comment-on-issues.yml
-        we need to pass environment variables in the second job, the first job can access the environment
-        variables internally because it is an action, but since we are sending a post request, we also need
-        to attach the environment variables in the url
+    1 & 2: see ./task/3-comment-on-issues.yml
 
-    2. what is the | jq '.'? used in the github_action file
+    3. what is the | jq '.'? used in the github_action file
 
         The command | jq '.' in the context of the line you provided is used for processing and formatting JSON data.
 
