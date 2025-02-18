@@ -5,6 +5,9 @@ import (
 	"fmt"
 	"testing"
 	"time"
+
+	http_helper "github.com/gruntwork-io/terratest/modules/http-helper"
+	"github.com/gruntwork-io/terratest/modules/terraform"
 )
 
 func TestTerraformHelloWorldExample(t *testing.T) {
