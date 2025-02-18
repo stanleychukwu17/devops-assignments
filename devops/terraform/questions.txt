@@ -279,4 +279,14 @@ SECTION 3 BEGINS
 
 7. Testing terraform code
     - using bash: look at the code and write by yourself
+        steps:
+        - set error to 1 if any command fails
+        - set error to 1 if trying to use any unset variable
+        - set error to 1 if pipe command fails
+        - check the current directory if it matches "7-terraform-test-code"
+        - initialize terraform and provision the infrastructure
+        - get the output of "ec2_public_ip_address"
+        - use the "ec2_public_ip_address" to make a curl request to see if the server is up and running
+        - check the status code of the curl request to be 200
+        - destroy the resources provisioned
     - using golang: look at the code and write by yourself
