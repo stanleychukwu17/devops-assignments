@@ -1,3 +1,6 @@
+full_revision: 18th Feb 2025
+full_revision: 19th Feb 2025
+
 1. What is a network
 
 2. What is a LAN and a WAN, give examples
@@ -8,3 +11,13 @@
 
 5. 1. how does a wired network communicate
    2. how does a wireless network communicate
+
+6. Network Addresses
+   - What is a MAC Address & IP Address
+   - Read: See image of a Large Network
+   - Read: What happens when you're sending message from one LAN network to another LAN network
+
+7. OSI Model Network
+   - What are the 7 layers of the OSI model
+     use "Please Do Not Throw Sausage Pizza Away"
+   - Explain each of the layers

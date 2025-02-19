@@ -38,7 +38,7 @@
 
     1. HTTP (Hypertext Transfer Protocol):
         Used for transferring web pages and other content on the internet.
-    
+
     2. TCP/IP (Transmission Control Protocol/Internet Protocol):
         A suite of protocols that forms the backbone of the internet. It governs how data packets are transmitted
         across networks.
@@ -101,9 +101,11 @@
     - **Switches** handle communication between devices on the same local network (LAN).
     - **Routers** handle traffic between different networks (e.g., your local network and the internet).
     - Devices communicate by sending data packets that are routed based on MAC and IP addresses.
-    - Communication is reliable, with data sent in a structured way using networking protocols (like TCP/IP) to ensure delivery.
+    - Communication is reliable, with data sent in a structured way using networking protocols (like TCP/IP)
+      to ensure delivery.
 
-    By using physical cables and switches/routers, wired networks typically provide more stable, faster, and more reliable communication compared to wireless networks.
+    By using physical cables and switches/routers, wired networks typically provide more stable,
+    faster, and more reliable communication compared to wireless networks.
 
     Here’s how devices communicate in a typical wired network:
     ./answers/5.1-wired-network.md
@@ -117,12 +119,13 @@
 
 
    2. how does a wireless network communicate
-    In a **wireless network**, devices communicate without the need for physical cables, using **radio waves**
-    to send and receive data.
+    In a **wireless network**, devices communicate without the need for physical cables, using
+    **radio waves** to send and receive data.
 
     In a **wireless network**, devices communicate using radio waves to send and receive data.
     The **Access Point (AP)** acts as a bridge between the wireless devices and the wired network,
     enabling devices to connect without physical cables.
+
     Devices send data packets over the air, using wireless standards like Wi-Fi, and communicate through
     protocols like TCP/IP to ensure data reaches its destination. Security measures like encryption and
     authentication protect the integrity of the communication.
