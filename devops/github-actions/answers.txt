@@ -131,8 +131,9 @@
             [✔] Require status check to pass before merging
                 [✔] Require branches to be up to date before merging
                 input [search for status check]
-                - In the search box, enter the name of the job you want to pass before the branch is allowed
-                  to merge into the branch(i.e the branch you specified @ step-4, the "main" branch)
+                - In the search box, enter the name of the job you want to pass before the 
+                  "incoming branch" is allowed to merge into the "protected branch"
+                  (i.e the branch you specified @ step-4, the "main" branch)
                 - {
                     The teacher added 3 jobs, these jobs can be found in different jobs at different workflow:
                     - Run linter            {see ./ci-cd-intro/.github/workflows/ci.yml}
