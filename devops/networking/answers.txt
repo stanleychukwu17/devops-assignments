@@ -1,28 +1,20 @@
 1. What is a network
-    A network multiple devices been connected to each other so they can communicate with each other.
-    The devices often need some network equipment to connect them all together and help direct the flow of traffic.
-    Common networking equipments are switches and routers
+    A network is multiple devices been connected to each other so they can communicate with each other.
+    The devices often need some network equipment to connect them all together and help direct the flow
+    of traffic. Common networking equipments are switches and routers
 
     - In a wired LAN network:
       The most common way for devices to be connected to each other is by using a switch
     - In a wireless LAN network:
-      The most common way for devices to be connected is through an AP(Access Point) & a router, but most
-      of the modern routers usually comes with in-built AP
+      The most common way for devices to be connected is through an AP(Access Point) & a router, but
+      most of the modern routers usually comes with in-built AP
 
 2. What is a LAN and a WAN
     - LAN:
       LAN (Local area network) is a network of computers and devices that are connected within a small
       geographical area, like a home, office or school. it allows devices to communicate with each other
       and share resources like files, printers or internet Access
-      e.g:
-      - Home Network: The network you set up in your house, connecting your devices like computers,
-        smartphones, smart TVs, printers, etc.
-
-      - Office Network: In a workplace, all the computers, printers, and servers connected within the office
-        to share resources and communicate.
-
-      - School Network: In a school, the computers in different classrooms, the library, and the admin offices
-        connected together to share files, access the internet, and more.
+      e.g: Home Network, Office Network, School Network e.t.c.
 
     - WAN:
       WAN (Wide area network) is a much larger network that covers a broader geographical area, often
@@ -38,15 +30,14 @@
         base stations and provide service across large areas or even globally.
 
 3. what is a protocol
-    A protocol is a set of rules and conventions that governs how data is transmitted over a network.
+    A protocol is a set of rules & guides that governs how data is transmitted over a network.
     These rules dictate how devices communicate with each other, how data is formatted,
     and how errors are handled, among other things.
 
     There are many different types of network protocols with specific purposes. Here are a few common ones:
 
     1. HTTP (Hypertext Transfer Protocol):
-        Used for transferring web pages and other content on the internet. It's the foundation of data
-        exchange on the World Wide Web.
+        Used for transferring web pages and other content on the internet.
     
     2. TCP/IP (Transmission Control Protocol/Internet Protocol):
         A suite of protocols that forms the backbone of the internet. It governs how data packets are transmitted
