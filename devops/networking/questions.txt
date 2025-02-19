@@ -18,6 +18,16 @@ full_revision: 19th Feb 2025
    - Read: What happens when you're sending message from one LAN network to another LAN network
 
 7. OSI Model Network
-   - What are the 7 layers of the OSI model
-     use "Please Do Not Throw Sausage Pizza Away"
+   - What are the 7 layers of the OSI model: use "Please Do Not Throw Sausage Pizza Away"
+      Application - Away - Layer 7
+      Presentation - Pizza - Layer 6
+      Session - Sausage - Layer 5
+      Transport - Throw - Layer 4
+      Network - Not - Layer 3
+      Data Link - Do - Layer 2
+      Physical Layer - Please - Layer 1
+
+      Upper layer = [Application, Presentation, Session]
+      Lower layer = [Transport, Network, Data Link, Physical Layer]
+
    - Explain each of the layers

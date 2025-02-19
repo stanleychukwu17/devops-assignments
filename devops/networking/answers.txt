@@ -154,3 +154,64 @@
     - Roaming and Seamless Communication
     - Wireless Network Security
 
+6. Network Addresses
+  - What is a MAC Address & IP Address
+    - MAC address:
+      A MAC address is an address that is assigned to a device when the device is manufactured.
+
+      A device might contain multiple network cards and each of these network cards have it's
+      own MAC address. so if a device have multiple network cards, it will also have multiple
+      mac-addresses. Since a mac-address is assigned when the device is manufactured, the
+      mac address of a device cannot be changed
+
+    - IP address:
+      Every device connected to a network usually has an IP address, but this address is
+      assigned by the DHCP in the router
+      here is how it works {
+        Devices get an IP address when connected to a network through a process called
+        **Dynamic Host Configuration Protocol (DHCP)**. Here's how it works:
+
+        1. Device Requests an IP Address: When a device (like a computer or smartphone) connects to a network,
+          it first sends out a request to get an IP address. This request is sent to the DHCP server,
+          which is usually part of the router or dedicated server on the network.
+
+        2. DHCP Discovery: The device sends a DHCP Discover message, which is a broadcast to all devices
+          on the network asking for an IP address.
+
+        3. DHCP Offer: The DHCP server receives the request and responds with a DHCP Offer message.
+          This message includes an available IP address and other network settings
+          (like the subnet mask, gateway, DNS servers).
+
+        4. DHCP Request: The device receives the DHCP offer and responds with a DHCP Request message,
+          indicating that it wants to use the provided IP address.
+
+        5. DHCP Acknowledgment: Finally, the DHCP server sends an acknowledgment (DHCP Ack) to the device,
+          confirming the IP address has been assigned.
+
+        Alternatively, if a static IP configuration is used, the device is manually assigned an
+        IP address by a network administrator or set directly on the device. 
+      }
+
+  - Read: See image of a Large Network
+
+  - Read: What happens when you're sending message from one LAN network to another LAN network
+    Say we are sending a message from a Laptop in LAN-1 to a printer in LAN-2. the Laptop1 will
+    prepare the message and attach the i.p address of the printer, it will also attach the
+    mac address of the router. i.e:
+
+    [12:12:AB:AB]----[172.167.0.1]----[message]
+          |               |               |
+      router mac        printer       message from laptop
+        address       i.p address       in LAN-1
+
+    it sends this message with theses info to the router, when the router receives the message,
+    it removes its own mac address from the message and replaces it with the mac-address of the
+    printer and then sends the message to the printer.
+
+7. OSI Model Network
+   - What are the 7 layers of the OSI model: use "Please Do Not Throw Sausage Pizza Away"
+   - Explain each of the layers
+
+
+
+
