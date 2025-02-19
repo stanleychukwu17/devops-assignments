@@ -47,6 +47,10 @@ full_revision: 18th Feb 2025
         pass when certain jobs are successful {You can go to your github account and demonstrate it}
 
 5. reusable workflows
+    - what are reusable workflows
+    - Read: example of reusable workflow with inputs
+    - Read: example of exposing outputs from reusable workflows
+    - Read: best practice for reusable workflows
 
 6. matrix in github_action
 
