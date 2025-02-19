@@ -1,0 +1,6 @@
+github.com/example/project/package/function1  100.0%
+github.com/example/project/package/function2  85.7%
+github.com/example/project/package/function3  92.5%
+github.com/example/project/package/func3      70.0%
+...
+total:                                           88.4%

@@ -83,6 +83,7 @@ jobs:
           go tool cover -func=coverage.out | tee coverage.txt
 
       - name: Check coverage percentage
+        # see the alternative i wrote in 4.3-analyze.sh
         run: |
           coverage=$(grep "total:" coverage.txt | awk '{print $3}' | sed 's/%//')
           echo "Coverage is $coverage%"
