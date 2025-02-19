@@ -41,13 +41,16 @@ full_revision: 18th Feb 2025
                     - install go dependencies
                     - run go test with coverage output
                     - check the coverage out
+                    - delete the coverage.txt file generated during the workflow
         }
     4. how do you set rules in your repo so that push_request & pull_request will only
         pass when certain jobs are successful {You can go to your github account and demonstrate it}
 
 5. reusable workflows
 
-6. take a look at this workflow the python/cpython workflow {
+6. matrix in github_action
+
+7. take a look at this workflow the python/cpython workflow {
     https://github.com/python/cpython/blob/main/.github/workflows/build.yml#L46
     https://github.com/python/cpython/blob/main/.github/workflows/reusable-change-detection.yml
     https://github.com/python/cpython/blob/main/.github/workflows/reusable-windows-msi.yml
