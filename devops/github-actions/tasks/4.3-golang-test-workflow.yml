@@ -53,12 +53,14 @@ jobs:
         run: echo $JWT_SECRET
 
       - name: Install Docker
+        # see explanation of the code below in
+        # 4.3-golang-explanation.txt
         run: |
           sudo apt-get update
           sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
           echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-          sudo apt-get update
+
           sudo apt-get install -y docker-ce docker-ce-cli containerd.io
           sudo systemctl start docker
           sudo systemctl enable docker
@@ -88,4 +90,8 @@ jobs:
             echo "Coverage is below 80%. Failing the build."
             exit 1
           fi
+
+      - name: Clean up coverage.txt
+        run: |
+          rm -f coverage.txt
 
