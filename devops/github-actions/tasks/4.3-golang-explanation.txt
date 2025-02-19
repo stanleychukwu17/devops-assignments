@@ -1,0 +1,49 @@
+1. Install Docker
+    - sudo apt-get update
+      updates the packages list for the package manager
+
+    - sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+      install some packages that is needed for the installation of docker,
+      notice that we installed "curl", incase it is not installed it will be installed, but if it is
+      already installed, the "curl" package will be updated to the latest version 
+
+    - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+      - https://download.docker.com/linux/ubuntu/gpg - this links carry keys that are important for docker
+        installation
+
+      - curl -fsSL
+        curl is a tool used to transfer data from or to a server. The flags used here are:
+
+        -f: Fail silently on server errors. This means that if the server responds with an error
+            (for example, a 404 or 500 error), curl won’t display an error message. It will just exit silently
+
+        -s: Silent mode. This prevents curl from showing progress or error messages
+
+        -S: Show error. This works in conjunction with -s. While -s suppresses the normal progress and errors,
+            -S ensures that if there’s an error, it will still be displayed.
+            In other words, -s hides the progress bar, but -S ensures any error is printed out.
+
+        -L: Follow redirects. This tells curl to follow any HTTP redirects
+            (e.g., if the URL provided redirects to another location).
+
+    - echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+      - echos the content in the "" into the "/etc/apt/sources.list.d/docker.list" file
+      - Without sudo, you'd get a "permission denied" error when trying to write to /etc/apt/sources.list.d/,
+        since this is a protected system directory
+
+    - sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+      - now install docker, docker cli and containerd.io
+
+    - sudo systemctl start docker
+      - The command starts Docker service immediately, If you run this command without enable,
+        Docker will be running, but it will not start automatically the next time your system reboots.
+        This command is useful if you want to use Docker right away.
+
+    - sudo systemctl enable docker
+      - This command configures Docker to start automatically every time your system reboots.
+        It ensures that the Docker service is enabled to launch during the system startup
+      - Without this, Docker will only run for the current session. Once you reboot your machine,
+        you would have to start it manually again.
+
+    - docker --version
+      shows you the current docker version installed
