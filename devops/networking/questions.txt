@@ -7,6 +7,8 @@ full_revision: 19th Feb 2025
 
 3. what is a protocol
 
+3.1 Read: About TCP/IP and HTTP
+
 4. Difference btw a wired and a wireless network
 
 5. 1. how does a wired network communicate
@@ -19,15 +21,4 @@ full_revision: 19th Feb 2025
 
 7. OSI Model Network
    - What are the 7 layers of the OSI model: use "Please Do Not Throw Sausage Pizza Away"
-      Application - Away - Layer 7
-      Presentation - Pizza - Layer 6
-      Session - Sausage - Layer 5
-      Transport - Throw - Layer 4
-      Network - Not - Layer 3
-      Data Link - Do - Layer 2
-      Physical Layer - Please - Layer 1
-
-      Upper layer = [Application, Presentation, Session]
-      Lower layer = [Transport, Network, Data Link, Physical Layer]
-
    - Explain each of the layers
