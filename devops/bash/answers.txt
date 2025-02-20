@@ -80,7 +80,7 @@
 
         - other ways but prone to error 
           expr 7 + 10
-          echo "7 + 10" | bc
+          echo "7 + 10" | bc {works in a linux environment, but will not work in git bash windows}
 
 6.  standard input, output & error
     - what are the values for each of the above
@@ -287,4 +287,19 @@
 
     - task: use the while loop to number the names in names.txt file
         see: ./answers/11-while-loops.sh
+
+12. For loops in Bash
+    - syntax of for loops
+    - loop through names.txt
+    - loop through an array
+    - loop through a string
+    - loop through all arguments
+    - loop through each arguments
+
+
+
+
+
+
+
 
