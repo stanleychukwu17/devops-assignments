@@ -53,7 +53,30 @@
     Each of these protocols works in a very specific way to ensure data is sent, received, and understood
     correctly by the devices on either end of the communication.
 
+3.1 Read: About TCP/IP and HTTP
+  HTTP & TCP/IP works together, here is how:
 
+  - TCP/IP is the foundation for internet communication. It handles how data is transmitted and ensures
+    it gets from one device to another correctly
+
+    - TCP/IP is at Layer 4 (the Transport Layer) and Layer 3 (the Network Layer) of the OSI model:
+
+    - TCP (Transmission Control Protocol) works at the Transport Layer (Layer 4), ensuring reliable
+      data transfer between devices.
+
+    - IP (Internet Protocol) works at the Network Layer (Layer 3), responsible for routing data packets
+      across different networks.
+
+
+  - HTTP operates on top of TCP/IP. It uses the reliable data transmission provided by TCP/IP to
+    send and receive web page requests and responses
+
+    HTTP is at Layer 7 (the Application Layer): It deals directly with user interactions,
+    such as requesting web pages. HTTP defines how web browsers and web servers communicate.
+  
+  So, when you visit a website, HTTP is the protocol that manages the request and response for the
+  web pages, but TCP/IP makes sure that data travels across the internet reliably, without getting lost
+  or mixed up. Both are essential for web browsing to work properly
 
 4. Difference btw a wired and a wireless network
     - Wired networks: Uses physical cables (like Ethernet cables) to connect devices.
