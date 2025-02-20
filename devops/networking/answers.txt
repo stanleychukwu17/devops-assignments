@@ -85,29 +85,8 @@
     - Wireless networks: Uses radio waves to connect devices without physical cables (typically via Wi-Fi).
       they are more convenient and flexible, though they may offer slightly slower and less reliable performance.
 
-    Read more {
-        Wired Network:
-        - Speed: Typically offers faster speeds and more stable connections compared to wireless networks,
-          as the signal doesn't degrade over distance or face interference.
-        - Reliability: More reliable because there’s no signal interference from things like walls or other
-          electronic devices.
-        - Security: Tends to be more secure because physical access to the cables is required to intercept data.
-        - Setup: Can be more complex due to the need to run cables, especially in larger spaces.
-        - Flexibility: Less flexible, as devices are tied to a specific location because of the cables.
-
-        Wireless Network:
-        - Speed: Can be slower and more prone to fluctuations due to interference
-          (e.g., from walls, other electronics, or even distance from the router).
-        - Reliability: More susceptible to signal interference or weak connections, especially over
-          longer distances or in crowded environments.
-        - Security: Generally less secure than wired networks, but this can be mitigated with strong
-          encryption and security protocols (like WPA3).
-        - Setup: Easier to set up, with fewer physical constraints since you don’t need to run cables.
-        - Flexibility: Highly flexible, allowing devices to connect from virtually anywhere within
-          range of the Wi-Fi signal.
-    }
-
-5. 1. how does a wired network communicate
+5.
+  1. how does a wired network communicate
     In a **wired network**, devices communicate with each other by using physical cables
     (usually **Ethernet cables**) and network devices like **switches** or **routers** to manage traffic.
     The process is much more straightforward than in a wireless network because it relies on physical
@@ -124,22 +103,10 @@
     By using physical cables and switches/routers, wired networks typically provide more stable,
     faster, and more reliable communication compared to wireless networks.
 
-    Here’s how devices communicate in a typical wired network:
-    ./answers/5.1-wired-network.md
-    - Physical Connections
-    - Network Switches
-    - Routers
-    - Data Communication
-    - MAC Address
-    - Communication Process
-    - Network Layers
-
-
-   2. how does a wireless network communicate
+  2. how does a wireless network communicate
     In a **wireless network**, devices communicate without the need for physical cables, using
     **radio waves** to send and receive data.
 
-    In a **wireless network**, devices communicate using radio waves to send and receive data.
     The **Access Point (AP)** acts as a bridge between the wireless devices and the wired network,
     enabling devices to connect without physical cables.
 
@@ -152,24 +119,6 @@
     - Your laptop sends a request to the AP (router) to access a webpage.
     - The AP forwards the request to the router, which then communicates with the internet to fetch the webpage.
     - The router sends the webpage data back to the AP, which then transmits it to your laptop via radio waves.
-    
-    2. **Streaming a Video**:
-    - You start streaming a video on your smartphone.
-    - The phone sends data packets to the AP requesting the video stream.
-    - The AP forwards the request to the router, which fetches the stream from the server.
-    - The server sends the video data to the router, which forwards it back to the AP, and the AP sends it to your phone.
-    - Your phone decodes the video data and displays it on the screen.
-
-    Here's how it works: ./answers/5.2-wireless-network.md
-    - Devices and the Wireless Access Point (AP)
-    - Establishing a Wireless Connection
-    - Radio Frequency (RF) Communication
-    - How Devices Send and Receive Data
-    - Routing and Switching
-    - Communication Protocols
-    - Managing Interference and Congestion
-    - Roaming and Seamless Communication
-    - Wireless Network Security
 
 6. Network Addresses
   - What is a MAC Address & IP Address
@@ -248,7 +197,46 @@
     - Session Layer: your Application might be talking to different endpoints, this layer creates
       a session btw your device and these endpoints
 
-    - Transport Layer: this layer transfers the data between different endpoints
+    - Transport Layer: this layer is responsible for ensuring that data is transferred reliably between
+      devices over a network. It takes care of breaking data into smaller pieces (called segments),
+      and it makes sure those pieces are sent, received, and reassembled correctly.
 
+      Protocols at this layer:
+      - TCP (Transmission Control Protocol): Ensures reliable, ordered delivery of data.
+      - UDP (User DataGram Protocol): Provides faster but less reliable data transfer. It’s used 
+        for things like video streaming where speed is more important than ensuring every packet arrives
+        perfectly.
 
+    - Network Layer: this layer is responsible for getting data from one device to another,
+      It handles routing and addressing to ensure that data reaches the correct destination, even if it
+      needs to pass through multiple networks.
+
+      This layer attaches the source i.p address and the destination i.p address to the header of
+      each segments
+
+      Protocols at this layer:
+      - IP (Internet Protocol): The most important protocol at this layer, responsible for addressing
+        and routing data across networks. There are two main versions: IPv4 and IPv6.
+      - ICMP (Internet Control Message Protocol): Used for diagnostic purposes, like sending "ping"
+        requests to check if a device is reachable.
+
+    - Data Link Layer: this layer attaches the mac addresses of the source and destination devices
+      now our segments will look like:
+      segments = [
+        header = [
+          mac addresses
+          i.p addresses
+          port numbers
+        ]
+        data = [msg]
+      ]
+
+      Common Protocols at the Data Link Layer: Ethernet, Wi-Fi, PPP (Point-to-Point Protocol)
+
+    - Physical layer: this layer is responsible for encoding the data into physical signals
+      it converts data into signals (electrical, light, or radio waves) and transmitting those
+      signals over a physical medium like copper cables, fiber-optic cables, or air (for wireless connections)
+      The bits themselves are transmitted as electrical pulses, light signals, or radio waves.
+
+      Common Technologies and Protocols: Ethernet, Wi-Fi, Fiber-Optic Communication, Bluetooth
 
