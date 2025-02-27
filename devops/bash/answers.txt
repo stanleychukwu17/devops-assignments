@@ -181,7 +181,7 @@
                1
 
             $ calc=$((1/10)) && echo $?
-            -> 1
+            -> 0
 
             $ func () {} && echo $?
             -> 2
@@ -231,9 +231,11 @@
                 echo "all is well"
             if
 
-            # the below will pass, use "-==" should be used for strings
-            if [ $strA -eq $strB ]; then
+            # the below will pass, use "==" should be used for strings
+            if [ "$strA" == "$strB" ]; then
                 echo "all is well"
+            elif [ "$strA" != "$strB" ]; then
+                echo "they are not equal"
             if
 
         see: ./answers/9-if-else.sh
