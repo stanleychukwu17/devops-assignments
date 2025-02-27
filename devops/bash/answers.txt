@@ -10,12 +10,12 @@
         3. Data processing
         4. Automaton of repetitive tasks
         5. Application and service management: starting, stopping and monitoring of application & services.
-        6. System monitoring and reporting: collecting system information like cpu usage, disk space and then using
-            them to generate report/warning based on predefined thresholds
-        7. Network-related tasks: automating network configuration, monitoring network connectivity and performing
-            network diagnostics are some common network related task
-        8. Web related task: automating website maintenance, crawling and scrapping web content, interacting with
-            web api and performing automated testing
+        6. System monitoring and reporting: collecting system information like cpu usage, disk space and
+            then using them to generate report/warning based on predefined thresholds
+        7. Network-related tasks: automating network configuration, monitoring network connectivity
+            and performing network diagnostics are some common network related task
+        8. Web related task: automating website maintenance, crawling and scrapping web content,
+            interacting with web api and performing automated testing
         9. Task scheduling: creating cron jobs to run at specific times
 
     - how do you create and run a bash script?
