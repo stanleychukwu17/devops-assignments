@@ -1,5 +1,5 @@
-full_revision: 18th Feb 2025
-full_revision: 18th Feb 2025
+full_revision: 27th Feb 2025
+full_revision: 27th Feb 2025
 
 1.  - Read: why use bash for shell scripting
     - how do you create and run a bash script?
