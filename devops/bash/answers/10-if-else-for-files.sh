@@ -1,10 +1,26 @@
 #!/bin/bash
 
 # -----------------------------
+# method 1
+# -----------------------------
+file=$(ls | grep -i -o "hello.sh")
+# echo "${files}"
+
+if [ "${file}" == "hello.sh" ]; then
+    echo "file exist"
+else
+    echo "file does not exist, but will be created now"
+    touch hello.sh
+    ls | grep -o "hello.sh"
+fi
+
+
+
+# -----------------------------
+# method 2
 # hello.sh is the file that we will check
 # -----------------------------
 check_file=hello.sh
-
 
 # -----------------------------
 # checks to see if the file exists
