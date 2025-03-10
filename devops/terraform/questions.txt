@@ -7,7 +7,7 @@ full_revision: 10th Mar 2025
 
 3. Configure an aws provider with both access_key and secret_key
 
-4.  What is a terraform block, arguments and label
+4.  What is a terraform block, label, local_name, arguments
     - Give an example
 
 5. How do you initialize terraform in your project directory
