@@ -230,8 +230,7 @@
     - Read: explanation of some of the options used in the ingress and egress
         1. ipv6_cidr_blocks = [] ?
           - What is ipv6_cidr_blocks:
-            This field defines the list of allowed IPv6 CIDR blocks for the rule. IPv6 CIDR blocks specify which
-            range of IPv6 addresses are allowed to access the resource.
+            IPv6 CIDR blocks specify which range of IPv6 addresses are allowed to access the resource.
           - Why is it empty ([]) ?
             The ipv6_cidr_blocks is empty because the rule is likely intended for IPv4 connections only. Since no
             IPv6 addresses are specified, the field is left empty (or set to an empty list []). If you wanted to
@@ -240,30 +239,28 @@
         2. self = false
           - What is self ?
             The self field specifies whether the rule applies to traffic originating from the same security group.
-            When self = true, the rule allows traffic between instances that are associated with the same security group.
-            This is useful for cases where you want to allow internal communication between instances in the same security group.
-            The rule is set to false, meaning it does not allow traffic from instances within the same security group
+            When self = true, the rule allows traffic between instances that are associated with the same security
+            group. This is useful for cases where you want to allow internal communication between instances in
+            the same security group.
 
         3. security_groups = null
           - What is security_groups?
-            The security_groups field is used to specify which other security groups can send traffic to the instances
-            associated with this rule. This allows you to restrict access to specific groups, as opposed to opening up
-            access to all IPs or CIDR blocks
+            The security_groups field is used to specify which other security groups can send traffic to
+            the instances associated with this rule.
           - Why is it set to null?
-            Setting security_groups = null means that this rule is not specifically restricting traffic based on other
-            security groups. In other words, it does not restrict access to instances from other security groups.
-            If you had specific security groups to allow, you would list them here
+            Setting security_groups = null means that this rule is not specifically restricting traffic based
+            on other security groups.
 
         4. prefix_list_ids = null
           - What is prefix_list_ids?
-            The prefix_list_ids field allows you to specify AWS-managed prefix lists (collections of IP address ranges)
-            to use in the rule. AWS offers managed prefix lists that include ranges for services like
-            Amazon S3, CloudFront, and others. This allows you to define rules based on these predefined IP address ranges
-            rather than manually specifying CIDR blocks
+            The prefix_list_ids field allows you to specify AWS-managed prefix lists
+            (collections of IP address ranges) to use in the rule. AWS offers managed prefix lists that
+            include ranges for services like Amazon S3, CloudFront, and others. This allows you to define rules
+            based on these predefined IP address ranges rather than manually specifying CIDR blocks
           - Why is it set to null?
-            Setting prefix_list_ids = null means that the rule is not using any AWS-managed prefix lists. If this field were
-            set with the ID of a prefix list (e.g., "pl-12345678"), it would allow traffic from the IP addresses included
-            in that prefix list.
+            Setting prefix_list_ids = null means that the rule is not using any AWS-managed prefix lists.
+            If this field were set with the ID of a prefix list (e.g., "pl-12345678"), it would allow traffic
+            from the IP addresses included in that prefix list.
 
         5. Summary of All Fields:
           - ipv6_cidr_blocks = []: No IPv6 addresses are specified, implying the rule is for IPv4 traffic.
