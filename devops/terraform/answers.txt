@@ -195,10 +195,10 @@
                     security_groups  = null
                     prefix_list_ids  = null
                 }
-                # for http connection on port 8080
+                # for https connection on port 443
                 {
-                    from_port = 8080
-                    to_port = 8080
+                    from_port = 443
+                    to_port = 443
                     protocol = "tcp"
                     cidr_block = var.public_cidr
                     description = "for http connections to the ec2 on port 8080"
