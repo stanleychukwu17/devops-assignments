@@ -3,18 +3,18 @@
     Plan:
     Apply
 
-2.  Terraform providers are plugins that allow Terraform to interact with various APIs and services. Each provider is 
-    responsible for understanding the API of a specific service (like AWS, Azure, Google Cloud, or even custom APIs)
-    and managing the lifecycle of the resources defined in your Terraform configuration.
+2.  Terraform providers are plugins that allow Terraform to interact with various APIs and services. it manages
+    the lifecycle of the resources defined in your Terraform configuration.
+
     more_explanation {
         Providers enable you to:
 
-        Define Resources: Specify what infrastructure components you want to create, such as virtual machines, databases,
-            and networking resources.
+        Define Resources: Specify what infrastructure components you want to create, such as virtual machines,
+            databases, and networking resources.
         Manage State: Keep track of the state of your resources, allowing Terraform to understand the current 
             configuration and make necessary updates.
-        Provision Infrastructure: Automate the creation, modification, and deletion of resources as defined in your
-            configuration files.
+        Provision Infrastructure: Automate the creation, modification, and deletion of resources as
+            defined in your configuration files.
     }
 
 3.
