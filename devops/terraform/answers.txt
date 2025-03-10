@@ -48,7 +48,7 @@
 
 5. terraform init - this will download all of the required_providers
 
-6. VPC -> Subnet -> Route table & Internet Gateway -> Security groups -> EC2 instance {
+6. VPC -> Subnet -> Internet Gateway & Route table -> Security groups -> EC2 instance {
     For EC2 instance, we need:
         data for "ami" automatic fetching
         keyGen for ssh logging into your EC2 vm
