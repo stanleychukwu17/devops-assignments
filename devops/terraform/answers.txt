@@ -1057,7 +1057,7 @@ SECTION 2 BEGINS
 
     - what is the syntax for accessing the output of a child module
         module.<module_name>.<output_name>
-    
+
     - how will different child modules access their outputs e.g:
       use the vpc_id from the "vpc_module" in the "ec2_module" to create the aws_security_group
         in ./modules/ec2/main.tf
