@@ -1277,7 +1277,7 @@ SECTION 3 BEGINS
         this involves you using multiple named sections within a single backend
         e.g staging, development, production e.t.c
 
-    - File structure: talk about it (add note on referenced images p49)
+    - File structure: talk about it
         this involves using of directory layout, where you can use the same module in different sub-directories.
         variables in the different directories will determine what resources are created
 
