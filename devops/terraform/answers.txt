@@ -1025,7 +1025,7 @@ SECTION 2 BEGINS
 
 16. As you separate into modules, what resources goes into which modules?
     - vpc module
-        aws_vpc, aws_subnet, aws_internet_gateway, aws_route_table, aws_route_association_table
+        aws_vpc, aws_subnet, aws_internet_gateway, aws_route_table, aws_route_table_association
     - ec2 module
         aws_security_group, aws_key_pair, data.aws_ami, aws_instance
     - storage module
