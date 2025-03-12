@@ -717,6 +717,7 @@ SECTION 2 BEGINS
             path = "/system/"
             count = "${length(var.users)}"
         }
+
         {You can go to the terraform doc to see how you can customize the IAM users and set level/roles and what
           the users can have access to}
 
@@ -1132,8 +1133,8 @@ SECTION 2 BEGINS
           then he parameterized the values, the final result look something like:
             module "vpc" {
                 source = "terraform-aws-modules/vpc/aws"
-                name = "my-vpc"
-                cidr_block = "10.0.0.0/16"
+                name = local.project_name
+                cidr_block = var.vpc_cidr_block
                 ...
             }
           

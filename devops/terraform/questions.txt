@@ -1,5 +1,5 @@
 full_revision: 17th Feb 2025
-full_revision: 10th Mar 2025
+full_revision: 12th Mar 2025
 
 1. What is the core terraform workflow
 
@@ -265,7 +265,7 @@ SECTION 3 BEGINS
 4. Managing multiple environment
     There are two main approaches:
     1. workspaces: talk about it
-    2. File structure: talk about it (add note on referenced images p49)
+    2. File structure: talk about it
 
 5.  Read: How to use terraform workspace to manage environment 
     - creating a workspace
