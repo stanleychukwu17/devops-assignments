@@ -10,8 +10,9 @@ SECTION 1
     - what are the following concepts/terms in Nginx? {Frontend, Backend, Upstream, Downstream}
     - Tell us about the 7 layers in OSI Model
 
-2.  - Talk about Layer 4 and Layer 7 proxying in Nginx
-    - Talk about TLS termination and TLS passthrough in Nginx
+2.  Talk about Layer 4 and Layer 7 proxying in Nginx
+
+3.  Talk about TLS termination and TLS passthrough in Nginx
 
 {
     Tip: the docker container name is the same as the hostname if you do not provide a hostname
@@ -24,7 +25,7 @@ SECTION 1
         now the container will be: nginx_container
         now the hostname will be: nginx_load_balancer
 }
-3.  Nginx Docker container
+4.  Nginx Docker container
     - Look at the image of the 2 nginx load balancers we will be creating
     - start a nginx container using
         image: nginx:1.26.3
@@ -35,7 +36,7 @@ SECTION 1
     - attach to the container
     - login into the container and see what it looks like
 
-4.  Solving image one & two problem
+5.  Solving image one & two problem
     - Create a node.js application to listen on port 9000 
     - the application should console.log(the hostname)
     - create the docker image of the nodejs application
