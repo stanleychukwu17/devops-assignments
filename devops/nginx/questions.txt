@@ -1,4 +1,17 @@
 full_revision: 15th mar 2025
 full_revision: 15th mar 2025
 
-1. 
+1.  Nginx
+    - what is Nginx
+    - talk about what a normal architecture look like vs what an Nginx architecture would look like
+    - what are the following concepts/terms in Nginx? {Frontend, Backend, Upstream, Downstream}
+    - Tell us about the 7 layers in OSI Model
+
+2.  - Talk about Layer 4 and Layer 7 proxying in Nginx
+    - Talk about TLS termination and TLS passthrough in Nginx
+
+    {
+        Tip: the docker container name is the same as the hostname if you do not provide a host name
+    }
+
+3.  - Run and Nginx Docker container using image: and container_name:
