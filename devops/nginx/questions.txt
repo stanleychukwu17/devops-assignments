@@ -26,8 +26,7 @@ SECTION 1
         now the hostname will be: nginx_load_balancer
 }
 4.  Nginx Docker container {please write down the code and also practice it}
-    - Look at the image of the 2 nginx load balancers we will be creating
-    - start a nginx container using
+    - start a nginx container in detached mode using
         image: nginx:1.26.3
         container_name: nginx
         port 80:80
@@ -37,7 +36,8 @@ SECTION 1
     - login into the container and see what it looks like
 
 5.  Solving image one & two problem
-    - Create a node.js application to listen on port 9000 
+    - Look at the image of the 2 nginx load balancers we will be creating
+    - Create a node.js application to listen on port 9000
     - the application should console.log(the hostname)
     - create the docker image of the nodejs application
     - use the image to spin up 3 new containers and do not expose the ports, use names
@@ -47,6 +47,7 @@ SECTION 1
     - create a server that listens on port 8080 and forward all request to the node upstream
     - spin up an Nginx container with the config we created, test to see that all is well
     - can you explain the code above
+    Solve the problem of image 2
 
 5. 
 
