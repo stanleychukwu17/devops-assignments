@@ -1,6 +1,9 @@
 full_revision: 15th mar 2025
 full_revision: 15th mar 2025
 
+=============
+SECTION 1
+=============
 1.  Nginx
     - what is Nginx
     - talk about what a normal architecture look like vs what an Nginx architecture would look like
@@ -9,7 +12,6 @@ full_revision: 15th mar 2025
 
 2.  - Talk about Layer 4 and Layer 7 proxying in Nginx
     - Talk about TLS termination and TLS passthrough in Nginx
-
 
 {
     Tip: the docker container name is the same as the hostname if you do not provide a hostname
@@ -33,4 +35,17 @@ full_revision: 15th mar 2025
     - attach to the container
     - login into the container and see what it looks like
 
+4.  Solving image one & two problem
+    - Create a node.js application to listen on port 9000 
+    - the application should console.log(the hostname)
+    - create the docker image of the nodejs application
+    - use the image to spin up 3 new containers and do not expose the ports, use names
+      node_app1, node_app2, node_app3
+    - Now write you Nginx configuration:
+    - create upstream for the 3 node_app servers
+    - create a server that listens on port 8080 and forward all request to the node upstream
+    - spin up an Nginx container with the config we created, test to see that all is well
+    - can you explain the code above
+
+5. 
 
