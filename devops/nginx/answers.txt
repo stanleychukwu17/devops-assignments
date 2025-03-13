@@ -1,0 +1,48 @@
+1.  Nginx
+    - what is Nginx
+      Nginx can be used as a web server that serves content or it can be used as reverse proxy which helps
+      when load balancing. it can also help with Backend re-routing & caching
+
+    - talk about what a normal architecture look like vs what an Nginx architecture would look like
+      - normal architecture:
+        [users request] -> [server] -> [database]
+    
+      - Nginx architecture
+        [users request] -> [nginx]  -> [server] ->
+                                    -> [server] -> [database]
+                                    -> [server] ->
+      
+      with the normal architecture, the request are going straight to the severs and it is not the best,
+      because if the request become too much for the server it will crash it, it is also difficult
+      to scale with the normal architecture, because every time you add a new server in the backend,
+      you need to start changing frontend code -> as this can become pretty complex. but with the
+      Nginx architecture, everything becomes easy to manage
+
+    - what are the following concepts/terms in Nginx? {Frontend, Backend, Upstream, Downstream}
+        Frontend: refers to all communication between the user_request & Nginx
+
+        Backend: refers to all communication between Nginx & the servers
+
+        Upstream: refers to the servers or services that NGINX communicates with to fulfill a request
+            When NGINX acts as a reverse proxy or load balancer, it forwards client requests to upstream
+            servers (like application servers or backend services).
+            The upstream servers handle the actual processing of the request and then return the result to
+            NGINX,  which then sends the response back to the client.
+
+        Downstream: refers to the end-users or the clients that send requests to your NGINX server.
+            When a client sends an HTTP request to NGINX, NGINX processes it, and then sends the response
+            back to the downstream client.
+
+    - Tell us about the 7 layers in OSI Model
+        Please - Physical layer 1
+        Do - Data-link layer 2
+        Not - Network layer 3
+        Throw - transport (TCP/IP) layer 4
+        Sausage - session layer 5
+        Pizza - presentation layer 6
+        Away - application layer 7
+
+2.  Talk about Layer 4 and Layer 7 proxying in Nginx
+
+3.  Talk about TLS termination and TLS passthrough in Nginx
+
