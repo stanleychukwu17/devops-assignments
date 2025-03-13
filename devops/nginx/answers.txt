@@ -130,3 +130,13 @@
             }
         }
 
+4.  Nginx Docker container {please write down the code and also practice it}
+    - Look at the image of the 2 nginx load balancers we will be creating
+    - start a nginx container using
+        image: nginx:1.26.3
+        container_name: nginx
+        port 80:80
+    - inspect the container
+    - see the logs from the container
+    - attach to the container
+    - login into the container and see what it looks like

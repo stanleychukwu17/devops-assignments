@@ -25,7 +25,7 @@ SECTION 1
         now the container will be: nginx_container
         now the hostname will be: nginx_load_balancer
 }
-4.  Nginx Docker container
+4.  Nginx Docker container {please write down the code and also practice it}
     - Look at the image of the 2 nginx load balancers we will be creating
     - start a nginx container using
         image: nginx:1.26.3
