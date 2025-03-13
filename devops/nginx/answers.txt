@@ -42,7 +42,51 @@
         Pizza - presentation layer 6
         Away - application layer 7
 
-2.  Talk about Layer 4 and Layer 7 proxying in Nginx
+2. Talk about Layer 4 and Layer 7 proxying in Nginx
+    Layer 4 (Transport Layer of the OSI model (TCP/UDP)):
+      - Layer 4 proxying operates at the Transport Layer of the OSI model (TCP/UDP)
+      - NGINX forwards raw TCP/UDP packets without inspecting the content
+      - Used for protocols like MySQL, FTP, or custom services
+      - Provides basic load balancing and traffic distribution based on IP and port
+
+        e.g:
+        stream {
+            upstream backend {
+                server backend1.example.com:3306;
+                server backend2.example.com:3306;
+            }
+
+            server {
+                listen 3306;
+                proxy_pass backend;
+            }
+        }
+
+    Layer 7 (Application Layer, HTTP proxying):
+     - Layer 7 proxying works at the Application Layer and understands HTTP/HTTPS content
+     - NGINX can inspect headers, cookies, and URLs to make routing decisions
+     - Allows for more advanced features like URL rewriting, caching, and SSL termination
+
+        e.g:
+        http {
+            upstream backend {
+                server backend1.example.com;
+                server backend2.example.com;
+            }
+
+            server {
+                listen 80;
+
+                location / {
+                    proxy_pass http://backend;
+                }
+            }
+        }
+    
+    You see that layer 7 in written inside the "http" block and layer 4 proxying is written
+    in the "stream" block
+
+
 
 3.  Talk about TLS termination and TLS passthrough in Nginx
 

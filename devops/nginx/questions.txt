@@ -10,7 +10,7 @@ SECTION 1
     - what are the following concepts/terms in Nginx? {Frontend, Backend, Upstream, Downstream}
     - Tell us about the 7 layers in OSI Model
 
-2.  Talk about Layer 4 and Layer 7 proxying in Nginx
+2.  Talk about Layer 4 and Layer 7 proxying in Nginx (give examples for each)
 
 3.  Talk about TLS termination and TLS passthrough in Nginx
 
