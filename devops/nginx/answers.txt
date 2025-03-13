@@ -86,7 +86,47 @@
     You see that layer 7 in written inside the "http" block and layer 4 proxying is written
     in the "stream" block
 
+3. Talk about TLS termination and TLS passthrough in Nginx
+    1. TLS Termination:
+        - TLS Termination refers to NGINX decrypting the incoming SSL/TLS traffic (i.e., HTTPS) and
+          then forwarding the unencrypted traffic (HTTP) to the backend servers
+        - NGINX handles the encryption and decryption process, offloading this task from the backend servers,
+          making it more efficient
+        - TLS Termination operates at Layer 7 because NGINX decrypts and inspects the traffic (HTTP)
 
+        e.g:
+        server {
+            listen 443 ssl;
+            server_name example.com;
 
-3.  Talk about TLS termination and TLS passthrough in Nginx
+            ssl_certificate /etc/nginx/ssl/cert.pem;
+            ssl_certificate_key /etc/nginx/ssl/key.pem;
+
+            location / {
+                proxy_pass http://backend;  # Unencrypted HTTP forwarded to backend
+            }
+        }
+
+    2. TLS Passthrough:
+        - TLS Passthrough means that NGINX does not decrypt the incoming SSL/TLS traffic.
+          Instead, it forwards the encrypted traffic directly to the backend server for decryption.
+        - This is useful when you want to maintain end-to-end encryption between the client & the backend server
+          (e.g., for security reasons or when the backend server needs to handle the SSL certificates).
+        - NGINX acts as a transparent proxy in this case, forwarding encrypted traffic without inspecting
+          or modifying it.
+        - TLS Passthrough operates at Layer 4 because the encrypted traffic is passed through without
+          decryption or inspection.
+
+        e.g:
+        stream {
+            upstream backend {
+                server backend1.example.com:443;  # Backend server with TLS (HTTPS)
+                server backend2.example.com:443;  # Another backend for load balancing
+            }
+
+            server {
+                listen 443;
+                proxy_pass backend;  # Load balancing between backend1 and backend2
+            }
+        }
 
