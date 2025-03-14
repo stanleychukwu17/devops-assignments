@@ -253,10 +253,15 @@
         - the location / {} & proxy_pass http://node_backend/; means all request should be forwarded
             to the "upstream node_backend group"
 
+    events {}: the event block is used to configure a-lot of settings, but here we use it to configure
+        the maximum number of simultaneous connections that a worker process can handle.
+        If your server receives more incoming connections than this limit allows, it might start to
+        queue connections or reject them, depending on the load and configuration
+        (such as keepalive_timeout or accept_mutex)
 
 
-    - Now Networking and spinning up all the services
-        1. spin up an Nginx container with the config we created, test to see that all is well
+8. Now Networking and spinning up all the services
+    1. spin up an Nginx container with the config we created, test to see that all is well
 
 
-6.  Solving image two problem
+9.  Solving image two problem
