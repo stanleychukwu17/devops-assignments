@@ -144,7 +144,10 @@
     - attach to the container
         docker attach 4e
 
-    - login into the container and see what it looks like
+    - login into the container, go to etc, see users(in passwd), see groups (in group)
         docker exec -it -u root 4e bash
+        cd etc
+        cat passwd (adduser stanley)
+        cat group (addgroup chukwu_family, usermod -aG chukwu_family stanley)
 
 5.
