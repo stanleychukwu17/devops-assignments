@@ -131,12 +131,20 @@
         }
 
 4.  Nginx Docker container {please write down the code and also practice it}
-    - Look at the image of the 2 nginx load balancers we will be creating
-    - start a nginx container using
-        image: nginx:1.26.3
-        container_name: nginx
-        port 80:80
+    - start a nginx container in detached mode using image: nginx:1.26.3, container_name: nginx, port 80:80
+        docker run -p 80:80 -d --name nginx nginx:1.26.3
+
     - inspect the container
+        docker inspect 4e :: where "4e" is the first 2 letters of the container
+
     - see the logs from the container
+        docker logs 4e
+        docker logs -f 4e :: to follow the logs
+
     - attach to the container
+        docker attach 4e
+
     - login into the container and see what it looks like
+        docker exec -it -u root 4e bash
+
+5.
