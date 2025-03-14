@@ -33,20 +33,21 @@ SECTION 1
     - inspect the container
     - see the logs from the container
     - attach to the container
-    - login into the container, go to etc, see users(in passwd), see groups
+    - login into the container, go to etc, see users(in passwd), see groups (in group)
 
 5.  Solving image one & two problem
     - Look at the image of the 2 nginx load balancers we will be creating
-    - Create a node.js application to listen on port 9000
-    - the application should console.log(the hostname)
+    - Create a node.js application to listen on port 9000, should console.log(the hostname)
+    - create the Dockerfile for the node.js application
     - create the docker image of the nodejs application
     - use the image to spin up 3 new containers and do not expose the ports, use names
-      node_app1, node_app2, node_app3
+      nodeapp1, nodeapp2, nodeapp3
     - Now write you Nginx configuration:
-    - create upstream for the 3 node_app servers
-    - create a server that listens on port 8080 and forward all request to the node upstream
-    - spin up an Nginx container with the config we created, test to see that all is well
-    - can you explain the code above
+        create upstream server for the nodeapp services
+        create a server that listens on port 8080 and forward all request to the node upstream
+        spin up an Nginx container with the config we created, test to see that all is well
+        Read or explain the code in your nginx config
+
     Solve the problem of image 2
 
 5. 
