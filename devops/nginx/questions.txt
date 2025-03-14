@@ -17,12 +17,12 @@ SECTION 1
 {
     Tip: the docker container name is the same as the hostname if you do not provide a hostname
     if you do:
-        docker run -p 80:80 --name nginx_container -d nginx:1.26.3
-        the container name & hostname too will be nginx_container
+        docker run -p 80:80 --name nginx_test_server -d nginx:1.26.3
+        the container name & hostname too will be nginx_test_server
 
     but if you can provide a custom hostname by doing:
-        docker run -p 80:80 --name nginx_container --hostname nginx_load_balancer -d nginx:1.26.3
-        now the container will be: nginx_container
+        docker run -p 80:80 --name nginx_test_server --hostname nginx_load_balancer -d nginx:1.26.3
+        now the container will be: nginx_test_server
         now the hostname will be: nginx_load_balancer
 }
 4.  Nginx Docker container {please write down the code and also practice it}
@@ -50,8 +50,9 @@ SECTION 1
 7. Read or explain the code in your nginx config
 
 8. Now Networking and spinning up all the services
-    1. spin up an Nginx container with the config we created, test to see that all is well
-
+    - now create a Docker Network called backend_network_for_nginx
+    - connects all the containers to the Network i.e (nginx_test_server, nodeapp1, nodeapp2, nodeapp3)
+    - start all the nodeapp & the nginx container. see if everything is working as expected
 
 9.  Solving image two problem
 
