@@ -195,42 +195,41 @@
     1. create upstream server for the nodeapp services
     2. create a server that listens on port 8080 and forward all request to the upstream server
 
-    --Answer-- nginx.conf
-    1 & 2:
-        http {
-            upstream node_backend {
-                server nodeapp1:9000;
-                server nodeapp2:9000;
-                server nodeapp3:9000;
-            }
-
-            server {
-                listen 8080;
-
-                server_name localhost; 
-
-                location / {
-                    proxy_pass http://node_backend/;
-                    proxy_set_header Host $host;
-                    proxy_set_header X-Real-IP $remote_addr;
-                    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                    proxy_set_header X-Forwarded-Proto $scheme;
-
-                    # Set timeouts to prevent hanging requests
-                    proxy_connect_timeout 90;
-                    proxy_send_timeout 90;
-                    proxy_read_timeout 90;
-                }
-            }
+    in nginx.conf
+    http {
+        upstream node_backend {
+            server nodeapp1:9000;
+            server nodeapp2:9000;
+            server nodeapp3:9000;
         }
 
-        # Set worker connections
-        events {
-            worker_connections 1024;  # Increase connections for higher load handling
-        }
+        server {
+            listen 8080;
 
-        # Auto worker processes based on the number of CPU cores
-        worker_processes auto;
+            server_name localhost; 
+
+            location / {
+                proxy_pass http://node_backend/;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+
+                # Set timeouts to prevent hanging requests
+                proxy_connect_timeout 90;
+                proxy_send_timeout 90;
+                proxy_read_timeout 90;
+            }
+        }
+    }
+
+    # Set worker connections
+    events {
+        worker_connections 1024;  # Increase connections for higher load handling
+    }
+
+    # Auto worker processes based on the number of CPU cores
+    worker_processes auto;
 
     3:
         docker run
