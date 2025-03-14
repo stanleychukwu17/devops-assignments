@@ -283,3 +283,6 @@
         if they do not exits, you have to create them before adding them to your docker network
 
 9.  Solving image two problem
+    - create another nginx container called ng2 using the same config, port 81:8080
+    - stop the container and connect it to the backend_network_for_nginx network
+    - start all the containers and test the different nginx on different ports
