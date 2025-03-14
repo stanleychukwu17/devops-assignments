@@ -284,5 +284,18 @@
 
 9.  Solving image two problem
     - create another nginx container called ng2 using the same config, port 81:8080
+        docker run
+            -d
+            --name ng2
+            -p 81:8080
+            -v ./nginx.conf:/etc/nginx/nginx.conf
+            nginx:1.26.3
+
     - stop the container and connect it to the backend_network_for_nginx network
+        docker stop ng2 nginx_test_server nodeapp1 nodeapp2 nodeapp3
+        docker network connect backend_network_for_nginx ng2
+
     - start all the containers and test the different nginx on different ports
+        docker start ng2 nginx_test_server nodeapp1 nodeapp2 nodeapp3
+
+10. 
