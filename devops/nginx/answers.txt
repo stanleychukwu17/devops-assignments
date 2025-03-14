@@ -194,7 +194,9 @@
 6. Now write you Nginx configuration:
     1. create upstream server for the nodeapp services
     2. create a server that listens on port 8080 and forward all request to the upstream server
+    3. start the nginx container
 
+    1&2:
     in nginx.conf
     http {
         upstream node_backend {
@@ -232,8 +234,7 @@
     worker_processes auto;
 
     3:
-        docker run
-            -d
+        docker run -d
             --name nginx_test_server
             -p 80:8080
             -v ./nginx.conf:/etc/nginx/nginx.conf
@@ -259,9 +260,26 @@
         queue connections or reject them, depending on the load and configuration
         (such as keepalive_timeout or accept_mutex)
 
+    worker_processes auto; this means NGINX will automatically spawn worker processes based on the number
+        of available CPU cores. each worker will be able to handle up to 1024 simultaneous connections,
+        depending on the server’s load and how many worker processes are running
 
 8. Now Networking and spinning up all the services
-    1. spin up an Nginx container with the config we created, test to see that all is well
+    - now create a Docker Network called backend_network_for_nginx
+        docker network create backend_network_for_nginx
 
+    - connects all the containers to the Network i.e (nginx_test_server, nodeapp1, nodeapp2, nodeapp3)
+        docker stop nginx_test_server nodeapp1 nodeapp2 nodeapp3
+
+        docker network connect backend_network_for_nginx nginx_test_server
+        docker network connect backend_network_for_nginx nodeapp1
+        docker network connect backend_network_for_nginx nodeapp2
+        docker network connect backend_network_for_nginx nodeapp3
+
+    - start all the nodeapp & the nginx container. see if everything is working as expected
+        if the containers already exist, then start the container
+            docker start nodeapp1 nodeapp2 nodeapp3 nginx_test_server
+        
+        if they do not exits, you have to create them before adding them to your docker network
 
 9.  Solving image two problem
