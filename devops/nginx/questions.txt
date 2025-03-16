@@ -73,3 +73,29 @@ SECTION 1
       all request to app2_backend
     - create the 3rd server to listen on port 80 with server_name static.stanley.com and
       let it serve files from the root
+
+
+
+
+
+
+
+for ssl {
+server {
+    listen 443 ssl;
+    server_name yourdomain.com;  # Replace with your domain name
+
+    ssl_certificate /etc/ssl/certs/your_certificate.crt;  # Path to your SSL certificate
+    ssl_certificate_key /etc/ssl/private/your_private.key;  # Path to your private key
+
+    ssl_protocols TLSv1.2 TLSv1.3;  # Enforce strong protocols
+    ssl_ciphers 'TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384';  # Secure ciphers
+
+    # Other configuration options as needed...
+    location / {
+        root /var/www/your-site;
+        index index.html index.htm;
+    }
+}
+
+}
