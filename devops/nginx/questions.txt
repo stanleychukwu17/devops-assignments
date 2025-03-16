@@ -59,5 +59,17 @@ SECTION 1
     - stop the container and connect it to the backend_network_for_nginx network
     - start all the containers and test the different nginx on different ports
 
+9.1 Read about exposing ports of your docker container
+
 10. Now go and practice in real life from (question 5 to question 9)
 
+11. Another task: write another nginx.conf configuration
+    - write 2 upstreams (app1_backend, app2_backend)
+    - let these upstreams group have 2 containers, let app1 listen on port 9000, and app2 on 8000
+    - create 2 servers
+    - let the 1st server listen on port 9000 with server_name app1.stanley.com and forward
+      all request to app1_backend
+    - let the 2nd server listen on port 9001 with server_name app2.stanley.com and forward
+      all request to app2_backend
+    - create the 3rd server to listen on port 80 with server_name static.stanley.com and
+      let it serve files from the root
