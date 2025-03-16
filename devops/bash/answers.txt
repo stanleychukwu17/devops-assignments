@@ -69,6 +69,13 @@
         echo ${names[2]} # third item
     - how do you retrieve and display all indexes of an array
         echo "${!names[@]}"
+    - add a variable called "school", add 3 schools you've been to in the array, now use
+      a for loop to print out each item in the array
+        names=("jewel model school" "whole person education" "east ukrainian national university")
+
+        for i in "${names[@]}"; do
+            echo $i
+        done
 
 5.  Arithmetic calculations
     - show the 3 ways of doing Arithmetic calculations
