@@ -1,5 +1,5 @@
 full_revision: 27th Feb 2025
-full_revision: 27th Feb 2025
+full_revision: 16th Mar 2025
 
 1.  - Read: why use bash for shell scripting
     - how do you create and run a bash script?
@@ -23,6 +23,7 @@ full_revision: 27th Feb 2025
     - how do your retrieve/display all the items in an array
     - how do you retrieve/display specific items in an array
     - how do you retrieve and display all indexes of an array
+
 
 5.  Arithmetic calculations
     - show the 3 ways of doing Arithmetic calculations
