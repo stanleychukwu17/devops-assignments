@@ -298,9 +298,15 @@
     - start all the containers and test the different nginx on different ports
         docker start ng2 nginx_test_server nodeapp1 nodeapp2 nodeapp3
 
+9.1 Read about exposing ports of your docker container
+    when working with docker and nginx, the only ports that should be exposed should be only the nginx port,
+    all other containers port should not be exposed
+
 10. Now go and practice in real life from (question 5 to question 9)
     find the project template on my system @:
         D:\Sz - projects\28-devops\3-nginx\1-hussien-nasser-introduction-to-nginx\nginx-project-1
 
     find the project template on github @:
         https://github.com/stanleychukwu17/hussien-nasser-introduction-to-nginx-project-1
+
+11.
