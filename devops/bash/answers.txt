@@ -127,7 +127,7 @@
         echo ${arg1}
 
     - how do you pass arguments to your script when running the script
-        ./script.sh arg1 arg2 arg3 arg...
+        ./script.sh arg1 "arg 2" "arg 3" arg...
 
     - how do you capture all arguments in bash
         $@ or $*
@@ -163,7 +163,7 @@
         exit(1) - This is a general error. It doesn't specify what kind of error occurred,
                   but it signals a failure. 
 
-        exit(2 to 125): These can be used for specific error codes defined by the program, often
+        exit(2 to 255): These can be used for specific error codes defined by the program, often
                   to indicate particular types of failures or issues
 
     - Read: list of common exit codes
