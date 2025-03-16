@@ -85,3 +85,9 @@ full_revision: 16th Mar 2025
     - loop through each arguments
 
 13. add the questions for functions in bash & coloring
+
+
+{
+    failed questions: 6
+    stopped at question 11
+}
