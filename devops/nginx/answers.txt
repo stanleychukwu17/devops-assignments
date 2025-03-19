@@ -316,4 +316,5 @@
     find the project template on github @:
         https://github.com/stanleychukwu17/hussien-nasser-introduction-to-nginx-project-1
 
-11.
+11. see answers in:
+    ./section1/11-nginx-conf/nginx.conf
