@@ -46,7 +46,7 @@ SECTION 1
     }
 }
 
-4.  Nginx Docker container {please write down the code and also practice it}
+4.  Nginx Docker container
     - start a nginx container in detached mode using
         image: nginx:1.26.3
         container_name: nginx

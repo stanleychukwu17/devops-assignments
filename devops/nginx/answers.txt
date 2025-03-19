@@ -131,7 +131,7 @@
             }
         }
 
-4.  Nginx Docker container {please write down the code and also practice it}
+4.  Nginx Docker container
     - start a nginx container in detached mode using image: nginx:1.26.3, container_name: nginx, port 80:80
         docker run -p 80:80 -d --name nginx nginx:1.26.3
 
