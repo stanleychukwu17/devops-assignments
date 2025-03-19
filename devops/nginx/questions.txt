@@ -49,7 +49,7 @@ SECTION 1
 
 7. Read or explain the code in your nginx config
 
-8. Now Networking and spinning up all the services
+8. Networking and spinning up all the services
     - now create a Docker Network called backend_network_for_nginx
     - connects all the containers to the Network i.e (nginx_test_server, nodeapp1, nodeapp2, nodeapp3)
     - start all the nodeapp & the nginx container. see if everything is working as expected
