@@ -189,7 +189,7 @@
         CMD ["npm", "run", "dev"]
 
     - create the docker image of the nodejs application
-        docker build -t nodeapp_for_nginx .
+        docker build -t nodeapp_for_nginx:v1 -f Dockerfile.dev .
 
     - use the image to spin up 3 new containers and do not expose the ports, use names
       nodeapp1, nodeapp2, nodeapp3
