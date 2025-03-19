@@ -141,7 +141,7 @@
             nginx:1.26.3
 
     - inspect the container
-        docker inspect 4e :: where "4e" is the first 2 letters of the container
+        docker inspect 4e :: where "4e" is the first 2 letters of the container ID
 
     - see the logs from the container
         docker logs 4e
