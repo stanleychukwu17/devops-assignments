@@ -1,5 +1,5 @@
-full_revision: 15th mar 2025
-full_revision: 15th mar 2025
+full_revision: 19th mar 2025
+full_revision: 19th mar 2025
 
 =============
 SECTION 1
@@ -25,6 +25,27 @@ SECTION 1
         now the container will be: nginx_test_server
         now the hostname will be: nginx_load_balancer
 }
+
+4.0 practice {
+    practice-project: D:\Sz - projects\28-devops\3-nginx\0-practice\0-nodeapp-simple
+    -
+    - check start the app to see that all is working properly
+    - write the Dockerfile for the app & start the docker container to see everything is working fine
+    - write the Nginx configuration and start the Nginx container, there will be error because of
+      service discovery, you need to connect all services to the same network
+    - Do yo thing with the networking
+    - write everything in a docker-compose file for everything
+    - start the docker-compose and be sure it works
+    - delete {
+        Dockerfile
+        Docker images
+        Docker containers
+        Docker network
+        -
+        delete all files except app.js .gitignore .dockerignore
+    }
+}
+
 4.  Nginx Docker container {please write down the code and also practice it}
     - start a nginx container in detached mode using
         image: nginx:1.26.3
