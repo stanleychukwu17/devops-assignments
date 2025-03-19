@@ -13,10 +13,11 @@
                                     -> [server] ->
       
       with the normal architecture, the request are going straight to the severs and it is not the best,
-      because if the request become too much for the server it will crash it, it is also difficult
+      because if the request becomes too much for the server it will crash it, it is also difficult
       to scale with the normal architecture, because every time you add a new server in the backend,
       you need to start changing frontend code -> as this can become pretty complex. but with the
-      Nginx architecture, everything becomes easy to manage
+      Nginx architecture, everything becomes easy to manage, if you need to scale your backend servers,
+      you'll only need to update your nginx config with the new backend ports
 
     - what are the following concepts/terms in Nginx? {Frontend, Backend, Upstream, Downstream}
         Frontend: refers to all communication between the user_request & Nginx
