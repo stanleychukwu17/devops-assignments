@@ -248,6 +248,7 @@
 
 7. Read or explain the code in your nginx config
     http {}: inside the http block is where you configure everything about your nginx server
+        when working with layer 7 proxying
 
     upstream {}: the upstream is used to group servers that nginx will be talking to at the "backend",
         you usually add a group name for each upstream you create, i.e upstream <group-name>.
@@ -257,8 +258,8 @@
     server {}: the server block is used to configure how Nginx will handle incoming request on
         the "frontend"
         - the listen 8080; tells Nginx to listen to request on port 8080
-        - the location / {} & proxy_pass http://node_backend/; means all request should be forwarded
-            to the "upstream node_backend group"
+        - the location / {} & proxy_pass http://node_backend/; means all request to the root url /
+            should be forwarded to the upstream "node_backend" group
 
     events {}: the event block is used to configure a-lot of settings, but here we use it to configure
         the maximum number of simultaneous connections that a worker process can handle.
@@ -266,7 +267,7 @@
         queue connections or reject them, depending on the load and configuration
         (such as keepalive_timeout or accept_mutex)
 
-    worker_processes auto; this means NGINX will automatically spawn worker processes based on the number
+    worker_processes auto; this means nginx will automatically spawn worker processes based on the number
         of available CPU cores. each worker will be able to handle up to 1024 simultaneous connections,
         depending on the server’s load and how many worker processes are running
 
