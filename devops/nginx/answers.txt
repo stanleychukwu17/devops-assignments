@@ -193,9 +193,9 @@
 
     - use the image to spin up 3 new containers and do not expose the ports, use names
       nodeapp1, nodeapp2, nodeapp3
-        docker run --name nodeapp1 -d nodeapp_for_nginx
-        docker run --name nodeapp2 -d nodeapp_for_nginx
-        docker run --name nodeapp3 -d nodeapp_for_nginx
+        docker run -d --name nodeapp1 --hostname nodeapp1 nodeapp_for_nginx:v1
+        docker run -d --name nodeapp2 --hostname nodeapp2 nodeapp_for_nginx:v1
+        docker run -d --name nodeapp3 --hostname nodeapp3 nodeapp_for_nginx:v1
 
 6. Now write you Nginx configuration:
     1. create upstream server for the nodeapp services
