@@ -32,6 +32,8 @@
         "toset",
         "usermod",
         "WORKDIR",
+        "wsapp",
+        "wschat",
         "yoyo"
     ]
 }
