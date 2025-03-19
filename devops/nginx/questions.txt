@@ -88,9 +88,9 @@ SECTION 1
     - write 2 upstreams (app1_backend, app2_backend)
     - let these upstreams group have 2 containers, let app1 listen on port 9000, and app2 on 8000
     - create 2 servers
-    - let the 1st server listen on port 9000 with server_name app1.stanley.com and forward
+    - let the 1st server listen on port 81 with server_name app1.stanley.com and forward
       all request to app1_backend
-    - let the 2nd server listen on port 9001 with server_name app2.stanley.com and forward
+    - let the 2nd server listen on port 82 with server_name app2.stanley.com and forward
       all request to app2_backend
     - create the 3rd server to listen on port 80 with server_name static.stanley.com and
       let it serve files from the root
