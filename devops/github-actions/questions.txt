@@ -55,7 +55,8 @@ full_revision: 18th Feb 2025
 6. matrix in github_action
 
 7. take a look at this workflow the python/cpython workflow {
-    https://github.com/python/cpython/blob/main/.github/workflows/build.yml#L46
+    https://github.com/python/cpython/blob/main/.github/workflows/build.yml
+    https://github.com/python/cpython/blob/main/.github/workflows/reusable-context.yml
     https://github.com/python/cpython/blob/main/.github/workflows/reusable-change-detection.yml
     https://github.com/python/cpython/blob/main/.github/workflows/reusable-windows-msi.yml
     https://github.com/python/cpython/blob/main/.github/workflows/stale.yml
