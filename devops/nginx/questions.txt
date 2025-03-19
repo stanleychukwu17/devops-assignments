@@ -77,7 +77,7 @@ SECTION 1
 
 9.  Solving image two problem
     - create another nginx container called ng2 using the same config, port 81:8080
-    - stop the container and connect it to the backend_network_for_nginx network
+    - stop the containers and connect it to the backend_network_for_nginx network
     - start all the containers and test the different nginx on different ports
 
 9.1 Read about exposing ports of your docker container
