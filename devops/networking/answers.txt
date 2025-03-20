@@ -166,6 +166,7 @@
     it sends this message with theses info to the router, when the router receives the message,
     it removes its own mac address from the message and replaces it with the mac-address of the
     printer and then sends the message to the printer.
+    {i need to expand of this answer using chatGPT}
 
 7. OSI Model Network
   - What are the 7 layers of the OSI model: use "Please Do Not Throw Sausage Pizza Away"
@@ -200,10 +201,8 @@
         for things like video streaming where speed is more important than ensuring every packet arrives
         perfectly.
 
-    - Network Layer: this layer is responsible for getting data from one device to another,
-      It handles routing and addressing to ensure that data reaches the correct destination, even if it
-      needs to pass through multiple networks.
-
+    - Network Layer: It handles routing and addressing to ensure that data reaches the correct destination,
+      even if it needs to pass through multiple networks.
       This layer attaches the source i.p address and the destination i.p address to the header of
       each segments
 
