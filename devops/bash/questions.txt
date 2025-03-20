@@ -89,7 +89,7 @@ full_revision: 16th Mar 2025
     - example
 
 14. Functions is bash
-    - syntax for functions in bash
+    - syntax for functions in bash and give an example
     - calling functions with arguments
     - passing multiple 
     - returning values from a function
