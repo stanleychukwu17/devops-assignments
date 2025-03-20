@@ -318,3 +318,9 @@
 
 11. see answers in:
     ./section1/11-nginx-conf/nginx.conf
+
+12. Understanding nginx timeouts for efficient configuration
+    - Read: see list of frontend & backend timeouts
+    - Read: see explanation of frontend timeouts
+    - Read: see explanation of backend timeouts
+
