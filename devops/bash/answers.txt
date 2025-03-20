@@ -334,8 +334,34 @@
             echo $i
         done
 
+13. Read: switch cases in bash
+    - syntax
+        case "$variable" in
+            condition1)
+                # command to execute
+                ;;
+            condition2)
+                # command to execute
+                ;;
+            *)
+                # command to execute if no pattern matches (optional)
+                ;;
+            esac
 
-
+    - example
+        echo "Enter your name :"
+        read NAME
+        case $NAME in
+            "root")
+                echo "you have access to root"
+                ;;
+            "stanley")
+                echo "you do not have access to root"
+                ;;
+            *)
+                echo "unknown user entered"
+                ;;
+        esac
 
 
 
