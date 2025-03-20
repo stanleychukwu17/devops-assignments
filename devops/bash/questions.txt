@@ -84,7 +84,9 @@ full_revision: 16th Mar 2025
     - loop through all arguments
     - loop through each arguments
 
-13. switch cases in bash
+13. Read: switch cases in bash
+    - syntax
+    - example
 
 14. Functions is bash
     - syntax for functions in bash
