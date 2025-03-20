@@ -153,8 +153,6 @@
         IP address by a network administrator or set directly on the device. 
       }
 
-  - Read: See image of a Large Network
-
   - Read: What happens when you're sending message from one LAN network to another LAN network
     Say we are sending a message from a Laptop in LAN-1 to a printer in LAN-2. the Laptop1 will
     prepare the message and attach the i.p address of the printer, it will also attach the

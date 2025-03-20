@@ -1,5 +1,5 @@
-full_revision: 18th Feb 2025
 full_revision: 19th Feb 2025
+full_revision: 20th Feb 2025
 
 1. What is a network
 
@@ -16,7 +16,6 @@ full_revision: 19th Feb 2025
 
 6. Network Addresses
    - What is a MAC Address & IP Address
-   - Read: See image of a Large Network
    - Read: What happens when you're sending message from one LAN network to another LAN network
 
 7. OSI Model Network
