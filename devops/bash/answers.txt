@@ -299,11 +299,40 @@
 
 12. For loops in Bash
     - syntax of for loops
+        for arg in [list]; do
+            expression
+        done
+
     - loop through names.txt
+        for i in `cat names.txt`; do
+            echo "$i"
+        done
+
+        for i in $(cat names.txt); do
+            echo "$i"
+        done
+
     - loop through an array
+        names=(chukwu stanley edward)
+        for i in "${names[@]}"; do
+            echo $i
+        done
+
     - loop through a string
+        str="hello world"
+        for i in "$str"; do
+            echo $i
+        done
+
     - loop through all arguments
+        for i in "$@"; do
+            echo $i
+        done
+
     - loop through each arguments
+        for i in $1 $2 $3; do
+            echo $i
+        done
 
 
 
