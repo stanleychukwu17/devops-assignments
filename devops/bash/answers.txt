@@ -363,7 +363,25 @@
                 ;;
         esac
 
+14. Functions is bash
+    - syntax for functions in bash and give an example
+        function <name_of_function> () {
+            # command to execute
+        }
+        or
+        <name_of_function> () {
+            # command to execute
+        }
 
+        e.g:
+        hello () {
+            echo "hello world"
+            ls
+        }
+        hello # calling the function
+
+    - see all the other answers
+        see ./answers/14-functions.sh
 
 
 
