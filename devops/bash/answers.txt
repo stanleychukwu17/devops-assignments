@@ -350,8 +350,8 @@
 
     - example
         echo "Enter your name :"
-        read NAME
-        case $NAME in
+        read name
+        case $name in
             "root")
                 echo "you have access to root"
                 ;;
