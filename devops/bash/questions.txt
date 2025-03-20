@@ -96,6 +96,9 @@ full_revision: 16th Mar 2025
     - recursive functions
 
 15. accepting values from users
+    - 1st: Accepting a value:
+    - 2nd: Accepting multiple values:
+    - 3rd: Using -p option with read (Inline Prompt):
 
 16. colors in bash
 
