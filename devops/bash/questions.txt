@@ -84,10 +84,21 @@ full_revision: 16th Mar 2025
     - loop through all arguments
     - loop through each arguments
 
-13. add the questions for functions in bash & coloring
+13. switch cases in bash
 
+14. Functions is bash
+    - syntax for functions in bash
+    - calling functions with arguments
+    - passing multiple 
+    - returning values from a function
+    - using default when no argument is passed
+    - recursive functions
 
-{
-    failed questions: 6
-    stopped at question 11
-}
+15. accepting values from users
+
+16. colors in bash
+
+17. explain set -euo pipefail
+
+18. xargs in bash
+    - explain
