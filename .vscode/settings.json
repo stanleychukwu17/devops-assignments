@@ -18,6 +18,7 @@
         "minmax",
         "nodeapp",
         "NOPASSWD",
+        "pipefail",
         "pnpx",
         "rgba",
         "rightclick",
