@@ -91,7 +91,6 @@ full_revision: 16th Mar 2025
 14. Functions is bash
     - syntax for functions in bash and give an example
     - calling functions with arguments
-    - passing multiple 
     - returning values from a function
     - using default when no argument is passed
     - recursive functions
