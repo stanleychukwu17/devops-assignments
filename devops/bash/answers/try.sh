@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# using default when no argument is passed
-
-greet () {
-    echo "hello ${1:-"stanley"}"
-}
-
-greet "adam ziRa"
-greet
+echo "Enter your name:"
+read name age
+echo "Hello, $name! $age"

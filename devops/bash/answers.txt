@@ -383,5 +383,22 @@
     - see all the other answers
         see ./answers/14-functions.sh
 
+15. accepting values from users
+    - 1st: Accepting a value:
+        echo "Enter your name:"
+        read name
+        echo "Hello, $name!"
 
+        - the ":" in the echo statement will prompt the user to enter a value in the terminal
+        - read name: This waits for the user to input a value and stores it in the variable name
 
+    - 2nd: Accepting multiple values:
+        echo "Enter your first and last name:"
+        read first_name last_name
+        echo "Hello, $first_name $last_name!"
+
+    - 3rd: Using -p option with read (Inline Prompt):
+        You can also display a prompt inline using the -p option with the read command.
+        -
+        read -p "Enter your age: " age
+        echo "You are $age years old."
