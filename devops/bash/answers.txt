@@ -402,3 +402,57 @@
         -
         read -p "Enter your age: " age
         echo "You are $age years old."
+
+16. Read: colors in bash
+    - initial explanation on coloring in bash
+        You can color the outputs in your terminal from your bash script. To do this, you use the -e flag in 
+        your echo command {-e = escape}
+
+        e.g:
+        echo -e "\e[30m Bash scripting \e[0m"
+
+        \e[<code>m - is used to open and close the coloring 
+        30 - is the color code
+        0 - is used to close the coloring
+
+    - common color numbers/codes
+        30 = Black
+        31 = Red
+        32 = Green
+        33 = Brown
+        34 = Blue
+        35 = Purple
+        36 = light blue
+        37 = light gray
+
+    - storing color codes in variables
+        red="\e[31m"
+        end="\e[0m"
+        echo -e "${red} Bash scripting ${end}"
+
+    - some tips
+        - \e[1;31] : 1 in front of every color code to make it bold
+        - \e[3;31] : 3 will make the text italic
+        - \e[4;31] : 4 will underline the text
+        - \e[5;31] : 5 & 6 will make the text blink
+        - \e[7;31] : 7 will highlight the background color of the text
+        - \e[9;31] : 9 will strike through the text
+    
+    - adding background color to the text
+        31 = Red; 41 = Red background color i.e: \e[41m
+        32 = Green; 42 = Green background color i.e: \e[42m
+        33 = Brown; 43 = Brown background color i.e: \e[43m
+        -
+        \e[1;42m = bold text and background color applied
+
+
+
+
+
+
+
+
+
+
+
+
