@@ -97,11 +97,6 @@
     - **Switches** handle communication between devices on the same local network (LAN).
     - **Routers** handle traffic between different networks (e.g., your local network and the internet).
     - Devices communicate by sending data packets that are routed based on MAC and IP addresses.
-    - Communication is reliable, with data sent in a structured way using networking protocols (like TCP/IP)
-      to ensure delivery.
-
-    By using physical cables and switches/routers, wired networks typically provide more stable,
-    faster, and more reliable communication compared to wireless networks.
 
   2. how does a wireless network communicate
     In a **wireless network**, devices communicate without the need for physical cables, using
