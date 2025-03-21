@@ -319,12 +319,6 @@
             echo $i
         done
 
-    - loop through a string
-        str="hello world"
-        for i in "$str"; do
-            echo $i
-        done
-
     - loop through all arguments
         for i in "$@"; do
             echo $i
