@@ -106,7 +106,7 @@ SECTION 1
 14. Nginx as a layer 4 proxy, look at the example, explain it and re-write it
 
 15. Enable HTTPS on Nginx
-    - how do you enable https on your nginx server?
+    - Read: how do you enable https on your nginx server
     - enable fast and secure TLS 1.3 on Nginx
     - enable http2 on Nginx
 

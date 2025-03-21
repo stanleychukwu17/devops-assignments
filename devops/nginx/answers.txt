@@ -473,6 +473,71 @@
     - explanation
       with layer 4 proxying, you can't really do much, you're just passing the request to one of the servers
 
+15. Enable HTTPS on Nginx
+    - Read: how do you enable https on your nginx server
+      if you want to enable https on nginx, you need a working dns name, now you follow the steps below
+
+      1. obtain an SSL certificate
+        - let us use certbot (will only work in a linux environment, will not work in your git bash environment)
+
+        - sudo apt-get update
+          sudo apt-get install -y certbot python3-certbot-nginx
+          sudo certbot --nginx
+        
+        - certbot will automatically configure nginx to use SSL
+
+      2. configure listening to https in your server block
+        server {
+            listen 443 ssl;
+            server_name stanleychukwu.com
+
+            ssl_certificate /etc/ssl/certs/your_certificate.crt;  # Path to your SSL certificate
+            ssl_certificate_key /etc/ssl/private/your_private.key;  # Path to your private key
+
+            ssl_protocols TLSv1.2 TLSv1.3;  # Enforce strong protocols
+            ssl_ciphers 'TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384';  # Secure ciphers
+
+            # Other configuration options as needed...
+            location / {
+                root /var/www/your-site;
+                index index.html index.htm;
+            }
+        }
+
+        # test the configuration for syntax error and reload nginx
+        sudo nginx -t
+        sudo systemctl reload nginx
+    
+      3. Optionally: redirect http to https
+        if you want to automatically redirect http traffic to https, add the following block before the https
+        server block:
+
+        server {
+            listen 80;
+            server_name stanleychukwu.com
+
+            return 301 https://$host$request_uri; # redirects to https
+        }
+
+      4. Additional Tip
+        You can also configure strict transport security to enforce HTTPS for browsers. the below can be added to
+        your HTTPS server block:
+
+        server {
+            listen 443 ssl;
+
+            ...
+
+            location / {
+                ...
+
+                add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+            }
+        }
+      
+    - enable fast and secure TLS 1.3 on Nginx
+
+    - enable http2 on Nginx
 
 
 
