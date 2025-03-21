@@ -1,5 +1,7 @@
 #!/bin/bash
 
-echo "Enter your name:"
-read name age
-echo "Hello, $name! $age"
+set -euo pipefail
+
+for i in $1 $2 $3; do
+    echo $i
+done
