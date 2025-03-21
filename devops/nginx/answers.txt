@@ -321,6 +321,77 @@
 
 12. Understanding nginx timeouts for efficient configuration
     - Read: see list of frontend & backend timeouts
+        - Frontend timeouts:
+            client_header_timeout
+            client_body_timeout
+            send_timeout
+            keepalive_timeout
+            lingering_timeout
+            resolver_timeout
+        - Backend timeouts:
+            proxy_connect_timeout
+            proxy_send_timeout
+            proxy_read_timeout
+            keepalive_timeout
+            proxy_next_upstream_timeout
+
     - Read: see explanation of frontend timeouts
+      - client_header_timeout
+        defines a timeout for reading client request header, if a client does not transmit the entire header
+        within this time, the request is terminated with 408(Request timeout) error.
+        default: 60s
+
+      - client_body_timeout
+        defines a timeout for reading client request body. the timeout is set only for a period between two
+        successive read operations, not for the transmission of the whole request body.
+        If a client does not send anything within this period, the request is terminated with a
+        408(Request timeout) error
+        default: 60s
+
+      - send_timeout
+        sets a timeout for transmitting a response to the client. the timeout is set only between two
+        successive write operations, not for the transmission of the whole response. if the client does
+        not receive anything within this time, the connection is closed
+        default: 60s
+
+      - keepalive_timeout
+        sets a timeout for which the connection with nginx server should stay connected to the client
+        without any communications, if this timeout is reach, the client is disconnected
+        default: 75s
+
+      - lingering_timeout
+        specifies the maximum waiting time for more client daa to arrive, if data are not received during
+        this time, the connection is closed
+
+      - resolver_timeout
+       sets a timeout for dns name resolution
+       default: 30s
+
     - Read: see explanation of backend timeouts
+      - proxy_connect_timeout
+        defines a timeout for establishing a connection with a proxied server.
+        default 75s
+
+      - proxy_send_timeout
+        sets a timeout for transmitting of request to the proxied server. the timeout is set only between
+        two successive write operations, not for the transmission of the whole request. if the proxied server
+        does not receive anything within this time, the connection is closed
+
+      - proxy_read_timeout
+        defines a timeout for reading a response from the proxied server. the timeout is set only between two
+        successive read operations, not for the transmission of the whole response. if the proxied server does
+        not transmit anything within this time, the connection is closed
+
+      - keepalive_timeout
+        sets a timeout during which an idle keepalive connection to an upstream server will stay open
+
+      - proxy_next_upstream_timeout
+        Limits the time during which a request can be passed to the next server.
+        the 0 value turns off this limitation, the default is 0
+        read more {
+            say you have 3 servers connected to nginx and nginx sends a request to server1 and server1 fails,
+            nginx will try server2, if 2 fails, it will try server3. if 3 fails, it will go back to server1
+            and try again, so this timeout can help to kil this loop otherwise nginx will continue to loop
+            all through the 3 servers until 60s is reached
+        }
 
