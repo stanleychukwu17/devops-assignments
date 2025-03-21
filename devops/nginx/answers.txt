@@ -395,3 +395,62 @@
             all through the 3 servers until 60s is reached
         }
 
+13. practice
+    - Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
+      http {
+        upstream all_apps {
+            server app1_backend:2222;
+            server app1_backend:3333;
+            server app2_backend:3333;
+            server app2_backend:4444;
+        }
+
+        upstream app1 {
+            server app1_backend:2222;
+            server app1_backend:3333;
+        }
+
+        upstream app2 {
+            server app2_backend:3333;
+            server app2_backend:4444;
+        }
+
+        server {
+            listen 80;
+
+            location / {
+                proxy_pass http://all_apps/;
+            }
+
+            location /app1 {
+                proxy_pass http://app1/;
+            }
+
+            location /app2 {
+                proxy_pass http://app2/;
+            }
+
+            location /admin {
+                return 403;
+                # return 403 "You are forbidden from visiting this page";
+            }
+        }
+
+        server {
+            listen 79453;
+
+            location /admin {
+                proxy_pass http://all_apps/;
+            }
+        }
+      }
+
+    - explanation
+
+
+
+
+
+
+
+
