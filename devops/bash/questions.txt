@@ -1,5 +1,5 @@
 full_revision: 27th Feb 2025
-full_revision: 16th Mar 2025
+full_revision: 21st Mar 2025
 
 1.  - Read: why use bash for shell scripting
     - how do you create and run a bash script?
@@ -80,7 +80,6 @@ full_revision: 16th Mar 2025
     - syntax of for loops
     - loop through names.txt
     - loop through an array
-    - loop through a string
     - loop through all arguments
     - loop through each arguments
 
@@ -110,4 +109,5 @@ full_revision: 16th Mar 2025
 17. explain set -euo pipefail
 
 18. xargs in bash
-    - explain
+    - explain this command:
+    echo "${ec2_public_ip}" | xargs -I {} curl 
