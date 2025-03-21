@@ -439,6 +439,8 @@
         server {
             listen 79453;
 
+            server_name localhost;
+
             location /admin {
                 proxy_pass http://all_apps/;
             }
@@ -446,9 +448,11 @@
       }
 
     - explanation
-
-
-
+        in the example above, we have 3 upstream servers, when a user visits the root url (i.e localhost:80),
+        nginx takes them to the upstream server "all_apps", if they visit localhost/app1, they are taken to
+        "app1_backend", if they visit localhost/app2, they are taken to "app2_backend".
+        but no one is allowed to visit /admin on port 80, i.e (localhost/admin), but if they go to port 79453
+        (localhost:79453/admin), they'll be proxied to the right upstream
 
 
 
