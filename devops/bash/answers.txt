@@ -406,7 +406,7 @@
         e.g:
         echo -e "\e[30m Bash scripting \e[0m"
 
-        \e[<code>m - is used to open and close the coloring 
+        \e[<color_code>m - is used to open and close the coloring 
         30 - is the color code
         0 - is used to close the coloring
 
@@ -426,12 +426,12 @@
         echo -e "${red} Bash scripting ${end}"
 
     - some tips
-        - \e[1;31] : 1 in front of every color code to make it bold
-        - \e[3;31] : 3 will make the text italic
-        - \e[4;31] : 4 will underline the text
-        - \e[5;31] : 5 & 6 will make the text blink
-        - \e[7;31] : 7 will highlight the background color of the text
-        - \e[9;31] : 9 will strike through the text
+        - \e[1;31m : 1 in front of every color code to make it bold
+        - \e[3;31m : 3 will make the text italic
+        - \e[4;31m : 4 will underline the text
+        - \e[5;31m : 5 & 6 will make the text blink
+        - \e[7;31m : 7 will highlight the background color of the text
+        - \e[9;31m : 9 will strike through the text
     
     - adding background color to the text
         31 = Red; 41 = Red background color i.e: \e[41m
