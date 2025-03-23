@@ -268,8 +268,9 @@
         (such as keepalive_timeout or accept_mutex)
 
     worker_processes auto; this means nginx will automatically spawn worker processes based on the number
-        of available CPU cores. each worker will be able to handle up to 1024 simultaneous connections,
-        depending on the server’s load and how many worker processes are running
+        of available CPU cores. each worker will be able to handle up to 1024 simultaneous connections
+        on each worker_processes and depending on how many worker_connections you set for each worker_processes
+        to handle
 
 8. Now Networking and spinning up all the services
     - now create a Docker Network called backend_network_for_nginx
