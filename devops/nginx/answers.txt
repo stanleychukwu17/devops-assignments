@@ -550,4 +550,13 @@
         }
 
 
+## Websockets with Nginx
+
+16. practice
+    - create a normal websocket node app
+    - bring the app to live and test it
+    - create 4 containers of the app
+    - use layer 4 proxy for the websocket app
+    - read some of the explanation on what is going on
+
 
