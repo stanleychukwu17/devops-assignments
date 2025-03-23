@@ -1,5 +1,5 @@
-full_revision: 19th mar 2025
-full_revision: 19th mar 2025
+full_revision: 23rd mar 2025
+full_revision: 23rd mar 2025
 
 =============
 SECTION 1
@@ -90,8 +90,7 @@ SECTION 1
     - Read: see explanation of frontend timeouts
     - Read: see explanation of backend timeouts
 
-13. practice
-    Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
+13. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
 
 14. Nginx as a layer 4 proxy, look at the example, explain it and re-write it
 

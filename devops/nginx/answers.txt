@@ -361,7 +361,7 @@
         default: 75s
 
       - lingering_timeout
-        specifies the maximum waiting time for more client daa to arrive, if data are not received during
+        specifies the maximum waiting time for more client data to arrive, if data are not received during
         this time, the connection is closed
 
       - resolver_timeout
@@ -396,8 +396,7 @@
             all through the 3 servers until 60s is reached
         }
 
-13. practice
-    - Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
+13. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
       http {
         upstream all_apps {
             server app1_backend:2222;
@@ -418,6 +417,8 @@
 
         server {
             listen 80;
+
+            server_name localhost;
 
             location / {
                 proxy_pass http://all_apps/;
