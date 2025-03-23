@@ -18,7 +18,8 @@ SECTION 1
     practice-project: D:\Sz - projects\28-devops\3-nginx\0-practice\0-nodeapp-simple
     -
     - check start the app to see that all is working properly
-    - write the Dockerfile for the app & start the docker container to see everything is working fine
+    - write the Dockerfile for the app
+    - start the 3 docker containers and be sure everything is working fine
     - write the Nginx configuration and start the Nginx container, there will be error because of
       service discovery, you need to connect all services to the same network
     - Do yo thing with the networking
@@ -26,6 +27,7 @@ SECTION 1
     - start the docker-compose and be sure it works
     - delete {
         Dockerfile
+        docker-compose.yml
         Docker images
         Docker containers
         Docker network
