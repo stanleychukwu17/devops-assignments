@@ -14,18 +14,6 @@ SECTION 1
 
 3.  Talk about TLS termination and TLS passthrough in Nginx
 
-{
-    Tip: the docker container name is the same as the hostname if you do not provide a hostname
-    if you do:
-        docker run -p 80:80 --name nginx_test_server -d nginx:1.26.3
-        the container name & hostname too will be nginx_test_server
-
-    but if you can provide a custom hostname by doing:
-        docker run -p 80:80 --name nginx_test_server --hostname nginx_load_balancer -d nginx:1.26.3
-        now the container will be: nginx_test_server
-        now the hostname will be: nginx_load_balancer
-}
-
 4.0 practice {
     practice-project: D:\Sz - projects\28-devops\3-nginx\0-practice\0-nodeapp-simple
     -
@@ -100,8 +88,8 @@ SECTION 1
     - Read: see explanation of frontend timeouts
     - Read: see explanation of backend timeouts
 
-13. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
-    - practice with docker
+13. practice
+    Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
 
 14. Nginx as a layer 4 proxy, look at the example, explain it and re-write it
 
