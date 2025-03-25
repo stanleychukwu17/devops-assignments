@@ -104,12 +104,19 @@ SECTION 1
 16. practice
     - create a normal websocket node app
     - bring the app to live and test it
-    - create 4 containers of the app
+    - create 3 containers for frontend
+    - create 3 containers for backend
     - use layer 4 proxy for the websocket app
+    - use layer 7 proxy for the websocket app
     - read some of the explanation on what is going on
 
 17. practice
-    - use layer 7 proxy for the application
+    - in the layer 7 config
     - create 2 upstream groups wsapp & wschat and let them have 2 servers each
     - listen on port 80 and on url :80/wsapp and :80/wschat and proxy to the right upstream 
     - read some of the explanation
+
+
+=============
+SECTION 2
+=============
