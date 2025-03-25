@@ -434,7 +434,7 @@
 
             location /admin {
                 return 403;
-                # return 403 "You are forbidden from visiting this page";
+                # or you can do: return 403 "You are forbidden from visiting this page";
             }
         }
 
