@@ -50,7 +50,7 @@ SECTION 1
 
 4.  Nginx Docker container
     - start a nginx container in detached mode using
-        image: nginx:1.26.3
+        image: nginx:1.27.4
         container_name: nginx
         port 80:80
     - inspect the container
