@@ -89,9 +89,9 @@
 
 3. Talk about TLS termination and TLS passthrough in Nginx
     1. TLS Termination:
-        - TLS Termination refers to NGINX decrypting the incoming SSL/TLS traffic (i.e., HTTPS) and
+        - TLS Termination refers to NGINX decrypting the incoming SSL/TLS traffic (i.e: HTTPS) and
           then forwarding the unencrypted traffic (HTTP) to the backend servers
-        - NGINX handles the encryption and decryption process, offloading this task from the backend servers,
+        - NGINX handles the decryption process, offloading this task from the backend servers,
           making it more efficient
         - TLS Termination operates at Layer 7 because NGINX decrypts and inspects the traffic (HTTP)
 
