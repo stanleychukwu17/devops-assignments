@@ -21,10 +21,20 @@ SECTION 1
     -
     - check start the app to see that all is working properly
     - write the Dockerfile for the app
+    - create an image for the Dockerfile you built - "simple_nodeapp:v1"
+    - start a container with the image: "simple_nodeapp:v1", to be sure it works
     - start the 3 docker containers and be sure everything is working fine
     - write the Nginx configuration and start the Nginx container, there will be error because of
       service discovery, you need to connect all services to the same network
-    - Do yo thing with the networking
+    - Do yo thing with the networking {
+        create a new network nginx_network
+        connect the network to the containers
+        inspect one of the containers to be sure that it is in the nginx_network
+    }
+    - restart the app to see it is working with nginx {
+        see the logs of nginx_0 container, check to find the 404 error when a request
+        was made for the favicon.ico
+    }
     - write everything in a docker-compose file for everything
     - start the docker-compose and be sure it works
     - delete {
