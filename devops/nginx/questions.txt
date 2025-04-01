@@ -15,7 +15,9 @@ SECTION 1
 3.  Talk about TLS termination and TLS passthrough in Nginx
 
 4.0 practice {
-    practice-project: D:\Sz - projects\28-devops\3-nginx\0-practice\0-nodeapp-simple
+    practice-project: 
+        local: D:\Sz - projects\28-devops\0-practice\devops\nginx\1-nodeapp-simple
+        github: https://github.com/stanleychukwu17/0-practice-to-become-better/tree/main/devops/nginx/1-nodeapp-simple
     -
     - check start the app to see that all is working properly
     - write the Dockerfile for the app
