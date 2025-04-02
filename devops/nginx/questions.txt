@@ -16,7 +16,7 @@ SECTION 1
 
 4.0 practice {
     practice-project: 
-        local: D:\Sz - projects\28-devops\0-practice\devops\nginx\1-nodeapp-simple
+        local: D:\Sz - projects\0-practice\devops\nginx\1-simple-nginx-docker-nodeapp
         github: https://github.com/stanleychukwu17/0-practice-to-become-better/tree/main/devops/nginx/1-nodeapp-simple
     -
     - check start the app to see that all is working properly
@@ -111,6 +111,8 @@ SECTION 1
     - enable fast and secure TLS 1.3 on Nginx
     - enable http2 on Nginx
 
+15.1 if you have time, Read: the difference between HTTP/1 and HTTP/2
+
 ## Websockets with Nginx
 
 16. practice
@@ -121,8 +123,7 @@ SECTION 1
     - use layer 4 proxy for the websocket app
     - use layer 7 proxy for the websocket app
     - read some of the explanation on what is going on
-
-17. practice
+    -
     - in the layer 7 config
     - create 2 upstream groups wsapp & wschat and let them have 2 servers each
     - listen on port 80 and on url :80/wsapp and :80/wschat and proxy to the right upstream 
