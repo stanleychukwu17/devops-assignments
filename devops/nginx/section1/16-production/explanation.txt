@@ -125,4 +125,10 @@
         }
 
         When a 50x error occurs, Nginx will internally redirect the request to the @handle_error location
+    
+    50x errors:
+      - 502 Bad Gateway: nginx received an invalid response from the upstream server
+      - 503 Service Unavailable: The upstream server is temporarily unable to handle the request,
+        typically because it's overloaded or down for maintenance
+      - 504 Gateway Timeout: nginx didn’t receive a timely response from the upstream server
 }
