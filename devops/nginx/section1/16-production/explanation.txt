@@ -1,0 +1,38 @@
+1.1 {
+    - include mime.types:
+        This directive tells Nginx to include a file named `mime.types`,
+        this file(i.e mime.types) usually defines mappings between file extensions
+        (like `.html`, `.css`, `.jpg`, etc.) and their corresponding MIME types.
+        This is important because it allows Nginx to serve files with the correct `Content-Type` header,
+        informing the client (browser) of the type of content it’s receiving.
+
+        For example:
+        - `.html` files might be served with `text/html` MIME type.
+        - `.css` files might be served with `text/css` MIME type.
+        - `.jpg` files might be served with `image/jpeg` MIME type.
+
+    - default_type application/octet-stream:
+        This directive sets the default MIME type for any files that are requested, but for which Nginx cannot
+        determine a specific MIME type (for example, if the file extension is unknown),
+        The value `application/octet-stream` is a generic binary data type, which is often used as a
+        fallback for unknown file types. This ensures that if Nginx doesn’t know how to handle a specific
+        file extension, it will still serve it with a reasonable default type (binary stream).
+
+    ### Summary:
+    - include mime.types: Loads file extension-to-MIME type mappings from a separate file.
+    - default_type application/octet-stream: Sets a fallback MIME type for files that have no known MIME type.
+
+    This configuration ensures Nginx serves files with appropriate MIME types, helping browsers interpret the
+    content correctly.
+}
+
+1.2 {
+    X-Content-Type-Options: prevents MIME type sniffing
+    X-XSS-Protection: enables cross-site scripting protection
+    X-Frame-Options: prevents click-jacking attacks
+    Strict-Transport-Security: ensures HTTPS is used
+    Referrer-Policy: {
+        
+    }
+    Content-Security-Policy: adds an additional layer of security for script and style resources
+}
