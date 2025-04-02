@@ -26,13 +26,103 @@
     content correctly.
 }
 
+
+
 1.2 {
     X-Content-Type-Options: prevents MIME type sniffing
     X-XSS-Protection: enables cross-site scripting protection
     X-Frame-Options: prevents click-jacking attacks
     Strict-Transport-Security: ensures HTTPS is used
     Referrer-Policy: {
-        
+        The Referrer-Policy header defines when and how the browser sends the Referrer header.
+        The Referrer header contains the URL of the page that the user came from when requesting a new resource.
+
+        For example, if a user clicks on a link from https://example.com/page1 to https://example.com/page2,
+        the browser may include Referrer: https://example.com/page1 in the HTTP request to page2.
+
+        The value "no-referrer-when-downgrade" means: No referrer is sent when downgrading from HTTPS to HTTP,
+        If the user is on a secure page (i.e., HTTPS) and navigates to an insecure page (i.e., HTTP),
+        no Referrer header is sent. but in other situations, such as navigating from HTTPS to HTTPS
+        or HTTP to HTTP, the Referrer header will be included with the request
+
+        This policy is often used to balance privacy with functionality. For example:
+        If a user clicks a link on an HTTPS page and goes to an HTTP page, the referrer would not be sent,
+        because sending it would expose potentially sensitive information on an insecure connection.
     }
     Content-Security-Policy: adds an additional layer of security for script and style resources
+}
+
+
+
+1.3 proxy_set_header {
+    proxy_set_header Host $host:
+        - Passes the original Host header to the backend server
+        - $host is a built-in Nginx variable that holds the value of the Host header from the client's request
+        e.g:
+            If client requests https://example.com/some/path, the Host header will contain example.com
+
+    proxy_set_header X-Real-IP $remote_addr;
+        - Passes the real client IP address to the backend server
+        - $remote_addr is a built-in Nginx variable that holds the IP address of the client making the request
+
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        - Adds the client’s IP address to the X-Forwarded-For header (or appends it to the existing one)
+        - $proxy_add_x_forwarded_for is an Nginx variable that appends the real client IP ($remote_addr)
+            to the X-Forwarded-For header.
+        - The X-Forwarded-For header is a standard header used by reverse proxies to pass along the
+            chain of client IP addresses, including the original client IP and any subsequent proxies
+            in the request path
+        - If the request passes through multiple proxies (such as Nginx and another proxy or load balancer),
+            the X-Forwarded-For header will contain a list of all the IP addresses in the chain,
+            which allows the backend server to know the real client’s IP address even if it’s behind
+            multiple proxies
+        - The backend can use the last IP address in the list as the real client IP. If this header wasn't set,
+            the backend would only see the IP of the immediate proxy (Nginx), rather than the
+            original client’s IP
+        e.g:
+            If the request passes through a proxy server before reaching Nginx, the X-Forwarded-For header
+            might look like this:
+            -
+            X-Forwarded-For: 203.0.113.45, 192.168.1.10
+            -
+            203.0.113.45 is the client IP, and 192.168.1.10 is the IP of the proxy server
+
+    proxy_set_header X-Forwarded-Proto $scheme;
+        - Passes the protocol (HTTP or HTTPS) used for the request to the backend server
+        - $scheme is a built-in Nginx variable that holds the protocol of the incoming request (http or https)
+}
+1.3.1 proxy_set_header Summary {
+    - proxy_set_header Host $host;: Pass the original host requested by the client
+
+    - proxy_set_header X-Real-IP $remote_addr;: Pass the real client IP address
+
+    - proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;: Append the real client IP to
+        the chain of IPs in X-Forwarded-For
+
+    - proxy_set_header X-Forwarded-Proto $scheme;: Pass the protocol (HTTP/HTTPS) of the request
+        to the backend
+}
+
+
+1.4 {
+    This tells Nginx how to handle buffering of data when it proxies responses from a backend server.
+    Buffering is the process of temporarily storing data in memory before it’s sent to the client.
+    This is particularly useful when dealing with large responses, as it allows Nginx to efficiently manage
+    the data flow and improve performance
+}
+
+
+
+1.5 {
+    This tell Nginx to handle specific HTTP error responses (502, 503, and 504 errors) and provide a
+    custom error page (in this case, /50x.html) to the user.
+    i.e if there is an error of 502, 503, 504 - redirect to /error50x
+
+    another way to do it:
+        error_page 502 503 504 = @handle_error;
+        location @handle_error {
+            proxy_pass http://nextapp_frontend/handle_error_page;
+        }
+
+        When a 50x error occurs, Nginx will internally redirect the request to the @handle_error location
 }
