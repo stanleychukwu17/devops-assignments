@@ -1,0 +1,22 @@
+1.  - Read: What is D3
+      D3 (Data Driven Document) allows you to bind data to DOM elements and apply data-driven transformations
+      to the elements. it leverages HTML, SVG and CSS to render visualization
+
+    - What are the 2 selection methods in D3
+      d3.select() : selects the first matching element
+      d3.selectAll() : selects all matching elements
+
+    - task write:
+        d3.select("body").style("background-color", "blue")
+        d3.selectAll("div").style("color", "red")
+        d3.select("p")
+          .style("color", "pink")
+          .attr("class", "active")
+          .text("Hello D3")
+
+2.  - How do you append & remove elements to the DOM
+        .append():
+            d3.select(body).append("p").text("New paragraph added")
+        
+        .remove():
+            d3.select("p").remove()
