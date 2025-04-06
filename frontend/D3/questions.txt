@@ -33,3 +33,30 @@ SECTION 1
     - what happens if there are only 2 <p> elements in the DOM
     - how do you fix the issue where there the data values are more than the elements in the DOM
     - Task write: write the solution of the above using question 3 "task write"
+
+5.  - What is the difference btw .enter() and .append()
+    - .enter task write: data: [1,2,3,4]
+        - select all circles in svg element and bind the data
+        - for eah of this data, use the .enter() method to create new circles for unbounded data
+        - let the attribute of "cx" for each circle be: (d,i) => i * 50 + 25 (explain this)
+        - let attribute cy:50, r:20 
+    - .append task:
+        see the example and re-write on your own
+
+6.  Explain the enter, update & exit pattern in D3
+    - Read: see example
+
+7.  SVG and D3
+    - task write: data: [30, 70, 110, 150]
+        - append <svg> to the <body>
+        - change the width: 400, height: 400
+        - select all circles in the svg and bind the data to them (create new circles if needed)
+        - let each circle cx be (d,i) => i * 90 + 30
+        - cy:50, r:[data value]
+        - fill each circle with pink color
+
+8. Scale functions
+    - Read: a little bit about scale functions
+    - give an example of a .scaleLinear() function using input:[0,100] and output:[0,500]
+    - Read: see an example where it was used & re-write the example
+
