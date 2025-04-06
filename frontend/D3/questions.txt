@@ -16,10 +16,6 @@ SECTION 1
             - change the text to "Hello D3"
 
 2.  - How do you append & remove elements to the DOM
-    - task write:
-        - append <p> to <body>
-        - change <p> text value : "New paragraph added"
-        - remove <p>
 
 3.  Binding Data
     - Read: A little bit about Binding data
