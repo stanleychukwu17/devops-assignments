@@ -19,8 +19,7 @@ SECTION 1
 
 3.  Binding Data
     - Read: A little bit about Binding data
-    - task write:
-        - using data = [10,20,30,40,50]
+    - task write: data = [10,20,30,40,50]
         - select all <p> and bind the data to them
         - modify each text of the <p> to display it's "data value", e.g: "Value is [data]"
         - change the font-size of each <p> using the "data value"
