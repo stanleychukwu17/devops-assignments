@@ -20,3 +20,47 @@
         
         .remove():
             d3.select("p").remove()
+
+3.  Binding Data
+    - Read: A little bit about Binding data
+        D3 makes it easy to bind data to elements and create dynamic charts. you bind the data to DOM
+        elements using the .data() method. it links the data to the elements in the DOM
+
+    - task write: data = [10,20,30,40,50]
+        d3.select("body").selectAll("p")
+            .data(data)
+            .text(d => `Value is ${d}`)
+            .style("font-size", d => `${d}px`)
+
+4.  From Question 3
+    - what happens if there are only 2 <p> elements in the DOM
+        If there are only 2 <p> elements in the DOM, D3 will only bind data to the existing 2 elements
+        so the 1st <p> will be 10, the second <p> will be 20. The remaining data points (30,40,50)
+        will be left unbound and effectively ignored in the DOM
+
+    - how do you fix the issue where there the data values are more than the elements in the DOM
+        you can fix the issue by using the .enter() method to create new <p> elements
+        for data values that do not have any <p> elements to bound to
+
+    - Task write: write the solution of the above using question 3 "task write"
+        d3.select("body").selectAll("p")
+            .data(data)
+            .enter()
+            .append("p")
+            .text(d => `Value is ${d}`)
+            .style("font-size", d => `${d}px`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
