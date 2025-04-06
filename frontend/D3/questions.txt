@@ -4,3 +4,32 @@ full_revision: 6 Apr 2025
 =============
 SECTION 1
 =============
+
+1.  - Read: What is D3
+    - What are the 2 selection methods in D3
+    - task write:
+        - select a <body> & add a background-color of blue
+        - select all <div> and change the text-color to red
+        - select 1 <p> and:
+            - change color to pink
+            - add a attribute of class with value "active"
+            - change the text to "Hello D3"
+
+2.  - How do you append & remove elements to the DOM
+    - task write:
+        - append <p> to <body>
+        - change <p> text value : "New paragraph added"
+        - remove <p>
+
+3.  Binding Data
+    - Read: A little bit about Binding data
+    - task write:
+        - using data = [10,20,30,40,50]
+        - select all <p> and bind the data to them
+        - modify each text of the <p> to display it's "data value", e.g: "Value is [data]"
+        - change the font-size of each <p> using the "data value"
+
+4.  From Question 3
+    - what happens if there are only 2 <p> elements in the DOM
+    - how do you fix the issue where there the data values are more than the elements in the DOM
+    - Task write: write the solution of the above using question 3 "task write"
