@@ -54,5 +54,5 @@ SECTION 1
 8. Scale functions
     - Read: a little bit about scale functions
     - give an example of a .scaleLinear() function using input:[0,100] and output:[0,500]
-    - Read: see an example where it was used & re-write the example
+    - Read: see an example where it was used & rewrite
 

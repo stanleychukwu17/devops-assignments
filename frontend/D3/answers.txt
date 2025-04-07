@@ -114,6 +114,22 @@
         .attr("fill", "pink")
 
 
+8. Scale functions
+    - Read: a little bit about scale functions
+        scale in D3 allows you you to map data values to visual values (like pixel positions or colors).
+        common scales include linear scales. 
+
+    - give an example of a .scaleLinear() function using input:[0,100] and output:[0,500]
+        const scale = d3.scaleLinear()
+                        .domain([0,100]) // input range (i.e your data range)
+                        .range([0,500]) // output range (i.e your visual range)
+
+    - Read: see an example where it was used & rewrite
+        d3.select("svg").append("rect")
+            .attr("x", scale(50)) // mapping data value 50 to a pixel position. output will be = 250
+            .attr("width", 50)
+            .attr("height", 50)
+            .attr("fill", "orange")
 
 
 
