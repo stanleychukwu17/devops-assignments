@@ -50,7 +50,53 @@
             .text(d => `Value is ${d}`)
             .style("font-size", d => `${d}px`)
 
+5.  .append() vs .enter()
+    - What is the difference btw .enter() and .append()
+        .enter():
+            it is used to create new DOM elements based on the data that is bound to a selection.
+            When you bind data to a selection using .data, D3 creates a enter method for any data points
+            that do not correspond to an existing DOM element. So you can use .enter() to create DOM
+            elements for those new data points
 
+        .append():
+            also used to add new elements to the DOM, but .append by itself does not deal with data Binding
+            (i.e it doesn't automatically create elements for unmatched data). it simply appends an element
+            to the selected element
+
+    - .enter task write: data: [1,2,3,4]
+        const circles = d3.select("svg").selectAll("circle").data(data)
+        circles.enter()
+                .append("circle")
+                .attr("cx", (d,i) => (i * 50 + 25)) // uses the index for x position on each circle
+                .attr("cy", 50)
+                .attr("r", 20)
+
+    - .append task:
+        const svg = d3.select("svg")
+        svg.append("circle")
+            .attr("cx",50)
+            .attr("cy", 50)
+            .attr("r", 20)
+            .attr("fill", "blue")
+
+6.  - Explain the enter, update & exit pattern in D3
+        D3 uses a concept called the "enter-update-exit" pattern for working with dynamic data, it ensures that
+        new elements are added, existing elements are updated and unnecessary elements are removed
+
+    - Read: see example and rewrite
+        const data = [10,20,30,40,50]
+        const p = d3.select("body").selectAll("p").data(data)
+
+        // uses .enter() to initiate the creating of new elements for unbounded data
+        p.enter()
+          .append("p")
+          .text(d => `New value: ${d}`)
+
+        // say you call some api and receive new data, you can update the elements
+        p.text(d => `Updated value: ${d}`) // updates existing elements
+
+        // remove extra elements
+        p.exit().remove()
 
 
 
