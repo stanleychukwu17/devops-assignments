@@ -99,7 +99,19 @@
         p.exit().remove()
 
 
-
+7.  SVG and D3
+    const data = [30, 70, 110, 150]
+    const svg = d3.select("body").append("svg")
+                    .attr("width", 400)
+                    .attr("height", 400)
+    
+    svg.selectAll("circle").data(data)
+        .enter()
+        .append("circle")
+        .attr("cx", (d,i) => (i * 90 + 30)) // set the x position of the circle based on the index of each data
+        .attr("cy", 50)
+        .attr("r", d => d)
+        .attr("fill", "pink")
 
 
 
