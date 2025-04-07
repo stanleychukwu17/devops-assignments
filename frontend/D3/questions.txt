@@ -29,7 +29,8 @@ SECTION 1
     - how do you fix the issue where there the data values are more than the elements in the DOM
     - Task write: write the solution of the above using question 3 "task write"
 
-5.  - What is the difference btw .enter() and .append()
+5.  .append() vs .enter()
+    - What is the difference btw .enter() and .append()
     - .enter task write: data: [1,2,3,4]
         - select all circles in svg element and bind the data
         - for eah of this data, use the .enter() method to create new circles for unbounded data
@@ -38,8 +39,8 @@ SECTION 1
     - .append task:
         see the example and re-write on your own
 
-6.  Explain the enter, update & exit pattern in D3
-    - Read: see example
+6.  - Explain the enter, update & exit pattern in D3
+    - Read: see example and rewrite
 
 7.  SVG and D3
     - task write: data: [30, 70, 110, 150]
