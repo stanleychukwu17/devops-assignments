@@ -56,3 +56,4 @@ SECTION 1
     - give an example of a .scaleLinear() function using input:[0,100] and output:[0,500]
     - Read: see an example where it was used & rewrite
 
+9. Scale functions and Axes
