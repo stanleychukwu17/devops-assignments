@@ -169,6 +169,23 @@
                     d3.axisBottom(xScale)
                 );
 
+10. Transitions & Animations
+    d3.selectAll("circle")
+        .attr("cx", "0")
+        .attr("r", "0")
+        .attr("fill", "yellow")
+        .transition()
+        .duration(1000)
+        .delay((data, index) => index * 100 ) // 100ms
+        .attr("cx", 300) // x-axis position of the circle
+        .attr("r", 50) // radius of the circle
+        .attr("fill", "blue") // color of the circle
+
+    - Read: some explanations
+        - .transition(): Creates an animation.
+        - .duration(): Specifies the transition duration.
+        - .attr() / .style(): Modify the attributes and styles during the transition.
+
 
 
 

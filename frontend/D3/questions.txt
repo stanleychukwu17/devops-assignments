@@ -64,7 +64,11 @@ SECTION 1
     - select all circles and add a transition to it, with duration of 1000ms
     - add a delay 100ms for the animation loop
     - animate the cx to 300
+    - animate the r to 50
     - animate the fill color from yellow to blue
+    -
+    - Read: some explanations
+
 
 
 # Resources for Learning D3
