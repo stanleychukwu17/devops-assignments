@@ -98,7 +98,6 @@
         // remove extra elements
         p.exit().remove()
 
-
 7.  SVG and D3
     const data = [30, 70, 110, 150]
     const svg = d3.select("body").append("svg")
@@ -112,7 +111,6 @@
         .attr("cy", 50)
         .attr("r", d => d)
         .attr("fill", "pink")
-
 
 8. Scale functions
     - Read: a little bit about scale functions
@@ -131,9 +129,45 @@
             .attr("height", 50)
             .attr("fill", "orange")
 
+9. Scale functions and Axes
+    - talk about scaleLinear and scaleBand
+        scaleLinear:
+            is used for **continuous data** — when you have numeric data that spans a continuous range
+            (like measurements, counts, or any value that could take any number within a given range)
+
+        scaleBand:
+            the scale function is used for categorical data, where you have a finite set of distinct
+            categories or groups (e.g., names of items, countries, months, etc.)
+            scaleBand scales the band in the .domain() to match the value in .range() & each "band"
+            represents a category (or a group).
 
 
+    - give examples of scaleLinear and scaleBand
+        scaleLinear:
+            const xScale = d3.scaleLinear()
+                .domain([0, 100])  // Input range
+                .range([0, 500]);  // Output range
 
+            console.log(xScale(50)); // Outputs: 250
+
+            const xAxis = d3.axisBottom(xScale);
+            d3.select("svg")
+                .append("g")
+                .attr("transform", "translate(50,250)")
+                .call(xAxis);
+
+        scaleBand:
+            const xScale = d3.scaleBand()
+                .domain(["A","B","C","D","E"])
+                .range([0, 1000])
+
+            console.log(scale("B")); // Outputs: 250
+            d3.select("svg")
+                .append("g")
+                .attr("transform", "translate(0,500)")
+                .call(
+                    d3.axisBottom(xScale)
+                );
 
 
 
