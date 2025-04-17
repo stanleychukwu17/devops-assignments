@@ -69,6 +69,15 @@ SECTION 1
     -
     - Read: some explanations
 
+11. Handling Events
+    - select one circle and add:
+    - mouseenter event, change color to blue
+    - mouseleave event, change color to green
+
+
+
+
+
 
 
 # Resources for Learning D3
