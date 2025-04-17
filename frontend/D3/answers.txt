@@ -186,6 +186,13 @@
         - .duration(): Specifies the transition duration.
         - .attr() / .style(): Modify the attributes and styles during the transition.
 
-
+11. Handling Events
+    d3.select("circle")
+        .on("mouseenter", function() {
+            d3.select(this).style("fill", "blue");
+        })
+        .on("mouseleave", function() {
+            d3.select(this).style("fill", "green");
+        });
 
 
