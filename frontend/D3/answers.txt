@@ -95,7 +95,8 @@
         // say you call some api and receive new data, you can update the elements
         p.text(d => `Updated value: ${d}`) // updates existing elements
 
-        // remove extra elements
+        // remove extra elements, that were not updated
+        // e.g: new data received from server is [15, 35, 20]
         p.exit().remove()
 
 7.  SVG and D3
@@ -139,7 +140,7 @@
             the scale function is used for categorical data, where you have a finite set of distinct
             categories or groups (e.g., names of items, countries, months, etc.)
             scaleBand scales the band in the .domain() to match the value in .range() & each "band"
-            represents a category (or a group).
+            represents a category (or a group)
 
 
     - give examples of scaleLinear and scaleBand
