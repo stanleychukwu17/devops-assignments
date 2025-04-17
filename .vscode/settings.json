@@ -18,6 +18,8 @@
         "Kubwa",
         "LOCKID",
         "minmax",
+        "mouseenter",
+        "mouseleave",
         "nodeapp",
         "NOPASSWD",
         "pipefail",
