@@ -37,7 +37,7 @@ SECTION 1
         - let the attribute of "cx" for each circle be: (d,i) => i * 50 + 25 (explain this)
         - let attribute cy:50, r:20 
     - .append task:
-        see the example and re-write on your own
+        see the example and explain
 
 6.  - Explain the enter, update & exit pattern in D3
     - Read: see example and rewrite
