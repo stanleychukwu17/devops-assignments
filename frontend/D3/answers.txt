@@ -52,6 +52,16 @@
             .text(d => `Value is ${d}`)
             .style("font-size", d => `${d}px`)
 
+    - .join() replaces the .enter().append() & .exit().remove(), see how it us used:
+        enter().append() is the classic way, works for (D3 v4 and earlier)
+        .join() is a newer method in D3
+        .join() automatically handles "enter", "update", and "exit" for you:
+        e.g:
+            g.selectAll("rect")
+              .data(data)
+              .join("rect") // 👈 magic happens here
+              .attr(...);
+
 5.  .append() vs .enter()
     - What is the difference btw .enter() and .append()
         .enter():
@@ -167,6 +177,7 @@
             console.log(xScale("B")); // Outputs: 250
             console.log(xScale("C")); // Outputs: 500
 
+            // use the xScale to create xAxis
             d3.select("svg")
                 .append("g")
                 .attr("transform", "translate(0,500)")

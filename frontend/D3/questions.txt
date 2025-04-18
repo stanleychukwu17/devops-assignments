@@ -28,6 +28,7 @@ SECTION 1
     - what happens if there are only 2 <p> elements in the DOM
     - how do you fix the issue where there the data values are more than the elements in the DOM
     - Task write: write the solution of the above using question 3 "task write"
+    - .join() replaces the .enter().append() & .exit().remove(), see how it us used:
 
 5.  .append() vs .enter()
     - What is the difference btw .enter() and .append()
