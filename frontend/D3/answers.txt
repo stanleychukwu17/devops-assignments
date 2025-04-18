@@ -163,7 +163,9 @@
                 .domain(["A","B","C","D","E"])
                 .range([0, 1000])
 
-            console.log(scale("B")); // Outputs: 250
+            console.log(xScale("A")); // Outputs: 0
+            console.log(xScale("B")); // Outputs: 250
+
             d3.select("svg")
                 .append("g")
                 .attr("transform", "translate(0,500)")
