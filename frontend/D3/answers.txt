@@ -39,8 +39,10 @@
         will be left unbound and effectively ignored in the DOM
 
     - how do you fix the issue where there the data values are more than the elements in the DOM
-        you can fix the issue by using the .enter() method to create new <p> elements
-        for data values that do not have any <p> elements to bound to
+        you can fix the issue by using the .enter() and .append() methods to create new <p> elements.
+        when you use this method, as D3 is looping through the data and attaching it to each respective
+        element, if it gets to a data where the DOM element does not exist, it will use .enter & .append
+        to create and attach a new DOM element for the data.
 
     - Task write: write the solution of the above using question 3 "task write"
         d3.select("body").selectAll("p")
