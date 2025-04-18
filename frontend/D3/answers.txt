@@ -62,12 +62,12 @@
               .join("rect") // 👈 magic happens here
               .attr(...);
 
-5.  .append() vs .enter()
-    - What is the difference btw .enter() and .append()
-        .enter():
+5.  .append() vs .join()
+    - What is the difference btw .join() and .append()
+        .join():
             it is used to create new DOM elements based on the data that is bound to a selection.
             When you bind data to a selection using .data, D3 creates a enter method for any data points
-            that do not correspond to an existing DOM element. So you can use .enter() to create DOM
+            that do not correspond to an existing DOM element. So you can use .join() to create DOM
             elements for those new data points
 
         .append():
@@ -75,10 +75,9 @@
             (i.e it doesn't automatically create elements for unmatched data). it simply appends an element
             to the selected element
 
-    - .enter task write: data: [1,2,3,4]
+    - .join task write: data: [1,2,3,4]
         const circles = d3.select("svg").selectAll("circle").data(data)
-        circles.enter()
-                .append("circle")
+        circles.join("circle")
                 .attr("cx", (d,i) => (i * 50 + 25)) // uses the index for x position on each circle
                 .attr("cy", 50)
                 .attr("r", 20)
@@ -94,6 +93,8 @@
 6.  - Explain the enter, update & exit pattern in D3
         D3 uses a concept called the "enter-update-exit" pattern for working with dynamic data, it ensures that
         new elements are added, existing elements are updated and unnecessary elements are removed
+        -
+        But this pattern have been replaced with the .join() method
 
     - Read: see example and rewrite
         const data = [10,20,30,40,50]
