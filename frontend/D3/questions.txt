@@ -1,5 +1,5 @@
-full_revision: 6 Apr 2025
-full_revision: 6 Apr 2025
+full_revision: 18 Apr 2025
+full_revision: 18 Apr 2025
 
 =============
 SECTION 1
@@ -9,7 +9,7 @@ SECTION 1
     - What are the 2 selection methods in D3
     - task write:
         - select a <body> & add a background-color of blue
-        - select all <div> and change the text-color to red
+        - select all <div> and change the color to red
         - select 1 <p> and:
             - change color to pink
             - add a attribute of class with value "active"
