@@ -173,8 +173,31 @@
                     d3.axisBottom(xScale)
                 );
 
-    - i asked chatGPT a question, see the question and answer
+9.1 I asked chatGPT a question, see the question and answer
+    -
+    - d3.select("svg").append("g")
+        .attr("transform", "translate(50,250)") // move the group element <g>
+        .call(
+            d3.axisBottom(xScale)
+        );
 
+    - i asked, can i still do:
+        d3.select(svg).append(g).attr(x, 50).attr(y, 250)?
+        -
+        i wanted to know if i could replace "transform" with "x & y" in moving the group
+
+    Answer:
+        Yes, you can use d3.select(svg).append("g").attr("x", 50).attr("y", 250) as an alternative to
+        the transform method, but there’s a key distinction to keep in mind.
+        -
+        - Using transform: .attr("transform", "translate(50, 250)")
+          This moves the entire group (<g>) element by 50 units along the x-axis and 250 units along the y-axis.
+          It applies a transformation, so everything inside that group will be shifted by those amounts.
+        -
+        - Using x and y attributes:
+          The x and y attributes don't work in the same way on a <g> element. These attributes are generally
+          used for positioning elements like <rect>, <circle>, or <text>, but not for <g>. So, if you
+          try to set x and y attributes on a <g>, you’ll likely not see any effect
 
 
 10. Transitions & Animations
