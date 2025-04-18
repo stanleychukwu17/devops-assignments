@@ -59,7 +59,8 @@ SECTION 1
 9. Scale functions and Axes
     - talk about scaleLinear and scaleBand
     - give examples of scaleLinear and scaleBand
-    - i asked chatGPT a question, see the question and answer
+
+9.1 i asked chatGPT a question, see the question and answer
 
 
 10. Transitions & Animations
