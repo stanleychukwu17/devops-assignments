@@ -41,7 +41,6 @@ SECTION 1
         see the example and explain
 
 6.  - Explain the enter, update & exit pattern in D3
-    - Read: see example and rewrite
 
 7.  SVG and D3
     - task write: data: [30, 70, 110, 150]
