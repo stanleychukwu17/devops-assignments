@@ -208,7 +208,7 @@
     - Read: some explanations
         - .transition(): Creates an animation.
         - .duration(): Specifies the transition duration.
-        - .attr() / .style(): Modify the attributes and styles during the transition.
+        - .attr() / .style(): All .attr & .style after .transition will be animated over the duration specified
 
 11. Handling Events
     d3.select("circle")
