@@ -213,18 +213,20 @@
 11. Handling Events
     d3.select("circle")
         .on("mouseenter", function(event, d) {
-            d3.select(this).attr("fill", "blue");
-            d3.select("p.display_text").style("color", "blue");
-
-            // Example: log the event and data
             console.log("Mouse entered:", event, d);
+
+            d3.select(this)
+              .transition()
+              .duration(300)
+              .attr("fill", "blue");
         })
         .on("mouseleave", function(event, d) {
-            d3.select(this).attr("fill", "green");
-            d3.select("p.display_text").style("color", "green");
-
-            // Example: log the event and data
             console.log("Mouse left:", event, d);
+
+            d3.select(this)
+              .transition()
+              .duration(300)
+              .attr("fill", "green");
         });
 
 
