@@ -165,6 +165,7 @@
 
             console.log(xScale("A")); // Outputs: 0
             console.log(xScale("B")); // Outputs: 250
+            console.log(xScale("C")); // Outputs: 500
 
             d3.select("svg")
                 .append("g")
@@ -198,7 +199,6 @@
           The x and y attributes don't work in the same way on a <g> element. These attributes are generally
           used for positioning elements like <rect>, <circle>, or <text>, but not for <g>. So, if you
           try to set x and y attributes on a <g>, you’ll likely not see any effect
-
 
 10. Transitions & Animations
     d3.selectAll("circle")

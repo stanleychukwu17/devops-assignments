@@ -62,7 +62,6 @@ SECTION 1
 
 9.1 i asked chatGPT a question, see the question and answer
 
-
 10. Transitions & Animations
     - select all circles and add a transition to it, with duration of 1000ms
     - add a delay 100ms for the animation loop
