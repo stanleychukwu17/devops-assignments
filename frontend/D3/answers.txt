@@ -173,6 +173,10 @@
                     d3.axisBottom(xScale)
                 );
 
+    - i asked chatGPT a question, see the question and answer
+
+
+
 10. Transitions & Animations
     d3.selectAll("circle")
         .attr("cx", "0")
