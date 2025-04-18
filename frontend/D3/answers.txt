@@ -103,8 +103,7 @@
                     .attr("height", 400)
     
     svg.selectAll("circle").data(data)
-        .enter()
-        .append("circle")
+        .join("circle")
         .attr("cx", (d,i) => (i * 90 + 30)) // set the x position of the circle based on the index of each data
         .attr("cy", 50)
         .attr("r", d => d)
@@ -174,9 +173,7 @@
     -
     - d3.select("svg").append("g")
         .attr("transform", "translate(50,250)") // move the group element <g>
-        .call(
-            d3.axisBottom(xScale)
-        );
+        .call( d3.axisBottom(xScale) );
 
     - i asked, can i still do:
         d3.select(svg).append(g).attr(x, 50).attr(y, 250)?
