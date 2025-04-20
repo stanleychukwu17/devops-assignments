@@ -12,9 +12,6 @@ invested in framer-motion
 
 
 
-
-
-
 1. Talk about useMotionValue
     - List some of the useMotionValue methods (7 methods)
 
