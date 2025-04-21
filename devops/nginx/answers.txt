@@ -44,6 +44,9 @@
         Sausage - session layer 5
         Pizza - presentation layer 6
         Away - application layer 7
+        ---
+        upper layer = [application layer, presentation layer, session layer]
+        lower layer = [transport layer, session layer, presentation layer, application layer]
 
 2. Talk about Layer 4 and Layer 7 proxying in Nginx
     Layer 4 (Transport Layer of the OSI model (TCP/UDP)):
