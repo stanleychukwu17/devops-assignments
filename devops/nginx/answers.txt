@@ -84,7 +84,7 @@
                 listen 80;
 
                 location / {
-                    proxy_pass http://backend;
+                    proxy_pass http://backend/;
                 }
             }
         }
