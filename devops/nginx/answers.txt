@@ -31,8 +31,10 @@
             NGINX,  which then sends the response back to the client.
 
         Downstream: refers to the end-users or the clients that send requests to your NGINX server.
-            When a client sends an HTTP request to NGINX, NGINX processes it, and then sends the response
-            back to the downstream client.
+            When a client sends an HTTP request to NGINX, NGINX sends it to the upstream and then the
+            upstream processes it and responds to Nginx, Nginx in-turns transports the response back to
+            the user, the process of this information coming from the "upstream servers" to the
+            "user" is known as "downstream" in Nginx
 
     - Tell us about the 7 layers in OSI Model
         Please - Physical layer 1
