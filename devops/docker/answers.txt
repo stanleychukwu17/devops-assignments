@@ -192,31 +192,31 @@ Group 2.
             postgres:latest
     }
     3. {
-        docker run -it --name my_node_app -v ${PWD}:/usr/src/app -w /usr/src/app node:14 bash
-        or
-        docker run -it --name my_node_app -v .:/usr/src/app -w /usr/src/app node:14 bash
-          explanation:
-          -w /usr/src/app: This sets the working directory inside the container to /usr/src/app. When you run bash
-            (or any other command), it will execute from this directory. If you don't specify -w, the working directory 
-            will be the container's default (typically / or a specific directory depending on the image).
+        docker run -it
+          --name my_node_app
+          -v ${PWD}:/usr/src/app    or    -v .:/usr/src/app
+          -w /usr/src/app
+          node:20.16.0 bash
 
-        ---
-        to prevent docker from bind mounting the node_modules folder, we do:
+        explanation:
+          -w /usr/src/app: This sets the working directory inside the container to /usr/src/app. When you run bash
+            (or any other command), it will execute from this directory. If you don't specify -w,
+            the working directory  will be the container's default (typically / or a specific directory
+            depending on the image)
+
+        to prevent docker from bind mounting the "node_modules" folder, we do:
         docker run -it \
             --name my_node_app \
             -v ${PWD}:/usr/src/app \
             -v /usr/src/app/node_modules \
             -w /usr/src/app \
-            node:14 \
-            bash
+            node:20.16.0 bash
 
         -v /usr/src/app/node_modules: Mounts an anonymous volume on-top of /usr/src/app/node_modules, effectively
             hiding the node_modules directory from your host. This setup ensures that the container uses its own
             node_modules directory, preventing any changes from affecting your local node_modules.
             With this, Docker creates an anonymous volume for node_modules, and once the container
             is removed, Docker cleans up the volume automatically.
-
-        -w /usr/src/app: Sets the working directory inside the container to /usr/src/app.
     }
 
 
