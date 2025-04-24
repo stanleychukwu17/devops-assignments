@@ -1,8 +1,6 @@
 full_revision: 24th Apr 2025
 full_revision: 24th Apr 2025
 
-failed questions: 1, 4
-
 1.  - Config default user.name & user.email
     - how do you see the global user.name and user.email
     - how do you add a local user.name & user.email
@@ -29,8 +27,7 @@ failed questions: 1, 4
     2. new files created that are not saved & un-committed
 )
 
-7. if your current location is the bug/fix-cart branch, how do you merge this branch
-    into the main branch
+7. if your current branch is the "bug/fix-cart" branch, how do you merge this branch into the main branch
 
 8. how do you save an uncompleted, uncommitted work before switching to another branch
 
