@@ -19,7 +19,7 @@
     {modify your commit message and save}
     git push
 
-4.  - we use branches to enhance our workflow on git, so allow proper development of new-features or
+4.  - we use branches to enhance our workflow on git, to allow proper development of new-features or
         bug fixes. This inturn saves us from too many unnecessary conflicts at-least until we are
         ready to merge with another branch
     - git branch <new-branch-name>
