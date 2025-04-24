@@ -82,6 +82,8 @@
 
 13. git remote is where we store our local project, we connect our local project to a remote repo using git..
     the remote repo can be github, gitlab e.t.c
+    -
+    git remote: shows you the remote name
     git remote -v: shows you the remote name and the remote url
 
 14. git remote add <name_you_want_to_call_the_remote> <url_where_you_want_to_assign_to_the_remote>
