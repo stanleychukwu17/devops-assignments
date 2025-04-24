@@ -33,7 +33,7 @@ full_revision: 24th Apr 2025
 
 9. Tell us all about the commands of stash and explain them (6 commands)
 
-10. how do you take just a file back to an old commit (i.e losing and the changes made after the commit)
+10. how do you take just a file back to an old commit (i.e losing the changes made after the commit)
 
 11. what is the difference btw git reset and git revert
 
