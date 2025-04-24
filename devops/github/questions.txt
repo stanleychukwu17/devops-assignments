@@ -44,7 +44,7 @@ full_revision: 24th Apr 2025
 14. - how do you add a remote url to push your github code to (also the syntax)
     - how do you delete a remote url
 
-15. write down the full syntax for git push
+15. - write down the full syntax for git push
     - how do you push a feature branch
     - how do you set a branch to be an upstream branch to always push to
 

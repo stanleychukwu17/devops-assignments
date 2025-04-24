@@ -94,13 +94,15 @@
         git remote remove <name_of_remote>;
         git remote remove origin
 
-15. - git push <remote_name> <name_of_branch>;
-        e.g - git push origin main
-    - git push <remote_name> <name_of_feature_branch>
-        e.g - git push origin feature/add-buy-it-now-button
-    # how do you set a branch to be an upstream branch to always push to
-        - git push -u <remote_name> <name_of_branch>
-        or
+15. - write down the full syntax for git push
+        git push <remote_name> <name_of_branch>
+        git push origin main
+
+    - how do you push a feature branch
+        git push origin feature/add-buy-it-now-button
+
+    - how do you set a branch to be an upstream branch to always push to
+        git push -u <remote_name> <name_of_branch>
         git push --set-upstream <remote_name> <name_of_branch>
 
 16. git switch <name_of_branch_on_the_remote_repo>
