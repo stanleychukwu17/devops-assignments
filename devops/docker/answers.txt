@@ -222,10 +222,10 @@ Group 2.
 
 Group 3
 1.  docker cp <container_id>:/path/to/file/in/container /path/on/your/local/system
-    e.g docker cp container_id:/app/file.txt /home/user/local-folder/
+    e.g docker cp container_id:/usr/src/app/file.txt /home/user/local-folder/
     ---
     docker cp /path/on/your/local/system <container_id>:/path/in/container
-    e.g docker cp /home/user/local-folder/file.txt <container_id>:/app/
+    e.g docker cp /home/user/local-folder/file.txt <container_id>:/usr/src/app/
 
 2.  docker system prune -f
     docker container prune -f
