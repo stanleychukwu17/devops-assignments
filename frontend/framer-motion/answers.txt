@@ -23,7 +23,8 @@
 4. useMotionTemplate creates a new motion value from a string template containing other motion values
     e.g-1:
     const x = useMotionValue(0)
-    const transform = useMotionTemplate`transform(${x}px)`
+    const y = useMotionValue(0)
+    const transform = useMotionTemplate`translate( ${x} ${y} )`
     -
     return <motion.div style={{transform}} />
 
