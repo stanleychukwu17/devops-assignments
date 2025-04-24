@@ -7,6 +7,11 @@ Group 1
     docker build -t python_image:v1.0 ./
     docker build -t python_image -f Dockerfile.nodejs.prod
 
+2.1 Say you have a docker file name Dockerfile.node.dev, how do you build an image from this
+    Dockerfile?
+    -
+    docker build -f Dockerfile.node.dev -t node_image:v1 ./
+
 3.  docker images
     docker image ls
 
