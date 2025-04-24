@@ -41,7 +41,7 @@ full_revision: 24th Apr 2025
 
 13. what is git remote and *git remote -v*
 
-14. how do you add a remote url to push your github code to (also the syntax)
+14. - how do you add a remote url to push your github code to (also the syntax)
     - how do you delete a remote url
 
 15. write down the full syntax for git push
