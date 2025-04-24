@@ -1,7 +1,14 @@
-1.  git config --global user.name "Chukwu Stanley Edward"
-    git config --global user.email "jondoe4life@yahoo.com"
-    To see name or email, you do
-    git config user.name or git config user.email
+1.  - Config default user.name & user.email
+        git config --global user.name "Chukwu Stanley Edward"
+        git config --global user.email "jondoe4life@yahoo.com"
+
+    - how do you see the global user.name and user.email
+        To see name or email, you do
+        git config user.name or git config user.email
+
+    - how do you add a local user.name & user.email
+        git config --local user.name "Chukwu Stanley Edward"
+        git config --local user.email "jondoe4life@yahoo.com"
 
 2.  git log {See all commit messages}
     git log --oneline {See all commit messages in one-line}
