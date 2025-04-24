@@ -54,7 +54,8 @@ Group 2
 
 8. use the docker attach command to attach to a running container
 
-9. remove a docker container - use the 2 methods available
+9.  - remove a docker container - use the 2 methods available
+    - remove all containers
     - how do you start and stop an already existing container
 
 10. docker volume
