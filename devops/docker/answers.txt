@@ -71,25 +71,19 @@ Group 1
 10. USER app
 
 11. COPY --chown=app:app . ./
-    RUN chown -R app:app /app
+    RUN chown -R app:app /usr/src/app
     {
         Use COPY --chown=app:app . ./ when you are copying files and want to set their ownership in one step.
-        Use RUN chown -R app:app /app when you need to change the ownership of files or directories that are
-        already present in the image from previous layers or build steps.
+        Use RUN chown -R app:app /usr/src/app when you need to change the ownership of files or directories
+        that are already present in the image from previous layers or build steps.
 
         chown = stands for "change owner"
         -R = This flag stands for "recursive"
         app:app = This specifies the new owner and group for the files.
                 The first app refers to the username, and the second app refers to the group name.
-        /app = The command will change the ownership of /app and all files and subdirectories within /app
+        /usr/src/app = The command will change the ownership of all files and subdirectories within this path
 
-        chatGPT say better to do: "RUN chown -R app:app /app" than: "RUN chown -R app:app ./"
-        but if your WORKDIR = /usr/src/app, then do:
-        -
-        WORKDIR /usr/src/app
-        COPY . /usr/src/app
-        RUN chown -R app:app /usr/src/app
-        USER app
+        chatGPT say better to do: "COPY --chown=app:app . ./" than: "RUN chown -R app:app ./"
     }
 
 
