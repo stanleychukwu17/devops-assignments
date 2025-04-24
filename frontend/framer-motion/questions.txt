@@ -10,6 +10,8 @@ motion is quite different from framer-motion, so i'll be sticking with framer-mo
 the foreseeable future, no time now to start learning motion after all the time i already
 invested in framer-motion
 
+*failed questions
+1, 4, 5, 6, 7
 
 
 1. Talk about useMotionValue

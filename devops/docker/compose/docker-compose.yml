@@ -5,20 +5,30 @@ services:
     build:
       context: ./frontend # folder to find the docker-file
       dockerfile: Dockerfile.dev.react
+    container_name: frontend_react_app
+    hostname: frontend_react_app
+    networks:
+      - nginx_network
     ports:
       - "3000:3000"
     volumes:
       - ./frontend/app:/usr/src/app/:ro
     environment:
-      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_USEPOLLING=true # needed for hot reloading
     depends_on:
       - backend
+      - db
+      - pg_admin
     # command: ["npm", "run", "dev"] - no need for this command, it's already in the Dockerfile
 
   backend:
     build:
       context: ./backend # folder to find the docker-file
       dockerfile: Dockerfile.dev.golang
+    container_name: backend_go_app
+    hostname: backend_go_app
+    networks:
+      - nginx_network
     ports:
       - "4000:4000"
     volumes:
@@ -27,10 +37,15 @@ services:
       - DB_PASS=1234
     depends_on:
       - db
+      - pg_admin
     # command: ["go", "run", "main.go"] - no need for this command, it's already in the Dockerfile  
 
   db:
     image: postgres:14-alpine
+    container_name: postgres
+    hostname: postgres
+    networks:
+      - nginx_network
     ports:
       - "5432:5432"
     environment:
@@ -42,6 +57,10 @@ services:
   
   pg_admin:
     image: dpage/pgadmin4
+    container_name: pg_admin
+    hostname: pg_admin
+    networks:
+      - nginx_network
     ports:
       - "5050:80"
     environment:
@@ -49,6 +68,11 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=password
     depends_on:
       - db
+    restart: unless-stopped
+
+networks:
+  nginx_network:
+    driver: bridge
 
 volumes:
   db-data:
