@@ -1,4 +1,11 @@
-1. Config default user.name & user.email
+full_revision: 24th Apr 2025
+full_revision: 24th Apr 2025
+
+failed questions: 1
+
+1.  - Config default user.name & user.email
+    - how do you see the global user.name and user.email
+    - how do you add a local user.name & user.email
 
 2.  - how to see all commit messages in a repo
     - then how to see it in one-line
