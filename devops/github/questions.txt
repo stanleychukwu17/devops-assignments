@@ -52,7 +52,9 @@ full_revision: 24th Apr 2025
 
 17. Diff btw *git fetch* and *git pull*
 
-18. Write a command to fetch from origin/main and another command to fetch from origin/new-page/promo
+18. - write a command to fetch from origin/main branch
+    - write another command to fetch from origin/new-page/promo
 
-19. write a command to pull from origin/main branch and another command to pull from origin/new-page/promo
+19. - write a command to pull from origin/main branch
+    - write another command to pull from origin/new-page/promo
     - what happens when you do a git pull, especially if they are conflicts
