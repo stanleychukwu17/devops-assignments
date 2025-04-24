@@ -13,6 +13,9 @@ RUN npm ci --production
 # Copy the application source code
 COPY . .
 
+# Build TypeScript files (you should have a tsconfig.json to specify build config)
+RUN npm run build 
+
 # Stage 2: Production Stage
 FROM node:20.16.0-alpine3.20 As production
 
@@ -24,6 +27,13 @@ RUN addgroup -S app && adduser -S -G app app
 
 # Copy only the necessary files from the build stage
 COPY --from=build /usr/src/app /usr/src/app
+
+# Copy only compiled JS files (e.g., dist/ folder)
+COPY --from=build /usr/src/app/dist /usr/src/app/dist 
+# Copy node_modules from build stage
+COPY --from=build /usr/src/app/node_modules /usr/src/app/node_modules
+# Copy package.json files
+COPY --from=build /usr/src/app/package*.json /usr/src/app/
 
 # Ensure correct file permissions
 RUN chown -R app:app /usr/src/app

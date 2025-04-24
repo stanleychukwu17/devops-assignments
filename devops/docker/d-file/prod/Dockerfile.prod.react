@@ -11,10 +11,13 @@ COPY package*.json ./
 RUN npm ci --production
 
 # Copy application source code
-COPY --chown=app:app . ./
+COPY . ./
 
 # Build the application (if applicable, e.g., for Next.js or similar frameworks)
 RUN npm run build
+
+# Clean up npm cache and unnecessary files after the build is complete
+RUN npm cache clean --force && rm -rf /usr/src/app/*.log
 
 ###
 # Stage 2: Production stage
