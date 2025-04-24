@@ -108,48 +108,20 @@
 16. git switch <name_of_branch_on_the_remote_repo>
 
 17. 
-    # git fetch
-        Purpose:
-            Downloads new changes from the remote repository but does not integrate them into your current
-            working branch.
-        Operation:
-            - Fetches all branches and tags from the remote repository that have been updated since your last
-                fetch.
-            - Updates the remote tracking branches (i.e origin/<repo> e.g: origin/main) in your local
-                repository to reflect the state of the remote repository.
-            - Does not modify your working directory or current branch.
-        Usage:
-            Typically followed by examining fetched changes (git diff origin/main) or merging them
-                manually (git merge origin/main).
+    - git fetch
+        Downloads new changes from the remote repository but does not integrate them into your current
+        working branch. it Updates the remote tracking branches (i.e origin/<repo> e.g: origin/main) in your local
+        repository to reflect the state of the remote repository.
+        After running "git fetch", you'll typically do: "git diff origin/main" and then maybe merge the changes:
+        "git merge origin/main"
 
     # git pull
-        Purpose:
-            Downloads new changes from the remote repository and integrates them into your current branch.
-        Operation:
-            - Performs a git fetch to bring down the latest changes from the remote repository.
-            - Then, it automatically merges the retrieved changes into your current branch.
-        Usage:
-            - Convenient for updating your working branch with the latest changes from the remote repository
-                in one step.
-            - caution: It automatically performs a merge, which could lead to conflicts if your local branch
-                has diverged from the remote branch.
-
-    # Key Differences
-        Integration:
-            git fetch only downloads new data from a remote repository while git pull downloads new data
-            and directly integrates it into your current working branch.
-        Safety:
-            git fetch is safer because it doesn't change your local branches automatically; you can review
-            changes before integrating them. git pull automatically integrates fetched changes, potentially
-            leading to unexpected merges or conflicts.
-        Usage Context:
-            git fetch is useful when you want to see what has changed in the remote repository without immediately
-            integrating it into your work. git pull is useful when you know you want to update your current
-            working branch with changes from the remote repository and you are prepared to handle any
-            potential conflicts.
-    # Summary
-        In summary, git fetch is more cautious and gives you more control over when and how to integrate changes,
-        while git pull is more convenient for straightforward updates of your current branch with remote changes.
+        Downloads new changes from the remote repository and integrates them into your current branch.
+        it Performs a git fetch to bring down the latest changes from the remote repository. Then, it
+        automatically merges the retrieved changes into your current branch.
+        -
+        use with caution: It automatically performs a merge, which could lead to conflicts if your
+        local branch has diverged from the remote branch.
 
 18. git fetch origin main
     git fetch origin new-page/promo
