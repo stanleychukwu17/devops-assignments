@@ -89,8 +89,6 @@
   1. how does a wired network communicate
     In a **wired network**, devices communicate with each other by using physical cables
     (usually **Ethernet cables**) and network devices like **switches** or **routers** to manage traffic.
-    The process is much more straightforward than in a wireless network because it relies on physical
-    connections to transmit data.
 
     In a wired network:
     - Devices are physically connected using Ethernet cables.
@@ -99,15 +97,12 @@
     - Devices communicate by sending data packets that are routed based on MAC and IP addresses.
 
   2. how does a wireless network communicate
-    In a **wireless network**, devices communicate without the need for physical cables, using
-    **radio waves** to send and receive data.
+    In a **wireless network**, devices communicate using **radio waves** to send and receive data.
 
-    The **Access Point (AP)** acts as a bridge between the wireless devices and the wired network,
-    enabling devices to connect without physical cables.
+    The **Access Point (AP)** acts as a bridge between the wireless devices.
 
     Devices send data packets over the air, using wireless standards like Wi-Fi, and communicate through
-    protocols like TCP/IP to ensure data reaches its destination. Security measures like encryption and
-    authentication protect the integrity of the communication.
+    protocols like TCP/IP to ensure data reaches its destination.
 
     ### Example of Communication:
     1. **Laptop Wants to Browse the Web**:
