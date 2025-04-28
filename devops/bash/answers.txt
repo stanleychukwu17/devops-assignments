@@ -185,8 +185,8 @@
             $ ldi && echo $? # non_existent_command
             -> 127
 
-            $ calc=$((1/10)) && echo $?
-            -> 1/0: division by 0 (error token is "0")
+            $ calc=$((1/0)) && echo $?
+            -> 1/0: division by 0 (error token is "1")
                1
 
             $ calc=$((1/10)) && echo $?
