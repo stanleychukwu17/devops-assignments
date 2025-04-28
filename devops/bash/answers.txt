@@ -100,12 +100,13 @@
         tail -5 < pop.txt # show the last 5 lines in the pop.txt document
         head -50 < pop.txt # show the first 50 lines in the pop.txt document
 
-    - how do you redirect standard output & standard error into a file
+    - how do you redirect standard output into a file
         standard output:
-        echo "${total_1} ${total_2}" 1>> pop.txt
-        echo "we gon make it by GOD'S grace " > stanley.txt {you don't need to add the 1}
+        echo "we gon make it by GOD'S grace " > stanley.txt
+        echo "22 in 2026" 1>> stanley.txt {but you don't need to add the 1} 
         cat pop.txt variables.sh > combined.txt
-        -
+
+    - how do you redirect standard error into a file
         standard error:
         unknown_command 2> error.log
 
