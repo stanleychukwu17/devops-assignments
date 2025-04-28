@@ -14,7 +14,7 @@ full_revision: 21st Mar 2025
     - slice "rules your" from the $welcome variable
     - delete the variable.sh file
 
-3.  if greeting="Hello world"
+3.  if greeting="Hello world"ls
     - Difference btw | echo ${greeting} | and | echo $(greeting) |
     - Difference btw | echo $greeting | and | echo ${greeting} |
 
@@ -32,7 +32,8 @@ full_revision: 21st Mar 2025
 6.  standard input, output & error
     - what are the values for each of the above
     - how do you redirect standard input from a text file
-    - how do you redirect standard output & standard error into a file
+    - how do you redirect standard output into a file
+    - how do you redirect standard error into a file
     - how do you redirect standard output & error into null
 
 7.  Arguments in bash
