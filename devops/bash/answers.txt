@@ -261,7 +261,7 @@
 
     - Read: difference btw [-f file] and [-e file]
         [-f file]: This check if a file exist and if it is a regular file
-            (i.e it is not a directory or a symbolic link)
+            (i.e it must not be a directory or a symbolic link)
         
         [-e file]: this checks to make sure that a file exist regardless of it's type,
             it might be of type: directory, regular file, symbolic link e.t.c
