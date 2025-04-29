@@ -457,7 +457,24 @@
         exits the script if any command in a pipeline fails
 
 18. xargs in bash
+    - echo "${ec2_public_ip}":
+      This command prints the value of the variable ec2_public_ip to standard output.
 
+    - | (pipe):
+      The output of the echo command is sent as input to the next command (xargs).
+    
+    - xargs -I {} curl http://{}
+      xargs: A command that builds and executes command lines from input.
+      -I {}: Specifies {} as the replacement string. For each line of input, xargs replaces {} in
+            the command with that input.
+      curl http://{}: This is the command template. {} will be replaced by the input (e.g., an IP or domain).
+
+    e.g:
+    Multiple IPs:
+        echo -e "1.2.3.4\n5.6.7.8" | xargs -I {} curl http://{}
+        output:
+        curl http://1.2.3.4
+        curl http://5.6.7.8
 
 
 

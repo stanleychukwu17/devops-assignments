@@ -111,4 +111,4 @@ full_revision: 29 Apr 2025
 
 18. xargs in bash
     - explain this command:
-    echo "${ec2_public_ip}" | xargs -I {} curl 
+    echo "${ec2_public_ip}" | xargs -I {} curl http://{}
