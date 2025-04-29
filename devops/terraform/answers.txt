@@ -296,6 +296,11 @@
     }
 
 25. chmod 400 ~/.ssh/test_rsa
+    this will set the file to something like:
+    -r--r--r-- 1 .............. test_rsa
+    -r--r--r-- 1 .............. test_rsa.pub
+
+    if the file is not read_only for all the users, aws will not use it, it will cause an error
 
 26. 
     resource "aws_key_pair" "test_ssh_key" {
