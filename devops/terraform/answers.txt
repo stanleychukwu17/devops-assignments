@@ -800,28 +800,28 @@ SECTION 2 BEGINS
         }
 
     - Read: see the explanation for the different ports used
-        1. Port 22:  
+        1. Port 22:
             - Service: SSH (Secure Shell)
             - Purpose: Used for secure remote login and command execution on a server.
 
-        2. Port 80:  
+        2. Port 80:
             - Service: HTTP (Hypertext Transfer Protocol)
             - Purpose: Used for unencrypted web traffic, typically for websites that don't require security.
 
-        3. Port 25:  
+        3. Port 25:
             - Service: SMTP (Simple Mail Transfer Protocol)
             - Purpose: For sending email btw mail servers. It’s often blocked by ISPs for outgoing mail to prevent spam.
 
-        4. Port 443:  
+        4. Port 443:
             - Service: HTTPS (Hypertext Transfer Protocol Secure)
             - Purpose: For secure web traffic, which encrypts the communication btw a web server & a client (browser).
 
-        5. Port 993:  
+        5. Port 993:
             - Service: IMAPS (Internet Message Access Protocol Secure)
             - Purpose: Used for secure access to email inboxes. It is an encrypted version of IMAP,
                        typically for retrieving email from a mail server.
 
-        6. Port 8080:  
+        6. Port 8080:
             - Service: HTTP Alternate (often used for proxies or web applications)
             - Purpose: A common port for web servers, often used as an alternative to port 80.
                        It may be used for proxy servers or other applications that require HTTP access.
