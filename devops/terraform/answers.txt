@@ -292,7 +292,7 @@
         -b 2048: Sets the number of bits in the key, here 2048 bits.
         -C 'test key': Adds a comment to the key.
         -N '': used for encryption. Sets an empty passphrase for the key (not recommended for all use cases due to security reasons).
-        -f ~/.ssh/test_rsa: Specifies the filename of the key file. and where to save the key
+        -f ~/.ssh/test_rsa: Specifies the filename of the key file and where to save the key
     }
 
 25. chmod 400 ~/.ssh/test_rsa
