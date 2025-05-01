@@ -1023,7 +1023,7 @@ SECTION 2 BEGINS
 14. 
     - 4.1, 4.2, 4.3, 4.4
       All answers in: ./answers/14-modules-ec2/
-    
+
     - what do you do after including a new module to your root module
       Anytime you import a new child module into a root module, you have to re-initialize your project:
       : "terraform init"
