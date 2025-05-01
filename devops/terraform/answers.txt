@@ -1374,6 +1374,7 @@ SECTION 3 BEGINS
         }
 
 7. Testing terraform code
+    see ./answers/7-terraform-test-code/
     - using bash: look at the code and write by yourself
     - using golang: look at the code and write by yourself
 
