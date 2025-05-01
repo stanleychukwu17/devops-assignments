@@ -1,5 +1,11 @@
-full_revision: 17th Feb 2025
-full_revision: 12th Mar 2025
+full_revision: 12 Mar 2025
+full_revision: 1 May 2025
+
+failed:
+3,10, 23,27
+36: write down the task to do in the entry-script.sh
+38: add curl to use in verification
+
 
 1. What is the core terraform workflow
 
