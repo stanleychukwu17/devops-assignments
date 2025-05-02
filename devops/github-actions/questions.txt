@@ -27,8 +27,15 @@ full_revision: 2nd May 2025
 
 4.
     1. Read: Some of the principles of Continuous Integration
-    2. work on the workflow for a nodejs project, let it include testing
-        2 jobs, 1. test, 2. lint
+    2. work on the workflow for a nodejs project
+        - this is the folder structure of the project
+          - .github/
+          - web/
+          - backend/
+          - infra/
+        - let the workflow have 2 jobs: 1. test, 2. lint
+        - let the workflow events only be triggered when the changes happen in the web/** path 
+        - let the steps only in the ./web directory
     3. work on the workflow for a golang project, let it include testing and test coverage report
         guide {
             - set the environment variables globally
