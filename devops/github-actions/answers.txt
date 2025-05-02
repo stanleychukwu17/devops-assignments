@@ -158,7 +158,6 @@
     - Read: example of exposing outputs from reusable workflows
 
     - Read: best practice for reusable workflows
-
         1. Modularization: Break down workflows into smaller, reusable components. For example, you could
             create separate reusable workflows for tasks like linting, testing, or deploying.
 
