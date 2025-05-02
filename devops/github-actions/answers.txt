@@ -87,10 +87,10 @@
 
     3. what is the | jq '.'? used in the github_action file
 
-        The command | jq '.' in the context of the line you provided is used for processing and formatting JSON data.
+        The command | jq '.' is used for processing and formatting JSON data.
 
         1. | (Pipe Operator) : This takes the output of the command before it (in this case,
-            the echo "${{ toJSON(github.event) }}") and sends it as input to the command after the pipe (jq '.').
+            the echo "${{ toJSON(github.event) }}") and sends it as input to the command after the pipe (jq '.')
 
         2. jq '.' :
             - jq is a lightweight and flexible command-line JSON processor. It allows you to extract, manipulate,
@@ -112,7 +112,7 @@
         2. Introduce Automated test(unit testing, Integration testing)
         3. Linting (maybe)
         4. Security and Scanning (maybe)
-    
+
     2. work on the workflow for a nodejs project, let it include testing
         see ./task/4.2-nodejs-test-workflow.yml
 
