@@ -49,13 +49,15 @@ full_revision: 2nd May 2025
             1. log-the-env-variables
             2. test-golang-service
                 {steps}
-                - install docker
+                - install docker and log the docker version to be sure installation was successful
                 - checkout the branch
                 - setup your golang
                 - install go dependencies
                 - run go test with coverage output
                 - check the coverage out
                 - delete the coverage.txt file generated during the workflow
+            3. look at this file and re-write the bash code inside of it
+                - 
     4. how do you set rules in your repo so that push_request & pull_request will only
         pass when certain jobs are successful {You can go to your github account and demonstrate it}
 
