@@ -1,5 +1,5 @@
 full_revision: 18th Feb 2025
-full_revision: 18th Feb 2025
+full_revision: 2nd May 2025
 
 1. what are the events that can trigger a workflow run {try to name 4-10 events}
     see more details on the answers in ./tasks/1-event-triggers.txt
