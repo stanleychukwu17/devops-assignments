@@ -4,8 +4,8 @@
 
     - sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
       install some packages that is needed for the installation of docker,
-      notice that we installed "curl", incase it is not installed it will be installed, but if it is
-      already installed, the "curl" package will be updated to the latest version 
+      notice that we installed "curl", incase it is not already present, but if present: the "curl"
+      package will be updated to the latest version 
 
     - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
       - https://download.docker.com/linux/ubuntu/gpg - this links carry keys that are important for docker
@@ -24,7 +24,7 @@
             In other words, -s hides the progress bar, but -S ensures any error is printed out.
 
         -L: Follow redirects. This tells curl to follow any HTTP redirects
-            (e.g., if the URL provided redirects to another location).
+            (i.e if the URL provided redirects to another location).
 
     - echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
       - echos the content in the "" into the "/etc/apt/sources.list.d/docker.list" file
@@ -35,9 +35,7 @@
       - now install docker, docker cli and containerd.io
 
     - sudo systemctl start docker
-      - The command starts Docker service immediately, If you run this command without enable,
-        Docker will be running, but it will not start automatically the next time your system reboots.
-        This command is useful if you want to use Docker right away.
+      - The command starts Docker service immediately
 
     - sudo systemctl enable docker
       - This command configures Docker to start automatically every time your system reboots.
