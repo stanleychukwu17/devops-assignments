@@ -1,12 +1,6 @@
 full_revision: 12 Mar 2025
 full_revision: 1 May 2025
 
-failed:
-3,10, 23,27
-36: write down the task to do in the entry-script.sh
-38: add curl to use in verification
-
-
 1. What is the core terraform workflow
 
 2. Talk about terraform providers
@@ -118,6 +112,13 @@ failed:
 36. running commands on your ec2 instance
     - which is the best for running commands on your ec2 instance (cloud-init or ansible)
     - create an entry-script.sh configuration that can be used in your ec2 instance
+        - update the apt-get package manager
+        - install httpd, start httpd and enable it
+        - echo the "hostname -f" into the httpd index file @ /var/www/html/index.html
+        - install docker, start docker, enable docker
+        - add "ec2-user" to the "docker" group
+        - run an nginx docker image attaching port 8080:80
+    - simple question: why do you start docker and enable docker.. what is the start and enable command
     -
     - not_needed: Read: read about some of the highlights of using cloud-init
     - not_needed: create a cloud-init configuration in yaml called "web-app-template.yaml"
