@@ -8,11 +8,13 @@ full_revision: 2nd May 2025
     1. what are they?
     2. how do you create a workflow and where do you save it?
     3. create a workflow called hello_world
-        - let it have 2 jobs
-        - the 1st job should have a step that says "hello world"
-        - the 2nd job should have a step that says "bye world"
-        - include {workflow_dispatch} so that we can click a button to re-run the job anytime
-            we want to
+        - *Do the task on your vsCode, not on paper
+        - let the events be push & pull_request on your "main" & "dev" branches
+        - include {workflow_dispatch} so that we can click a button to always re-run the job
+        - let it have 2 jobs, 1. hello_world, 2. bye_world
+        - let them both have steps that displays a message taken from "workflow_dispatch" inputs
+        - for each of the jobs, you need to checkout the repo(i.e switch to the current branch) 
+
     4. Explain what the "actions/checkout@v4" is doing in your workflow
     5. Read: read about some additional's you can do on your github-actions page on github 
 
