@@ -81,7 +81,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-            go-version: 1.22.2
+            go-version: ${{ github.event.inputs.go_version || '1.22.2' }}
 
       - name: Install dependencies
         run: go mod download
