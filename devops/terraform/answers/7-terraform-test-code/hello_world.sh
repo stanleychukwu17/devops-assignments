@@ -11,6 +11,11 @@ if  [ "${correct_directory}" != "7-terraform-test-code" ]; then
     exit 1
 fi
 
+# we create a function that will be used to destroy already created resources
+function destroy_resources() {
+    terraform destroy -auto-approve
+}
+
 # create the resources using terraform
 terraform init
 terraform apply -auto-approve
@@ -26,6 +31,9 @@ http_status=$(echo "${ec2_public_ip}" | xargs -I {} curl -s -o /dev/null -w "%{h
 
 # checks if the request was successful
 if [ "${http_status}" != "200" ]; then
+    destroy_resources
+    sleep 15
+
     echo "The request was not successful - returned status code: ${http_status}"
     exit 1
 fi
@@ -34,4 +42,4 @@ fi
 echo "everything is fine with i.p ${ec2_public_ip}"
 
 # destroy the resources
-terraform destroy -auto-approve
+destroy_resources
