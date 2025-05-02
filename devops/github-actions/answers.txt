@@ -114,10 +114,10 @@
         4. Security and Scanning (maybe)
 
     2. work on the workflow for a nodejs project, let it include testing
-        see ./task/4.2-nodejs-test-workflow.yml
+        see ./task/4/4.2-nodejs-test-workflow.yml
 
     3. work on the workflow for a golang project, let it include testing and test coverage report
-        see ./task/4.3-golang-test-workflow.yml
+        see ./task/4/4.3-golang-test-workflow.yml
 
     4. here is how to set up rules to allow merging based on successful workflows:
         1. Go to your repository on github
