@@ -16,6 +16,7 @@ jobs:
       - name: dump github event context
         run: |
           echo "${{ toJSON(github.event) }}" | jq '.'
+          # or: echo "${{ toJSON(github.event) }}" | jq -r '.'  - this will print out the raw output
 
       - name: comment with action
         uses: peter-evans/create-or-update-comment@v3
