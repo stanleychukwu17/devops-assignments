@@ -456,6 +456,16 @@
     - create an entry-script.sh configuration that can be used in your ec2 instance
         ./answers/36.2-entry-script.sh
 
+    - simple question: why do you start docker and enable docker.. what is the start and enable command
+        - when you do "systemctl start docker", the docker service is started on your linux machine,
+          so now you can run your docker commands.. otherwise if the docker service is not started, you will not
+          be able to run docker commands.
+        
+        - "systemctl enable docker", now say that your docker service is running and for some reasons your server
+          crashes and restarts, after the restart, your docker will be disabled because it is waiting for you to
+          run a command of "systemctl docker start", but if you do "systemctl docker enable" during boot-time
+          configuration, every time your server restarts, docker service will also start immediately
+
     - not_needed: Read: read about some of the highlights of using cloud-init
         ~ it is the standard for customizing cloud instances on spin up
         ~ it runs on most linux distributions and cloud providers
