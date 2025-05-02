@@ -1,35 +1,51 @@
-name: hello & bye world workflow
-
+name: hello world workflow
 on:
   push:
     branches:
       - main
       - dev
+  
   pull_request:
     branches:
-      - main:
-      - dev:
+      - main
+      - dev
+
   workflow_dispatch:
+    inputs:
+      hello_input:
+        description: Saying hello
+        required: true
+        default: Hi there, saying hello world
+      bye_world:
+        description: Saying bye world
+        required: true
+        default: Sad to see you go, Bye world
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   hello_world_job:
-    name: A job to say hello
+    name: hello world
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout the repo branch
         uses: actions/checkout@v4
-
-      - name: Hello
-        run: echo "Hello World"
+        
+      - name: hello greetings
+        run: |
+          echo "${{github.event.inputs.hello_input}}"
         shell: bash
-
+  
   bye_world_job:
-    name: A job to say bye
+    name: bye world
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout the repo branch
         uses: actions/checkout@v4
       
-      - name: Bye
-        run: echo "Bye World"
+      - name: bye message
+        run: |
+          echo "${{github.event.inputs.bye_world}}"
         shell: bash
