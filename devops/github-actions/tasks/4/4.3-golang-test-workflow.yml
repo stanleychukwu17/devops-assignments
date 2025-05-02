@@ -1,7 +1,6 @@
 name: Testing golang backend
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -12,6 +11,12 @@ on:
         - main
       paths:
         - 'server-golang/**'
+  workflow_dispatch:
+    inputs:
+      go_version:
+        description: your desired go version
+        default: 1.22.2
+        required: false
 env:
   ENV: continuous_integration
   PORT: 4000
@@ -58,8 +63,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+
           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-          echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    
+          # Print the Docker APT repository line for your Ubuntu version & Use sudo to write the output to the Docker sources list file (requires root)
+          echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
+          | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
           sudo apt-get install -y docker-ce docker-ce-cli containerd.io
           sudo systemctl start docker
