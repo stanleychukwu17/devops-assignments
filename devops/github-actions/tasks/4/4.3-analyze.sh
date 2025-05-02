@@ -13,6 +13,10 @@ fi
 
 # grab the total line, should look like: "total:        88.4%"
 total=$(cat "$file" | grep "total:")
+total2=$(grep -i total $file)
+
+# echo "total-1 ${total}"
+# echo "total-2 ${total2}"
 
 # grab the coverage percentage
 # awk - $NF gets the last column/field
