@@ -16,7 +16,10 @@ full_revision: 2nd May 2025
         - for each of the jobs, you need to checkout the repo(i.e switch to the current branch) 
 
     4. Explain what the "actions/checkout@v4" is doing in your workflow
-    5. Read: read about some additional's you can do on your github-actions page on github 
+    5. Read: read about some additional's you can do on your github-actions page on github
+
+2.1 needs: Controlling Job Order
+    - what can you say needs when it comes to controlling how jobs are ordered
 
 3. You next task is to use github-actions to write a comment on newly created issue in
     our github-repo. Let the workflow have 2 jobs:
