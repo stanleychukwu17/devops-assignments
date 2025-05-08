@@ -191,7 +191,7 @@
             $ calc=$((1/10)) && echo $?
             -> 0
 
-            $ func () {} && echo $?
+            $ function () {} && echo $?
             -> 2
 
 9.  if-else conditions in bash
