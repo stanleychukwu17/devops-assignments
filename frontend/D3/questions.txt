@@ -33,7 +33,7 @@ SECTION 1
 5.  .append() vs .join()
     - What is the difference btw .join() and .append()
     - .join task write: data: [1,2,3,4]
-        - select all circles in svg element and bind the data
+        - select all circles in an svg element and bind the data
         - for eah of this data, use the .join() method to create new circles for unbounded data
         - let the attribute of "cx" for each circle be: (d,i) => i * 50 + 25 (explain this)
         - let attribute cy:50, r:20 
