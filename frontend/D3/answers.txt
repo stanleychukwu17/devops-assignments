@@ -43,6 +43,8 @@
         when you use this method, as D3 is looping through the data and attaching it to each respective
         element, if it gets to a data where the DOM element does not exist, it will use .enter & .append
         to create and attach a new DOM element for the data.
+        -
+        The newer way of doing .enter().append(<element>) is .join(<element>)
 
     - Task write: write the solution of the above using question 3 "task write"
         d3.select("body").selectAll("p")
