@@ -1,8 +1,7 @@
 1.  - Read: why use bash for shell scripting
         shell scripting is the process of writing and executing scripts in a shell (command-line interpreter)
         to automate tasks. it involves using scripting languages such as bash to write series of commands and
-        instructions that can be executed sequentially. shell scripts are commonly used in unix-like operating
-        systems for system administration and automation purposes
+        instructions that can be executed sequentially
 
         here are some of the task commonly performed using shell scripts
         1. File and directory management
