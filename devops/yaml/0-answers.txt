@@ -45,6 +45,11 @@ Answers
             - name1: huey
               name2: dewey
               name3: louie
+
+            - name1: stanley
+              name2: edward
+              name3: chukwu
+
         other things:
             - hotel 1: Marriott
               hotel 2: Hilton
