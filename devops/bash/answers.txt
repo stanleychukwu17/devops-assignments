@@ -466,7 +466,7 @@
       xargs: A command that builds and executes command lines from input.
       -I {}: Specifies {} as the replacement string. For each line of input, xargs replaces {} in
             the command with that input.
-      curl http://{}: This is the command template. {} will be replaced by the input (e.g., an IP or domain).
+      curl http://{}: This is the command template. {} will be replaced by the input
 
     e.g:
     Multiple IPs:
