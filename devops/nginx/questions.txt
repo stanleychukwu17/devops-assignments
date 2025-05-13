@@ -35,11 +35,12 @@ SECTION 1
         see the logs of nginx_0 container, check to find the 404 error when a request
         was made for the favicon.ico
     }
-    - write everything in a docker-compose file for everything
+    - write everything in a docker-compose file
     - start the docker-compose and be sure it works
     - delete {
         Dockerfile
         docker-compose.yml
+        nginx.conf
         Docker images
         Docker containers
         Docker network
@@ -58,24 +59,9 @@ SECTION 1
     - attach to the container
     - login into the container, go to etc, see users(in passwd), see groups (in group)
 
-5.  Solving image one problem
-    - Look at the image of the 2 nginx load balancers we will be creating
-    - Create a node.js application to listen on port 9000, should console.log(the hostname)
-    - create the Dockerfile for the node.js application
-    - create the docker image of the nodejs application
-    - use the image to spin up 3 new containers and do not expose the ports, use names
-      nodeapp1, nodeapp2, nodeapp3
-
-6.  Now write you Nginx configuration:
-    1. create upstream server for the nodeapp services
-    2. create a server that listens on port 8080 and forward all request to the node upstream
 
 7. Read or explain the code in your nginx config
 
-8. Networking and spinning up all the services
-    - now create a Docker Network called backend_network_for_nginx
-    - connects all the containers to the Network i.e (nginx_test_server, nodeapp1, nodeapp2, nodeapp3)
-    - start all the nodeapp & the nginx container. see if everything is working as expected
 
 9.  Solving image two problem
     - create another nginx container called ng2 using the same config, port 81:8080
