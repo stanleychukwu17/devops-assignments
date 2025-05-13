@@ -50,16 +50,6 @@ SECTION 1
     }
 }
 
-5. Nginx Docker container
-    - start a nginx container in detached mode using
-        image: nginx:1.27.4
-        container_name: nginx
-        port 80:80
-    - inspect the container
-    - see the logs from the container
-    - attach to the container
-    - login into the container, go to etc, see users(in passwd), see groups (in group)
-
 6. Read or explain the code in your nginx config
 
 7 Read about exposing ports of your docker container
