@@ -1,7 +1,10 @@
 1.  Nginx
     - what is Nginx
-      Nginx can be used as a web server that serves content or it can be used as reverse proxy which helps
-      when load balancing. it can also help with Backend re-routing & caching
+      - Nginx is a useful tool that can be used as a web server that serves static/dynamic content or
+        can be used as reverse proxy which helps to load balance request among your upstream/backend servers.
+      - It can also help with Backend re-routing, caching of files, url-rewriting e.t.c 
+      - Nginx can inspect a request(both the headers and the body content), it can modify the headers,
+        add more cookies e.t.c Nginx is a powerful tool
 
     - talk about what a normal architecture look like vs what an Nginx architecture would look like
       - normal architecture:
@@ -28,7 +31,7 @@
             When NGINX acts as a reverse proxy or load balancer, it forwards client requests to upstream
             servers (like application servers or backend services).
             The upstream servers handle the actual processing of the request and then return the result to
-            NGINX,  which then sends the response back to the client.
+            NGINX, which then sends the response back to the client.
 
         Downstream: refers to the end-users or the clients that send requests to your NGINX server.
             When a client sends an HTTP request to NGINX, NGINX sends it to the upstream and then the
