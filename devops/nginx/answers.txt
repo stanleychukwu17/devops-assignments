@@ -209,7 +209,7 @@
 
       - keepalive_timeout
         sets a timeout for which the connection with nginx server should stay connected to the client
-        without any communications, if this timeout is reach, the client is disconnected
+        without any communications, if this timeout is reached, the client is disconnected
         default: 75s
 
       - lingering_timeout
@@ -296,7 +296,7 @@
             server_name localhost;
 
             location /admin {
-                proxy_pass http://all_apps/;
+                proxy_pass http://all_apps/admin/;
             }
         }
       }
