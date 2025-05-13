@@ -50,7 +50,7 @@ SECTION 1
     }
 }
 
-5.  Nginx Docker container
+5. Nginx Docker container
     - start a nginx container in detached mode using
         image: nginx:1.27.4
         container_name: nginx
@@ -75,24 +75,24 @@ SECTION 1
     - create the 3rd server to listen on port 80 with server_name static.stanley.com and
       let it serve files from the root
 
-12. Understanding nginx timeouts for efficient configuration
+9. Understanding nginx timeouts for efficient configuration
     - Read: see list of frontend & backend timeouts
     - Read: see explanation of frontend timeouts
     - Read: see explanation of backend timeouts
 
-13. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
+10. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
 
-14. Nginx as a layer 4 proxy, look at the example, explain it and re-write it
+11. Nginx as a layer 4 proxy, look at the example, explain it and re-write it
 
-15. Enable HTTPS on Nginx
+12. Enable HTTPS on Nginx
     - Read: how do you enable https on your nginx server
     - enable fast and secure TLS 1.3 on Nginx
     - enable http2 on Nginx
 
-15.1 if you have time, Read: the difference between HTTP/1 and HTTP/2
+13 if you have time, Read: the difference between HTTP/1 and HTTP/2
 
 ## Websockets with Nginx
-16. practice
+14. practice
     Follow the README.md to solve the problems for each of the projects:
     1. nginx and websockets | live mouse movement app
         https://github.com/stanleychukwu17/0-practice-to-become-better/tree/main/devops/nginx/2-nginx-websocket-mouse-app
@@ -102,7 +102,7 @@ SECTION 1
         https://github.com/stanleychukwu17/0-practice-to-become-better/tree/main/devops/nginx/3-nginx-websocket-chat-app
         D:\Sz - projects\0-practice\devops\nginx\3-nginx-websocket-chat-app
 
-17. - see what layer 4 proxying for nginx and websocket looks like
+15. - see what layer 4 proxying for nginx and websocket looks like
     - read some of the explanation
 
 =============

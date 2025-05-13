@@ -139,7 +139,7 @@
             }
         }
 
-4.  Nginx Docker container
+5. Nginx Docker container
     - start a nginx container in detached mode using image: nginx:1.26.3, container_name: nginx, port 80:80
         docker run -d
             -p 80:80
@@ -164,7 +164,7 @@
         cat passwd (adduser stanley)
         cat group (addgroup chukwu_family, usermod -aG chukwu_family stanley)
 
-7. Read or explain the code in your nginx config
+6. Read or explain the code in your nginx config
     http {}: inside the http block is where you configure everything about your nginx server
         when working with layer 7 proxying
 
@@ -190,14 +190,14 @@
         on each worker_processes and depending on how many worker_connections you set for each worker_processes
         to handle
 
-9.1 Read about exposing ports of your docker container
+7. Read about exposing ports of your docker container
     when working with docker and nginx, the only ports that should be exposed should be only the nginx port,
     all other containers port should not be exposed
 
-11. see answers in:
+8. see answers in:
     ./section1/11-nginx-conf/nginx.conf
 
-12. Understanding nginx timeouts for efficient configuration
+9. Understanding nginx timeouts for efficient configuration
     - Read: see list of frontend & backend timeouts
         - Frontend timeouts:
             client_header_timeout
@@ -273,7 +273,7 @@
             all through the 3 servers until 60s is reached
         }
 
-13. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
+10. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
       http {
         upstream all_apps {
             server app1_backend:2222;
@@ -333,7 +333,7 @@
         but no one is allowed to visit /admin on port 80, i.e (localhost/admin), but if they go to port 79453
         (localhost:79453/admin), they'll be proxied to the right upstream
 
-14. Nginx as a layer 4 proxy, look at the example, explain it and re-write it
+11. Nginx as a layer 4 proxy, look at the example, explain it and re-write it
     - code
       stream {
         upstream all_apps {
@@ -352,7 +352,7 @@
     - explanation
       with layer 4 proxying, you can't really do much, you're just passing the request to one of the servers
 
-15. Enable HTTPS on Nginx
+12. Enable HTTPS on Nginx
     - Read: how do you enable https on your nginx server
       if you want to enable https on nginx, you need a working dns name, now you follow the steps below
 
@@ -423,12 +423,12 @@
             ssl_protocols TLSv1.3;
         }
 
-15.1 if you have time, Read: the difference between HTTP/1 and HTTP/2
+13. if you have time, Read: the difference between HTTP/1 and HTTP/2
     see: ./section1/15-https/http2-http1.md
 
 
 ## Websockets with Nginx
-17. - see what layer 4 proxying for nginx and websocket looks like
+15. - see what layer 4 proxying for nginx and websocket looks like
     - read some of the explanation
 
 
