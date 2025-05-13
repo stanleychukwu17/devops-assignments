@@ -343,7 +343,7 @@
       2. configure listening to https in your server block
         server {
             listen 443 ssl;
-            server_name stanleychukwu.com
+            server_name stanleychukwu.com;
 
             ssl_certificate /etc/ssl/certs/your_certificate.crt;  # Path to your SSL certificate
             ssl_certificate_key /etc/ssl/private/your_private.key;  # Path to your private key
@@ -381,7 +381,6 @@
             listen 443 ssl;
 
             add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
-        
         }
       
     - enable fast and secure TLS 1.3 on Nginx
