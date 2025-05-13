@@ -18,6 +18,7 @@ SECTION 1
     practice-project: 
         local: D:\Sz - projects\0-practice\devops\nginx\1-simple-nginx-docker-nodeapp
         github: https://github.com/stanleychukwu17/0-practice-to-become-better/tree/main/devops/nginx/1-nodeapp-simple
+        template: https://github.com/stanleychukwu17/hussien-nasser-introduction-to-nginx-project-1
     -
     - check start the app to see that all is working properly
     - write the Dockerfile for the app
@@ -49,7 +50,7 @@ SECTION 1
     }
 }
 
-4.  Nginx Docker container
+5.  Nginx Docker container
     - start a nginx container in detached mode using
         image: nginx:1.27.4
         container_name: nginx
@@ -59,20 +60,11 @@ SECTION 1
     - attach to the container
     - login into the container, go to etc, see users(in passwd), see groups (in group)
 
+6. Read or explain the code in your nginx config
 
-7. Read or explain the code in your nginx config
+7 Read about exposing ports of your docker container
 
-
-9.  Solving image two problem
-    - create another nginx container called ng2 using the same config, port 81:8080
-    - stop the containers and connect it to the backend_network_for_nginx network
-    - start all the containers and test the different nginx on different ports
-
-9.1 Read about exposing ports of your docker container
-
-10. Now go and practice in real life from (question 5 to question 9)
-
-11. Another task: write another nginx.conf configuration
+8. Another task: write another nginx.conf configuration
     - write 2 upstreams (app1_backend, app2_backend)
     - let these upstreams group have 2 containers, let app1 listen on port 9000, and app2 on 8000
     - create 2 servers

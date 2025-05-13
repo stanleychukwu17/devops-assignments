@@ -190,50 +190,9 @@
         on each worker_processes and depending on how many worker_connections you set for each worker_processes
         to handle
 
-8. Now Networking and spinning up all the services
-    - now create a Docker Network called backend_network_for_nginx
-        docker network create backend_network_for_nginx
-
-    - connects all the containers to the Network i.e (nginx_test_server, nodeapp1, nodeapp2, nodeapp3)
-        docker stop nginx_test_server nodeapp1 nodeapp2 nodeapp3
-
-        docker network connect backend_network_for_nginx nginx_test_server
-        docker network connect backend_network_for_nginx nodeapp1
-        docker network connect backend_network_for_nginx nodeapp2
-        docker network connect backend_network_for_nginx nodeapp3
-
-    - start all the nodeapp & the nginx container. see if everything is working as expected
-        if the containers already exist, then start the container
-            docker start nodeapp1 nodeapp2 nodeapp3 nginx_test_server
-        
-        if they do not exits, you have to create them before adding them to your docker network
-
-9.  Solving image two problem
-    - create another nginx container called ng2 using the same config, port 81:8080
-        docker run
-            -d
-            --name ng2
-            -p 81:8080
-            -v ./nginx.conf:/etc/nginx/nginx.conf
-            nginx:1.26.3
-
-    - stop the container and connect it to the backend_network_for_nginx network
-        docker stop ng2 nginx_test_server nodeapp1 nodeapp2 nodeapp3
-        docker network connect backend_network_for_nginx ng2
-
-    - start all the containers and test the different nginx on different ports
-        docker start ng2 nginx_test_server nodeapp1 nodeapp2 nodeapp3
-
 9.1 Read about exposing ports of your docker container
     when working with docker and nginx, the only ports that should be exposed should be only the nginx port,
     all other containers port should not be exposed
-
-10. Now go and practice in real life from (question 5 to question 9)
-    find the project template on my system @:
-        D:\Sz - projects\28-devops\3-nginx\1-hussien-nasser-introduction-to-nginx\nginx-project-1
-
-    find the project template on github @:
-        https://github.com/stanleychukwu17/hussien-nasser-introduction-to-nginx-project-1
 
 11. see answers in:
     ./section1/11-nginx-conf/nginx.conf
