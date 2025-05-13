@@ -120,7 +120,7 @@
         - TLS Passthrough means that NGINX does not decrypt the incoming SSL/TLS traffic.
           Instead, it forwards the encrypted traffic directly to the backend server for decryption.
         - This is useful when you want to maintain end-to-end encryption between the client & the backend server
-          (e.g., for security reasons or when the backend server needs to handle the SSL certificates).
+          (e.g: for security reasons or when the backend server needs to handle the SSL certificates).
         - NGINX acts as a transparent proxy in this case, forwarding encrypted traffic without inspecting
           or modifying it.
         - TLS Passthrough operates at Layer 4 because the encrypted traffic is passed through without
