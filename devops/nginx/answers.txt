@@ -139,31 +139,6 @@
             }
         }
 
-5. Nginx Docker container
-    - start a nginx container in detached mode using image: nginx:1.26.3, container_name: nginx, port 80:80
-        docker run -d
-            -p 80:80
-            --name nginx
-            --hostname nginx
-            -v /fullPath/nginx.conf:/etc/nginx/nginx.conf
-            nginx:1.26.3
-
-    - inspect the container
-        docker inspect 4e :: where "4e" is the first 2 letters of the container ID
-
-    - see the logs from the container
-        docker logs 4e
-        docker logs -f 4e :: to follow the logs
-
-    - attach to the container
-        docker attach 4e
-
-    - login into the container, go to etc, see users(in passwd), see groups (in group)
-        docker exec -it -u root 4e bash
-        cd etc
-        cat passwd (adduser stanley)
-        cat group (addgroup chukwu_family, usermod -aG chukwu_family stanley)
-
 6. Read or explain the code in your nginx config
     http {}: inside the http block is where you configure everything about your nginx server
         when working with layer 7 proxying
@@ -192,7 +167,7 @@
 
 7. Read about exposing ports of your docker container
     when working with docker and nginx, the only ports that should be exposed should be only the nginx port,
-    all other containers port should not be exposed
+    all other containers port should not be exposed, they should be internal
 
 8. see answers in:
     ./section1/11-nginx-conf/nginx.conf
