@@ -10,9 +10,11 @@ full_revision: 2nd May 2025
 
 3. create a workflow called hello_world
     - *Do the task on your vsCode, not on paper
+
     - let the events be push & pull_request on your "main" & "dev" branches
-    - include {workflow_dispatch} so that we can click a button to always re-run the job
-    - take a message from the workflow_dispatch that we be displayed in both of the jobs below
+    - include workflow_dispatch: so that we can click a button to always re-run the job
+      - input: add an input "hello_input"
+      - input: add an input "bye_input"
 
     - job1:
         - name: "set up job"
@@ -21,36 +23,41 @@ full_revision: 2nd May 2025
             - access the value from one of the steps
         - step: checkout the branch you're working on
         - step: update the linux packages and install the "tree" package
-        - use "tree" command: display the folder structures using the "tree" package
+          - use "tree" command: display the folder structures using the "tree" package
         - step:
-        - id: should be "app_version"
-        - let this step echo an "app_version" into github outputs, so that i
+          - id: should be "set_version"
+          - let this step echo an "app_version" into github outputs, so that i
 
     - job2:
-        - name: "hello_world job"
+        - name: "saying hello world job"
         - settings:
-        - needs: the "set_up" job
-        - set defaults to run in bash
-        - set defaults working directory to be "web"
-        - add environment variable called "FIRST_NAME"
+          - needs: the "set_up" job
+          - add an id: hello_world_job
+          - set defaults to run in bash
+          - set defaults working directory to be "web"
+          - add environment variable called "FIRST_NAME"
         - step: checkout the branch you're working on
         - step: echo the "app_version" output from the "set_up" job
         - step: display the hello message from the input
-        - if the input is empty, use a default message
-        - echo "we made it"
+          - if the input is empty, use a default message: "Hello world, welcome back"
+          - echo "we made it"
 
     - job3:
         - name: "bye_world job"
         - settings:
-        - needs: the "set_up" & "hello_world" job
-        - set defaults to run in bash
-        - set defaults working directory to be "web"
-        - add environment variable called "LAST_NAME"
+          - needs: the "set_up" & "hello_world" job
+          - add an id: bye_world_job
+          - set defaults to run in bash
+          - set defaults working directory to be "web"
+          - add environment variable called "LAST_NAME"
         - step: checkout the branch you're working on
         - step: echo the "app_version" output from the "set_up" job
-        - step: display the hello message from the input
-        - if the input is empty, use a default message
-        - echo "we made it"
+        - step: display the bye message from the input
+          - if the input is empty, use a default message: "Bye, we are going to miss you"
+          - echo "we done with it"
+
+    - finally:
+      - make sure all jobs runs-on ubuntu latest
 
 4. Read: read about some additional's you can do on your github-actions page on github
 
