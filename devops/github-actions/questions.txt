@@ -7,51 +7,52 @@ full_revision: 2nd May 2025
 2. workflows
     1. what are they?
     2. how do you create a workflow and where do you save it?
-    3. create a workflow called hello_world
-        - *Do the task on your vsCode, not on paper
-        - let the events be push & pull_request on your "main" & "dev" branches
-        - include {workflow_dispatch} so that we can click a button to always re-run the job
-        - take a message from the workflow_dispatch that we be displayed in both of the jobs below
 
-        - job1:
-          - name: "set up job"
-          - settings:
-            - outputs: add an output called "app_version"
-              - access the value from one of the steps
-          - step: checkout the branch you're working on
-          - step: update the linux packages and install the "tree" package
-            - use "tree" command: display the folder structures using the "tree" package
-          - step:
-            - id: should be "app_version"
-            - let this step echo an "app_version" into github outputs, so that i
+3. create a workflow called hello_world
+    - *Do the task on your vsCode, not on paper
+    - let the events be push & pull_request on your "main" & "dev" branches
+    - include {workflow_dispatch} so that we can click a button to always re-run the job
+    - take a message from the workflow_dispatch that we be displayed in both of the jobs below
 
-        - job2:
-          - name: "hello_world job"
-          - settings:
-            - needs: the "set_up" job
-            - set defaults to run in bash
-            - set defaults working directory to be "web"
-            - add environment variable called "FIRST_NAME"
-          - step: checkout the branch you're working on
-          - step: echo the "app_version" output from the "set_up" job
-          - step: display the hello message from the input
-            - if the input is empty, use a default message
-            - echo "we made it"
+    - job1:
+        - name: "set up job"
+        - settings:
+        - outputs: add an output called "app_version"
+            - access the value from one of the steps
+        - step: checkout the branch you're working on
+        - step: update the linux packages and install the "tree" package
+        - use "tree" command: display the folder structures using the "tree" package
+        - step:
+        - id: should be "app_version"
+        - let this step echo an "app_version" into github outputs, so that i
 
-        - job3:
-          - name: "bye_world job"
-          - settings:
-            - needs: the "set_up" & "hello_world" job
-            - set defaults to run in bash
-            - set defaults working directory to be "web"
-            - add environment variable called "LAST_NAME"
-          - step: checkout the branch you're working on
-          - step: echo the "app_version" output from the "set_up" job
-          - step: display the hello message from the input
-            - if the input is empty, use a default message
-            - echo "we made it"
+    - job2:
+        - name: "hello_world job"
+        - settings:
+        - needs: the "set_up" job
+        - set defaults to run in bash
+        - set defaults working directory to be "web"
+        - add environment variable called "FIRST_NAME"
+        - step: checkout the branch you're working on
+        - step: echo the "app_version" output from the "set_up" job
+        - step: display the hello message from the input
+        - if the input is empty, use a default message
+        - echo "we made it"
 
-    4. Read: read about some additional's you can do on your github-actions page on github
+    - job3:
+        - name: "bye_world job"
+        - settings:
+        - needs: the "set_up" & "hello_world" job
+        - set defaults to run in bash
+        - set defaults working directory to be "web"
+        - add environment variable called "LAST_NAME"
+        - step: checkout the branch you're working on
+        - step: echo the "app_version" output from the "set_up" job
+        - step: display the hello message from the input
+        - if the input is empty, use a default message
+        - echo "we made it"
+
+4. Read: read about some additional's you can do on your github-actions page on github
 
 3. You next task is to use github-actions to write a comment on newly created issue in
     our github-repo. Let the workflow have 2 jobs:
@@ -104,9 +105,7 @@ full_revision: 2nd May 2025
 
 
 
-?. ids in github_actions
 
-?. depends on in github_actions
 
 ?5. reusable workflows
     - what are reusable workflows
