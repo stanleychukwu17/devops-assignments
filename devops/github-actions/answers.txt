@@ -53,13 +53,15 @@
         - inside the .github folder, create a folder called: "workflows"
         - inside the workflows folder, here you can create all your github-actions workflows .yaml files
 
+    3. the action is used to checkout/switch to the branch from where the event that triggered the
+        workflow was called from, so if the push_request or pull_request was called from the
+        "bug/fix-add-to-cart" branch, this action will switch to the correct branch, in this case it switches to
+        the "bug/fix-add-to-cart" branch and the sibling steps will run in this specific branch.
+        otherwise if you do not use the actions/checkout@v4, the workflow will run on the main branch
+
 3. see ./tasks/2-hello-world.yml
 
-4. the action is used to checkout/switch to the branch from where the event that triggered the
-    workflow was called from, so if the push_request or pull_request was called from the
-    "bug/fix-add-to-cart", this action will switch to the branch "bug/fix-add-to-cart" and
-    run your workflow in this specific branch.
-    otherwise if you do not use the checkout@v4, the workflow will run on the main branch
+
 
 4.1.
     - On your github actions page, at the top of the terminal where your workflow ran, you'll see
