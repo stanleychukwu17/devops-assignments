@@ -80,15 +80,7 @@
             added "workflow_dispatch" to our workflow, otherwise, if it was not present, you'd not
             see this button. the button helps us to run our workflows without always relying on events
 
-
 3. see ./tasks/2-hello-world.yml
-
-
-
-
-
-
-
 
 3.
     1 & 2: see ./task/3-comment-on-issues.yml
