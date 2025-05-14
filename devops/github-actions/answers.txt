@@ -59,30 +59,32 @@
         the "bug/fix-add-to-cart" branch and the sibling steps will run in this specific branch.
         otherwise if you do not use the actions/checkout@v4, the workflow will run on the main branch
 
+    4.
+        - On your github actions page, at the top of the terminal where your workflow ran, you'll see
+            a button [●●●] at the right corner, click on this button and you'll see a drop-down, this
+            drop-down contains the following actions:
+                view workflow file
+                view workflow runs
+                create status badge
+                delete all logs
+        - click on the settings button for the following options:
+            show timestamps
+            switch terminal to full-screen
+            download logs
+            view raw logs
+        - click on the [search input] to search for something in your log, let's say in your workflow,
+            somewhere you did: echo "stanley will be one of the greatest by GOD'S grace", you can use
+            the [search input] to verify that this output is available in your log, and then you can
+            also search for other expected outputs from your workflow
+        - click on your [Re-run job button] to re-run all your jobs, this button is here because we
+            added "workflow_dispatch" to our workflow, otherwise, if it was not present, you'd not
+            see this button. the button helps us to run our workflows without always relying on events
+
+
 3. see ./tasks/2-hello-world.yml
 
 
 
-4.1.
-    - On your github actions page, at the top of the terminal where your workflow ran, you'll see
-        a button [●●●] at the right corner, click on this button and you'll see a drop-down, this
-        drop-down contains the following actions:
-            view workflow file
-            view workflow runs
-            create status badge
-            delete all logs
-    - click on the settings button for the following options:
-        show timestamps
-        switch terminal to full-screen
-        download logs
-        view raw logs
-    - click on the [search input] to search for something in your log, let's say in your workflow,
-        somewhere you did: echo "stanley will be one of the greatest by GOD'S grace", you can use
-        the [search input] to verify that this output is available in your log, and then you can
-        also search for other expected outputs from your workflow
-    - click on your [Re-run job button] to re-run all your jobs, this button is here because we
-        added "workflow_dispatch" to our workflow, otherwise, if it was not present, you'd not
-        see this button. the button helps us to run our workflows without always relying on events
 
 
 
