@@ -1,22 +1,21 @@
-name: hello world workflow
+name: hello_world workflow
+
 on:
   push:
     branches:
       - main
       - dev
-  
   pull_request:
     branches:
       - main
       - dev
-
   workflow_dispatch:
     inputs:
       hello_input:
         description: Saying hello
         required: true
         default: Hi there, saying hello world
-      bye_world:
+      bye_input:
         description: Saying bye world
         required: true
         default: Sad to see you go, Bye world
@@ -24,28 +23,78 @@ on:
 defaults:
   run:
     shell: bash
+    working-directory: ./web
 
 jobs:
-  hello_world_job:
-    name: hello world
+
+  set_up:
+    name: set up job
     runs-on: ubuntu-latest
+    outputs:
+      app_version: ${{ steps.set_version.outputs.version }}
     steps:
-      - name: Checkout the repo branch
+      - name: checkout the repo
         uses: actions/checkout@v4
-        
-      - name: hello greetings
+
+      - name: update packages and install tree package
         run: |
-          echo "${{github.event.inputs.hello_input}}"
-        shell: bash
-  
-  bye_world_job:
-    name: bye world
+          apt-get update && apt-get install -y tree
+          tree
+          tree -L 2 # shows the directory tree up to 2 levels deep
+      
+      - name: "set the version of the app we're working on"
+        id: set_version
+        run: |
+          echo "version=1.2.$RANDOM" >> $GITHUB_OUTPUT
+
+  hello_world:
+    name: saying hello world job
     runs-on: ubuntu-latest
+    needs: set_up
+    id: hello_world_job
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./web
+    env:
+      FIRST_NAME: Stanley
+
     steps:
-      - name: Checkout the repo branch
+      - name: checkout repo
         uses: actions/checkout@v4
       
-      - name: bye message
+      - name: display app version
         run: |
-          echo "${{github.event.inputs.bye_world}}"
+          echo "Using version from setup: ${{ needs.set_up.outputs.app_version }}"
+
+      - name: display welcome message
+        run: |
+          msg="${{ inputs.hello_input }}"
+          echo "${msg:-Hello world, welcome back}"
+          echo "we made it"
+  
+  bye_world:
+    name: bye_world job
+    runs-on: ubuntu-latest
+    needs: [hello_world, set_up]
+    id: bye_world_job
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./web
+    env:
+      LAST_NAME: Chukwu
+    steps:
+      - name: checkout repo 
+        uses: actions/checkout@v4
+
+      - name: display app version
+        run: |
+          echo "${{ needs.set_up.outputs.app_version }}"
+
+      - name: display bye message
+        run: |
+          msg="${{ inputs.bye_input }}"
+          echo "${msg:-Hello world, welcome back}"
+          echo "we done with it"
         shell: bash
