@@ -17,12 +17,15 @@ invested in framer-motion
 1. Talk about useMotionValue
     - List some of the useMotionValue methods (7 methods)
 
-2. use the useMotionValue and useTransform on a drag element
+2. use the useMotionValue and useTransform on a drag element,
+    - let the opacity of the element change as it is been dragged
 
 3. use the useTransform hook to transform the xInput -> opacityOutput & colorOutput
     where: xInput = [-100, 0, 100]
 
 4. Tell us about useMotionTemplate and give an example of how to use it
+    - example1: use it to transform an element
+    - example2: use it to change the drop shadow of an element
 
 5. Tell us about useScroll and give an example of how to use it to display page scroll progress bar
 6. How can you track the scrolling in a scrollable element using the useScroll hook
