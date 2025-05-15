@@ -1,13 +1,17 @@
 full_revision: 13 Feb 2025
 full_revision: 13 Feb 2025
 
+repeat questions: 3
+
 1. Talk about grids
 
 2.  - what are grid lines?
     - using a diagram, draw a grid with 6 columns and 4 rows, then highlight the grid lines
         {7-grid-column-lines, 5-grid-row-lines}
 
-3. What is gap, write down the syntax(2 types)
+3. What is gap, write down the syntax
+    - set gap both the row and column at once
+    - set gap separately for the row and column
 
 4.  - How do you tell your grid how many columns and rows to have
     - give us a grid with (4 columns @300px), (2 columns @200px), (3 rows @50px) (2 rows @100px)
