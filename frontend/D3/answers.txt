@@ -16,10 +16,13 @@
 
 2.  - How do you append & remove elements to the DOM
         .append():
-            d3.select(body).append("p").text("New paragraph added")
+            d3.select(body)
+              .append("p")
+              .attr("class", "mayo")
+              .text("New paragraph added")
         
         .remove():
-            d3.select("p").remove()
+            d3.select("p.mayo").remove()
 
 3.  Binding Data
     - Read: A little bit about Binding data
