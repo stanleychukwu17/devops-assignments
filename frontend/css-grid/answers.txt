@@ -80,21 +80,44 @@
 8.
     justify-content & align-content
         justify-content and align-content affect the way a grid is displayed if they are any spaces left
-        in the grid cell
+        after the grid-cells take their place
         -
-        justify-content aligns items along the horizontal axis(i.e x-axis)
-        align-content aligns items along the vertical axis(i.e y-axis)
+        justify-content:
+            scope: Whole grid
+            axis: horizontal (x-axis)
+            description: aligns the entire grid in the container
+        align-content:
+            scope: Whole grid
+            axis: vertical (y-axis)
+            description: aligns the entire grid in the container        
+
     justify-items & align-items
-        justify-items & align-items affect the children of the grid-items (i.e if the children do not fully
-        occupy total grid-cell assigned to the parent)
+        justify-items & align-items affect the children of the grid-cells (i.e if the children do not fully
+        occupy total area of the grid-cell)
         -
-        justify-items aligns the children along the horizontal axis(i.e x-axis)
-        align-items aligns the children along the vertical axis(i.e y-axis)
+        justify-items:
+            scope: All items
+            axis: horizontal (x-axis)
+            description: aligns items within their cell
+        align-items:
+            scope: All items
+            axis: vertical (y-axis)
+            description: align items within their cell
+
     justify-self & align-self
         justify-self: this is used on the item it-self on the x-axis, it overrides the justify-items
             settings from the parent
         align-self: this is used on the item it-self on the y-axis, it overrides the align-items
             settings from the parent
+        -
+        justify-self:
+            scope: all items
+            axis: horizontal (x-axis)
+            description: aligns a specific item in its cell
+        align-self:
+            scope: all items
+            axis: vertical (y-axis)
+            description: aligns a specific item in its cell
 
 9. 
     - for the row:
