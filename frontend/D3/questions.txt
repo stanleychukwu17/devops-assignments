@@ -15,7 +15,7 @@ SECTION 1
             - add a attribute of class with value "active"
             - change the text to "Hello D3"
 
-2.  - How do you append & remove elements to the DOM
+2.  How do you append & remove elements to the DOM
 
 3.  Binding Data
     - Read: A little bit about Binding data

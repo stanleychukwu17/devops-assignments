@@ -14,7 +14,7 @@
           .attr("class", "active")
           .text("Hello D3")
 
-2.  - How do you append & remove elements to the DOM
+2.  How do you append & remove elements to the DOM
         .append():
             d3.select(body)
               .append("p")
