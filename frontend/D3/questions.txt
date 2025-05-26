@@ -40,7 +40,7 @@ SECTION 1
     - .append task:
         see the example and explain
 
-6.  - Explain the enter, update & exit pattern in D3
+6.  Read: Explain the enter, update & exit pattern in D3
 
 7.  SVG and D3
     - task write: data: [30, 70, 110, 150]
