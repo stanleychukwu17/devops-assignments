@@ -95,7 +95,7 @@
             .attr("r", 20)
             .attr("fill", "blue")
 
-6.  - Explain the enter, update & exit pattern in D3
+6.  Read: Explain the enter, update & exit pattern in D3
         D3 uses a concept called the "enter-update-exit" pattern for working with dynamic data, it ensures that
         new elements are added, existing elements are updated and unnecessary elements are removed
         -
@@ -217,7 +217,7 @@
 
 11. Handling Events
     d3.select("circle")
-        .on("mouseenter", function(event, d) {
+        .on("mouseenter", function(this: SVGElement, event, d) {
             console.log("Mouse entered:", event, d);
 
             d3.select(this)
@@ -225,7 +225,7 @@
               .duration(300)
               .attr("fill", "blue");
         })
-        .on("mouseleave", function(event, d) {
+        .on("mouseleave", function(this: SVGElement, event, d) {
             console.log("Mouse left:", event, d);
 
             d3.select(this)
