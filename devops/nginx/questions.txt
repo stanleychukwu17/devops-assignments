@@ -94,6 +94,9 @@ SECTION 1
 
 15. - see what layer 4 proxying for nginx and websocket looks like
     - read some of the explanation
+## End Websockets
+
+16. see what production configuration looks like
 
 =============
 SECTION 2
