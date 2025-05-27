@@ -1,5 +1,5 @@
 full_revision: 1 Apr 2025
-full_revision: 8 May 2025
+full_revision: 27 May 2025
 
 =============
 SECTION 1
@@ -46,7 +46,7 @@ SECTION 1
         Docker containers
         Docker network
         -
-        delete all files except app.js .gitignore .dockerignore
+        delete all files except app.js .gitignore .dockerignore package.json pnpm-lock.yaml README.md
     }
 }
 
