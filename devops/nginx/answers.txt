@@ -258,13 +258,13 @@
         }
 
         upstream app1 {
-            server app1_backend:2222;
-            server app1_backend:3333;
+            server app1_backendA:2222;
+            server app1_backendB:2222;
         }
 
         upstream app2 {
-            server app2_backend:3333;
-            server app2_backend:4444;
+            server app2_backendA:3333;
+            server app2_backendB:3333;
         }
 
         server {
@@ -312,7 +312,7 @@
     - code
       stream {
         upstream all_apps {
-            server app1_backend:2222;
+            server app1_backendA:2222;
             server app1_backend:3333;
             server app2_backend:4444;
             server app2_backend:5555;
