@@ -387,7 +387,7 @@
         server {
             ...
 
-            ssl_protocols TLSv1.3;
+            ssl_protocols TLSv1.2 TLSv1.3;
         }
 
     - enable http2 on Nginx
@@ -400,10 +400,9 @@
 13. if you have time, Read: the difference between HTTP/1 and HTTP/2
     see: ./section1/15-https/http2-http1.md
 
-
-## Websockets with Nginx
 15. - see what layer 4 proxying for nginx and websocket looks like
     - read some of the explanation
+
 
 
 
