@@ -1,7 +1,7 @@
 1.  Nginx
     - what is Nginx
       - Nginx is a useful tool that can be used as a web server that serves static/dynamic content or
-        can be used as reverse proxy which helps to load balance request among your upstream/backend servers.
+        can be used as a reverse proxy which helps to load balance request among your upstream/backend servers
       - It can also help with Backend re-routing, caching of files, url-rewriting e.t.c 
       - Nginx can inspect a request(both the headers and the body content), it can modify the headers,
         add more cookies e.t.c Nginx is a powerful tool
@@ -49,7 +49,7 @@
         Away - application layer 7
         ---
         upper layer = [application layer, presentation layer, session layer]
-        lower layer = [transport layer, session layer, presentation layer, application layer]
+        lower layer = [transport layer, Network layer, Data link layer, Physical layer]
 
 2. Talk about Layer 4 and Layer 7 proxying in Nginx
     Layer 4 (Transport Layer of the OSI model (TCP/UDP)):
@@ -251,10 +251,10 @@
 10. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
       http {
         upstream all_apps {
-            server app1_backend:2222;
-            server app1_backend:3333;
-            server app2_backend:3333;
-            server app2_backend:4444;
+            server app1_backendA:2222;
+            server app1_backendB:2222;
+            server app2_backendA:3333;
+            server app2_backendB:3333;
         }
 
         upstream app1 {
