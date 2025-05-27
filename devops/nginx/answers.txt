@@ -368,7 +368,7 @@
 
         server {
             listen 80;
-            server_name stanleychukwu.com
+            server_name stanleychukwu.com;
 
             return 301 https://$host$request_uri; # redirects to https
         }
