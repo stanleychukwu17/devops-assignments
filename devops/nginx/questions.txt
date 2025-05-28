@@ -98,6 +98,9 @@ SECTION 1
 
 16. see what production configuration looks like
 
+17. see how to set-up https/ssl with localhost and Nginx
+
+
 =============
 SECTION 2
 =============
