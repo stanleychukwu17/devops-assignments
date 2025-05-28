@@ -1,7 +1,7 @@
 HTTP/2 and HTTP/1 are both versions of the Hypertext Transfer Protocol, but HTTP/2 is a major improvement over HTTP/1 in several key areas. Here's a comparison of the two:
 
 ### 1. **Multiplexing**
-   - **HTTP/1:** In HTTP/1, each request and response is sent in a separate connection. If there are multiple requests (e.g., for images, CSS, and JS), the browser needs to open multiple connections to the server, leading to inefficiencies.
+   - **HTTP/1:** In HTTP/1, each request and response is sent in a separate connection. If there are multiple requests (e.g: for images, CSS, and JS), the browser needs to open multiple connections to the server, leading to inefficiencies.
    - **HTTP/2:** HTTP/2 allows **multiplexing**, meaning multiple requests and responses can be sent over a single connection. This reduces the overhead of opening and closing multiple connections and allows for faster communication.
 
 ### 2. **Header Compression**
