@@ -667,7 +667,7 @@ SECTION 2 BEGINS
             or
             ami = var.amis["${var.region}"]
         }
-    
+
 3. Structural types
     - Give an example of using "tuple"
         variable "my_vm" {
@@ -1369,11 +1369,11 @@ SECTION 3 BEGINS
                 vpc_module/
                 ec2_module/
             global/
-                main.tf
+                main.tf, variables.tf, terraform.auto.tfvars, outputs.tf
             production/
-                main.tf
+                main.tf, variables.tf, terraform.auto.tfvars, outputs.tf
             staging/
-                main.tf
+                main.tf, variables.tf, terraform.auto.tfvars, outputs.tf
 
         the "global/main.tf" housed only resources that were shared by both production & staging.
         in  global/main.tf, you have:
