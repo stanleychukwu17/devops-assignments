@@ -1039,7 +1039,7 @@ SECTION 2 BEGINS
       Anytime you import a new child module into a root module, you have to re-initialize your project:
       : "terraform init"
 
-15. what makes a good module
+15. Read: what makes a good module
     - Group resources in a logical fashion
     - Exposes input variable to allow necessary customization + composition
     - Provides useful defaults
