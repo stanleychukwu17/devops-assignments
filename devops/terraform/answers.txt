@@ -90,7 +90,7 @@
     - terraform destroy -target "aws_vpc.main"
     - terraform apply -replace="aws_vpc.main"
 
-13. D:\Sz - projects\0-exercise\terraform\answers\13_a.tf
+13. ./answers/13_a.tf
 
 14.
     - How do you declare a variable, what are the three & four arguments in a variable declaration
@@ -150,9 +150,11 @@
         the internet
 
 21. - An aws_security_group is an aws managed service that determines if internet traffic are permitted
-        into or out of an instance
-    - aws_security_group = You have to create this one by yourself using the resource "aws_security_group"
-      aws_default_security_group = This one comes by default when you create the VPC, it is always better to leave
+        into or out of an instance, main used to control who and what gets access to your ec2 instances.
+        it is also used for aws load balancer, mainly used to determine who gets access to the load balancer
+
+    - aws_security_group: You have to create this one by yourself using the resource "aws_security_group"
+      aws_default_security_group: This one comes by default when you create the VPC, it is always better to leave
         this one alone and create new security groups (i.e aws_security_group)
 
 22. 
