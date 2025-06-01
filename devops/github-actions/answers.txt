@@ -173,10 +173,3 @@
             reusing them.
 
         4. Security: Handle secrets carefully and make sure you only pass secrets when required
-
-
-
-
-to work on {
-    matrix, reusable workflow,
-}

@@ -7,6 +7,8 @@ full_revision: 2nd May 2025
 2. workflows
     1. what are they?
     2. how do you create a workflow and where do you save it?
+    3. Read: why do we use actions/checkout@v4
+    4. Read: read about some additional's you can do on your github-actions page on github
 
 3. create a workflow called hello_world
     - *Do the task on your vsCode, not on paper
@@ -59,9 +61,7 @@ full_revision: 2nd May 2025
     - finally:
       - make sure all jobs runs-on ubuntu latest
 
-4. Read: read about some additional's you can do on your github-actions page on github
-
-3. You next task is to use github-actions to write a comment on newly created issue in
+4. You next task is to use github-actions to write a comment on newly created issue in
     our github-repo. Let the workflow have 2 jobs:
 
     1. 1st job: dump github events data & use community action to add a comment to the issue
@@ -105,9 +105,6 @@ full_revision: 2nd May 2025
 
     4. how do you set rules in your repo so that push_request & pull_request will only
         pass when certain jobs are successful {You can go to your github account and demonstrate it}
-
-
-
 
 
 
