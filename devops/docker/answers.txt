@@ -5,7 +5,7 @@ Group 1
 
 2.  docker build -t <image_name>:<tag> <path_to_locate_dockerfile>
     docker build -t python_image:v1.0 ./
-    docker build -t python_image -f Dockerfile.nodejs.prod
+    docker build -t python_image:v1.0 -f Dockerfile.nodejs.prod ./
 
 2.1 Say you have a docker file name Dockerfile.node.dev, how do you build an image from this
     Dockerfile?

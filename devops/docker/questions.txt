@@ -3,6 +3,7 @@ full_revision: 2nd June 2025
 
 Group 1
 1. Build an image with out a tag (i.e <image_name>:<tag>)
+
 2. Build an image with a tag (i.e <image_name>:<tag>)
 
 2.1 Say you have a docker file name Dockerfile.node.dev, how do you build an image from this
