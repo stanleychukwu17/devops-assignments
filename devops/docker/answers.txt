@@ -107,6 +107,10 @@ Group 2.
     docker image tag <image_name>:tag <username>/<myRepo>:<tag>
     docker push <username>/<myRepo>:<tag>
     https://hub.docker.com/r/username/myapp - to verify that the image has been pushed
+    -
+    e.g
+    docker image tag react_app:latest stanleychukwu17/kit_react_app:v1.1.0
+    docker push stanleychukwu17/kit_react_app:v1.1.0
 
 2.1 what is the shortcut for "docker image tag"
     - docker tag
