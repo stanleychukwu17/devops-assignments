@@ -25,8 +25,8 @@ Group 1
 
 6.  docker image rm image_1 image_2 image_3 {...}
 
-7.  docker image rm $(docker image ls -q)
-    docker rmi $(docker images -q)
+7.  docker image rm -f $(docker image ls -q)
+    docker rmi -f $(docker images -q)
     --
     docker image prune -f {Remove all dangling images (-f = by force (without confirmation))}
     docker image prune -a {Remove all unused images (with confirmation):}
