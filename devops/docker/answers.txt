@@ -117,8 +117,7 @@ Group 2.
       e.g:  docker image tag go-app my-registry/go-app:v1
       or:   docker tag go-app my-registry/go-app:v1
 
-3.  docker run -d --name react_container -p 3000:3000 react_image:latest (or)
-    docker run -d --name=react_container -p 3000:3000 react_image:latest
+3.  docker run -d --name react_container -p 3000:3000 react_image:latest
 
 4.  a. docker run -it \
         --name postgres \
