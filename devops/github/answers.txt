@@ -23,9 +23,10 @@
     {modify your commit message and save}
     git push
 
-4.  - we use branches to enhance our workflow on git, to allow proper development of new-features or
+4. Tell us about github branches
+    - we use branches to enhance our workflow on git, to allow proper development of new-features or
         bug fixes. This inturn saves us from too many unnecessary conflicts at-least until we are
-        ready to merge with another branch
+        ready to merge with other branches
     - git branch <new-branch-name>
     - git branch -d <branch-name> {for merged branch}
         git branch -D <branch-name? {For un-merged branch}
@@ -47,7 +48,8 @@
     2. you run: git merge bug/fix-cart
     3. git branch -d bug/fix-cart (this is optional, to delete the branch)
 
-8.  git stash
+8. how do you save an uncompleted, uncommitted work before switching to another branch
+    - git stash
 
 9.  1. git stash : this will stash(save) all your uncommitted changes and will allow you to switch to
         another branch without any issues
