@@ -10,8 +10,10 @@
         git config --local user.name "Chukwu Stanley Edward"
         git config --local user.email "jondoe4life@yahoo.com"
 
-2.  git log {See all commit messages}
-    git log --oneline {See all commit messages in one-line}
+2.  - how to see all commit messages in a repo
+        git log {See all commit messages}
+    - then how to see it in one-line
+        git log --oneline {See all commit messages in one-line}
 
 3.  git commit -m "first commit"
     git add file1.ext file2.ext file...
