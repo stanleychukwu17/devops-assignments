@@ -19,7 +19,7 @@ full_revision: 1 June 2025
     - See all remote branches
     - See all remote and local branches at once
 
-5. Switch to a newly created branch
+5.  - Switch to a newly created branch
     - Switch while creating a new branch using the *Switch* command
 
 6. what happens when you try to Switch from one branch to another (

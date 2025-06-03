@@ -36,8 +36,10 @@
     - git branch -r
     - git branch -a
 
-5.  git switch <branch-name>
-    git switch -c <new-branch-name>
+5.  - Switch to a newly created branch
+        git switch <branch-name>
+    - Switch while creating a new branch using the *Switch* command
+        git switch -c <new-branch-name>
 
 6.  1. when you try to switch from a branch with un-committed changes, git will not allow you to switch
         branches until you commit the changes or stash the changes,
