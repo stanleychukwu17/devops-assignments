@@ -152,7 +152,7 @@ Group 2.
     For attaching to a running shell as root:
     docker exec -it -u root CONTAINER_ID_or_NAME /bin/bash
     (or)
-    docker exec -it -u root CONTAINER_ID_or_NAME /bin/sh {where -u == --user}
+    docker exec -it -u root CONTAINER_ID_or_NAME
 
 9.  - remove a docker container - use the 2 methods available
         docker rm -f CONTAINER_ID_or_NAME
