@@ -69,7 +69,7 @@ Group 2
     2. do the both of them while starting a postgres container using a postgres image from docker hub
     3. how do you map your current workspace into the container using volumes,
        so that you can see live changes in your container
-    4. see ./compose/another-way-to-add-volumes.png - wee another way of using volumes
+    4. see ./compose/another-way-to-add-volumes.png - see another way of using volumes
 
 
 Group 3
