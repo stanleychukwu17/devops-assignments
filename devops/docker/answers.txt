@@ -198,6 +198,7 @@ Group 2.
         docker run -it
           --name my_node_app
           -v ${PWD}:/usr/src/app    or    -v .:/usr/src/app
+          -v ${PWD}:/usr/src/app:ro     {where ro is read only}
           -w /usr/src/app
           node:20.16.0 bash
 
