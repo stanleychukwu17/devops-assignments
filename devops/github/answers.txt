@@ -62,11 +62,13 @@
     5. git stash drop <stash-id> : deletes a stash using the stash-id
     6. git stash clear: deletes all the stash
 
-10. git restore <filename> - this will restore the file to the state of the last committed file
+10. how do you take just a file back to an old commit (i.e losing the changes made after the commit)
+    git restore <filename> - this will restore the file to the state of the last committed file
     git restore --source <commit-hash> <filename> - this will restore the file to the state it was in the
         commit hash provided
 
-11. git reset <commit-hash> - this will delete all the commits you have made after the <commit-hash> specified
+11. what is the difference btw git reset and git revert
+    git reset <commit-hash> - this will delete all the commits you have made after the <commit-hash> specified
         but it will not roll back the changes, everything will remain the same, only the commits will be deleted
     
     git reset --hard <commit-hash> - this will delete and the commits and will also take your project back to
