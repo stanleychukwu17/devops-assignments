@@ -1,5 +1,5 @@
 full_revision: 24th Apr 2025
-full_revision: 24th Apr 2025
+full_revision: 1 June 2025
 
 1.  - Config default user.name & user.email
     - how do you see the global user.name and user.email
