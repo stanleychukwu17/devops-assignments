@@ -156,7 +156,7 @@ Group 2.
 
 9.  - remove a docker container - use the 2 methods available
         docker rm -f CONTAINER_ID_or_NAME
-        docker container rm CONTAINER_ID_or_NAME
+        docker container rm -f CONTAINER_ID_or_NAME
 
     - remove all containers
         docker rm -f $(docker ps -aq)
