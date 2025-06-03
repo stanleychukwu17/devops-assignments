@@ -118,9 +118,10 @@
         git push -u <remote_name> <name_of_branch>
         git push --set-upstream <remote_name> <name_of_branch>
 
-16. git switch <name_of_branch_on_the_remote_repo>
+16. how do you switch to a remote branch (i.e a branch available in your remote repo, but not in your local repo)
+    git switch <name_of_branch_on_the_remote_repo>
 
-17. 
+17. Diff btw *git fetch* and *git pull*
     - git fetch
         Downloads new changes from the remote repository but does not integrate them into your current
         working branch. it Updates the remote tracking branches (i.e origin/<repo> e.g: origin/main) in your local
@@ -136,13 +137,11 @@
         use with caution: It automatically performs a merge, which could lead to conflicts if your
         local branch has diverged from the remote branch.
 
-
 18. - write a command to fetch from origin/main branch
         git fetch origin main
 
     - write another command to fetch from origin/new-page/promo
         git fetch origin new-page/promo
-
 
 19. - write a command to pull from origin/main branch
         git pull origin main
