@@ -15,8 +15,10 @@
     - then how to see it in one-line
         git log --oneline {See all commit messages in one-line}
 
-3.  git commit -m "first commit"
-    git add file1.ext file2.ext file...
+3. How do you modify commits to include files you did not add + modify the commit message
+    git add file_a.txt file_b.txt
+    git commit -m "added 2 files"
+    git add file_c.txt file_d.txt
     git commit --amend
     {modify your commit message and save}
     git push
