@@ -46,7 +46,8 @@
     2. when you have new files that are not saved, the new files will follow you to the branch you're
         switching to
 
-7.  1. you switch to the *main* branch by: git switch main
+7. if your current branch is the "bug/fix-cart" branch, how do you merge this branch into the main branch
+    1. you switch to the *main* branch by: git switch main
     2. you run: git merge bug/fix-cart
     3. git branch -d bug/fix-cart (this is optional, to delete the branch)
 
@@ -91,7 +92,8 @@
 
 12. git clone <url_of_repo>
 
-13. git remote is where we store our local project, we connect our local project to a remote repo using git..
+13. what is git remote and *git remote -v*
+    git remote is where we store our local project, we connect our local project to a remote repo using git..
     the remote repo can be github, gitlab e.t.c
     -
     git remote: shows you the remote name
