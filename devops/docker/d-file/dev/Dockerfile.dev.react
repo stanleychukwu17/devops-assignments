@@ -12,6 +12,9 @@ COPY package*.json ./
 # Install dependencies using npm
 RUN npm install
 
+# if you're using nodemon
+RUN npm install nodemon
+
 # Switch to the non-root user
 USER app
 
