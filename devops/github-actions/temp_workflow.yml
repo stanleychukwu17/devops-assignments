@@ -1,0 +1,87 @@
+name: the golang job
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "backend/**"
+  
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "backend/**"
+  
+  workflow_dispatch:
+    inputs:
+      go_version:
+        description: "go go_version:"
+        required: false
+        default: 1.27
+
+env:
+  ENV: development
+  PORT: 4000
+  TIMEZONE: africa/lagos
+  DB_NAME: stanley
+
+jobs:
+  log-the-env-variables:
+    name: log-the-env-variables
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./backend
+
+    steps:
+      - name: log variables out
+        run: |
+          echo $ENV
+          echo $PORT
+          echo $TIMEZONE
+          echo $DB_NAME
+  
+  test-golang-service:
+    name: test-golang-service
+    runs-on: ubuntu-latest
+    id: golang
+    outputs:
+      test_result: ${{steps.test_result.outputs.test_result}}
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./backend
+
+    steps:
+      - name: install docker
+        run: |
+          apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+
+          apt install -y docker-ce docker-ce-cli containerd.io
+          systemctl start docker
+          systemctl enable docker
+          docker --version
+
+      - name: checkout
+        uses: actions/checkout@v4
+      
+      - name: set_up
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ inputs.go_version || "1.27.1" }}
+      
+      - name: install dependencies
+        run: |
+          go mod download
+          go mod tidy
+      
+      - name: test the code
+        run: |
+          go test -coverprofile=coverage.out ./...
+          go tool cover -func=coverage.out | tee coverage.txt
+      
+      - name: check coverage percentage
