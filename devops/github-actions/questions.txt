@@ -144,21 +144,12 @@ full_revision: 2nd May 2025
           - run-test should be true|false
         secrets:
           - should include the NPM_TOKEN secrets needed
-
-
-    
-
-
-
-
-
-
-
-
+  - see explanation.txt
+  - use the reusable workflow in another repo
 
 7. matrix in github_action
 
-8. take a look at this workflow the python/cpython workflow {
+8. take a look at this workflow the python/cpython workflow, take spend 1hr on reading their code {
     https://github.com/python/cpython/blob/main/.github/workflows/build.yml
     https://github.com/python/cpython/blob/main/.github/workflows/reusable-context.yml
     https://github.com/python/cpython/blob/main/.github/workflows/reusable-change-detection.yml
