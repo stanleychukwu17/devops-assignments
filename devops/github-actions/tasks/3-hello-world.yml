@@ -70,7 +70,7 @@ jobs:
       - name: display welcome message
         run: |
           msg="${{ inputs.hello_input }}"
-          echo "${msg:-Hello world, welcome back}"
+          echo "${msg:-Hola Amigos}"
           echo "we made it"
   
   bye_world:
@@ -95,6 +95,6 @@ jobs:
       - name: display bye message
         run: |
           msg="${{ inputs.bye_input }}"
-          echo "${msg:-Hello world, welcome back}"
+          echo "${msg:-Adios Amigos}"
           echo "we done with it"
         shell: bash
