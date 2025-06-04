@@ -1,0 +1,6 @@
+Section:	        Description
+workflow_call:	  Makes the reusable.yml workflow callable from other workflows.
+inputs:           Parameters like Node.js version and whether to run tests.
+secrets:          Secrets passed to the reusable workflow.
+jobs:             Normal jobs like in any workflow.
+uses:             In the caller, instead of defining jobs, it uses the reusable workflow via uses.
