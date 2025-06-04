@@ -111,15 +111,15 @@ full_revision: 2nd May 2025
 
 
 
-?5. reusable workflows
+6. reusable workflows
     - what are reusable workflows
     - Read: example of reusable workflow with inputs
     - Read: example of exposing outputs from reusable workflows
     - Read: best practice for reusable workflows
 
-6. matrix in github_action
+7. matrix in github_action
 
-7. take a look at this workflow the python/cpython workflow {
+8. take a look at this workflow the python/cpython workflow {
     https://github.com/python/cpython/blob/main/.github/workflows/build.yml
     https://github.com/python/cpython/blob/main/.github/workflows/reusable-context.yml
     https://github.com/python/cpython/blob/main/.github/workflows/reusable-change-detection.yml
