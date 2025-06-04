@@ -68,7 +68,7 @@ full_revision: 2nd May 2025
     2. 2nd job: use the github api to post a comment to the issue
     3. what is the | jq '.'? used in the github_action file
 
-4.
+5.
     1. Read: Some of the principles of Continuous Integration
     -
     - Both of the task below uses the following folder structure
