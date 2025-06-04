@@ -1,0 +1,17 @@
+# .github/workflows/main.yml
+name: Main Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      node-version: '20'
+      run-tests: true
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
