@@ -83,7 +83,7 @@
 3. see ./tasks/2-hello-world.yml
 
 4.
-    1 & 2: see ./task/3-comment-on-issues.yml
+    1 & 2: see ./task/4-comment-on-issues.yml
 
     3. what is the | jq '.'? used in the github_action file
 
