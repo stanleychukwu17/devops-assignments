@@ -99,7 +99,7 @@ full_revision: 2nd May 2025
                 - setup your golang
                 - install go dependencies
                 - run go test with coverage output
-                - check the coverage out
+                - check the test coverage percentage
                 - delete the coverage.txt file generated during the workflow
             3. look at this file and re-write the bash code inside of it
                 - ./tasks/4/4.3-analyze.sh
