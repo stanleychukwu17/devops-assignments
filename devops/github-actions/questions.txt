@@ -111,13 +111,45 @@ full_revision: 2nd May 2025
     - what are reusable workflows
     - Read: best practice for reusable workflows
 
-6.1 reusable workflow task-1
-    - working on a reusable workflow for nodejs 
-    - create 2 files (reusable.yml, main.yml)
-        - reusable.yml: this is where you'll write your reusable workflow
-        - main.yml: this is where you'll be using the reusable workflow
-    - inside reusable workflow
-        - name of workflow: "Reusable CI Workflow"
+6.1 reusable workflow task-1: working on a reusable workflow for nodejs
+  - create 2 files (reusable.yml, main.yml)
+    - reusable.yml: this is where you'll write your reusable workflow
+    - main.yml: this is where you'll be using the reusable workflow
+  - inside reusable workflow
+      - name of workflow: "Reusable CI Workflow"
+      - add the on event: "workflow_call"
+          inputs:
+            node-version (it should be required)
+            run-tests (it should be required)
+          secrets:
+            NPM_TOKEN - (it should be required)
+      - working on jobs:
+        job1: setup-and-test
+          steps:
+          - checkout branch
+          - set up node using the version received to the workflow
+          - install node package, do a clean install
+          - (should run only if NPM_TOKEN is not empty): Authenticate with NPM_TOKEN
+          - (should run only if run-tests is true) run test
+  - inside the main workflow
+    - name of workflow: "Main Workflow"
+    - add events:
+      on push & pull_request
+      let both only run if changes are on web-directory backend
+    - working on jobs:
+      job1: call-reusable
+        uses: the reusable workflow we created
+        with:
+          - node_version that will be used
+          - run-test should be true|false
+        secrets:
+          - should include the NPM_TOKEN secrets needed
+
+
+    
+
+
+
 
 
 
