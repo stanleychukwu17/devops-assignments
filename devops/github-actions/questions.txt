@@ -25,7 +25,7 @@ full_revision: 2nd May 2025
             - access the value from one of the steps
         - step: checkout the branch you're working on
         - step: update the linux packages and install the "tree" package
-          - use "tree" command: display the folder structures using the "tree" package
+          - use "tree" command: display the folder structures
         - step:
           - id: should be "set_version"
           - let this step echo an "app_version" into github outputs, so that i
