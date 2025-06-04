@@ -107,16 +107,22 @@ full_revision: 2nd May 2025
     4. how do you set rules in your repo so that push_request & pull_request will only
         pass when certain jobs are successful {You can go to your github account and demonstrate it}
 
-
-
-
-
-
 6. reusable workflows
     - what are reusable workflows
-    - Read: example of reusable workflow with inputs
-    - Read: example of exposing outputs from reusable workflows
     - Read: best practice for reusable workflows
+
+6.1 reusable workflow task-1
+    - working on a reusable workflow for nodejs 
+    - create 2 files (reusable.yml, main.yml)
+        - reusable.yml: this is where you'll write your reusable workflow
+        - main.yml: this is where you'll be using the reusable workflow
+    - inside reusable workflow
+        - name of workflow: "Reusable CI Workflow"
+
+
+
+
+
 
 7. matrix in github_action
 
