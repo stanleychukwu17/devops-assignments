@@ -1,0 +1,19 @@
+name: another repo workflow
+on:
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - web/**
+jobs:
+  call-reusable:
+    uses: org-name-or-username/repo-name/.github/workflows/reusable.yml@main
+    with:
+      node-version: '20'
+      run-tests: true
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+# You must make the reusable workflow public or use a PAT with workflow scope to call
+# cross-repo workflows.
