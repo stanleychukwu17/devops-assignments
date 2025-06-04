@@ -82,7 +82,7 @@
 
 3. see ./tasks/2-hello-world.yml
 
-3.
+4.
     1 & 2: see ./task/3-comment-on-issues.yml
 
     3. what is the | jq '.'? used in the github_action file
@@ -106,7 +106,7 @@
             Converts the GitHub event context (github.event) into a JSON string.
             Pipes that JSON into jq to pretty-print it.
 
-4.
+5.
     1. Read: Some of the principles of Continuous Integration
         1. Automate the build
         2. Introduce Automated test(unit testing, Integration testing)
