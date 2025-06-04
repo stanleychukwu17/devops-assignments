@@ -17,7 +17,7 @@ on:
         default: Hi there, saying hello world
       bye_input:
         description: Saying bye world
-        required: true
+        required: on
         default: Sad to see you go, Bye world
 
 defaults:
