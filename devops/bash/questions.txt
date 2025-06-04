@@ -1,8 +1,7 @@
 full_revision: 29 Apr 2025
 full_revision: 27 May 2025
 
-1.  - Read: why use bash for shell scripting
-    - how do you create and run a bash script?
+1.  how do you create and run a bash script?
 
 2.  variables in bash
     - create a variable.sh script
