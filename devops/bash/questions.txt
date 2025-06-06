@@ -119,4 +119,6 @@ full_revision: 6 June 2025
 
 20. look at this file:
     ./practice/1-nginx-entrypoint/docker-entrypoint-4-nginx.sh*
-    explain what is going on
+    - explain what is going on
+      see explanation: ./practice/1-nginx-entrypoint/explanation.txt
+    - then write the code by yourself while looking at the code
