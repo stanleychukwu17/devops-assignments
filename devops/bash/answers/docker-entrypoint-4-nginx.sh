@@ -1,7 +1,6 @@
+#!/bin/sh
 # this script is used in nginx container, add this script to your bash assignment, challenge is to read
 # the code and explain everything going on step by step, then move on to write the code by yourself
-#!/bin/sh
-# vim:sw=4:ts=4:et
 
 set -e
 
