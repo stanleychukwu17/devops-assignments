@@ -148,6 +148,8 @@ full_revision: 2nd May 2025
   - use the reusable workflow in another repo
 
 7. matrix in github_action
+  - what is a matrix in github_action
+  - using it in a nodejs project
 
 8. take a look at this workflow the python/cpython workflow, take spend 1hr on reading their code {
     https://github.com/python/cpython/blob/main/.github/workflows/build.yml
