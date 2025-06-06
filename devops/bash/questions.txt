@@ -40,6 +40,7 @@ full_revision: 6 June 2025
     - how do you pass arguments to your script when running the script
     - how do you capture all arguments in bash
     - what is the difference btw $@ and $*
+    - what is $0
     - task: using for loop, loop through all arguments received and echo them
 
 8.  Exit status in bash
