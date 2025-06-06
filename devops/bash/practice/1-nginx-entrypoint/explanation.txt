@@ -1,0 +1,107 @@
+1. set -e:
+  The set -e command ensures that the script will exit immediately if any command exits with
+  a non-zero status (an error)
+
+
+2. entrypoint_log function
+  entrypoint_log() {
+    if [ -z "${NGINX_ENTRYPOINT_QUIET_LOGS:-}" ]; then
+        echo "$@"
+    fi
+  }
+  - This function is used to log messages to the console.
+  - It checks if the environment variable NGINX_ENTRYPOINT_QUIET_LOGS is not set
+    (-z checks if the string is empty)
+    - If it is not set, the function logs the message passed to it
+      ($@ refers to all arguments passed to the function).
+
+
+3. if [ "$1" = "nginx" ] || [ "$1" = "nginx-debug" ]; then
+  This checks if the first argument passed to the script ($1) is either nginx or nginx-debug
+
+
+4. if /usr/bin/find "/docker-entrypoint.d/" -mindepth 1 -maxdepth 1 -type f -print -quit 2>/dev/null | read v; then
+  This command checks if the /docker-entrypoint.d/ directory contains any files:
+    - find /docker-entrypoint.d/: This searches the /docker-entrypoint.d/ directory.
+    - -mindepth 1 -maxdepth 1: This restricts the search to the files in /docker-entrypoint.d/ 
+                                itself (not in subdirectories).
+    - -type f: Only looks for files, not directories
+    - -print: Prints the paths of the found files
+    - -quit: Stops the search after finding the first file
+    - 2>/dev/null: Suppresses error output (so it doesn’t clutter the logs if there are no files)
+  -
+  If the find command finds any file, it will execute the then block. This is used to detect if there are
+  any configuration files that need to be processed.
+
+
+5. entrypoint_log "$0: /docker-entrypoint.d/ is not empty, will attempt to perform configuration"
+  - Logs that there are files in /docker-entrypoint.d/, i.e the directory is not empty
+  - $0: refers to the name of the script itself. In this case, it would print the script's filename in
+        the log message, like ./entrypoint.sh or sh (depending on how it's invoked). It’s used to
+        prefix the log messages with the script's name for better clarity.
+
+6. finding and sorting files:
+  entrypoint_log "$0: Looking for shell scripts in /docker-entrypoint.d/"
+  find "/docker-entrypoint.d/" -follow -type f -print | sort -V | while read -r f; do:
+  -
+    - The script logs that it is looking for shell scripts in /docker-entrypoint.d/
+    - It then uses the find command to look for files inside the directory and its subdirectories
+      (-follow makes sure it follows symlinks)
+    - It pipes the result of find into sort -V to sort the files in version order
+      (useful if the files have numeric versions in their names)
+    - The while read -r f; do reads each file path one by one and processes it in the loop
+      The -r flag in the read command prevents backslashes (\) from being interpreted as escape characters.
+      By default, read treats backslashes as escape sequences, but when you use -r, it tells read to take the
+      input literally, meaning backslashes are just treated as regular characters instead of being used to
+      escape characters like n (newline), t (tab), etc.
+
+7. Case Statement to Handle Different File Types
+  case "$f" in
+    *.envsh)
+        if [ -x "$f" ]; then
+            entrypoint_log "$0: Sourcing $f";
+            . "$f"
+        else
+            entrypoint_log "$0: Ignoring $f, not executable";
+        fi
+        ;;
+    *.sh)
+        if [ -x "$f" ]; then
+            entrypoint_log "$0: Launching $f";
+            "$f"
+        else
+            entrypoint_log "$0: Ignoring $f, not executable";
+        fi
+        ;;
+    *) entrypoint_log "$0: Ignoring $f";;
+  esac
+  -
+  - Case Statement: It checks the file extension of each file ($f) and processes it accordingly
+
+  - *.envsh: If the file has a .envsh extension, it checks if the file is executable (-x "$f"). If it is,
+    it sources the file using . "$f". Sourcing means running the script in the current shell, allowing
+    the environment variables or functions to be available in the current shell session
+
+  - *.sh: If the file has a .sh extension, it similarly checks if the file is executable and, if so,
+    runs it directly ("$f")
+  
+  - *: If the file doesn't match either of the above extensions, it simply logs that the file is being ignored
+
+
+8. entrypoint_log "$0: Configuration complete; ready for start up"
+  After processing all the files, it logs that the configuration is complete and the container is ready to start up
+
+
+9. If No Files are Found
+  else
+    entrypoint_log "$0: No files found in /docker-entrypoint.d/, skipping configuration"
+  fi
+  -
+  If no files were found in /docker-entrypoint.d/, it logs that the configuration is being skipped
+
+
+10. exec "$@"
+  - Finally, it uses exec to run whatever command was passed to the script as arguments ($@)
+  - This typically would be nginx or nginx-debug and starts the Nginx service in the container
+  - The exec command replaces the current shell with the process that it executes
+    (in this case, starting Nginx)
