@@ -1,5 +1,5 @@
-full_revision: 29 Apr 2025
 full_revision: 27 May 2025
+full_revision: 6 June 2025
 
 1.  how do you create and run a bash script?
 
@@ -115,5 +115,4 @@ full_revision: 27 May 2025
 19. curl in bash
     - explain this command:
     echo "example.com" | xargs -I {} curl -s -o /dev/null -w "%{http_code}\n" http://{}
-
 
