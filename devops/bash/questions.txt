@@ -116,3 +116,6 @@ full_revision: 6 June 2025
     - explain this command:
     echo "example.com" | xargs -I {} curl -s -o /dev/null -w "%{http_code}\n" http://{}
 
+20. look at this file:
+    ./practice/1-nginx-entrypoint/docker-entrypoint-4-nginx.sh*
+    explain what is going on
