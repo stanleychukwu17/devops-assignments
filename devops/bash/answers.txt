@@ -237,6 +237,7 @@
         is a directory: [-d file]
         is writeable: [-w file]
         is a file: [-f file]
+        is executable: [-x file]
         file size greater than 0bytes: [-s file]
 
     - Read: difference btw [-f file] and [-e file]
