@@ -105,3 +105,14 @@
   - This typically would be nginx or nginx-debug and starts the Nginx service in the container
   - The exec command replaces the current shell with the process that it executes
     (in this case, starting Nginx)
+
+
+Summary of What the Script Does
+1.Checks the first argument: If it’s nginx or nginx-debug, it proceeds to configure the
+    Nginx container
+2. Looks for files in /docker-entrypoint.d/: If files exist, it processes them
+    - .envsh files: Sourced into the shell to modify environment variables.
+    - .sh files: Executed as shell scripts to perform configurations.
+    - Any other files: Ignored.
+3. After configuration: It logs that the configuration is complete and proceeds to start Nginx
+4. Executes the passed command: Typically, this would be to start Nginx (or Nginx in debug mode)
