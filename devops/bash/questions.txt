@@ -22,6 +22,7 @@ full_revision: 6 June 2025
     - how do your retrieve/display all the items in an array
     - how do you retrieve/display specific items in an array
     - how do you retrieve and display all indexes of an array
+    - Read: how do you get the length of an array
     - task: add a variable called "school", add 3 schools you've been to in the array, now use
       a for loop to print out each item in the array
 
