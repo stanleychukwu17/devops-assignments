@@ -484,3 +484,13 @@
 
 20. see the files
 
+21. - Read: how do you generate random numbers
+        $RANDOM is a global variable that returns a random number every time it is called
+        echo $RANDOM
+
+    - Read: How do you generate random numbers within a certain range
+        syntax: $((RANDOM%<max_amount>))
+        -
+        rand_num=$((RANDOM%5)) # btw 0 & 5
+        rand_num=$((RANDOM%30)) # btw 0 & 30
+        rand_num=$((RANDOM%100)) # btw 0 & 100
