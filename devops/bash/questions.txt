@@ -122,3 +122,6 @@ full_revision: 6 June 2025
     - explain what is going on
       see explanation: ./practice/1-nginx-entrypoint/explanation.txt
     - then write the code by yourself while looking at the code
+
+21. - Read: how do you generate random numbers
+    - Read: How do you generate random numbers within a certain range
