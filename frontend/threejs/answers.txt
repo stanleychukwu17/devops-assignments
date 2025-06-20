@@ -1,0 +1,35 @@
+1 - Read: introduction
+      React-three-fibre is a react renderer for three.js. it helps you build your scene declaratively with
+      re-useable, self-contained components that react to state, are readily interactive and can participate
+      in React's ecosystem
+
+    *Warning:
+      React-three-fibre is a react renderer, it must pair with a major version of react, just like react-dom,
+      react-native e.t.c @react-three/fiber@8 pairs with react@18, @react-fiber@9 pairs with react@19
+
+    *Does it have limitations?:
+      None, everything that works in three.js will work here without exceptions
+
+    *Is it slower than plain three.js:
+      No, there is no overhead, components render outside of React, it outperforms plain three.js in scale due
+      to react's scheduling abilities
+
+    *Can it keep up with frequent feature updates to three.js:
+      Yes. it merely expresses three.js in JSX, <mesh /> dynamically turns into a new THREE.Mesh(). if a new
+      three.js version adds, removes or changes features, it will be available to you instantly without
+      depending on updates to this library
+
+  - Read: installing react-three-fibre
+    pnpm install three @types/three @react-three/fibre
+
+  - Read: see some of the ecosystem of react-three-fibre
+    There is a vibrant and extensive eco system around three-fiber full of libraries, helpers and abstractions
+    -
+    - @react-three/drei: useful helpers, this is an ecosystem in itself
+    - @react-three/gltFjx: turns GLTFs into JSX components
+    - @react-three/postProcessing: post processing effects
+    - @react-three/test-renderer: for unit tests in node
+    - @react-three/flex: flexBox for react-three-fiber
+    - @react-three/xr: VR/AR controllers and events
+    - @react-three/cannon: 3D physics using canon
+    - create-r3f-app next: nextjs starter
