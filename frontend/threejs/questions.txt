@@ -5,6 +5,11 @@ full_revision: 20 June 2025
   - Read: installing react-three-fibre 
   - Read: see some of the ecosystem of react-three-fibre
 
+2 Transforming objects
+  - Name 3 ways to to transform an object
+  - Read a little about object transformation
+  - How do you make the camera look at an object
+
 3 Test your Knowledge, work on a simple 3.js scene (do not use A.I assistance)
   - create a Box component that returns a box Geometry
     - let the component receive 3 arguments
