@@ -5,3 +5,23 @@ full_revision: 20 June 2025
   - Read: installing react-three-fibre 
   - Read: see some of the ecosystem of react-three-fibre
 
+3 Test your Knowledge, work on a simple 3.js scene (do not use A.I assistance)
+  - create a Box component that returns a box Geometry
+    - let the component receive 3 arguments
+      position: for the position of the box on the 3D scene
+      args: the dimensions of the box
+      color: the color for each box
+      hovered color: the color to transform to when hovered over
+    - use useFrame delta to rotate the box on its x-axis & y-axis
+    - when the box is clicked on, toggle the scale of the box
+    - when the box is hovered on, change the material color of the box
+  - using the Box component, render 3 boxes in a group
+    - let the group position be: x:0, y:-1, z:0
+  - add an ambientLight to the scene, use Math.PI/2 for the intensity
+  - add a spotLight and use the following props:
+    - position: x:10, y:10, z:10
+    - angle:0.15, intensity:Math.PI, penumbra:1, decay:0
+  - add pointLight and use the following props
+    - position: x:-10, y:-10, z: -10
+    - decay:0, intensity: Math.PI
+
