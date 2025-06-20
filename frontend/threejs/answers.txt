@@ -33,3 +33,26 @@
     - @react-three/xr: VR/AR controllers and events
     - @react-three/cannon: 3D physics using canon
     - create-r3f-app next: nextjs starter
+
+2 Transforming objects
+  - Name 3 ways to to transform an object
+    there are 4 properties to transform an object
+    1. position   2. scale    3. rotation   4. Quaternion
+
+  - Read a little about object transformation
+    -
+    All the objects that inherits from Object3D possesses these properties. If ypu go to 3.js doc, you'll see
+    the classes of each objects(i.e the classes they inherit from)
+    e.g:
+      for a mesh: Object3D -> Mesh
+      for a perspective camera: Object3D -> Camera -> Perspective Camera
+
+    To adjust any of the 4 properties above, we can manipulate the x,y,z axis on each of the properties
+    e.g:
+      mesh.position.x = 2;
+      mesh.position.y = 1.5;
+      mesh.position.z = -0.2;
+
+    The position and scale property inherits from the "vector3"
+
+  - How do you make the camera look at an object
