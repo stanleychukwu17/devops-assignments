@@ -11,18 +11,41 @@ full_revision: 22 June 2025
   - where do all 3 axis face in 3.js, draw the axis
   - How do you make the camera look at an object
 
+2.1 Some General Knowledge
+  - Math.PI in rotation = 360deg
+  - note on args on Geometries
+
 3 Test your Knowledge, work on a simple 3.js scene (do not use A.I assistance)
+  - import all you need from react and the three.js package (e.g Canvas, * as THREE)
+  - you'll be needing SoftShadows, OrbitControls & MeshWobbleMaterial from drei
+
   - create a Box component that returns a box Geometry
-    - let the component receive 3 arguments
-      position: for the position of the box on the 3D scene
-      args: the dimensions of the box
-      color: the color for each box
-      hovered color: the color to transform to when hovered over
+    - let the component receive 4 arguments
+      "position": for the position of the box on the 3D scene
+      "args": the dimensions of the box
+      "color": the color for each box
+      "hoverColor": the color to transform to when hovered over
+      -
+    - let the Box castShadow (i.e use the castShadow prop)
     - use useFrame delta to rotate the box on its x-axis & y-axis
     - when the box is clicked on, toggle the scale of the box
     - when the box is hovered on, change the material color of the box
+
+  - create the main App component and add your Canvas component
+    - use shadow prop in the Canvas component
+    - use camera prop in the Canvas component
+      - let the camera use a fov of 60 (fov is field of view)
+      - camera position should be x:-5, y:2, z:10
+    - render your "SoftShadows" from drei inside the Canvas component
+
+  - add a group element (inside you'll render the boxes and the planeGeometry for your shadow)
   - using the Box component, render 3 boxes in a group
-    - let the group position be: x:0, y:-1, z:0
+  - add a new planeGeometry mesh
+    - use the receiveShadow prop
+    - let it use a shadowMaterial with props attach="material" and opacity=0.3 or 1.3
+    - rotate the planeGeometry on the y-axis by -180deg so that it would be the flat plane
+    - bring the plane downward so that it is below the boxes (i.e position downward on the y-axis)
+
   - add an ambientLight to the scene, use Math.PI/2 for the intensity
   - add a spotLight and use the following props:
     - position: x:10, y:10, z:10
