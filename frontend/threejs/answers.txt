@@ -36,8 +36,7 @@
 
 2 Transforming objects
   - Name 3 ways to to transform an object
-    there are 4 properties to transform an object
-    1. position   2. scale    3. rotation   4. Quaternion
+    1. position   2. scale    3. rotation
 
   - Read a little about object transformation
     -
