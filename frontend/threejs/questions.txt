@@ -1,5 +1,5 @@
 full_revision: 20 May 2025
-full_revision: 20 June 2025
+full_revision: 22 June 2025
 
 1 - Read: introduction
   - Read: installing react-three-fibre 
