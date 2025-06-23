@@ -80,3 +80,8 @@
       y
 
   - How do you make the camera look at an object
+    "Object3D" instances have a .lookAt() method which rotates the object so that its z faces the target
+    you provided. the target must be a vector3. this is mostly used for the camera
+    e.g:
+    camera.lookAt(new THREE.Vector3(0,0,0))
+    camera.lookAt(mesh.position)
