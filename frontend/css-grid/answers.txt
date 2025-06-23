@@ -24,7 +24,7 @@
     - gap 15px 10px;
         give a gap of 15px on the each row-cell and 10px on each column-cell
     - grid-template-columns:
-        used to set the number of columns on the grid and the sizes of this columns
+        used to set the number of cells on the grid and the sizes of this cells
     - grid-template-rows:
         used to set the number of rows on the grid and the sizes of this rows
     - grid-template-areas:
