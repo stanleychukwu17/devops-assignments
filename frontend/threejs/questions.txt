@@ -8,6 +8,7 @@ full_revision: 22 June 2025
 2 Transforming objects
   - Name 3 ways to to transform an object
   - Read a little about object transformation
+  - where do all 3 axis face in 3.js, draw the axis
   - How do you make the camera look at an object
 
 3 Test your Knowledge, work on a simple 3.js scene (do not use A.I assistance)
