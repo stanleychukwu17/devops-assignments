@@ -172,6 +172,9 @@
     look at the number of grid-cells, it matches the total number of rows and columns defined in the
     grid-template-rows & grid-template-columns, looking at the grid-template-areas, you'll see we have
     5 rows and 5 columns
+    -
+    grid-template-areas: defines where things go
+    grid-template-rows & grid-template-columns: define how many grid cells we want and how big the cells should be
 
 14. see images/3-grid-template-area
 
