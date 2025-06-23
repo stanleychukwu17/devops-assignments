@@ -64,4 +64,19 @@
         there by bringing the object back to the center of the scene
     - position.set(x,y,z): set all 3 axis at once, you can also do mesh.scale.set(x,y,z)
 
+  - where do all 3 axis face in 3.js, draw the axis
+      in three.js:
+      y
+      |
+      |
+      |__ __ __ x
+      z
+
+      in blender front-view (1)
+      z
+      |
+      |
+      |__ __ __ x
+      y
+
   - How do you make the camera look at an object
