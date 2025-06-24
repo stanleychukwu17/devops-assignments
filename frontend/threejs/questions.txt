@@ -1,6 +1,9 @@
 full_revision: 20 May 2025
 full_revision: 22 June 2025
 
+NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain three.js with r3f),
+  please 
+
 1 - Read: introduction
   - Read: installing react-three-fibre 
   - Read: see some of the ecosystem of react-three-fibre
@@ -12,8 +15,8 @@ full_revision: 22 June 2025
   - How do you make the camera look at an object
 
 2.1 Some General Knowledge
+  - Read: types of Geometries and their args
   - Math.PI in rotation = 360deg
-  - note on args on Geometries
 
 3 Test your Knowledge, work on a simple 3.js scene (do not use A.I assistance)
   - import all you need from react and the three.js package (e.g Canvas, * as THREE)
