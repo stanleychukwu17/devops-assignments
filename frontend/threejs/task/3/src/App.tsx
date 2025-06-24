@@ -79,6 +79,7 @@ function App () {
           <pointLight position={[0, -10, 0]} intensity={1.5} />
 
           <group>
+            {/* the planeGeometry for the shadow */}
             <mesh
               rotation={[-Math.PI/2, 0, 0]}
               position={[0, -3, 0]}
@@ -93,6 +94,7 @@ function App () {
             <Box position={[5,0,3]} args={[2,3,1.5]} color='yellowgreen' hoverColor='yellow' speed={2} />
           </group>
 
+          {/* enable orbit controls */}
           <OrbitControls />
         </Canvas>
       </div>
