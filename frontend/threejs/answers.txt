@@ -58,7 +58,7 @@
     The position and scale property inherits from the "vector3" class, and this "vector3" class has
     many useful methods, some of them are:
 
-    - mesh.position.length(): gives you the distance of an object from the scene
+    - mesh.position.length(): gives you the distance of an object from the center of the scene
     - position.distanceTo(camera.position): gives you the distance btw the camera and the mesh
     - position.normalize(): takes the length of your "vector3" object and reduces it until it is 1,
         there by bringing the object back to the center of the scene
@@ -85,3 +85,4 @@
     e.g:
     camera.lookAt(new THREE.Vector3(0,0,0))
     camera.lookAt(mesh.position)
+
