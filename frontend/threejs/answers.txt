@@ -105,4 +105,20 @@
       new THREE.SphereGeometry(1, 32, 32)
       args = radius, widthSegments, heightSegments, phiStart*, phiLength*, thetaStart*, thetaLength*
 
+    - PlaneGeometry:
+      new THREE.PlaneGeometry(5, 5);
+      args = width, height, widthSegments*, heightSegments*
+
+    - CylinderGeometry:
+      new THREE.CylinderGeometry(1, 1, 5, 32)
+      args = radiusTop, radiusBottom, height, radialSegments, heightSegments*, openEnded*, thetaStart*, thetaLength*
+
+    - ConeGeometry:
+      new THREE.ConeGeometry(1, 5, 32)
+      args = radius, height, radialSegments, heightSegments*, openEnded*, thetaStart*, thetaLength*
+    
+    - TorusGeometry:
+      new THREE.TorusGeometry(1, 0.4, 16, 100)
+      args = radius, tube, radialSegments, tubularSegments, arc*
+
   - Math.PI in rotation = 360deg
