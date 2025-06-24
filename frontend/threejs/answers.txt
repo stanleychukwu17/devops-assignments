@@ -120,5 +120,16 @@
     - TorusGeometry:
       new THREE.TorusGeometry(1, 0.4, 16, 100)
       args = radius, tube, radialSegments, tubularSegments, arc*
+    
+    - TorusKnotGeometry
+    - DodecahedronGeometry
+    - IcosahedronGeometry
+    - OctahedronGeometry
+    - RingGeometry
+    - LatheGeometry
+    - ExtrudeGeometry
+    - ShapeGeometry
+    - BufferGeometry
+    - CircleGeometry
 
   - Math.PI in rotation = 360deg
