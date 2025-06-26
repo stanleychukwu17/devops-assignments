@@ -68,14 +68,16 @@ NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain
 
   - if everything is okay, delete the node-modules folder
 
-4. useFrame hook
+4 useFrame hook
   - what can you say about the useFrame hook
   - what can you say about the "state" and "delta" callback arguments
   - advanced usage, how do you use the useFrame hook with priority
   - Read: some of the methods and properties available in the "state" callback arguments
 
-5. useFrame exercise
+5 useFrame exercise
   - use it to rotate an object on the y-axis
   - use it to make a camera move closer to an object
   - use it to detect the size of the screen and scale an object based on the screen size
   - Read: some tips of accessing the state object outside of useFrame
+
+6 - Read: see the different types of light
