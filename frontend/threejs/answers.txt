@@ -146,9 +146,37 @@
   
 3. see ./task/3
 
+4 useFrame hook
+  - what can you say about the useFrame hook
+    This hook is provided by r3f, it is used to run code on every frame, similar to the
+    requestAnimationFrame loop in the native three.js. This is useful for animations,
+    interactions or any updates that need to occur continuously
 
+  - what can you say about the "state" and "delta" callback arguments
+    e.g useFrame((state, delta) => {
+      // state: The r3f root state (includes camera, scene, clock)
+      // delta: time elapsed since the last frame in seconds
+    })
 
+  - advanced usage, how do you use the useFrame hook with priority
+    e.g:
+      useFrame(callback, priority = 0) // runs before 1
+      useFrame(callback, priority = 1) // runs before 2
+      useFrame(callback, priority = 2) // runs after everything (i.e after 1 & 2)
 
+  - Read: some of the methods and properties available in the "state" callback arguments
+
+    clock:    THREE.Clock, Used to get the elapsed time and delta
+    camera:   THREE.camera, The active camera in the scene, useful for animations involving camera
+    scene:    THREE.scene, the main scene graph
+    size:     {width, height, aspectRation, ...}, viewport dimensions, useful for responsive UI or camera controls
+    viewport: {width, height, factor, distance, ...}, scene relative view size (especially useful in Orthographic mode)
+    mouse:    THREE.Vector2, mouse position in normalized device coordinates (NDC): [-1,1]
+    pointer:  THREE.Vector2, Raw pixel pointer position
+    controls: Any, if you're using @react-three/drei controls like OrbitControls, the may be available here
+    events:   Object, Event system used by r3f (pointer, drag, scroll)
+    invalidate: Function, Force a manual re-render of the scene
+    performance: {current, min, max, debounce}, performance tuning system (automatically down-sampling frames if FPS drops)
 
 
 
