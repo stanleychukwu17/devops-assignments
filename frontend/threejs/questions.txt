@@ -75,3 +75,7 @@ NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain
   - Read: some of the methods and properties available in the "state" callback arguments
 
 5. useFrame exercise
+  - use it to rotate an object on the y-axis
+  - use it to make a camera move closer to an object
+  - use it to detect the size of the screen and scale an object based on the screen size
+  - Read: some tips of accessing the state object outside of useFrame
