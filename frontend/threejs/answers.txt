@@ -179,8 +179,38 @@
     performance: {current, min, max, debounce}, performance tuning system (automatically down-sampling frames if FPS drops)
 
 
+5 useFrame exercise
+  - use it to rotate an object on the y-axis
+    useFrame((state, delta) => {
+      meshRef.current.rotation.y = clock.getElapsedTime()
+      or
+      meshRef.current.rotation.y += delta
+    })
 
+  - use it to make a camera move closer to an object
+    useFrame(({camera}, delta) => {
+      camera.position.lerp(mesh.current.position, 0.5)
+      camera.lookAt(mesh.current.position)
+    })
 
+    you can use an alternative method: "lerpVectors":
+    : camera.position.lerpVectors(camera.position, targetPos, 0.1)
+
+  - use it to detect the size of the screen and scale an object based on the screen size
+    useFrame(({size}, delta) => {
+      const isMobile = size.width <= 768
+
+      if (isMobile) {
+        meshRef.current.scale.set(0.5, 0.5, 0.5)
+      } else {
+        meshRef.current.scale.set(1,1,1)
+      }
+    })
+
+  - how do you access the state object outside of useFrame
+    useThree(): by using the useThree hook, you can access the "state" object outside of react
+    e.g:
+      const {camera, size, clock} = useThree()    
 
 
 
