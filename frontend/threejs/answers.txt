@@ -181,7 +181,6 @@
     invalidate: Function, Force a manual re-render of the scene
     performance: {current, min, max, debounce}, performance tuning system (automatically down-sampling frames if FPS drops)
 
-
 5 useFrame exercise
   - use it to rotate an object on the y-axis
     useFrame((state, delta) => {
@@ -214,6 +213,30 @@
     useThree(): by using the useThree hook, you can access the "state" object outside of react
     e.g:
       const {camera, size, clock} = useThree()    
+
+6 drei package
+  - talk about the drei package
+    this package contains useful helpers and fully functional, ready-made abstractions for r3f.
+    can be used in react & react-native, see more @ https://github.com/pmndrs/drei
+
+  - some of it's useful helpers
+    Camera:
+      perspectiveCamera, OrthographicCamera, cubeCamera 
+    
+    Controls:
+      CameraControls, FlyControls, MapControls, DeviceControls, DeviceOrientationControls,
+      MotionPathControls
+
+    Misc:
+      wireframe, useCamera, useCursor, useTrail, useIntersect
+    
+    pnpm i @react-three/drei
+
+  - what helper from drei helps you rotate around your scene, zoom in and out of your scene
+  - give an example of MeshWobbleMaterial from drei
+  - give an example of MeshDistortMaterial from drei
+
+
 
 
 
