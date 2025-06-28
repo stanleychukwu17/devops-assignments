@@ -88,3 +88,11 @@ NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain
   - give an example of MeshWobbleMaterial from drei
   - give an example of MeshDistortMaterial from drei
 
+7 useHelper hook from drei
+  - talk about the useHelper hook (p16, p19)
+  - visualize axes using the AxesHelper
+  - visualize grids using the GridHelper
+  - visualize light sources using any of the following:
+    SpotLightHelper, PointLightHelper, DirectionalLightHelper
+  - visualize the bounding box of an object using the BoxHelper
+
