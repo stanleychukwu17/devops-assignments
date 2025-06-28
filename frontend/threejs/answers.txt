@@ -217,7 +217,7 @@
 6 drei package
   - talk about the drei package
     this package contains useful helpers and fully functional, ready-made abstractions for r3f.
-    can be used in react & react-native, see more @ https://github.com/pmndrs/drei
+    can be used in react & react-native,
 
   - some of it's useful helpers
     Camera:
@@ -229,10 +229,36 @@
 
     Misc:
       wireframe, useCamera, useCursor, useTrail, useIntersect
-    
-    pnpm i @react-three/drei
 
   - what helper from drei helps you rotate around your scene, zoom in and out of your scene
+    you use the "OrbitControls" helper
+    e.g:
+      import { OrbitControls } from @react-three/drei
+      return (
+        <>
+          <Box />
+          <OrbitControls />
+        </>
+      )
+
+    you can customize the settings using props, ask chatGPT for more on the props
+      - enableZoom:	Enables/disables zooming (wheel/pinch). Default: true
+      - enablePan	Enables/disables panning. Default: true
+      - enableRotate	Enables/disables rotation. Default: true
+      {You can also set the zoomSpeed, panSpeed, rotateSpeed. they're all set to "1" by default}
+      - target: A [x, y, z] array that sets the focus point (what the camera orbits around).
+      - minDistance / maxDistance: Clamp the zoom range
+      - minPolarAngle / maxPolarAngle: Clamp the vertical orbit angle (in radians)
+
+    To prevent the camera from rotating below the ground plane, you should limit the polar angle:
+      - minPolarAngle: Minimum vertical angle (up/down)
+      - maxPolarAngle: Maximum vertical angle
+      e.g:
+        <OrbitControls
+          minPolarAngle={0}                  // look horizontally
+          maxPolarAngle={Math.PI / 2}        // limit to top hemisphere
+        />
+
   - give an example of MeshWobbleMaterial from drei
   - give an example of MeshDistortMaterial from drei
 
