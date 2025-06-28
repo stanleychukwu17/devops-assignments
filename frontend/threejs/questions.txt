@@ -8,15 +8,16 @@ NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain
   - Read: installing react-three-fibre 
   - Read: see some of the ecosystem of react-three-fibre
 
+1.1 Some General Knowledge
+  - Read: types of Geometries and their args
+  - Math.PI in rotation = 360deg
+  - Read: see the different types of light in 3.js
+
 2 Transforming objects
   - Name 3 ways to to transform an object
   - Read a little about object transformation
   - where do all 3 axis face in 3.js, draw the axis
   - How do you make the camera look at an object
-
-2.1 Some General Knowledge
-  - Read: types of Geometries and their args
-  - Math.PI in rotation = 360deg
 
 3 Test your Knowledge, work on a simple 3.js scene (do not use A.I assistance)
   - open the ./task/3/src/App.tsx and write the answer to the questions below:
@@ -79,5 +80,3 @@ NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain
   - use it to make a camera move closer to an object
   - use it to detect the size of the screen and scale an object based on the screen size
   - Read: some tips of accessing the state object outside of useFrame
-
-6 - Read: see the different types of light
