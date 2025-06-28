@@ -96,3 +96,7 @@ NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain
     SpotLightHelper, PointLightHelper, DirectionalLightHelper
   - visualize the bounding box of an object using the BoxHelper
 
+8 Leva package
+  - talk about the leva package 
+  - use leva to control the lightColor and lightIntensity of a directionalLight
+  - use leva to adjust the color and the radius of a TorusKnotGeometry
