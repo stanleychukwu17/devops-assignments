@@ -2,8 +2,8 @@ import * as THREE from 'three'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { SoftShadows, OrbitControls, MeshWobbleMaterial} from '@react-three/drei'
 import {a, useSpring} from '@react-spring/three'
-import './App.css'
 import { useRef, useState } from 'react'
+import './App.css'
 
 
 type BoxProps = {
