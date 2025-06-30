@@ -13,7 +13,45 @@
     You no longer need @tailwind base;, @tailwind components;, @tailwind utilities;
     The single @import "tailwindcss"; handles everything
 
+  - The @theme Directive
+    This is the primary way to customize your design tokens (colors, fonts, spacing, breakpoints, etc.) in v4,
+    It allows you to define CSS variables that Tailwind will use to generate utility classes
+    e.g:
+      @import "tailwindcss";
 
+      @theme {
+        --color-blonde-50: #eff6ff;
+        --color-blonde-100: #dbeafe;
+        --color-blonde-200: #bfdbfe;
+        /* ... more colors */
+
+        --font-display: "Smart", "sans-serif";
+        --breakpoint-3xl: 1920px;
+      }
+
+      * When you define --color-* variables, Tailwind automatically generates corresponding
+        color utility classes (e.g., bg-blonde-50, text-blonde-100)
+      * Similarly, --breakpoint-* variables will create custom breakpoints you can use in
+        responsive utilities (e.g., 3xl:text-lg)
+
+  - Automatic Content Detection
+    * You no longer need to configure the content array in tailwind.config.js to tell Tailwind where
+      to scan for class names
+    * Tailwind v4 uses heuristics to automatically detect your template files, including ignoring files
+      in your .gitignore.
+    * If you do need to explicitly specify source files, you can use the @source directive in your CSS
+      i.e:
+        @import "tailwindcss";
+        @source "./src/components/"; /* Scans this folder for Tailwind classes */
+
+  - Using Plugins
+    You can import Tailwind CSS v4-compatible plugins directly in your CSS using the @plugin directive
+    i.e:
+      @import "tailwindcss";
+      @plugin "@tailwindcss/typography";
+
+      * For older, JavaScript-based plugins, you might still need to use a tailwind.config.js file
+        and explicitly load it
 
 
 
