@@ -12,3 +12,54 @@ full_revision: 29 June 2025
   - Backward Compatibility (Using a tailwind.config.js file)
   - PostCSS Configuration
   - Vite Integration (Recommended)
+
+2 some tips
+  - using em
+  - using rem
+  - font-size calc
+  - installing tailwind plugin for vsCode
+
+3 Text and colors
+  - apply text color on an element (3 eg)
+  - apply custom text color to an element (3 eg)
+  - apply background color to an element (3 eg)
+  - apply custom background color to an element (3 eg)
+  - apply border on an element
+  - apply border with width value
+  - border-top, border-right, border-bottom, border-left
+  - border custom width
+  - border custom color
+  - how do you extend a custom color using @theme
+  - how do you use the custom color extend in @theme
+
+4 Typography with tailwindCss
+  - Read: tailwind comes with 3 default font families
+  - apply font-size (5 eg)
+  - using @theme, extend font-size
+  - using @theme, extend font-family
+  - use the custom font-size and font-family in a custom class (i.e a utility class)
+  - Read: font-smoothing
+  - text-decoration: list the 4 types
+  - how do you do "text-decoration-line" in tailwindCss
+  - how do you do "text-decoration-color" in tailwindCss
+  - how do you do "text-decoration-style" in tailwindCss
+  - how do you do "text-decoration-thickness" in tailwindCss
+  - Read: how do you do "text-underline-offset" in tailwindCss
+  - task: convert the below css to tailwindCss:
+    text-decoration: underline wavy red 5px;
+  - how do you do line-height in tailwindCss (2 eg)
+
+5 Spaces & Sizes
+  - Read: Intro into spacing and sizes
+  - apply padding (3 eg)
+  - apply custom padding (3 eg)
+  - padding top, right, bottom & left
+  - shortcut that combines padding-top & padding-bottom in normal css and tailwind
+  - shortcut that combines padding-left & padding-right in normal css and tailwind
+  - apply margin (3 eg)
+  - apply custom margin (3 eg)
+  - margin top, right, bottom & left
+  - shortcut that combines margin-top & margin-bottom in normal css and tailwind
+  - shortcut that combines margin-left & margin-right in normal css and tailwind
+  - apply negative margin and padding (3.eg)
+
