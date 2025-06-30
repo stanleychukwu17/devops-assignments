@@ -63,3 +63,30 @@ full_revision: 29 June 2025
   - shortcut that combines margin-left & margin-right in normal css and tailwind
   - apply negative margin and padding (3.eg)
 
+6 Width & height
+  - width (5 eg)
+  - height (5 eg)
+  - both above custom values (5 eg)
+  - Read: tips of using width when working with flex elements
+  - Read: min-width & max-width
+  - Read: min-height & max-height
+
+7 Space Between
+  - what can you say about it and it's syntax
+  - space-x (3 eg)
+  - space-y (3 eg)
+  - using custom values [] for both of the above
+
+8 Flex with tailwindCss
+  - Read: about flex in tailwindCss
+  - how do you do the below in tailwindCss:
+      flex-direction: row
+      flex-direction: row-reverse
+      flex-direction: column
+      flex-direction: column-reverse
+  - flex-grow, how do you do the below in tailwindCss
+      flex-grow: 1
+      flex-grow: 0
+  -flex-basis, how do you do the below in tailwindCss
+      flex-basis: 1
+      flex-basis: 0
