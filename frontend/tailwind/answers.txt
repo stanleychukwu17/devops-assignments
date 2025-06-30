@@ -32,6 +32,7 @@
 
       * When you define --color-* variables, Tailwind automatically generates corresponding
         color utility classes (e.g., bg-blonde-50, text-blonde-100)
+    
       * Similarly, --breakpoint-* variables will create custom breakpoints you can use in
         responsive utilities (e.g., 3xl:text-lg)
 
@@ -245,7 +246,100 @@
     bg-blonde-100
     border-blonde-200
 
+4 Typography with tailwindCss
+  - Read: tailwind comes with 3 default font families
+    * By default, Tailwind includes a few standard fonts for your project, and these fonts are part
+      of the fontFamily utility
+    
+    1. sans:
+        Font family: "Inter", "ui-sans-serif", "system-ui", "sans-serif"
+    2. serif:
+        Font family: "Georgia", "Cambria", "Times New Roman", "Times", "serif"
+    3. mono:
+        Font family: "MenLo", "Monaco", "Courier New", "monospace"
 
+    using them be like:
+      <div class="font-sans"></div>
+      <div class="font-serif"></div>
+      <div class="font-mono"></div>
+
+  - using @theme, extend font-family
+    @theme {
+      --font-<customFont_1>: 'YourCustomSans', 'Arial', 'sans-serif'
+      --font-<customFont_2>: 'YourCustomSerif', 'Arial', 'sans-serif'
+    }
+    e.g:
+    @theme {
+      --font-stanley: 'Aero', 'Arial', 'sans-serif'
+    }
+
+    using them be like
+      <div class="font-stanley"></div>
+
+  - apply font-size (5 eg)
+    text-xs
+    text-sm
+    text-lg
+    text-2xl
+    text-4xl e.t.c
+  
+  - apply font-size with css variable
+    -
+    body {
+      --my-text-size: 20px;
+    }
+
+    syntax:
+      text-(length:<custom-property>) -> font-size: var(<custom-property>);
+    e.g:
+      <p class="text-(length:--my-text-size)"> sit</p>
+
+  - apply font-size with line-height (3 eg)
+    syntax: text-size/line-height
+    e.g:
+      text-sm/6
+      text-lg/7
+      text-sm/8
+      e.t.c
+
+  - apply font-size with custom value (3 eg)
+    text-[14px]
+    text-[calc(16px + 2vw)]
+    text-[clamp(16px, calc(16px + 2vw), 40px)]
+
+  - using @theme, extend font-size
+    @theme {
+      --text-<custom_name>: <value>
+    }
+
+    e.g:
+      @theme {
+        --text-tiny: 0.625rem;
+      }
+      
+      you can also provide default line-height, letter-spacing, and font-weight values for a font size:
+      @theme {
+        --text-tiny: 0.625rem;
+        --text-tiny--line-height: 1.5rem; 
+        --text-tiny--letter-spacing: 0.125rem; 
+        --text-tiny--font-weight: 500; 
+      }
+
+    using them be like:
+      <div class="text-tiny">...</div>
+
+  - use the custom font-size and font-family in a custom class (i.e a utility class)
+  
+  - Read: font-smoothing
+  - text-decoration: list the 4 types
+  - how do you do "text-decoration-line" in tailwindCss
+  - how do you do "text-decoration-color" in tailwindCss
+  - how do you do "text-decoration-style" in tailwindCss
+  - how do you do "text-decoration-thickness" in tailwindCss
+  - Read: how do you do "text-underline-offset" in tailwindCss
+  - task: convert the below css to tailwindCss:
+    text-decoration: underline wavy red 5px;
+  - how do you do line-height in tailwindCss (2 eg)
 
 
 

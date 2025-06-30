@@ -32,9 +32,12 @@ full_revision: 29 June 2025
 
 4 Typography with tailwindCss
   - Read: tailwind comes with 3 default font families
-  - apply font-size (5 eg)
-  - using @theme, extend font-size
   - using @theme, extend font-family
+  - apply font-size (5 eg)
+  - apply font-size with css variable
+  - apply font-size with line-height (3 eg)
+  - apply font-size with custom value (3 eg)
+  - using @theme, extend font-size
   - use the custom font-size and font-family in a custom class (i.e a utility class)
   - Read: font-smoothing
   - text-decoration: list the 4 types
