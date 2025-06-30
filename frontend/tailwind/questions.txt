@@ -8,3 +8,7 @@ full_revision: 29 June 2025
   - The @theme Directive
   - Automatic Content Detection
   - Using Plugins
+  - Custom Utilities and Variants
+  - Backward Compatibility (Using a tailwind.config.js file)
+  - PostCSS Configuration
+  - Vite Integration (Recommended)
