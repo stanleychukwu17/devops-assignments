@@ -2,6 +2,7 @@
 1 TailwindCss v4
   - installation
     pnpm i tailwindcss @tailwindcss/postcss
+    - if you're in a new environment, install the tailwind intellisense plugin for vsCode
 
   - Core Configuration in CSS
     The most notable change is the deprecation of the tailwind.config.js file for most cases,
@@ -119,8 +120,76 @@
 
       * Then, in your main CSS file, simply @import "tailwindcss";.
 
+2 some tips
+  - using em & rem
+    :em (Relative to Parent's Font Size)
+      Advantages:
+        - Scales based on the font size of the parent element.
+        - Useful for making designs relative to their containers.
+        - Use em when you want elements (like padding, margins, or font sizes) to
+          scale according to the parent’s font size
+      e.g:
+        .parent {
+          font-size: 16px;
+        }
+        .child {
+          font-size: 1.5em; /* 1.5 times the parent's font size, i.e., 24px */
+        }
 
+    :rem (Relative to Root Font Size)
+      Advantages:
+        - Scales based on the root element’s (html) font size (usually 16px by default)
+        - More predictable and consistent because it’s not affected by parent font sizes
+        - Use rem when you want your sizes (fonts, paddings, etc.) to be consistent across the
+          entire page or website, no matter where the element is placed in the DOM
+      e.g:
+        html {
+          font-size: 16px; /* Base size */
+        }
+        .header {
+          font-size: 2rem; /* 32px */
+        }
 
+    :When to Use Which?
+      - Use em for cases where you want the sizing to be flexible and adapt based on
+        the context (like in nested components)
+      - Use rem when you want a more global, consistent design that is easy to control
+        from a single point (the root)
+
+    :rem vs px
+      - pixels are great for precise, fixed measurements but lack flexibility, accessibility,
+        and responsiveness
+      - rem are better for scalable, flexible, and accessible designs. They allow for more fluidity,
+        respect user preferences, and adapt to different devices and screen sizes
+
+    :using clamp() (CSS Function)
+      - Combines multiple units to create a fluid value that respects both a minimum and maximum value
+      - Great for responsive typography or spacing that needs to stay within certain limits
+        (like a font size that scales between two breakpoints)
+      e.g:
+        .heading {
+          /* Font size will scale between 16px and 32px, but never go outside that range */
+          font-size: clamp(16px, 5vw, 32px);
+        }
+
+  - font-size calc
+    - you can do for a header:
+      font-size: calc(16px + 2vw)
+      font-size: min(calc(16px + 2vw), 35px)
+      font-size: clamp(28px, calc(16px + 2vw), 40px)
+
+3 Text and colors
+  - apply text color on an element (3 eg)
+  - apply custom text color to an element (3 eg)
+  - apply background color to an element (3 eg)
+  - apply custom background color to an element (3 eg)
+  - apply border on an element
+  - apply border with width value
+  - border-top, border-right, border-bottom, border-left
+  - border custom width
+  - border custom color
+  - how do you extend a custom color using @theme
+  - how do you use the custom color extend in @theme
 
 
 
