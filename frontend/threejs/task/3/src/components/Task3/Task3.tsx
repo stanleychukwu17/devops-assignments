@@ -3,9 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { SoftShadows, OrbitControls, MeshWobbleMaterial} from '@react-three/drei'
 import {a, useSpring} from '@react-spring/three'
 import { useRef, useState } from 'react'
-
 import "./Task3.css"
-
 
 type BoxProps = {
   position: [number, number, number]
