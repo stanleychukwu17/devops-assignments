@@ -219,7 +219,7 @@
     this package contains useful helpers and fully functional, ready-made abstractions for r3f.
     can be used in react & react-native,
 
-  - some of it's useful helpers
+  - Read: some of it's useful helpers
     Camera:
       perspectiveCamera, OrthographicCamera, cubeCamera 
     
@@ -260,7 +260,23 @@
         />
 
   - give an example of MeshWobbleMaterial from drei
+    import { MeshWobbleMaterial } from @react-three/drei
+
+    return (
+      <>
+        <mesh position={[x,y,z]}>
+          <BoxGeometry args={[1,1,1]} />
+          <MeshWobbleMaterial
+            color="red"
+            speed={1.2}
+            factor={0.6}
+          />
+        </mesh>
+      </>
+    )
+
   - give an example of MeshDistortMaterial from drei
+    see ./task/
 
 
 
