@@ -83,10 +83,11 @@ NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain
 
 6 drei package
   - talk about the drei package
-  - some of it's useful helpers
+  - Read: some of it's useful helpers
   - what helper from drei helps you rotate around your scene, zoom in and out of your scene
   - give an example of MeshWobbleMaterial from drei
   - give an example of MeshDistortMaterial from drei
+    - Read: explanation of the hooks we used in this task
 
 7 useHelper hook from drei
   - talk about the useHelper hook (p16, p19)
