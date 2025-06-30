@@ -1,0 +1,24 @@
+
+1 TailwindCss v4
+  - installation
+    pnpm i tailwindcss @tailwindcss/postcss
+
+  - Core Configuration in CSS
+    The most notable change is the deprecation of the tailwind.config.js file for most cases,
+    Your main CSS file (e.g: app.css, global.css) is now where you'll import Tailwind and define
+    your theme
+
+    i.e @import "tailwindcss";
+
+    You no longer need @tailwind base;, @tailwind components;, @tailwind utilities;
+    The single @import "tailwindcss"; handles everything
+
+
+
+
+
+
+
+
+
+
