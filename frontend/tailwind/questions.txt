@@ -14,17 +14,15 @@ full_revision: 29 June 2025
   - Vite Integration (Recommended)
 
 2 some tips
-  - using em
-  - using rem
+  - using em & rem
   - font-size calc
-  - installing tailwind plugin for vsCode
 
 3 Text and colors
   - apply text color on an element (3 eg)
   - apply custom text color to an element (3 eg)
   - apply background color to an element (3 eg)
   - apply custom background color to an element (3 eg)
-  - apply border on an element
+  - apply border on an element, also set the border color
   - apply border with width value
   - border-top, border-right, border-bottom, border-left
   - border custom width
