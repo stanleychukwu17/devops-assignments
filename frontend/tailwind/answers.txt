@@ -53,6 +53,73 @@
       * For older, JavaScript-based plugins, you might still need to use a tailwind.config.js file
         and explicitly load it
 
+  - Custom Utilities and Variants
+    * You can define custom utilities using @utility
+      e.g: in your css file
+        @utility custom-url {
+          color: var(--color-blonde-200);
+          text-decoration: underline;
+        }
+
+        <a href="#" class="custom-url p-2 hover:no-underline> Hover over me </a>
+    
+    * Create custom variants with @variant:
+      e.g: in you css file
+        .custom-url-with-variant {
+          text-decoration: underline;
+
+          @variant hover {
+            text-decoration: no-underline;
+          }
+        }
+
+        <a href="#" class="custom-url-with-variant p-2> Hover over me </a>
+
+  - Backward Compatibility (Using a tailwind.config.js file)
+    * While the default is CSS-first, you can still use a traditional tailwind.config.js JavaScript
+      file for backward compatibility or more complex configurations (e.g., if you're using
+      JavaScript-based plugins that haven't been updated for the CSS-first approach).
+
+    * If you want to use a tailwind.config.js file, you need to explicitly load it in your main CSS
+      file using the @config directive:
+
+    i.e:
+    @import "tailwindcss";
+    @config "../../tailwind.config.js"; /* Adjust the path as needed */
+
+  - PostCSS Configuration
+    * You'll still need a postcss.config.mjs (or postcss.config.js) file to include the
+      @tailwindcss/postcss plugin
+
+      // postcss.config.mjs
+      export default {
+        plugins: {
+          "@tailwindcss/postcss": {},
+        },
+      };
+
+     In v4, postcss-import and autoPreFixer are often handled automatically by Tailwind, so you might
+     not need to include them explicitly anymore. 
+ 
+  - Vite Integration (Recommended)
+    Tailwind CSS v4 has a first-party Vite plugin for optimal performance and minimal configuration
+
+    pnpm install tailwindcss @tailwindcss/vite
+
+    - Configure vite.config.ts (or .js)
+      // vite.config.ts
+      import { defineConfig } from 'vite';
+      import tailwindcss from '@tailwindcss/vite';
+
+      export default defineConfig({
+        plugins: [
+          tailwindcss(),
+        ],
+      });
+
+      * Then, in your main CSS file, simply @import "tailwindcss";.
+
+
 
 
 
