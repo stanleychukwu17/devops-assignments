@@ -6,3 +6,10 @@
   height: 100vh;
   /* background-color: #000; */
 }
+.three_Canvas {
+  display: block;
+  position: relative;
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+}
