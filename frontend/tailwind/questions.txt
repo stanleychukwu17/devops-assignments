@@ -28,7 +28,7 @@ full_revision: 29 June 2025
   - border custom width
   - border custom color
   - how do you extend a custom color using @theme
-  - how do you use the custom color extend in @theme
+  - how do you use the custom color extend in @theme (using in text, background, border)
 
 4 Typography with tailwindCss
   - Read: tailwind comes with 3 default font families

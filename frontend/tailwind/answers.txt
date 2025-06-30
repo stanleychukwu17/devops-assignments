@@ -180,16 +180,74 @@
 
 3 Text and colors
   - apply text color on an element (3 eg)
+    text-green-100
+    text-yellow-200
+    text-gray-700
+
   - apply custom text color to an element (3 eg)
+    text-[<custom_color>]
+    text-[#f1f2f6]
+    text-[#fff]
+    text-[yellow]
+
   - apply background color to an element (3 eg)
+    bg-green-100
+    bg-yellow-200
+    bg-gray-700
+
   - apply custom background color to an element (3 eg)
-  - apply border on an element
+    bg-[<custom_color>]
+    bg-[#f1f2f6]
+    bg-[#fff]
+    bg-[yellow]
+
+  - apply border on an element, also set the border color
+    border -> border-width: 1px;
+    border-green-700: set the border color to green
+
   - apply border with width value
+    border-<width_value>
+    border-2
+    border-4
+    border-8
+
   - border-top, border-right, border-bottom, border-left
+    border-t-2
+    border-r-4
+    border-b-8
+    border-l-12
+
   - border custom width
+    border-[<custom_value>]
+    border-[16px]
+    border-[32px]
+
   - border custom color
+    border-[<custom_color>]
+    border-[yellow]
+    border-[purple]
+
   - how do you extend a custom color using @theme
-  - how do you use the custom color extend in @theme
+    * in your global css file where you have @import "tailwindcss", do
+      @theme {
+        --color-<color_name>-<optional_color_number>: <color_value>;
+      }
+
+      e.g:
+      @theme {
+        --color-blonde-50: #eff6ff;
+        --color-blonde-100: #dbeafe;
+        --color-blonde-200: #bfdbfe;
+      }
+
+  - how do you use the custom color extend in @theme (using in text, background, border)
+    text-blonde-50
+    bg-blonde-100
+    border-blonde-200
+
+
+
+
 
 
 
