@@ -5,3 +5,6 @@ full_revision: 29 June 2025
 1 TailwindCss v4
   - installation
   - Core Configuration in CSS
+  - The @theme Directive
+  - Automatic Content Detection
+  - Using Plugins
