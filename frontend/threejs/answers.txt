@@ -147,7 +147,8 @@
     camera.lookAt(new THREE.Vector3(0,0,0))
     camera.lookAt(mesh.position)
 
-3. see ./task/3
+3. see ./task/3/src/components/Task3/Task3.tsx
+
 
 4 useFrame hook
   - what can you say about the useFrame hook
@@ -276,9 +277,18 @@
     )
 
   - give an example of MeshDistortMaterial from drei
-    see ./task/
+    * see ./task/3/src/components/Task6/Task6.tsx
 
+    - Read: explanation of the hooks we used in this task
+      we used the "useCursor" from drei
 
+      * useCursor is a hook provided by @react-three/drei that allows you to change the
+        cursor style dynamically when hovering over interactive 3D elements in a
+        React Three Fiber scene.
+
+      e.g:
+        useCursor(hovered); // Change cursor to a pointer when hovered, pointer is the default
+        useCursor(hovered, "progress"); // Change cursor to "progress" (typically a spinning wheel)
 
 
 
