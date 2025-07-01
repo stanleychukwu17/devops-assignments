@@ -147,7 +147,7 @@
     camera.lookAt(new THREE.Vector3(0,0,0))
     camera.lookAt(mesh.position)
 
-3. see ./task/3/src/components/Task3/Task3.tsx
+3. see ./task/src/components/Task3/Task3.tsx
 
 
 4 useFrame hook
@@ -277,7 +277,7 @@
     )
 
   - give an example of MeshDistortMaterial from drei
-    * see ./task/3/src/components/Task6/Task6.tsx
+    * see ./task/src/components/Task6/Task6.tsx
 
     - Read: explanation of the hooks we used in this task
       we used the "useCursor" from drei
@@ -291,7 +291,60 @@
         useCursor(hovered, "progress"); // Change cursor to "progress" (typically a spinning wheel)
 
 
+7 useHelper hook from drei
+  - talk about the useHelper hook
+    * This is another useful hook from the drei package. Helpers in three.js are useful tools
+      that provide visual aids to understand the structure and relationships of objects in 3D world
 
+    * Instead of manually creating and adding helpers like AxesHelper, GridHelper e.t.c, you can
+      use "useHelper" to add them dynamically
+
+  - visualize axes using the AxesHelper
+    use the component provided by r3f:
+    <axesHelper args={[5]} />
+
+  - visualize grids using the GridHelper
+      use the component provided by r3f:
+        <gridHelper position={[x,y,z]} args={[15]} />
+
+  - visualize light sources using any of the following:
+    SpotLightHelper, PointLightHelper, DirectionalLightHelper
+    -
+    -
+    import * as THREE from "three"
+    import {useHelper} from "@react-three/drei"
+
+    const Cube = () => {
+      const lightRef = useRef<THREE.Mesh>(null!)
+      useHelper(lightRef, THREE.DirectionalLightHelper, 1)
+
+      return (
+        <group>
+          <directionalLight ref={lightRef} position={[0, 2, 5]} intensity={Math.PI} />
+          <mesh>...</mesh>
+        </group>
+      )
+    }
+    
+  - visualize the bounding box of an object using the BoxHelper
+    -
+    -
+    import * as THREE from "three"
+    import {useHelper} from "@react-three/drei"
+
+    const Cube = () => {
+      const meshRef = useRef<THREE.Mesh>(null!)
+      useHelper(meshRef, THREE.BoxHelper, "red") // replace "red" with any color of your choice
+
+      return (
+        <group>
+          <mesh ref={meshRef}>...</mesh>
+        </group>
+      )
+    }
+
+  see all examples at:
+  ./task/src/components/Task7/Task7.tsx
 
 
 
