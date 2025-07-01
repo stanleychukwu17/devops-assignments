@@ -98,8 +98,11 @@ NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain
   - visualize the bounding box of an object using the BoxHelper
 
 8 Leva package
-  - talk about the leva package 
+  - Talk about the leva package
+  - Read: Example 1
+  - Read: Conditionally show fields
+  - Read: Folders
+  - Read: Nested folders
+  - Read: Input Types
   - use leva to control the lightColor and lightIntensity of a directionalLight
   - use leva to adjust the color and the radius of a TorusKnotGeometry
-  -
-  - Read: example 1
