@@ -6,6 +6,26 @@ import { useControls } from "leva"
 
 const colors = ['hotpink', 'purple']
 
+const DirectLightComp = () => {
+  const directionalLightRef = useRef<THREE.Mesh>(null!) // reference to the directional light
+
+  // use leva to control the light color and intensity
+  const {lightColor, lightIntensity} = useControls("Direct Light Settings", {
+    lightColor: "#ffffff",
+    lightIntensity: {value: Math.PI, min: 0, max: 10}
+  })
+
+  return (
+    <directionalLight
+      ref={directionalLightRef}
+      color={lightColor}
+      intensity={lightIntensity}
+      position={[2, 10, 10]}
+      castShadow
+    />
+  )
+}
+
 type CubeProps = {
   name: string,
   color: string,
@@ -38,14 +58,8 @@ const Cube = ({name, color, position, args}: CubeProps) => {
   )
 }
 
-export default function Task8() {
-  const directionalLightRef = useRef<THREE.Mesh>(null!) // reference to the directional light
 
-  // useLeva to control the light color and intensity
-  const {lightColor, lightIntensity} = useControls({
-    lightColor: "#ffffff",
-    lightIntensity: {value: Math.PI, min: 0, max: 10}
-  })
+export default function Task8() {
 
   return (
     <div className="three_Canvas">
@@ -55,7 +69,6 @@ export default function Task8() {
         shadows
         camera={{position:[0,0,10], fov: 40}}
       >
-
         {/* enable soft shadows */}
         <SoftShadows />
 
@@ -63,13 +76,7 @@ export default function Task8() {
         <ambientLight intensity={0.5} />
 
         {/* directional light for the shadows */}
-        <directionalLight
-          ref={directionalLightRef}
-          color={lightColor}
-          intensity={lightIntensity}
-          position={[2, 10, 10]}
-          castShadow
-        />
+        <DirectLightComp />
 
         {/* plane to receive the shadows */}
         <mesh

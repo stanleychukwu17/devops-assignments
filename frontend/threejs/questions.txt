@@ -1,9 +1,6 @@
 full_revision: 20 May 2025
 full_revision: 22 June 2025
 
-NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain three.js with r3f),
-  please 
-
 1 - Read: introduction
   - Read: installing react-three-fibre 
   - Read: see some of the ecosystem of react-three-fibre
