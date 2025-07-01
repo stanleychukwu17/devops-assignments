@@ -353,8 +353,54 @@
       scene
     * pnpm i leva
 
+    * To use Leva, simply import useControls and use it anywhere in your app:
+      import { useControls } from "leva"
+      const { myValue } = useControls({ myValue: 10 })
+
   - use leva to control the lightColor and lightIntensity of a directionalLight
   - use leva to adjust the color and the radius of a TorusKnotGeometry
+  -
+  - Read: example 1
+    import { useControls } from 'leva'
+
+    function MyComponent() {
+      const { myValue } = useControls({ myValue: 10 })
+      return myValue
+    }
+
+    function AnotherComponent() {
+      const { anotherValue } = useControls({ anotherValue: 'alive!!' })
+      return <div>Hey, I'm {anotherValue}</div>
+    }
+
+    function UnmountedComponent() {
+      const { barValue } = useControls({ barValue: true })
+      return barValue ? <div>Hello!</div> : null
+    }
+
+    function MyApp() {
+      return (
+        <>
+          <MyComponent />
+          <AnotherComponent />
+        </>
+      )
+    }
+
+    * Note that since UnmountedComponent is not mounted anywhere in our application,
+      the control declared there will not be added to the GUI!
+
+    * The order of the controls depends on hooks call order, in our case myValue will be first
+  
+
+
+
+
+
+
+
+
+
 
 
   
