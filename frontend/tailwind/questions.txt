@@ -2,6 +2,8 @@ full_revision: 29 June 2025
 full_revision: 29 June 2025
 full_revision: 29 June 2025
 
+NOTE: https://tailwindcss.com/docs/upgrade-guide
+
 1 TailwindCss v4
   - installation
   - Core Configuration in CSS
