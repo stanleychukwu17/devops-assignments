@@ -50,10 +50,13 @@ export default function Task8() {
         camera={{position:[0,0,10], fov: 40}}
       >
 
+        {/* enable soft shadows */}
         <SoftShadows />
 
+        {/* enable ambient light, creates a soft glow */}
         <ambientLight intensity={0.5} />
 
+        {/* directional light for the shadows */}
         <directionalLight
           ref={directionalLightRef}
           color={lightColor}
@@ -62,6 +65,7 @@ export default function Task8() {
           castShadow
         />
 
+        {/* plane to receive the shadows */}
         <mesh
           receiveShadow
           rotation={[-Math.PI/2, 0, 0]}
@@ -71,12 +75,15 @@ export default function Task8() {
           <shadowMaterial attach={"material"} opacity={0.7} />
         </mesh>
 
+        {/* group to hold the cubes */}
         <group>
           <Cube position={[2,0,0]} color={"hotpink"} args={[1.5,2,1.5]} />
           <Cube position={[-2,0,0]} color={"purple"} args={[1.5,2,1.5]} />
         </group>
 
+        {/* enable orbit controls */}
         <OrbitControls />
+
       </Canvas>
     </div>
   )
