@@ -2,15 +2,24 @@ import * as THREE from "three"
 import { useRef } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { MeshWobbleMaterial, SoftShadows, OrbitControls } from "@react-three/drei"
-import { Leva, useControls } from "leva"
+import { useControls } from "leva"
+
+const colors = ['hotpink', 'purple']
 
 type CubeProps = {
+  name: string,
   color: string,
   position: [number, number, number]
   args: [number, number, number]
 }
-const Cube = ({color, position, args}: CubeProps) => {
+const Cube = ({name, color, position, args}: CubeProps) => {
   const meshRef = useRef<THREE.Mesh>(null!)
+
+  const {xSize, ySize, zSize} = useControls(name, {
+    xSize: {value: args[0], min: 0, max: 5, step: 0.25},
+    ySize: {value: args[1], min: 0, max: 5, step: 0.25},
+    zSize: {value: args[2], min: 0, max: 5, step: 0.25},
+  })
 
   // rotate the cube every frame on the x and y axis
   useFrame((state) => {
@@ -23,7 +32,7 @@ const Cube = ({color, position, args}: CubeProps) => {
       position={position}
       castShadow
     >
-      <boxGeometry args={args} />
+      <boxGeometry args={[xSize, ySize, zSize]} />
       <MeshWobbleMaterial color={color} factor={0.8} speed={1.5} />
     </mesh>
   )
@@ -40,9 +49,6 @@ export default function Task8() {
 
   return (
     <div className="three_Canvas">
-
-      {/* rendering the Leva GUI */}
-      <Leva />
 
       {/* the 3D canvas */}
       <Canvas
@@ -77,8 +83,8 @@ export default function Task8() {
 
         {/* group to hold the cubes */}
         <group>
-          <Cube position={[2,0,0]} color={"hotpink"} args={[1.5,2,1.5]} />
-          <Cube position={[-2,0,0]} color={"purple"} args={[1.5,2,1.5]} />
+          <Cube name={`${colors[0]} cube`} position={[2,0,0]} color={`${colors[0]}`} args={[1.5,2,1.5]} />
+          <Cube name={`${colors[1]} cube`} position={[-2,0,0]} color={`${colors[1]}`} args={[1.5,2,1.5]} />
         </group>
 
         {/* enable orbit controls */}
