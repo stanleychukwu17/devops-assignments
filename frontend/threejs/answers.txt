@@ -347,7 +347,7 @@
   ./task/src/components/Task7/Task7.tsx
 
 8 Leva package
-  - talk about the leva package
+  - Talk about the leva package
     * Leva is a wonderful r3f package created by the same guys who created drei and r3f. The library
       helps to adjust the properties of objects and see the live changes of the properties in our
       scene
@@ -357,10 +357,7 @@
       import { useControls } from "leva"
       const { myValue } = useControls({ myValue: 10 })
 
-  - use leva to control the lightColor and lightIntensity of a directionalLight
-  - use leva to adjust the color and the radius of a TorusKnotGeometry
-  -
-  - Read: example 1
+  - Read: Example 1
     import { useControls } from 'leva'
 
     function MyComponent() {
@@ -392,15 +389,48 @@
 
     * The order of the controls depends on hooks call order, in our case myValue will be first
   
+  - Read: Conditionally show fields
+    -
+    const {check, myNumber, color} = useControls({
+      check: false,
+      myNumber: 4,
+      color: {
+        value: "#fff",
+        render: (get) => get('check') && get('myNumber') > 5
+      }
+    })
+
+    * The color input will show in the GUI only if check is true & myNumber is strictly greater than 5
+
+  - Read: Folders
+    * Using a folder structure can be as easy as setting the name you want as the
+      first parameter of useControls
+    -
+    const {showLighting, showStats} = useControls('My folder', {
+      showLighting: true,
+      showStats: false,
+    })
+
+  - Read: Nested folders
+    * Say you want folders in your folders. For this we are going to need the folder function. 
+      Using this method the object key becomes the folder name
+    -
+    import { folder, useControls } from 'leva'
+
+    const { showLighting, showStats } = useControls('My folder', {
+      lighting: folder({
+        showLighting: true,
+      }),
+      'Show stats': folder({
+        showStats: false,
+      }),
+    })
+
+    * One thing to note is that all inputs used here are returned on the same level.
+      So the state will look like:
+      {showLighting: true, showStats: false}
+      This means that having properties with the same names in different folders will cause conflicts
 
 
 
 
-
-
-
-
-
-
-
-  
