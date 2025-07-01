@@ -346,7 +346,15 @@
   see all examples at:
   ./task/src/components/Task7/Task7.tsx
 
+8 Leva package
+  - talk about the leva package
+    * Leva is a wonderful r3f package created by the same guys who created drei and r3f. The library
+      helps to adjust the properties of objects and see the live changes of the properties in our
+      scene
+    * pnpm i leva
 
+  - use leva to control the lightColor and lightIntensity of a directionalLight
+  - use leva to adjust the color and the radius of a TorusKnotGeometry
 
 
   
