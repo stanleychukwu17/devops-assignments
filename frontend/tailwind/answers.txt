@@ -329,8 +329,9 @@
       <div class="text-tiny">...</div>
 
   - use the custom font-size and font-family in a custom class (i.e a utility class)
-  
+
   - Read: font-smoothing
+
   - text-decoration: list the 4 types
   - how do you do "text-decoration-line" in tailwindCss
   - how do you do "text-decoration-color" in tailwindCss
