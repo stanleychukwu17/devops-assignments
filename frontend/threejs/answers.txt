@@ -431,6 +431,45 @@
       {showLighting: true, showStats: false}
       This means that having properties with the same names in different folders will cause conflicts
 
+  - Read: Input Types
+    :Number
+      A single numerical input
+
+      const { myNumber } = useControls({
+        myNumber: 4,
+      })
+
+      Change the value by either dragging over the input label or the inner label
+
+    :Range
+      A Number input with a range slider. It will be used when you provide a min and max value
+      const { myNumber } = useControls({
+        myNumber: {
+          value: 4,
+          min: 0,
+          max: 10,
+          step: 1, // step is optional, tells leva how to increase/reduce the value
+        },
+      })
+
+    :Color
+      A color picker. Color format is inferred by the object used:
+      -
+      const {myFooColor, myBarColor} = useControls({
+        myFooColor: '#fff',
+        myBarColor: { r: 200, b: 125, g: 106, a: 0.4 },
+      })
+      -
+      * In the example, "myFooColor" will create an Hexadecimal field while "myBarColor" will
+        expose 4 values in separate r, g, b and a numerical fields
+
+    :Boolean
+      A simple toggle
+      const { toggle } = useControls({ toggle: true })
+
+    :Select
+
+
 
 
 
