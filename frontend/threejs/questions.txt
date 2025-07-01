@@ -104,5 +104,7 @@ NOTE: if you ever wanted to to work with the traditional three.js (i.e the plain
   - Read: Folders
   - Read: Nested folders
   - Read: Input Types
+
+8.1 Leva challenge
   - use leva to control the lightColor and lightIntensity of a directionalLight
-  - use leva to adjust the color and the radius of a TorusKnotGeometry
+  - use leva to adjust the color and the args of a boxGeometry

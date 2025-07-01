@@ -501,7 +501,7 @@
 
       * https://github.com/pmndrs/leva/blob/main/docs/inputs.md#vector3
 
-  -
+8.1 Leva challenge
   - use leva to control the lightColor and lightIntensity of a directionalLight
     -
     import {useControls} from 'leva'
