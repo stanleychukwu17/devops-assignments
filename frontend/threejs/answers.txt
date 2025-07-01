@@ -468,8 +468,79 @@
       const { toggle } = useControls({ toggle: true })
 
     :Select
+      A dropdown select input with a specified list of elements. An optional default value can be provided
+      -
+      const presetColor = useControls({
+        options: ['red', 'green', 'blue', 'yellow'],
+        value: 'red',
+      })
 
+    :Interval
+      An array containing two numerical values. Will be used when value is an array of 2
+      numbers and min and max are specified
+      -
+      const { myInterval } = useControls({
+        myInterval: {
+          min: 0,
+          max: 10,
+          // initial value of 4, 5
+          value: [4, 5],
+        },
+      })
 
+    :Vector2
+      * good stuff, but i don't see myself using it.
 
+      * Compound input of two numerical values without min and max bounds. Will be used when value
+        is an object with x and y properties or an array of two numbers
 
+      * https://github.com/pmndrs/leva/blob/main/docs/inputs.md#vector2
 
+    :Vector3
+      * same as vector2. i don't see myself using it
+
+      * https://github.com/pmndrs/leva/blob/main/docs/inputs.md#vector3
+
+  -
+  - use leva to control the lightColor and lightIntensity of a directionalLight
+    -
+    import {useControls} from 'leva'
+
+    const LightComp = () => {
+      const {color, intensity} = useControls('Light Folder', {
+        color: "#fff",
+        intensity: {
+          value: Math.PI,
+          min:1,
+          max:20,
+          step:0.5
+        }
+      })
+
+      return (
+        <directionalLight
+          castShadow
+          color={color}
+          intensity={intensity}
+        />
+      )
+    }
+
+  - use leva to adjust the color and the args of a boxGeometry
+    -
+    import {useControls} from 'leva'
+
+    const BoxComp = () => {
+      const {xSize, ySize, zSize} = useControls({
+        xSize: {value: 1.5, min: 1, max: 3, step: 0.25}
+        ySize: {value: 1.5, min: 1, max: 3, step: 0.25}
+        zSize: {value: 1.5, min: 1, max: 3, step: 0.25}
+      })
+
+      return (
+        <mesh>
+          <boxGeometry args={[xSize, ySize, zSize]} />
+          <MeshWobbleMaterial color={"purple"} factor={0.8} speed={1.5} />
+        </mesh>
+      )
+    }
