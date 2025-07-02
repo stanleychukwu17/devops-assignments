@@ -235,10 +235,10 @@
     e.g:
       import { OrbitControls } from @react-three/drei
       return (
-        <>
+        <Canvas>
           <Box />
           <OrbitControls />
-        </>
+        </Canvas>
       )
 
     you can customize the settings using props, ask chatGPT for more on the props
