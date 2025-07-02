@@ -265,7 +265,7 @@
     return (
       <>
         <mesh position={[x,y,z]}>
-          <BoxGeometry args={[1,1,1]} />
+          <boxGeometry args={[1,1,1]} />
           <MeshWobbleMaterial
             color="red"
             speed={1.2}
