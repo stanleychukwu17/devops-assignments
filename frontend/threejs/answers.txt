@@ -133,12 +133,12 @@
       |__ __ __ x
       z
 
-      in blender front-view (1)
-      z
-      |
-      |
-      |__ __ __ x
-      y
+      in blender front-view (1);        in blender side-view (3);
+      z                                  z
+      |                                  |
+      |                                  |
+      |__ __ __ x                        |__ __ __ y
+      y                                  x
 
   - How do you make the camera look at an object
     "Object3D" instances have a .lookAt() method which rotates the object so that its z faces the target
