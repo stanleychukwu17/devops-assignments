@@ -18,9 +18,11 @@ full_revision: 2 July 2025
   - How do you make the camera look at an object
 
 3 Test your Knowledge, work on a simple 3.js scene (do not use A.I assistance)
-  - open the ./task/3/src/App.tsx and write the answer to the questions below:
+  - open the ./task/src/components/Task0/Task0.tsx and write your code there:
 
   - run pnpm i or npm i to install dependencies and packages
+  - pnpm run dev to start your server
+  - import the Task0 component in the App.tsx for the world to see
   - import all you need from react and the three.js package (e.g Canvas, * as THREE)
   - you'll be needing SoftShadows, OrbitControls & MeshWobbleMaterial from drei
 
@@ -37,7 +39,7 @@ full_revision: 2 July 2025
     - when the box is hovered on, change the material color of the box
 
   - create the main App component and add your Canvas component
-    - use shadow prop in the Canvas component
+    - use shadows prop in the Canvas component
     - use camera prop in the Canvas component
       - let the camera use a fov of 60 (fov is field of view)
       - camera position should be x:-5, y:2, z:10
@@ -64,6 +66,10 @@ full_revision: 2 July 2025
   - add pointLight and use the following props
     - position: x:0, y:-10, z: 0
     - intensity: 1.5
+
+  - 👏🏾 clap for yourself, nice job wel-done!
+    - stop the code from running
+    - allow the code to remain here, we will use it in the future
 
 4 useFrame hook
   - what can you say about the useFrame hook
