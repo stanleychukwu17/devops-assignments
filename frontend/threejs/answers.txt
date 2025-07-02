@@ -215,7 +215,7 @@
       const {camera, size, clock} = useThree()    
 
 6 drei package
-  - talk about the drei package
+  - Read: about the drei package
     this package contains useful helpers and fully functional, ready-made abstractions for r3f.
     can be used in react & react-native,
 
