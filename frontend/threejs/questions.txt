@@ -92,7 +92,7 @@ full_revision: 2 July 2025
     - Read: explanation of the hooks we used in this task
 
 7 useHelper hook from drei
-  - talk about the useHelper hook (p16, p19)
+  - talk about the useHelper hook
   - visualize axes using the AxesHelper
   - visualize grids using the GridHelper
   - visualize light sources using any of the following:
