@@ -48,7 +48,7 @@ export default function Task0() {
     <div className="three_Canvas">
       <Canvas
         shadows
-        camera={{ position:[-3,0,10], fov: 60 }}
+        camera={{ position:[0, 2,10], fov: 60 }}
       >
         <SoftShadows />
 
@@ -58,29 +58,36 @@ export default function Task0() {
           position={[2, 5, 2]}
           intensity={Math.PI}
           castShadow
+          shadow-mapSize-width={2096}
+          shadow-mapSize-height={2096}
         />
 
-        <mesh
-          rotation={[-Math.PI/2,0,0]}
-          position={[0,-4,0]}
-          receiveShadow
-        >
-          <planeGeometry args={[100,100]} />
-          {/* <meshStandardMaterial color={"white"} /> */}
-          <shadowMaterial attach={"material"} opacity={0.7} />
-        </mesh>
-
         <group>
+          <mesh
+            rotation={[-Math.PI/2,0,0]}
+            position={[0,-4,0]}
+            receiveShadow
+          >
+            <planeGeometry args={[100,100]} />
+            <shadowMaterial attach={"material"} opacity={0.7} />
+          </mesh>
+
           <BoxComp
-            position={[-3, 0, 0]}
+            position={[-5, 0, 0]}
             color="purple"
-            hovColor="lightgreen"
+            hovColor="indigo"
             args={[2,2.5,1.5]}
           />
           <BoxComp
-            position={[3, 0, 0]}
+            position={[0, 0, 0]}
             color="hotpink"
             hovColor="yellowgreen"
+            args={[2,2.5,1.5]}
+          />
+          <BoxComp
+            position={[5, 0, 0]}
+            color="#61b79a"
+            hovColor="#1b5c50"
             args={[2,2.5,1.5]}
           />
         </group>
