@@ -65,8 +65,6 @@ full_revision: 2 July 2025
     - position: x:0, y:-10, z: 0
     - intensity: 1.5
 
-  - if everything is okay, delete the node-modules folder
-
 4 useFrame hook
   - what can you say about the useFrame hook
   - what can you say about the "state" and "delta" callback arguments
