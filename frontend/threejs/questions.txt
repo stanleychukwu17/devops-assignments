@@ -7,7 +7,7 @@ full_revision: 22 June 2025
 
 1.1 Some General Knowledge
   - Read: types of Geometries and their args
-  - Math.PI in rotation = 360deg
+  - Math.PI in rotation = 180deg
   - Read: see the different types of light in 3.js
 
 2 Transforming objects
