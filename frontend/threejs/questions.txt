@@ -75,7 +75,7 @@ full_revision: 2 July 2025
   - what can you say about the useFrame hook
   - what can you say about the "state" and "delta" callback arguments
   - advanced usage, how do you use the useFrame hook with priority
-  - Read: some of the methods and properties available in the "state" callback arguments
+  - Read: some of the properties available in the "state" callback arguments (11 listed)
 
 5 useFrame exercise
   - use it to rotate an object on the y-axis
