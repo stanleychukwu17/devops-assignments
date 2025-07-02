@@ -11,7 +11,7 @@ const Flag = () => {
     scale: active ? 1.3 : 1
   }) 
 
-  useCursor(hovered) // Change cursor to a pointer when hovered
+  useCursor(hovered) // Change cursor to a pointer when this component is hovered on
 
   return (
     <a.mesh
