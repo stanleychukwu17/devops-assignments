@@ -92,7 +92,10 @@ export default function Task0() {
           />
         </group>
 
-        <OrbitControls />
+        <OrbitControls
+          minPolarAngle={0}                  // look horizontally
+          maxPolarAngle={Math.PI / 2}        // limit to top hemisphere
+        />
       </Canvas>
     </div>
   )
