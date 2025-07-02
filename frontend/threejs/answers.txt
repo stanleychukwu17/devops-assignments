@@ -70,6 +70,7 @@
       args = radius, tube, radialSegments, tubularSegments, arc*
     
     - TorusKnotGeometry
+    - CircleGeometry
     - DodecahedronGeometry
     - IcosahedronGeometry
     - OctahedronGeometry
@@ -78,9 +79,8 @@
     - ExtrudeGeometry
     - ShapeGeometry
     - BufferGeometry
-    - CircleGeometry
 
-  - Math.PI in rotation = 360deg
+  - Math.PI in rotation = 180deg
     When you see something like Math.PI used in mesh.rotation, it usually refers to rotating an object
     by 180 degrees (since π radians = 180°).
     e.g:
