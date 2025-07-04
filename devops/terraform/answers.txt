@@ -24,6 +24,21 @@
                 version = "~>5.0"
             }
         }
+
+        backend "s3" {
+            bucket = var.bucket_name
+            key = "backend.tfstate"
+            region = "eu-north-1"
+            encrypt = true
+            dynamodb_table = var.table_name
+        }
+        or
+        backend "remote" {
+            organization = "my-terraform"
+            workspaces {
+                name = "Github-CI/CD"
+            }
+        }
     }
 
     provider "aws" {
