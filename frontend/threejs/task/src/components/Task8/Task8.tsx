@@ -35,7 +35,8 @@ type CubeProps = {
 const Cube = ({name, color, position, args}: CubeProps) => {
   const meshRef = useRef<THREE.Mesh>(null!)
 
-  const {xSize, ySize, zSize} = useControls(name, {
+  const {boxColor, xSize, ySize, zSize} = useControls(name, {
+    boxColor: color,
     xSize: {value: args[0], min: 0, max: 5, step: 0.25},
     ySize: {value: args[1], min: 0, max: 5, step: 0.25},
     zSize: {value: args[2], min: 0, max: 5, step: 0.25},
@@ -53,7 +54,7 @@ const Cube = ({name, color, position, args}: CubeProps) => {
       castShadow
     >
       <boxGeometry args={[xSize, ySize, zSize]} />
-      <MeshWobbleMaterial color={color} factor={0.8} speed={1.5} />
+      <MeshWobbleMaterial color={boxColor} factor={0.8} speed={1.5} />
     </mesh>
   )
 }
