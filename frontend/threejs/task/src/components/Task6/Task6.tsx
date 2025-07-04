@@ -5,8 +5,8 @@ import { useSpring, a } from "@react-spring/three"
 
 // Flag component with hover and click interactions
 const Flag = () => {
-  const [hovered, setHovered] = useState(false) // State to track hover
-  const [active, setActive] = useState(false) // Change cursor to a pointer when hovered
+  const [hovered, setHovered] = useState<boolean>(false) // State to track hover
+  const [active, setActive] = useState<boolean>(false) // Change cursor to a pointer when hovered
   const animate = useSpring({
     scale: active ? 1.3 : 1
   }) 
