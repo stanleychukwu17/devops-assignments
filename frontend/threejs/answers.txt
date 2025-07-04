@@ -402,7 +402,7 @@
       }
     })
 
-    * The color input will show in the GUI only if check is true & myNumber is strictly greater than 5
+    * The color input will show in the GUI only if check is true & myNumber is greater than 5
 
   - Read: Folders
     * Using a folder structure can be as easy as setting the name you want as the
@@ -459,7 +459,7 @@
       -
       const {myFooColor, myBarColor} = useControls({
         myFooColor: '#fff',
-        myBarColor: { r: 200, b: 125, g: 106, a: 0.4 },
+        myBarColor: { r: 200, g: 106, b: 125, a: 0.4 },
       })
       -
       * In the example, "myFooColor" will create an Hexadecimal field while "myBarColor" will
@@ -472,9 +472,11 @@
     :Select
       A dropdown select input with a specified list of elements. An optional default value can be provided
       -
-      const presetColor = useControls({
-        options: ['red', 'green', 'blue', 'yellow'],
-        value: 'red',
+      const { presetColor } = useControls({
+        presetColor: {
+          options: ['red', 'green', 'blue', 'yellow'],
+          value: 'red',
+        }
       })
 
     :Interval
