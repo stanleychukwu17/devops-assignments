@@ -3,8 +3,7 @@
     Plan:
     Apply
 
-2.  Terraform providers are plugins that allow Terraform to interact with various APIs and services. it manages
-    the lifecycle of the resources defined in your Terraform configuration.
+2.  Terraform providers are plugins that allow Terraform to interact with various APIs and services.
 
     more_explanation {
         Providers enable you to:
