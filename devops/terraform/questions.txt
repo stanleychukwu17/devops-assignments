@@ -163,8 +163,8 @@ SECTION 2 BEGINS
     - Give an example of using "maps" to organize your aws_instance settings
 
 3. Structural types
-    - Give an example of using "tuple"
-    - Give an example of using "object"
+    - Give an example of using "tuple" to organize your availability_zone's
+    - Give an example of using "object" to organize your aws_instance settings
 
 4. The count meta-argument
     - What is count in terraform and what can it be used for
