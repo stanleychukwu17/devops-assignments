@@ -159,8 +159,8 @@ SECTION 2 BEGINS
     - List structural types
 
 2.  Collection types
-    - Give an example of using "list"
-    - Give an example of using "maps"
+    - Give an example of using "list" to organize your availability_zone's
+    - Give an example of using "maps" to organize your aws_instance settings
 
 3. Structural types
     - Give an example of using "tuple"
