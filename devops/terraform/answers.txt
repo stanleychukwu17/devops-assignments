@@ -50,7 +50,10 @@
 3.1 Read: more info on working with backend "s3" or backend "remote"
     * backend "s3" must be defined statically — Terraform doesn't support using variables
       (var.bucket_name, etc.) in the backend block directly.
+      -
       You must define them directly or use a -backend-config file or CLI args
+      -
+      the backend block is parsed before variables are loaded, which is why it doesn't support var.* directly
     
     e.g of using a "backend.config" file:
         inside your file, you add your backend config there:
@@ -59,6 +62,9 @@
         region         = "eu-north-1"
         encrypt        = true
         dynamodb_table = "my-lock-table"
+
+        then re-initialize your terraform:
+        terraform init -backend-config=backend.config
 
 4.
     resource "aws_vpc" "main" {
