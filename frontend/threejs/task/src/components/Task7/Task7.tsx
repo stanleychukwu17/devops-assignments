@@ -2,6 +2,7 @@ import * as THREE from "three"
 import { useRef } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { useHelper, OrbitControls } from '@react-three/drei';
+import './Task7.css'
 
 const Cube = () => {
   const meshRef = useRef<THREE.Mesh>(null!)
