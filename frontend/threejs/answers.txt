@@ -526,6 +526,7 @@
           castShadow
           color={color}
           intensity={intensity}
+          position={[x,y,z]}
         />
       )
     }
@@ -542,7 +543,7 @@
       })
 
       return (
-        <mesh>
+        <mesh position={[x,y,z]}>
           <boxGeometry args={[xSize, ySize, zSize]} />
           <MeshWobbleMaterial color={"purple"} factor={0.8} speed={1.5} />
         </mesh>
