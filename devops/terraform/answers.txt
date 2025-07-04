@@ -474,6 +474,7 @@
         e.g terraform state show aws_instance.my_vm
     - terraform state pull
     - terraform state list | grep 'module.<module_name>'
+      e.g: terraform state list | grep -i module.vpc_module
 
 36. running commands on you ec2 instance
     - which is the best for running commands on your ec2 instance (cloud-init or ansible)
@@ -498,7 +499,7 @@
         
         - "systemctl enable docker", now say that your docker service is running and for some reasons your server
           crashes and restarts, after the restart, your docker will be disabled because it is waiting for you to
-          run a command of "systemctl docker start", but if you do "systemctl docker enable" during boot-time
+          run a command of "systemctl start docker", but if you do "systemctl enable docker" during boot-time
           configuration, every time your server restarts, docker service will also start immediately
 
     - not_needed: Read: read about some of the highlights of using cloud-init
