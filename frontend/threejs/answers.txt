@@ -250,12 +250,13 @@
       - minDistance / maxDistance: Clamp the zoom range
       - minPolarAngle / maxPolarAngle: Clamp the vertical orbit angle (in radians)
 
-    To prevent the camera from rotating below the ground plane, you should limit the polar angle:
+    When working with perspective camera which is the default, if you want to prevent the camera
+    from rotating below the ground plane, you should limit the polar angle:
       - minPolarAngle: Minimum vertical angle (up/down)
       - maxPolarAngle: Maximum vertical angle
       e.g:
         <OrbitControls
-          minPolarAngle={0}                  // look horizontally
+          minPolarAngle={0}                  // does not allow user rotate beyond the ground plane horizontally
           maxPolarAngle={Math.PI / 2}        // limit to top hemisphere
         />
 
