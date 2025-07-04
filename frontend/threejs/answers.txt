@@ -300,11 +300,14 @@
 
   - visualize axes using the AxesHelper
     use the component provided by r3f:
-    <axesHelper args={[5]} />
+      <axesHelper args={[5]} />
 
   - visualize grids using the GridHelper
       use the component provided by r3f:
         <gridHelper position={[x,y,z]} args={[15]} />
+        -
+        You can also specify grid colors like this:
+        <gridHelper args={[15, 15, 'white', 'gray']} />
 
   - visualize light sources using any of the following:
     SpotLightHelper, PointLightHelper, DirectionalLightHelper
@@ -385,7 +388,8 @@
     * Note that since UnmountedComponent is not mounted anywhere in our application,
       the control declared there will not be added to the GUI!
 
-    * The order of the controls depends on hooks call order, in our case myValue will be first
+    * The order of the controls depends on hooks call order, in our case "myValue" will be first,
+      followed by "anotherValue" and then "barValue"
   
   - Read: Conditionally show fields
     -
