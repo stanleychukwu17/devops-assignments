@@ -6,6 +6,7 @@ full_revision: 1 June 2025
 2. Talk about terraform providers
 
 3. Configure an aws provider with both access_key and secret_key
+3.1 Read: more info on working with backend "s3" or backend "remote"
 
 4.  What is a terraform block, label, local_name, arguments
     - Give an example

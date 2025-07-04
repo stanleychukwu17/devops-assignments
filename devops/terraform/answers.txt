@@ -47,6 +47,19 @@
         secret_key = var.secret_key
     }
 
+3.1 Read: more info on working with backend "s3" or backend "remote"
+    * backend "s3" must be defined statically — Terraform doesn't support using variables
+      (var.bucket_name, etc.) in the backend block directly.
+      You must define them directly or use a -backend-config file or CLI args
+    
+    e.g of using a "backend.config" file:
+        inside your file, you add your backend config there:
+        bucket         = "my-bucket"
+        key            = "backend.tfstate"
+        region         = "eu-north-1"
+        encrypt        = true
+        dynamodb_table = "my-lock-table"
+
 4.
     resource "aws_vpc" "main" {
         cidr_block = "10.0.0.0/16"
