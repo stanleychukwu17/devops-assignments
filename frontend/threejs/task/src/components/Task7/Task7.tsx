@@ -31,7 +31,6 @@ const Cube = () => {
 
 export default function Task7() {
 
-
   return (
     <div className="three_Canvas">
       <Canvas
