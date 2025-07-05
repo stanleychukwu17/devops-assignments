@@ -112,7 +112,7 @@
             ssl_certificate_key /etc/nginx/ssl/key.pem;
 
             location / {
-                proxy_pass http://backend;  # Unencrypted HTTP forwarded to backend
+                proxy_pass http://backend/;  # Unencrypted HTTP forwarded to backend
             }
         }
 
