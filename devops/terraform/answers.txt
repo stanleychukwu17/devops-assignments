@@ -925,7 +925,7 @@ SECTION 2 BEGINS
         }
         resource "aws_subnet" "dev_subnet" {
             vpc_id = aws_vpc.dev_vpc.id
-            cidr_block = local.cidr_block[0]
+            cidr_block = local.cidr_blocks[0]
             availability_zone = "eu-central-1a"
         }
         resource "aws_internet_gateway" "dev_igw" {
