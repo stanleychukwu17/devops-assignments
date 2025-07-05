@@ -1045,7 +1045,6 @@ SECTION 2 BEGINS
         |    |__ main.tf
         |    |__ variables.tf
         |    |__ terraform.auto.tfvars
-        |    |__ variables.tf
         |    |__ outputs.tf
         |    |__ locals.tf
         |
