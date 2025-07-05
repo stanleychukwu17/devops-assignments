@@ -946,8 +946,8 @@ SECTION 2 BEGINS
         e.g ami = lookup(var.ami, var.region)
 
     - difference btw lookup & element function
-        lookup retrieves an item from a map using the key of the value
-        element retrieves an item from a list using the index of the value
+        lookup retrieves an item from a map using the key of the value: lookup(map, key)
+        element retrieves an item from a list using the index of the value: element(list, index)
 
     - file function
         The file function reads the content of a file and returns it as a string
