@@ -93,6 +93,12 @@ full_revision: 9 July 2025
     SpotLightHelper, PointLightHelper, DirectionalLightHelper
   - visualize the bounding box of an object using the BoxHelper
 
+7.1 useHelper challenge
+  using the code from task:3
+  - add a axesHelper, gridHelper
+  - add DirectionalLightHelper
+  - add BoxHelper
+
 8 Leva package
   - Talk about the leva package
   - Read: Example 1
