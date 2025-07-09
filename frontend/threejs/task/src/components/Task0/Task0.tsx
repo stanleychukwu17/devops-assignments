@@ -1,8 +1,9 @@
 import * as THREE from 'three'
 import { Canvas, useFrame, } from "@react-three/fiber"
-import { MeshWobbleMaterial, SoftShadows, useCursor, OrbitControls } from '@react-three/drei'
+import { MeshWobbleMaterial, SoftShadows, useCursor, OrbitControls, useHelper } from '@react-three/drei'
 import { useRef, useState } from "react"
 import { useSpring, a } from '@react-spring/three'
+import { useControls } from 'leva'
 
 
 type CubeProps = {
@@ -44,13 +45,43 @@ const Cube = ({position, color, args}: CubeProps) => {
   )
 }
 
+type LightProps = {
+  position: [number, number, number]
+  shadows?: boolean
+  name: string
+}
+const Light = ({position, shadows = false, name}: LightProps) => {
+  const ref = useRef<THREE.Mesh>(null!)
+
+  useHelper(ref, THREE.DirectionalLightHelper, 1, "red")
+
+  const {lightIntensity, color} = useControls(`${name}`, {
+    color: "#ffffff",
+    lightIntensity: {value: Math.PI, min: 0.5, max: 10, step:0.25}
+  })
+
+  return (
+      <directionalLight
+        ref={ref}
+        color={color}
+        intensity={lightIntensity}
+        position={position}
+        castShadow={shadows}
+      />
+  )
+}
+
 export default function Task0() {
   return (
     <div className="three_Canvas">
       <Canvas
         shadows
-        camera={{position:[0, 1, 5], fov:70}}
+        camera={{position:[0, 1, 7], fov:70}}
       >
+
+        <axesHelper scale={7} />
+
+        <gridHelper scale={3} position={[0,-2,0]} />
 
         {/* for the soft shadow in the scene */}
         <SoftShadows />
@@ -59,8 +90,8 @@ export default function Task0() {
         <ambientLight intensity={0.5} />
 
         {/* add some directional Light */}
-        <directionalLight intensity={Math.PI} position={[2,5,2]} castShadow />
-        <directionalLight intensity={Math.PI} position={[-2,5,2]} />
+        <Light position={[2,5,1]} name="light-1" shadows={true} />
+        <Light position={[-2,5,1]} name="light-2" />
 
         <group>
           {/* plane geometry for the shadow */}
