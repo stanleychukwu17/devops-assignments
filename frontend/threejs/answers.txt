@@ -217,20 +217,16 @@
       const {camera, size, clock} = useThree()    
 
 6 drei package
-  - Read: about the drei package
-    this package contains useful helpers and fully functional, ready-made abstractions for r3f.
-    can be used in react & react-native,
-
   - Read: some of it's useful helpers
-    Camera:
-      perspectiveCamera, OrthographicCamera, cubeCamera 
-    
     Controls:
       CameraControls, FlyControls, MapControls, DeviceControls, DeviceOrientationControls,
-      MotionPathControls
+      MotionPathControls, OrbitControls
 
     Misc:
       wireframe, useCamera, useCursor, useTrail, useIntersect
+
+    material:
+      MeshDistortMaterial, MeshWobbleMaterial
 
   - what helper from drei helps you rotate around your scene, zoom in and out of your scene
     you use the "OrbitControls" helper
