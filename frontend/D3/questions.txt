@@ -41,9 +41,7 @@ SECTION 1
     - .append task:
         see the example and explain
 
-6.  Read: Explain the enter, update & exit pattern in D3
-
-7.  SVG and D3
+6.  SVG and D3
     - task write: data: [30, 70, 110, 150]
         - append <svg> to the <body>
         - change the width: 400, height: 400
@@ -52,18 +50,18 @@ SECTION 1
         - cy:50, r:[data value]
         - fill each circle with pink color
 
-8. Scale functions
+7. Scale functions
     - Read: a little bit about scale functions
     - give an example of a .scaleLinear() function using input:[0,100] and output:[0,500]
     - Read: see an example where it was used & rewrite
 
-9. Scale functions and Axes
+8. Scale functions and Axes
     - talk about scaleLinear and scaleBand
     - give examples of scaleLinear and scaleBand
 
-9.1 i asked chatGPT a question, see the question and answer
+8.1 i asked chatGPT a question, see the question and answer
 
-10. Transitions & Animations
+9. Transitions & Animations
     - select all circles and add a transition to it, with duration of 1000ms
     - add a delay 100ms for the animation loop
     - animate the cx to 300
@@ -72,7 +70,7 @@ SECTION 1
     -
     - Read: some explanations
 
-11. Handling Events
+10. Handling Events
     - select one circle and add:
     - mouseenter event, change color to blue
     - mouseleave event, change color to green

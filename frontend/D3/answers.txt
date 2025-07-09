@@ -95,13 +95,7 @@
             .attr("r", 20)
             .attr("fill", "blue")
 
-6.  Read: Explain the enter, update & exit pattern in D3
-        D3 uses a concept called the "enter-update-exit" pattern for working with dynamic data, it ensures that
-        new elements are added, existing elements are updated and unnecessary elements are removed
-        -
-        But this pattern have been replaced with the .join() method
-
-7.  SVG and D3
+6.  SVG and D3
     const data = [30, 70, 110, 150]
     const svg = d3.select("body").append("svg")
                     .attr("width", 400)
@@ -114,7 +108,7 @@
         .attr("r", d => d)
         .attr("fill", "pink")
 
-8. Scale functions
+7. Scale functions
     - Read: a little bit about scale functions
         scale in D3 allows you you to map data values to visual values (like pixel positions or colors).
         common scales include linear scales. 
@@ -131,7 +125,7 @@
             .attr("height", 50)
             .attr("fill", "orange")
 
-9. Scale functions and Axes
+8. Scale functions and Axes
     - talk about scaleLinear and scaleBand
         scaleLinear:
             is used for **continuous data** — when you have numeric data that spans a continuous range
@@ -174,7 +168,7 @@
                     d3.axisBottom(xScale)
                 );
 
-9.1 I asked chatGPT a question, see the question and answer
+8.1 I asked chatGPT a question, see the question and answer
     -
     - d3.select("svg").append("g")
         .attr("transform", "translate(50,250)") // move the group element <g>
@@ -198,7 +192,7 @@
           used for positioning elements like <rect>, <circle>, or <text>, but not for <g>. So, if you
           try to set x and y attributes on a <g>, you’ll likely not see any effect
 
-10. Transitions & Animations
+9. Transitions & Animations
     d3.selectAll("circle")
         .attr("cx", "0")
         .attr("r", "0")
@@ -215,7 +209,7 @@
         - .duration(): Specifies the transition duration.
         - .attr() / .style(): All .attr & .style after .transition will be animated over the duration specified
 
-11. Handling Events
+10. Handling Events
     d3.select("circle")
         .on("mouseenter", function(this: SVGElement, event, d) {
             console.log("Mouse entered:", event, d);
