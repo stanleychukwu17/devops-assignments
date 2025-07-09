@@ -160,7 +160,7 @@
   - what can you say about the "state" and "delta" callback arguments
     e.g useFrame((state, delta) => {
       // state: The r3f root state (includes camera, scene, clock)
-      // delta: time elapsed since the last frame in seconds
+      // delta: time elapsed since the last frame in seconds (i.e difference in secs btw each frame)
     })
 
   - advanced usage, how do you use the useFrame hook with priority
