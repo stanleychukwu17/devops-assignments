@@ -79,7 +79,6 @@ full_revision: 9 July 2025
   - Read: some tips of accessing the state object outside of useFrame
 
 6 drei package
-  - Read: about the drei package
   - Read: some of it's useful helpers
   - what helper from drei helps you rotate around your scene, zoom in and out of your scene
   - give an example of MeshWobbleMaterial from drei
