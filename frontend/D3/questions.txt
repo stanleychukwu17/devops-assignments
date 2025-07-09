@@ -53,6 +53,7 @@ SECTION 1
 7. Scale functions
     - Read: a little bit about scale functions
     - give an example of a .scaleLinear() function using input:[0,100] and output:[0,500]
+      the use it to create an x and y axis
     - Read: see an example where it was used & rewrite
 
 8. Scale functions and Axes
