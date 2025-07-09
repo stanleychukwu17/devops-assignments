@@ -60,19 +60,18 @@ export default function Task0() {
 
         {/* add some directional Light */}
         <directionalLight intensity={Math.PI} position={[2,5,2]} castShadow />
-        <directionalLight intensity={Math.PI} position={[-2,5,2]} castShadow />
-
-        <mesh
-          receiveShadow
-          position={[0,-3,0]}
-          rotation={[-Math.PI/2, 0, 0]}
-        >
-          <planeGeometry args={[100,100]} />
-          {/* <meshStandardMaterial color={"indigo"} /> */}
-          <shadowMaterial attach={"material"} opacity={0.8} />
-        </mesh>
+        <directionalLight intensity={Math.PI} position={[-2,5,2]} />
 
         <group>
+          {/* plane geometry for the shadow */}
+          <mesh
+            receiveShadow
+            position={[0,-3,0]}
+            rotation={[-Math.PI/2, 0, 0]}
+          >
+            <planeGeometry args={[100,100]} />
+            <shadowMaterial attach={"material"} opacity={0.8} />
+          </mesh>
           <Cube color='#443cf8' position={[2.5,0,0]} args={[1.2,1.8,.8]} />
           <Cube color='#dc10a9' position={[0,0,0]} args={[1.2,1.8,.8]} />
           <Cube color='#188cc1' position={[-2.5,0,0]} args={[1.2,1.8,.8]} />
