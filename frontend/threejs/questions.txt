@@ -109,5 +109,6 @@ full_revision: 9 July 2025
   - Read: Input Types
 
 8.1 Leva challenge
+  using the code from task:3
   - use leva to control the lightColor and lightIntensity of a directionalLight
   - use leva to adjust the color and the args of a boxGeometry
