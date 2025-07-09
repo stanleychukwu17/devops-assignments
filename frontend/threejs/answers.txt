@@ -79,6 +79,7 @@
     - ExtrudeGeometry
     - ShapeGeometry
     - BufferGeometry
+    - primitive
 
   - Math.PI in rotation = 180deg
     When you see something like Math.PI used in mesh.rotation, it usually refers to rotating an object
@@ -102,7 +103,7 @@
   - Read a little about object transformation
     -
     All the objects that inherits from "Object3D" possesses these transformation properties: (i.e scale,
-    rotation, position). If ypu go to 3.js doc, you'll see the classes of each objects(i.e the classes
+    rotation, position). If you go to 3.js doc, you'll see the classes of each objects(i.e the classes
     they inherit from)
     e.g:
       for a mesh: Object3D -> Mesh
