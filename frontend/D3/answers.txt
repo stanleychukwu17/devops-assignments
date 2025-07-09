@@ -118,6 +118,12 @@
                         .domain([0,100]) // input range (i.e your data range)
                         .range([0,500]) // output range (i.e your visual range)
 
+        const yAxis = svg.append("g").attr("id", "yAxis")
+                        .call(d3.axisLeft(scale))
+
+        const xAxis = svg.append("g").attr("id", "xAxis")
+                        .call(d3.axisBottom(scale))
+
     - Read: see an example where it was used & rewrite
         d3.select("svg").append("rect")
             .attr("x", scale(50)) // mapping data value 50 to a pixel position. output will be = 250
