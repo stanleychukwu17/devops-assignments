@@ -20,7 +20,6 @@ full_revision: 9 July 2025
 3 Test your Knowledge, work on a simple 3.js scene (do not use A.I assistance)
   - open the ./task/src/components/Task0/Task0.tsx and write your code there:
 
-  - run pnpm i or npm i to install dependencies and packages
   - pnpm run dev to start your server
   - import the Task0 component in the App.tsx for the world to see
   - import all you need from react and the three.js package (e.g Canvas, * as THREE)
