@@ -152,9 +152,10 @@
 
 4 useFrame hook
   - what can you say about the useFrame hook
-    This hook is provided by r3f, it is used to run code on every frame, similar to the
-    requestAnimationFrame loop in the native three.js. This is useful for animations,
-    interactions or any updates that need to occur continuously
+    This hook is provided by r3f, it is used to run code on every animations frame,
+    (i think the default is 24fps), similar to the requestAnimationFrame loop in the
+    native three.js. This is useful for animations, interactions or any updates that
+    need to occur continuously
 
   - what can you say about the "state" and "delta" callback arguments
     e.g useFrame((state, delta) => {
