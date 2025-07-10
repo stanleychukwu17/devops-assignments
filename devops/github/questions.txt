@@ -58,3 +58,6 @@ full_revision: 1 June 2025
 19. - write a command to pull from origin/main branch
     - write another command to pull from origin/new-page/promo
     - what happens when you do a git pull, especially if they are conflicts
+
+20. cleaning up
+    - write a command to clean up only remote tracking branches (without pulling)
