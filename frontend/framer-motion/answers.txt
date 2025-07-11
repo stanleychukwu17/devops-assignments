@@ -222,6 +222,8 @@
         childrenControls.start({y:-50, color:'#fefefe'})
     })
 
+    note: the above can also be solved with a setTimeout
+
 11.3
     useEffect(() => {
         controls.start(i => ({
