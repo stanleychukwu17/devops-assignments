@@ -99,6 +99,16 @@
                 position reaches 400 pixels from the top of the target element
     }
 
+7.1
+    const ref = useRef<HTMLElement>({} as HTMLElement)
+    const {scrollYProgress} = useScroll({
+        target: ref,
+        offset: [0, 0.5]
+    })
+    const opacity = useTransform(scrollYProgress, [0, 0.5], [0,1])
+
+    return <motion.div ref={ref} style={{opacity}}>...</motion.div>
+
 8. useSpring creates a motion value that will animate to its latest target with a spring animation.
     e.g
         const x = useMotionValue(0)
