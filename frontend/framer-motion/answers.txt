@@ -177,7 +177,7 @@
 ----------
 
 11. useAnimationControls can create animation controls that can be used to start/stop animations on one or
-    more motion components or multiple animations together
+    more motion components
     e.g
     function HomeComp () {
         const controls = useAnimationControls()
