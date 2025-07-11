@@ -153,3 +153,12 @@
         when the changes pulled from the remote repo are conflicting with one or more files on your
         local repo, git will pause the merging and require you to manually resolve the conflicts and
         merge the branches again by yourself
+
+
+20. cleaning up
+    - write a command to clean up only remote tracking branches (without pulling)
+      git fetch --prune
+      or
+      git remote prune origin
+
+
