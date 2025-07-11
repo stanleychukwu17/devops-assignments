@@ -249,12 +249,14 @@
         controls.start({x:0, transition: {duration: 1}})
     .stop(): stops the animation at the current timeline
 
-12. useAnimationFrame: is an animation loop that provides the latest frame time to the provided
-    callback function, it runs a callback once every animation frame 
+12. useAnimationFrame: it runs a callback once every animation frame 
     e.g
     useAnimationFrame((time, delta) => {
         ref.current.style.transform = `rotateY(${time}deg)`
     })
+    -
+    time: is the elapsed time in milliseconds since the component was mounted
+    delta: is the time difference in milliseconds between the current frame and the previous frame
 
 13. The useInView hook is a simple hook to let you know when an element is within the viewport
     const ref = useRef(null)
