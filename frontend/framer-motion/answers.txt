@@ -323,6 +323,9 @@
         whileHover={{scale: 1.2}}
         onHoverStart={(event, info) => console.log(info)}
         onHoverEnd={(event, info) => console.log(info)}
+        onUpdate={(latest) => {
+            console.log("Current animated values:", latest);
+        }}
     />
     ---
     - whileTap: can be used with some more related props
