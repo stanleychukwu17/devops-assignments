@@ -60,7 +60,10 @@ invested in framer-motion
 11.2 Read: because useAnimationControls returns an async function, you can sequence animations
      see an example of using sequence to open a menu
 11.3 using dynamic element with useAnimationControls.start
-11.4 Talk about the useAnimationControls methods, the .set(), .start(), .stop()
+11.4 Talk about the useAnimationControls methods:
+     .set()
+     .start() & also using it with transitionOverride
+     .stop()
 
 12. Talk about useAnimationFrame hook and give us an example
 
