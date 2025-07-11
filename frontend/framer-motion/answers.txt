@@ -258,38 +258,39 @@
     time: is the elapsed time in milliseconds since the component was mounted
     delta: is the time difference in milliseconds between the current frame and the previous frame
 
-13. The useInView hook is a simple hook to let you know when an element is within the viewport
-    const ref = useRef(null)
-    const isInView = useInView(ref)
+13. 
+    - The useInView hook is a simple hook to let you know when an element is within the viewport
+        const ref = useRef<HTMLElement>(null!)
+        const isInView = useInView(ref)
 
-    useEffect(() => {
-        console.log("Element is in view", isInView)
-    }, [isInView])
+        useEffect(() => {
+            console.log("Element is in view", isInView)
+        }, [isInView])
 
-    return <motion.div ref={ref} />
-    --
+        return <motion.div ref={ref} />
+
     - What are the options that can be provided to the hook?
-    1. root: RefObject<HTMLElement>
-        By default, the element will be tracked as it enters & leaves the window's viewport,
-        Set root to be the ref of a scrollable parent & it will use that parent to be the viewport instead
-        e.g:
-            const ref = useRef(null)
-            const container = useRef(null)
-            const isInView = useInView(ref, {root: container})
-            return (
-                <motion.div ref={container} style={{overflow: "scroll"}}>
-                    <div />
-                    <div />
-                    <div />
-                    <div ref={ref} />
-                </motion.div>
-            )
-    2. once: boolean
-        if you set to true, the useInView hook will stop observing the element once it hits true and will
-        always return true. The default is false
-    3. amount: "some"|"all"|number
-        The amount of the item that needs to enter the viewport for useInView to return true.
-        You can also use number from 0-1, The default is 0
+        1. root: RefObject<HTMLElement>
+            By default, the element will be tracked as it enters & leaves the window's viewport,
+            Set root to be the ref of a scrollable parent & it will use that parent to be the viewport instead
+            e.g:
+                const ref = useRef(null)
+                const container = useRef(null)
+                const isInView = useInView(ref, {root: container})
+                return (
+                    <motion.div ref={container} style={{overflow-y: "scroll"}}>
+                        <div />
+                        <div />
+                        <div />
+                        <div ref={ref} />
+                    </motion.div>
+                )
+        2. once: boolean
+            if you set to true, the useInView hook will stop observing the element once it hits true and will
+            always return true. The default is false
+        3. amount: "some"|"all"|number
+            The amount of the item that needs to enter the viewport for useInView to return true.
+            You can also use number from 0-1, The default is 0
 
 14. e.g:
     <motion.circle
