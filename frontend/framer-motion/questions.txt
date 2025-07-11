@@ -71,6 +71,8 @@ invested in framer-motion
     - what are the options that can be provided to this hook
 
 14. Talk about keyframe's in framer-motion, also how do you space them using times
+    - use it to animate the "cx" and the "cy" of an svg circle element
+    - use times to control each of the keyframe for the "cx" and "cy" values
 
 15. List at-least 5 gesture animation props
     - talk about whileHover
