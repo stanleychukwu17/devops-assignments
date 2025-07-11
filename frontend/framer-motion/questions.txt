@@ -34,7 +34,9 @@ invested in framer-motion
 7. How do you track the scroll progress on an element that is not scrollable
     (i.e the scroll progress of an element as it enters and leaves the viewport)
     - explain the offset option provided
-
+7.1 Use the example from question 7 and expand on it
+    - change the opacity of the element using useTransform, change from 0 to 1
+      (i.e fading in the div as it enters the web-page)
 
 8. Explain the useSpring hook and give an example
     - explain some of the options that can be passed into a useSpring hook
