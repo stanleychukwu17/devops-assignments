@@ -44,13 +44,19 @@ invested in framer-motion
 9. Tell us about the useTransform hook and give us an example
     - show some examples of using functions to transform the input value
 
-10. Tell us about the useVelocity hook,
-    write down at-least one example of using the useVelocity hook and go-through the other one
+10. - Tell us about the useVelocity hook,
+    - create a motion value for "x", let the initial value be 0
+    - use useSpring to smoothen the movement of the "x" value
+    - use the velocity hook to track the returned smoothen value
+    - use the returned velocity value to scale an element using the useTransform hook
+      input: [-3000, 0 ,3000], output: [2,1,2]
+    - use the returned velocity value to change the backgroundColor
+    - use all returned value on the element, give the element a drag prop
 
 ----------
 
 11. Talk about the useAnimationControls hook and give examples
-11.1 how do you use variant variables in useAnimationControls 
+11.1 how do you use variant variables in useAnimationControls
 11.2 useAnimationControls for sequence animations, show an example of using sequence to open a menu
 11.3 using dynamic element with useAnimationControls.start
 11.4 Talk about the useAnimationControls methods, the .set(), .start(), .stop()
