@@ -72,11 +72,12 @@
         commit hash provided
 
 11. what is the difference btw git reset and git revert
-    git reset <commit-hash> - this will delete all the commits you have made after the <commit-hash> specified
-        but it will not roll back the changes, everything will remain the same, only the commits will be deleted
+    git reset <commit-hash> - this will delete all the commits you have made after the <commit-hash>
+        specified but it will not roll back the changes, everything will remain the same, only the
+        commits will be deleted
     
-    git reset --hard <commit-hash> - this will delete and the commits and will also take your project back to
-        the state it was at the time of the <commit-hash> specified
+    git reset --hard <commit-hash> - this will delete and the commits and will also take your project
+        back to the state it was at the time of the <commit-hash> specified
 
     ### git revert
     git revert <commit-hash> - this is different from git reset because instead of deleting the commits
@@ -85,8 +86,8 @@
         you'll be prompted to enter a commit message
     
     ### which one should i use
-    - if you want to reverse commits that you haven't shared with anyone, use reset and no one will ever know
-        what happened
+    - if you want to reverse commits that you haven't shared with anyone, use reset and no one will
+        ever know what happened
     - but if you want to reverse commits that are already in other peoples system, you should use revert,
         because if you delete the commit on other peoples system, this will cause serious serious issues
         to reconcile the changes
