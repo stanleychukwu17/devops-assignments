@@ -43,7 +43,7 @@
 5.1
     - grid-column: 3 / -1; start from grid-column-line 3 and stop at the last grid-column-line
     - grid-row: 1 / -1; start from grid-row-line 1 and stop at the last grid-row-line
-    - grid-area: 3/1/-1/-1; start-row/start-column/end-row/end-column
+    - grid-area: 1/3/-1/-1; start-row/start-column/end-row/end-column
 
 6. 
     - grid-column: 1 / span 3
