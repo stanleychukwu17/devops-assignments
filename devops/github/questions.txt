@@ -1,5 +1,6 @@
 full_revision: 24th Apr 2025
 full_revision: 1 June 2025
+full_revision: 12 July 2025
 
 1.  - Config default user.name & user.email
     - how do you see the global user.name and user.email
@@ -10,7 +11,7 @@ full_revision: 1 June 2025
 
 3. How do you modify commits to include files you did not add + modify the commit message
 
-4. Tell us about github branches
+4.  Tell us about github branches
     - Create a new branch
     - Delete a branch
     - rename a branch
