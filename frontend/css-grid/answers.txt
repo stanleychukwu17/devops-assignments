@@ -274,6 +274,10 @@
         grid-auto-rows: 100px
         -
         this will ensure that the height of every new row is 100px
+    
+    summary:
+    grid-template-rows: auto; // this means random heights for each new row
+    grid-auto-rows: 100px; // this mean fixed heights for each new row
 
 19. 
     Say we have a grid container where all the cells are filled up because of the way we styled the grid items
