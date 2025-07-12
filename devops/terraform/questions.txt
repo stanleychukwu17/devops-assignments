@@ -299,6 +299,3 @@ SECTION 3 BEGINS
     - using golang: look at the code and write by yourself
         - this one is a bit more technical, just look at code and rewrite by yourself 2x
 
-
-
-failed question: 23. 39
