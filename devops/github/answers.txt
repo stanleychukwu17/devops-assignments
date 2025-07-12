@@ -25,8 +25,9 @@
 
 4. Tell us about github branches
     - we use branches to enhance our workflow on git, to allow proper development of new-features or
-        bug fixes. This inturn saves us from too many unnecessary conflicts at-least until we are
-        ready to merge with other branches
+      bug fixes. This inturn saves us from too many unnecessary conflicts at-least until we are
+      ready to merge with other branches
+    -
     - git branch <new-branch-name>
     - git branch -d <branch-name> {for merged branch}
         git branch -D <branch-name? {For un-merged branch}
