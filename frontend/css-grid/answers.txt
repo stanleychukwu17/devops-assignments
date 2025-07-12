@@ -288,9 +288,9 @@
         ;
     }
     From the example, you can see that there are no grid-cells left, so lets say after 3 months, we added another
-    grid-item and we forgot to adjust our grid-container to make space for the new grid-item, this new grid-item
-    will automatically create a new row and jump to that row, but the height and width of the new row will be
-    random since we did not provided a grid-cell for it.
+    grid-item and we forgot to adjust our grid-container styling to make space for the new grid-item, this
+    new grid-item will automatically create a new row and jump to that row, but the height and width of the new
+    row will be random since we did not provided a grid-cell or styling for it.
     -
     (Any items/elements created outside the available grid-cells are called explicit-grids/explicit-grid-items)
     So to make sure that new grid-items maintain consistency with other grid-items (i.e has the same row-height
@@ -299,7 +299,7 @@
     ...
     so
         grid-auto-flow: row; // this is not needed because the default for new explicit-grids are rows
-        grid-auto-rows: 100px; // means explicit-grids row-height should be 100px
+        grid-auto-rows: 100px; // means explicit-grids row-height would be 100px inline with existing grids
     ...
     for
         grid-auto-flow: column; // means let the default for explicit-grids be columns
