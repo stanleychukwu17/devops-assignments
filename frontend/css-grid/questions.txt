@@ -168,10 +168,19 @@ full_revision: 12 July 2025
 
 17. what is the difference between auto-fit and auto-fill
 
-18. Explain
+18. So from example 16, when you use "auto-fit", you can not accurately predict the number
+    of rows that each screen size will have, so how do you attend to these spontaneous
+    rows?
+
+19. Explain
     .container {
         ...
         grid-auto-flow: row
         grid-auto-rows: 100px
     }
     - also what about for columns
+    .container2 {
+        ...
+        grid-auto-flow: column
+        grid-auto-columns: 100px
+    }
