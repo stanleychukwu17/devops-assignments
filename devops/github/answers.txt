@@ -127,10 +127,10 @@
 17. Diff btw *git fetch* and *git pull*
     - git fetch
         Downloads new changes from the remote repository but does not integrate them into your current
-        working branch. it Updates the remote tracking branches (i.e origin/<repo> e.g: origin/main) in your local
-        repository to reflect the state of the remote repository.
-        After running "git fetch", you'll typically do: "git diff origin/main" and then maybe merge the changes:
-        "git merge origin/main"
+        working branch. it Updates the remote tracking branches (i.e origin/<repo> e.g: origin/main)
+        in your local repository to reflect the state of the remote repository.
+        After running "git fetch", you'll typically do: "git diff origin/main" and then maybe merge
+        the changes: "git merge origin/main"
 
     # git pull
         Downloads new changes from the remote repository and integrates them into your current branch.
@@ -156,7 +156,6 @@
         when the changes pulled from the remote repo are conflicting with one or more files on your
         local repo, git will pause the merging and require you to manually resolve the conflicts and
         merge the branches again by yourself
-
 
 20. cleaning up
     - write a command to clean up only remote tracking branches (without pulling)
