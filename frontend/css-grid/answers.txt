@@ -254,11 +254,12 @@
             up the available space. It essentially adjusts to fit the content while still providing flexibility.
         e.g: grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         This will create as many 200px wide columns as can fit in the container, but any empty columns will not
-            take up space, allowing the existing items to expand to a maximum of 1fr
+            be created, allowing the existing columns to expand to a maximum of 1fr
 
     Summary
-        auto-fill: Fills the grid with items and keeps empty space.
-        auto-fit: Fills the grid and collapses empty space, allowing items to take up available room.
+        auto-fill: Fills the grid with cells and keeps empty cells.
+        auto-fit: Fills the grid with non-empty cells and collapses empty space, allowing items to
+                  take up available space in the grid container.
 
 18. 
     Say we have a grid container where all the cells are filled up because of the way we styled the grid items
