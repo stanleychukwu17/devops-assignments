@@ -120,8 +120,9 @@
         git push -u <remote_name> <name_of_branch>
         git push --set-upstream <remote_name> <name_of_branch>
 
-16. how do you switch to a remote branch (i.e a branch available in your remote repo, but not in your local repo)
+16. how do you switch to a remote branch
     git switch <name_of_branch_on_the_remote_repo>
+    but run either "git fetch" or "git pull" first
 
 17. Diff btw *git fetch* and *git pull*
     - git fetch

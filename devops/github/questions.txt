@@ -11,7 +11,7 @@ full_revision: 12 July 2025
 
 3. How do you modify commits to include files you did not add + modify the commit message
 
-4.  Tell us about github branches
+4.  - Tell us about github branches
     - Create a new branch
     - Delete a branch
     - rename a branch
@@ -49,7 +49,8 @@ full_revision: 12 July 2025
     - how do you push a feature branch
     - how do you set a branch to be an upstream branch to always push to
 
-16. how do you switch to a remote branch (i.e a branch available in your remote repo, but not in your local repo)
+16. how do you switch to a remote branch (i.e a branch available in your remote repo,
+    but not in your local repo)
 
 17. Diff btw *git fetch* and *git pull*
 
