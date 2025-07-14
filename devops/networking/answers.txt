@@ -84,7 +84,8 @@
       they are faster, more reliable, and secure, but less flexible.
 
     - Wireless networks: Uses radio waves to connect devices without physical cables (typically via Wi-Fi).
-      they are more convenient and flexible, though they may offer slightly slower and less reliable performance.
+      they are more convenient and flexible, though they may offer slightly slower and
+      less reliable performance.
 
 5.
   1. how does a wired network communicate
