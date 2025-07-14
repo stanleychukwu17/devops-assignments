@@ -18,8 +18,8 @@
 
     - WAN:
       WAN (Wide area network) is a much larger network that covers a broader geographical area, often
-      spanning cities, countries or even continents. The internet is the largest example of a WAN. it connects
-      multiple LANs and other networks together, enabling communication over long distances
+      spanning cities, countries or even continents. The internet is the largest example of a WAN. it
+      connects multiple LANs and other networks together, enabling communication over long distances
       e.g:
       - The Internet: The most common example of a WAN. It connects millions of LANs worldwide.
 
