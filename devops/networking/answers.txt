@@ -68,8 +68,9 @@
       across different networks.
 
 
-  - HTTP operates on top of TCP/IP. It uses the reliable data transmission provided by TCP/IP to
-    send and receive web page requests and responses
+  - HTTP operates on top of TCP/IP. it is like a class that inherits from TCP/IP as it's parent class.
+    It uses the reliable data transmission provided by TCP/IP to send and receive web page requests
+    and responses
 
     HTTP is at Layer 7 (the Application Layer): It deals directly with user interactions,
     such as requesting web pages. HTTP defines how web browsers and web servers communicate.
