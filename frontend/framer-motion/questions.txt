@@ -11,9 +11,6 @@ motion is quite different from framer-motion, so i'll be sticking with framer-mo
 the foreseeable future, no time now to start learning motion after all the time i already
 invested in framer-motion
 
-*failed questions
-6, 11.3
-
 
 1. Talk about useMotionValue
     - List some of the useMotionValue methods (7 methods)
@@ -96,7 +93,6 @@ invested in framer-motion
     - talk about useDragControls
     - talk about dragListener
     - what do you do on touch-screen devices when using useDragControls?
-
 
 18. tell us about these transition properties {when, delayChildren, staggerChildren, staggerDirection}
     - talk about dynamic variant
