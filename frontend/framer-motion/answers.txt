@@ -176,8 +176,8 @@
 
 ----------
 
-11. useAnimationControls can create animation controls that can be used to start/stop animations on one or
-    more motion components
+11. useAnimationControls can create animation controls that can be used to start/stop animations
+    on one or more motion components
     e.g
     function HomeComp () {
         const controls = useAnimationControls()
@@ -362,7 +362,8 @@
     - <motion.div drag /> or drag="x" or drag="y"
     - whileDrag={{scale:1.2}}
     - dragSnapToOrigin:
-        If set to true, the draggable element will animate back to it's center/origin when released
+        If set to true, the draggable element will animate back to it's center/origin when released,
+        set to false by default
     ---
     - dragConstraints:
         This will define a distance for the named edge of the draggable component
@@ -373,7 +374,7 @@
         Or you can pass in the ref to another component
         e.g:
             const MyComponent = () => {
-                const container = useRef(null)
+                const container = useRef<HTMLDivElement>(null!)
                 return (
                     <motion.div ref={container}>
                         <motion.div drag dragConstraints={container} />
