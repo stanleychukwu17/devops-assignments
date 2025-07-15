@@ -17,8 +17,10 @@ full_revision: 14 July 2025
 
 6. Network Addresses
    - What is a MAC Address & IP Address
-   - Read: What happens when you're sending message from one LAN network to another LAN network
+
+6.1 What happens when you're sending message from one LAN network to another LAN network
 
 7. OSI Model Network
    - What are the 7 layers of the OSI model: use "Please Do Not Throw Sausage Pizza Away"
    - Explain each of the layers
+
