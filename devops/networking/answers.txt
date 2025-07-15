@@ -150,20 +150,8 @@
         IP address by a network administrator or set directly on the device. 
       }
 
-  - Read: What happens when you're sending message from one LAN network to another LAN network
-    Say we are sending a message from a Laptop in LAN-1 to a printer in LAN-2. the Laptop1 will
-    prepare the message and attach the i.p address of the printer, it will also attach the
-    mac address of the router. i.e:
-
-    [12:12:AB:AB]----[172.167.0.1]----[message]
-          |               |               |
-      router mac        printer       message from laptop
-        address       i.p address       in LAN-1
-
-    it sends this message with theses info to the router, when the router receives the message,
-    it removes its own mac address from the message and replaces it with the mac-address of the
-    printer and then sends the message to the printer.
-    {i need to expand of this answer using chatGPT}
+6.1 Read: What happens when you're sending message from one LAN network to another LAN network
+    Say we are sending a message from a Laptop in LAN-1 to a printer in LAN-2.
 
 7. OSI Model Network
   - What are the 7 layers of the OSI model: use "Please Do Not Throw Sausage Pizza Away"
