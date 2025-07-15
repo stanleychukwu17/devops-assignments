@@ -207,11 +207,18 @@
 
         const controls = useAnimationControls()
 
-        controls.start("hidden")
-        controls.start("visible")
-        controls.start("hover")
+        useEffect(() => { controls.start("hidden") }, [])
 
-        <motion.div variants={myVariant} animate={controls} />
+        const clicked = () => (controls.start("visible"))
+        const hovered = () => (controls.start("hover"))
+
+        <motion.div
+            variants={myVariant}
+            initial="hidden"
+            animate={controls}
+            onClick={clicked}
+            onPointerOver={hovered}
+        />
 
 11.2
     const sequence = async () => {
