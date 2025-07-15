@@ -229,7 +229,8 @@
         childrenControls.start({y:-50, color:'#fefefe'})
     })
 
-    note: the above can also be solved with a setTimeout
+    note: the above can also be solved with a setTimeout, or you can use the "animate" function
+        that framerMotion provides for sequence animation
 
 11.3
     useEffect(() => {
