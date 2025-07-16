@@ -98,7 +98,7 @@ invested in framer-motion
     - talk about dynamic variant
 
 19. - Talk about useAnimate hook
-    - what can it be used for
+    - Read: what can it be used for
     - use the useAnimate & usePresence hooks to animate a component when it exits the dom
 
 20. Talk about event propagation(i.e bubbling up of an event)
