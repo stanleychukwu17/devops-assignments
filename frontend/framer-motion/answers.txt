@@ -347,7 +347,7 @@
 16. To enable motion layout animation, we simply set the layout prop of a motion component. e.g:
     <motion.div layout />
     -
-    Any layout changes dat happens as a result of a re-render will b animated, dat could be a combination of:
+    Any layout changes dat happens as a result of a re-render will b animated, could be a:
     1. Re-ordering of a list
     2. A change in width, height or position
     3. A change in the parent layout e.g flexBox or grid
@@ -439,8 +439,8 @@
         )
     - dragListener:
         Determines whether to trigger the drag gesture from event listeners. if passing dragControls,
-        setting this to false will ensure that dragging can only be initiated by the controls, rather than a
-        pointerDown event on the draggable element. The default is set to true.
+        setting this to false will ensure that dragging can only be initiated by the controls,
+        rather than a pointerDown event on the draggable element. The default is set to true.
         -
         <motion.div drag="x" dragListener={false} dragControls={dragControls} />
     - what do you do on touch-screen devices when using useDragControls?
