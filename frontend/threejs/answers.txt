@@ -109,7 +109,7 @@
       for a group: Object3D -> group
       for a perspective camera: Object3D -> Camera -> Perspective Camera
 
-    To adjust any of the 4 properties above, we can manipulate the x,y,z axis on each of the properties
+    To adjust any of the 3 properties, we can manipulate the x,y,z axis on each of the properties
     e.g:
       mesh.position.x = 2;
       mesh.position.y = 1.5;
