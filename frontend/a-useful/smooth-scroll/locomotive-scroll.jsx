@@ -1,3 +1,8 @@
+// install the package
+// pnpm install locomotive-scroll
+
+
+
 // SmoothScrollWrapper.js
 import React, { useEffect, useRef } from 'react';
 import LocomotiveScroll from 'locomotive-scroll';
