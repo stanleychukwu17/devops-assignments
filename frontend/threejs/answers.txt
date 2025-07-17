@@ -341,7 +341,7 @@
       )
     }
 
-  see all examples at:
+7.1 see all examples at:
   ./task/src/components/Task7/Task7.tsx
 
 8 Leva package
