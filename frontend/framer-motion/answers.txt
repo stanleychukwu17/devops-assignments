@@ -573,6 +573,12 @@
     - List 3 types of transition:
         tween | spring | inertia
 
+        - spring: this is physics based, and applied by default to physical transformations like:
+            x, y, rotate, scale, layout, etc.
+        - tween: this is used when animation is for non-transform values like:
+            opacity, color, etc.
+        - inertia: mostly used for post drag transitions
+
     - Types of built-in named easing functions:
         "linear"
         easeIn, easeOut, easeInOut
