@@ -27,3 +27,24 @@ const SmoothScrollWrapper = ({ children }) => {
 };
 
 export default SmoothScrollWrapper;
+
+
+
+
+// Then wrap your content:
+// App.js or wherever
+import SmoothScrollWrapper from './SmoothScrollWrapper';
+
+function App() {
+  return (
+    <SmoothScrollWrapper>
+      <section style={{ height: '100vh', background: 'red' }}></section>
+      <section style={{ height: '100vh', background: 'blue' }}></section>
+      <section style={{ height: '100vh', background: 'green' }}></section>
+    </SmoothScrollWrapper>
+  );
+}
+
+
+// This gives you buttery, momentum-style scrolling on desktop and mobile, with 
+// support for parallax effects, scroll triggers, etc.
