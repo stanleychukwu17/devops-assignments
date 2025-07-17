@@ -39,3 +39,8 @@ function App() {
 }
 
 // Lenis is performant, React-friendly, and has a nice native scroll feel.
+
+// | Library               | Feel/Quality        | React Support   | Recommended For          |
+// | --------------------- | ------------------- | --------------- | ------------------------ |
+// | **Locomotive Scroll** | High-end, momentum  | Manual setup    | Parallax + smooth scroll |
+// | **Lenis**             | Modern, smooth      | ✅ Hook-friendly | General smooth scroll    |
