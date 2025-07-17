@@ -1,7 +1,6 @@
 1 - Read: introduction
       React-three-fibre is a react renderer for three.js. it helps you build your scene declaratively with
-      re-useable, self-contained components that react to state, are readily interactive and can participate
-      in React's ecosystem
+      re-useable components that react to state, are readily interactive & can participate in React's ecosystem
 
     *Warning:
       React-three-fibre is a react renderer, it must pair with a major version of react, just like react-dom,
