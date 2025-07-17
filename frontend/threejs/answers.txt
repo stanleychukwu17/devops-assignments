@@ -70,10 +70,10 @@
     
     - TorusKnotGeometry
     - CircleGeometry
+    - RingGeometry
     - DodecahedronGeometry
     - IcosahedronGeometry
     - OctahedronGeometry
-    - RingGeometry
     - LatheGeometry
     - ExtrudeGeometry
     - ShapeGeometry
