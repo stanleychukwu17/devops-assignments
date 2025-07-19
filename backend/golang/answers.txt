@@ -18,7 +18,8 @@
         var a, b, c, d, e int = 1, 2, 3, 4, 5
 
     - attach an int & string to a, b (use var)
-        var a, b = 5, "stanley"
+        var a int, b string = 22, "stanley"
+        var a, b = 22, "stanley"
 
     - attach an int, string & boolean to a, b, c (use := )
         a, b, c := 15, "bounce", true
@@ -44,6 +45,9 @@
         %T = type
         %s = string
         %d = int or digit(covering all number types)
+
+    - How many types of fmt.Print and fmt.Sprint do we have
+      fmt.Spr
 
     - what and where do we use fmt.Printf("%+v", value)
         ~ It is used for structs, and it adds the field names to the output when printing the value of a struct
