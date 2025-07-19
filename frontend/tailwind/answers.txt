@@ -1,4 +1,3 @@
-
 1 TailwindCss v4
   - installation
     pnpm i tailwindcss @tailwindcss/postcss
