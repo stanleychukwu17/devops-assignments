@@ -24,7 +24,7 @@
     e.g-1:
     const x = useMotionValue(0)
     const y = useMotionValue(0)
-    const transform = useMotionTemplate`translate( ${x} ${y} )`
+    const transform = useMotionTemplate`transform: translate( ${x} ${y} )`
     -
     return <motion.div style={{transform}} />
 
