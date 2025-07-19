@@ -149,6 +149,11 @@
 10. Creates a motion value that tracks the velocity of another motion value. it accepts a motion value
     and returns a new one that updates with the provided motion values velocity
     e.g:
+        const x = useMotionValue(0)
+        const velocity = useVelocity(x)
+        const acceleration = useVelocity(velocity)
+
+    -
     const pink = (saturation: number): string => {
         return `hsl(327, ${saturation}%, 50%)`
     }
