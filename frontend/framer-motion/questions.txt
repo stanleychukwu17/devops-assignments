@@ -25,7 +25,8 @@ invested in framer-motion
     - example1: use it to transform an element, translate the element on the x & y axis
     - example2: use it to change the drop shadow of an element
 
-5. Tell us about useScroll and give an example of how to use it to display page scroll progress bar
+5. Tell us about useScroll
+    - give an example of updating a progress bar using the scroll progress of a web page
 6. How can you track the scrolling in a scrollable element using the useScroll hook
     (track scroll in x-axis)
 7. How do you track the scroll progress on an element that is not scrollable
