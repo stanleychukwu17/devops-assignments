@@ -1,3 +1,7 @@
+full_revision: 18 July 2025
+full_revision: 18 July 2025
+full_revision: 18 July 2025
+
 1. How do you initialize a golang project
 
 2. Write the deck of cards application
@@ -12,6 +16,7 @@
     - go const, assign values to different const variables in a block
 
 4.  - In fmt.Printf, what is %v, %T, %s, %d
+    - How many types of fmt.Print and fmt.Sprint do we have
     - what and where do we use fmt.Printf("%+v", value)
     - what and where do we use fmt.Printf("%#v", value)
 
