@@ -1,0 +1,29 @@
+revision in blender
+
+full_revision: 
+::Book 6
+  jon character rigging - 60 (see finger rigging @ p65)
+  southern 3D character rigging - 68
+  southern walking 1 - 80
+  southern walking 2 - 87
+  mastering walk cycle - 92
+
+
+full_revision: 
+::Book 8.3 = Blender 3
+  voxel ret-opo-logy: p3
+  uv unwrapping: p5
+  How to set_up texture maps in blender: p13
+  Easy texturing without uv-unwrapping p18:
+  How to mix multiple normal maps together: p22
+  Texture baking: p26
+  How to bake normal map Decals (i.e: turn your models into normal maps): p33
+
+
+full_revision: 
+::Book 8 = Blender Animation
+  pro eeVee rendering: 81
+  Compositing in blender: 43
+  video editing: 54
+  Quick smooth camera movement in Blender: 38
+  Blender Light Linking: 71
