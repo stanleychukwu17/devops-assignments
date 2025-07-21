@@ -719,8 +719,8 @@
         useAnimationFrame       useVelocity                 useInView
 
     - List and talk about methods of these hooks
-        .get()  .set()  .getVelocity()  .jump(newValue)     .stop()
-        .isAnimating() 
+        .get()  .set()  .getVelocity()  .jump(newValue)     .stop()     .destroy()
+        .isAnimating()
         .on(event, ()=>{}) event: change | animationStart | animationComplete | animationCancel
 
     - Talk about the hook useMotionValueEvent
