@@ -118,6 +118,9 @@ invested in framer-motion
     - How do you repeat an animation + specify a repeat type & specifying a delay for the repeat
 
 22. Read the answer - on supported values
+    - value types that can be animated by motion
+    - value type conversions
+    - animating btw different color types/values
 
 23. Transform origin
     - how do you set origin of x,y,z axis (use number and text)
