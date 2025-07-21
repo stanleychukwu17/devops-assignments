@@ -662,8 +662,13 @@
         see more info on Book-19, Page 22
 
 25. 
-    MotionConfig can be used to set configurations for all child motion components. Currently, it only
-    accepts one prop, transition
+    MotionConfig can be used to set configurations for all child motion components.
+    - it can be used to configure duration
+    - it can be used to reducedMotion: "user" | "always" | "never"
+        "user": Respect the user's device setting.
+        "always": Enforce reduced motion (useful for debugging).
+        "never": Don't respect reduced motion.
+
     e.g:
     import {motion, MotionConfig} from "framer-motion"
     <MotionConfig transition={{duration:1}}>
