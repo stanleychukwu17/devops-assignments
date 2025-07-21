@@ -11,6 +11,8 @@ motion is quite different from framer-motion, so i'll be sticking with framer-mo
 the foreseeable future, no time now to start learning motion after all the time i already
 invested in framer-motion
 
+https://motion.dev/docs/react-three-fiber
+
 
 1. Talk about useMotionValue
     - List some of the useMotionValue methods (7 methods)
@@ -129,7 +131,7 @@ invested in framer-motion
 24. - List some animation props that can be received by a motion component (6 props)
     - List some animation events that can be received by a motion component (3 events)
 
-25. What is MotionConfig and how can you use it?
+25. Read: What is MotionConfig and how can you use it?
 
 26. - Re-order, create a component with a list of items that can be re-ordered using framer-motion
     - how do you change the <Reorder.Group> default element used to render your items
