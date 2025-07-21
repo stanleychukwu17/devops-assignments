@@ -1,6 +1,6 @@
-full_revision: 20th Apr 2025
-full_revision: 11th July 2025
-full_revision: 19th Apr 2025
+full_revision: 20 Apr 2025
+full_revision: 11 July 2025
+full_revision: 21 July 2025
 
 Framer-motion & motion have been merged together:
 here is a guide on upgrading:
