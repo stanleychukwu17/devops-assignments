@@ -624,13 +624,13 @@
         - mirror: switches from and to alternately
 
 22. 
-    value types that can be animated by motion:
+    - value types that can be animated by motion:
         - Numbers: 0, 1000 e.t.c
         - Strings containing numbers: "0vh", "10px" e.t.c"
         - colors: hex, rgba, hsla
         - complex stings containing multiple numbers and colors (i.e "10px 0 #000")
 
-    value type conversions:
+    - value type conversions:
         For html properties like x, y, width, height, top, left, bottom, right. their values can be animated
         freely between different value types. e.g
         -
@@ -638,8 +638,12 @@
             initial={{x: "100"}}
             animate={{x: "calc(100vw-50%)"}}
         />
-        -
-        Additionally, any color type (hex, hsl, rgb) can animate btw each other
+    - animating btw different color types/values
+        you can animate btw any color types (hex, hsl, rgb)
+        <motion.div
+            initial={{backgroundColor: '#ffffff'}}
+            animate={{backgroundColor: 'rgba(0,0,0,1)'}}
+        />
 
 23.
     - how do you set origin of x,y,z axis (use number and text)
