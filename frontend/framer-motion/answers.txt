@@ -615,7 +615,7 @@
             transition={{
                 repeat: number(i.e number of times) | Infinity 
                 repeatType: loop | reverse | mirror
-                repeatDelay time_in_seconds
+                repeatDelay: time_in_seconds
             }}
         />
         repeatType explanation:
