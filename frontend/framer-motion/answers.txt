@@ -957,3 +957,18 @@
     const bgColor = transform([0, 100], ["#f00","#00f"])(50)
     const transformer = transform([-100, 0, 100, 200], [0,1,1,0])
     opacity = transformer(-50)
+
+
+new-answer:
+    gsap.fromTo(selector, {from}, {to})
+    can be replaced with:
+    animate(selector, {property: [from, to]})
+    -
+    -
+    gsap.fromTo("div.box", {scaleX:0}, {scaleX:1, duration:1, ease:easeInOut})
+    :=
+    animate("div.box", {scaleX:[0,1]}, {duration:1, ease: easeInOut})
+    -
+    gsap.fromTo("div.item", {background:"#fff"}, {background:"#000"})
+    :=
+    animate(boxRef.current, {background: ["#fff", "#000"]})
