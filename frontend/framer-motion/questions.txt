@@ -143,7 +143,7 @@ https://motion.dev/docs/react-three-fiber
 
 28. Talk about the useReducedMotion hook
 
-29. - The animate function
+29. the "animate" function
     - Animating a single value
     - Animating a motion value hook
     - animating html/svg element
