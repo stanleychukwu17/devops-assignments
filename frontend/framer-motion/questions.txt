@@ -144,9 +144,10 @@ https://motion.dev/docs/react-three-fiber
 28. Talk about the useReducedMotion hook
 
 29. the "animate" function
-    - Animating a single value
-    - Animating a motion value hook
-    - animating html/svg element
+    - animate a single value, use the onUpdate call back & gsap.set()
+    - animate a color
+    - animate a motion value hook
+    - animate html/svg element
 
 30. - Using the animate function to animate sequences (like gsap.timeline)
     - it is also possible to override transitions on a per-value bases in the definitions
