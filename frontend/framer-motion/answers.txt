@@ -868,25 +868,28 @@
     - explain all the at in the sequence below
         sequence = [
             [".product_cover", {x:100}, {duration:2}],
-            - this will start immediately and last for 2s
+            - Starts at 0s (default), runs for 2s → ends at 2s
 
             "my-label" // my label is defined at 2s, because the last animation duration = 2s
 
             ["nav", {x:100}, {duration:1, at:0.5}],
-            - this will start at 0.5 from when the timeline animation kicked off, if there was no "at",
-                it would have started after "2s" which is the duration of the previous animation
+            - this will start at 0.5 from when the timeline animation kicked off,
+              if there was no "at", it would start at "2s", i.e when last animation ends
 
             ["nav", {x:100}, {at:"+0.5"}],
-            - this will start at 0.5s after the previous animation
+            - ⏱ Starts 0.5s *after the previous animation ends*
+              Previous = 1s duration → this starts at 1.5s
 
             ["nav li", {opacity:1}, {delay: stagger(0.2), at:"-0.2"}],
-            - this will start at 0.2s before the end previous animation
+            - ⏱ Starts 0.2s *before* the previous animation ends (i.e. starts at 1.3s)
+              `delay: stagger(0.2)` means each `nav li` animates 0.2s apart
 
             ["a", {scale: 1.2}, {at: "<"}],
-            - this will start at the same time when the previous animation starts
+            - ⏱ Starts at same time as previous animation (1.3s)
+              "<" is shorthand for "start when previous one started"
 
             [".items", {x:400, y:10}, {at: "my-label"}],
-            - this will start at the time where the label was defined, which is 2s
+            - ⏱ Starts exactly at 2s (where "my-label" was defined)
         ]
 
     - list some of the options returned from animate(sequence)
