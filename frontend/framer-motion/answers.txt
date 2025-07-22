@@ -900,16 +900,22 @@
             returns the total duration of the animation/sequence
             const animation = animate(x, 100, {duration:1, repeat:2})
             const {duration} = animation; // 1s
+    
         - .time
-            Gets and Sets the current time of the animation
+            Gets and Sets the current time of the animation, you can use this to forward
+            or rewind your animation
+            -
             animation.time = 0.5 // sets the time to 0.5s
             console.log(animation.time) // 0.5
+    
         - .then()
             you can do either of the 2
             await animate(...)
             animate(...).then(() => console.log("animation completed"))
+
         - .pause()
             animation.pause(); // this will pause the animation
+
         - .play()
             animation.play()
             - if the animation is paused, it will resume from it's current time
@@ -918,21 +924,26 @@
             animation.pause()
             animation.time = 1 // the next play will resume from 1s
             animation.play()
+
         - .stop()
             animation.stop()
             stops the animation, and it cannot be restarted or played anymore if you use .stop()
+
         - .complete()
             animation.complete()
             fast forward the animation to the ending
+
         - .cancel()
             animation.cancel()
-            cancels the animation and takes it back to the start
+            cancels the animation and takes it back to the start, or you can also do:
+            animation.time = 0
+
         - .speed()
             Gets and Sets the playback speed of the animation
             animation.speed = 1 // Normal speed
             animation.speed = 0.5 // Half speed
             animation.speed = 2 // Double speed
-            animation.speed = -1 // Reverse speed
+            animation.speed = -1 // Reverse speed, like reversing the timeline animation
 
 32. Talk about the "transform" function
     Create's a function that will map a value from one range to another, used under the hood by "useTransform"
