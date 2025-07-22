@@ -837,8 +837,8 @@
         - startDelay: number
             A delay in seconds, from which to start the stagger
             -
-            stagger(0.5, {startDelay: 1}) // this means the first animation will kick-off after 1s, then the next
-            one will start at 1.5s, then the next will kick-off 2s and so on
+            stagger(0.5, {startDelay: 1}) // this means the first animation will kick-off after 1s,
+            then subsequent staggers will play at 0.5s
 
         - ease: Easing
             By passing an easing function, staggers can be redistributed through the total stagger time
