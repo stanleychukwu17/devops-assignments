@@ -145,7 +145,7 @@ https://motion.dev/docs/react-three-fiber
 
 29. the "animate" function
     - animate a single value, use the onUpdate call back & gsap.set()
-    - animate a color
+    - animate a color, use the onUpdate call back & gsap.set()
     - animate a motion value hook
     - animate html/svg element
 
