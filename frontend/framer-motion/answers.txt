@@ -757,10 +757,12 @@
             }
         });
 
-    animate('#fff', '#000', {
-        duration: 2,
-        onUpdate: (latest) => {console.log(latest)}
-    })
+    - animate a color
+        animate('#fff', '#000', {
+            duration: 2,
+            ease: easeOut,
+            onUpdate: (latest) => { gsap.set("div.cap", {backgroundColor: latest}) }
+        })
 
     - animate a motion value hook
         const x = useMotionValue(0)
