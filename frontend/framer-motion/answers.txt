@@ -514,7 +514,7 @@
         })
         return <motion.div> {rounded} </motion.div>
     - use the useAnimate & usePresence hooks to animate a component when it exits the dom
-        import {useAnimate, usePresence} from "framer-motion"
+        import {useAnimate, usePresence} from "motion/react"
 
         function Component() {
             const [isPresent, safeToRemove] = usePresence()
@@ -670,14 +670,14 @@
         "never": Don't respect reduced motion.
 
     e.g:
-    import {motion, MotionConfig} from "framer-motion"
+    import {motion, MotionConfig} from "motion/react"
     <MotionConfig transition={{duration:1}}>
         <motion.div initial={{opacity:0}} animate={{opacity:1}} />
     </MotionConfig>
 
 26. 
     - The Reorder component can be used to crate drag-to-reorder lists, like reOrderable tabs or todo items e.g:
-        import {Reorder} from "framer-motion"
+        import {Reorder} from "motion/react"
         import {useState} from "react"
 
         function List () {
@@ -699,7 +699,7 @@
         <Reorder.Group as="ol">
 
     - how can we use dragControls with the re-order component?
-        import {Reorder, useDragControls} from "framer-motion"
+        import {Reorder, useDragControls} from "motion/react"
 
         function EachItem ({value}) {
             const controls = useDragControls()
@@ -741,7 +741,7 @@
 28.
     useReducedMotion hook is used to check if a user prefers reduced motion
     e.g
-    import {useReducedMotion} from "framer-motion"
+    import {useReducedMotion} from "motion/react"
 
     const prefersReducedMotion = useReducedMotion()
     const closeX = prefersReducedMotion ? 0 : "-100%"
@@ -795,7 +795,7 @@
             ["li", { x: [-100, 0] }, { delay: stagger(0.1) }],
             [count, 100, { duration: 2, ease: "easeInOut" }],
             [".progress-bar", { scaleX: [0, 1] }, { ease: "easeInOut", transformOrigin: "left" }],
-            ["div.Item", { y: [0, 50, 70] }, { duration:1, at: 1 }],
+            [boxRef.current, { y: [0, 50, 70] }, { duration:1, at: 1 }],
             ["div.box", { x: [0, 100, 0] }, { duration: 2, repeat: 3, repeatType: reverse, at: 2 }],
         ];
 
@@ -816,8 +816,10 @@
         ]
 
     - using stagger for delays
-        if animating more than one item, you can stagger the animations by passing the stagger function to delay
-        import {stagger, animate} from "framer-motion"
+        if animating more than one item(most likely when you're animating sibling items), you can
+        stagger the animations by passing the stagger function to delay
+        -
+        import {stagger, animate} from "motion/react"
         animate(".items", {x:300}, {delay: stagger(0.1)})
 
     - what are the options that can be passed to the "stagger" function
