@@ -748,24 +748,33 @@
     <motion.div animate={{opacity: isOpen ? 1:0, x:isOpen ? 0 : closedX}}
 
 29. the "animate" function
-    - Animating a single value
-        animate(0, 100, {onUpdate: (latest) => {console.log(latest)} })
-        animate('#fff', '#000', {
+    - animate a single value
+        animate(0, 100, {
             duration: 2,
-            onUpdate: (latest) => {console.log(latest)}
-        })
-    - Animating a motion value hook
+            ease: easeInOut,
+            onUpdate: (latest) => {
+                gsap.set("div.text", { text: latest });
+            }
+        });
+
+    animate('#fff', '#000', {
+        duration: 2,
+        onUpdate: (latest) => {console.log(latest)}
+    })
+
+    - animate a motion value hook
         const x = useMotionValue(0)
         animate(x, 200, {duration: .5})
         return <motion.div>{x}{/motion.div}
-    - animating html/svg element
+
+    - animate html/svg element
         const box = document.getElementById("box")
         animate(box, {opacity:0}, {duration:0.5})
         -
         const button = document.querySelector("button.add_to_cart")
         animate(button, {scale:1.5, x:[0, 100]}, {type:"spring"} )
         animate("div.btn_cvr", {opacity:1}, {duration:.25})
-    
+
 30.
     - Using the animate function to animate sequences (like gsap.timeline)
         animate() can also accept complex animation sequences
