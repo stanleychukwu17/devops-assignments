@@ -649,7 +649,8 @@
 23.
     - how do you set origin of x,y,z axis (use number and text)
         {originX: 0.5, originY: 0.7, originZ: 1}
-        {originX: left|center|right|top|bottom}
+        {originX: left|center|right}
+        {originY: top|center|bottom}
     
     - what properties do you animate when animating an svg
         pathOffset, pathLength
