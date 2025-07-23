@@ -107,9 +107,9 @@ https://motion.dev/docs/react-three-fiber
 20. Talk about event propagation(i.e bubbling up of an event)
     talk about the whileInView animation
         - using with variants
-        - using with definitionObjects
-        - using the viewport prop, customize the item so that whileInView will work only when visible inside
-            the scrollable container & and only when 20% is visible
+        - using with targetOptions
+        - using the viewport prop, customize the item so that whileInView will work only
+          when visible inside a scrollable container & and only when 20% is visible
 
 ----------
 21. transitions
