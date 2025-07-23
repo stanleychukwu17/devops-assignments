@@ -763,7 +763,11 @@
         animate('#fff', '#000', {
             duration: 2,
             ease: easeOut,
-            onUpdate: (latest) => { gsap.set("div.cap", {backgroundColor: latest}) }
+            onUpdate: (latest) => {
+                gsap.set("div.cap", {backgroundColor: latest})
+                or
+                animate("div.cap", {backgroundColor: latest}, {duration:0})
+            }
         })
 
     - animate a motion value hook
