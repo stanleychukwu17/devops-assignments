@@ -631,13 +631,14 @@
         - complex stings containing multiple numbers and colors (i.e "10px 0 #000")
 
     - value type conversions:
-        For html properties like x, y, width, height, top, left, bottom, right. their values can be animated
-        freely between different value types. e.g
+        For html properties like x, y, width, height, top, left, bottom, right. their values can
+        be animated freely between different value types. e.g
         -
         <motion.div
             initial={{x: "100"}}
             animate={{x: "calc(100vw-50%)"}}
         />
+
     - animating btw different color types/values
         you can animate btw any color types (hex, hsl, rgb)
         <motion.div
