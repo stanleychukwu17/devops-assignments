@@ -886,7 +886,7 @@
             - ⏱ Starts 0.5s *after the previous animation ends*
               Previous = 1s duration → this starts at 1.5s
 
-            ["nav li", {opacity:1}, {delay: stagger(0.2), at:"-0.2"}],
+            ["nav li", {opacity:1}, {delay: stagger(0.2, {from:"center"}), at:"-0.2"}],
             - ⏱ Starts 0.2s *before* the previous animation ends (i.e. starts at 1.3s)
               `delay: stagger(0.2)` means each `nav li` animates 0.2s apart
 
