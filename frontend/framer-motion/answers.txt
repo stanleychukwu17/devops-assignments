@@ -510,7 +510,7 @@
                 type:"spring", stiffness:200, duration:10, onComplete: (x) => {...}
             })
 
-            return animation.stop
+            return animation.stop()
         })
         return <motion.div> {rounded} </motion.div>
     - use the useAnimate & usePresence hooks to animate a component when it exits the dom
