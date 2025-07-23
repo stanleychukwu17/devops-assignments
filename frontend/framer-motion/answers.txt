@@ -562,7 +562,7 @@
         using variant-variable
         <motion.div variants={boxVariant} initial="hidden" whileInView="visible" viewport={{once:true}} />
         -
-        using targetOptions
+        using targetOptions & viewport prop
         <motion.div
             initial={{opacity: 0}}
             whileInView={{opacity: 1}}
