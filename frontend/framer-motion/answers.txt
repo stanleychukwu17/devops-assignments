@@ -657,7 +657,7 @@
 
 24.
     - List some animation props that can be received by a motion component
-        initial, animate, variants, transition, exit, style
+        initial, animate, variants, transition, exit, style, layout, layoutScroll e.t.c
 
     - List some animation events that can be received by a motion component
         onUpdate, onAnimationStart, onAnimationComplete
