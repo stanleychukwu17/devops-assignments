@@ -602,7 +602,7 @@
             transition: {
                 x: {
                     times: [0, 0.3, 0.6, 1]
-                    ease: ["easeIn", "easeOut", "circIn"]
+                    ease: ["easeIn", "easeOut", "circIn", "backIn"]
                     repeat: Infinity
                     repeatDelay: 0.2
                 }
