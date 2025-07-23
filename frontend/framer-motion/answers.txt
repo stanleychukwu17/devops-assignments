@@ -783,7 +783,7 @@
         animate(button, {scale:1.5, x:[0, 100]}, {type:"spring"} )
         animate("div.btn_cvr", {opacity:1}, {duration:.25})
         -
-        animate("circle", {pathLength: 1}, {duration: 1.5})
+        animate("circle", {pathLength: [0,1]}, {duration: 1.5})
 
 30.
     - Using the animate function to animate sequences (like gsap.timeline)
