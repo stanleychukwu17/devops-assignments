@@ -1,6 +1,6 @@
 full_revision: 20 Apr 2025
 full_revision: 11 July 2025
-full_revision: 21 July 2025
+full_revision: 23 July 2025
 
 Framer-motion & motion have been merged together:
 here is a guide on upgrading:
@@ -149,7 +149,7 @@ https://motion.dev/docs/react-three-fiber
     - animate a motion value hook
     - animate html/svg element
 
-30. - Using the animate function to animate sequences (like gsap.timeline)
+30. - Use the animate function to animate sequences (like gsap.timeline)
       after writing yours, look at the example and re-write it
     - Read: it is also possible to override transitions on a per-value bases in the definitions
     - using stagger for delays
