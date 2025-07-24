@@ -76,8 +76,8 @@
       });
 
   - The @theme Directive
-    This is the primary way to customize your design tokens (colors, fonts, spacing, breakpoints, etc.) in v4,
-    It allows you to define CSS variables that Tailwind will use to generate utility classes
+    This is the primary way to customize your design tokens (colors, fonts, spacing, breakpoints, etc)
+    in v4,  It allows you to define CSS variables that Tailwind will use to generate utility classes
     e.g:
       @import "tailwindcss";
 
@@ -92,7 +92,20 @@
       }
 
       * When you define --color-* variables, Tailwind automatically generates corresponding
-        color utility classes (e.g., bg-blonde-50, text-blonde-100)
+        color utility classes:
+          <div class="bg-blonde-50 text-blonde-100">...</div>
+        -
+        it also generates variables that you can use directly in tailwind or in your css files:
+          <div class="bg-[var(--color-blonde-50)] text-[var(--color-blonde-100)]">...</div>
+        -
+        you can also do:
+          <div class="fill-(--my-brand-color)">...</div>
+          -
+          This is just a shorthand for fill-[var(--my-brand-color)] that adds the var()
+          function for you automatically
+
+
+
     
       * Similarly, --breakpoint-* variables will create custom breakpoints you can use in
         responsive utilities (e.g., 3xl:text-lg)
@@ -119,6 +132,9 @@
 
         <a href="#" class="custom-url-with-variant p-2> Hover over me </a>
 
+    * you can now write things like:
+      <div class="[mask-image:url('/some-mask.svg')]">
+      <div class="bg-[var(--color-primary)] text-[var(--color-text)]">
 
 2 some tips
   - using em & rem
