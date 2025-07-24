@@ -1,4 +1,6 @@
-revision in blender
+full_revision: - July 2025
+full_revision: - July 2025
+full_revision: - July 2025
 
 full_revision: 
 ::Book 6
@@ -16,9 +18,9 @@ full_revision:
   How to set_up texture maps in blender: p13
   Easy texturing without uv-unwrapping p18:
   How to mix multiple normal maps together: p22
+  - stopped here
   Texture baking: p26
   How to bake normal map Decals (i.e: turn your models into normal maps): p33
-
 
 full_revision: 
 ::Book 8 = Blender Animation
@@ -27,3 +29,7 @@ full_revision:
   video editing: 54
   Quick smooth camera movement in Blender: 38
   Blender Light Linking: 71
+
+
+full_revision:
+:: shortcuts
