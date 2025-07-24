@@ -8,12 +8,12 @@ NOTE: https://tailwindcss.com/docs/upgrade-guide
   - Read: installation
   - Read: Core Configuration in CSS
   - Read: Automatic Content Detection
+  - Read: Using Plugins
+  - Read: Backward Compatibility (Using a tailwind.config.js file)
+  - Read: PostCSS Configuration
+  - Read: Vite Integration (Recommended)
   - The @theme Directive
-  - Using Plugins
   - Custom Utilities and Variants
-  - Backward Compatibility (Using a tailwind.config.js file)
-  - PostCSS Configuration
-  - Vite Integration (Recommended)
 
 2 some tips
   - using em & rem
