@@ -1,9 +1,9 @@
 1 TailwindCss v4
-  - installation
+  - Read: installation
     pnpm i tailwindcss @tailwindcss/postcss
     - if you're in a new environment, install the tailwind intellisense plugin for vsCode
 
-  - Core Configuration in CSS
+  - Read: Core Configuration in CSS
     The most notable change is the deprecation of the tailwind.config.js file for most cases,
     Your main CSS file (e.g: app.css, global.css) is now where you'll import Tailwind and define
     your theme
@@ -12,6 +12,16 @@
 
     You no longer need @tailwind base;, @tailwind components;, @tailwind utilities;
     The single @import "tailwindcss"; handles everything
+
+  - Automatic Content Detection
+    * You no longer need to configure the content array in tailwind.config.js to tell Tailwind where
+      to scan for class names
+    * Tailwind v4 uses heuristics to automatically detect your template files, including ignoring files
+      in your .gitignore.
+    * If you do need to explicitly specify source files, you can use the @source directive in your CSS
+      i.e:
+        @import "tailwindcss";
+        @source "./src/components/"; /* Scans this folder for Tailwind classes */
 
   - The @theme Directive
     This is the primary way to customize your design tokens (colors, fonts, spacing, breakpoints, etc.) in v4,
@@ -35,15 +45,6 @@
       * Similarly, --breakpoint-* variables will create custom breakpoints you can use in
         responsive utilities (e.g., 3xl:text-lg)
 
-  - Automatic Content Detection
-    * You no longer need to configure the content array in tailwind.config.js to tell Tailwind where
-      to scan for class names
-    * Tailwind v4 uses heuristics to automatically detect your template files, including ignoring files
-      in your .gitignore.
-    * If you do need to explicitly specify source files, you can use the @source directive in your CSS
-      i.e:
-        @import "tailwindcss";
-        @source "./src/components/"; /* Scans this folder for Tailwind classes */
 
   - Using Plugins
     You can import Tailwind CSS v4-compatible plugins directly in your CSS using the @plugin directive
