@@ -2,7 +2,19 @@ full_revision: 29 June 2025
 full_revision: 29 June 2025
 full_revision: 24 July 2025
 
-NOTE: https://tailwindcss.com/docs/upgrade-guide
+
+links to work on {
+  https://tailwindcss.com/docs/upgrade-guide
+  https://tailwindcss.com/docs/styling-with-utility-classes
+  https://tailwindcss.com/docs/hover-focus-and-other-states
+  https://tailwindcss.com/docs/responsive-design
+  https://tailwindcss.com/docs/dark-mode
+  https://tailwindcss.com/docs/theme
+  https://tailwindcss.com/docs/colors
+  https://tailwindcss.com/docs/adding-custom-styles
+  https://tailwindcss.com/docs/detecting-classes-in-source-files
+  https://tailwindcss.com/docs/functions-and-directives
+}
 
 1 TailwindCss v4
   - Read: installation
@@ -12,6 +24,8 @@ NOTE: https://tailwindcss.com/docs/upgrade-guide
   - Read: Backward Compatibility (Using a tailwind.config.js file)
   - Read: PostCSS Configuration
   - Read: Vite Integration (Recommended)
+
+1.1 theme and variants
   - The @theme Directive
   - Custom Utilities and Variants
 

@@ -75,9 +75,10 @@
         ],
       });
 
+1.1 theme and variants
   - The @theme Directive
     This is the primary way to customize your design tokens (colors, fonts, spacing, breakpoints, etc)
-    in v4,  It allows you to define CSS variables that Tailwind will use to generate utility classes
+    in v4, It allows you to define CSS variables that Tailwind will use to generate utility classes
     e.g:
       @import "tailwindcss";
 
