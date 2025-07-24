@@ -1,14 +1,14 @@
 full_revision: 29 June 2025
 full_revision: 29 June 2025
-full_revision: 19 July 2025
+full_revision: 24 July 2025
 
 NOTE: https://tailwindcss.com/docs/upgrade-guide
 
 1 TailwindCss v4
-  - installation
-  - Core Configuration in CSS
+  - Read: installation
+  - Read: Core Configuration in CSS
+  - Read: Automatic Content Detection
   - The @theme Directive
-  - Automatic Content Detection
   - Using Plugins
   - Custom Utilities and Variants
   - Backward Compatibility (Using a tailwind.config.js file)
