@@ -137,25 +137,18 @@
 2 some tips
   - using em & rem
     :em (Relative to Parent's Font Size)
-      Advantages:
-        - Scales based on the font size of the parent element.
-        - Useful for making designs relative to their containers.
-        - Use em when you want elements (like padding, margins, or font sizes) to
-          scale according to the parent’s font size
       e.g:
         .parent {
           font-size: 16px;
         }
         .child {
-          font-size: 1.5em; /* 1.5 times the parent's font size, i.e., 24px */
+          font-size: 1.5em; /* 1.5 times the parent's font size i.e: 24px */
         }
 
     :rem (Relative to Root Font Size)
       Advantages:
         - Scales based on the root element’s (html) font size (usually 16px by default)
-        - More predictable and consistent because it’s not affected by parent font sizes
-        - Use rem when you want your sizes (fonts, paddings, etc.) to be consistent across the
-          entire page or website, no matter where the element is placed in the DOM
+        - More predictable and consistent because it’s not affected by parent font sizes like "em"
       e.g:
         html {
           font-size: 16px; /* Base size */
@@ -164,12 +157,6 @@
           font-size: 2rem; /* 32px */
         }
 
-    :When to Use Which?
-      - Use em for cases where you want the sizing to be flexible and adapt based on
-        the context (like in nested components)
-      - Use rem when you want a more global, consistent design that is easy to control
-        from a single point (the root)
-
     :rem vs px
       - pixels are great for precise, fixed measurements but lack flexibility, accessibility,
         and responsiveness
@@ -177,8 +164,7 @@
         respect user preferences, and adapt to different devices and screen sizes
 
     :using clamp() (CSS Function)
-      - Combines multiple units to create a fluid value that respects both a minimum and maximum value
-      - Great for responsive typography or spacing that needs to stay within certain limits
+      - Great for responsive typography or sizing that needs to stay within certain limits
         (like a font size that scales between two breakpoints)
       e.g:
         .heading {
