@@ -1,15 +1,3 @@
-full_revision: - July 2025
-full_revision: - July 2025
-
-
-full_revision: - July 2025
-::Book 6
-  jon character rigging - 60 (see finger rigging @ p65)
-  southern 3D character rigging - 68
-  southern walking 1 - 80
-  southern walking 2 - 87
-  mastering walk cycle - 92
-
 
 full_revision: - July 2025
 ::Book 8.3 = Blender 3
@@ -21,6 +9,16 @@ full_revision: - July 2025
   How to mix multiple normal maps together: p22
   Texture baking: p26
   How to bake normal map Decals (i.e: turn your models into normal maps): p33
+
+
+full_revision: - July 2025
+::Book 6
+  jon character rigging - 60 (see finger rigging @ p65)
+  southern 3D character rigging - 68
+  southern walking 1 - 80
+  southern walking 2 - 87
+  mastering walk cycle - 92
+
 
 full_revision: - July 2025
 ::Book 8 = Blender Animation
