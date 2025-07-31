@@ -9,7 +9,7 @@ Answers
 4.  you can represent a string by
     1. just writing it out : like this string
     2. by wrapping them in double quotes : "like this string"
-    2. by wrapping them in single quotes : 'like this string'
+    3. by wrapping them in single quotes : 'like this string'
 
 5. You use a pound sign (#) to indicate a comment, and it can appear on its own or inline e.g
     # this is a full line comment
