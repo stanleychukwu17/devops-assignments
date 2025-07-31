@@ -11,7 +11,7 @@ Group 1
     Dockerfile?
 
 3. List all images you've created
-4. Go to docker hub and search for node-alpine image
+4. Go to docker hub and search for node-alpine image, search for node v24.2
 
 5. delete an image
 6. delete multiple images
