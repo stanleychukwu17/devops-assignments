@@ -2,6 +2,9 @@ full_revision: 1 June 2025
 full_revision: 12 July 2025
 full_revision: 31 July 2025
 
+NOTE: you can download git kraken, has a great ui for managing git messages and commit history
+    and all so for see the difference clearly when resolving merge conflicts
+
 1.  - Config default user.name & user.email
     - how do you see the global user.name and user.email
     - how do you add a local user.name & user.email
