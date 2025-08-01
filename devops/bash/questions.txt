@@ -10,7 +10,7 @@ full_revision: 1 Aug 2025
     - execute the script to print out the value of greet on the terminal
     - add variable named "welcome" with value "bash rules your terminal, use bash today"
     - with $welcome, search and replace the word "bash" with "makefile"
-    - with $welcome, search and replace the all "bash" words with "golang
+    - with $welcome, search and replace the all "bash" words with "golang"
     - slice "Hello world" from the $welcome variable
     - slice "rules your" from the $welcome variable
     - delete the variable.sh file
