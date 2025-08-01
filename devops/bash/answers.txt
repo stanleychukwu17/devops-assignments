@@ -85,7 +85,7 @@
     - how do you redirect standard output into a file
         standard output:
         echo "we gon make it by GOD'S grace " > stanley.txt
-        echo "22 in 2026" 1>> stanley.txt {but you don't need to add the 1} 
+        echo "22 in 2025" 1>> stanley.txt {but you don't need to add the 1} 
         cat pop.txt variables.sh > combined.txt
 
     - how do you redirect standard error into a file
