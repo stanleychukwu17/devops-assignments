@@ -13,6 +13,7 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend/app:/usr/src/app/:ro
+      - /usr/src/app/node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true # needed for hot reloading
     depends_on:
