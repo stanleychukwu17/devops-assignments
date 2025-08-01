@@ -93,7 +93,7 @@
         unknown_command 2> error.log
 
     - how do you redirect standard output & error into null
-        ls &> /dev/null - redirects both the STDOUT and STDERR
+        ls unknown_directory &> /dev/null - redirects both the STDOUT and STDERR
         ls 1> /dev/null - redirects only STDOUT to null
         -
         fake_command 2> error.log - redirects only STDERR to error log
