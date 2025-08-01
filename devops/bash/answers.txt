@@ -134,6 +134,9 @@
             -> one two words
             It treats all arguments as one combined string.
 
+    - what is $0
+        $0 is the name of the script itself (as it was called from the command line).
+
     - task: using for loop, loop through all arguments received and echo them
         see ./answers/7-arguments.sh
 
