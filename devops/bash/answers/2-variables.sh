@@ -11,7 +11,7 @@ echo ${welcome/bash/makefile}
 echo ${welcome//bash/golang}
 
 echo ""
-echo "sliced: ${welcome::11}"
+echo "sliced: ${welcome::10}"
 
 echo ""
-echo "sliced: ${welcome:18:-9}"
+echo "sliced: ${welcome:25:-5}"

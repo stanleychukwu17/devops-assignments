@@ -11,8 +11,8 @@ full_revision: 1 Aug 2025
     - add variable named "welcome" with value "bash rules your terminal, use bash today"
     - with $welcome, search and replace the word "bash" with "makefile"
     - with $welcome, search and replace the all "bash" words with "golang"
-    - slice "Hello world" from the $welcome variable
-    - slice "rules your" from the $welcome variable
+    - slice "bash rules" from the $welcome variable
+    - slice "use bash" from the $welcome variable
     - delete the variable.sh file
 
 3.  if greeting="Hello world"
