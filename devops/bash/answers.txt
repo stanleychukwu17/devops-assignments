@@ -391,6 +391,18 @@
         -
         read -p "Enter your age: " age
         echo "You are $age years old."
+        -
+        for multiple values:
+        read -p "Enter your first name and age: " name age
+        echo "Hi $name, you are $age years old.
+        -
+        if you want to make sure the age is a valid number, you can add a check:
+        # Check if the age is a valid number
+        if [[ ! "$age" =~ ^[0-9]+$ ]]; then
+            echo "Please enter a valid number for age."
+        else
+            echo "Hi $fname, you are $age years old."
+        fi
 
 16. Read: colors in bash
     - initial explanation on coloring in bash
