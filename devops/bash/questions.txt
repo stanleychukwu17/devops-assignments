@@ -76,7 +76,8 @@ full_revision: 1 Aug 2025
         - use [-f file] to check if hello.sh exist and create it
 
 11. while loops in bash
-    - write the syntax for a while loop, give an example of while number is less than 5: do something
+    - write the syntax for a while loop, give an example:
+        say i = 0, loop and echo $i until it reaches 10
     - write an if-else condition inside a while loop
     - how do you do an infinite while loop
     - task: use the while loop to number the names in names.txt file
