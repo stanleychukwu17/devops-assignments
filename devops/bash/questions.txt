@@ -64,6 +64,7 @@ full_revision: 1 Aug 2025
         1 equals 1, $var equals 2, $var less than 5
     - string comparison, strA not equal to strB
         Read: tip when comparing strings
+    - string: check if a string is empty
 
 10. if-else for files
     - how do you check if a file:
