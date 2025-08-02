@@ -234,6 +234,13 @@
 
         see: ./answers/9-if-else.sh
 
+    - string: check if a string is empty
+        strA=""
+        -
+        if [ -z "$strA" ]; // -z checks if a variable is empty or null
+        or
+        if [ "$strA" == "" ]
+
 10. if-else for files
     - how do you check if a file:
         exist: [-e file]
