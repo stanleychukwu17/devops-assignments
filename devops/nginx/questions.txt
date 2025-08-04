@@ -30,6 +30,8 @@ SECTION 1
       service discovery, you need to connect all services to the same network
     - Do yo thing with the networking {
         create a new network nginx_network
+        connect the network to the nginx_container
+            inspect the nginx_container to be sure it is now in the nginx_network
         connect the network to the containers
         inspect one of the containers to be sure that it is in the nginx_network
     }
