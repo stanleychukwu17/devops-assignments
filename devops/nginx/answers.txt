@@ -170,7 +170,8 @@
 
 7. Read about exposing ports of your docker container
     when working with docker and nginx, the only ports that should be exposed should be only the nginx port,
-    all other containers port should not be exposed, they should be internal
+    all other containers port should not be exposed, they should be internal and talk to each other
+    through the network that connects all of them
 
 8. see answers in:
     ./section1/11-nginx-conf/nginx.conf
