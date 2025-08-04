@@ -325,6 +325,7 @@ Group 3
 
     - Validate and view the composed configuration in YAML format. It’s useful to check for any syntax errors in the docker-compose.yml file.
       docker-compose config
+      docker-compose -f docker-compose.dev.yml config
 
     - Display the current version of Docker Compose
       docker-compose version
