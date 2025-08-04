@@ -255,20 +255,20 @@
 10. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
       http {
         upstream all_apps {
-            server app1_backendA:2222;
-            server app1_backendB:2222;
-            server app2_backendA:3333;
-            server app2_backendB:3333;
+            server app1_A:2222;
+            server app1_B:2222;
+            server app2_A:3333;
+            server app2_B:3333;
         }
 
         upstream app1 {
-            server app1_backendA:2222;
-            server app1_backendB:2222;
+            server app1_A:2222;
+            server app1_B:2222;
         }
 
         upstream app2 {
-            server app2_backendA:3333;
-            server app2_backendB:3333;
+            server app2_A:3333;
+            server app2_B:3333;
         }
 
         server {
@@ -316,10 +316,10 @@
     - code
       stream {
         upstream all_apps {
-          server app1_backendA:2222;
-          server app1_backendB:2222;
-          server app2_backendA:3333;
-          server app2_backendB:3333;
+          server app1_A:2222;
+          server app1_B:2222;
+          server app2_A:3333;
+          server app2_B:3333;
         }
 
         server {
