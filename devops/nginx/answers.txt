@@ -330,6 +330,7 @@
 
     - explanation
       with layer 4 proxying, you can't really do much, you're just passing the request to one of the servers
+      and you see that we cannot do location / {..}, because at layer4, you do not have access to the url
 
 12. Enable HTTPS on Nginx
     - Read: how do you enable https on your nginx server
