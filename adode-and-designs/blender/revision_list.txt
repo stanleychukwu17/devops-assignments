@@ -5,7 +5,6 @@ full_revision: - July 2025
   uv unwrapping: p5
   How to set_up texture maps in blender: p13
   Easy texturing without uv-unwrapping p18:
-  - stopped here
   How to mix multiple normal maps together: p22
   Texture baking: p26
   How to bake normal map Decals (i.e: turn your models into normal maps): p33
