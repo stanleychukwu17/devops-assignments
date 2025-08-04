@@ -25,7 +25,9 @@ SECTION 1
     - write the Dockerfile for the app
     - create an image for the Dockerfile you built - "simple_nodeapp:v1"
     - start a container with the image: "simple_nodeapp:v1", to be sure it works
-    - start the 3 docker containers and be sure everything is working fine
+    - start the 3 docker containers and be sure everything is working fine {
+        ensure to use --name and --hostname
+    }
     - write the Nginx configuration and start the Nginx container, there will be error because of
       service discovery, you need to connect all services to the same network
     - Do yo thing with the networking {
@@ -99,7 +101,7 @@ SECTION 1
     - read some of the explanation
 ## End Websockets
 
-16. see what production configuration looks like
+16. see what production configuration looks like, try to re-write
 
 17. see how to set-up https/ssl with localhost and Nginx
 
