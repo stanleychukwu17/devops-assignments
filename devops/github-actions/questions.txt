@@ -22,6 +22,7 @@ full_revision: 6th Aug 2025
     - job1:
         - name: "set up job"
         - settings:
+        - let the job run on "ubuntu-latest"
         - outputs: add an output called "app_version"
             - access the value from one of the steps
         - step: checkout the branch you're working on
@@ -29,7 +30,8 @@ full_revision: 6th Aug 2025
           - use "tree" command: display the folder structures
         - step:
           - id: should be "set_version"
-          - let this step echo an "app_version" into github outputs, so that i
+          - let this step echo an "app_version" into github outputs, so that i can access the output
+            from the "outputs" settings at the job level (i.e the outputs specified earlier)
 
     - job2:
         - name: "saying hello world job"
