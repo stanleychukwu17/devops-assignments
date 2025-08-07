@@ -59,9 +59,9 @@
 
     3. the action is used to checkout/switch to the branch from where the event that triggered the
         workflow was called from, so if the push_request or pull_request was called from the
-        "bug/fix-add-to-cart" branch, this action will switch to the correct branch, in this case it switches to
-        the "bug/fix-add-to-cart" branch and the sibling steps will run in this specific branch.
-        otherwise if you do not use the actions/checkout@v4, the workflow will run on the main branch
+        "bug/fix-add-to-cart" branch, this action will switch to the branch, which is the "bug/fix-add-to-cart"
+        branch and the sibling steps will run in this specific branch.
+        if you do not use the actions/checkout@v4, the job will run on the main branch
 
     4.
         - On your github actions page, at the top of the terminal where your workflow ran, you'll see
