@@ -1,9 +1,13 @@
 1. {
-    1. on: push
-        branches: [main, dev]
+    1. on:
+        push:
+            branches: [main, dev]
+            paths: "web/**"
 
-    2. on: pull_request
-        branches: [main, dev]
+    2. on:
+        pull_request:
+            branches: [main, dev]
+            paths: "frontend/**"
 
     3. on: issues:
                 types: [opened, edited]
