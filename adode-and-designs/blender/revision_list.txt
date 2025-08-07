@@ -1,5 +1,5 @@
 
-full_revision: - July 2025
+full_revision: - Aug 2025
 ::Book 8.3 = Blender 3
   voxel ret-opo-logy: p3
   uv unwrapping: p5
@@ -10,16 +10,7 @@ full_revision: - July 2025
   How to bake normal map Decals (i.e: turn your models into normal maps): p33
 
 
-full_revision: - July 2025
-::Book 6
-  jon character rigging - 60 (see finger rigging @ p65)
-  southern 3D character rigging - 68
-  southern walking 1 - 80
-  southern walking 2 - 87
-  mastering walk cycle - 92
-
-
-full_revision: - July 2025
+full_revision: - Aug 2025
 ::Book 8 = Blender Animation
   pro eeVee rendering: 81
   Compositing in blender: 43
@@ -27,6 +18,13 @@ full_revision: - July 2025
   Quick smooth camera movement in Blender: 38
   Blender Light Linking: 71
 
-
-full_revision:
+full_revision: Aug 2025
 :: shortcuts
+
+full_revision: - Aug 2025
+::Book 6
+  jon character rigging - 60 (see finger rigging @ p65)
+  southern 3D character rigging - 68
+  southern walking 1 - 80
+  southern walking 2 - 87
+  mastering walk cycle - 92
