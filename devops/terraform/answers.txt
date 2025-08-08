@@ -53,8 +53,8 @@
       -
       You must define them directly or use a -backend-config file or CLI args
       -
-      the backend block is parsed before variables are loaded, which is why it doesn't support var.* directly
-    
+      the "terraform" block is parsed before variables are loaded, which is why it doesn't support var.* directly
+
     e.g of using a "backend.config" file:
         inside your file, you add your backend config there:
         bucket         = "my-bucket"
@@ -65,6 +65,9 @@
 
         then re-initialize your terraform:
         terraform init -backend-config=backend.config
+
+        and when you run "terraform apply", backend.config is not included in the final main module, only
+        the .tf files will be in the final module, but be careful not to push the file to your github repo
 
 4.
     resource "aws_vpc" "main" {
