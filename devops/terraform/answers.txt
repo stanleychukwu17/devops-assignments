@@ -143,6 +143,7 @@
             default = ["...", "...", "..."]
             sensitive = true
         }
+
     - you save variables in two file: variables.tf & (terraform.tfvars or <any_name>.auto.tfvars)
 
 15. terraform apply -auto-approve -var="vpc_cidr_block=10.0.0.0/16" -var="subnet_cidr_block=10.0.10.0/24"
@@ -478,7 +479,7 @@
         e.g terraform state show aws_instance.my_vm
     - terraform state pull
     - terraform state list | grep 'module.<module_name>'
-      e.g: terraform state list | grep -i module.vpc_module
+      e.g: terraform state list | grep -i "module.vpc_module"
 
 36. running commands on you ec2 instance
     - which is the best for running commands on your ec2 instance (cloud-init or ansible)
