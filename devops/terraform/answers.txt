@@ -588,7 +588,7 @@
 37.
     - explain why this error occurred and how can it be solved
         so the main issue is that this is a new_project and all the terraform code here was copied from another
-        terraform project_1, and in "project_1", the "aws_key_pair" has already been used
+        terraform project_1, and in "project_1", the "aws_key_pair" has already been used.
         for every new aws_key_pair key_name you use, aws creates a new entry for it, so now this new_project
         is trying to create a new aws_key_pair using the same key_name that already exist on your aws account,
         that's why an error occurred
