@@ -1363,7 +1363,7 @@ SECTION 3 BEGINS
             ec2_instances in project-B, you can reference the "remote state file" of project-A from
             project-B to get the i.p address
 
-5.  Read: How to use terraform workspace to manage environment 
+5. Read: How to use terraform workspace to manage environment 
     - creating a workspace
         terraform workspace new <name-of-workspace>
         e.g: terraform workspace new development
@@ -1375,10 +1375,12 @@ SECTION 3 BEGINS
     - switching btw workspaces
         terraform workspace switch <name-of-workspace>
         e.g: terraform workspace switch production
+             terraform workspace switch development
 
     - deleting of workspaces
         terraform workspace delete <name-of-workspace>
         e.g: terraform workspace delete development
+             terraform workspace delete production
 
 6.  
     Read: Terragrunt
