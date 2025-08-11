@@ -9,12 +9,12 @@
     - talk about what a normal architecture look like vs what an Nginx architecture would look like
       - normal architecture:
         [users request] -> [server] -> [database]
-    
+
       - Nginx architecture
         [users request] -> [nginx]  -> [server] ->
                                     -> [server] -> [database]
                                     -> [server] ->
-      
+
       with the normal architecture, the request are going straight to the severs and it is not the best,
       because if the request becomes too much for the server it will crash it, it is also difficult
       to scale with the normal architecture, because every time you add a new server in the backend,
