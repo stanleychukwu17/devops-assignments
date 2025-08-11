@@ -9,4 +9,4 @@ sudo systemctl start docker && sudo systemctl enable docker
 
 sudo usermod -aG docker ec2-user
 
-sudo docker run -d -p 8080:80 nginx
+sudo docker run -d --name nginx_server -p 80:80 -v ./nginx.conf:/etc/nginx/nginx.conf nginx
