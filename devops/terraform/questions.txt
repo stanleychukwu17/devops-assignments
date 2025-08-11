@@ -1,6 +1,6 @@
 full_revision: 1 June 2025
 full_revision: 5 July 2025
-full_revision: 8 Aug 2025
+full_revision: 11 Aug 2025
 
 1. What is the core terraform workflow
 
@@ -286,7 +286,7 @@ SECTION 3 BEGINS
 7. Testing terraform code
     - using bash: look at the code and write by yourself
         steps:
-        - set error to 1 if any command fails
+        - set error to 1 if any command fails (i.e exits with a non zero status)
         - set error to 1 if trying to use any unset variable
         - set error to 1 if pipe command fails
         - check the current directory if it matches "7-terraform-test-code"
