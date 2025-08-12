@@ -1,0 +1,78 @@
+name: hello world workflow
+on:
+  push:
+    branches:
+      - main
+      - dev
+  
+  pull_request:
+    branches:
+      - main
+      - dev
+  
+  workflow_dispatch:
+    inputs:
+      hello_input:
+        description: enter welcome message to use
+        required: true
+        default: hello BOSS
+      bye_input:
+        description: enter bye message to use
+        required: true
+        default: bye BOSS
+
+env:
+  BOSS: GOD
+  FOLLOWER: stanley
+
+jobs:
+  set_up:
+    name: "set up job"
+    runs-on: ubuntu-latest
+    outputs:
+      app_version: {{steps.set_version.outputs.app_version}}
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./frontend
+
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v4
+      
+      - name: install tree linux package
+        run: |
+          apt-get update && apt-get install -y tree
+          tree -L2
+        shell: bash
+        working-directory: ./backend
+      
+      - name: will add the app_version
+        id: set_version
+        run: |
+          echo "app_version=59893" >> $GITHUB_OUTPUTS
+
+  hello_world:
+    name: saying hello world job
+    runs-on: ubuntu-latest
+    needs:
+      - set_up
+    id: hello_world_job
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./web
+    env:
+      FIRST_NAME: stanley
+    
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v4
+      
+      - name: log the app_version
+        run: |
+          echo 
+
+      - name: log the hello message
+        run: |
+          echo ${{inputs.hello_input | "hello sir"}}
