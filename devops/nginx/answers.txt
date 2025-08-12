@@ -174,7 +174,7 @@
     through the network that connects all of them
 
 8. see answers in:
-    ./section1/11-nginx-conf/nginx.conf
+    ./section1/8-nginx-conf/nginx.conf
 
 9. Understanding nginx timeouts for efficient configuration
     - Read: see list of frontend & backend timeouts
@@ -403,7 +403,7 @@
         }
 
 13. if you have time, Read: the difference between HTTP/1 and HTTP/2
-    see: ./section1/15-https/http2-http1.md
+    see: ./section1/13-https/http2-http1.md
 
 15. - see what layer 4 proxying for nginx and websocket looks like
     - read some of the explanation
