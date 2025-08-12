@@ -401,7 +401,7 @@
         if [[ ! "$age" =~ ^[0-9]+$ ]]; then
             echo "Please enter a valid number for age."
         else
-            echo "Hi $fname, you are $age years old."
+            echo "Hi $name, you are $age years old."
         fi
 
 16. Read: colors in bash
