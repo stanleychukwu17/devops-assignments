@@ -18,7 +18,7 @@ const BoxComp = ({position, args, color, hoverColor}: BoxProp) => {
     scale: active ? 1.2 : 1
   })
 
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     boxRef.current.rotation.x = boxRef.current.rotation.y += delta
   })
 
