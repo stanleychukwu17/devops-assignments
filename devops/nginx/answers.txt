@@ -312,7 +312,7 @@
         but no one is allowed to visit /admin on port 80, i.e (localhost/admin), but if they go to port 79453
         (localhost:79453/admin), they'll be proxied to the right upstream
 
-11. Nginx as a layer 4 proxy, look at the example, explain it and re-write it
+11. Nginx as a layer 4 proxy, look at the example, explain it
     - code
       stream {
         upstream all_apps {
