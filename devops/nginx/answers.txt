@@ -252,7 +252,7 @@
             all through the 3 servers until 60s is reached
         }
 
-10. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
+10. Nginx as a layer 7 proxy, look at the example, explain it
       http {
         upstream all_apps {
             server app1_A:2222;
@@ -299,7 +299,7 @@
 
             server_name localhost;
 
-            location /admin {
+            location = /admin {
                 proxy_pass http://all_apps/admin/;
             }
         }
