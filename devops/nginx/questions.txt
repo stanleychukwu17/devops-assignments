@@ -75,9 +75,9 @@ SECTION 1
     - Read: see explanation of frontend timeouts
     - Read: see explanation of backend timeouts
 
-10. Nginx as a layer 7 proxy, look at the example, explain what is going on and re-write it
+10. Nginx as a layer 7 proxy, look at the example, explain it
 
-11. Nginx as a layer 4 proxy, look at the example, explain it and re-write it
+11. Nginx as a layer 4 proxy, look at the example, explain it
 
 12. Enable HTTPS on Nginx
     - Read: how do you enable https on your nginx server
