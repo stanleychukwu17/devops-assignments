@@ -35,6 +35,7 @@ full_revision: 6th Aug 2025
 
     - job2:
         - name: "saying hello world job"
+        - let the job run on "ubuntu-latest"
         - settings:
           - needs: the "set_up" job
           - add an id: hello_world_job
@@ -49,6 +50,7 @@ full_revision: 6th Aug 2025
 
     - job3:
         - name: "bye_world job"
+        - let the job run on "ubuntu-latest"
         - settings:
           - needs: the "set_up" & "hello_world" job
           - add an id: bye_world_job
@@ -61,8 +63,6 @@ full_revision: 6th Aug 2025
           - if the input is empty, use a default message: "Bye, we are going to miss you"
           - echo "we done with it"
 
-    - finally:
-      - make sure all jobs runs-on ubuntu latest
 
 4. You next task is to use github-actions to write a comment on newly created issue in
     our github-repo. Let the workflow have 2 jobs:
