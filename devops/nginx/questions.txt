@@ -68,7 +68,7 @@ SECTION 1
     - let the 2nd server listen on port 82 with server_name app2.stanley.com and forward
       all request to app2_backend
     - create the 3rd server to listen on port 80 with server_name static.stanley.com and
-      let it serve files from the root
+      let the root be: /var/www/static
 
 9. Understanding nginx timeouts for efficient configuration
     - Read: see list of frontend & backend timeouts
