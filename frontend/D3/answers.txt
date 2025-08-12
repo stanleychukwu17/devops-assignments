@@ -19,7 +19,7 @@
             d3.select(body)
               .append("div")
               .attr("class", "temporary")
-              .html("New div added")
+              .html("<p>New div added</p>")
         
         .remove():
             d3.select("div.temporary").remove()
