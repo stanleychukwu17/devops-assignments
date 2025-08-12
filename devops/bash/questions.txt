@@ -1,6 +1,6 @@
 full_revision: 27 May 2025
 full_revision: 6 June 2025
-full_revision: 1 Aug 2025
+full_revision: 12 Aug 2025
 
 1.  how do you create and run a bash script?
 
@@ -27,6 +27,7 @@ full_revision: 1 Aug 2025
     - Read: how do you get the length of an array
     - task: add a variable called "school", add 3 schools you've been to in the array, now use
       a for loop to print out each item in the array
+
 
 5.  Arithmetic calculations
     - show the 3 ways of doing Arithmetic calculations
