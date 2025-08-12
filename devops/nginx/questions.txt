@@ -1,6 +1,6 @@
 full_revision: 1 Apr 2025
 full_revision: 27 May 2025
-full_revision: 2 Aug 2025
+full_revision: 12 Aug 2025
 
 =============
 SECTION 1
@@ -57,7 +57,7 @@ SECTION 1
 
 6. Read or explain the code in your nginx config
 
-7 Read about exposing ports of your docker container
+7. Read about exposing ports of your docker container
 
 8. Another task: write another nginx.conf configuration
     - write 2 upstreams (app1_backend, app2_backend)
