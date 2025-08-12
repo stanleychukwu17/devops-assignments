@@ -19,7 +19,7 @@ full_revision: 12th Aug 2025
       - input: add an input "hello_input"
       - input: add an input "bye_input"
 
-    - job1:
+    - job1 (set_up_job):
         - name: "set up job"
         - settings:
         - let the job run on "ubuntu-latest"
@@ -30,10 +30,10 @@ full_revision: 12th Aug 2025
           - use "tree" command: display the folder structures
         - step:
           - id: should be "set_version"
-          - let this step echo an "app_version" into github outputs, so that i can access the output
+          - let this step echo an "app_version" into github output, so that i can access the output
             from the "outputs" settings at the job level (i.e the outputs specified earlier)
 
-    - job2:
+    - job2 (hello_world_job):
         - name: "saying hello world job"
         - let the job run on "ubuntu-latest"
         - settings:
@@ -45,10 +45,10 @@ full_revision: 12th Aug 2025
         - step: checkout the branch you're working on
         - step: echo the "app_version" output from the "set_up" job
         - step: display the hello message from the input
-          - if the input is empty, use a default message: "Hello world, welcome back"
+          - if the input is empty, use a default message: "Hi there, welcome back"
           - echo "we made it"
 
-    - job3:
+    - job3: bye_world_job
         - name: "bye_world job"
         - let the job run on "ubuntu-latest"
         - settings:
