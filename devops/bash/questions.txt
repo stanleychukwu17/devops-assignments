@@ -27,7 +27,8 @@ full_revision: 12 Aug 2025
     - Read: how do you get the length of an array
     - task: add a variable called "school", add 3 schools you've been to in the array, now use
       a for loop to print out each item in the array
-
+      - do for $i in array
+      - do for $i = 0, $i++
 
 5.  Arithmetic calculations
     - show the 3 ways of doing Arithmetic calculations
