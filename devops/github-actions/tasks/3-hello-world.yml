@@ -1,56 +1,85 @@
-name: hello_world workflow
+# A friendly name for your workflow
+name: hello world workflow
 
+# This block specifies when the workflow should be triggered.
 on:
+  # Trigger on a push to main or dev branches
   push:
     branches:
       - main
       - dev
+    # Only run if files in the 'frontend' directory are changed
+    paths:
+      - "frontend/**"
+  
   pull_request:
     branches:
       - main
       - dev
+    # Only run if files in the 'frontend' directory are changed
+    paths:
+      - "frontend/**"
+
+  # Allow manual execution from the GitHub Actions UI
   workflow_dispatch:
     inputs:
       hello_input:
-        description: Saying hello
-        required: true
-        default: Hi there, saying hello world
+        description: enter hello message
+        required: false
       bye_input:
-        description: Saying bye world
-        required: on
-        default: Sad to see you go, Bye world
+        description: enter a bye message
+        required: false
 
+# Define global defaults for all jobs
 defaults:
   run:
     shell: bash
-    working-directory: ./web
+    working-directory: ./frontend
+
+# Define global environment variables available to all jobs
+env:
+  STANLEY: is the greatest!!!
+  CHUKWU: Belongs to the most high
 
 jobs:
-
-  set_up:
+  set_up_job:
     name: set up job
     runs-on: ubuntu-latest
+    # Define outputs that other jobs can consume
     outputs:
-      app_version: ${{ steps.set_version.outputs.version }}
+      app_version: ${{steps.set_version.outputs.app_version}}
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./frontend
+  
     steps:
       - name: checkout the repo
         uses: actions/checkout@v4
 
       - name: update packages and install tree package
         run: |
-          apt-get update && apt-get install -y tree
+          apt-get update
+          apt-get install -y tree
+
+          # The 'tree' command will run in the ./frontend directory
           tree
+          tree -a # shows hidden files
           tree -L 2 # shows the directory tree up to 2 levels deep
+
+        shell: bash
+        working-directory: ./backend # purposefully set to a different directory
       
-      - name: "set the version of the app we're working on"
+      - name: Set application version 🌟
         id: set_version
         run: |
-          echo "version=1.2.$RANDOM" >> $GITHUB_OUTPUT
+          # The correct way to set a step output is using `echo "name=value" >> $GITHUB_OUTPUT`
+          echo "app_version=1.27.1" >> $GITHUB_OUTPUT
 
-  hello_world:
-    name: saying hello world job
+  hello_world_job:
+    name: "saying hello world job"
     runs-on: ubuntu-latest
-    needs: set_up
+    needs: [ set_up_job ]
     id: hello_world_job
     defaults:
       run:
@@ -65,36 +94,46 @@ jobs:
       
       - name: display app version
         run: |
-          echo "Using version from setup: ${{ needs.set_up.outputs.app_version }}"
+          app_version=${{ needs.set_up_job.outputs.app_version }}
+          echo $app_version
+
+          # or you can do:
+          echo "version from setup: ${{ needs.set_up_job.outputs.app_version }}"
 
       - name: display welcome message
         run: |
-          msg="${{ inputs.hello_input }}"
-          echo "${msg:-Hola Amigos}"
-          echo "we made it"
+          msg=${{ github.event.inputs.hello_input }}
+          echo "Hello ${FIRST_NAME}, ${msg:- welcome back}"
+
+          # or you can do:
+          echo "We made it: ${{ github.event.inputs.hello_input || 'Hi Stanley' }}"
   
-  bye_world:
+  bye_world_job:
     name: bye_world job
     runs-on: ubuntu-latest
-    needs: [hello_world, set_up]
+    needs: [ set_up_job, hello_world_job ]
     id: bye_world_job
     defaults:
       run:
         shell: bash
         working-directory: ./web
+    # Define environment variables specific to this job
     env:
       LAST_NAME: Chukwu
+
     steps:
       - name: checkout repo 
         uses: actions/checkout@v4
 
       - name: display app version
         run: |
-          echo "${{ needs.set_up.outputs.app_version }}"
+          echo "${{ needs.set_up_job.outputs.app_version }}"
 
       - name: display bye message
         run: |
-          msg="${{ inputs.bye_input }}"
-          echo "${msg:-Adios Amigos}"
+          msg="${{ github.event.inputs.bye_input }}"
+          echo "${msg:- ye, we are going to miss you}"
           echo "we done with it"
+          exit 0
         shell: bash
+        working-directory: ./web
