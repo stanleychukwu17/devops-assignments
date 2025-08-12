@@ -142,15 +142,15 @@
 
 8.  Exit status in bash
     - what is a successful exit status
-        a successful exit is of status "0", i.e "exit(0)"
+        a successful exit is of status "0", i.e "exit 0"
 
     - what is a non-successful exit status (you know the range)
         a non-zero exit status indicates an error or failure
 
-        exit(1) - This is a general error. It doesn't specify what kind of error occurred,
+        exit 1 - This is a general error. It doesn't specify what kind of error occurred,
                   but it signals a failure. 
 
-        exit(2 to 255): These can be used for specific error codes defined by the program, often
+        exit 2 to 255: These can be used for specific error codes defined by the program, often
                   to indicate particular types of failures or issues
 
     - Read: list of common exit codes
