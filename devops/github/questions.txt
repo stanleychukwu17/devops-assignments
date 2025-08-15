@@ -66,3 +66,12 @@ NOTE: you can download git kraken, has a great ui for managing git messages and 
 
 20. cleaning up
     - write a command to clean up only remote tracking branches (without pulling)
+
+
+21. tips {
+    you can do: git commit /src/component {
+        instead of:
+            git add /src/component
+            git commit -m "....."
+    }
+}
