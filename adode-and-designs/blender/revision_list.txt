@@ -1,5 +1,5 @@
 
-full_revision: - Aug 2025
+full_revision: - 15th Aug 2025
 ::Book 8.3 = Blender 3
   voxel ret-opo-logy: p3
   uv unwrapping: p5
@@ -10,7 +10,7 @@ full_revision: - Aug 2025
   How to bake normal map Decals (i.e: turn your models into normal maps): p33
 
 
-full_revision: - Aug 2025
+full_revision: - 16th Aug 2025
 ::Book 8 = Blender Animation
   pro eeVee rendering: 81
   Compositing in blender: 43
