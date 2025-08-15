@@ -59,7 +59,7 @@ full_revision: 15 Aug 2025
     - intensity: (1.5 or Math.PI)
 
   - add another directionalLight or add a pointLight and use the following props
-    - position: x:-10, y:0, z: -20
+    - position: x:-3, y:5, z: -2
     - intensity: 0.5
 
   - 👏🏾 clap for yourself, nice job wel-done!
