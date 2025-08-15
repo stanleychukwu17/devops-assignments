@@ -217,16 +217,16 @@
 
 10. Handling Events
     d3.select("circle")
-        .on("mouseenter", function(this: SVGElement, event, d) {
-            console.log("Mouse entered:", event, d);
+        .on("mouseenter", function(this: SVGElement, event, data) {
+            console.log("Mouse entered:", event, data);
 
             d3.select(this)
               .transition()
               .duration(300)
               .attr("fill", "blue");
         })
-        .on("mouseleave", function(this: SVGElement, event, d) {
-            console.log("Mouse left:", event, d);
+        .on("mouseleave", function(this: SVGElement, event, data) {
+            console.log("Mouse left:", event, data);
 
             d3.select(this)
               .transition()
