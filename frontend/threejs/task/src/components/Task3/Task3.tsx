@@ -90,7 +90,10 @@ function Task3 () {
           <Box position={[5,0,3]} args={[2,3,1.5]} color='yellowgreen' hoverColor='yellow' speed={2} />
         </group>
 
-        <OrbitControls />
+        <OrbitControls
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI/2}
+        />
       </Canvas>
     </div>
   )
