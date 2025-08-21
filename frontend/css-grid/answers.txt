@@ -178,6 +178,14 @@
     grid-template-areas: defines where things go
     grid-template-rows & grid-template-columns: define how many grid cells we want and how big the cells should be
 
+    - NOT NEEDED : why developers don't often use grid-template-areas
+      - It's most useful for fixed grid layouts
+      - It requires named areas
+      - It doesn't support overlapping
+      - Developers prefer more granular control
+      - Verbose syntax
+
+
 14. see images/3-grid-template-area
 
 15.
