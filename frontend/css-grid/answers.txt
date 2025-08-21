@@ -15,7 +15,7 @@
     2. gap: 5px 10px; margin of 5px for each row-cell and 10px for each column-cell
 
 4.
-    - grid-template-rows & grid-template-columns
+    - grid-template-rows, grid-template-columns & grid-template-areas
 
     - grid-template-rows: repeat(3, 50px) repeat(2, 100px)
       grid-template-columns: repeat(4, 300px) repeat(2, 200px)
