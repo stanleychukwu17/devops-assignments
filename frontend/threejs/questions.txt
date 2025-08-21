@@ -112,3 +112,7 @@ full_revision: 15 Aug 2025
   using the code from task:3
   - use leva to control the lightColor and lightIntensity of a directionalLight
   - use leva to adjust the color and the args of a boxGeometry
+
+
+
+add useCursor to task3, use useCursor to change the mouse pointer when the object is hovered over on
