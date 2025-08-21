@@ -96,19 +96,21 @@ full_revision: 21 Aug 2025
 12. - What is grid-area and what is it syntax
     - Using grid-area, replace grid-column & grid-row for .item1, .item2 & .item3
 
-13. Explain
-    .container {
-        display: grid
-        grid-template-rows: repeat(5, 100px)
-        grid-template-columns: repeat(5, 100px)
-        grid-template-areas:
-        "   .   .   .   .   .   "
-        "   .   .   .   .   .   "
-        "   .   .   .   .   .   "
-        "   .   .   .   .   .   "
-        "   .   .   .   .   .   "
-        ;
-    }
+13. - Explain:
+        .container {
+            display: grid
+            grid-template-rows: repeat(5, 100px)
+            grid-template-columns: repeat(5, 100px)
+            grid-template-areas:
+            "   .   .   .   .   .   "
+            "   .   .   .   .   .   "
+            "   .   .   .   .   .   "
+            "   .   .   .   .   .   "
+            "   .   .   .   .   .   "
+            ;
+        }
+
+    - NOT NEEDED : why developers don't often use grid-template-areas
 
 14. Draw out the layout for the grid template
     .container {
