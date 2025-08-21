@@ -20,7 +20,16 @@ full_revision: 19th Aug 2025
   Blender Light Linking: 71
 
 full_revision: 20th Aug 2025
-:: shortcuts
+:: shortcuts & whats new in blender
+    Book3 - p1
+    book6 - cover-front
+    book7 - cover-front
+    book7 - p53
+    book8 - cover-front
+    book8.3 - cover-front
+    -
+    whats new in blender
+      book7 - What's new in Blender 4.2 LTS - p55
 
 full_revision: 20th Aug 2025
 ::Book 6
