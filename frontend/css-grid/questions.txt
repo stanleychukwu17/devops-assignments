@@ -112,19 +112,22 @@ full_revision: 21 Aug 2025
 
     - NOT NEEDED : why developers don't often use grid-template-areas
 
-14. Draw out the layout for the grid template
-    .container {
-        display: grid
-        grid-template-rows: repeat(5, 100px)
-        grid-template-columns: repeat(5, 100px)
-        grid-template-areas:
-        "   item3       .           .           .           .       "
-        "   item3       item2       item2       item2       item2   "
-        "   item3       item1       item1       .           .       "
-        "   .           item1       item1       .           .       "
-        "   .           .           .           .           .       "
-        ;
-    }
+14. - Draw out the layout for the grid template
+        .container {
+            display: grid
+            grid-template-rows: repeat(5, 100px)
+            grid-template-columns: repeat(5, 100px)
+            grid-template-areas:
+            "   item3       .           .           .           .       "
+            "   item3       item2       item2       item2       item2   "
+            "   item3       item1       item1       .           .       "
+            "   .           item1       item1       .           .       "
+            "   .           .           .           .           .       "
+            ;
+        }
+
+    - for each of (.item1, .item2, .item3), write out the (grid-row, grid-column, grid-area)
+
 
 15. From the template below, what will be the grid-template-area
     images/4-grid-template-ask
