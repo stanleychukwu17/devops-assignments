@@ -157,6 +157,7 @@
     - What is grid-area and what is it syntax
         grid is a shortcut that you can use to replace grid-row & grid-column, the syntax is:
         grid-area: row-line-start / column-line-start/ row-line-end / column-line-end
+
     - Using grid-area, replace grid-column & grid-row for .item1, .item2 & .item3
         .item1 {
             grid-area: 2/2/4/4
