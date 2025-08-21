@@ -203,8 +203,9 @@
             grid-row: 1/4;
             grid-column: 1 / span 1;
             grid-area: 1/1/4/2;
+            # NOTE: you cannot do : grid-area: 1/1/4/span 1;
+            # grid-area: It only accepts line numbers or named lines, not spans.
         }
-
 
 15.
     based on the image provided, the .container class will look like:
