@@ -85,9 +85,9 @@ function Task3 () {
             <shadowMaterial attach="material" opacity={0.3} />
           </mesh>
 
-          <Box position={[0,0,0]} args={[2,3,1.5]} color='hotpink' hoverColor='yellow' speed={2} />
-          <Box position={[-5,0,-1]} args={[2,3,1.5]} color='purple' hoverColor='yellow' speed={2} />
-          <Box position={[5,0,3]} args={[2,3,1.5]} color='yellowgreen' hoverColor='yellow' speed={2} />
+          <Box position={[0,0,0]} args={[2,3,1.5]} color='#d152af' hoverColor='yellow' speed={2} />
+          <Box position={[-5,0,-1]} args={[2,3,1.5]} color='#ff9b35' hoverColor='yellow' speed={2} />
+          <Box position={[5,0,3]} args={[2,3,1.5]} color='indigo' hoverColor='yellow' speed={2} />
         </group>
 
         <OrbitControls
