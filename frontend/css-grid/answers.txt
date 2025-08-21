@@ -290,7 +290,6 @@
         auto-fit: Fills the grid with non-empty cells and collapses empty space, allowing items to
                   take up available space in the grid container.
 
-
 18.
     you can solve this by using 2 ways:
     1. set the number of rows to auto (i.e let rows be automatically created):
