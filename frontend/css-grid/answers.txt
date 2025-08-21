@@ -1,7 +1,8 @@
 1.
     Css grids allows us to display contents(html elements) in grids on a webpage. A grid is made of columns
     and rows know as grid-cells. these cells are separated by grid-lines
-    You decide how many columns and rows in your grid and where your contents are placed on the grid.
+    You decide how many columns and rows are going to be in your grid, you also decide where your html elements
+    are placed on the grid
 
 2. 
     - Each column and row has a line that make up the grid-cells, these lines are know as grid-lines
