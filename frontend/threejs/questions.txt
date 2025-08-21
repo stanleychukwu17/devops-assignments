@@ -1,6 +1,6 @@
 full_revision: 17 July 2025
 full_revision: 28 July 2025
-full_revision: 15 Aug 2025
+full_revision: 21 Aug 2025
 
 1 - Read: introduction
   - Read: installing react-three-fibre
@@ -17,6 +17,7 @@ full_revision: 15 Aug 2025
   - where do all 3 axis face in 3.js, draw the axis
   - How do you make the camera look at an object
 
+NOTE: add useCursor to task3, use useCursor to change the mouse pointer when the object is hovered over on
 3 Test your Knowledge, work on a simple 3.js scene (do not use A.I assistance)
   - open the ./task/src/components/Task0/Task0.tsx and write your code there:
 
@@ -114,5 +115,3 @@ full_revision: 15 Aug 2025
   - use leva to adjust the color and the args of a boxGeometry
 
 
-
-add useCursor to task3, use useCursor to change the mouse pointer when the object is hovered over on
