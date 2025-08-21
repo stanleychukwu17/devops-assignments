@@ -1,72 +1,74 @@
 import * as THREE from 'three'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas, useFrame } from "@react-three/fiber"
 import { SoftShadows, MeshWobbleMaterial, OrbitControls } from '@react-three/drei'
-import { useRef, useState } from 'react'
-import {a, useSpring} from '@react-spring/three'
+import { useRef, useState } from "react"
+import { useSpring, a } from '@react-spring/three'
+
 
 type BoxProps = {
   position: [number, number, number]
   args: [number, number, number]
   color: string
 }
-const Box = ({color, position, args}: BoxProps) => {
-  const boxRef = useRef<THREE.Mesh>(null!)
-  const [active, setActive] = useState(false)
-  const [hovered, setHovered] = useState(false)
-  const props = useSpring({
-    scale: active ? 1.2 : 1
+const Box = ({position, args, color}: BoxProps) => {
+  const meshRef = useRef<THREE.Mesh>(null!)
+  const [active, setActive] = useState<boolean>(false)
+  const [hovered, setHovered] = useState<boolean>(false)
+  const animateProps = useSpring({
+    scale: active ? 1.3 : 1
   })
 
   useFrame((_state, delta) => {
-    boxRef.current.rotation.x = boxRef.current.rotation.y += delta
+    meshRef.current.rotation.x = meshRef.current.rotation.y += delta
   })
 
   return (
     <a.mesh
-      ref={boxRef}
       position={position}
+      ref={meshRef}
       castShadow
-      onClick={() => setActive(!active)}
+      scale={animateProps.scale}
+      onClick={() => setActive(!active) }
       onPointerOver={() => setHovered(true)}
-      onPointerLeave={() => setHovered(false)}
-      scale={props.scale}
+      onPointerOut={() => setHovered(false)}
     >
-      <boxGeometry args={[...args, 10, 10, 10]} />
+      <boxGeometry args={args} />
       <MeshWobbleMaterial
-        color={ hovered ? 'indigo' : color} speed={1} factor={0.6}
-
+        color={hovered ? "#295e4f" : color }
+        factor={0.8}
+        speed={1.8}
       />
     </a.mesh>
   )
 }
 
+
 export default function Task0() {
   return (
     <div className="three_Canvas">
       <Canvas
+        camera={{ position: [0,3,10], fov: 70 }}
         shadows
-        camera={{ position: [0, 0, 9], fov: 80 }}
       >
-        <ambientLight intensity={Math.PI/2} />
-        <directionalLight intensity={Math.PI/2} position={[2,5,1]} castShadow />
-        <directionalLight intensity={Math.PI/2} position={[-3,5,-2]} />
-
         <SoftShadows />
 
+        <ambientLight intensity={Math.PI/2} />
+        <directionalLight position={[2,8,0]} intensity={Math.PI/2} castShadow />
+        <directionalLight position={[-5,5,0]} intensity={Math.PI/1.3} />
+
         <mesh
-          position={[0,-3,0]}
+          rotation={[-Math.PI/2, 0, 0]}
+          position={[0,-2,0]}
           receiveShadow
-          rotation={[-Math.PI/2,0,0]}
         >
           <planeGeometry args={[100,100]} />
-          {/* <meshStandardMaterial color={"lightgreen"} /> */}
-          <shadowMaterial attach="material" opacity={0.6} />
+            <shadowMaterial attach="material" opacity={0.7} />
         </mesh>
 
         <group>
-          <Box color='#d505cf' position={[-3,0,0]} args={[1.2,1.7,1.2]}/>
-          <Box color='#26e3d6' position={[0,0,0]} args={[1.2,1.7,1.2]}/>
-          <Box color='#6f58f6' position={[3,0,0]} args={[1.2,1.7,1.2]}/>
+          <Box args={[1,1.6,1.1]} position={[0,0,0]} color="#d152af" />
+          <Box args={[1,1.6,1.1]} position={[2.5,0,0]} color="indigo" />
+          <Box args={[1,1.6,1.1]} position={[-2.5,0,0]} color="#ff9b35" />
         </group>
 
         <OrbitControls
