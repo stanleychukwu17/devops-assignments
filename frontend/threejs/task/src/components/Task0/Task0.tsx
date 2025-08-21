@@ -25,6 +25,13 @@ const Box = ({position, args, color}: BoxProps) => {
 
   useHelper(meshRef, THREE.BoxHelper, "red")
 
+  const {boxColor, xSize, ySize, zSize} = useControls(`box-${color}`, {
+    boxColor: color,
+    xSize: {value: args[0], min: 0.5, max: 5, step: 0.25},
+    ySize: {value: args[1], min: 0.5, max: 5, step: 0.25},
+    zSize: {value: args[2], min: 0.5, max: 5, step: 0.25},
+  })
+
   return (
     <a.mesh
       position={position}
@@ -35,9 +42,9 @@ const Box = ({position, args, color}: BoxProps) => {
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      <boxGeometry args={args} />
+      <boxGeometry args={[xSize, ySize, zSize]} />
       <MeshWobbleMaterial
-        color={hovered ? "#295e4f" : color }
+        color={hovered ? "#295e4f" : boxColor }
         factor={0.8}
         speed={1.8}
       />
