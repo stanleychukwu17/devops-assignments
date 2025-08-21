@@ -185,8 +185,26 @@
       - Developers prefer more granular control
       - Verbose syntax
 
+14. - Draw out the layout for the grid template
+      see images/3-grid-template-area
 
-14. see images/3-grid-template-area
+    - for each of (.item1, .item2, .item3), write out the (grid-row, grid-column, grid-area)
+        .item1 {
+            grid-row: 3/5;
+            grid-column: 2/4;
+            grid-area: 3/2/5/4;
+        }
+        .item2 {
+            grid-row: 2/3;
+            grid-column: 2/-1;
+            grid-area: 2/2/3/-1;
+        }
+        .item3 {
+            grid-row: 1/4;
+            grid-column: 1 / span 1;
+            grid-area: 1/1/4/2;
+        }
+
 
 15.
     based on the image provided, the .container class will look like:
