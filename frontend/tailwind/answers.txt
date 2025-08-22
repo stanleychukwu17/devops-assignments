@@ -222,7 +222,7 @@
   - border custom width
     border-[<custom_value>]
     border-[16px]
-    border-[32px]
+    border-[var(--custom-width)]
 
   - border custom color
     border-[<custom_color>]
