@@ -200,7 +200,8 @@
     bg-[<custom_color>]
     bg-[#f1f2f6]
     bg-[#fff]
-    bg-[yellow]
+    bg-[var(--color-blonde-50)]
+    bg-(--color-blonde-100)
 
   - apply border on an element, also set the border color
     border -> border-width: 1px;
