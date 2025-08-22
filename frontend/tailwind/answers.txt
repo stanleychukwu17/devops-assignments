@@ -377,7 +377,19 @@
     -
     leading-1, leading-2, leading-none, leading-normal, leading-loose
 
-
+5 Spaces & Sizes
+  - Read: Intro into spacing and sizes
+  - apply padding (3 eg)
+  - apply custom padding (3 eg)
+  - padding top, right, bottom & left
+  - shortcut that combines padding-top & padding-bottom in normal css and tailwind
+  - shortcut that combines padding-left & padding-right in normal css and tailwind
+  - apply margin (3 eg)
+  - apply custom margin (3 eg)
+  - margin top, right, bottom & left
+  - shortcut that combines margin-top & margin-bottom in normal css and tailwind
+  - shortcut that combines margin-left & margin-right in normal css and tailwind
+  - apply negative margin and padding (3.eg)
 
 
 
