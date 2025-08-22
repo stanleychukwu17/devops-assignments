@@ -188,7 +188,8 @@
     text-[<custom_color>]
     text-[#f1f2f6]
     text-[#fff]
-    text-[yellow]
+    text-[var(--color-blonde-50)]
+    text-(--color-blonde-100)
 
   - apply background color to an element (3 eg)
     bg-green-100
