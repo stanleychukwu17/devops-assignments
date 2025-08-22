@@ -332,19 +332,48 @@
       <div class="text-tiny">...</div>
 
   - use the custom font-size and font-family in a custom class (i.e a utility class)
+    @utility cover_card {
+      font-size: var(--text-tiny);
+    }
 
   - Read: font-smoothing
+    antialiased -> --webkit-font-smoothing: antialiased;
+    subpixel-antialiased -> --webkit-font-smoothing: auto;
 
   - text-decoration: list the 4 types
+    :underline   :no-underline    :overline     :line-through
+
   - how do you do "text-decoration-line" in tailwindCss
+    underline, no-underline, overline, line-through
+
   - how do you do "text-decoration-color" in tailwindCss
+    decoration-<color>
+    -
+    decoration-yellow
+    decoration-yellow-100
+    decoration-yellow-[#f1f2f6]
+
   - how do you do "text-decoration-style" in tailwindCss
+    decoration-<style>
+    decoration-dashed
+
   - how do you do "text-decoration-thickness" in tailwindCss
+    decoration-<width>
+    decoration-2
+    decoration-[5px]
+
   - Read: how do you do "text-underline-offset" in tailwindCss
+    underline-offset-<size>
+    underline-offset-[3px]
+
   - task: convert the below css to tailwindCss:
     text-decoration: underline wavy red 5px;
-  - how do you do line-height in tailwindCss (2 eg)
+    -
+    we would have:
+      underline decoration-wavy decoration-red decoration-[5px]
 
+  - how do you do line-height in tailwindCss (2 eg)
+    leading-<size>
 
 
 
