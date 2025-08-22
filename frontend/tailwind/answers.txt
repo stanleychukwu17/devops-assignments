@@ -228,6 +228,7 @@
     border-[<custom_color>]
     border-[yellow]
     border-[purple]
+    border-[var(--color-blonde-50)]
 
   - how do you extend a custom color using @theme
     * in your global css file where you have @import "tailwindcss", do
