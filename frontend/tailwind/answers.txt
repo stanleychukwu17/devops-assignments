@@ -374,6 +374,8 @@
 
   - how do you do line-height in tailwindCss (2 eg)
     leading-<size>
+    -
+    leading-1, leading-2, leading-none, leading-normal, leading-loose
 
 
 
