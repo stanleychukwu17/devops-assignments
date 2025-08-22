@@ -267,12 +267,12 @@
 
   - using @theme, extend font-family
     @theme {
-      --font-<customFont_1>: 'YourCustomSans', 'Arial', 'sans-serif'
-      --font-<customFont_2>: 'YourCustomSerif', 'Arial', 'sans-serif'
+      --font-<customFont_1>: 'YourCustomSans', 'Arial', 'sans-serif';
+      --font-<customFont_2>: 'YourCustomSerif', 'Arial', 'sans-serif';
     }
     e.g:
     @theme {
-      --font-stanley: 'Aero', 'Arial', 'sans-serif'
+      --font-stanley: 'oneOfTheGreatest', 'Arial', 'sans-serif'
     }
 
     using them be like
