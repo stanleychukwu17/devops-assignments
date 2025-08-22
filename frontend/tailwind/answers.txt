@@ -295,6 +295,7 @@
       text-(length:<custom-property>) -> font-size: var(<custom-property>);
     e.g:
       <p class="text-(length:--my-text-size)"> sit</p>
+      <p class="text-[var(--my-text-size)]"> sit</p>
 
   - apply font-size with line-height (3 eg)
     syntax: text-size/line-height
