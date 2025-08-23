@@ -65,6 +65,7 @@ links to work on {
   - task: convert the below css to tailwindCss:
     text-decoration: underline wavy red 5px;
   - how do you do line-height in tailwindCss (2 eg)
+  - how do you do a custom line-height
 
 5 Spaces & Sizes
   - Read: Intro into spacing and sizes

@@ -264,7 +264,7 @@
       <div class="font-sans"></div>
       <div class="font-serif"></div>
       <div class="font-mono"></div>
-  
+
   - using @theme, extend font-family
     @theme {
       --font-<customFont_1>: 'YourCustomSans', 'Arial', 'sans-serif';
@@ -376,6 +376,9 @@
     leading-<size>
     -
     leading-1, leading-2, leading-none, leading-normal, leading-loose
+
+  - how do you do a custom line-height
+    <p class="[line-height: 1.5px]"></p>
 
 5 Spaces & Sizes
   - Read: Intro into spacing and sizes
