@@ -82,9 +82,9 @@ links to work on {
   - apply negative margin and padding (3.eg)
 
 6 Width & height
-  - width (5 eg)
-  - height (5 eg)
-  - both above custom values (5 eg)
+  - width (3 eg)
+  - height (3 eg)
+  - both above custom values (3 eg)
   - Read: tips of using width when working with flex elements
   - Read: min-width & max-width
   - Read: min-height & max-height
