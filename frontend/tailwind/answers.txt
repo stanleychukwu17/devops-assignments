@@ -473,7 +473,20 @@
       -
       max-h-* : same as min-h-*
 
+7 Space Between
+  - what is the syntax for space on x-axis and y-axis
+    space-x-<size>, space-y-<size>
 
+  - space-x (3 eg)
+    space-x-0, space-x-2, space-x-4
+
+  - space-y (3 eg)
+    space-y-0, space-y-2, space-y-4
+
+  - using custom values [] for both of the above
+    space-x-[10px]; space-x-[var(--custom-width)]; space-x-(--custom-width)
+    -
+    space-y-[10px]; space-y-[var(--custom-width)]; space-y-(--custom-width)
 
 
 
