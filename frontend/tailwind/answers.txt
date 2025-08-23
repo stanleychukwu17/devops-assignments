@@ -264,7 +264,7 @@
       <div class="font-sans"></div>
       <div class="font-serif"></div>
       <div class="font-mono"></div>
-
+  
   - using @theme, extend font-family
     @theme {
       --font-<customFont_1>: 'YourCustomSans', 'Arial', 'sans-serif';
