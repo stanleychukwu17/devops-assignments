@@ -89,7 +89,7 @@ links to work on {
   - Read: min-height & max-height
 
 7 Space Between
-  - what can you say about it and it's syntax
+  - what is the syntax for space on x-axis and y-axis
   - space-x (3 eg)
   - space-y (3 eg)
   - using custom values [] for both of the above
