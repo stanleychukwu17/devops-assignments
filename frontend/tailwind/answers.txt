@@ -382,17 +382,43 @@
 
 5 Spaces & Sizes
   - Read: Intro into spacing and sizes
+    In spacing we have mainly padding, margin and Space-between
+
   - apply padding (3 eg)
+    p-2, p-4, p-6
+
   - apply custom padding (3 eg)
+    p-[1rem] p-[var(--custom-padding)] p-(--custom-padding)
+
   - padding top, right, bottom & left
+    pt-, pr-, pb-, pl-
+
   - shortcut that combines padding-top & padding-bottom in normal css and tailwind
+    py-, py-2, py-[10px]
+
   - shortcut that combines padding-left & padding-right in normal css and tailwind
+    px-; px-2, px-4
+
   - apply margin (3 eg)
+    m-2, m-4, m-6
+
   - apply custom margin (3 eg)
+    m-[10px] m-[var(--custom-margin)] m-(--custom-margin)
+
   - margin top, right, bottom & left
+    mt-, mr-, mb-, ml-
+
   - shortcut that combines margin-top & margin-bottom in normal css and tailwind
+    my-, my-4, my-[10px]
+
   - shortcut that combines margin-left & margin-right in normal css and tailwind
+    mx-; mx-2, mx-[14px]
+
   - apply negative margin and padding (3.eg)
+    to make a value negative, you add minus(-) in front of it
+    : -mt-2, -mx-4, -mb-[14px]
+    : -pt-2, -px-4, -pb-[14px]
+
 
 
 
