@@ -419,6 +419,61 @@
     : -mt-2, -mx-4, -mb-[14px]
     : -pt-2, -px-4, -pb-[14px]
 
+6 Width & height
+  - width & height (3 eg each)
+    w-<size>: eg:
+      w-0, w-24, w-80
+      w-full: 100%
+      w-1/4: 25%
+      w-2/4: 50%
+
+    h-<size>: eg: h-0, h-24, h-80
+      h-full: 100%
+      h-1/4: 25%
+      h-2/4: 50%
+
+  - both above custom values (3 eg each)
+    w-[250px], w-[var(--custom-width)], w-(--custom-width)
+    h-[250px], h-[var(--custom-width)], h-(--custom-width)
+
+  - Read: tips of using width when working with flex elements
+    when working with flex elements in tailwind, "w" can be very useful
+    e.g:
+      <div class="flex w-full">
+        <div class="w-1/5"></div>
+        <div class="w-4/5"></div>
+      </div>
+      w-1/5: means take 1 out of 5 columns
+      w-4/5: means take 4 out of 5 columns
+      
+      -
+      if we did: w-2/5 and w-3/5 (it will mean 2 out of 5 columns & 3 out of 5 columns)
+
+  - Read: min-width & max-width
+    e.g:
+      min-w-0: min width 0px
+      min-w-full: min width 100%
+      min-w-[200px]: min width 200px
+      min-w-[100vw]: min width 100vw
+      min-w-[var(--custom-width)]: using a custom width
+      -
+      min-w-min: min-content
+      min-w-max: max-content
+      min-w-fit: fit-content
+      -
+      max-w-* : same as all in min-w-*
+
+  - Read: min-height & max-height
+      min-h-0: min height 0px
+      min-h-full: min height 100%
+      min-h-screen: min height 100vh
+      min-h-[200px]: min height 200px
+      min-h-[100vh]: min width 100vh
+      min-h-[var(--custom-height)]: using a custom height
+      -
+      max-h-* : same as min-h-*
+
+
 
 
 
