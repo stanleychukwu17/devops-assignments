@@ -354,8 +354,9 @@
         ...
     }
 
-27. ssh -i ~/.ssh/test_rsa ec2-user@<PublicIP>
-27.1 sudo su - (i.e sudo switch user - where dash(-)=root)
+27.
+    - ssh -i ~/.ssh/test_rsa ec2-user@<PublicIP>
+    - sudo su - (i.e sudo switch user - where dash(-)=root)
 
 28. 
     in variables.tf we do:
