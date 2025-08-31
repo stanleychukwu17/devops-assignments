@@ -1,5 +1,5 @@
 # Stage 1: Build stage
-FROM golang:1.21 AS builder
+FROM golang:1.25 AS builder
 
 # No need to add a non-root user in this stage, since this stage does not run the application
 # Add a non-root user
@@ -24,7 +24,7 @@ RUN go build -o final_app .
 # but in this case, the go code is in the root directory, same place as the Dockerfile
 
 # Stage 2: Development stage
-FROM golang:1.21.13-alpine3.20
+FROM golang:1.25-alpine
 
 # Add a non-root user
 RUN addgroup -S app && adduser -S -G app app
