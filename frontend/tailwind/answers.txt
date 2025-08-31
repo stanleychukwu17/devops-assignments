@@ -488,7 +488,19 @@
     -
     space-y-[10px]; space-y-[var(--custom-width)]; space-y-(--custom-width)
 
-
+8 Flex with tailwindCss
+  - Read: about flex in tailwindCss
+  - how do you do the below in tailwindCss:
+      flex-direction: row
+      flex-direction: row-reverse
+      flex-direction: column
+      flex-direction: column-reverse
+  - flex-grow, how do you do the below in tailwindCss
+      flex-grow: 1
+      flex-grow: 0
+  -flex-basis, how do you do the below in tailwindCss
+      flex-basis: 1
+      flex-basis: 0
 
 
 
