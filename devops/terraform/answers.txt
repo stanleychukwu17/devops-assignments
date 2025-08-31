@@ -481,7 +481,7 @@
         e.g terraform state show aws_instance.my_vm
     - terraform state pull
     - terraform state list | grep 'module.<module_name>'
-      e.g: terraform state list | grep -i "module.vpc_module"
+      e.g: terraform state list | grep -i -A20 "module.vpc_module"
 
 36. running commands on you ec2 instance
     - which is the best for running commands on your ec2 instance (cloud-init or ansible)
