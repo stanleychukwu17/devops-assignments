@@ -1,5 +1,5 @@
 # Stage 1: Build stage
-FROM node:20.16.0-alpine3.20 AS builder
+FROM node:24.7-alpine AS builder
 
 # Set work directory
 WORKDIR /usr/src/app
@@ -21,7 +21,7 @@ RUN npm cache clean --force && rm -rf /usr/src/app/*.log
 
 ###
 # Stage 2: Production stage
-FROM node:20.16.0-alpine3.20
+FROM node:24.7-alpine
 
 # Add a non-root user
 RUN addgroup -S app && adduser -S -G app app
