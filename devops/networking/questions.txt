@@ -1,6 +1,6 @@
-full_revision: 4 June 2025
 full_revision: 14 July 2025
 full_revision: 1 Aug 2025
+full_revision: 31 Aug 2025
 
 1. What is a network
 
