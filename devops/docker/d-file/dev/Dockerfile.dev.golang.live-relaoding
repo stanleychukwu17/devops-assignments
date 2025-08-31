@@ -1,4 +1,4 @@
-FROM golang:1.21 
+FROM golang:1.25 
 
 # For a development environment, you don’t need to add a non-root user (app).
 # RUN addgroup -S app && adduser -S -G app app
