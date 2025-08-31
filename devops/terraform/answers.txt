@@ -400,7 +400,8 @@
         ...
     }
 
-30. outputs.tf (you can also do output.tf)
+30.
+    outputs.tf (you can also do output.tf)
 
 31. in your outputs.tf
     output "ec2_public_ip_address" {
