@@ -1,5 +1,5 @@
 # Stage 1: Build stage
-FROM golang:1.21 AS builder
+FROM golang:1.25 AS builder
 
 # Set work directory
 WORKDIR /usr/src/app
@@ -34,7 +34,8 @@ CMD ["./final_app"]
 # This results in a tiny image (~10MB) but lacks debugging tools.
 # if you want to be able to debug the application, you can use the alpine image
 # -
-# FROM golang:1.21.13-alpine3.20
+# FROM golang:1.25-alpine as builder
+# RUN addgroup -S app && adduser -S -G app app
 # WORKDIR /usr/src/app
 # COPY --from=builder /usr/src/app/final_app ./final_app
 # Ensure execution permissions
