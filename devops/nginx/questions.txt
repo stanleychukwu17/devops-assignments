@@ -38,8 +38,7 @@ SECTION 1
         inspect one of the containers to be sure that it is in the nginx_network
     }
     - restart the app to see it is working with nginx {
-        see the logs of nginx_0 container, check to find the 404 error when a request
-        was made for the favicon.ico
+        see the logs of nginx_0 container to see that all is well
     }
     - write everything in a docker-compose file
     - start the docker-compose and be sure it works
