@@ -426,7 +426,7 @@
         your echo command {-e = escape}
 
         e.g:
-        echo -e "\e[30m Bash scripting \e[0m"
+        echo -e "\e[32m Bash scripting \e[0m \n \e[30m Bash scripting \e[0m"
 
         \e[<color_code>m - is used to open and close the coloring 
         30 - is the color code
