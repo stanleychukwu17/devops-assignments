@@ -54,10 +54,14 @@
     - add a variable called "school", add 3 schools you've been to in the array, now use
       a for loop to print out each item in the array
         names=("jewel model school" "whole person education" "east ukrainian national university")
-
+        -
         for i in "${names[@]}"; do
             echo $i
         done
+        -
+        for ((i=0; i<3; i++)); do
+        echo "${names[$i]}"
+        done;
 
 5.  Arithmetic calculations
     - show the 3 ways of doing Arithmetic calculations
