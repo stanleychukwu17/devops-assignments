@@ -273,11 +273,23 @@
         done
 
         e.g:
-        count=1
-        while [ $count -le 5 ]; do
-            echo "Count is: $count"
-            ((count++))  # Increment the count
-        done
+            count=1
+            while [ $count -le 5 ]; do
+                echo "Count is: $count"
+                ((count++))  # Increment the count
+            done
+
+        e.g2:
+            i=0
+            while ((i<10)); do
+                echo $i
+
+                if [ $i -eq 5 ]; then
+                    echo "we hit the five"
+                fi
+
+                ((i++))
+            done
 
     - write an if-else condition inside a while loop
         while [ condition ]; do
