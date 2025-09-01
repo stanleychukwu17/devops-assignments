@@ -433,7 +433,7 @@
         0 - is used to close the coloring
 
     - common color numbers/codes
-        30 = Black
+        30 = grey
         31 = Red
         32 = Green
         33 = Brown
