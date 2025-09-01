@@ -154,7 +154,7 @@
         exit 1 - This is a general error. It doesn't specify what kind of error occurred,
                   but it signals a failure. 
 
-        exit 2 to 255: These can be used for specific error codes defined by the program, often
+        exit 1 to 255: These can be used for specific error codes defined by the program, often
                   to indicate particular types of failures or issues
 
     - Read: list of common exit codes
