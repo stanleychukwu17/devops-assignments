@@ -520,7 +520,7 @@
     -
     This is especially useful for:
         Monitoring website health
-        Checking if a site is up (e.g., 200 OK vs 503 Service Unavailable vs 404 page not found)
+        Checking if a site is up (e.g: 200 OK vs 503 Service Unavailable vs 404 page not found)
 
 20. see the files
 
