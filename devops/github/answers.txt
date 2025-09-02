@@ -122,7 +122,9 @@
 
 16. how do you switch to a remote branch
     git switch <name_of_branch_on_the_remote_repo>
-    but run either "git fetch" or "git pull" first
+    -
+    but run either "git fetch" or "git pull" first,
+    preferably, run "git pull --prune"
 
 17. Diff btw *git fetch* and *git pull*
     - git fetch
