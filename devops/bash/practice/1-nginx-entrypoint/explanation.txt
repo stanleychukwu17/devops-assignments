@@ -49,7 +49,7 @@
       (-follow makes sure it follows symlinks)
     - It pipes the result of find into sort -V to sort the files in version order
       (useful if the files have numeric versions in their names)
-    - The while read -r f; do reads each file path one by one and processes it in the loop
+    - The while read -r f; reads each file path one by one and processes it in the loop
       The -r flag in the read command prevents backslashes (\) from being interpreted as escape characters.
       By default, read treats backslashes as escape sequences, but when you use -r, it tells read to take the
       input literally, meaning backslashes are just treated as regular characters instead of being used to
@@ -102,9 +102,33 @@
 
 10. exec "$@"
   - Finally, it uses exec to run whatever command was passed to the script as arguments ($@)
-  - This typically would be nginx or nginx-debug and starts the Nginx service in the container
-  - The exec command replaces the current shell with the process that it executes
-    (in this case, starting Nginx)
+    e.g: if the script was called like:
+      ./entrypoint.sh nginx -g 'daemon off;'
+      Then "$@" becomes:
+      nginx -g 'daemon off;'
+  exec:
+    - Replaces the current shell process (your script) with the command you provide
+    - That means the process started by "exec" will take over PID 1 (in containers), which is crucial
+
+  Why is exec "$@" important in a Docker ENTRYPOINT {
+    When this script is used as the Docker ENTRYPOINT, it runs as PID 1 inside the container.
+    -
+    Why that matters:
+      - PID 1 is special in Linux: it is responsible for reaping zombie processes
+
+      - if you do not use exec, your script './entrypoint.sh' remains as PID 1 and starts
+        a subprocess (nginx (i.e the nginx command called)), your script shell becomes the
+        parent of the nginx shell.. the issue here is that you script shell may not handle
+        signals properly (like SIGTERM, SIGQUIT), meaning the app won’t shut down gracefully.
+
+      - With exec, nginx becomes PID 1 — and it can properly receive and handle system signals
+  }
+
+  ✅ Correct behavior with exec "$@":
+    - Replaces the shell with the final command (e.g. nginx)
+    - Avoids leaving a zombie shell running
+    - Allows proper signal handling
+    - More efficient: avoids running an extra shell process
 
 
 Summary of What the Script Does
