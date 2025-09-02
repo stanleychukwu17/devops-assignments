@@ -96,10 +96,7 @@ SECTION 1
         https://github.com/stanleychukwu17/0-practice-to-become-better/tree/main/devops/nginx/3-nginx-websocket-chat-app
         D:\Sz - projects\0-practice\devops\nginx\3-nginx-websocket-chat-app
 
-15. - see what layer 4 proxying for nginx and websocket looks like
-    - read some of the explanation
 ## End Websockets
-
 16. see what production configuration looks like, try to re-write
 
 17. see how to set-up https/ssl with localhost and Nginx
