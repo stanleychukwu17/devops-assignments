@@ -1,9 +1,9 @@
-full_revision: 1 June 2025
 full_revision: 12 July 2025
 full_revision: 31 July 2025
+full_revision: 31 Aug 2025
 
 NOTE: you can download git kraken, has a great ui for managing git messages and commit history
-    and all so for see the difference clearly when resolving merge conflicts
+    and all so for seeing the difference clearly when resolving merge conflicts
 
 1.  - Config default user.name & user.email
     - how do you see the global user.name and user.email
@@ -49,7 +49,7 @@ NOTE: you can download git kraken, has a great ui for managing git messages and 
     - how do you delete a remote url
 
 15. - write down the full syntax for git push
-    - how do you push a feature branch
+    - how do you push a feature branch, e.g push "bug/fix-add-to-cart-btn"
     - how do you set a branch to be an upstream branch to always push to
 
 16. how do you switch to a remote branch (i.e a branch available in your remote repo,
