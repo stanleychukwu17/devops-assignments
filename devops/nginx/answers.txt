@@ -405,9 +405,6 @@
 13. if you have time, Read: the difference between HTTP/1 and HTTP/2
     see: ./section1/13-https/http2-http1.md
 
-15. - see what layer 4 proxying for nginx and websocket looks like
-    - read some of the explanation
-
 16. see:  ./section1/16-production/*
 
 
