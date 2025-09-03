@@ -495,9 +495,9 @@
     space-y-0, space-y-2, space-y-4
 
   - using custom values [] for both of the above
-    space-x-[10px]; space-x-[var(--custom-width)]; space-x-(--custom-width)
+    space-x-[10px]; space-x-[var(--custom-x)]; space-x-(--custom-x)
     -
-    space-y-[10px]; space-y-[var(--custom-width)]; space-y-(--custom-width)
+    space-y-[10px]; space-y-[var(--custom-y)]; space-y-(--custom-y)
 
 8 Flex with tailwindCss
   - Read: about flex in tailwindCss
