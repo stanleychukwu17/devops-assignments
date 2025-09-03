@@ -362,6 +362,8 @@
   - how do you do "text-decoration-style" in tailwindCss
     decoration-<style>
     decoration-dashed
+    decoration-dotted
+    decoration-wavy
 
   - how do you do "text-decoration-thickness" in tailwindCss
     decoration-<width>
