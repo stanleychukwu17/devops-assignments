@@ -94,18 +94,34 @@ links to work on {
   - space-y (3 eg)
   - using custom values [] for both of the above
 
-8 Flex with tailwindCss
-  - Read: flex: <flex-grow> <flex-shrink> <flex-basis>;
+8 Flex with tailwindCss v1
+  - Read:
+    setting how flex items will grow, shrink & basis(i.e initial size of the flex item)
+    flex: <flex-grow> <flex-shrink> <flex-basis>;
     if you understand it, then move on to the next question, see read mor on it
-  - Read: the default for flex items
+
+  - Explain the following "flex" shorthand:
+    - flex: 0 1 auto (this is the default for all children element)
+    - flex: 1 1 0
+    - flex: 2 1 100px
+    - flex: 0 0 100px
+
+  - Read: some more shorthand provided by vanilla css
+    
+
+  - Read: the "flex" shorthand in tailwind
+
+
+
+9 Flex with tailwindCss v2
+  - flex-grow, how do you do the below in tailwindCss
+      flex-grow: 1
+      flex-grow: 0
+  - flex-basis, how do you do the below in tailwindCss
+      flex-basis: 1
+      flex-basis: 0
   - how do you do the below in tailwindCss:
       flex-direction: row
       flex-direction: row-reverse
       flex-direction: column
       flex-direction: column-reverse
-  - flex-grow, how do you do the below in tailwindCss
-      flex-grow: 1
-      flex-grow: 0
-  -flex-basis, how do you do the below in tailwindCss
-      flex-basis: 1
-      flex-basis: 0
