@@ -90,6 +90,7 @@
 
         --font-display: "Smart", "sans-serif";
         --breakpoint-3xl: 1920px;
+        --breakpoint-large-screen: 2500px;
       }
 
       * When you define --color-* variables, Tailwind automatically generates corresponding
@@ -105,7 +106,7 @@
           This is just a shorthand for fill-[var(--my-brand-color)]
 
       * Similarly, --breakpoint-* variables will create custom breakpoints you can use in
-        responsive utilities (e.g., 3xl:text-lg)
+        responsive utilities (e.g., 3xl:text-lg, max-large-screen: bg-blonde-200)
 
   - Custom Utilities and Variants
     * You can define custom utilities using @utility
