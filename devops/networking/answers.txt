@@ -209,12 +209,8 @@
         data = [msg]
       ]
 
-      Common Protocols at the Data Link Layer: Ethernet, Wi-Fi, PPP (Point-to-Point Protocol)
-
     - Physical layer: this layer is responsible for encoding the data into physical signals
       it converts data into signals (electrical, light, or radio waves) and transmitting those
       signals over a physical medium like copper cables, fiber-optic cables, or air (for wireless connections)
-      The bits themselves are transmitted as electrical pulses, light signals, or radio waves.
 
-      Common Technologies and Protocols: Ethernet, Wi-Fi, Fiber-Optic Communication, Bluetooth
 
