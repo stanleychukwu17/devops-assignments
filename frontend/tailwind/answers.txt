@@ -248,6 +248,10 @@
     text-blonde-50
     bg-blonde-100
     border-blonde-200
+    -
+    bg-[var(--color-blonde-50)]
+    text-(--color-blonde-50)
+    border-(--color-blonde-50)
 
 4 Typography with tailwindCss
   - Read: tailwind comes with 3 default font families
