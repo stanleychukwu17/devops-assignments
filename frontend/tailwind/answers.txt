@@ -408,7 +408,7 @@
     py-, py-2, py-[10px]
 
   - shortcut that combines padding-left & padding-right in normal css and tailwind
-    px-; px-2, px-4
+    px-; px-2, px-[14px]
 
   - apply margin (3 eg)
     m-2, m-4, m-6
