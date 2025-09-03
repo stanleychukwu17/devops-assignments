@@ -101,17 +101,14 @@ links to work on {
     if you understand it, then move on to the next question, see read mor on it
 
   - Explain the following "flex" shorthand:
-    - flex: 0 1 auto (this is the default for all children element)
+    - flex: 0 1 auto (default) (this is the default for all children element)
     - flex: 1 1 0
     - flex: 2 1 100px
+    - flex: 0 0 auto
     - flex: 0 0 100px
 
-  - Read: some more shorthand provided by vanilla css
-    
-
-  - Read: the "flex" shorthand in tailwind
-
-
+  - Read: the "flex" shorthand from vanilla css
+  - Read: the "flex" shorthand from tailwind css
 
 9 Flex with tailwindCss v2
   - flex-grow, how do you do the below in tailwindCss
