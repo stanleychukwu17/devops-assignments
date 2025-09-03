@@ -95,7 +95,9 @@ links to work on {
   - using custom values [] for both of the above
 
 8 Flex with tailwindCss
-  - Read: about flex in tailwindCss
+  - Read: flex: <flex-grow> <flex-shrink> <flex-basis>;
+    if you understand it, then move on to the next question, see read mor on it
+  - Read: the default for flex items
   - how do you do the below in tailwindCss:
       flex-direction: row
       flex-direction: row-reverse
