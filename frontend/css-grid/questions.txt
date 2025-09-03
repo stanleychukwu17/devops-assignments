@@ -179,6 +179,7 @@ full_revision: 21 Aug 2025
 
 19. Read:
     Read the answer to see why we did grid-auto-flow: row & grid-auto-rows: 100px
+    note: by default, grid-auto-flow is row (i.e: grid-auto-flow: row)
     .container {
         ...
         grid-auto-flow: row
