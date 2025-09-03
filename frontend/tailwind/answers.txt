@@ -212,6 +212,7 @@
     border-2
     border-4
     border-8
+    border-[14px]
 
   - border-top, border-right, border-bottom, border-left
     border-t-2
@@ -227,7 +228,7 @@
   - border custom color
     border-[<custom_color>]
     border-[yellow]
-    border-[purple]
+    border-[#f1f2f6]
     border-[var(--color-blonde-50)]
 
   - how do you extend a custom color using @theme
