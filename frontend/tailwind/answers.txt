@@ -188,7 +188,6 @@
   - apply custom text color to an element (3 eg)
     text-[<custom_color>]
     text-[#f1f2f6]
-    text-[#fff]
     text-[var(--color-blonde-50)]
     text-(--color-blonde-100)
 
@@ -200,13 +199,13 @@
   - apply custom background color to an element (3 eg)
     bg-[<custom_color>]
     bg-[#f1f2f6]
-    bg-[#fff]
     bg-[var(--color-blonde-50)]
     bg-(--color-blonde-100)
 
   - apply border on an element, also set the border color
     border -> border-width: 1px;
     border-green-700: set the border color to green
+    border-[#f1f2f6]: set the border color to f1f2f6
 
   - apply border with width value
     border-<width_value>
