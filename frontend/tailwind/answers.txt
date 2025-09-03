@@ -339,6 +339,7 @@
   - use the custom font-size and font-family in a custom class (i.e a utility class)
     @utility cover_card {
       font-size: var(--text-tiny);
+      font-family: var(--font-stanley)
     }
 
   - Read: font-smoothing
