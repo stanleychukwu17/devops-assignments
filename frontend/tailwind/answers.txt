@@ -372,6 +372,7 @@
 
   - Read: how do you do "text-underline-offset" in tailwindCss
     underline-offset-<size>
+    underline-offset-2
     underline-offset-[3px]
 
   - task: convert the below css to tailwindCss:
