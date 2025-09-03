@@ -500,16 +500,65 @@
     space-y-[10px]; space-y-[var(--custom-y)]; space-y-(--custom-y)
 
 8 Flex with tailwindCss
-  - Read: about flex in tailwindCss
+  - Read: 
+    setting how flex items will grow, shrink & basis(i.e initial size of the flex item)
+    -
+    flex: <flex-grow> <flex-shrink> <flex-basis>;
+    see: ./more/8-flex-grow-shrink-basis.md
+
+  - Explain the following "flex" shorthand:
+    - flex: 0 1 auto (default) (this is the default for all children element)
+      grow = 0; item won't grow
+                the max-width is dependent on the "flex-basis" or if the item has a width property
+      shrink = 1; item can shrink
+      basis = auto; item size will be equal to the content (auto)
+
+    - flex: 1 1 0
+      grow = 1; item will grow
+      shrink = 1; item can shrink
+      basis = 0; Starts at 0 width
+
+    - flex: 2 1 100px
+      grow = 2; Grows twice as much as items with flex-grow: 1
+      shrink = 1; item can shrink
+      basis = 100px; Starts at 100px
+
+    - flex: 0 0 auto
+      grow = 0; item won't grow
+      shrink = 0; item won't shrink
+      basis = auto; width based on content
+
+    - flex: 0 0 100px
+      grow = 0; item won't grow
+      shrink = 0; item won't shrink
+      basis = 100px; width is 100px
+
+  - Read: the "flex" shorthand from vanilla css
+    - flex: 1 -> flex: 1 1 0%
+      Flexible item, grows and shrinks equally
+
+    - flex: auto -> flex: 1 1 auto
+      Flexible item, but starts at its content size
+
+    - flex: none -> flex: 0 0 auto
+      Fixed-size item based on content
+
+  - Read: the "flex" shorthand from tailwind css
+
+
+
+9 Flex with tailwindCss v2
   - how do you do the below in tailwindCss:
       flex-direction: row
       flex-direction: row-reverse
       flex-direction: column
       flex-direction: column-reverse
+
   - flex-grow, how do you do the below in tailwindCss
       flex-grow: 1
       flex-grow: 0
-  -flex-basis, how do you do the below in tailwindCss
+
+  - flex-basis, how do you do the below in tailwindCss
       flex-basis: 1
       flex-basis: 0
 
