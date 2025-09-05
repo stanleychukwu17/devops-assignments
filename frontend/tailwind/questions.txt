@@ -111,14 +111,14 @@ links to work on {
   - Read: the "flex" shorthand from tailwind css
 
 9 Flex with tailwindCss v2
+  - how do you do the below in tailwindCss:
+      flex-direction: row
+      flex-direction: row-reverse
+      flex-direction: column
+      flex-direction: column-reverse
   - flex-grow, how do you do the below in tailwindCss
       flex-grow: 1
       flex-grow: 0
   - flex-basis, how do you do the below in tailwindCss
       flex-basis: 1
       flex-basis: 0
-  - how do you do the below in tailwindCss:
-      flex-direction: row
-      flex-direction: row-reverse
-      flex-direction: column
-      flex-direction: column-reverse
