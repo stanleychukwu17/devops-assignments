@@ -129,6 +129,12 @@ links to work on {
       <div class="size-14 flex-none">03</div>
     </div>
 
+  - What will the diagram of the below look like
+    <div class="flex">
+      <div class="size-14 grow">01</div>
+      <div class="size-14 grow-0">02</div>
+      <div class="size-14 grow">03</div>
+    </div>
 
   - flex-shrink: how do you do the below in tailwindCss
     flex-shrink: 1

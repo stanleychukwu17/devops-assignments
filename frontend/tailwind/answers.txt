@@ -572,7 +572,10 @@
     -
     [01] [        02         ] [03]
 
-
+  - What will the diagram of the below look like
+    <div class="flex">
+      [           01          ] [02] [           03          ]
+    </div>
 
 
 
