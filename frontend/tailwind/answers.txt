@@ -551,14 +551,15 @@
 
 9 Flex with tailwindCss v2
   - how do you do the below in tailwindCss:
-    flex-direction: row
-    flex-direction: row-reverse
-    flex-direction: column
-    flex-direction: column-reverse
+    flex-direction: row                 = flex-row
+    flex-direction: row-reverse         = flex-row-reverse
+    flex-direction: column              = flex-col
+    flex-direction: column-reverse      = flex-col-reverse
 
   - flex-grow, how do you do the below in tailwindCss
-    flex-grow: 1
-    flex-grow: 0
+    flex-grow: 1                = grow-1 
+    flex-grow: 0                = grow-0
+    flex-grow: <custom_value>   = grow-[custom_value]; grow-[var(<custom_value>)];
 
   - flex-basis, how do you do the below in tailwindCss
     flex-basis: 1
