@@ -499,7 +499,7 @@
     -
     space-y-[10px]; space-y-[var(--custom-y)]; space-y-(--custom-y)
 
-8 Flex with tailwindCss
+8.0 Flex v1
   - Read: 
     setting how flex items will grow, shrink & basis(i.e initial size of the flex item)
     -
@@ -549,7 +549,7 @@
     - flex-none -> flex: 0 0 auto
     - flex-initial -> flex: 0 1 auto
 
-9 Flex with tailwindCss v2
+8.1 Flex v2
   - how do you do the below in tailwindCss:
     flex-direction: row                 = flex-row
     flex-direction: row-reverse         = flex-row-reverse

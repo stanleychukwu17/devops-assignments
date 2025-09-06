@@ -94,7 +94,7 @@ links to work on {
   - space-y (3 eg)
   - using custom values [] for both of the above
 
-8 Flex with tailwindCss v1
+8.0 Flex v1
   - Read:
     setting how flex items will grow, shrink & basis(i.e initial size of the flex item)
     flex: <flex-grow> <flex-shrink> <flex-basis>;
@@ -110,7 +110,7 @@ links to work on {
   - Read: the "flex" shorthand from vanilla css
   - Read: the "flex" shorthand from tailwind css
 
-9 Flex with tailwindCss v2
+8.1 Flex v2
   - how do you do the below in tailwindCss:
     flex-direction: row
     flex-direction: row-reverse
@@ -122,7 +122,12 @@ links to work on {
     flex-grow: 0
     flex-grow: <custom_value>
 
-  - Explain the flex-grow example below
+  - Explain the flex-grow example below:
+    <div class="flex">
+      <div class="size-14 flex-none">01</div>
+      <div class="size-14 grow">02</div>
+      <div class="size-14 flex-none">03</div>
+    </div>
 
 
   - flex-shrink: how do you do the below in tailwindCss
