@@ -561,9 +561,21 @@
     flex-grow: 0                = grow-0
     flex-grow: <custom_value>   = grow-[custom_value]; grow-[var(<custom_value>)];
 
-  - flex-basis, how do you do the below in tailwindCss
-    flex-basis: 1
-    flex-basis: 0
+  - Explain the flex-grow example below:
+    - All divs are set to "size-14" meaning that they have fixed width and height initially
+    - Now, div-1 and div-3 are set to "flex-none" and remember that flex-none equates "0 0 auto", which means
+      both div will not grow & will not shrink, there size will be "size-14"
+    - But div-2 is set to "grow", and grow equates to "flex-grow: 1", so this div will take up all available
+      space of it's parent
+    
+    the final result will look like:
+    -
+    [01] [        02         ] [03]
+
+
+
+
+
 
 
 
