@@ -112,13 +112,29 @@ links to work on {
 
 9 Flex with tailwindCss v2
   - how do you do the below in tailwindCss:
-      flex-direction: row
-      flex-direction: row-reverse
-      flex-direction: column
-      flex-direction: column-reverse
-  - flex-grow, how do you do the below in tailwindCss
-      flex-grow: 1
-      flex-grow: 0
-  - flex-basis, how do you do the below in tailwindCss
-      flex-basis: 1
-      flex-basis: 0
+    flex-direction: row
+    flex-direction: row-reverse
+    flex-direction: column
+    flex-direction: column-reverse
+
+  - flex-grow: how do you do the below in tailwindCss
+    flex-grow: 1
+    flex-grow: 0
+    flex-grow: <custom_value>
+
+  - Explain the flex-grow example below
+
+
+  - flex-shrink: how do you do the below in tailwindCss
+    flex-shrink: 1
+    flex-shrink: 0
+    flex-shrink: <custom_value>
+  - flex-basis: how do you do the below in tailwindCss
+    flex-basis: auto
+    flex-basis: 0
+    flex-basis: 0%
+    flex-basis: <custom_value>
+  - Explain some of these useful flex-basis default provided by tailwind
+
+
+
