@@ -6,7 +6,7 @@
     <motion.div drag style={{x,y}} />
 
     - some of the methods for useMotionValue are
-    .get()  .set()  .stop() .getVelocity() .destroy() .jump(newValue) .isAnimating()
+    .get()  .set(newValue)  .stop() .getVelocity() .destroy() .jump(newValue) .isAnimating()
 
 2.  const x = useMotionValue(-200)
     const opacity = useTransform(x, [-200, 0, 200], [0,1,0])
