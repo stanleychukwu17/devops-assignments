@@ -25,13 +25,11 @@
     There is a vibrant and extensive eco system around three-fiber full of libraries, helpers and abstractions
     -
     - @react-three/drei: useful helpers, this is an ecosystem in itself
-    - @react-three/gltFjx: turns GLTFs into JSX components
     - @react-three/postProcessing: post processing effects
     - @react-three/test-renderer: for unit tests in node
     - @react-three/flex: flexBox for react-three-fiber
     - @react-three/xr: VR/AR controllers and events
     - @react-three/cannon: 3D physics using canon
-    - create-r3f-app next: nextjs starter
 
 1.1 Some General Knowledge
   - Read: types of Geometries and their args
@@ -91,6 +89,8 @@
     Math.PI ≈ 3.14159 radians = 180°
     Math.PI / 2 = 90°
     2 * Math.PI = 360° (full rotation)
+
+    Math.PI can also be used for light intensity, Where Math.PI = 3.13
 
   - Read: see the different types of light in 3.js
     see ./images/1.1/types-of-3js-lights.jpg
