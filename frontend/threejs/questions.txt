@@ -17,7 +17,6 @@ full_revision: 21 Sep 2025
   - where do all 3 axis face in 3.js, draw the axis
   - How do you make the camera look at an object
 
-NOTE: add useCursor to task3, use useCursor to change the mouse pointer when the object is hovered over on
 3 Test your Knowledge, work on a simple 3.js scene (do not use A.I assistance)
   - open the ./task/src/components/Task0/Task0.tsx and write your code there:
 
@@ -37,6 +36,7 @@ NOTE: add useCursor to task3, use useCursor to change the mouse pointer when the
     - use useFrame delta to rotate the box on its x-axis & y-axis
     - when the box is clicked on, toggle the scale of the box
     - when the box is hovered on, change the material color of the box
+    - use useCursor to change the mouse pointer when the object is hovered (try progress, move, wait, grabbing, none)
 
   - create the main App component and add your Canvas component
     - use shadows prop in the Canvas component
