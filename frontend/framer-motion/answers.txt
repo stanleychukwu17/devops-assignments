@@ -50,7 +50,7 @@
     const {scrollYProgress} = useScroll()
     const scaleX = useSpring(scrollYProgress)
     -
-    return <motion.div style={{scaleX}} />
+    return <motion.div style={{scaleX, originX:0}} />
 
 6.
     const ref = useRef<HTMLElement>({} as HTMLElement)
