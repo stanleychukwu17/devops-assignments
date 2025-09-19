@@ -9,9 +9,9 @@
     .get()  .set(newValue)  .stop() .getVelocity() .destroy() .jump(newValue) .isAnimating()
 
 2.  const x = useMotionValue(-200)
-    const opacity = useTransform(x, [-200, 0, 200], [0,1,0])
+    const opacity = useTransform(x, [-200, 0, 200], [0.2,1,0.2])
     -
-    return <motion.div drag="x" style={{x, opacity}} />
+    return <motion.div drag="x" dragMomentum={false} style={{x, opacity}} />
 
 3.  const xInput = [-100, 0, 100]
     const opacityOutput = [0,1,0]
