@@ -16,10 +16,12 @@
 
 2.  How do you append & remove elements to the DOM
         .append():
-            d3.select(body)
+            d3.select("body")
               .append("div")
               .attr("class", "temporary")
               .html("<p>New div added</p>")
+            
+            d3.select("svg").append("circle")
         
         .remove():
             d3.select("div.temporary").remove()
