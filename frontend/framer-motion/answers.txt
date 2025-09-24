@@ -259,7 +259,7 @@
         with properties: controls.set({opacity: 0})
         with variants: controls.set("hidden")
     .start():
-        controls.start("hover", {duration: .5, ease:"easeIn"}) // i.e (definition, transitionOverride)
+        controls.start("hover", {duration: .5, ease:"easeIn"}) // i.e (variant, transitionOverride)
         controls.start({x:0, transition: {duration: 1}})
     .stop(): stops the animation at the current timeline
 
