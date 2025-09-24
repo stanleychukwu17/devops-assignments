@@ -72,15 +72,12 @@
 5.  .append() vs .join()
     - What is the difference btw .join() and .append()
         .join():
-            it is used to create new DOM elements based on the data that is bound to a selection.
-            When you bind data to a selection using .data, D3 creates a enter method for any data points
-            that do not correspond to an existing DOM element. So you can use .join() to create DOM
-            elements for those new data points
+            it is used create new DOM elements based on any data points that do not correspond
+            to an existing DOM element
 
         .append():
-            also used to add new elements to the DOM, but .append by itself does not deal with data Binding
-            (i.e it doesn't automatically create elements for unmatched data). it simply appends an element
-            to the selected element
+            it is purely used for creating new DOM elements, no data binding or spontaneously
+            creating new DOM elements based on data
 
     - .join task write: data: [1,2,3,4]
         const circles = d3.select("svg").selectAll("circle").data(data)
