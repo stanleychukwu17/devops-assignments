@@ -134,7 +134,7 @@
     const rotate = useTransform(scrollY, [0, 100], [0,360], {clamp:false, ease:"ask chatGPT for values"})
     // by setting clamp to false, the increment will continue to map even when the max input value
         has been reached. e.g if scrollY is 200, rotate = 720
-    
+
     -- using functions to transform output values
     e.g:1
     const x = useMotionValue(0)
