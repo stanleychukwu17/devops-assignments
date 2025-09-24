@@ -469,6 +469,7 @@
     ---
     - dynamic variant:
         const liVariant = {
+            hidden: {x:0},
             visible: i => ({x: 50, transition:{delay:i*0.3}})
         }
         -
