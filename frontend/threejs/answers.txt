@@ -387,7 +387,7 @@
 
     * The order of the controls depends on hooks call order, in our case "myValue" will be first,
       followed by "anotherValue" and then "barValue"
-  
+
   - Read: Conditionally show fields
     -
     const {check, myNumber, color} = useControls({
@@ -463,7 +463,7 @@
         expose 4 values in separate r, g, b and a numerical fields
 
     :Boolean
-      A simple toggle
+      A simple toggle, used for checkboxes
       const { toggle } = useControls({ toggle: true })
 
     :Select
