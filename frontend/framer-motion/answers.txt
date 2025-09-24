@@ -58,7 +58,8 @@
 
     <svg>
         <motion.circle
-            cx={50}, cy={30} r={30} fill="purple" style={{pathLength: scrollXProgress}}
+            cx={50}, cy={30} r={30} stroke-width={2} stroke-color="#f1f2f6"
+            style={{pathLength: scrollXProgress}}
         />
     </svg>
     <ul ref={ref} style={{overflow-x: "scroll"}}>
