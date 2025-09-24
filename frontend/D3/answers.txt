@@ -228,7 +228,7 @@
         .on("mouseleave", function(this: SVGElement, event, data) {
             console.log("Mouse left:", event, data);
 
-            d3.select(this)
+            d3.select(event.currentTarget)
               .transition()
               .duration(300)
               .attr("fill", "green");
