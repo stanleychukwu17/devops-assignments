@@ -69,6 +69,7 @@ https://motion.dev/docs/react-three-fiber
 
 13. Talk about the useInView hook
     - what are the options that can be provided to this hook
+      what option do you use if you are targeting an element inside it's scrollable parent
 
 14. Talk about keyframe's in framer-motion, also how do you space them using times
     - use it to animate the "cx" and the "cy" of an svg circle element
