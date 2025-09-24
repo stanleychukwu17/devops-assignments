@@ -71,6 +71,7 @@ SECTION 1
     - animate the fill color from yellow to blue
     -
     - Read: some explanations
+    - Read: about easing
 
 10. Handling Events
     - select one circle and add:
