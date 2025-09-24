@@ -203,6 +203,7 @@
         .transition()
         .duration(1000)
         .delay((data, index) => index * 100 ) // 100ms
+        .ease(d3.easeLinear)
         .attr("cx", 300) // x-axis position of the circle
         .attr("r", 50) // radius of the circle
         .attr("fill", "blue") // color of the circle
@@ -210,6 +211,8 @@
     - Read: some explanations
         - .transition(): Creates an animation.
         - .duration(): Specifies the transition duration.
+        - .delay(): adds a delay for each animation in the loop (aka, stagger the animation)
+        - .ease(): adds a easing function for each animation in the loop
         - .attr() / .style(): All .attr & .style after .transition will be animated over the duration specified
 
 10. Handling Events
