@@ -169,7 +169,6 @@
       useFrame(callback, priority = 2) // runs after everything (i.e after 1 & 2)
 
   - Read: some of the properties available in the "state" callback arguments (11 listed)
-
     clock:    THREE.Clock, Used to get the elapsed time and delta
     camera:   THREE.camera, The active camera in the scene, useful for animations involving camera
     scene:    THREE.scene, the main scene graph
