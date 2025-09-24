@@ -570,7 +570,7 @@
             whileInView={{opacity: 1}}
             viewport={{
                 root:scrollable_containerRef,
-                amount:some|all|number(default is some, where some = 0)
+                amount: .2 {you can do: some|all|number (default is some, where some = 0)}
             }}
         />
 
