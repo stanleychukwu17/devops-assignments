@@ -172,7 +172,7 @@
     clock:    THREE.Clock, Used to get the elapsed time and delta
     camera:   THREE.camera, The active camera in the scene, useful for animations involving camera
     scene:    THREE.scene, the main scene graph
-    size:     {width, height, aspectRation, ...}, viewport dimensions, useful for responsive UI or camera controls
+    size:     {width, height, aspectRatio, ...}, viewport dimensions, useful for responsive UI or camera controls
     viewport: {width, height, factor, distance, ...}, scene relative view size (especially useful in Orthographic mode)
     mouse:    THREE.Vector2, mouse position in normalized device coordinates (NDC): [-1,1]
     pointer:  THREE.Vector2, Raw pixel pointer position
