@@ -151,7 +151,7 @@
     and returns a new one that updates with the provided motion values velocity
     e.g:
         const x = useMotionValue(0)
-        const xSmooth = useSpring(x)
+        const smooth = useSpring(x)
         const velocity = useVelocity(x)
         const acceleration = useVelocity(velocity)
 
