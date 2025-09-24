@@ -65,6 +65,7 @@ SECTION 1
 9. Transitions & Animations
     - select all circles and add a transition to it, with duration of 1000ms
     - add a delay of index * 100ms for each of the circle in the animation loop
+    - add easing, add "d3.easeLinear"
     - animate the cx to 300
     - animate the r to 50
     - animate the fill color from yellow to blue
