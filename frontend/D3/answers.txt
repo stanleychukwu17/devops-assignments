@@ -215,6 +215,16 @@
         - .ease(): adds a easing function for each animation in the loop
         - .attr() / .style(): All .attr & .style after .transition will be animated over the duration specified
 
+    - Read: about easing
+        there are different types of easing in d3, once you write d3.ease, you'll see all the options
+        available for you to use, i.e: d3.ease<options>
+        e.g:
+        d3.easeLinear
+        d3.easeBackIn, easeBackOut, easeBackInOut
+        d3.easeCircIn, easeCircOut, easeCircInOut
+        d3.easeCBounceIn, easeCBounceOut, easeCBounceInOut
+        e.t.c
+
 10. Handling Events
     d3.select("circle")
         .on("mouseenter", function(this: SVGElement, event, data) {
