@@ -148,8 +148,6 @@
                 .domain([0, 100])  // Input range
                 .range([0, 500]);  // Output range
 
-            console.log(xScale(50)); // Outputs: 250
-
             const xAxis = d3.axisBottom(xScale);
             d3.select("svg")
                 .append("g")
