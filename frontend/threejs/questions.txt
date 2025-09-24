@@ -44,6 +44,7 @@ full_revision: 24 Sep 2025
       - let the camera use a fov of 60 (fov is field of view)
       - camera position should be x:-5, y:2, z:10
     - render your "SoftShadows" from drei inside the Canvas component
+    - add an ambientLight to the scene, use (0.3 or Math.PI) for the intensity
 
   - add a group element (inside you'll render the boxes and the planeGeometry for your shadow)
     - using the Box component, render 3 boxes in the group
@@ -53,7 +54,6 @@ full_revision: 24 Sep 2025
       - rotate the planeGeometry on the x-axis by -90deg so that it would be the flat plane
       - bring the plane downward so that it is below the boxes (i.e position downward on the y-axis)
 
-  - add an ambientLight to the scene, use (0.3 or Math.PI/2) for the intensity
   - add a directionalLight mainly for the shadow and use the following props:
     - let this light castShadow
     - position: x:2, y:5, z:1
