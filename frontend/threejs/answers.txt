@@ -285,6 +285,7 @@
       e.g:
         useCursor(hovered); // Change cursor to a pointer when hovered, pointer is the default
         useCursor(hovered, "progress"); // Change cursor to "progress" (typically a spinning wheel)
+        useCursor(hovered, "move");
 
 7 useHelper hook from drei
   - talk about the useHelper hook
