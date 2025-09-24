@@ -525,8 +525,8 @@
             useEffect(() => {
                 if (isPresent) {
                     const enterAnimation = async () => {
-                        await animate(scope.current, {opacity:1})
-                        await animate("li", {opacity:1, x:0})
+                        await animate(scope.current, {opacity:1}, {duration:1, ease:easeInOut})
+                        await animate("li", {opacity:1, x:0}, {duration:.5, ease:circInOut})
                     }
 
                     enterAnimation()
