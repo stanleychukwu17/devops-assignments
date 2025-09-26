@@ -322,12 +322,6 @@
     using them be like:
       <div class="text-tiny">...</div>
 
-  - use the custom font-size and font-family in a custom class (i.e a utility class)
-    @utility cover_card {
-      font-size: var(--text-tiny);
-      font-family: var(--font-stanley)
-    }
-
   - Read: font-smoothing
     antialiased -> --webkit-font-smoothing: antialiased;
     subpixel-antialiased -> --webkit-font-smoothing: auto;
@@ -372,7 +366,7 @@
     -
     leading-1, leading-2, leading-none, leading-normal, leading-loose
 
-  - how do you do a custom line-height
+  - how do you do a custom line-height (tip: leading-[<custom-size>](e.g leading-[5px]) is wrong)
     <p class="[line-height: 1]"></p>
     <p class="[line-height: 2]"></p>
     <p class="[line-height: 15px]"></p>
