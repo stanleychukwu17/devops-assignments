@@ -134,8 +134,24 @@
 10.
     - grid-template-rows: repeat(3, 100px), repeat(2, 1fr):
         this means, give us 3-rows @100px and 2-rows @1fr each of whatever space is left
-    - grid-template-columns: repeat(3, 200px), repeat(2, 1fr):
-        this means, give us 3-columns @200px and 2-columns @1fr each of whatever space is left
+
+    -
+      grid-template-columns: repeat(3, 200px), repeat(2, 1fr):
+      width: 1000px;
+        this means, give us 2-columns @100px and 3-columns @3fr each, 2-columns @1fr each
+        -
+        total we have:
+          3*3fr = 9fr
+          2*1fr = 2fr
+          total = 11fr
+        so we do:
+          800px/11fr ≈ 72.73px
+          Each 3fr column = 3 × 72.73px ≈ 218.18px
+          Each 1fr column = 1 × 72.73px ≈ 72.73px
+        so we will have:
+          3 divs each at 218.18px, total = 654.54px
+          2 divs each at 72.73px, total = 145.46px
+
 
 11.
     - 11.1 see images/2-grid-row-and-column.png

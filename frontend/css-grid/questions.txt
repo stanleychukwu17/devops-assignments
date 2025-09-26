@@ -63,7 +63,9 @@ full_revision: 24 Sep 2025
 
 10. Explain
     - grid-template-columns: repeat(3, 200px) repeat(2, 1fr);
-    - grid-template-columns: repeat(2, 100px) repeat(3, 3fr) repeat(2, 1fr);
+    -
+      grid-template-columns: repeat(2, 100px) repeat(3, 3fr) repeat(2, 1fr);
+      width: 1000px;
       - {the below questions might be tricky, chatGPT helped me with the answer}
       - what will be the value of (3, 3fr)
       - what will be the value of (2, 1fr)
