@@ -102,10 +102,8 @@
             description: align items within their cell on the y-axis
 
     justify-self & align-self
-        justify-self: this is used on the child item it-self on the x-axis, it overrides the justify-items
-            settings from the parent
-        align-self: this is used on the child item it-self on the y-axis, it overrides the align-items
-            settings from the parent
+        justify-self: used on the child item it-self, it overrides the justify-items settings from the parent
+        align-self: used on the child item it-self, it overrides the align-items settings from the parent
         -
         justify-self:
             axis: horizontal (x-axis)
