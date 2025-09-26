@@ -108,11 +108,12 @@
       * Similarly, --breakpoint-* variables will create custom breakpoints you can use in
         responsive utilities (e.g., 3xl:text-lg, max-large-screen: bg-blonde-200)
 
-  - Read: how to customize different values in @theme
+  - how to customize different values in @theme
+    {color, font-family, breakpoints}
     @theme {
       --color-{name}-{extra-name}: {value} // color
       --font-{font-name}: {value} // for font-family
-      --breakpoint-{size}: {value} // for responsive design breaking points
+      --breakpoint-{size}: {value} // for responsive design breakpoints
     }
 
 2 some tips

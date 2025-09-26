@@ -26,8 +26,9 @@ links to work on {
 
 1.1 theme and variants
   - The @theme Directive
-  - Read: how to customize different values in @theme
-
+  - how to customize different values in @theme
+    {color, font-family, breakpoints}
+  
 2 some tips
   - using em & rem
   - font-size calc
