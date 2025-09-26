@@ -101,7 +101,7 @@
           <div class="bg-[var(--color-blonde-50)] text-[var(--color-blonde-100)]">...</div>
         -
         you can also do:
-          <div class="fill-(--my-brand-color)">...</div>
+          <circle class="fill-(--my-brand-color)">...</circle>
           -
           This is just a shorthand for fill-[var(--my-brand-color)]
 
