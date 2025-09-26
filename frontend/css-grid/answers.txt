@@ -152,7 +152,6 @@
           3 divs each at 218.18px, total = 654.54px
           2 divs each at 72.73px, total = 145.46px
 
-
 11.
     - 11.1 see images/2-grid-row-and-column.png
     - 11.2 see images/2-grid-row-and-column.png
