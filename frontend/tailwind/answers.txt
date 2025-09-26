@@ -560,6 +560,7 @@
     flex-grow: 1                = grow-1 
     flex-grow: 0                = grow-0
     flex-grow: <custom_value>   = grow-[custom_value]; grow-[var(<custom_value>)];
+                                  e.g grow-[25vw]; grow-(--custom-grow)
 
   - Explain the flex-grow example below:
     - All divs are set to "size-14" meaning that they have fixed width and height initially
