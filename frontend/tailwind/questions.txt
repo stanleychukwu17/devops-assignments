@@ -27,11 +27,11 @@ links to work on {
 1.1 theme and variants
   - The @theme Directive
   - Read: how to customize different values in @theme
-  - Custom Utilities and Variants
 
 2 some tips
   - using em & rem
   - font-size calc
+  - in tailwind v4, you can now do stuffs like:
 
 3 Text and colors
   - apply text color on an element (3 eg)
