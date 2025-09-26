@@ -338,8 +338,7 @@
     -
     (Any items/elements created outside the available grid-cells are called explicit-grids/explicit-grid-items)
     So to make sure that new grid-items maintain consistency with other grid-items (i.e has the same row-height
-    like other grid-cells), we need to use the "grid-auto-rows" the property specifies a row-height for any
-    explicit-grid.
+    like other grid-cells), we need to use the "grid-auto-flow: <row|column>" & "grid-auto-<rows|columns>"
     ...
     so
         grid-auto-flow: row; // this is not needed because the default for new explicit-grids are rows
