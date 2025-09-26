@@ -115,12 +115,6 @@
       --breakpoint-{size}: {value} // for responsive design breaking points
     }
 
-
-  - you can now write things like:
-    <div class="[mask-image:url('/some-mask.svg')]">
-    <div class="bg-[var(--color-blonde-50)] text-[var(--color-text)]">
-    or do: <div class="bg-(--color-blonde-50) text-(--color-text)">
-
 2 some tips
   - using em & rem
     :em (Relative to Parent's Font Size)
@@ -164,6 +158,11 @@
       font-size: calc(16px + 2vw)
       font-size: min(calc(16px + 2vw), 35px)
       font-size: clamp(28px, calc(16px + 2vw), 40px)
+
+  - you can now write things like:
+    <div class="[mask-image:url('/some-mask.svg')]">
+    <div class="bg-[var(--color-blonde-50)] text-[var(--color-text)]">
+    or do: <div class="bg-(--color-blonde-50) text-(--color-text)">
 
 3 Text and colors
   - apply text color on an element (3 eg)
