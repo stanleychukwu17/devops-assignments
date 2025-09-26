@@ -1,6 +1,6 @@
-full_revision: 23 June 2025
 full_revision: 12 July 2025
 full_revision: 21 Aug 2025
+full_revision: 24 Sep 2025
 
 1. Talk about grids
 
@@ -62,8 +62,8 @@ full_revision: 21 Aug 2025
     - in the columns: what will be the final value for 2fr and 1fr
 
 10. Explain
-    - grid-template-rows: repeat(3, 100px) repeat(2, 1fr);
     - grid-template-columns: repeat(3, 200px) repeat(2, 1fr);
+    - grid-template-columns: repeat(2, 100px) repeat(3, 3fr) repeat(2, 1fr);
 
 11.
     - Draw the following diagram using the html & css below:
