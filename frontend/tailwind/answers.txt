@@ -115,32 +115,11 @@
       --breakpoint-{size}: {value} // for responsive design breaking points
     }
 
-  - Custom Utilities and Variants
-    * You can define custom utilities using @utility
-      e.g: in your css file
-        @utility custom-url {
-          color: var(--color-blonde-200);
-          text-decoration: underline;
-        }
 
-        <a href="#" class="custom-url p-2 hover:no-underline> Hover over me </a>
-    
-    * Create custom variants with @variant:
-      e.g: in you css file
-        .custom-url-with-variant {
-          text-decoration: underline;
-
-          @variant hover {
-            text-decoration: no-underline;
-          }
-        }
-
-        <a href="#" class="custom-url-with-variant p-2> Hover over me </a>
-
-    * you can now write things like:
-      <div class="[mask-image:url('/some-mask.svg')]">
-      <div class="bg-[var(--color-blonde-50)] text-[var(--color-text)]">
-      or do: <div class="bg-(--color-blonde-50) text-(--color-text)">
+  - you can now write things like:
+    <div class="[mask-image:url('/some-mask.svg')]">
+    <div class="bg-[var(--color-blonde-50)] text-[var(--color-text)]">
+    or do: <div class="bg-(--color-blonde-50) text-(--color-text)">
 
 2 some tips
   - using em & rem
