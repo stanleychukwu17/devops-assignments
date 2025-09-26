@@ -280,7 +280,6 @@
             display: grid
             justify-content: center;
             align-content: center;
-            grid-template-rows: repeat(3, 150px)
             grid-template-columns: repeat(auto-fit, 100px);
             gap: 20px 20px;
         }
