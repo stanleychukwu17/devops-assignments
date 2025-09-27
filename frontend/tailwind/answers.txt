@@ -296,7 +296,7 @@
       text-sm/8
       e.t.c
 
-  - apply font-size with custom value (3 eg)
+  - apply font-size with custom value(3 eg) (use calc(), use clamp())
     text-[14px]
     text-[calc(16px + 2vw)]
     text-[clamp(16px, calc(16px + 2vw), 40px)]

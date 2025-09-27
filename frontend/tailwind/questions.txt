@@ -53,7 +53,7 @@ links to work on {
   - apply font-size (5 eg)
   - apply font-size with css variable
   - apply font-size with line-height (3 eg)
-  - apply font-size with custom value (3 eg)
+  - apply font-size with custom value(3 eg) (use calc(), use clamp())
   - using @theme, extend font-size, Read: providing default values (line-height, font-weight, letter-spacing)
   - Read: font-smoothing
   - text-decoration: list the 4 types
