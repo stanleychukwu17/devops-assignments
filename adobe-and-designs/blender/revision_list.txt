@@ -13,11 +13,11 @@ full_revision: 19th Aug 2025
 
 full_revision: 19th Aug 2025
 ::Book 8 = Blender Animation
-  pro eeVee rendering: 81
+  Quick smooth camera movement in Blender: 38
   Compositing in blender: 43
   video editing: 54
-  Quick smooth camera movement in Blender: 38
   Blender Light Linking: 71
+  pro eeVee rendering: 81
 
 full_revision: 20th Aug 2025
 :: shortcuts & whats new in blender
@@ -38,3 +38,13 @@ full_revision: 20th Aug 2025
   southern walking 1 - 80
   southern walking 2 - 87
   mastering walk cycle - 92
+
+
+
+Other design revisions:
+  Adobe Illustrator: Book-1
+  Adobe After effects: Book-2
+  SVG: Book-4
+  Figma: Book-8.1
+  Adobe Media Encoder - {no note on media encoder, take a note on how to use it and index the book number}
+  Lottie files - {no note on lottie files, take a note on how to use it in react, have 1 practice project and index the book number}
