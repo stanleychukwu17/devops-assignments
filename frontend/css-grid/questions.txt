@@ -66,7 +66,7 @@ full_revision: 13 Oct 2025
     -
       grid-template-columns: repeat(2, 100px) repeat(3, 3fr) repeat(2, 1fr);
       width: 1000px;
-      - {the below questions might be tricky, chatGPT helped me with the answer}
+      - {the above questions might be tricky, chatGPT helped me with the answer}
       - what will be the value of (3, 3fr)
       - what will be the value of (2, 1fr)
 
