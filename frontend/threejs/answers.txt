@@ -181,7 +181,7 @@
 5 useFrame exercise
   - use it to rotate an object on the y-axis
     useFrame((state, delta) => {
-      meshRef.current.rotation.y = clock.getElapsedTime()
+      meshRef.current.rotation.y = state.clock.getElapsedTime()
       or
       meshRef.current.rotation.y += delta
     })
