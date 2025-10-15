@@ -29,7 +29,7 @@ full_revision: 15 Oct 2025
     - let the component receive 4 arguments
       "position": for the position of the box on the 3D scene
       "args": the dimensions of the box
-      "color": the color for each box
+      "color": the color for each box {indigo, lime-green, hot-pink, lightblue }
       "hoverColor": the color to transform to when hovered over
       -
     - let the Box castShadow (i.e use the castShadow prop)
@@ -51,6 +51,7 @@ full_revision: 15 Oct 2025
     - add a new planeGeometry mesh in the group
       - use the receiveShadow prop
       - let it use a shadowMaterial with props attach="material" & opacity=0.3 or 1.3
+        the props "attach=material" is optional, you do not need it
       - rotate the planeGeometry on the x-axis by -90deg so that it would be the flat plane
       - bring the plane downward so that it is below the boxes (i.e position downward on the y-axis)
 
