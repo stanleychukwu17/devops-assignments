@@ -251,7 +251,7 @@
       e.g:
         <OrbitControls
           minPolarAngle={0}           // does not allow user rotate beyond the ground plane horizontally, i.e 0-deg
-          maxPolarAngle={Math.PI / 2} // limit to top hemisphere, i.e 180-deg
+          maxPolarAngle={Math.PI / 2} // limit to top hemisphere, i.e 90-deg
         />
 
   - give an example of MeshWobbleMaterial from drei
