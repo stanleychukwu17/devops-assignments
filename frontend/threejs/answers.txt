@@ -209,7 +209,8 @@
   - how do you access the state object outside of useFrame
     useThree(): by using the useThree hook, you can access the "state" object outside of react
     e.g:
-      const {camera, size, clock} = useThree()    
+      import { useThree } from '@react-three/fiber'
+      const {camera, size, clock} = useThree()
 
 6 drei package
   - Read: some of it's useful helpers
