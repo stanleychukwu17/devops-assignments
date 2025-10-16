@@ -301,7 +301,8 @@
       - here "args" is the length of the axes, we're creating an AxesHelper of length 5
       - you can also use the "scale" prop to make the axesHelper larger
       - You can't change the colors of AxesHelper easily — it's hardcoded in Three.js:
-        https://github.com/mrdoob/three.js/blob/master/src/helpers/AxesHelper.js
+        X = red, Y = green, Z = blue;
+        To customize colors, you'd need to make a custom helper or modify the geometry manually
 
     see an axesHelper with multiple props:
       <axesHelper 
