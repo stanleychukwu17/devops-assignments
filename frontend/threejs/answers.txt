@@ -296,6 +296,9 @@
   - visualize axes using the AxesHelper
     use the component provided by r3f:
       <axesHelper args={[5]} />
+      equivalent to: new THREE.AxesHelper(5) in raw 3.js
+      -
+      - here "args" is the length of the axes, we're creating an AxesHelper of length 5
 
   - visualize grids using the GridHelper
       use the component provided by r3f:
