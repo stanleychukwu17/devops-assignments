@@ -295,8 +295,8 @@
 
   - visualize axes using the AxesHelper
     use the component provided by r3f:
-      <axesHelper args={[5]} />
-      equivalent to: new THREE.AxesHelper(5) in raw 3.js
+      <axesHelper args={[5]} scale={5} />
+      i.e: new THREE.AxesHelper(length) in raw 3.js
       -
       - here "args" is the length of the axes, we're creating an AxesHelper of length 5
 
@@ -304,12 +304,17 @@
       use the component provided by r3f:
         <gridHelper position={[x,y,z]} args={[15]} />
         -
-        You can also specify grid colors like this:
-        <gridHelper args={[15, 15, 'white', 'gray']} />
+        i.e: new THREE.GridHelper(size, divisions, colorCenterLine, colorGrid) in raw 3.js
+        - size: total size of the grid (width and height)
+        - divisions: number of divisions (number of grid lines)
+        - colorCenterLine: color of the center line
+        - colorGrid: color of the other lines
+
+        in react-three-fiber, you'll do like this:
+        <gridHelper args={[15, 15, 'white', 'gray']} /> i.e [size, divisions, colorCenterLine, colorGrid]
 
   - visualize light sources using any of the following:
     SpotLightHelper, PointLightHelper, DirectionalLightHelper
-    -
     -
     import * as THREE from "three"
     import {useHelper} from "@react-three/drei"
@@ -333,7 +338,9 @@
 
     const Cube = () => {
       const meshRef = useRef<THREE.Mesh>(null!)
-      useHelper(meshRef, THREE.BoxHelper, "red") // replace "red" with any color of your choice
+
+      // replace "red" with any color of your choice, you can also ask chatGPT for "args" on "sizes" of the BoxHelper
+      useHelper(meshRef, THREE.BoxHelper, "red")
 
       return (
         <group>
