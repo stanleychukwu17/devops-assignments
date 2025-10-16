@@ -422,7 +422,7 @@
       }
     })
 
-    * The color input will show in the GUI only if check is true & myNumber is greater than 5
+    * The color input will show in the GUI only if `check` is true & `myNumber` is greater than 5
 
   - Read: Folders
     * Using a folder structure can be as easy as setting the name you want as the
