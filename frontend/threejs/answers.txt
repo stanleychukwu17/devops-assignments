@@ -428,7 +428,7 @@
     * Using a folder structure can be as easy as setting the name you want as the
       first parameter of useControls
     -
-    const {showLighting, showStats} = useControls('My folder', {
+    const {showLighting, showStats} = useControls('Light Settings', {
       showLighting: true,
       showStats: false,
     })
