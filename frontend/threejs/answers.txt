@@ -295,14 +295,28 @@
 
   - visualize axes using the AxesHelper
     use the component provided by r3f:
-      <axesHelper args={[5]} scale={5} />
+      <axesHelper args={[5]} />
       i.e: new THREE.AxesHelper(length) in raw 3.js
       -
       - here "args" is the length of the axes, we're creating an AxesHelper of length 5
+      - you can also use the "scale" prop to make the axesHelper larger
+      - You can't change the colors of AxesHelper easily — it's hardcoded in Three.js:
+        https://github.com/mrdoob/three.js/blob/master/src/helpers/AxesHelper.js
+
+    see an axesHelper with multiple props:
+      <axesHelper 
+        args={[10]}
+        position={[0, 1, 0]}
+        rotation={[0, Math.PI / 4, 0]}
+        scale={[1, 2, 1]}
+        visible={true} // or false
+        name="myAxesHelper"
+        onClick={(e) => console.log('Clicked helper', e)}
+      />
 
   - visualize grids using the GridHelper
       use the component provided by r3f:
-        <gridHelper position={[x,y,z]} args={[15]} />
+        <gridHelper position={[x,y,z]} args={[15]} scale={3} />
         -
         i.e: new THREE.GridHelper(size, divisions, colorCenterLine, colorGrid) in raw 3.js
         - size: total size of the grid (width and height)
