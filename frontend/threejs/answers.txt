@@ -457,8 +457,9 @@
     :Number
       A single numerical input
 
-      const { myNumber } = useControls({
-        myNumber: 4,
+      const { number1, number2 } = useControls({
+        number1: 4,
+        number2: {value: 4, min: 0, max: 10}
       })
 
       Change the value by either dragging over the input label or the inner label
