@@ -193,7 +193,7 @@
     })
 
     you can use an alternative method: "lerpVectors":
-    : camera.position.lerpVectors(camera.position, targetPos, 0.1)
+    : camera.position.lerpVectors(camera.position, targetPos, 0.5)
 
   - use it to detect the size of the screen and scale an object based on the screen size
     useFrame(({size}, delta) => {
