@@ -335,7 +335,7 @@
     import {useHelper} from "@react-three/drei"
 
     const Cube = () => {
-      const lightRef = useRef<THREE.Mesh>(null!)
+      const lightRef = useRef<THREE.DirectionalLight>(null!) // or for Generic light type, you do: useRef<THREE.Light>(null!);
       useHelper(lightRef, THREE.DirectionalLightHelper, 1)
 
       return (
