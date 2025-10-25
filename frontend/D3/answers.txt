@@ -109,8 +109,7 @@
 
 7. Scale functions
     - Read: a little bit about scale functions
-        scale in D3 allows you you to map data values to visual-values(like pixel positions or colors).
-        common scales include linear scales. 
+        scale in D3 allows you you to map data values to visual-values.
 
     - give an example of a .scaleLinear() function using input:[0,100] and output:[0,500]
         const scale = d3.scaleLinear()
