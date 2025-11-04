@@ -81,6 +81,9 @@
     e.g:
       useFrame((state, delta) => {
         meshRef.current.rotation.y += Math.PI * delta; // rotate 180° per second
+        // or
+        meshRef.current.rotation.y += delta / 1.5 // this is the one we-used in the chair project
+        meshRef.current.rotation.y = state.clock.getElapsedTime() / 1.5 // same as above
       });
     
     Math.PI ≈ 3.14159 radians = 180°
