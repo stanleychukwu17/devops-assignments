@@ -157,6 +157,7 @@
             const xScale = d3.scaleBand()
                 .domain(["A","B","C","D","E"])
                 .range([0, 1000])
+                .padding(0.1) // gives spaces between the data(i.e btw each band)
 
             console.log(xScale("A")); // Outputs: 0
             console.log(xScale("B")); // Outputs: 250
