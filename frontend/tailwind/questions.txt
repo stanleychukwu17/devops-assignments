@@ -14,6 +14,10 @@ links to work on {
   https://tailwindcss.com/docs/detecting-classes-in-source-files
   https://tailwindcss.com/docs/functions-and-directives
 }
+study on utility {
+  https://tailwindcss.com/docs/functions-and-directives
+  https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities
+}
 
 1 TailwindCss v4
   - Read: installation
