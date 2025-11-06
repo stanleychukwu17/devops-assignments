@@ -85,10 +85,10 @@
         -
         justify-content:
             axis: horizontal (x-axis)
-            description: aligns the entire grid in the container along the x-axis
+            description: aligns the entire grid-cells in the container along the x-axis
         align-content:
             axis: vertical (y-axis)
-            description: aligns the entire grid in the container along the y-axis
+            description: aligns the entire grid-cells in the container along the y-axis
 
     justify-items & align-items
         justify-items & align-items affect the children of the grid-cells (i.e if the children do not fully
