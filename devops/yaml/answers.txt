@@ -28,7 +28,7 @@ Answers
     foo: ~
     foo: null
 
-8. you represent a null in yaml using 3 symbols..
+8. how do you represent booleans in a yaml file (there are 3 ways of doing this)
     True, Yes, On
     False, No, Off
 
