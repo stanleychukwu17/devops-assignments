@@ -24,7 +24,8 @@ Group 1
 5.  docker image rm <image_name>
     docker rmi <image_name>
 
-6.  docker image rm image_1 image_2 image_3 {...}
+6.  docker image rm image_1 image_2 image_3 ...
+    docker rmi image_1 image_2 image_3 ...
 
 7.  docker image rm -f $(docker image ls -q)
     docker rmi -f $(docker images -q)
