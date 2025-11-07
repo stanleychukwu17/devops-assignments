@@ -44,9 +44,11 @@ Group 2
 }
 
 5. logs in a container {
+    - show the logs from a container
     - follow logs in a container
     - show a certain number of log
     - show the timestamp for each logs
+    - combine all of the above, follow, show certain number, show timestamp
 }
 
 6. execute three commands in a running container {1. ls, 2. mkdir, 3. sh}
