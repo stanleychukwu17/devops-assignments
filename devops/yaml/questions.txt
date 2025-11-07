@@ -40,7 +40,7 @@ full_revision: 7 Nov 2025
             "hotel 2": "Hilton",
         }]
     }
-    
+
 11. how do you represent an object in a yaml file (there are 2 ways of doing this)
 
 12. Explain the chomp modifiers
