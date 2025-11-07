@@ -135,6 +135,7 @@ Group 2.
     a. docker logs -f CONTAINER_ID_or_NAME
     b. docker logs --tail 100 my_container {shows last 100 logs}
     c. docker logs -f -t my_container (or) docker logs -ft my_container
+    d. docker logs --tail 100 -t -f <CID>
 
 6.  1. docker exec -it my_container ls
     2. docker exec -it my_container mkdir /path/to/new_directory
