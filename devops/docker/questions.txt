@@ -26,7 +26,7 @@ Group 1
 
 9. create a group and create a user, then add the user to the group created using the RUN command
 10. make the user you just created the default user
-11. while copying files, change ownership to the user you created
+11. while copying files, change ownership to the user you created (there are 2ways of doing this)
 
 
 
