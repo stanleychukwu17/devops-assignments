@@ -1,6 +1,6 @@
-full_revision: 5 July 2025
 full_revision: 11 Aug 2025
 full_revision: 31 Aug 2025
+full_revision: 7 Nov 2025
 
 1. What is the core terraform workflow
 
