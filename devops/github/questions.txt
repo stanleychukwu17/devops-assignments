@@ -1,6 +1,6 @@
-full_revision: 12 July 2025
 full_revision: 31 July 2025
 full_revision: 31 Aug 2025
+full_revision: 7 Nov 2025
 
 NOTE: you can download git kraken, has a great ui for managing git messages and commit history
     and all so for seeing the difference clearly when resolving merge conflicts
@@ -13,6 +13,7 @@ NOTE: you can download git kraken, has a great ui for managing git messages and 
     - then how to see it in one-line
 
 3. How do you modify commits to include files you did not add + modify the commit message
+
 
 4.  - Tell us about github branches
     - Create a new branch
