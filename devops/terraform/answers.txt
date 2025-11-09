@@ -153,10 +153,16 @@
         so variable value in your .tfvars is safe
 
     - what is the difference btw terraform.tfvars and variables.tf
-    - Read: Read about *.auto.tfvars & terraform.tf
+        - terraform.tfvars stores only the values. no description, no type
+        - variables.tf stores everything, the (default(i.e the value), description & type)
 
-    - terraform.tfvars stores only the values. no description, no type
-    - variables.tf stores everything, the (default, description & type)
+    - Read: Read about *.auto.tfvars & terraform.tf
+        - Terraform automatically loads variable values from files named exactly:
+          - terraform.tfvars
+          - terraform.tfvars.json
+          - Any file with the pattern *.auto.tfvars or *.auto.tfvars.json
+
+
     
 17. touch production.tfvars
     terraform apply -auto-approve -var-file=production.tfvars
