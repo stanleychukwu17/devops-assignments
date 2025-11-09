@@ -149,18 +149,22 @@
 15. terraform apply -auto-approve -var="vpc_cidr_block=10.0.0.0/16" -var="subnet_cidr_block=10.0.10.0/24"
 
 16. - what can you say about terraform.tfvars file?
-        terraform.tfvars does not compile with the other terraform files(i.e .tf files) into a single module.
-        so variable value in your .tfvars is safe
+      terraform.tfvars does not compile with the other terraform files(i.e .tf files) into a single module.
+      so variable value in your .tfvars is safe
 
     - what is the difference btw terraform.tfvars and variables.tf
-        - terraform.tfvars stores only the values. no description, no type
-        - variables.tf stores everything, the (default(i.e the value), description & type)
+      - terraform.tfvars stores only the values. no description, no type
+      - variables.tf stores everything, the (default(i.e the value), description & type)
 
     - Read: Read about *.auto.tfvars & terraform.tf
-        - Terraform automatically loads variable values from files named exactly:
-          - terraform.tfvars
-          - terraform.tfvars.json
-          - Any file with the pattern *.auto.tfvars or *.auto.tfvars.json
+      Terraform automatically loads variable values from files named exactly:
+        - terraform.tfvars
+        - terraform.tfvars.json
+        - Any file with the pattern *.auto.tfvars or *.auto.tfvars.json
+        All of the above are loaded automatically without needing -var-file flag.
+      ---
+      But if you name your file something else like: "my-vars.tfvars" or "production.tfvars", they'll not be
+      loaded automatically except you add .auto, i.e "my-vars.auto.tfvars" or "production.auto.tfvars"
 
 
     
