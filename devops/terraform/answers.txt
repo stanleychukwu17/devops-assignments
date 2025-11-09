@@ -148,7 +148,13 @@
 
 15. terraform apply -auto-approve -var="vpc_cidr_block=10.0.0.0/16" -var="subnet_cidr_block=10.0.10.0/24"
 
-16. terraform.tfvars does not compile with the other terraform files(i.e .tf files) into a single module
+16. - what can you say about terraform.tfvars file?
+        terraform.tfvars does not compile with the other terraform files(i.e .tf files) into a single module.
+        so variable value in your .tfvars is safe
+
+    - what is the difference btw terraform.tfvars and variables.tf
+    - Read: Read about *.auto.tfvars & terraform.tf
+
     - terraform.tfvars stores only the values. no description, no type
     - variables.tf stores everything, the (default, description & type)
     
