@@ -49,7 +49,7 @@
 
 3.1 Read: more info on working with backend "s3" or backend "remote"
     * backend "s3" must be defined statically — Terraform doesn't support using variables
-      (var.bucket_name, etc.) in the backend block directly.
+      (e.g: var.bucket_name, etc.) in the backend block directly or anywhere in the terraform block
       -
       You must define them directly or use a -backend-config file or CLI args
       -
