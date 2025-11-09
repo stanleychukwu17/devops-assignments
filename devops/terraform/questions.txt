@@ -48,8 +48,9 @@ full_revision: 9 Nov 2025
 15. How do you force a replacement of your variables when running the terraform plan or
     terraform apply command
 
-16. what can you say about terraform.tfvars file?
+16. - what can you say about terraform.tfvars file?
     - what is the difference btw terraform.tfvars and variables.tf
+    - Read: Read about *.auto.tfvars & terraform.tf
 
 17. Create a production.tfvars file and use it to run the terraform apply command
 
