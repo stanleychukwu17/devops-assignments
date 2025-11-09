@@ -157,16 +157,14 @@
       - variables.tf stores everything, the (default(i.e the value), description & type)
 
     - Read: Read about *.auto.tfvars & terraform.tf
-      Terraform automatically loads variable values from files named exactly:
+      Terraform automatically loads variables from files named exactly:
         - terraform.tfvars
         - terraform.tfvars.json
-        - Any file with the pattern *.auto.tfvars or *.auto.tfvars.json
+        - All *.auto.tfvars or *.auto.tfvars.json
         All of the above are loaded automatically without needing -var-file flag.
       ---
       But if you name your file something else like: "my-vars.tfvars" or "production.tfvars", they'll not be
       loaded automatically except you add .auto, i.e "my-vars.auto.tfvars" or "production.auto.tfvars"
-
-
     
 17. touch production.tfvars
     terraform apply -auto-approve -var-file=production.tfvars
