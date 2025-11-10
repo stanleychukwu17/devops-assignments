@@ -170,6 +170,7 @@ SECTION 2 BEGINS
     - when you do count=0 in any resource, what will happen when you run terraform apply
 
 5.  - Read: the for_each meta-argument {No need to master}
+    - Read: for_each with a map
 
 6.  - Read: take a look at looping with dynamic block {No need to master}
     - Read: what happens when you run terraform apply
