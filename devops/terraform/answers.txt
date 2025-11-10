@@ -732,8 +732,14 @@ SECTION 2 BEGINS
         }
         -
         resource "aws_iam_user" "test" {
-            for_each = toset(var.users) # toset converts the list(string) into a set
-            name = each.key # each.key iterates over the set and grabs the key
+            for_each = var.users
+            name = each.key # each.key iterates over the list and grabs the key
+        }
+        ---
+        you can also do:
+        resource "aws_iam_user" "test" {
+            for_each = var.users
+            name = each.value # when working with list or sets, each.value = each.key
         }
 
 6.  
