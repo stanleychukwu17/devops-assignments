@@ -532,8 +532,8 @@
         that's why an error occurred
         -
     - how you solve the above problem
-        To solve this problem {the teacher says it is usually a common problem}, you have to import
-        the aws_key_pair into this new_project, here is what you'll do:
+        To solve this problem {the teacher says it is usually a common problem}, either you use another key_name or
+        you import the existing aws_key_pair into this new_project, here is what you'll do:
 
         terraform import aws_key_pair.<local_name> <key_pair_name>
         -
