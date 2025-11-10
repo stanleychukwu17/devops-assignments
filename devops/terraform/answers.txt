@@ -723,7 +723,8 @@ SECTION 2 BEGINS
         when you set count = 0 in a resource block, that resource will not be created, if the resource already
         exists, the resource will be destroyed
 
-5.  - Read: the for_each meta-argument {No need to master}
+5. 
+    - Read & practice: the for_each meta-argument {No need to master}
         for_each was introduced to overcome the downside of count, it works with either sets or maps
         e.g:
         variable "users" {
@@ -740,6 +741,22 @@ SECTION 2 BEGINS
         resource "aws_iam_user" "test" {
             for_each = var.users
             name = each.value # when working with list or sets, each.value = each.key
+        }
+
+    - Read & practice: for_each with a map
+        variable "users" {
+            type = map(string)
+            default = {
+                alice  = "alice-dev"
+                bob    = "bob-prod"
+                charlie = "charlie-test"
+            }
+        }
+        ---
+        resource "aws_iam_user" "test" {
+            for_each = var.users
+            name     = each.value    # ← correct: uses the map value
+            # name = each.key       # ← would use the map key instead
         }
 
 6.  
