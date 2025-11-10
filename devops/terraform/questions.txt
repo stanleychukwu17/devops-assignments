@@ -119,11 +119,6 @@ full_revision: 9 Nov 2025
         - add "ec2-user" to the "docker" group
         - run an nginx docker image attaching port 8080:80
     - simple question: why do you start docker and enable docker.. what is the start and enable command
-    -
-    - not_needed: Read: read about some of the highlights of using cloud-init
-    - not_needed: create a cloud-init configuration in yaml called "web-app-template.yaml"
-    - not_needed: explain the code in your cloud-init configuration
-    - not_needed: use the cloud-init in your ec2
 
 37. The teacher copied the terraform code(i.e the terraform files) from another project into a
     new folder/project and then he modified the "aws_instance" resource to use cloud-init to setup
