@@ -225,7 +225,11 @@ SECTION 2 BEGINS
       - in the outputs.tf, output the "public_ip" of the aws_instance, let the public_ip output depend on
         the "aws_instance" (i.e depends_on)
 
-    3. 
+    3. Back to the root module
+      - import the ec2_module into the main.tf, add all the parameters needed by the output.tf
+      - in the output.tf, output the
+        - the vpc_id: let it depend on the "aws_vpc"
+        - the "aws_instance" public_ip: let it depend on the "aws_vpc" & "aws_instance"
 
 14. - Create a small project using modules. Let the ec2 module house the creating of an aws_instance
     - use the module in your root module 
