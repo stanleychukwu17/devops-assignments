@@ -2,6 +2,13 @@ full_revision: 11 Aug 2025
 full_revision: 31 Aug 2025
 full_revision: 14 Nov 2025
 
+docs {
+    https://registry.terraform.io/browse/providers
+    https://registry.terraform.io/providers/hashicorp/aws/latest
+    https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+    https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
+}
+
 1. What is the core terraform workflow
 
 2. Talk about terraform providers
