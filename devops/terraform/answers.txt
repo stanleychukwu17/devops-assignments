@@ -1040,7 +1040,7 @@ SECTION 2 BEGINS
 
 15. Read: what makes a good module
     - Group resources in a logical fashion
-    - Exposes input variable to allow necessary customization + composition
+    - Exposes input variable to allow necessary customization
     - Provides useful defaults
     - Return outputs to make further integrations possible
 
