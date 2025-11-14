@@ -1,6 +1,6 @@
 full_revision: 11 Aug 2025
 full_revision: 31 Aug 2025
-full_revision: 9 Nov 2025
+full_revision: 14 Nov 2025
 
 1. What is the core terraform workflow
 
@@ -210,6 +210,7 @@ SECTION 2 BEGINS
 
 13. How do you structure your project to use modules
 
+14.
 14. - Create a small project using modules. Let the ec2 module house the creating of an aws_instance
     - use the module in your root module 
     - parameterize the ec2_module you created
