@@ -1138,6 +1138,8 @@ SECTION 2 BEGINS
         db_user = "foo"
         db_pass = var.db_pass
     }
+    -
+    So here you see that he kinda abstracted all the modules into one single module
 
 18. - Convert all the code/project from DevOps Directive to use modules
 
