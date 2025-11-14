@@ -231,7 +231,7 @@ SECTION 2 BEGINS
         - the vpc_id: let it depend on the "aws_vpc"
         - the "aws_instance" public_ip: let it depend on the "aws_vpc" & "aws_instance"
 
-14.1
+14.1 what do you do after including a new module to your root module
 
 15 Read: what makes a good module
 
