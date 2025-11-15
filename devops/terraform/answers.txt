@@ -1344,7 +1344,7 @@ SECTION 3 BEGINS
         e.g: terraform workspace delete development
              terraform workspace delete production
 
-6.  
+6.
     Read: Terragrunt
         This is a tool provided by grunt-work.io, it provide utilities to make certain terraform use
         cases easier
