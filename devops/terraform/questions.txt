@@ -310,12 +310,28 @@ SECTION 3 BEGINS
         - set error to 1 if any command fails (i.e exits with a non zero status)
         - set error to 1 if trying to use any unset variable
         - set error to 1 if pipe command fails
+        -
         - check the current directory if it matches "7-terraform-test-code"
-        - initialize terraform and provision the infrastructure
+        - write a function that can be used to destroy the resources
+        - initialize terraform
+        - provision the infrastructures
         - get the output of "ec2_public_ip_address"
-        - use the "ec2_public_ip_address" to make a curl request to see if the server is up and running
-        - check the status code of the curl request to be 200
-        - destroy the resources provisioned
+        - echo "waiting for ec2 instance to be ready ..."
+        - add these 3 variables:
+          timeout = 300 # represents 300seconds, approx 5mins
+          interval = 10 # will delay each while loop by 10s
+          elapsed = 0 # will be used to track when the elapsed time > timeout
+        -
+        - now write a "while" loop that runs as long as elapsed_time "is less than" timeout
+          - use the "ec2_public_ip_address" to make a curl request to see if the server is up and running
+          - check if the http_status of the ec2 instance is 200
+          - if the http_status == 200, then break the while loop
+          - else if not != 200, increase the elapsed_time by adding the "interval" to the elapsed_time
+          - then "sleep" for the "interval" time
+        -
+        - after the while loop, do a final check on the http_status to see if == 200
+          - if not != 200, exit the script with an error
+          - regardless of what the status is, destroy the resources using the destroy function
 
     - using golang: look at the code and write by yourself
         - this one is a bit more technical, just look at code and rewrite by yourself 2x
