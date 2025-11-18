@@ -164,9 +164,9 @@
         (such as keepalive_timeout or accept_mutex)
 
     worker_processes auto; this means nginx will automatically spawn worker processes based on the number
-        of available CPU cores. each worker will be able to handle up to 1024 simultaneous connections
-        on each worker_processes and depending on how many worker_connections you set for each worker_processes
-        to handle
+        of available CPU cores. each worker will be able to handle up to 1024 simultaneous connections by default,
+        but you can set how many connections you want each "worker_processes" to handle using the
+        events > worker_connections 
 
 7. Read about exposing ports of your docker container
     when working with docker and nginx, the only ports that should be exposed should be only
