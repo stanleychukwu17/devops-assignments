@@ -10,7 +10,6 @@ full_revision: 19th Aug 2025
   Texture baking: p26
   How to bake normal map Decals (i.e: turn your models into normal maps): p33
 
-
 full_revision: 19th Aug 2025
 ::Book 8 = Blender Animation
   Quick smooth camera movement in Blender: 38
@@ -31,14 +30,13 @@ full_revision: 20th Aug 2025
     whats new in blender
       book7 - What's new in Blender 4.2 LTS - p55
 
-full_revision: 20th Aug 2025
+full_revision: 30th Oct 2025
 ::Book 6
   jon character rigging - 60 (see finger rigging @ p65)
   southern 3D character rigging - 68
   southern walking 1 - 80
   southern walking 2 - 87
   mastering walk cycle - 92
-
 
 
 Other design revisions:
