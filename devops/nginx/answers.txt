@@ -402,6 +402,21 @@
             ssl_protocols TLSv1.3;
         }
 
+12.1 Enabling https on your localhost (am using windows)
+  - setting up Chocolatey (windows package manager)
+    -
+    - open PowerShell as Administrator (important!) and paste the below:
+      Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+      -
+      After it finishes, close and reopen PowerShell (normal user is fine now) and test again, do:
+      choco -v
+      you'll see the version number, (something like 2.5.1 or newer)
+
+  - updating Chocolatey
+    - Upgrade Chocolatey only: choco upgrade chocolatey -y
+    - Upgrade all installed packages: choco upgrade all -y
+    - Check what’s out of date first: choco outdated
+
 13. if you have time, Read: the difference between HTTP/1 and HTTP/2
     see: ./section1/13-https/http2-http1.md
 
