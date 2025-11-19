@@ -364,8 +364,8 @@
         }
 
         # test the configuration for syntax error and reload nginx
-        sudo nginx -t
-        sudo systemctl reload nginx
+        sudo nginx -t # test the configuration to see if any errors
+        sudo systemctl reload nginx # reload nginx
     
       3. Optionally: redirect http to https
         if you want to automatically redirect http traffic to https, add the following block before the https
