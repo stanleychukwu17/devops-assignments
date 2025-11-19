@@ -437,7 +437,7 @@
     in your project directory, do:
     - grok did:
       *create a folder called "certs" for your trusted certificates, then cd into "certs" and do:
-        : mkcert localhost 127.0.0.1 ::1
+        : mkcert localhost 127.0.0.1 ::1 # use PowerShell, because we installed mkcert as a window package
 
       *You’ll get two files:
         localhost+2.pem
