@@ -81,13 +81,14 @@ SECTION 1
 12. Enable HTTPS on Nginx
     - Read: how do you enable https on your nginx server
     - enable fast and secure TLS 1.2 & TLS 1.3 on Nginx
+    - ssl_ciphers options
     - enable http2 on Nginx
 
 12.1 Enabling https on your localhost (am using windows)
-    - setting up Chocolatey (windows package manager)
-    - updating Chocolatey
-    - using choco to install "mkcert"
-    - using "mkcert" to generate certificates in your projects
+  - setting up Chocolatey (windows package manager)
+  - updating Chocolatey
+  - using choco to install "mkcert"
+  - using "mkcert" to generate certificates in your projects
 
 13 if you have time, Read: the difference between HTTP/1 and HTTP/2
 
