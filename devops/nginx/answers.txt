@@ -417,6 +417,10 @@
     - Upgrade all installed packages: choco upgrade all -y
     - Check what’s out of date first: choco outdated
 
+  - using choco to install "mkcert"
+    : choco install mkcert -y     # Install using Chocolatey
+    : mkcert -install             # Install the local CA (one-time setup)
+
 13. if you have time, Read: the difference between HTTP/1 and HTTP/2
     see: ./section1/13-https/http2-http1.md
 
