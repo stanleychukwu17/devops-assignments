@@ -87,6 +87,7 @@ SECTION 1
     - setting up Chocolatey (windows package manager)
     - updating Chocolatey
     - using choco to install "mkcert"
+    - using "mkcert" to generate certificates in your projects
 
 13 if you have time, Read: the difference between HTTP/1 and HTTP/2
 
