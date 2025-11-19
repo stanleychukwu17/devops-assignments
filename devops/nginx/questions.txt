@@ -85,7 +85,8 @@ SECTION 1
 
 12.1 Enabling https on your localhost (am using windows)
     - setting up Chocolatey (windows package manager)
-    -
+    - updating Chocolatey
+    - using choco to install "mkcert"
 
 13 if you have time, Read: the difference between HTTP/1 and HTTP/2
 
