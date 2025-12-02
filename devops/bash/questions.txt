@@ -1,6 +1,7 @@
-full_revision: 6 June 2025
-full_revision: 12 Aug 2025
 full_revision: 31 Aug 2025
+full_revision: 26 Oct 2025
+full_revision: 2 Dec 2025
+
 
 1.  how do you create and run a bash script?
 
@@ -132,3 +133,7 @@ full_revision: 31 Aug 2025
 
 21. - Read: how do you generate random numbers
     - Read: How do you generate random numbers within a certain range
+
+
+failed:
+4,5
