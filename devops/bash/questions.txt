@@ -48,7 +48,10 @@ full_revision: 2 Dec 2025
     - how do you capture all arguments in bash
     - what is the difference btw $@ and $*
     - what is $0
-    - task: using for loop, loop through all arguments received and echo them
+    - task:
+        - using for loop, loop through all arguments received and echo them
+        - add each of the argument to an array
+        - print out the array to the terminal
 
 8.  Exit status in bash
     - what is a successful exit status
