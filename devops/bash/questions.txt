@@ -38,6 +38,7 @@ full_revision: 2 Dec 2025
     - what are the values for each of the above
     - how do you redirect standard input from a text file
     - how do you redirect standard output into a file
+    - difference btw > & >>
     - how do you redirect standard error into a file
     - how do you redirect standard output & error into null
 
