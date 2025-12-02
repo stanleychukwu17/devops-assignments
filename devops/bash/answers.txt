@@ -92,6 +92,10 @@
         echo "22 in 2025" 1>> stanley.txt {but you don't need to add the 1} 
         cat pop.txt variables.sh > combined.txt
 
+    - difference btw > & >>
+        > : will delete initial content in the receiving file and then save the STDOUT(1) into the file
+        >>: will keep initial content in the receiving file and then appends the STDOUT(1) content to the file
+
     - how do you redirect standard error into a file
         standard error:
         unknown_command 2> error.log
