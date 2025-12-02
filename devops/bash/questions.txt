@@ -133,7 +133,3 @@ full_revision: 2 Dec 2025
 
 21. - Read: how do you generate random numbers
     - Read: How do you generate random numbers within a certain range
-
-
-failed:
-4,5
