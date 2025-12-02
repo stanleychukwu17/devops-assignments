@@ -1,25 +1,15 @@
-arg1=$1
-arg2=$2
+#!/bin/bash
 
-echo "working for \$@"
-for i in $@; do
-    echo "$i"
-done
+# names is the array, and current is the index in the array
+names=()
+current=0
 
-echo ""
-echo "working for \$*"
-for i in $*; do
-    echo "$i"
-done
-
-echo ""
-echo 'working for "\$@"'
+# loop through the argument and add the arguments to the name array
 for i in "$@"; do
-    echo "$i"
+  echo $i
+  names[current]=$i
+  ((current++))
 done
 
-echo ""
-echo 'working for "\$*"'
-for i in "$*"; do
-    echo "$i"
-done
+# printout the content in the array
+echo "${names[@]}"
