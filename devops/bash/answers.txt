@@ -72,7 +72,7 @@
           echo "${total_1} + ${total_2} = $total_3"
 
         - other ways but prone to error 
-          expr 7 + 10
+          expr 7 + 10 {works properly on bash and my linux environment}
           echo "7 + 10" | bc {works in a linux environment, but will not work in git bash windows}
 
 6.  standard input, output & error
