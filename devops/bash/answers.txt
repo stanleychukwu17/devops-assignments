@@ -211,10 +211,10 @@
     - how do you check:
         equal to: [==] or [-eq]
         not equal to: [!=] or [-ne]
-        greater than: [-gt]
-        less than: [-lt]
-        greater than or equal to: [-ge]
-        less than or equal to: [-le]
+        greater than: [>] or [-gt]
+        less than: [<] or [-lt]
+        greater than or equal to: [>=] or [-ge]
+        less than or equal to: [<=] or [-le]
         regex matching: [[=~]]
 
     - Do some mathematical comparison of:
