@@ -123,6 +123,16 @@ full_revision: 2 Dec 2025
         console.log(factorial(20)); // 2432902008176640000
 
     - recursive functions 2, convert the below js function to a bash function
+        -
+        function factorial(n) {
+        if (n < 0) return undefined;
+        let result = 1;
+        while (n > 1) {
+            result *= n;
+            n--;
+        }
+        return result;
+        }
 
 15. accepting values from users
     - 1st: Accepting a value:
