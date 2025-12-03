@@ -41,6 +41,8 @@ full_revision: 2 Dec 2025
     - difference btw > & >>
     - how do you redirect standard error into a file
     - how do you redirect standard output & error into null
+    - Read: more tips on redirection
+    
 
 7.  Arguments in bash
     - how do you capture/use arguments in bash
@@ -142,8 +144,8 @@ full_revision: 2 Dec 2025
 
 19. curl in bash
     - explain this command:
-    echo "example.com" | xargs -I {} curl -s -o /dev/null -w "%{http_code}\n" http://{}
-    - *add more curl commands
+      echo "example.com" | xargs -I {} curl -s -o /dev/null -w "%{http_code}\n" http://{}
+    - see more flags to use with curl
 
 20. look at this file:
     ./practice/1-nginx-entrypoint/docker-entrypoint-4-nginx.sh*
@@ -155,4 +157,4 @@ full_revision: 2 Dec 2025
     - Read: How do you generate random numbers within a certain range
 
 
-to work on 14, 19, 20
+to work on 19, 20
