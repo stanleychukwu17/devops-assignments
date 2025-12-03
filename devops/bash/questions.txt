@@ -110,7 +110,6 @@ full_revision: 2 Dec 2025
     - using default when no argument is passed
     - recursive functions
     - task1: convert the below js function to a bash function
-        -
         function factorial(n) {
             if (n < 0) return undefined; // factorial not defined for negative numbers
             if (n === 0 || n === 1) return 1;
@@ -122,18 +121,6 @@ full_revision: 2 Dec 2025
             return result;
         }
         // Usage: console.log(factorial(5));  // 120
-
-    - task2, convert the below js function to a bash function
-        -
-        function factorial(n) {
-        if (n < 0) return undefined;
-        let result = 1;
-        while (n > 1) {
-            result *= n;
-            n--;
-        }
-        return result;
-        }
 
 15. accepting values from users
     - 1st: Accepting a value:
