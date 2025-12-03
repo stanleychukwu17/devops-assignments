@@ -107,6 +107,13 @@
         fake_command &> error.log - redirects only STDOUT & STDERR to error log
         fake_command &> /dev/null - redirects only STDOUT & STDERR to null
 
+    - Read: more tips on redirection
+      - command &> log.txt and command >& log.txt: both commands are the same, redirecting STDOUT & STDERR to file.txt
+      - command > file.txt 2>&1: Here, 2>&1 means "redirect stderr (2) to wherever stdout (1) is currently going."
+      - command > file.txt >&2: redirect STDOUT to STDERR, e.g echo "This is an error message" >&2
+      - if your goal is send everything to stderr, the simplest is:
+        command 1>&2 2>&2
+
 7.  Arguments in bash
     - how do you capture/use arguments in bash
         $1 - 1st argument
