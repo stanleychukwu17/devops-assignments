@@ -392,8 +392,8 @@
     - see all the other answers
         see ./answers/14-functions.sh
     
-    - recursive functions 1, convert the below js function to a bash function
-        -
+    - task1: convert the below js function to a bash function
+      - my answer
         factorial () {
             local n=$1 result=1 # multiple variables in one line
 
@@ -414,7 +414,7 @@
             echo $result
         }
 
-        an optimized version from grok:
+      - an optimized version from grok:
         factorial() {
             (( $1 < 0 )) && { echo "undefined"; return 1; }
             (( $1 <= 1 )) && { echo 1; return 0; }
