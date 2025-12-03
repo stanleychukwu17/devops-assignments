@@ -81,6 +81,9 @@ full_revision: 2 Dec 2025
     - Task: check if hello.sh exist, if not create it
         - use ls -l to see if the file(i.e hello.sh) exist else create it
         - use [-f file] to check if hello.sh exist else create it
+    - Read:
+        [ -n "$var" ] = means $var is non-empty, (in js would be var === ""), -n is faster than -z
+        [ -z "$var" ] = means $var has length of 0, (in js would be var.length)
 
 11. while loops in bash
     - write the syntax for a while loop, give an example:
@@ -155,6 +158,7 @@ full_revision: 2 Dec 2025
 19. curl in bash
     - explain this command:
     echo "example.com" | xargs -I {} curl -s -o /dev/null -w "%{http_code}\n" http://{}
+    - *add more curl commands
 
 20. look at this file:
     ./practice/1-nginx-entrypoint/docker-entrypoint-4-nginx.sh*
@@ -164,3 +168,6 @@ full_revision: 2 Dec 2025
 
 21. - Read: how do you generate random numbers
     - Read: How do you generate random numbers within a certain range
+
+
+to work on 14, 19, 20
