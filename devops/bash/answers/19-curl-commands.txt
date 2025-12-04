@@ -1,0 +1,2 @@
+Here are the most useful and commonly used curl flags in Linux, organized by category, with
+practical examples.
