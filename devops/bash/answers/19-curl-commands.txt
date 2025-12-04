@@ -83,4 +83,11 @@ practical examples.
   :: -k, --insecure: Allow insecure SSL (ignore cert errors)
     e.g: curl -k https://self-signed-bad.example.com
 
+# Timeouts & Performance
+  :: --connect-timeout: Max time to connect
+    e.g: curl --connect-timeout 5 url |
+
+| :: -m, --max-time: Total timeout (seconds)
+    e.g:  curl -m 10 https://slow-site.com
+
 
