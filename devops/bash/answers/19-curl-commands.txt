@@ -79,3 +79,8 @@ practical examples.
   :: --referer | Set Referrer header
       e.g: curl --referer "https://google.com" https://git.io/ant
 
+# SSL / Security
+  :: -k, --insecure: Allow insecure SSL (ignore cert errors)
+    e.g: curl -k https://self-signed-bad.example.com
+
+
