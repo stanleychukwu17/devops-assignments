@@ -2,34 +2,61 @@ Here are the most useful and commonly used curl flags in Linux, organized by cat
 practical examples.
 
 # Basic Requests
-:: -X, --request: Specify HTTP method (GET, POST, PUT, DELETE, etc.), default is GET if -X is not specified
-  e.g: curl -X POST https://example.com
+  :: -X, --request: Specify HTTP method (GET, POST, PUT, DELETE, etc.), default is GET if -X is not specified
+    e.g: curl -X POST https://example.com
 
-:: -I, --head: Fetch only headers (HEAD request)
-  e.g: curl -I https://httpbin.org/get
-  result might look like:
-    HTTP/1.1 200 OK
-    Content-Type: text/html; charset=UTF-8
-    Content-Length: 12345
-    Last-Modified: Wed, 21 Jan 2020 14:30:00 GMT
-    ETag: "1234567890abcdef"
-    Accept-Ranges: bytes
-    Server: Apache
-    Date: Thu, 04 Dec 2024 00:00:00 GMT
-    ---
-    The actual headers will vary depending on the server and resource being requested.
+  :: -I, --head: Fetch only headers (HEAD request)
+    e.g: curl -I https://httpbin.org/get
+    result might look like:
+      HTTP/1.1 200 OK
+      Content-Type: text/html; charset=UTF-8
+      Content-Length: 12345
+      Last-Modified: Wed, 21 Jan 2020 14:30:00 GMT
+      ETag: "1234567890abcdef"
+      Accept-Ranges: bytes
+      Server: Apache
+      Date: Thu, 04 Dec 2024 00:00:00 GMT
+      ---
+      The actual headers will vary depending on the server and resource being requested.
 
-:: -d, --data: Send data in POST request (URL-encoded)
-  e.g: curl -X POST -d "name=john&age=30" https://httpbin.org/post
+  :: -d, --data: Send data in POST request (URL-encoded)
+    e.g: curl -X POST -d "name=john&age=30" https://httpbin.org/post
 
-:: --json: sends json data to the specified url, there are 2 methods to do this:
-  1. -H to set header and -d to add the json data
-    e.g: curl -H "Content-Type: application/json" -d "{"key":"value"}"  https://api.example.com
-    -
-    This is the classic, widely compatible method.
-  
-  2. Modern Method: --json (curl 7.82+)
-    curl --json '{"name":"stanley"}' https://api.example.com/resource
-    -
-    The --json is a convenience feature introduced in recent versions of curl (v7.82.0+, released in 2022)
+  :: --json: sends json data to the specified url, there are 2 methods to do this:
+    1. -H to set header and -d to add the json data
+      e.g: curl -H "Content-Type: application/json" -d "{"key":"value"}"  https://api.example.com
+      -
+      This is the classic, widely compatible method.
+    
+    2. Modern Method: --json (curl 7.82+)
+      curl --json '{"name":"stanley"}' https://api.example.com/resource
+      -
+      The --json is a convenience feature introduced in recent versions of curl (v7.82.0+, released in 2022)
+
+
+# Output & Saving
+  :: -o, --output: Save response to file
+      e.g: curl -o webpage.html https://example.com
+
+  :: --output-dir: Save to specific directory (curl 7.73+)
+      e.g: curl --output-dir /tmp -o file.html https://example.com
+
+  :: -s, --silent: It tells curl to mute the progress meter and most error messages during the operation, The command
+                   only outputs the requested data (e.g., the HTML content) to standard output
+      e.g: curl -s https://api.ipify.org
+
+  :: -S: Show errors, This flag only has an effect when combined with -s. It tells curl that if an error occurs,
+         it should override the silent setting (-s) and print the error message to standard error.
+         The result is you get silence on success & get feedback on failure.
+      e.g: curl -sS https://example.com
+
+  :: -f, --fail: It instructs curl to fail silently on server errors like 4xx (Client Error) or 5xx (Server Error).
+                HTTP response codes. If a server returns an HTTP error, curl will exit with a non-zero exit code,
+                which is essential for script logic, otherwise curl would download the error page and exit with a
+                success code (0)
+      e.g: curl -f https://example.com/badpage
+      popular combos:
+      curl -fsSL https://example.com/badpage, i.e fail silently, show minimal errors, follow redirection
+
+
 
