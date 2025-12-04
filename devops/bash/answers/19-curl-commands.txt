@@ -69,5 +69,13 @@ practical examples.
   :: -b, --cookie: Send cookies
       e.g: curl -b "session=abc123" url
 
+# Following Redirects & Referrer
+  :: --location -L | Follow redirects (30x)
+      e.g: curl -L https://git.io/ant
 
+  :: --max-redirs: Limit number of redirects
+      e.g: curl -L --max-redirs 10 https://git.io/ant
+
+  :: --referer | Set Referrer header
+      e.g: curl --referer "https://google.com" https://git.io/ant
 
