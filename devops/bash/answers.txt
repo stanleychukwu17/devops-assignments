@@ -435,9 +435,6 @@
             echo "$result"
         }
 
-    - recursive functions 2, convert the below js function to a bash function
-
-
 15. accepting values from users
     - 1st: Accepting a value:
         echo "Enter your name:"

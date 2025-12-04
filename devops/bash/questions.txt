@@ -42,7 +42,6 @@ full_revision: 2 Dec 2025
     - how do you redirect standard error into a file
     - how do you redirect standard output & error into null
     - Read: more tips on redirection
-    
 
 7.  Arguments in bash
     - how do you capture/use arguments in bash
