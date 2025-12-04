@@ -569,6 +569,7 @@
             Checking if a site is up (e.g: 200 OK vs 503 Service Unavailable vs 404 page not found)
 
     - see more flags to use with curl
+      see  ./answers/9-curl-commands.txt
 
 20. see the files
 
