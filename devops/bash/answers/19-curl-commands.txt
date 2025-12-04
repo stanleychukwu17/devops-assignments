@@ -69,6 +69,7 @@ practical examples.
   :: -b, --cookie: Send cookies
       e.g: curl -b "session=abc123" url
 
+
 # Following Redirects & Referrer
   :: --location -L | Follow redirects (30x)
       e.g: curl -L https://git.io/ant
@@ -79,15 +80,26 @@ practical examples.
   :: --referer | Set Referrer header
       e.g: curl --referer "https://google.com" https://git.io/ant
 
+
 # SSL / Security
   :: -k, --insecure: Allow insecure SSL (ignore cert errors)
     e.g: curl -k https://self-signed-bad.example.com
+
 
 # Timeouts & Performance
   :: --connect-timeout: Max time to connect
     e.g: curl --connect-timeout 5 url |
 
-| :: -m, --max-time: Total timeout (seconds)
+  :: -m, --max-time: Total timeout (seconds)
     e.g:  curl -m 10 https://slow-site.com
 
+# Debugging & Verbose
+  :: -w, --write-out: Custom output after transfer (e.g. %{http_code}, %{time_total}, %{size_download})
+      e.g: curl -s -o /dev/null -w "Code: %{http_code} | Time: %{time_total}s\n" https://example.com
 
+  :: -v, --verbose: Show everything (headers, SSL, etc.) – very useful
+  :: --trace: Extremely detailed trace
+  :: --trace-ascii: Human-readable trace
+
+
+# Downloads (Resumable, Parallel, etc.)
