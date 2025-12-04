@@ -571,6 +571,8 @@
     - see more flags to use with curl
       see  ./answers/9-curl-commands.txt
 
+    :: next time, add an assignment on this curl command, add some flags and see if you can say what they are
+
 20. see the files
 
 21. - Read: how do you generate random numbers
