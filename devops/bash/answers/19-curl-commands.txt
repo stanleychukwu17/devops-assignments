@@ -93,6 +93,7 @@ practical examples.
   :: -m, --max-time: Total timeout (seconds)
     e.g:  curl -m 10 https://slow-site.com
 
+
 # Debugging & Verbose
   :: -w, --write-out: Custom output after transfer (e.g. %{http_code}, %{time_total}, %{size_download})
       e.g: curl -s -o /dev/null -w "Code: %{http_code} | Time: %{time_total}s\n" https://example.com
@@ -103,3 +104,11 @@ practical examples.
 
 
 # Downloads (Resumable, Parallel, etc.)
+  :: -C, --continue-at: Resume partial download
+      e.g: curl -C - -O https://bigfile.com/iso.torrent
+
+  :: --limit-rate: Throttle download speed
+    e.g: curl --limit-rate 500K -O bigfile.iso
+
+  :: --parallel --parallel-max: Download multiple URLs in parallel (curl 7.68+)
+    e.g: curl --parallel -O url1 -O url2 -O url3
