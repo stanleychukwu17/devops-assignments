@@ -59,4 +59,15 @@ practical examples.
       curl -fsSL https://example.com/badpage, i.e fail silently, show minimal errors, follow redirection
 
 
+# Headers & Authentication
+  :: -H, --header: Add custom header
+        e.g: curl -H "Authorization: Bearer abc123" https://example.com
+  
+  :: -u, --user: Basic auth (user:password)
+      e.g: curl -u user:pass https://example.com
+
+  :: -b, --cookie: Send cookies
+      e.g: curl -b "session=abc123" url
+
+
 
