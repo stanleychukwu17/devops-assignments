@@ -1,6 +1,6 @@
-full_revision: 26 Sep 2025
 full_revision: 15 Oct 2025
 full_revision: 6 Nov 2025
+full_revision: 17 Dec 2025
 
 1. Talk about grids
 
