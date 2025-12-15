@@ -150,11 +150,11 @@
                 .domain([0, 100])  // Input range
                 .range([0, 500]);  // Output range
 
-            const xAxis = d3.axisBottom(xScale);
-            d3.select("svg")
-                .append("g")
-                .attr("transform", "translate(50,250)")
-                .call(xAxis);
+            const axisBottom = d3.axisBottom(xScale);
+            const xAxis = d3.select("svg")
+                            .append("g")
+                            .attr("transform", "translate(50,250)")
+                            .call(axisBottom);
 
         scaleBand:
             const xScale = d3.scaleBand()
