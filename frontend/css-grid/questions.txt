@@ -131,7 +131,6 @@ full_revision: 17 Dec 2025
 
     - for each of (.item1, .item2, .item3), write out the (grid-row, grid-column, grid-area)
 
-
 15. From the template below, what will be the grid-template-area
     images/4-grid-template-ask
     copy the below to a new tab and fill it in based on the image {
