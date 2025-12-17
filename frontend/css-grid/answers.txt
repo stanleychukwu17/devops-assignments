@@ -200,18 +200,18 @@
 
     - for each of (.item1, .item2, .item3), write out the (grid-row, grid-column, grid-area)
         .item1 {
-            grid-row: 3/5;
-            grid-column: 2/4;
+            grid-row: 3/5; or 3/span 2;
+            grid-column: 2/4; or 2/span 2;
             grid-area: 3/2/5/4;
         }
         .item2 {
-            grid-row: 2/3;
-            grid-column: 2/-1;
+            grid-row: 2/3; or 2/span 1; or 2;
+            grid-column: 2/-1; or 2/span 4; or 2/6; 
             grid-area: 2/2/3/-1;
         }
         .item3 {
-            grid-row: 1/4;
-            grid-column: 1 / span 1;
+            grid-row: 1/4; or 1/span 3;
+            grid-column: 1/2; or 1/span 1; or 1;
             grid-area: 1/1/4/2;
             # NOTE: you cannot do : grid-area: 1/1/4/span 1;
             # grid-area: It only accepts line numbers or named lines, not spans.
