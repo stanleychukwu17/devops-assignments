@@ -301,21 +301,8 @@
                   take up available space in the grid container.
 
 18.
-    you can solve this by using 2 ways:
-    1. set the number of rows to auto (i.e let rows be automatically created):
-        grid-template-rows: auto
-        -
-        the only issue here is the rows do not have specific size in terms of height,
-        but the next solutions fixes the issue of size (i.e height)
-    
-    2. set a fix size for new rows
-        grid-auto-rows: 100px
-        -
-        this will ensure that the height of every new row is 100px
-    
-    summary:
-    grid-template-rows: auto;
-    grid-auto-rows: 100px; // this mean fixed heights for each new row
+    you do:
+    grid-auto-rows: 100px; // with this, every row will maintain a height of 100px
 
 19. 
     Say we have a grid container where all the cells are filled up because of the way we styled the grid items
