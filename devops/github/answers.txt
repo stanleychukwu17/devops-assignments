@@ -131,8 +131,8 @@
 16. how do you switch to a remote branch
     git switch <name_of_branch_on_the_remote_repo>
     -
-    but run either "git fetch" or "git pull" first,
-    preferably, run "git pull --prune"
+    but run either "git fetch" or "git pull" first, preferably, run "git pull --prune",
+    then use "git branch -a" to confirm that the branch does exist
 
 17. Diff btw *git fetch* and *git pull*
     - git fetch
