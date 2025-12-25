@@ -89,10 +89,9 @@
         back to the state it was at the time of the <commit-hash> specified
 
     ### git revert
-    git revert <commit-hash> - this is different from git reset because instead of deleting the commits
-        and taking the project back, it will instead create a new commit (and in this new commit, it will
-        take your work back to the state it was at the <commit-hash>), because it results in a new commit,
-        you'll be prompted to enter a commit message
+    git revert <commit-hash> - is different from git reset because instead of deleting commits and moving
+        the branch backward, it creates a new commit that reverses the changes introduced by the specified commit.
+        Since it creates a new commit, you’ll be prompted to enter a commit message
     
     ### which one should i use
     - if you want to reverse commits that you haven't shared with anyone, use reset and no one will
