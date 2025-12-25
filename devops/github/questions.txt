@@ -73,7 +73,9 @@ NOTE: you can download git kraken, has a great ui for managing git messages and 
     - write a command to clean up both your working space & remote tracking branches (you have to pull)
 
 
-21. tips {
+
+
+tips {
     you can do: git commit /src/component {
         instead of:
             git add /src/component
