@@ -46,7 +46,8 @@
     - git branch -a
 
 5.  - Switch to a newly created branch
-        git switch <branch-name>
+        git branch bug-fix # creates a new branch
+        git switch bug-fix
     - Switch while creating a new branch using the *Switch* command
         git switch -c <new-branch-name>
 
