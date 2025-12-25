@@ -15,13 +15,20 @@
     - then how to see it in one-line
         git log --oneline {See all commit messages in one-line}
 
-3. How do you modify commits to include files you did not add + modify the commit message
-    git add file_a.txt file_b.txt
-    git commit -m "added 2 files"
-    git add file_c.txt file_d.txt
-    git commit --amend
-    {modify your commit message and save}
-    git push
+3.  - How do you modify commits to include files you did not add + modify the commit message
+        git add file_a.txt file_b.txt
+        git commit -m "added 2 files"
+        git add file_c.txt file_d.txt
+        git commit --amend
+        {modify your commit message and save}
+        git push
+
+    - No we, use "git commit -m" for simple oneline commit message, what if you want to write a more detailed
+      multi-line commit, what command will you use
+        ----
+        git commit
+        -
+        this will open a text file in your default code editor so you can write a more detailed commit message
 
 4. Tell us about github branches
     - we use branches to enhance our workflow on git, to allow proper development of new-features or
