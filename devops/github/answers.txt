@@ -172,6 +172,6 @@
       git fetch --prune (or) git remote prune origin
 
     - write a command to clean up both your working space & remote tracking branches (you have to pull)
-      git pull --prune 
+      git pull --prune
 
 
