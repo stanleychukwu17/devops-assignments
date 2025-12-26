@@ -112,7 +112,9 @@
       - command > file.txt 2>&1: Here, 2>&1 means "redirect stderr (2) to wherever stdout (1) is currently going."
       - command > file.txt >&2: redirect STDOUT to STDERR, e.g echo "This is an error message" >&2
       - if your goal is send everything to stderr, the simplest is:
-        command 1>&2 2>&2
+        command >&2
+        or command 1>&2
+        or command 2>&2
 
 7.  Arguments in bash
     - how do you capture/use arguments in bash
