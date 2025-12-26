@@ -153,9 +153,7 @@ Group 2.
 8. docker attach CONTAINER_ID_or_NAME
     note this attaches to the main process as its own user, not as root unless the main process is running as root.
     For attaching to a running shell as root:
-    docker exec -it -u root CONTAINER_ID_or_NAME /bin/bash
-    (or)
-    docker exec -it -u root CONTAINER_ID_or_NAME
+    docker exec -it -u root CONTAINER_ID_or_NAME (sh|bash)
 
 9.  - remove a docker container - use the 2 methods available
         docker rm -f CONTAINER_ID_or_NAME
