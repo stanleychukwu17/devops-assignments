@@ -81,7 +81,7 @@ Group 3
 1. copy a file from docker to your system and do vice-versa
 2. Cleaning up your workspace {
     1. using prune
-    2. recursively using rm --p60
+    2. recursively using rm, do for (containers, volumes, networks, images)
 }
 3. create a Dockerfile for react, golang, node.js {
     dev - react, node.js, golang;

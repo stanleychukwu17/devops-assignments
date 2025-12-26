@@ -237,7 +237,7 @@ Group 3
     docker container prune -f
     docker volume prune
     docker network prune -f
-    docker image prune -f
+    docker image prune -af
     ---
     docker rm -f $(docker ps -aq) # for containers
     docker volume rm -f $(docker volume ls) # for volumes
