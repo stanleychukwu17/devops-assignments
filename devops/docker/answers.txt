@@ -99,8 +99,8 @@ Group 2.
 
     - what are the alternatives to CMD command, explain the diff btw CMD and it's alternatives
       An alternative to CMD is ENTRYPOINT, e.g ENTRYPOINT ["npm", "run", "dev"].
-      the difference is that the CMD command can be over-ridden when starting the container, while
-      that of ENTRYPOINT cannot be over-ridden
+      the difference is that the CMD command can be over-ridden when starting the container, especially
+      when using a docker-compose file, but ENTRYPOINT, it cannot be over-ridden
 
 2.  Go to hub.docker.com. create a new repo (the repo name is going to be the same name you'll
     use for the image), now come back to your vsCode terminal and do:
