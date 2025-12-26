@@ -195,6 +195,7 @@ Group 2.
             -e POSTGRES_PASSWORD=password \
             postgres:latest
     }
+  
     3. {
         docker run -it
           --name my_node_app
