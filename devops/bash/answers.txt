@@ -225,6 +225,13 @@
         greater than or equal to: [>=] or [-ge]
         less than or equal to: [<=] or [-le]
         regex matching: [[=~]]
+            e.g Checks if the age is a valid number
+            -
+            if [[ ! "$age" =~ ^[0-9]+$ ]]; then
+                echo "Please enter a valid number for age."
+            else
+                echo "Hi $name, you are $age years old."
+            fi
 
     - Do some mathematical comparison of:
         1 equals 1: [ 1 == 1 ] or [ 1 -eq 1]
