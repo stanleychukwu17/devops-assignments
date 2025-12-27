@@ -383,7 +383,7 @@
     ssh_pubic_key_path = "C:/Users/STANLEY/.ssh/test_rsa.pub"
 
     in main.tf we do:
-    resource "aws_key_pair" "test_ssh_key" {
+    resource "aws_key_pair" "test_key" {
         key_name = "testing_ssh_key"
         public_key = file(var.ssh_pubic_key_path)
     }
