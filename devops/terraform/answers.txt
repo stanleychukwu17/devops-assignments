@@ -877,6 +877,7 @@ SECTION 2 BEGINS
             owner = "DevOps Corp Team"
             project = "online store"
             cidr_blocks = ["172.16.10.0/24", "172.16.20.0/24", "172.16.30.0/24"]
+            dns_support = true
             common-tags = {
                 Name = "Dev"
                 Environment = "development"
@@ -887,6 +888,8 @@ SECTION 2 BEGINS
         in main.tf
         resource "aws_vpc" "dev_vpc" {
             cidr_block = "10.0.0.0/16"
+            enable_dns_support = local.dns_support
+            enable_dns_hostnames = local.dns_support
             tags = local.common-tags
         }
         resource "aws_subnet" "dev_subnet" {
