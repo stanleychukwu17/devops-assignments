@@ -135,7 +135,7 @@
         2. DHCP Discovery: The device sends a DHCP Discover message, which is a broadcast to all devices
           on the network asking for an IP address.
 
-        3. DHCP Offer: The DHCP server receives the request and responds with a DHCP Offer message.
+        3. DHCP Offer: The DHCP server now responds with a DHCP Offer message.
           This message includes an available IP address and other network settings
           (like the subnet mask, gateway, DNS servers).
 
