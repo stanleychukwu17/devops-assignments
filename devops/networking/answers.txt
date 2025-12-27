@@ -38,9 +38,8 @@
         Used for transferring web pages and other content on the internet.
 
     2. TCP/IP (Transmission Control Protocol/Internet Protocol):
-        It's a set of rules that helps data travel across the internet. It breaks down data into packets,
+        It is the system that gets data from one place to another. It breaks down data into packets,
         sends them across the network, and makes sure they all arrive in the right order.
-        Think of it as the system that gets data from one place to another.
 
     3. FTP (File Transfer Protocol): for transferring files between computers over a network.
 
