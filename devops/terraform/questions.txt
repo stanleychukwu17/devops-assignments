@@ -1,6 +1,7 @@
 full_revision: 11 Aug 2025
 full_revision: 31 Aug 2025
 full_revision: 14 Nov 2025
+full_revision: 27 Dec 2025
 
 docs {
     https://registry.terraform.io/browse/providers
@@ -325,8 +326,10 @@ SECTION 3 BEGINS
         - now write a "while" loop that runs as long as elapsed_time "is less than" timeout
           - use the "ec2_public_ip_address" to make a curl request to see if the server is up and running
           - check if the http_status of the ec2 instance is 200
-          - if the http_status == 200, then break the while loop
-          - else if not != 200, increase the elapsed_time by adding the "interval" to the elapsed_time
+          - if the http_status == 200, then break the while loop & echo "App is ready! Status: $http_status"
+          - else if not != 200:
+            - echo "echo "App not ready yet (status: $http_status), retrying in $interval seconds... ($elapsed/$timeout)"
+            - increase the elapsed_time by adding the "interval" to the "elapsed_time"
           - then "sleep" for the "interval" time
         -
         - after the while loop, do a final check on the http_status to see if == 200
