@@ -1001,7 +1001,7 @@ SECTION 2 BEGINS
         A module is a set of terraform configuration files in a single directory.
         Modules are a key to writing reuseable, maintainable, testable terraform code
     - what is a root module & child module
-        - root module: A root module is the place where you run terraform plan or apply
+        - root module: A root module is the place where you run terraform init, plan or apply
         - child module: All modules imported from other directories into the root module
     - what is the difference btw a local module and a remote module
         - Local modules: It is a module created by you or your team members and are loaded locally
