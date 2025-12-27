@@ -1033,7 +1033,7 @@ SECTION 2 BEGINS
                 |__ outputs.tf
                 |__ variables.tf
 
-14. 
+14.
     - 4.1, 4.2, 4.3, 4.4
       All answers in: ./answers/14-modules-ec2/
 
