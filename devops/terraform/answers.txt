@@ -1357,7 +1357,7 @@ SECTION 3 BEGINS
         -
         it's a very great tool, once you start scaling up, you can research more on how to use this tool
 
-    Read: using the "tree" command
+    Read: using the "tree" command  
         this one is just a terminal tip: you can use the "tree" command to see all your directories and
         sub-directories
         tree -a; # to see both hidden directories
