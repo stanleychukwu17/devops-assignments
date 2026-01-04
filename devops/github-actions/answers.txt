@@ -59,7 +59,7 @@
         - inside the .github folder, create a folder called: "workflows"
         - inside the workflows folder, here you can create all your github-actions workflows .yaml files
 
-    3. the action is used to checkout/switch to the branch from where the event that triggered the
+    3. the action is used to switch to the branch from where the event that triggered the
         workflow was called from, so if the push_request or pull_request was called from the
         "bug/fix-add-to-cart" branch, this action will switch to the branch, which is the "bug/fix-add-to-cart"
         branch and the sibling steps will run in this specific branch.
