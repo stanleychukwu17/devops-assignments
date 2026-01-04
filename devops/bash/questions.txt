@@ -157,4 +157,4 @@ full_revision: 26 Dec 2025
     - Read: How do you generate random numbers within a certain range
 
 
-to work on 19, 20
+stopped at 18

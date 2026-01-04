@@ -20,26 +20,38 @@ function destroy_resources() {
 terraform init
 terraform apply -auto-approve
 
-# wait while the resources are created and the ec2 instance is ready
-sleep 60
-
 # get the public ip address of the ec2 instance
 ec2_public_ip=$(terraform output -json | jq -r '.ec2_public_ip_address.value')
 
+echo "waiting for ec2 instance to be ready ..."
+
+timeout=300 # represents 300seconds, approx 5mins
+interval=10 # will delay each while loop by 10s
+elapsed=0 # will be used to track when the elapsed time > timeout
+
+while [ $elapsed -lt $timeout ]; do
+    http_status=$(echo "$ec2_public_ip" | xargs -I {} curl -s -o /dev/null -w "%{http_code}" http://{}:8080 || echo "000")
+
+    if [ "$http_status" == "200" ]; then
+        echo "App is ready! Status: $http_status"
+        break
+    else
+        echo "App is not ready yet. Status: $http_status"
+        sleep $interval
+        elapsed=$((elapsed + interval))
+    fi
+done
+
 # make a request to the ec2 instance
-http_status=$(echo "${ec2_public_ip}" | xargs -I {} curl -s -o /dev/null -w "%{http_code}" http://{}:8080)
+http_status=$(echo "${ec2_public_ip}" | xargs -I {} curl -s -o /dev/null -w "%{http_code}" http://{}:8080 || echo "000")
 
 # checks if the request was successful
 if [ "${http_status}" != "200" ]; then
+    echo "Timeout: App never became ready."
     destroy_resources
-    sleep 15
-
-    echo "The request was not successful - returned status code: ${http_status}"
     exit 1
 fi
 
 # everything is fine
-echo "everything is fine with i.p ${ec2_public_ip}"
-
-# destroy the resources
-destroy_resources
+echo "App is running on http://${ec2_public_ip}:8080"
+destroy_resources # destroy the resources
