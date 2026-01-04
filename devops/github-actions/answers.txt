@@ -9,15 +9,17 @@
             branches: [main, dev]
             paths: "frontend/**"
 
-    3. on: issues:
-                types: [opened, edited]
+    3. on:
+        issues:
+            types: [opened, edited]
 
-    4. on: workflow_dispatch:
-                inputs:
-                    example_input:
-                        description: 'An example input'
-                        required: true
-                        default: 'default_value'
+    4. on:
+        workflow_dispatch:
+            inputs:
+                example_input:
+                    description: 'An example input'
+                    required: true
+                    default: 'default_value'
 
     5. on: deployment_status:
                 types: [success, failure]
