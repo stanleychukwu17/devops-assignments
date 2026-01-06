@@ -1,5 +1,4 @@
 
-3. see ./tasks/3-hello-world.yml
 
 4.
     1 & 2: see ./task/4-comment-on-issues.yml
