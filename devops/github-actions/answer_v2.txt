@@ -116,6 +116,40 @@
       Converts the GitHub event context (github.event) into a JSON string.
       Pipes that JSON into jq to pretty-print it.
 
+5.
+  1. Read: Some of the principles of Continuous Integration
+    1. Automate the build
+    2. Introduce Automated test(unit testing, Integration testing)
+    3. Linting (maybe)
+    4. Security and Scanning (maybe)
+
+  2. work on the workflow for a nodejs project, let it include testing
+    see ./task/4/4.2-nodejs-test-workflow.yml
+
+  3. work on the workflow for a golang project, let it include testing and test coverage report
+    see ./task/4/4.3-golang-test-workflow.yml
+
+  4. here is how to set up rules to allow merging based on successful workflows:
+    1. Go to your repository on github
+    2. click on the "settings" tab
+    3. click on the "branches" tab
+    4. if no rules, then click on [Add branch ruleset]
+    5. Enter your branch name e.g ("main") and then select these options
+      [✔] Require a pull request before merging
+        [✔] require approvals
+
+      [✔] Require status check to pass before merging
+        [✔] Require branches to be up to date before merging
+        input [search for status check]
+        - In the search box, enter the name of the job you want to pass before the 
+          "incoming branch" is allowed to merge into the "protected branch"
+          (i.e the branch you specified @ step-4, the "main" branch)
+        - {
+          The teacher added 3 jobs, these jobs can be found in different jobs at different workflow:
+          - Run linter            {see ./ci-cd-intro/.github/workflows/ci.yml}
+          - Run unit tests        {see ./ci-cd-intro/.github/workflows/ci.yml}
+          - Analyze (javascript)  {see ./ci-cd-intro/.github/workflows/codeql-analysis.yml}
+        }
 
 
 
