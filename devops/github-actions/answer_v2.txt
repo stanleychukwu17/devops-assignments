@@ -92,6 +92,30 @@
 
 3. see ./tasks/3-hello-world.yml
 
+4.
+  1 & 2: see ./task/4-comment-on-issues.yml
+
+  3. what is the | jq '.'? used in the github_action file
+
+    The command | jq '.' is used for processing and formatting JSON data.
+
+    1. | (Pipe Operator) : This takes the output of the command before it (in this case,
+      the echo "${{ toJSON(github.event) }}") and sends it as input to the command after the pipe (jq '.')
+
+    2. jq '.' :
+      - jq is a lightweight and flexible command-line JSON processor. It allows you to extract, manipulate,
+        and format JSON data
+      - The "." is a filter in jq that represents the entire JSON object being passed to it.
+        Essentially, "." means "take the input and output it as it is."
+      - The jq command, when used this way, will pretty-print the JSON data in a more readable format.
+        It indents and structures the JSON nicely for easy reading.
+
+    Summary:
+      In this case, the entire command echo "${{ toJSON(github.event) }}" | jq '.':
+      -
+      Converts the GitHub event context (github.event) into a JSON string.
+      Pipes that JSON into jq to pretty-print it.
+
 
 
 
