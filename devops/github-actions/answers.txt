@@ -1,6 +1,0 @@
-
-6.1 reusable workflow task-1: working on a reusable workflow for nodejs
-    - see ./tasks/6.1/reusable.yml
-    - see ./tasks/6.1/main.yml
-    - see ./task/6.1/explanation.txt
-    - see ./task/6.1/another_repo.yml
