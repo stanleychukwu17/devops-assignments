@@ -16,7 +16,9 @@ full_revision: 4th Jan 2025
     - *Do the task on your vsCode, not on paper
 
     - let the events be push & pull_request on your "main" & "dev" branches
+      - let the "path" that trigger the workflows be "frontend" directory
     - include workflow_dispatch: so that we can click a button to always re-run the job
+      - input: add an input "node_version" with default value of "24.2.0" 
       - input: add an input "hello_input"
       - input: add an input "bye_input"
 
@@ -41,7 +43,7 @@ full_revision: 4th Jan 2025
           - needs: the "set_up" job
           - add an id: hello_world_job
           - set defaults to run in bash
-          - set defaults working directory to be "web"
+          - set defaults working directory to be "frontend"
           - add environment variable called "FIRST_NAME"
         - step: checkout the branch you're working on
         - step: echo the "app_version" output from the "set_up" job
