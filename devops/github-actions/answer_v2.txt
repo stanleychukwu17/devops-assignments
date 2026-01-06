@@ -151,6 +151,29 @@
           - Analyze (javascript)  {see ./ci-cd-intro/.github/workflows/codeql-analysis.yml}
         }
 
+6. reusable workflows
+  - what are reusable workflows
+      GitHub Actions reusable workflows allow you to create workflows that can be shared and reused
+      across different repositories, it can also be used across different workflows within the same
+      repository. This feature helps to reduce duplication and increase maintainability by
+      centralizing commonly used workflows, making it easier to update and manage them.
+
+      - Reusable workflows can accept inputs, and return outputs, which allows for customization
+        and better interaction between workflows.
+
+      - A reusable workflow is just a normal GitHub Actions workflow, but it needs to be designed
+        to be reused. It is typically stored in a `.github/workflows/` folder.
+
+  - Read: best practice for reusable workflows
+    1. Modularization: Break down workflows into smaller, reusable components. For example, you could
+        create separate reusable workflows for tasks like linting, testing, or deploying.
+
+    2. Parameterization: Use inputs and outputs to customize reusable workflows for different scenarios
+
+    3. Versioning: Tag your workflows with a version (e.g., `v1.0.0`) to avoid breaking changes when
+        reusing them.
+
+    4. Security: Handle secrets carefully and make sure you only pass secrets when required
 
 
 
