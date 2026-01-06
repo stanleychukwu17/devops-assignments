@@ -48,10 +48,6 @@ jobs:
     # Define outputs that other jobs can consume
     outputs:
       app_version: ${{steps.set_version.outputs.app_version}}
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./frontend
   
     steps:
       - name: checkout the repo
@@ -84,7 +80,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./web
+        working-directory: ./frontend
     env:
       FIRST_NAME: Stanley
 
@@ -106,7 +102,7 @@ jobs:
           echo "Hello ${FIRST_NAME}, ${msg:- welcome back}"
 
           # or you can do:
-          echo "We made it: ${{ github.event.inputs.hello_input || 'Hi Stanley' }}"
+          echo "We made it: ${{ github.event.inputs.hello_input || 'welcome back' }}"
   
   bye_world_job:
     name: bye_world job
@@ -132,8 +128,8 @@ jobs:
       - name: display bye message
         run: |
           msg="${{ github.event.inputs.bye_input }}"
-          echo "${msg:- ye, we are going to miss you}"
+          echo "${msg:- we are going to miss you}"
           echo "we done with it"
           exit 0
         shell: bash
-        working-directory: ./web
+        working-directory: ./backend
