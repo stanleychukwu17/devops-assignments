@@ -55,11 +55,10 @@ Answers
               hotel 2: Hilton
 
 11. there 2 ways to represent an object
-    1. numbers: { one: 1, two: 2, three: 3 }
-    2. numbers:
-            one: 1
-            two: 2
-            three: 3
+    1. names: { FIRST_NAME: Stanley, LAST_NAME: Chukwu}
+    2. names:
+            FIRST_NAME: Stanley
+            LAST_NAME: Chukwu
 
 12. chomp modifiers are used to tell yaml what we would like to happen with multiline text that
     ends with [space] or [tab], by default sometimes, yaml strips/removes this [space]/[tab]
