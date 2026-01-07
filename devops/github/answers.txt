@@ -24,7 +24,7 @@
         {modify your commit message and save}
         git push
 
-    - No we, use "git commit -m" for simple oneline commit message, what if you want to write a more detailed
+    - Now we, use "git commit -m" for simple oneline commit message, what if you want to write a more detailed
       multi-line commit, what command will you use
         ----
         git commit

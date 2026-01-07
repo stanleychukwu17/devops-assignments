@@ -14,7 +14,7 @@ NOTE: you can download git kraken, has a great ui for managing git messages and 
     - then how to see it in one-line
 
 3.  - How do you modify commits to include files you did not add + modify the commit message
-    - No we, use "git commit -m" for simple oneline commit message, what if you want to write a more detailed
+    - Now we, use "git commit -m" for simple oneline commit message, what if you want to write a more detailed
       multi-line commit, what command will you use
 {i need to add from my note how to setup vsCode or any other code editor to be the default editor for git commit --amend or git commit}
 
