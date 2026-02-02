@@ -1,7 +1,7 @@
 full_revision: 26 Oct 2025
 full_revision: 4 Dec 2025
 full_revision: 26 Dec 2025
-full_revision: 2 feb 2026
+full_revision: 3 feb 2026
 
 
 
@@ -156,6 +156,3 @@ full_revision: 2 feb 2026
 
 21. - Read: how do you generate random numbers
     - Read: How do you generate random numbers within a certain range
-
-
-stopped at 18
