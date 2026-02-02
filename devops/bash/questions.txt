@@ -11,7 +11,7 @@ full_revision: 2 feb 2026
     - create a variable.sh script
     - add a variable named "greet"
     - execute the script to print out the value of greet on the terminal
-    - add variable named "welcome with value bash rules your terminal, use bash today"
+    - add variable named "welcome" with value "bash rules your terminal, use bash today"
     - with $welcome, search and replace the word "bash" with "makefile"
     - with $welcome, search and replace the all "bash" words with "golang"
     - slice "bash rules" from the $welcome variable
