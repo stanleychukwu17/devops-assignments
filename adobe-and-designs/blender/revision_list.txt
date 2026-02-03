@@ -30,7 +30,7 @@ full_revision: 20th Aug 2025
     whats new in blender
       book7 - What's new in Blender 4.2 LTS - p55
 
-full_revision: 30th Oct 2025
+full_revision: 30th Oct 2025, 14th Jan 2026
 ::Book 6
   jon character rigging - 60 (see finger rigging @ p65)
   southern 3D character rigging - 68
