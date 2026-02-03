@@ -156,7 +156,7 @@
       - terraform.tfvars stores only the values. no description, no type
       - variables.tf stores everything, the (default(i.e the value), description & type)
 
-    - Read: Read about *.auto.tfvars & terraform.tf
+    - Read: Read about *.auto.tfvars & variables.tf
       Terraform automatically loads variables from files named exactly:
         - terraform.tfvars
         - terraform.tfvars.json
