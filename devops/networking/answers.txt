@@ -201,8 +201,8 @@
       now our segments will look like:
       segments = [
         header = [
-          mac addresses
           i.p addresses
+          mac addresses
           port numbers
         ]
         data = [msg]
