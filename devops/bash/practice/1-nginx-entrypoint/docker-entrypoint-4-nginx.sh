@@ -25,7 +25,7 @@ if [ "$1" = "nginx" ] || [ "$1" = "nginx-debug" ]; then
                         # warn on shell scripts without exec bit
                         entrypoint_log "$0: Ignoring $f, not executable";
                     fi
-                    ;;
+                ;;
                 *.sh)
                     if [ -x "$f" ]; then
                         entrypoint_log "$0: Launching $f";
@@ -34,7 +34,7 @@ if [ "$1" = "nginx" ] || [ "$1" = "nginx-debug" ]; then
                         # warn on shell scripts without exec bit
                         entrypoint_log "$0: Ignoring $f, not executable";
                     fi
-                    ;;
+                ;;
                 *) entrypoint_log "$0: Ignoring $f";;
             esac
         done
