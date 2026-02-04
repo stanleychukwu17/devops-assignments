@@ -748,7 +748,7 @@ SECTION 2 BEGINS
         variable "users" {
             type = map(string)
             default = {
-                alice  = "alice-dev"
+                stanley  = "stanley-dev"
                 bob    = "bob-prod"
                 charlie = "charlie-test"
             }
