@@ -629,20 +629,21 @@ SECTION 2 BEGINS
         }
 
     - Give an example of using "maps"
-        variable "amis" {
+        variable "ec2" {
             description = "..."
             type = map(string)
             default = {
-                "eu-central-1a" = "ami-something-eu-central"
-                "us-west-1" = "ami-something-us-west-1"
+                "count" = 1
+                "public_ip" = true
+                "instance_type" = "t3.micro" 
             }
         }
         ---
         in main.tf
         resource "aws_instance" "my_vm" {
-            ami = var.amis[var.region]
-            or
-            ami = var.amis["${var.region}"]
+            count = var.ec2["count"]
+            instance_type = var.ec2["instance_type"]
+            associate_public_ip_address = var.ec2["public_ip"]
         }
 
 3. Structural types
