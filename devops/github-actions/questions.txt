@@ -91,10 +91,16 @@ full_revision: 5th Feb 2025 (1 month ago)
   - 1st job:
     - name of job: "community_action"
     - runs on "ubuntu-latest"
-    - step: dump github events dat
+    - step: dump github events data
     - step: use community action to add a comment to the issue
 
   - 2nd job:
+    - name of job: "community_action"
+    - runs on "ubuntu-latest"
+    - step: dump github events data
+    - step: use community action to add a comment to the issue
+
+  - 3rd job:
     - name of job: comment-with-github-api
     - runs on "ubuntu-latest"
     - set defaults:
