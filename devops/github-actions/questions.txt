@@ -92,7 +92,11 @@ full_revision: 5th Feb 2025 (1 month ago)
     - name of job: "community_action"
     - runs on "ubuntu-latest"
     - step:
-        - name = dump github events data
+        - name = dump github events data using "echo"
+        - use "toJSON" to convert the "event"
+
+    - step:
+        - name = dump github events data using "actions"
         - uses github-script@v6
         - using "with" & "script" console.log a json stringify of github.event
     - step: use "peter-evans/create-or-update-comment@v3" community action to comment on the issue
@@ -103,7 +107,10 @@ full_revision: 5th Feb 2025 (1 month ago)
     - set defaults:
       shell = bash
       working-directory = backend
-    - step: use the github api to post a comment to the issue
+    - step:
+      - use the github api to post a comment to the issue
+      - add environment variables:
+        GITHUB_TOKEN, ORGANIZATION, REPOSITORY, ISSUE_NUMBER
 
   3. what is the | jq '.'? used in the github_action file
 
