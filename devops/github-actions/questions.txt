@@ -91,16 +91,13 @@ full_revision: 5th Feb 2025 (1 month ago)
   - 1st job:
     - name of job: "community_action"
     - runs on "ubuntu-latest"
-    - step: dump github events data
-    - step: use community action to add a comment to the issue
+    - step:
+        - name = dump github events data
+        - uses github-script@v6
+        - using "with" & "script" console.log a json stringify of github.event
+    - step: use "peter-evans/create-or-update-comment@v3" community action to comment on the issue
 
   - 2nd job:
-    - name of job: "community_action"
-    - runs on "ubuntu-latest"
-    - step: dump github events data
-    - step: use community action to add a comment to the issue
-
-  - 3rd job:
     - name of job: comment-with-github-api
     - runs on "ubuntu-latest"
     - set defaults:
