@@ -7,10 +7,10 @@ full_revision: 5th Feb 2025 (1 month ago)
     see more details on the answers in ./tasks/1-event-triggers.txt
 
 2. workflows
-    1. what are they?
-    2. how do you create a workflow and where do you save it?
-    3. Read: why do we use actions/checkout@v4
-    4. Read: read about some additional's you can do on your github-actions page on github
+  1. what are they?
+  2. how do you create a workflow and where do you save it?
+  3. Read: why do we use actions/checkout@v4
+  4. Read: read about some additional's you can do on your github-actions page on github
 
 3. create a workflow called hello_world
     - *Do the task on your vsCode, not on paper
