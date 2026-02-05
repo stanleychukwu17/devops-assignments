@@ -29,7 +29,7 @@ full_revision: 5th Feb 2025 (1 month ago)
   
   - Define some global environment variables
     - STANLEY = is the greatest
-    - CHUKWU = Belongs to the most high
+    - CHUKWU = Belongs to the most HIGH
 
   - job1 (set_up_job):
     - name: "set up job"
