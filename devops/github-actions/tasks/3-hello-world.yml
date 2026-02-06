@@ -23,6 +23,10 @@ on:
   # Allow manual execution from the GitHub Actions UI
   workflow_dispatch:
     inputs:
+      node_version:
+        description: for node version
+        required: true
+        default: 24.2.0
       hello_input:
         description: enter hello message
         required: false
