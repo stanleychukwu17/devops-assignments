@@ -13,10 +13,14 @@ jobs:
       run:
         shell: bash
     steps:
-      - name: dump github event context
+      - name: dump github events data using *echo*
         run: |
           echo "${{ toJSON(github.event) }}" | jq '.'
           # or: echo "${{ toJSON(github.event) }}" | jq -r '.'  - this will print out the raw output
+
+      - name: dump github events data using github-script *action*
+        uses: actions/github-script@v6
+        with:
 
       - name: comment with action
         uses: peter-evans/create-or-update-comment@v3
