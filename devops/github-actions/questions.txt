@@ -92,12 +92,12 @@ full_revision: 5th Feb 2025 (1 month ago)
     - name of job: "community_action"
     - runs on "ubuntu-latest"
     - step:
-        - name = dump github events data using "echo"
-        - use "toJSON" to convert the "event"
+        - name = dump github events data using *echo*
+        - use "toJSON" to convert the "event" to a json string and then pipe it to "jq"
 
     - step:
-        - name = dump github events data using "actions"
-        - uses github-script@v6
+        - name = dump github events data using *actions*
+        - uses action github-script@v6
         - using "with" & "script" console.log a json stringify of github.event
     - step: use "peter-evans/create-or-update-comment@v3" community action to comment on the issue
 
