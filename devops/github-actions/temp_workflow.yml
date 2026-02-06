@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: dump github event data
+        run: |
+          echo "${{ toJSON(github.event) }}" | jq '.'
+
+      - name: dump github event data
         uses: actions/github-script@v6
         with:
           script: |
@@ -22,3 +26,24 @@ jobs:
           body: |
             hello from github actions
           reaction: "+1"
+  
+  comment-with-github-api:
+    name: comment with github api
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./backend
+
+    steps:
+      - name: comment with github api
+        run: |
+          gh api -X POST \
+          https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+          -f body="Hello from GitHub Actions!"
+          -f reaction="+1"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORGANIZATION: ${{ github.repository_owner }}
+          REPOSITORY: ${{ github.repository.name }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
