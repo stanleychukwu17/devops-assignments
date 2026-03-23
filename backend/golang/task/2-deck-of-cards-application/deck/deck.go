@@ -50,6 +50,9 @@ func DrawCard(handSize int, cards *Deck) (*Deck, *Deck) {
 
 func SaveToFile(filename string, cards *Deck) {
 	var permission fs.FileMode = 0644
+	// or do like below
+	// fs.FileMode converts the integer to the appropriate file mode type
+	// permission := fs.FileMode(0644)
 
 	cardsToSliceOfString := []string(*cards) // converts first to a slice of string
 	joinCard := strings.Join(cardsToSliceOfString, "~")
