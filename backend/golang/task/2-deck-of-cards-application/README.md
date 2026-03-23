@@ -17,6 +17,7 @@ suits := []string{"Spades", "Hearts", "Diamonds", "Clubs"}
   
 - **DrawCard**:  
     This function removes and returns the top card from the deck.
+    it receives the number of cards to draw
 
 - **SaveToFile**:  
     saves the current slice of cards into a text file (.txt)
