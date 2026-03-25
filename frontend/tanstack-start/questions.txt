@@ -1,3 +1,15 @@
 full_revision: 25 Mar 2026
 full_revision: 25 Mar 2026
 full_revision: 25 Mar 2026
+
+1.  Read: about tanstanck
+1.1 How do you navigate the following url in tanstanck
+  routes
+  |
+  |---> __root,tsx
+  |---> index.tsx
+  |---> dashboard.tsx
+  |---> users/
+      |
+      |-->index.tsx
+      |-->$userId.tsx
