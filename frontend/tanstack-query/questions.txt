@@ -24,13 +24,17 @@ full_revision: 25 Mar 2026
 1.3 Multiple query keys
   - How do you use multiple query keys?
     e.g a user searching for todos by title and status, and you want to add the search term
-      and status to the query key
+      and status to the query 
 
-1.3 What is the difference between useQuery and useSuspenseQuery?
+1.4 Lazy loading
+  - how do you lazy load data using useQuery, load the data when the user clicks a button
+  - {Look at the optimistic updates and rewrite it, i love optimistic update}
+
+1.5 What is the difference between useQuery and useSuspenseQuery?
   - Give an example of how to use it, including the queryKey and queryFn
   - Read: some props you can pass to the hook, like staleTime, refetchOnWindowFocus, etc.
 
-1.3 What is the difference between useQuery and useInfiniteQuery?
+1.6 What is the difference between useQuery and useInfiniteQuery?
   - Give an example of how to use it, including the queryKey and queryFn
   - Read: some props you can pass to the hook, like getNextPageParam, getPreviousPageParam, etc.
   - Read: some props you can destructure from the hook, like data, error, isLoading, etc.
