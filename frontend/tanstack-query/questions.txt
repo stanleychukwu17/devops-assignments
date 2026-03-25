@@ -1,3 +1,37 @@
 full_revision: 25 Mar 2026
 full_revision: 25 Mar 2026
 full_revision: 25 Mar 2026
+
+1.  Read: about tanstack query, setup, basic usage with QueryClient and QueryClientProvider
+
+1.1 What hook does tanstack query provide to fetch data?
+  - Give an example of how to use it, including the queryKey and queryFn,
+    - fetch all todos, let the function be an async function that returns a promise
+  - Read: some props you can destructure from the hook, like data, error, isLoading, etc.
+  - Read: some props you can pass to the hook, like staleTime, refetchOnWindowFocus, etc.
+  - how do you set the cacheTime and staleTime?
+    - what is the difference between cacheTime and staleTime?
+
+1.2 What hook does tanstack query provide to mutate data?
+  - whats the difference btw mutate and mutateAsync?
+    i.e const { mutate, mutateAsync } = useMutation({ ... })
+  - Give an example of how to use it, including the mutationFn, onSuccess, onError, etc.
+    - use it to add an item to the todos list, let the function be an async function that returns a promise
+  - Read: some props you can pass to the hook, like mutationFn, onSuccess, onError, etc.
+  - After mutation, how to refetch the data?
+    - {tip: you can use the refetch function or invalidateQueries}
+
+1.3 Multiple query keys
+  - How do you use multiple query keys?
+    e.g a user searching for todos by title and status, and you want to add the search term
+      and status to the query key
+
+1.3 What is the difference between useQuery and useSuspenseQuery?
+  - Give an example of how to use it, including the queryKey and queryFn
+  - Read: some props you can pass to the hook, like staleTime, refetchOnWindowFocus, etc.
+
+1.3 What is the difference between useQuery and useInfiniteQuery?
+  - Give an example of how to use it, including the queryKey and queryFn
+  - Read: some props you can pass to the hook, like getNextPageParam, getPreviousPageParam, etc.
+  - Read: some props you can destructure from the hook, like data, error, isLoading, etc.
+  - Read: some props you can pass to the hook, like staleTime, refetchOnWindowFocus, etc.
