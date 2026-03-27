@@ -5,3 +5,18 @@
 	place-content: center;
 }
 
+# research more on aspect-ratio
+
+# research more on color-mix
+	e.g: background: color-mix(in oklab, var(--header-bg) 84%, transparent 16%);
+	e.g: background: color-mix(in srgb, blue, yellow);
+	e.g: background: color-mix(in srgb, var(--brand-color), white 20%);
+	---
+	---
+	using in oklab or in lch prevents the "gray dead zone" that can happen when mixing colors
+	in standard RGB. RGB mixing often results in muddy colors, while oklab keeps the
+	vibrancy intact during the transition.
+	-
+	Summary:
+	If you have a hex code and just want a quick alpha, rgba is fine.
+	If you are building a themable system using CSS variables, color-mix is much more robust!
