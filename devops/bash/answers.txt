@@ -49,8 +49,23 @@
         echo ${names[2]} # third item
     - how do you retrieve and display all indexes of an array
         echo "${!names[@]}"
+
+    - Read: how to append an item to an array in bash
+        e.g:
+            ./temp.sh stanley "edward chukwu" ukrainian
+            inside the "temp.sh", we loop through the arguments and add it to an array
+            names=()
+            index=0
+            for i in "$@"; do
+                names+=("$i")
+                or
+                names[index]="$i"
+                ((index++))
+            done
+
     - Read: how do you get the length of an array
         echo "${#names[@]}"
+
     - add a variable called "school", add 3 schools you've been to in the array, now use
       a for loop to print out each item in the array
         names=("jewel model school" "whole person education" "east ukrainian national university")
