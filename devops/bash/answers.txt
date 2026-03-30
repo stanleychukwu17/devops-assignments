@@ -93,8 +93,8 @@
         cat pop.txt variables.sh > combined.txt
 
     - difference btw > & >>
-        > : will delete initial content in the receiving file and then save the STDOUT(1) into the file
-        >>: will keep initial content in the receiving file and then appends the STDOUT(1) content to the file
+        > : will delete initial content in the receiving file and then save the STDOUT(0) into the file
+        >>: will keep initial content in the receiving file and then appends the STDOUT(0) content to the file
 
     - how do you redirect standard error into a file
         standard error:
