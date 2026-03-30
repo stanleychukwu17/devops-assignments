@@ -1,9 +1,7 @@
-full_revision: 26 Oct 2025
 full_revision: 4 Dec 2025
 full_revision: 26 Dec 2025
 full_revision: 3 feb 2026
-
-
+full_revision: 3 Apr 2026 (2months)
 
 1.  how do you create and run a bash script?
 
@@ -27,11 +25,13 @@ full_revision: 3 feb 2026
     - how do your retrieve/display all the items in an array
     - how do you retrieve/display specific items in an array
     - how do you retrieve and display all indexes of an array
+    - Read: how to append an item to an array in bash
     - Read: how do you get the length of an array
     - task: add a variable called "school", add 3 schools you've been to in the array, now use
       a for loop to print out each item in the array
       - do for $i in array
       - do for $i = 0, $i++
+      - pass some arguments to your script and loop through the arguments and each one to an array
 
 5.  Arithmetic calculations
     - show the 3 ways of doing Arithmetic calculations
