@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --production
+RUN npm ci
 
 # Copy application source code
 COPY . ./
@@ -23,16 +23,21 @@ RUN npm cache clean --force && rm -rf /usr/src/app/*.log
 # Stage 2: Production stage
 FROM node:24.7-alpine
 
-# Add a non-root user
+# Add a non-root useri
 RUN addgroup -S app && adduser -S -G app app
 
 # Set work directory
 WORKDIR /usr/src/app
 
+# Copy only package files
+COPY package*.json ./
+
+# Install ONLY production dependencies
+RUN npm ci --omit=dev && npm cache clean --force
+
 # Copy only the necessary files from the build stage
-COPY --from=builder /usr/src/app/.next .next/
-COPY --from=builder /usr/src/app/node_modules node_modules/
-COPY --from=builder /usr/src/app/package*.json ./
+COPY --from=builder /usr/src/app/.next ./.next
+COPY --from=builder /usr/src/app/public ./public
 
 # Switch to the non-root user
 USER app
