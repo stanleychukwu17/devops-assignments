@@ -10,12 +10,11 @@ links to work on {
   https://tailwindcss.com/docs/dark-mode
   https://tailwindcss.com/docs/theme
   https://tailwindcss.com/docs/colors
-  https://tailwindcss.com/docs/adding-custom-styles
   https://tailwindcss.com/docs/detecting-classes-in-source-files
-  https://tailwindcss.com/docs/functions-and-directives
 }
 study on utility {
   https://tailwindcss.com/docs/functions-and-directives
+  https://tailwindcss.com/docs/adding-custom-styles
   https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities
 }
 
