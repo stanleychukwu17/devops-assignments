@@ -1,7 +1,7 @@
 full_revision: 11 Aug 2025
 full_revision: 31 Aug 2025
 full_revision: 27 Dec 2025 (4months)
-full_revision: 3 Feb 2026 (1month, 7days ago)
+full_revision: 3 Apr 2026 (3.5month)
 
 docs {
     https://registry.terraform.io/browse/providers
