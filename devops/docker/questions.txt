@@ -98,7 +98,12 @@ Group 3
     - see the list of images created
 
 6. using the compose file
-    - start the containers, start with image rebuild, start in detached mode
+    - start the containers
+        - start with image rebuild
+        - start in detached mode
+        - just rebuild, don't start
+        - just rebuild only one service
+        - just rebuild only one service and start the one service your rebuilt
     - see the list of containers from this compose file
     - stop & remove the running containers for only this compose file
     - Stop running containers without removing them
