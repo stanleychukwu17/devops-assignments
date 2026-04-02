@@ -101,6 +101,16 @@
         because if you delete the commit on other peoples system, this will cause serious serious issues
         to reconcile the changes
 
+11.1 Read: delete all un-committed/un-staged files
+    - git clean -f
+      -f: force(required)
+
+    - git clean -fd (deletes untracked files + folders)
+      -d = directories
+
+    - git clean -fdn (That shows what will be deleted without actually deleting anything)
+    
+
 12. git clone <url_of_repo>
 
 13. what is git remote and *git remote -v*

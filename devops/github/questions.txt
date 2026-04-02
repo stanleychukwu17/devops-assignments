@@ -45,6 +45,8 @@ NOTE: you can download git kraken, has a great ui for managing git messages and 
 
 11. what is the difference btw git reset and git revert
 
+11.1 Read: delete all un-committed/un-staged files
+
 12. how do you clone a project from github into your working directory
 
 13. what is git remote and *git remote -v*
