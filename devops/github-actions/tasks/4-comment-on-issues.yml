@@ -21,6 +21,12 @@ jobs:
       - name: dump github events data using github-script *action*
         uses: actions/github-script@v6
         with:
+          script: |
+            // this will print out the raw output without formatting
+            console.log(JSON.stringify(github.event));
+
+            // pretty-prints it with indentation (like jq '.')
+            console.log(JSON.stringify(github.event, null, 2))
 
       - name: comment with action
         uses: peter-evans/create-or-update-comment@v3
