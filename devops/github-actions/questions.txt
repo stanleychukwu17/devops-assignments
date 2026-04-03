@@ -1,7 +1,7 @@
 full_revision: 12th Aug 2025
 full_revision: 4th Dec 2025
 full_revision: 6th Jan 2025
-full_revision: 5th Feb 2025 (1 month ago)
+full_revision: 3 Apr 2026 (3 months ago)
 
 1. what are the events that can trigger a workflow run {try to name 4-10 events}
     see more details on the answers in ./tasks/1-event-triggers.txt
@@ -78,7 +78,6 @@ full_revision: 5th Feb 2025 (1 month ago)
       - echo "we done with it"
       - set the default shell to "bash"
       - set the default working-directory to "backend"
-
 
 4. You next task is to use github-actions to write a comment on newly created issue in
   our github-repo. Let the workflow have 2 jobs:
