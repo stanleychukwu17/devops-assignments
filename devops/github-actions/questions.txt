@@ -114,6 +114,8 @@ full_revision: 3 Apr 2026 (3 months ago)
 
   3. what is the | jq '.'? used in the github_action file
 
+  4. see more ways to get info from the github.event
+
 5.
     1. Read: Some of the principles of Continuous Integration
 
