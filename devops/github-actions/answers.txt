@@ -116,6 +116,66 @@
       Converts the GitHub event context (github.event) into a JSON string.
       Pipes that JSON into jq to pretty-print it.
 
+  4. see more ways to get info from the github.event
+    - Extract PR details
+      - name: Extract PR details
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const pr = github.event.pull_request;
+            console.log({ pr, "PR Title ":pr?.title, } );
+
+    - Extract commit info
+      - name: Extract commit info
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const commits = github.event.commits;
+
+            console.log(commits)
+
+            if (commits) {
+              commits.forEach((commit, index) => {
+                console.log(`Commit #${index + 1}`);
+                console.log("Message:", commit.message);
+                console.log("Author:", commit.author.name);
+                console.log("URL:", commit.url);
+              });
+            } else {
+              console.log("No commits found.");
+            }
+
+    - Extract repo details
+      - name: Extract repo details
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const repo = github.event.repository;
+
+            console.log(repo)
+            console.log("Repo Name:", repo.full_name);
+            console.log("Default Branch:", repo.default_branch);
+            console.log("Branch:", github.event?.ref);
+            console.log("Private:", repo.private);
+
+    - General event metadata
+      - name: General event metadata
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log(github)
+            console.log("Event Name:", github.event_name);
+            console.log("Actor:", github.actor);
+            console.log("Ref:", github.ref);
+            console.log("SHA:", github.sha);
+
+    - Tip:
+      The structure of github.event changes based on the trigger (push, pull_request, issues, etc.)
+      A good workflow is:
+        1. Dump full payload once
+        2. Copy the parts you care about
+        3. Extract them like above
+
 5.
   1. Read: Some of the principles of Continuous Integration
     1. Automate the build
