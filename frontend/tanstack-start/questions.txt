@@ -2,9 +2,10 @@ full_revision: 25 Mar 2026
 full_revision: 25 Mar 2026
 full_revision: 25 Mar 2026
 
-1.  Read: about tanstanck
-1.1 How do you navigate the following url in tanstanck
-  routes
+1.  Read: about tanstack
+1.1 How do you navigate the following url in tanstack
+  ---
+  routes/
   |
   |---> __root,tsx
   |---> index.tsx
@@ -13,3 +14,28 @@ full_revision: 25 Mar 2026
       |
       |-->index.tsx
       |-->$userId.tsx
+  |---> admin/
+      |
+      |-->$adminId/
+        |
+        |-->index.tsx
+        |-->settings.tsx
+
+
+1.2 createFileRoute
+  - What is the createFileRoute, give an example
+  - what are some important arguments you can pass into createFileRoute (list 5)
+
+1.3 Nested layout
+  - Read: About nested layout (can you talk about it without reading)
+  - <Outlet />
+
+2. createFileRoute
+  - Talk about createFileRoute, give an example
+  - How do you access the data retrieved by loader
+  - Read: a little bit about loader
+
+3. CreateServerFn
+  - give an example using method: GET to fetch all todos
+  - call the function from the loader prop
+  - access the returned value in the page component
