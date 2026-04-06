@@ -20,9 +20,6 @@ function destroy_resources() {
 terraform init
 terraform apply -auto-approve
 
-# get the public ip address of the ec2 instance
-ec2_public_ip=$(terraform output -json | jq -r '.ec2_public_ip_address.value')
-
 echo "waiting for ec2 instance to be ready ..."
 
 timeout=300 # represents 300seconds, approx 5mins
@@ -30,6 +27,10 @@ interval=10 # will delay each while loop by 10s
 elapsed=0 # will be used to track when the elapsed time > timeout
 
 while [ $elapsed -lt $timeout ]; do
+    # get the public ip address of the ec2 instance
+    ec2_public_ip=$(terraform output -json | jq -r '.ec2_public_ip_address.value')
+
+    # get the http status of the instance
     http_status=$(echo "$ec2_public_ip" | xargs -I {} curl -s -o /dev/null -w "%{http_code}" http://{}:8080 || echo "000")
 
     if [ "$http_status" == "200" ]; then
@@ -42,7 +43,10 @@ while [ $elapsed -lt $timeout ]; do
     fi
 done
 
-# make a request to the ec2 instance
+# get the public ip address of the ec2 instance
+ec2_public_ip=$(terraform output -json | jq -r '.ec2_public_ip_address.value')
+
+# make another request to the ec2 instance to be sure everything is still working well
 http_status=$(echo "${ec2_public_ip}" | xargs -I {} curl -s -o /dev/null -w "%{http_code}" http://{}:8080 || echo "000")
 
 # checks if the request was successful
