@@ -78,7 +78,20 @@ NOTE: you can download git kraken, has a great ui for managing git messages and 
 
 
 tips {
-    you can do: git commit /src/component {
+    - .gitkeep {
+        Git doesn’t track empty folders. So if you want a directory to exist in your
+        repo but it has no files yet, people add a dummy file called .gitkeep to
+        force Git to include that folder.
+        e.g:
+            logs/
+              |__ .gitkeep  (Without .gitkeep, the logs/ folder wouldn’t be committed.)
+
+        ---
+        you can delete .gitkeep if:
+        - The folder now has files in it, or
+        - You don’t need the folder tracked anymore
+    }
+    - you can do: git commit /src/component {
         instead of:
             git add /src/component
             git commit -m "....."
