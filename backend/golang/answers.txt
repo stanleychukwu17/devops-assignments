@@ -38,7 +38,7 @@
             STATE string = "ENUGU"
             alive boolean = true
         )
-    
+
 4.
     - In fmt.Printf, what is %v, %T, %s, %d
         %v = value
