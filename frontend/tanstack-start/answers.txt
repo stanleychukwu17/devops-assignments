@@ -1,0 +1,19 @@
+1.  Read: about tanstack
+  pnpm create @
+1.1 How do you navigate the following url in tanstack
+  ---
+  routes/
+  |
+  |---> __root,tsx
+  |---> index.tsx --------------------------------> /
+  |---> dashboard.tsx ----------------------------> /dashboard
+  |---> users/ -----------------------------------> /
+      |
+      |-->index.tsx
+      |-->$userId.tsx
+  |---> admin/
+      |
+      |-->$adminId/
+        |
+        |-->index.tsx
+        |-->settings.tsx
