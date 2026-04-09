@@ -1,6 +1,6 @@
 full_revision: 25 Mar 2026
 full_revision: 25 Mar 2026
-full_revision: 25 Mar 2026
+full_revision: 4 Apr 2026
 
 1.  Read: about tanstack
 1.1 How do you navigate the following url in tanstack
@@ -39,3 +39,10 @@ full_revision: 25 Mar 2026
   - give an example using method: GET to fetch all todos
   - call the function from the loader prop
   - access the returned value in the page component
+
+  4. CreateServerOnlyFn, CreateClientOnlyFn, createIsomorphicFn
+    - Give an example of CreateServerOnlyFn
+    - Give an example of CreateClientOnlyFn
+    - Give an example of createIsomorphicFn {Tip: use .server & .client}
+  
+  5. How errors propagate to the UI
