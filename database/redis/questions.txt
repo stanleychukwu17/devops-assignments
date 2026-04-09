@@ -1,0 +1,5 @@
+full_revision: 9 Apr 2026
+full_revision: 9 Apr 2026
+full_revision: 9 Apr 2026
+
+commands: https://redis.io/docs/latest/commands/
