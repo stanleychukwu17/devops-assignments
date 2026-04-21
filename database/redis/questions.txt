@@ -3,3 +3,22 @@ full_revision: 9 Apr 2026
 full_revision: 9 Apr 2026
 
 commands: https://redis.io/docs/latest/commands/
+
+1 - Read: about redis
+  - Redis stack
+  - Redis data types: list them and give examples on how to save them
+  - see example of redis key value storage
+
+2 - Read: (optional) how to connect to redis
+  - I used docker, see the docker-compose.yml file and rewrite on your own
+  - rewrite everything in the docker-compose as an inline docker command
+    (i.e docker run -d)
+
+3 Task:
+  - connect to a redis instance, use redis-insight to monitor the activity on the redis instance
+  - set a "name" with value "stanley chukwu"
+  - get the "name" from the database
+  - delete the name from the database
+  - set multiple keys and values at once
+  - get multiple values using their keys
+  - Read: about GETRANGE and SETRANGE
