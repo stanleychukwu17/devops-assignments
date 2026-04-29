@@ -1,0 +1,36 @@
+1 - Read: about redis
+  - Redis stack
+  - Redis data types: list them and give examples on how to save them
+  - see example of redis key value storage
+
+2 - Read: (optional) how to connect to redis
+  - I used docker, see the docker-compose.yml file and rewrite on your own
+  - rewrite everything in the docker-compose as an inline docker command
+    (i.e docker run -d)
+
+3 Task: Working with strings
+  - connect to a redis instance, use redis-insight to monitor the activity on the redis database
+  - set a "name" with value "stanley chukwu"
+  - get the "name" from the database
+  - delete the name from the database
+  - set multiple keys and values at once
+  - get multiple values using their keys
+  - Read: about GETRANGE and SETRANGE
+
+4 Task: Working with numbers
+  - connect to a redis instance, use redis-insight to monitor the activity on the redis database
+  - set a an age with value 22
+  - increase this age
+  - decrease this age
+  - increase the age by a certain amount: use 5
+  - decrease the age by a certain amount: use 10
+
+5 Command Options
+  - what flags can you add to the SET command
+  - explain each of the flags using an example
+
+6 Task: working with commands
+  - set a name to expire in 7 seconds
+  - set name only if name does not exist
+  - set name only if it exist
+  - set name with a new value and on the same command, use GET to return the old value
