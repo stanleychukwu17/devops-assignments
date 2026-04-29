@@ -5,7 +5,7 @@ full_revision: 9 Apr 2026
 commands: https://redis.io/docs/latest/commands/
 
 1 - Read: about redis
-  - Redis stack
+  - Read: Redis stack
   - Redis data types: list them and give examples on how to save them
   - see example of redis key value storage
 

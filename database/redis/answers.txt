@@ -1,7 +1,42 @@
 1 - Read: about redis
-  - Redis stack
+    - Redis is an in-memory data store 
+    - uses key-value structures
+    - Traditionally used as a caching layer
+    - Data is stored in RAM (making queries and retrieval very fast)
+
+  - Read: Redis stack
+    Redis -> Redis Cloud
+          |__ Redis Database
+          |__ Data persistence
+          |__ JSON support
+          |__ Search
+          |__ Redis OM: Object-mapping
+
   - Redis data types: list them and give examples on how to save them
+    - strings: your typical key=string, value=string
+      name->stanley, age->23
+
+    - sets: sets will store only unique values
+      names -> {Chukwu, Stanley, Edward}
+
+    - lists: list is like sets, but it will take both multiple same values
+      names -> {Chukwu, Stanley, Edward, Stanley}
+
+    - hashes: more like objects in javascript, but limited. it cannot take deeply nested objects
+      book:1 -> {
+                title: "Final empire"
+                author: "Brandon SanderSon"
+              }
+
+    - sorted sets: sorted sets are more sets, but sorted. you assign each value to a numerical key that will be
+      used to sort the items in the sorted set, it's used very well for leader-boards
+      names: {Tin_ubu:5, Peter_Obi:250000, Sow_ore:10}
+
   - see example of redis key value storage
+    - books -> {"books:1", "books:2", "books:3"} sets contain all the books key-ids
+    - each book details:
+      books:1 -> {title:"....", author:"...."}
+      books:2 -> {title:"....", author:"...."}
 
 2 - Read: (optional) how to connect to redis
   - I used docker, see the docker-compose.yml file and rewrite on your own
