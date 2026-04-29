@@ -7,13 +7,35 @@
   |---> __root,tsx
   |---> index.tsx --------------------------------> /
   |---> dashboard.tsx ----------------------------> /dashboard
-  |---> users/ -----------------------------------> /
+  |---> users/ -----------------------------------> /users/
       |
-      |-->index.tsx
-      |-->$userId.tsx
+      |-->index.tsx ------------------------------> /users/
+      |-->$userId.tsx ----------------------------> /users/:userId
   |---> admin/
       |
-      |-->$adminId/
+      |-->$adminId/ ------------------------------> /admin/:adminId
         |
-        |-->index.tsx
-        |-->settings.tsx
+        |-->index.tsx ----------------------------> /admin/:adminId/
+        |-->settings.tsx -------------------------> /admin/:adminId/settings/
+
+1.2 createFileRoute
+  - What is the createFileRoute, give an example
+    - It is a function that creates a route for a page component
+    e.g:
+    import {createFileRoute} from "@tanstack/react-router"
+
+    const Route = createFileRoute("/users/$")({
+      component: UserComponent,
+    })
+
+    const UserComponent = () => {
+      return <>free9ja shall be great!</>
+    }
+
+  - what are some important arguments you can pass into createFileRoute (list 5)
+    - component: PageComponent,
+    - staticData: { title: "Free9ja" },
+    - errorComponent: ErrorComponent,
+    - pendingComponent: PendingComponent,
+    - loader: async () => { console.log("free9ja") },
+    
