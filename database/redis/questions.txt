@@ -63,3 +63,19 @@ commands: https://redis.io/docs/latest/commands/
   - using an item, get the position of an item in the list
 
 9. Hashes
+  - Read: about hashes
+  - Read: about resource_types and id
+  - set a hash for books, with id 1, add the title of the book to the book-1 hash
+  - add multiple fields to the book1, add author, rating
+  - how do you change the value of ratings in books:1
+  - set books:2, add title, author, rating at once
+  - get a field from books:1, get the title
+  - get all the key & values in books:2
+  - check if a key exist in a hash, e.g check if :
+    - year exist in books:2
+    - title exist in books:3
+    - title exist in books:1
+  - return all keys in books:1
+  - return all values in books:2
+  - delete one key from books:1, delete rating
+  - delete the entire hash, delete books:1
