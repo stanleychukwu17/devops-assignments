@@ -23,17 +23,18 @@ full_revision: 4 Apr 2026
 
 
 1.2 createFileRoute
-  - What is the createFileRoute, give an example
+  - Talk about is the createFileRoute, give an example
   - what are some important arguments you can pass into createFileRoute (list 5)
+  - give an example
+  - How do you access the data retrieved by loader
+  - Read: a little bit about loader
 
 1.3 Nested layout
   - Read: About nested layout (can you talk about it without reading)
   - <Outlet />
 
 2. createFileRoute
-  - Talk about createFileRoute, give an example
-  - How do you access the data retrieved by loader
-  - Read: a little bit about loader
+
 
 3. CreateServerFn
   - give an example using method: GET to fetch all todos
