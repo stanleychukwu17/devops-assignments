@@ -50,4 +50,16 @@ commands: https://redis.io/docs/latest/commands/
   - check if a value is a member of a set
   - Read: concluding remarks
 
-8. 
+8. LIST
+  - Read: read about list and talk about it
+  - add an item to a list from the left and from the right, what will the new result look like
+  - add multiple items from the left side of the list and from the right side of the list
+  - remove an item from the left side of the list and from the right side of the list
+  - get the length of a list
+  - get a certain range from a list
+    - get first 2 items in the list
+    - get last 2 items in the list
+  - retrieve only the item at index 2
+  - using an item, get the position of an item in the list
+
+9. Hashes
