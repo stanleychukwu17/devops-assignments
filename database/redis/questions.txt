@@ -41,3 +41,13 @@ commands: https://redis.io/docs/latest/commands/
   - set name only if it exist
   - set name with a new value and on the same command, use GET to return the old value
 
+7 SETS
+  - Read: about sets and talk about it on your own
+  - Add stanley, edward, chukwu to names set
+  - remove one name from the set
+  - create another set called "nicknames", add 2 of your nicknames to this set
+  - combine each of the set(i.e names and nicknames) using union
+  - check if a value is a member of a set
+  - Read: concluding remarks
+
+8. 
