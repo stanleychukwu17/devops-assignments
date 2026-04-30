@@ -1,12 +1,11 @@
-1.  Read: about tanstack
-  pnpm create @
-1.1 How do you navigate the following url in tanstack
+1. How do you navigate the following url in tanstack
   ---
   routes/
   |
   |---> __root,tsx
   |---> index.tsx --------------------------------> /
   |---> dashboard.tsx ----------------------------> /dashboard
+  |---> dashboard.settings.tsx -------------------> /dashboard/settings
   |---> users/ -----------------------------------> /users/
       |
       |-->index.tsx ------------------------------> /users/
@@ -18,13 +17,47 @@
         |-->index.tsx ----------------------------> /admin/:adminId/
         |-->settings.tsx -------------------------> /admin/:adminId/settings/
 
-1.2 createFileRoute
-  - What is the createFileRoute, give an example
+1.2 Nested layout
+  - Tell us about <Outlet /> and how you use it
+    ---
+    in tanstack, routing is hierarchial, like a tree:
+      routes/
+        |__ __root.tsx ----------------------------------------> Root Layout
+        |__ dashboard.tsx ------------------------------------------> /dashboard
+        |__ dashboard.settings.tsx -----------------------------> /dashboard/settings
+
+      - __root.tsx: is the root layout of the application, it will be rendered in the root of the application
+      - dashboard.tsx: is the layout of the dashboard, it will be rendered in the <Outlet /> of __root.tsx
+      - dashboard.settings.tsx: is a child route for dashboard.tsx, it will be rendered in the 
+                                <Outlet /> of dashboard.tsx
+
+  - Read: see multiple ways of doing <Outlet /> renders
+    1. naming convention
+      /dashboard.tsx -> The Parent Layout (contains your <Outlet/>).
+      /dashboard.index.tsx → Matches /dashboard/
+      /dashboard.settings.tsx -> Child route -> /dashboard/settings
+      /dashboard.stats.tsx -> Child route -> /dashboard/stats
+      /dashboard.activity.tsx -> Child route -> /dashboard/activity
+
+    2. nested file route:
+      /dashboard.tsx (File) → This is the layout for the folder.
+      /dashboard/ (Folder)
+        |__ index.tsx ---------------------> /dashboard/
+        |__ settings.tsx ------------------> /dashboard/settings
+        |__ stats.tsx ---------------------> /dashboard/stats
+        |__ activity.tsx ------------------> /dashboard/activity
+
+      Note: If you use a folder named "dashboard" without a sibling file named "dashboard.tsx", the routes
+        inside become "pathless" or "unwrapped" unless you use specific prefixing.
+
+1.3 createFileRoute
+  - Talk about is the createFileRoute, give an example
     - It is a function that creates a route for a page component
     e.g:
     import {createFileRoute} from "@tanstack/react-router"
 
-    const Route = createFileRoute("/users/$")({
+    const Route = createFileRoute("/users/$userId")({
+      loader: async ({ params }) => fetchPost(params.userId),
       component: UserComponent,
     })
 
@@ -33,9 +66,167 @@
     }
 
   - what are some important arguments you can pass into createFileRoute (list 5)
-    - component: PageComponent,
-    - staticData: { title: "Free9ja" },
-    - errorComponent: ErrorComponent,
-    - pendingComponent: PendingComponent,
-    - loader: async () => { console.log("free9ja") },
+    - component: The React component to render for the route.
+      e.g: component: PageComponent,
+
+    - loader: A function that fetches data before the route is rendered.
+      e.g: loader: async ({ params, search, context }) => { fetchPost(params.userId) },
     
+    - beforeLoad: A hook that runs before navigation completes, Useful for authentication checks or redirects.
+      e.g: beforeLoad: async ({ params, search, context }) => { console.log("before load") },
+    
+    - validateSearch: A function that validates the search parameters.
+      e.g:
+        validateSearch: async (search) => {
+          if (!search.userId) { throw new Error("Missing user ID"); }
+          return search;
+        }
+        ---
+        validatesSearch: (search) => {
+          return { q: String(search.q || "") };
+        },
+
+    - errorComponent: A component to render when an error occurs.
+      e.g: errorComponent: ErrorComponent,
+    
+    - pendingComponent: A component to render while the loader is fetching data.
+      e.g: pendingComponent: PendingComponent,
+    
+    - notFoundComponent: A component to render when a route is not found.
+      e.g: notFoundComponent: NotFoundComponent,
+
+  - see this example, rewrite example on your own
+    -
+    export const Route = createFileRoute('/posts/$postId')({
+      component: PostComponent,
+      loader: async ({ params }) => fetchPost(params.postId),
+      beforeLoad: ({ context }) => {
+        if (!context.user) throw redirect({ to: '/login' })
+      },
+      validateSearch: (search) => ({
+        q: String(search.q ?? '')
+      }),
+      errorComponent: ErrorBoundary,
+      pendingComponent: LoadingSpinner,
+      notFoundComponent: NotFoundPage,
+    })
+
+  - How do you access the data retrieved by loader
+    - Use the useLoaderData hook
+      e.g: const data = Route.useLoaderData()
+      or
+      e.g: const data = useLoaderData({ from: "/users/$userId" });
+  
+  - Read: a little bit about loader
+    - loaders can run on the server and client:
+      - Initial page load (SSR):
+        → Loader runs on the server
+        → Data is fetched and sent with the HTML
+
+      - After hydration / client navigation:
+        → Loader runs on the client (browser) during route changes
+
+    - So effectively: server first, then client on subsequent navigations
+    - it can throw an error if the data cannot be fetched. The error will be passed to the errorComponent.
+
+1.4 createLazyFileRoute: talk about it and give an example
+  - Talk about it and give an example
+    This is almost identical to createFileRoute, but instead of eagerly importing the component,
+    you lazy-load it for code-splitting:
+    e.g:
+      for url -> /posts/:postId, the file will be: /posts.$postId.tsx
+      content:
+        import {createLazyFileRoute} from '@tanstack/react-router'
+
+        export const Route = createLazyFileRoute('/posts/$postId')({
+          component: () => import('./PostComponent'),
+          loader: async ({ params }) => fetchPost(params.postId),
+        })
+
+  - What is the difference between createFileRoute and createLazyFileRoute
+    - createFileRoute → expects a direct component reference.
+    - createLazyFileRoute → expects a function returning a dynamic import().
+      -> This helps reduce bundle size by loading route components only when needed.
+
+1.5 createFileRoute: see more arguments you can pass into the createFileRoute
+  - Read them and explain them in your own words
+    - meta → Arbitrary metadata (e.g., title, description).
+    - staticData →  Predefined static data for the route.
+    - wrapComponent →  Higher-order wrapper for the route component.
+    - parseParams / stringifyParams →  Custom parsing/serialization for route params.
+    - context → Extra context passed into loaders and components.
+
+  - See examples of all of the above
+    - meta:
+      Attach arbitrary metadata (often used for SEO, analytics, or custom route info):
+      e.g:
+      const Route = createFileRoute('/about')({
+        component: AboutPage,
+        meta: {
+          title: 'About Us',
+          description: 'Learn more about our company and mission',
+          requiresAuth: false,
+        },
+      }) 
+
+    - staticData:
+      Use staticData for data that does not need to be fetched dynamically.
+      e.g:
+      const Route = createFileRoute('/faq')({
+        component: FaqPage,
+        staticData: {
+          faqs: [
+            { q: 'What is TanStack?', a: 'A set of powerful libraries for React.' },
+            { q: 'Is it open source?', a: 'Yes!' },
+          ],
+        },
+      })
+
+    - wrapComponent:
+      Wrap the route component with a higher-order component (HOC).
+      This is useful for adding common UI patterns (like a wrapper layout or custom providers)
+      without repeating code in every route.
+
+      e.g:
+      function AuthWrapper({ children }) {
+        return (
+          <div style={{ border: "2px solid blue", padding: "10px" }}>
+            {children}
+          </div>
+        );
+      }
+      
+      const Route = createFileRoute('/protected')({
+        component: ProtectedPage,
+        wrapComponent: AuthWrapper,
+      })
+
+    - parseParams / stringifyParams: 
+      Custom parsing/serialization for route params.
+      e.g:
+      function parseProductId(id: string | number | undefined) {
+        const num = Number(id);
+        if (isNaN(num) || num <= 0) {
+          return null;
+        }
+        return num;
+      }
+
+      const Route = createFileRoute('/products/$productId')({
+        component: ProductPage,
+        parseParams: { productId: parseProductId },
+      })
+      
+      or you can do:
+      export const Route = createFileRoute('/products/$productId')({
+        component: ProductPage,
+        parseParams: (params) => ({
+          productId: Number(params.productId), // convert string to number
+        }),
+        stringifyParams: (params) => ({
+          productId: String(params.productId), // ensure string when building URL
+        }),
+      })
+
+    - context: 
+      
