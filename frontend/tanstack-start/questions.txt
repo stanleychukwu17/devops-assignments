@@ -2,14 +2,16 @@ full_revision: 25 Mar 2026
 full_revision: 25 Mar 2026
 full_revision: 4 Apr 2026
 
-1.  Read: about tanstack
-1.1 How do you navigate the following url in tanstack
+pnpm create @tanstack/start@latest
+
+1 How do you navigate the following url in tanstack
   ---
   routes/
   |
   |---> __root,tsx
   |---> index.tsx
   |---> dashboard.tsx
+  |---> dashboard.settings.tsx
   |---> users/
       |
       |-->index.tsx
@@ -21,19 +23,19 @@ full_revision: 4 Apr 2026
         |-->index.tsx
         |-->settings.tsx
 
-
-1.2 createFileRoute
-  - Talk about is the createFileRoute, give an example
-  - what are some important arguments you can pass into createFileRoute (list 5)
-  - give an example
-  - How do you access the data retrieved by loader
-  - Read: a little bit about loader
-
-1.3 Nested layout
+1.2 Nested layout
   - Read: About nested layout (can you talk about it without reading)
   - <Outlet />
 
-2. createFileRoute
+1.3 createFileRoute
+  - Talk about is the createFileRoute, give an example
+  - what are some important arguments you can pass into createFileRoute (list 5)
+  - give an example, rewrite example on your own
+  - How do you access the data retrieved by loader
+  - Read: a little bit about loader
+
+1.4 createFileRoute v2
+
 
 
 3. CreateServerFn
@@ -47,3 +49,10 @@ full_revision: 4 Apr 2026
     - Give an example of createIsomorphicFn {Tip: use .server & .client}
   
   5. How errors propagate to the UI
+
+
+
+
+
+- staticData: Data that is static and doesn't change.
+e.g: staticData: { title: "My Page" },
