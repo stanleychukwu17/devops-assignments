@@ -485,8 +485,6 @@
 34. - terraform show
     - terraform show | grep -A 20 aws_vpc -: means, show all resources, then pipe the result to the grep
         command and then search for aws_vpc, if you find the result, then show 20lines after it(i.e A20)
-    - terraform show -target=<resource_address>
-        e.g terraform show -target=aws_instance.my_vm
     - terraform show <plan_file> e.g terraform show tfplan
 
 35. terraform state

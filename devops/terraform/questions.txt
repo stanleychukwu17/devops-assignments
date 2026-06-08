@@ -108,7 +108,6 @@ docs {
 
 34. - how do you see all the resources in your terraform state
     - explain this command terraform show | grep -A20 aws_vpc
-    - use show to see a specific resource
     - use show to see the content of a plan file
 
 35. terraform state
