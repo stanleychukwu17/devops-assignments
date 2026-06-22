@@ -130,23 +130,98 @@
     - it can throw an error if the data cannot be fetched. The error will be passed to the errorComponent.
 
 1.4 createLazyFileRoute: talk about it and give an example
-  - Talk about it and give an example
-    This is almost identical to createFileRoute, but instead of eagerly importing the component,
-    you lazy-load it for code-splitting:
+  - Talk about it
+    createLazyFileRoute is used for creating a partial file-based route instance that is lazily
+    loaded when matched. This route instance can only be used to configure the non-critical properties
+    of the route — component, pendingComponent, errorComponent, and notFoundComponent.
+
+    # The Core Idea: Critical vs. Non-Critical Route Config:
+      TanStack Router separates code into two categories:
+        - Critical Route Configuration — code required to render the current route and kick off the data
+          loading process as early as possible.
+        - Non-Critical/Lazy Route Configuration — code that is not required to match the route, and can be
+          loaded on-demand.
+
+      createLazyFileRoute handles only the non-critical side.
+    
+    # The .lazy.tsx File Convention
+      You can code-split your route files using the .lazy.tsx suffix. It's as easy as
+      moving your code into a separate file with a .lazy.tsx suffix and using
+      createLazyFileRoute instead of createFileRoute
+    
+    # Hooks still work
+      The exported Route object from a lazy file still gives you access to all the route-scoped hooks
+      like Route.useLoaderData(), Route.useParams(), Route.useSearch(), etc., because the LazyRoute class 
+      provides route-scoped React hooks that are pre-bound to the specific route ID
+
     e.g:
-      for url -> /posts/:postId, the file will be: /posts.$postId.tsx
-      content:
-        import {createLazyFileRoute} from '@tanstack/react-router'
+      /src/routes/index.tsx ← critical configs
+      /src/routes/index.lazy.tsx ← deferred, code-split, non-critical configs
+      -
+      /src/routes/posts.$postId.tsx
+      /src/routes/posts.$postId.lazy.tsx
+      -
+      /src/routes/admin.tsx
+      /src/routes/admin.lazy.tsx
+      
+    --
+      
+  - give an example:
+    // src/routes/posts.tsx  ← critical config
+    import { createFileRoute } from '@tanstack/react-router'
+    import { fetchPosts } from './api'
+    export const Route = createFileRoute('/posts')({
+      loader: fetchPosts,
+    })
 
-        export const Route = createLazyFileRoute('/posts/$postId')({
-          component: () => import('./PostComponent'),
-          loader: async ({ params }) => fetchPost(params.postId),
-        })
+    // src/routes/posts.lazy.tsx  ← deferred, code-split
+    import { createLazyFileRoute } from '@tanstack/react-router'
+    export const Route = createLazyFileRoute('/posts')({
+      component: Posts,
+    })
 
-  - What is the difference between createFileRoute and createLazyFileRoute
-    - createFileRoute → expects a direct component reference.
-    - createLazyFileRoute → expects a function returning a dynamic import().
-      -> This helps reduce bundle size by loading route components only when needed.
+    function Posts() {
+      const allPosts = Route.useLoaderData()
+      // ...
+    }
+
+  - example 2:
+    // src/routes/posts/$postId.tsx ← critical config
+    import { createFileRoute } from '@tanstack/react-router'
+    import { fetchPost, fetchPostComments } from './api'
+
+    export const Route = createFileRoute('/posts/$postId')({
+      loader: async ({ params }) => {
+        return {
+          post: await fetchPost(params.postId),
+          comments: await fetchPostComments(params.postId),
+        }
+      },
+    })
+
+    // src/routes/posts/$postId.lazy.tsx ← deferred, code-split
+    import { createLazyFileRoute } from '@tanstack/react-router'
+
+    export const Route = createLazyFileRoute('/posts/$postId')({
+      component: PostPage,
+    })
+
+    function PostPage() {
+      const { post, comments } = Route.useLoaderData()
+      // ...
+    }
+
+  - When to Use createLazyFileRoute vs createFileRoute
+    Use createFileRoute when:
+      - The route is small and lightweight.
+      - The component is critical and should be loaded immediately (e.g., homepage, login).
+      - Highly visited pages should be loaded immediately
+      - You don’t care about bundle size for that route.
+
+    Use createLazyFileRoute when:
+      - The route’s component is large or rarely visited (e.g., admin dashboard, settings).
+      - You want code-splitting: components are only loaded when the user navigates there.
+      - You’re optimizing for faster initial page load and smaller bundle size.
 
 1.5 createFileRoute: see more arguments you can pass into the createFileRoute
   - Read them and explain them in your own words
@@ -228,5 +303,29 @@
         }),
       })
 
-    - context: 
-      
+    - context:
+      Pass extra context into loaders and components
+      e.g:
+        const Route = createFileRoute('/posts/$postId')({
+          component: PostPage,
+          context: {
+            user: { id: 1, name: 'Karen' },
+          },
+          loader: ({ context }) => {
+            console.log('Context:', context); // { user: ... }
+            return { postId: params.postId };
+          },
+        })
+
+      e.g2:
+        export const Route = createFileRoute('/profile')({
+          component: ProfilePage,
+          loader: async ({ context }) => {
+            return fetchUserProfile(context.apiClient)
+          },
+          context: {
+            apiClient: new ApiClient('/api'),
+          },
+        })
+
+
