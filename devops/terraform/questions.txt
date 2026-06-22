@@ -83,7 +83,8 @@ docs {
 
 25. How do you set the ssh key file permission to read only for all users
 
-26. use the ssh to create a resource key pair and use the key pair in your ec2 instance
+26. - use the ssh to create a resource key pair and use the key pair in your ec2 instance
+    - see the one we used on one of our instances on aws
 
 27. - login into your running ec2 instance using the ssh key that you generated
     - once logged in, how do you switch to been the root user?

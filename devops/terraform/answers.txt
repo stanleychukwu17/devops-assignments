@@ -340,13 +340,16 @@
         }
     }
 
-24. ssh-keygen -t rsa -b 2048 -C 'test key' -N '' -f ~/.ssh/test_rsa {
+24.
+    - ssh-keygen -t rsa -b 2048 -C 'test key' -N '' -f ~/.ssh/test_rsa {
         -t rsa: Specifies the type of key to create, in this case, RSA.
         -b 2048: Sets the number of bits in the key, here 2048 bits.
         -C 'test key': Adds a comment to the key.
         -N '': used for encryption. Sets an empty passphrase for the key (not recommended for all use cases due to security reasons).
         -f ~/.ssh/test_rsa: Specifies the filename of the key file and where to save the key
     }
+
+    - ssh-keygen -t rsa -b 4096 -f "$HOME\.ssh\devops\sql_redis_rsa" -N '""'
 
 25.
     chmod 400 ~/.ssh/test_rsa
