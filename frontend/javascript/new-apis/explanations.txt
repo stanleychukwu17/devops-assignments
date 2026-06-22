@@ -51,12 +51,70 @@
         return () => observer.disconnect();
       }, []);
 
+2. window.dispatchEvent:
+  # Description:
+    window.dispatchEvent is a JavaScript method that lets you manually fire (dispatch) an event on the window object,
+    triggering any event listeners attached to it. Unlike browser-generated events, it runs synchronously and
+    is often used to simulate user actions or custom events.
 
+  # Key details:
+    1. Event Creation: You must first create an event object using the Event constructor (or specialized constructors like MouseEvent, KeyboardEvent, etc.).
+      Example:
+        let event = new Event('resize');
+        window.dispatchEvent(event);
 
+    2. Event Authenticity: Programmatically dispatched events have event.isTrusted = false, distinguishing them from user-generated events (true)
 
+  E.g: Simulate resize:
+    window.addEventListener('resize', () => console.log('Resized!'));
+    window.dispatchEvent(new Event('resize'));
+    // Logs "Resized!" without actually resizing the window.
 
+  E.g: Trigger custom events:
+    let myEvent = new Event('myCustomEvent', {bubbles: true, cancelable: true});
+    window.dispatchEvent(myEvent);
+    // Testing event listeners: Useful in unit tests to verify event-driven code without requiring user interaction.
 
+  E.g: Using it in React
+    const [theme, setThemeState] = useState<ThemeMode>('auto')
 
+    useEffect(() => {
+      const handleThemeSync = () => {
+        setThemeState(getInitialMode())
+      }
+
+      window.addEventListener('theme-change', handleThemeSync)
+      return () => {
+        window.removeEventListener('theme-change', handleThemeSync)
+      }
+    }, [])
+
+    const setTheme = (newTheme: ThemeMode) => {
+      setThemeState(newTheme)
+      applyThemeMode(newTheme)
+      window.localStorage.setItem('theme', newTheme)
+      window.dispatchEvent(new Event('theme-change'))
+    }
+
+    return { theme, setTheme }
+
+    - From the example above, you'll see that the "useEffect" runs and subscribes to the customEvent 'theme-change',
+      and in "setTheme" function, we fire the custom event 'theme-change', so every callback subscribed to 'theme-change'
+      will be fired when the "dispatchEvent" is triggered
+
+  E.g Passing data with events:
+    caller:
+      window.dispatchEvent(
+        new CustomEvent('theme-change', {
+          detail: {theme: 'dark'}
+        })
+      )
+    
+    Listener:
+      window.addEventListener('theme-change', (event: CustomEvent<{theme: string}>) => {
+          console.log(event.detail.theme)
+        }
+      )
 
 
 
